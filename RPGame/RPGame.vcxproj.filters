@@ -21,6 +21,15 @@
     <ClInclude Include="enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SprayMop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DustMop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Broomba.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">
@@ -33,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSelection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

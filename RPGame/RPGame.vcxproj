@@ -127,14 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Broomba.h" />
     <ClInclude Include="character.h" />
+    <ClInclude Include="DustMop.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="SprayMop.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleSequence.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
+    <ClCompile Include="PlayerSelection.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
