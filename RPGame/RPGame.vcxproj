@@ -134,7 +134,6 @@
     <ClInclude Include="SprayMop.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\OneDrive\Desktop\Spring 2024 (CSC 145) Quest Logs\Game_Tester_Menu.cpp\Game_Tester_Menu.cpp.cpp" />
     <ClCompile Include="BattleSequence.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="MopMania.cpp" />
