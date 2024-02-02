@@ -14,6 +14,9 @@
     <Filter Include="GameMap Files">
       <UniqueIdentifier>{a84d754a-7360-4fec-a70d-d56a0594109b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MusicStuff">
+      <UniqueIdentifier>{00678854-65e3-477e-80f8-7d91a5b92194}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
@@ -90,5 +93,10 @@
     <ClCompile Include="SqueeGeeCity.cpp">
       <Filter>GameMap Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="void.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>
