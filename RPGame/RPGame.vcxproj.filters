@@ -1,48 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
+    <Filter Include="MainGame Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Character Files">
+      <UniqueIdentifier>{2a16c7cd-68b2-47d2-85eb-97eb12345322}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Enemy Files">
+      <UniqueIdentifier>{dd6b2f04-6bba-40b8-9f09-fe52b3620abf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameMap Files">
+      <UniqueIdentifier>{a84d754a-7360-4fec-a70d-d56a0594109b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SprayMop.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DustMop.h">
-      <Filter>Header Files</Filter>
+      <Filter>Character Files</Filter>
     </ClInclude>
     <ClInclude Include="Broomba.h">
-      <Filter>Header Files</Filter>
+      <Filter>Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DustMop.h">
+      <Filter>Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SprayMop.h">
+      <Filter>Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Enemy Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralGameFunctions.h">
+      <Filter>MainGame Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1.h">
+      <Filter>GameMap Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level2.h">
+      <Filter>GameMap Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level3.h">
+      <Filter>GameMap Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level4.h">
+      <Filter>GameMap Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalLevel.h">
+      <Filter>GameMap Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VacuumVille.h">
+      <Filter>GameMap Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SqueeGeeCity.h">
+      <Filter>GameMap Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MainGame Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneralGameFunctions.cpp">
+      <Filter>MainGame Files</Filter>
     </ClCompile>
     <ClCompile Include="character.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BattleSequence.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Character Files</Filter>
     </ClCompile>
     <ClCompile Include="enemy.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Enemy Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level1.cpp">
+      <Filter>GameMap Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level2.cpp">
+      <Filter>GameMap Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level3.cpp">
+      <Filter>GameMap Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level4.cpp">
+      <Filter>GameMap Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FinalLevel.cpp">
+      <Filter>GameMap Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VacuumVille.cpp">
+      <Filter>GameMap Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SqueeGeeCity.cpp">
+      <Filter>GameMap Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

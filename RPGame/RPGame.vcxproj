@@ -131,14 +131,28 @@
     <ClInclude Include="character.h" />
     <ClInclude Include="DustMop.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="FinalLevel.h" />
+    <ClInclude Include="GeneralGameFunctions.h" />
+    <ClInclude Include="Level1.h" />
+    <ClInclude Include="Level2.h" />
+    <ClInclude Include="Level3.h" />
+    <ClInclude Include="Level4.h" />
     <ClInclude Include="SprayMop.h" />
+    <ClInclude Include="SqueeGeeCity.h" />
+    <ClInclude Include="VacuumVille.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BattleSequence.cpp" />
     <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="FinalLevel.cpp" />
+    <ClCompile Include="GeneralGameFunctions.cpp" />
+    <ClCompile Include="Level1.cpp" />
+    <ClCompile Include="Level2.cpp" />
+    <ClCompile Include="Level3.cpp" />
+    <ClCompile Include="Level4.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
-    <ClCompile Include="PlayerSelection.cpp" />
+    <ClCompile Include="SqueeGeeCity.cpp" />
+    <ClCompile Include="VacuumVille.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

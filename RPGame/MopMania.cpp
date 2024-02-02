@@ -3,11 +3,11 @@
 //nothing except the int main should on here.
 #include <iostream>
 #include "character.h"
+#include "GeneralGameFunctions.h"
 
 int main()
 {
-	std::cout << "hello worldssssssss" << std::endl;
-	std::cout << "hello world" << std::endl;
+	Start_Menu();
 
 	return 0;
 }
