@@ -1,5 +1,6 @@
 #pragma once
 #include "GeneralGameFunctions.h"
+#include <string>
 #include <chrono>
 #include <thread>
 #include <Windows.h>
@@ -16,7 +17,7 @@ void Start_Menu()
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
 	std::this_thread::sleep_for(std::chrono::seconds(3));
-	std::cout << "\n\nSYou wake up one day with no body... all you see is the void of darkness" << std::endl;
+	std::cout << "You wake up one day with no body... all you see is the void of darkness" << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(6));
 	std::cout << "You hear a voice calling in the distance:" << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(3));
@@ -32,9 +33,33 @@ void Start_Menu()
 	std::this_thread::sleep_for(std::chrono::seconds(5));
 	std::cout << "\nWell anyways, you failed in your previous life so now I will offer you a new life" << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(3));
-	std::cout << "A life as a cleaning mop.";
+	std::cout << "A life as a cleaning mop...";
 	std::this_thread::sleep_for(std::chrono::seconds(4));
-	std::cout << " Pretty lame right?" << std::endl;
+	std::cout << " Will you accept this new life?";
+	SetConsoleTextAttribute(h, 7);
+	std::cout << " type: [y/n]" << std::endl;
+	std::string choice;
+	std::cin >> choice;
+	SetConsoleTextAttribute(h, 6);
+
+	if (choice == "y")
+	{
+		std::cout << "\nAs you should..." << std::endl;
+		std::this_thread::sleep_for(std::chrono::seconds(4));
+	}
+	else
+	{
+		PlaySound(0, 0, 0);
+		std::this_thread::sleep_for(std::chrono::seconds(5));
+		std::cout << "Okay... time to DIE AGAIN..." << std::endl;
+		std::this_thread::sleep_for(std::chrono::seconds(6));
+		std::cout << "\033[2J\033[1;1H";
+
+		return Start_Menu();
+	}
+
+
+
 
 
 	//end music
