@@ -52,10 +52,13 @@
     <ClInclude Include="FinalLevel.h">
       <Filter>GameMap Files</Filter>
     </ClInclude>
+    <ClInclude Include="SqueeGeeCity.h">
+      <Filter>GameMap Files</Filter>
+    </ClInclude>
     <ClInclude Include="VacuumVille.h">
       <Filter>GameMap Files</Filter>
     </ClInclude>
-    <ClInclude Include="SqueeGeeCity.h">
+    <ClInclude Include="GraphMap.h">
       <Filter>GameMap Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -91,6 +94,9 @@
       <Filter>GameMap Files</Filter>
     </ClCompile>
     <ClCompile Include="SqueeGeeCity.cpp">
+      <Filter>GameMap Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphMap.cpp">
       <Filter>GameMap Files</Filter>
     </ClCompile>
   </ItemGroup>

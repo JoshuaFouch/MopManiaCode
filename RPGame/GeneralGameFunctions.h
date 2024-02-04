@@ -10,13 +10,13 @@ void Game_Tester_Menu();	//general form of our menus, probably going to be our p
 
 character Mop_Selection();	//user gets to choose a type of mop, then the function will return an instance of class character
 
-void Pause_Menu();
+void Pause_Menu();	//pauses game to show menu
 
-void Battle_Sequence();
+void Battle_Sequence();	//in-game battle
 
-void GameShop_Menu();
+void GameShop_Menu();	//shopping menu
 
-void GameOver();	//josh
+void GameOver();	//completely clears the terminal and prints game over, completely ending the code
  
 
 

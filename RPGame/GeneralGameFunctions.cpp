@@ -20,14 +20,14 @@ void Start_Menu()
 	std::cout << "You wake up one day with no body... all you see is the void of darkness" << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(6));
 	std::cout << "You hear a voice calling in the distance:" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(3));
+	std::this_thread::sleep_for(std::chrono::seconds(4));
 	SetConsoleTextAttribute(h, 6); //Janitorius (Tyler) is yellow text
 	std::cout << "My dear soul,";
 	std::cout << " I am Janitorius, the custodian of Le Hospitale." << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(4));
 	std::cout << "You seem to have lost all your memory from that day." << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(4));
-	std::cout << "You died.";
+	std::cout << "You died...";
 	std::this_thread::sleep_for(std::chrono::seconds(3));
 	std::cout << " You unfortunately bit your tongue too hard until your legs began to fall off" << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(5));
@@ -121,7 +121,7 @@ void Game_Tester_Menu()
 		}
 		else if (choice == 5) {
 			//function quitGame()
-			std::cout << "quiteGame()";
+			std::cout << "quitGame()";
 			break;
 		}
 		else
