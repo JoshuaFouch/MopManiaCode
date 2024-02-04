@@ -11,6 +11,7 @@ int main()
 	//GameOver();
 	//Game_Tester_Menu();
 	std::cout << "hi" << std::endl;
+	std::cout << "eljay :P" << '\n';
 
 
 	return 0;
