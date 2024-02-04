@@ -10,6 +10,8 @@ int main()
 	//Start_Menu();
 	//GameOver();
 	//Game_Tester_Menu();
+	std::cout << "hi" << std::endl;
+
 
 	return 0;
 }

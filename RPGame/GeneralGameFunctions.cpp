@@ -54,6 +54,7 @@ void Start_Menu()
 		std::cout << "Okay... time to DIE AGAIN..." << std::endl;
 		std::this_thread::sleep_for(std::chrono::seconds(6));
 		std::cout << "\033[2J\033[1;1H";
+		SetConsoleTextAttribute(h, 7);
 
 		return Start_Menu();
 	}

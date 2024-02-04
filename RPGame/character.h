@@ -33,6 +33,8 @@ public:
 	//takes in opponents attack to subtract health of character
 	void damaged(int oppAtt);
 
+	//function 
+
 
 
 private:
@@ -40,11 +42,11 @@ private:
 	int hp;
 	int att;
 	int def;
+	//class inventory (linked list?)
 
 };
 
 
-void PlayerSelection();
 
 
 
