@@ -7,7 +7,9 @@
 
 int main()
 {
-	Start_Menu();
+	//Start_Menu();
+	//GameOver();
+	//Game_Tester_Menu();
 
 	return 0;
 }

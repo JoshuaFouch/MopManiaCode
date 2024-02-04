@@ -4,15 +4,19 @@
 #ifndef GeneralGameFunctions_h
 #define GeneralGameFunctions_h
 
-void Start_Menu();
+void Start_Menu();	//beginning of the game
 
-void Player_Selection();
+void Game_Tester_Menu();	//general form of our menus, probably going to be our pause menu
+
+character Mop_Selection();	//user gets to choose a type of mop, then the function will return an instance of class character
 
 void Pause_Menu();
 
 void Battle_Sequence();
 
 void GameShop_Menu();
+
+void GameOver();	//josh
  
 
 
@@ -21,4 +25,4 @@ void GameShop_Menu();
 
 
 
-#endif GeneralGameFunctions_h
+#endif

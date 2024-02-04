@@ -98,5 +98,8 @@
     <Media Include="void.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="dies-irae-chant.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>

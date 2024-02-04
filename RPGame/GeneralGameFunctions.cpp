@@ -58,13 +58,78 @@ void Start_Menu()
 		return Start_Menu();
 	}
 
-
-
-
-
 	//end music
 	PlaySound(0, 0, 0);
 	//end text color
 	SetConsoleTextAttribute(h, 7);
+
+}
+
+void GameOver()
+{
+	PlaySound(TEXT("dies-irae-chant.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	std::cout << "\033[2J\033[1;1H";
+	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
+	std::this_thread::sleep_for(std::chrono::seconds(5));
+
+	PlaySound(0, 0, 0);
+}
+
+void Game_Tester_Menu()
+{
+
+	int choice;
+
+	while (true)
+	{
+		std::cout << "\nMop Mania\n";
+		std::cout << "---------------------------------\n";
+		std::cout << "1. Return to Game" << '\n';
+		std::cout << "2. Enter Battle" << '\n';
+		std::cout << "3. Manage Inventory" << '\n';
+		std::cout << "4. Enter Shoppie" << '\n';
+		std::cout << "5. Talk to Someone" << '\n';
+		std::cout << "6. Quit Game" << '\n';
+		std::cout << "---------------------------------\n";
+
+		std::cin >> choice;
+
+		if (choice == 6) {
+			std::cout << "\nFarewell Mopdian! Come back again next time!" << '\n';
+			break;
+		}
+
+		if (choice == 1) {
+			//function returnToOverworld()
+			std::cout << "returnToOverworld()";
+			break;
+		}
+		else if (choice == 2) {
+			//function enterBattle()
+			std::cout << "enterBattle()";
+			break;
+		}
+		else if (choice == 3) {
+			//function manageInventory()
+			std::cout << "Inventory()";
+			break;
+		}
+		else if (choice == 4) {
+			//function chatter()
+			std::cout << "chatter()";
+			break;
+		}
+		else if (choice == 5) {
+			//function quitGame()
+			std::cout << "quiteGame()";
+			break;
+		}
+		else
+		{
+			std::cout << "try again" << endl;
+		}
+
+
+	}
 
 }
