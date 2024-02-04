@@ -10,8 +10,8 @@ int main()
 	//Start_Menu();
 	//GameOver();
 	//Game_Tester_Menu();
-	std::cout << "hi" << std::endl;
-	std::cout << "eljay :P" << '\n';
+	std::cout << "git RKD" << std::endl;
+	
 
 
 	return 0;
