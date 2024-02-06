@@ -19,7 +19,7 @@ private:
 	int get_def();
 	void displayStats();
 	void damaged(int oppAtt);
-	void attack();
+	//void attack();
 	
 	
 

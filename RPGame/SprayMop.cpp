@@ -86,5 +86,5 @@ void SprayMop::runSprayMopDemo()
 		cout << "\nUpdated Stats for " << sprayMop.get_name() << ":" << '\n';
 
 		//test attack function
-		sprayMop.attack();
+		//sprayMop.attack();
 }
