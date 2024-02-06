@@ -153,6 +153,7 @@
     <ClCompile Include="Level4.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
+    <ClCompile Include="SprayMop.cpp" />
     <ClCompile Include="SqueeGeeCity.cpp" />
     <ClCompile Include="VacuumVille.cpp" />
   </ItemGroup>

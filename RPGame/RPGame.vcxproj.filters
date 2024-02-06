@@ -99,6 +99,9 @@
     <ClCompile Include="GraphMap.cpp">
       <Filter>GameMap Files</Filter>
     </ClCompile>
+    <ClCompile Include="SprayMop.cpp">
+      <Filter>Character Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="void.wav">
