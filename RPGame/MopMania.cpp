@@ -13,7 +13,7 @@ int main()
 	//Game_Tester_Menu();
 	//std::cout << "git RKD" << std::endl;
 	SprayMop sprayMop("SprayMop", 75, 45, 25);
-	//sprayMop.runSprayMopDemo();//having trouble currently running it
+	sprayMop.attack();//having trouble currently running it
 	
 	
 

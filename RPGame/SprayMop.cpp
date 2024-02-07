@@ -69,7 +69,7 @@ void SprayMop::damaged(int oppAtt)
 
 
 
-void SprayMop::runSprayMopDemo()
+void SprayMop::attack()
 {
     //below is the test code for SprayMop character (no character selection thing yet, but just to know if it can output something
 	SprayMop sprayMop("SprayMop", 75, 50, 10);//very fragile mop, but swift and hits hard
