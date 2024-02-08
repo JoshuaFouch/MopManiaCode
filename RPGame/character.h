@@ -35,9 +35,8 @@ public:
 
 	//function 
 
-
-
 private:
+
 	string name;
 	int hp;
 	int att;
@@ -45,22 +44,6 @@ private:
 	//class inventory (linked list?)
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

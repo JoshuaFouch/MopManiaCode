@@ -1,28 +1,24 @@
+// SprayMop.h
 #pragma once
+
 #include "character.h"
-#include <string>
 #ifndef SprayMop_h
 #define SprayMop_h
-//mr. eljay worked on character class hehe
+
 class SprayMop : public character
 {
 public:
-	SprayMop(string name, int hp, int att, int def);
-	//void runSprayMopDemo();//this runs the SprayMop character's attributes
-
-	string get_name();
-	void set_name(string name);
-	int get_hp();
-	int get_att();
-	void set_att(int att);
-	int get_def();
-	void displayStats();
-	void damaged(int oppAtt);
-	void attack();
-	
-	
-
+    SprayMop(string name, int hp, int att, int def);
+    void attack();
+    string get_name();
+    void set_name(string name);
+    int get_hp();
+    void set_hp(int hp);
+    int get_att();  
+    void set_att(int att);
+    int get_def();  
+    void set_def(int def);
+    void displayStats();
+    void damaged(int oppAtt);
 };
-
-
-#endif SprayMop_h
+#endif
