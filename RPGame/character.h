@@ -11,6 +11,9 @@ class character
 {
 
 public:
+
+	//constructor!!!
+
 	//name variable
 	string get_name();
 	void set_name(string name);
@@ -34,6 +37,14 @@ public:
 	void damaged(int oppAtt);
 
 	//function 
+
+	//virtual attack function
+
+	//attack1();
+	//attack2();
+	//attack3();
+	//attack4();
+	//
 
 private:
 

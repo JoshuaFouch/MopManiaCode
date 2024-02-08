@@ -1,7 +1,7 @@
 #include "SprayMop.h"
 
 // Constructor implementation
-SprayMop::SprayMop(string name, int hp, int att, int def)
+/*SprayMop::SprayMop(string name, int hp, int att, int def)
 {
     set_name(name);
     set_hp(hp);
@@ -51,10 +51,12 @@ void SprayMop::set_def(int def)
 
 void SprayMop::displayStats()
 {
-    cout << "Name: " << get_name() << '\n';
-    cout << "HP: " << get_hp() << '\n';
-    cout << "Attack: " << get_att() << '\n';
-    cout << "Defense: " << get_def() << '\n';
+    cout << "*************************************" << '\n';
+    cout << "| Name: " << get_name() << "                    |"<< '\n';
+    cout << "| HP: " << get_hp() << "                            |" << '\n';
+    cout << "| Attack: " << get_att() << "                        |" << '\n';
+    cout << "| Defense: " << get_def() << "                       |" << '\n';
+    cout << "*************************************" << '\n';
 }
 
 void SprayMop::damaged(int oppAtt)
@@ -65,4 +67,4 @@ void SprayMop::damaged(int oppAtt)
 void SprayMop::attack()
 {
     cout << get_name() << " Attacked you cleanly!" << '\n';
-}
+}*/

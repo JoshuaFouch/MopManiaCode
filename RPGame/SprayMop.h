@@ -5,7 +5,7 @@
 #ifndef SprayMop_h
 #define SprayMop_h
 
-class SprayMop : public character
+/*class SprayMop : public character
 {
 public:
     SprayMop(string name, int hp, int att, int def);
@@ -20,5 +20,5 @@ public:
     void set_def(int def);
     void displayStats();
     void damaged(int oppAtt);
-};
+};*/
 #endif
