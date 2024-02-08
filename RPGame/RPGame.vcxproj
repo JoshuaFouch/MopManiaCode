@@ -134,6 +134,7 @@
     <ClInclude Include="FinalLevel.h" />
     <ClInclude Include="GeneralGameFunctions.h" />
     <ClInclude Include="GraphMap.h" />
+    <ClInclude Include="InventoryLL.h" />
     <ClInclude Include="Level1.h" />
     <ClInclude Include="Level2.h" />
     <ClInclude Include="Level3.h" />
@@ -147,6 +148,7 @@
     <ClCompile Include="FinalLevel.cpp" />
     <ClCompile Include="GeneralGameFunctions.cpp" />
     <ClCompile Include="GraphMap.cpp" />
+    <ClCompile Include="InventoryLL.cpp" />
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="Level2.cpp" />
     <ClCompile Include="Level3.cpp" />
