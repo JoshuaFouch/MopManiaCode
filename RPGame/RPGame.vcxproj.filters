@@ -67,6 +67,7 @@
     <ClInclude Include="InventoryLL.h">
       <Filter>Inventory Files</Filter>
     </ClInclude>
+    <ClInclude Include="Items.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">
@@ -77,9 +78,6 @@
     </ClCompile>
     <ClCompile Include="character.cpp">
       <Filter>Character Files</Filter>
-    </ClCompile>
-    <ClCompile Include="enemy.cpp">
-      <Filter>Enemy Files</Filter>
     </ClCompile>
     <ClCompile Include="Level1.cpp">
       <Filter>GameMap Files</Filter>
@@ -107,6 +105,15 @@
     </ClCompile>
     <ClCompile Include="SprayMop.cpp">
       <Filter>Character Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryLL.cpp">
+      <Filter>MainGame Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>MainGame Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Enemy Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
