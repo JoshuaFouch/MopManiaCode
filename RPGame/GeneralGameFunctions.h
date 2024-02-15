@@ -18,6 +18,7 @@ void GameShop_Menu();	//shopping menu
 
 void GameOver();	//completely clears the terminal and prints game over, completely ending the code
  
+void BattleStats(character& c, enemy& e);	//displays stats of a character and enemy
 
 
 

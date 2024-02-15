@@ -82,6 +82,7 @@ void character::displayStats()
 void character::damaged(int oppAtt)
 {
     std::cout << get_name() << " is slapping you menacingly!" << '\n';
+    hp -= (oppAtt - (def / 2));
     //simulate character being damaged with a console output message.
 }
 
@@ -89,21 +90,21 @@ void character::damaged(int oppAtt)
 void character::Attack1(character c, enemy e)
 {
     std::cout << "this is attack 1" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(c.att);
 }
 void character::Attack2(character c, enemy e) 
 {
     std::cout << "this is attack 2" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(c.att);
 }
 void character::Attack3(character c, enemy e) 
 {
     std::cout << "this is attack 3" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(c.att);
 }
 void character::Attack4(character c, enemy e) 
 {
     std::cout << "this is attack 4" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(c.att);
 }
 

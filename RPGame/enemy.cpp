@@ -37,4 +37,3 @@ void enemy::increaseDef(int exp)
 	def += exp;
 }
 
-
