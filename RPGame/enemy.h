@@ -21,6 +21,7 @@ public:
 	void increaseDef(int exp);
 
 	int nextMove(int random);
+	int RandomNum();
 	void damaged(int oppAtt);
 
 	virtual void Attack1(enemy e, character c);
@@ -29,8 +30,3 @@ public:
 	virtual void Attack4(enemy e, character c);
 };
 
-int RandomNum() {
-
-srand((unsigned) time(NULL));//need to randomize seed with the time to make the random number actually different each time its run
-int random = rand() % 4;//calls a random number 1,4
-return random;

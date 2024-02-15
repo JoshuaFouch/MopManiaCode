@@ -37,9 +37,11 @@ void enemy::increaseDef(int exp)
 	def += exp;
 }
 
-int enemy::RandomNum(){
+int enemy::RandomNum()
+{
 	srand((unsigned) time(NULL));//need to randomize seed with the time to make the random number actually different each time its run
 	int random = rand() % 4;//calls a random number 1,4
 		return random;
 }
+
 
