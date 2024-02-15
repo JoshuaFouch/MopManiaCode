@@ -107,3 +107,8 @@ void character::Attack4(character c, enemy e)
     std::cout << "this is attack 4" << std::endl;
     e.damaged(c.att);
 }
+void character::Inventory(character c)
+{
+    std::cout << "this is for checking the inventory, and we will use a linked list" << std::endl;
+    
+}
