@@ -4,6 +4,7 @@
 #include <chrono>
 #include <thread>
 #include <Windows.h>
+#include <stdlib.h>
 
 
 
@@ -134,4 +135,54 @@ void Game_Tester_Menu()
 	}
 
 }
+	void Battle_Sequence(&character c, &enemy e){
+while(e.hp>0||c.hp>=0){
 
+ BattleStats(character& c, enemy& e);
+
+cin>>int choice;
+switch (choice) {
+  case 1:
+    character::Attack1(c,e)
+
+    break;
+  case 2:
+    character::Attack2(c,e)
+
+    break;
+  case 3:
+    character::Attack3(c,e)
+
+    break;
+  case 4:
+    character::Attack4(c,e)
+
+  case 5:
+    character::Inventory(c)
+
+    break;
+
+  case 5:
+    character::Run(c)
+
+    break;
+
+    default:
+
+}
+
+system("CLS");
+    
+    
+    }
+    if (e.hp>0){
+        character::increaseHP(int exp)
+        character::increaseAtt(int exp)
+        character::increaseDef(int exp)
+    }
+    if (c.hp>=0){
+        GameOver();
+    }
+        
+
+}
