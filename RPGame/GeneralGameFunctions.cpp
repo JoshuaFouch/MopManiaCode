@@ -7,7 +7,6 @@
 #include <stdlib.h>
 
 
-
 void Start_Menu()
 {
 	#pragma comment(lib, "winmm.lib")
@@ -64,7 +63,6 @@ void Start_Menu()
 	PlaySound(0, 0, 0);
 	//end text color
 	SetConsoleTextAttribute(h, 7);
-
 }
 
 void GameOver()
@@ -79,26 +77,22 @@ void GameOver()
 
 void BattleStats(character& c, enemy& e)
 {
-	while (true) {
-		std::cout << "-----[Character Stats]-----" << '\n';
-		std::cout << "HP:" << c.get_hp() << '\n';
-		std::cout << "Attack: " << c.get_att() << '\n';
-		std::cout << "Defense " << c.get_def() << '\n';
-		std::cout << "----------------------------" << '\n';
+//character stats
+	std::cout << "-----[ " << c.get_name() << " ]---- - " << '\n';
+	std::cout << "HP:" << c.get_hp() << '\n';
+	std::cout << "Attack: " << c.get_att() << '\n';
+	std::cout << "Defense " << c.get_def() << '\n';
+	std::cout << "----------------------------" << '\n';
 
-		std::cout << "-----[Enemy Stats]-----" << '\n';
-		std::cout << "HP:" << e.get_hp() << '\n';
-		std::cout << "----------------------------" << '\n';
-
-
-	}
+//enemy stats
+	std::cout << "-----[ " << e.get_name() << " ]----- " << '\n';
+	std::cout << "HP:" << e.get_hp() << '\n';
+	std::cout << "----------------------------" << '\n';
 }
 
 void Game_Tester_Menu()
 {
-
 	int choice;
-
 	while (true)
 	{
 		std::cout << "\nMop Mania\n";
@@ -147,48 +141,38 @@ void Game_Tester_Menu()
 		{
 			std::cout << "try again" << std::endl;
 		}
-
-
 	}
-
 }
-	void Battle_Sequence(&character c, &enemy e){
-while(e.hp>0||c.hp>=0){
+void Battle_Sequence(character &c, enemy &e)
+{
+	int run = 0;	//if character wants to run away from battle
+	while(e.get_hp() >= 0 || c.get_hp() >= 0 || run == 0) 
+	{
 
- BattleStats(character& c, enemy& e);
+		BattleStats(c,e);
+		std::cout << "What would you like to do? " << std::endl;
+		int choice;
+		std::cin >> choice;
 
-cin>>int choice;
-switch (choice) {
-  case 1:
-    character::Attack1(c,e)
-
-    break;
-  case 2:
-    character::Attack2(c,e)
-
-    break;
-  case 3:
-    character::Attack3(c,e)
-
-    break;
-  case 4:
-    character::Attack4(c,e)
-
-  case 5:
-    character::Inventory(c)
-
-    break;
-
-  case 5:
-    character::Run(c)
-
-    break;
-
-    default:
-
-}
-
-
+		switch (choice)
+		{
+		case 1:
+			c.Attack1(c, e);
+			break;
+		case 2:
+			c.Attack2(c, e);
+			break;
+		case 3:
+			c.Attack3(c, e);
+			break;
+		case 4:
+			c.Attack4(c, e);
+			break;
+		case 5:
+			std::cout << "\033[2J\033[1;1H";
+			std::cout << "You ran..." << std::endl;
+			run = 1;
+			break;
+		}
 	}
-
 }
