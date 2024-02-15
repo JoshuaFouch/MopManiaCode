@@ -76,6 +76,23 @@ void GameOver()
 	PlaySound(0, 0, 0);
 }
 
+void BattleStats(character& c, enemy& e)
+{
+	while (true) {
+		std::cout << "-----[Character Stats]-----" << '\n';
+		std::cout << "HP:" << c.get_hp() << '\n';
+		std::cout << "Attack: " << c.get_att() << '\n';
+		std::cout << "Defense " << c.get_def() << '\n';
+		std::cout << "----------------------------" << '\n';
+
+		std::cout << "-----[Enemy Stats]-----" << '\n';
+		std::cout << "HP:" << e.get_hp() << '\n';
+		std::cout << "----------------------------" << '\n';
+
+
+	}
+}
+
 void Game_Tester_Menu()
 {
 
@@ -127,10 +144,14 @@ void Game_Tester_Menu()
 		}
 		else
 		{
-			std::cout << "try again" << endl;
+			std::cout << "try again" << std::endl;
 		}
 
 
 	}
 
+}
+
+void Test(character& c) {
+	std::cout << c.get_name() << std::endl;
 }
