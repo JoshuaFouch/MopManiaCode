@@ -1,4 +1,4 @@
-// SprayMop.h
+/*// SprayMop.h
 #pragma once
 
 #include "character.h"
@@ -28,3 +28,4 @@ public:
     void Attack4(character& c, enemy& e) override;
 };
 #endif
+*/

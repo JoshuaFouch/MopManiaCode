@@ -1,6 +1,7 @@
 #include "SprayMop.h"
 
 // Constructor implementation
+/*
 SprayMop::SprayMop(std::string name, int hp, int att, int def)
 {
     set_name(name);
@@ -88,3 +89,4 @@ void SprayMop::Attack4(character& c, enemy& e)
 {
     std::cout << "SprayMop performs Attack 4: Ultra Clean Sweep!" << std::endl;
 }
+*/
