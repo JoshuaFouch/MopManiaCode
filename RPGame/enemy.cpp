@@ -41,7 +41,53 @@ int enemy::RandomNum()
 {
 	srand((unsigned) time(NULL));//need to randomize seed with the time to make the random number actually different each time its run
 	int random = rand() % 4;//calls a random number 1,4
-		return random;
+	return random;
 }
 
+void enemy::damaged(int oppAtt)
+{
+	hp -= (oppAtt - (def / 2));
+	//enemy gets attack
+}
 
+void enemy::Attack1(enemy e, character c)
+{
+	std::cout << "enemy attacks you 1! " << std::endl;
+	c.damaged(e.att);
+}
+
+void enemy::Attack2(enemy e, character c)
+{
+	std::cout << "enemy attacks you 2!" << std::endl;
+	c.damaged(e.att);
+}
+
+void enemy::Attack3(enemy e, character c)
+{
+	std::cout << "enemy attacks you 3!" << std::endl;
+	c.damaged(e.att);
+}
+
+void enemy::Attack4(enemy e, character c)
+{
+	std::cout << "enemy attacks you 4!" << std::endl;
+	c.damaged(e.att);
+}
+
+int enemy::nextMove(enemy e, character c, int random)
+{
+	switch (random) {
+	case 1:
+		Attack1(e, c);
+		break;
+	case 2:
+		Attack2(e, c);
+		break;
+	case 3:
+		Attack3(e, c);
+		break;
+	case 4:
+		Attack4(e, c);
+		break;
+	}
+}

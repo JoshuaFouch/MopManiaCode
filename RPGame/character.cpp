@@ -81,7 +81,6 @@ void character::displayStats()
 
 void character::damaged(int oppAtt)
 {
-    std::cout << get_name() << " is slapping you menacingly!" << '\n';
     hp -= (oppAtt - (def / 2));
     //simulate character being damaged with a console output message.
 }
