@@ -1,7 +1,7 @@
 #include "SprayMop.h"
 
 // Constructor implementation
-/*SprayMop::SprayMop(string name, int hp, int att, int def)
+SprayMop::SprayMop(std::string name, int hp, int att, int def)
 {
     set_name(name);
     set_hp(hp);
@@ -9,7 +9,7 @@
     set_def(def);
 }
 
-string SprayMop::get_name()
+std::string SprayMop::get_name()
 {
     return character::get_name();
 }
@@ -51,20 +51,40 @@ void SprayMop::set_def(int def)
 
 void SprayMop::displayStats()
 {
-    cout << "*************************************" << '\n';
-    cout << "| Name: " << get_name() << "                    |"<< '\n';
-    cout << "| HP: " << get_hp() << "                            |" << '\n';
-    cout << "| Attack: " << get_att() << "                        |" << '\n';
-    cout << "| Defense: " << get_def() << "                       |" << '\n';
-    cout << "*************************************" << '\n';
+    std::cout << "*************************************" << '\n';
+    std::cout << "| Name: " << get_name() << "                    |"<< '\n';
+    std::cout << "| HP: " << get_hp() << "                            |" << '\n';
+    std::cout << "| Attack: " << get_att() << "                        |" << '\n';
+    std::cout << "| Defense: " << get_def() << "                       |" << '\n';
+    std::cout << "*************************************" << '\n';
 }
 
 void SprayMop::damaged(int oppAtt)
 {
-    cout << get_name() << " is slapping you menacingly!" << '\n';
+    std::cout << get_name() << " is slapping you menacingly!" << '\n';
 }
 
 void SprayMop::attack()
 {
-    cout << get_name() << " Attacked you cleanly!" << '\n';
-}*/
+    std::cout << get_name() << " Attacked you cleanly!" << '\n';
+}
+
+void SprayMop::Attack1(character& c, enemy& e)
+{
+    std::cout << "SprayMop performs Attack 1: Splash Attack!" << std::endl;
+}
+
+void SprayMop::Attack2(character& c, enemy& e)
+{
+    std::cout << "SprayMop performs Attack 2: High-Pressure Jet!" << std::endl;
+}
+
+void SprayMop::Attack3(character& c, enemy& e)
+{
+    std::cout << "SprayMop performs Attack 3: Cleaning Wave!" << std::endl;
+}
+
+void SprayMop::Attack4(character& c, enemy& e)
+{
+    std::cout << "SprayMop performs Attack 4: Ultra Clean Sweep!" << std::endl;
+}

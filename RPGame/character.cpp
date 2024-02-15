@@ -17,7 +17,7 @@ std::string character::get_name()
 void character::set_name(std::string name)
 {
     this->name = name;
-   
+
 }
 
 int character::get_hp()
@@ -28,7 +28,7 @@ int character::get_hp()
 void character::set_hp(int hp)
 {
     this->hp = hp;
-    
+
 }
 
 int character::get_att()
@@ -39,7 +39,7 @@ int character::get_att()
 void character::set_att(int att)
 {
     this->att = att;
-    
+
 }
 
 int character::get_def()
@@ -50,7 +50,7 @@ int character::get_def()
 void character::set_def(int def)
 {
     this->def = def;
-    
+
 }
 
 void character::increaseHP(int exp)
@@ -70,12 +70,12 @@ void character::increaseDef(int exp)
 
 void character::displayStats()
 {
-    std::cout << "*************************************"<<'\n';
+    std::cout << "*************************************" << '\n';
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "*************************************"<<'\n';
+    std::cout << "*************************************" << '\n';
     //display the character's statistics using the previously defined getter functions.
 }
 
@@ -91,19 +91,18 @@ void character::Attack1(character c, enemy e)
     std::cout << "this is attack 1" << std::endl;
     e.damaged(c.get_att());
 }
-void character::Attack2(character c, enemy e) 
+void character::Attack2(character c, enemy e)
 {
     std::cout << "this is attack 2" << std::endl;
     e.damaged(c.get_att());
 }
-void character::Attack3(character c, enemy e) 
+void character::Attack3(character c, enemy e)
 {
     std::cout << "this is attack 3" << std::endl;
     e.damaged(c.get_att());
 }
-void character::Attack4(character c, enemy e) 
+void character::Attack4(character c, enemy e)
 {
     std::cout << "this is attack 4" << std::endl;
     e.damaged(c.get_att());
 }
-

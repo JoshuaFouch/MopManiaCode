@@ -5,13 +5,14 @@
 #ifndef SprayMop_h
 #define SprayMop_h
 
-/*class SprayMop : public character
+class SprayMop : public character
 {
 public:
-    SprayMop(string name, int hp, int att, int def);
+    SprayMop(std::string name, int hp, int att, int def);
     void attack();
-    string get_name();
-    void set_name(string name);
+    
+    std::string get_name();
+    void set_name(std::string name);
     int get_hp();
     void set_hp(int hp);
     int get_att();  
@@ -20,5 +21,10 @@ public:
     void set_def(int def);
     void displayStats();
     void damaged(int oppAtt);
-};*/
+
+    void Attack1(character& c, enemy& e) override;
+    void Attack2(character& c, enemy& e) override;
+    void Attack3(character& c, enemy& e) override;
+    void Attack4(character& c, enemy& e) override;
+};
 #endif
