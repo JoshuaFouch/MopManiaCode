@@ -112,3 +112,9 @@ void character::Inventory(character c)
     std::cout << "this is for checking the inventory, and we will use a linked list" << std::endl;
     
 }
+void character::Run(character c)
+{
+    std::cout << "this is for running" << std::endl;
+    
+}
+
