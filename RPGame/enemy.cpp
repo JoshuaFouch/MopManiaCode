@@ -37,4 +37,5 @@ void enemy::increaseDef(int exp)
 	def += exp;
 }
 
+int enemy::RandomNum();
 
