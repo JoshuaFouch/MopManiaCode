@@ -9,3 +9,21 @@ MAKE SURE YOU PULL ALL CODE INTO YOUR IDE
 - Here is how to clone a repo through GitHub and Visual Studio: https://youtu.be/E2RjolZw1TM?si=IroP4w3ByeC10OZW
           - this is how you can take the code from this repository and put it into your IDE
 
+
+
+# INCLUDE GUARD ADVICE
+
+- For Header files
+-           make forward declarations (class enemy)
+-       DO NOT #include other header files
+
+- For implementation files
+-           this is where you #include other header files
+
+- In the main game .cpp file
+-           #include all header files and other libraries needed
+
+
+# When we are coding
+
+- make sure everyone is working on DIFFERENT files to make sure there is no conflicts within the code.
