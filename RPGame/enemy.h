@@ -1,6 +1,9 @@
-#pragma once
+#ifndef enemy_h
+#define enemy_h
+
 #include "character.h"
 #include <cstdlib>
+
 
 class enemy{
 
@@ -29,4 +32,6 @@ public:
 	virtual void Attack3(enemy e, character c);
 	virtual void Attack4(enemy e, character c);
 };
+
+#endif enemy_h
 

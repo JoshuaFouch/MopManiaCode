@@ -1,5 +1,5 @@
 #include "character.h"
-//implementations for character class member functions
+
 
 character::character(std::string name, int hp, int att, int def)
 {

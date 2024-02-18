@@ -1,10 +1,8 @@
-//for now, this will be to test out the functions.
-
-//nothing except the int main should on here.
 #include <iostream>
 #include "character.h"
+#include "enemy.h"
 #include "GeneralGameFunctions.h"
-#include "SprayMop.h"//header file for SprayMop character
+
 
 int main()
 {

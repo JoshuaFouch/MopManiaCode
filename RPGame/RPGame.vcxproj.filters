@@ -25,15 +25,6 @@
     <ClInclude Include="character.h">
       <Filter>Character Files</Filter>
     </ClInclude>
-    <ClInclude Include="Broomba.h">
-      <Filter>Character Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DustMop.h">
-      <Filter>Character Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SprayMop.h">
-      <Filter>Character Files</Filter>
-    </ClInclude>
     <ClInclude Include="enemy.h">
       <Filter>Enemy Files</Filter>
     </ClInclude>
@@ -63,9 +54,6 @@
     </ClInclude>
     <ClInclude Include="GraphMap.h">
       <Filter>GameMap Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InventoryLL.h">
-      <Filter>Inventory Files</Filter>
     </ClInclude>
     <ClInclude Include="Items.h">
       <Filter>Inventory Files</Filter>
@@ -105,14 +93,8 @@
     <ClCompile Include="GraphMap.cpp">
       <Filter>GameMap Files</Filter>
     </ClCompile>
-    <ClCompile Include="SprayMop.cpp">
-      <Filter>Character Files</Filter>
-    </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>Enemy Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InventoryLL.cpp">
-      <Filter>Inventory Files</Filter>
     </ClCompile>
     <ClCompile Include="Items.cpp">
       <Filter>Inventory Files</Filter>

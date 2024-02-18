@@ -75,10 +75,10 @@ void GameOver()
 	PlaySound(0, 0, 0);
 }
 
-void BattleStats(character& c, enemy& e)
+void BattleStats(character &c, enemy &e)
 {
 //character stats
-	std::cout << "-----[ " << c.get_name() << " ]---- - " << '\n';
+	std::cout << "-----[ " << c.get_name() << " ]----- " << '\n';
 	std::cout << "HP:" << c.get_hp() << '\n';
 	std::cout << "Attack: " << c.get_att() << '\n';
 	std::cout << "Defense " << c.get_def() << '\n';
@@ -173,6 +173,13 @@ void Battle_Sequence(character &c, enemy &e)
 			std::cout << "You ran..." << std::endl;
 			run = 1;
 			break;
+		default:
+			std::cout << "Invalid choice, please choose again" << std::endl;
+			continue;
 		}
 	}
+}
+
+void Test(character &c) {
+	std::cout << c.get_att();
 }

@@ -1,8 +1,7 @@
-#pragma once
-#include "character.h"
-#include "enemy.h"
 #ifndef GeneralGameFunctions_h
 #define GeneralGameFunctions_h
+#include "character.h"
+#include "enemy.h"
 
 void Start_Menu();	//beginning of the game
 
@@ -18,9 +17,9 @@ void GameShop_Menu();	//shopping menu
 
 void GameOver();	//completely clears the terminal and prints game over, completely ending the code
  
-void BattleStats(character& c, enemy& e);	//displays stats of a character and enemy
+void BattleStats(character &c, enemy &e);	//displays stats of a character and enemy
 
-void Test(character& c);
+void Test(character &c);
 
 
 

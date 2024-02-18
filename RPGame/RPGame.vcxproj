@@ -127,20 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Broomba.h" />
     <ClInclude Include="character.h" />
-    <ClInclude Include="DustMop.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="FinalLevel.h" />
     <ClInclude Include="GeneralGameFunctions.h" />
     <ClInclude Include="GraphMap.h" />
-    <ClInclude Include="InventoryLL.h" />
     <ClInclude Include="Items.h" />
     <ClInclude Include="Level1.h" />
     <ClInclude Include="Level2.h" />
     <ClInclude Include="Level3.h" />
     <ClInclude Include="Level4.h" />
-    <ClInclude Include="SprayMop.h" />
     <ClInclude Include="SqueeGeeCity.h" />
     <ClInclude Include="VacuumVille.h" />
   </ItemGroup>
@@ -149,7 +145,6 @@
     <ClCompile Include="FinalLevel.cpp" />
     <ClCompile Include="GeneralGameFunctions.cpp" />
     <ClCompile Include="GraphMap.cpp" />
-    <ClCompile Include="InventoryLL.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="Level2.cpp" />
@@ -157,7 +152,6 @@
     <ClCompile Include="Level4.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
-    <ClCompile Include="SprayMop.cpp" />
     <ClCompile Include="SqueeGeeCity.cpp" />
     <ClCompile Include="VacuumVille.cpp" />
   </ItemGroup>
