@@ -1,8 +1,9 @@
 #include "character.h"
 #include "enemy.h"
 
-enemy::enemy(int att, int def, int hp)
+enemy::enemy(std::string name, int att, int def, int hp)
 {
+	this->name = name;
 	this->att = att;
 	this->def = def;
 	this->hp = hp;
@@ -51,25 +52,25 @@ void enemy::damaged(int oppAtt)
 	//enemy gets attack
 }
 
-void enemy::Attack1(enemy e, character c)
+void enemy::Attack1(enemy& e, character& c)
 {
 	std::cout << "enemy attacks you 1! " << std::endl;
 	c.damaged(e.att);
 }
 
-void enemy::Attack2(enemy e, character c)
+void enemy::Attack2(enemy& e, character& c)
 {
 	std::cout << "enemy attacks you 2!" << std::endl;
 	c.damaged(e.att);
 }
 
-void enemy::Attack3(enemy e, character c)
+void enemy::Attack3(enemy& e, character& c)
 {
 	std::cout << "enemy attacks you 3!" << std::endl;
 	c.damaged(e.att);
 }
 
-void enemy::Attack4(enemy e, character c)
+void enemy::Attack4(enemy& e, character& c)
 {
 	std::cout << "enemy attacks you 4!" << std::endl;
 	c.damaged(e.att);

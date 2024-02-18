@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Broomba.h" />
     <ClInclude Include="character.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="FinalLevel.h" />
@@ -135,10 +136,12 @@
     <ClInclude Include="Level2.h" />
     <ClInclude Include="Level3.h" />
     <ClInclude Include="Level4.h" />
+    <ClInclude Include="SprayMop.h" />
     <ClInclude Include="SqueeGeeCity.h" />
     <ClInclude Include="VacuumVille.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Broomba.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="FinalLevel.cpp" />
     <ClCompile Include="GraphMap.cpp" />

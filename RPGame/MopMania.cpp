@@ -34,8 +34,11 @@ int main()
 	//Game_Tester_Menu();
 	//std::cout << "git RKD" << std::endl;
 	character c("Bob", 100, 50, 60);
-	enemy e(100, 60, 80);
+	enemy e("Bill", 100, 60, 80);
 
+	BattleStats(c, e);
+	c.increaseHP(10);
+	std::this_thread::sleep_for(std::chrono::seconds(3));
 	BattleStats(c, e);
 
 	return 0;
@@ -119,6 +122,8 @@ void GameOver()
 
 void BattleStats(character& c, enemy& e)
 {
+	//clear the console
+	std::cout << "\033[2J\033[1;1H";
 	//character stats
 	std::cout << "-----[ " << c.get_name() << " ]----- " << '\n';
 	std::cout << "HP:" << c.get_hp() << '\n';
@@ -130,6 +135,7 @@ void BattleStats(character& c, enemy& e)
 	std::cout << "-----[ " << e.get_name() << " ]----- " << '\n';
 	std::cout << "HP:" << e.get_hp() << '\n';
 	std::cout << "----------------------------" << '\n';
+
 }
 
 void Game_Tester_Menu()
@@ -199,7 +205,9 @@ void Battle_Sequence(character& c, enemy& e)
 		switch (choice)
 		{
 		case 1:
-			c.Attack1(c, e);
+			c.Attack1(c, e);	//character attacks
+			BattleStats(c, e);	//display new stats
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 2:
 			c.Attack2(c, e);
@@ -211,6 +219,9 @@ void Battle_Sequence(character& c, enemy& e)
 			c.Attack4(c, e);
 			break;
 		case 5:
+			std::cout << "Will display inventory" << std::endl;
+			break;
+		case 6:
 			std::cout << "\033[2J\033[1;1H";
 			std::cout << "You ran..." << std::endl;
 			run = 1;
