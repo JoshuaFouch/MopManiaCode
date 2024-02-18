@@ -48,8 +48,12 @@ int enemy::RandomNum()
 
 void enemy::damaged(int oppAtt)
 {
+	if ((oppAtt - (def / 2)) < 0) {
+		hp--;
+		return;
+	}
 	hp -= (oppAtt - (def / 2));
-	//enemy gets attack
+	//simulate enemy being damaged with a console output message.
 }
 
 void enemy::Attack1(enemy& e, character& c)

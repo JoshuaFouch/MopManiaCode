@@ -104,5 +104,14 @@
     <Media Include="dies-irae-chant.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="battlemusic.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="GoDown.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="vine-boom.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>

@@ -5,13 +5,9 @@
 //forward declaration
 class character;
 
-class enemy{
+class enemy
+{
 
-private:
-	int att;
-	int def;
-	int hp;
-	std::string name;
 public:
 	enemy(std::string name, int hp, int att, int def);
 	std::string get_name();
@@ -31,6 +27,13 @@ public:
 	virtual void Attack2(enemy& e, character& c);
 	virtual void Attack3(enemy& e, character& c);
 	virtual void Attack4(enemy& e, character& c);
+
+private:
+
+	int att;
+	int def;
+	int hp;
+	std::string name;
 };
 
 #endif

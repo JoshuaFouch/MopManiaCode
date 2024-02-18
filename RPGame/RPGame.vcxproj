@@ -155,7 +155,10 @@
     <ClCompile Include="VacuumVille.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="battlemusic.wav" />
     <Media Include="dies-irae-chant.wav" />
+    <Media Include="GoDown.wav" />
+    <Media Include="vine-boom.wav" />
     <Media Include="void.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

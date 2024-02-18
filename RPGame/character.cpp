@@ -9,10 +9,7 @@ character::character(std::string name, int hp, int att, int def)
     this->maxHp = hp;
     this->att = att;
     this->def = def;
-    this->aName1 = "Hit with Broom";
-    this->aName2 = "Bleach Spray";
-    this->aName3 = "Water Board";
-    this->aName4 = "Strangle";
+    set_AttackNames();
 }
 
 std::string character::get_name()
@@ -85,6 +82,14 @@ std::string character::get_aName4()
     return aName4;
 }
 
+void character::set_AttackNames()
+{
+    this->aName1 = "Hit with Broom";
+    this->aName2 = "Bleach Spray";
+    this->aName3 = "Water Board";
+    this->aName4 = "Strangle";
+}
+
 void character::increaseHP(int exp)
 {
     hp += exp;
@@ -132,6 +137,7 @@ void character::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
+    std::cout << "This character is etc...." << '\n';   //description
     std::cout << std::endl;
     SetConsoleTextAttribute(h, 7);
     //std::cout << "*************************************" << '\n';
@@ -151,22 +157,22 @@ void character::damaged(int oppAtt)
 
 void character::Attack1(character& c, enemy& e)
 {
-    std::cout << "this is attack 1" << std::endl;
+    std::cout << "BONK!!" << std::endl;
     e.damaged(c.att);
 }
 void character::Attack2(character& c, enemy& e)
 {
-    std::cout << "this is attack 2" << std::endl;
+    std::cout << "SQUIRT!!" << std::endl;
     e.damaged(c.att);
 }
 void character::Attack3(character& c, enemy& e)
 {
-    std::cout << "this is attack 3" << std::endl;
+    std::cout << "SPLOOSH!!" << std::endl;
     e.damaged(c.att);
 }
 void character::Attack4(character& c, enemy& e)
 {
-    std::cout << "this is attack 4" << std::endl;
+    std::cout << "EGHAEGOISEVLAEVN!!" << std::endl;
     e.damaged(c.att);
 }
 void character::Inventory(character& c)
@@ -174,9 +180,5 @@ void character::Inventory(character& c)
     std::cout << "this is for checking the inventory, and we will use a linked list" << std::endl;
     
 }
-void character::Run(character& c)
-{
-    std::cout << "this is for running" << std::endl;
-    
-}
+
 

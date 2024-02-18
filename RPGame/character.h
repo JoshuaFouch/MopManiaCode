@@ -24,12 +24,14 @@ public:
 	int get_def();
 	void set_def(int def);
 	int get_level();
+	int get_winNum();
 
 	//attack getters
 	std::string get_aName1();
 	std::string get_aName2();
 	std::string get_aName3();
 	std::string get_aName4();
+	virtual void set_AttackNames();
 
 	//we will use these functions every time you defeat an enemy to level up
 	void increaseHP(int exp);
@@ -37,7 +39,7 @@ public:
 	void increaseDef(int exp);
 	void expPt();	//checks how many battles the character won, and increases stats accordingly
 
-	void displayStats();
+	virtual void displayStats();
 	void damaged(int oppAtt);
 
 	//abilities
@@ -47,7 +49,6 @@ public:
 	virtual void Attack4(character& c, enemy& e);
 
 	void Inventory(character& c);
-	void Run(character& c);
 
 	
 

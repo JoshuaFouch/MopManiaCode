@@ -30,7 +30,7 @@ void delay();	//delays the next output
 /*the game*/
 int main()
 {
-	//Start_Menu();
+	Start_Menu();
 
 	character c("Bob", 100, 50, 6);
 	enemy e("Bill", 100, 1, 2);
@@ -141,7 +141,6 @@ void BattleStats(character& c, enemy& e)
 	std::cout << "\t\t\t\t\t|HP:" << e.get_hp() << "\n";
 	std::cout << "\t\t\t\t\t|----------------|" << '\n';
 	SetConsoleTextAttribute(h, 7);
-
 }
 
 void Game_Tester_Menu()
@@ -208,7 +207,7 @@ void Battle_Sequence(character& c, enemy& e)
 		std::cout << "\n1. " << c.get_aName1() << std::endl;
 		std::cout << "2. " << c.get_aName2() << std::endl;
 		std::cout << "3. " << c.get_aName3() << std::endl;
-		std::cout << "3. " << c.get_aName4() << std::endl;
+		std::cout << "4. " << c.get_aName4() << std::endl;
 		std::cout << "5. Use Item" << std::endl;
 		std::cout << "6. Check stats" << std::endl;
 		std::cout << "7. Run (coward lol)" << std::endl;
@@ -222,25 +221,25 @@ void Battle_Sequence(character& c, enemy& e)
 			delay();
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, 1);	//its the enemies turn to attack
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			delay();
 			clear();
 			break;
 		case 2:
 			c.Attack2(c, e);	//character attacks
-			e.nextMove(e, c, 1);	//its the enemies turn to attack
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			delay();
 			clear();
 			break;
 		case 3:
 			c.Attack3(c, e);	//character attacks
-			e.nextMove(e, c, 1);	//its the enemies turn to attack
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			delay();
 			clear();
 			break;
 		case 4:
 			c.Attack4(c, e);	//character attacks
-			e.nextMove(e, c, 1);	//its the enemies turn to attack
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			delay();
 			clear();
 			break;
@@ -276,6 +275,9 @@ void Battle_Sequence(character& c, enemy& e)
 	{
 		std::cout << "You ran..." << std::endl;
 	}
+
+	//for enemy leveling
+
 }
 
 void clear()
