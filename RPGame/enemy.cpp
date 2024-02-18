@@ -1,7 +1,7 @@
 #include "character.h"
 #include "enemy.h"
 
-enemy::enemy(std::string name, int att, int def, int hp)
+enemy::enemy(std::string name, int hp, int att, int def)
 {
 	this->name = name;
 	this->att = att;

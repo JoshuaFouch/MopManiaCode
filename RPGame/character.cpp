@@ -8,6 +8,10 @@ character::character(std::string name, int hp, int att, int def)
     this->hp = hp;
     this->att = att;
     this->def = def;
+    this->aName1 = "Hit with Broom";
+    this->aName2 = "Bleach Spray";
+    this->aName3 = "Water Board";
+    this->aName4 = "Strangle";
 }
 
 std::string character::get_name()
@@ -59,6 +63,12 @@ int character::get_level()
     return level;
 }
 
+//attack getters
+std::string character::get_aName1()
+{
+    return aName1;
+}
+
 void character::increaseHP(int exp)
 {
     hp += exp;
@@ -106,27 +116,31 @@ void character::displayStats()
 
 void character::damaged(int oppAtt)
 {
+    if ((oppAtt - (def / 2)) < 0) {
+        hp--;
+        return;
+    }
     hp -= (oppAtt - (def / 2));
     //simulate character being damaged with a console output message.
 }
 
 
-void character::Attack1(character c, enemy e)
+void character::Attack1(character& c, enemy& e)
 {
     std::cout << "this is attack 1" << std::endl;
     e.damaged(c.att);
 }
-void character::Attack2(character c, enemy e)
+void character::Attack2(character& c, enemy& e)
 {
     std::cout << "this is attack 2" << std::endl;
     e.damaged(c.att);
 }
-void character::Attack3(character c, enemy e)
+void character::Attack3(character& c, enemy& e)
 {
     std::cout << "this is attack 3" << std::endl;
     e.damaged(c.att);
 }
-void character::Attack4(character c, enemy e)
+void character::Attack4(character& c, enemy& e)
 {
     std::cout << "this is attack 4" << std::endl;
     e.damaged(c.att);

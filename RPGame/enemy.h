@@ -13,7 +13,7 @@ private:
 	int hp;
 	std::string name;
 public:
-	enemy(std::string name, int att, int def, int hp);
+	enemy(std::string name, int hp, int att, int def);
 	std::string get_name();
 	int get_def();
 	int get_hp();

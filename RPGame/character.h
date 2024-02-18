@@ -25,6 +25,12 @@ public:
 	void set_def(int def);
 	int get_level();
 
+	//attack getters
+	std::string get_aName1();
+	std::string get_aName2();
+	std::string get_aName3();
+	std::string get_aName4();
+
 	//we will use these functions every time you defeat an enemy to level up
 	void increaseHP(int exp);
 	void increaseAtt(int exp);
@@ -35,10 +41,10 @@ public:
 	void damaged(int oppAtt);
 
 	//abilities
-	virtual void Attack1(character c, enemy e);
-	virtual void Attack2(character c, enemy e);
-	virtual void Attack3(character c, enemy e);
-	virtual void Attack4(character c, enemy e);
+	virtual void Attack1(character& c, enemy& e);
+	virtual void Attack2(character& c, enemy& e);
+	virtual void Attack3(character& c, enemy& e);
+	virtual void Attack4(character& c, enemy& e);
 
 	void Inventory(character& c);
 	void Run(character& c);
@@ -55,6 +61,11 @@ private:
 	int winNum = 0; //checks how many battles character has won
 	int level = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
+	//attack names
+	std::string aName1;
+	std::string aName2;
+	std::string aName3;
+	std::string aName4;
 	//class inventory (linked list?)
 
 };

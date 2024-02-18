@@ -14,11 +14,10 @@ void Start_Menu();	//beginning of the game
 void Game_Tester_Menu();	//general form of our menus, probably going to be our pause menu
 character Mop_Selection();	//user gets to choose a type of mop, then the function will return an instance of class character
 void Pause_Menu();	//pauses game to show menu
-void Battle_Sequence();	//in-game battle
+void Battle_Sequence(character& c, enemy& e);	//in-game battle
 void GameShop_Menu();	//shopping menu
 void GameOver();	//completely clears the terminal and prints game over, completely ending the code
 void BattleStats(character& c, enemy& e);	//displays stats of a character and enemy
-void Test(character& c);
 
 
 
@@ -33,14 +32,15 @@ int main()
 	//GameOver();
 	//Game_Tester_Menu();
 	//std::cout << "git RKD" << std::endl;
-	character c("Bob", 100, 50, 60);
-	enemy e("Bill", 100, 60, 80);
+	character c("Bob", 100, 5, 6);
+	enemy e("Bill", 100, 1, 2);
 
-	BattleStats(c, e);
+	/*BattleStats(c, e);
 	c.increaseHP(10);
 	e.increaseHP(100000);
 	std::this_thread::sleep_for(std::chrono::seconds(3));
-	BattleStats(c, e);
+	BattleStats(c, e);*/
+	Battle_Sequence(c, e);
 
 	return 0;
 }
@@ -124,7 +124,7 @@ void GameOver()
 void BattleStats(character& c, enemy& e)
 {
 	//clear the console
-	std::cout << "\033[2J\033[1;1H";
+	//std::cout << "\033[2J\033[1;1H";
 	//character stats
 	std::cout << "-----[ " << c.get_name() << " ]----- " << '\n';
 	std::cout << "Level: " << c.get_level() << "\n";
@@ -201,6 +201,7 @@ void Battle_Sequence(character& c, enemy& e)
 
 		BattleStats(c, e);	//begins by display the stats
 		std::cout << "What would you like to do? " << std::endl;
+		std::cout << "\n\n1." << c.
 		int choice;
 		std::cin >> choice;
 
@@ -208,8 +209,8 @@ void Battle_Sequence(character& c, enemy& e)
 		{
 		case 1:
 			c.Attack1(c, e);	//character attacks
-			BattleStats(c, e);	//display new stats
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			//BattleStats(c, e);	//display new stats
+			e.nextMove(e, c, 1);	//its the enemies turn to attack
 			break;
 		case 2:
 			c.Attack2(c, e);
@@ -239,12 +240,12 @@ void Battle_Sequence(character& c, enemy& e)
 			continue;
 		}
 	}
-	if (e.get_hp() >= 0)
+	if (e.get_hp() <= 0)
 	{
 		std::cout << "You WON " << std::endl;
 		c.expPt();
 	}
-	else if (c.get_hp() >= 0)
+	else if (c.get_hp() <= 0)
 	{
 		std::cout << "YOU LOST LOSER, GOLD MINUS 3000" << std::endl;
 	}
@@ -252,8 +253,4 @@ void Battle_Sequence(character& c, enemy& e)
 	{
 		std::cout << "You ran..." << std::endl;
 	}
-}
-
-void Test(character& c) {
-	std::cout << c.get_att();
 }
