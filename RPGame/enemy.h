@@ -23,7 +23,7 @@ public:
 	void increaseAtt(int exp);
 	void increaseDef(int exp);
 
-	void nextMove(enemy e, character c, int random);
+	void nextMove(enemy& e, character& c, int random);
 	int RandomNum();
 	void damaged(int oppAtt);
 

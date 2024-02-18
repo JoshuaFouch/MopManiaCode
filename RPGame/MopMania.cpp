@@ -38,6 +38,7 @@ int main()
 
 	BattleStats(c, e);
 	c.increaseHP(10);
+	e.increaseHP(100000);
 	std::this_thread::sleep_for(std::chrono::seconds(3));
 	BattleStats(c, e);
 
@@ -126,6 +127,7 @@ void BattleStats(character& c, enemy& e)
 	std::cout << "\033[2J\033[1;1H";
 	//character stats
 	std::cout << "-----[ " << c.get_name() << " ]----- " << '\n';
+	std::cout << "Level: " << c.get_level() << "\n";
 	std::cout << "HP:" << c.get_hp() << '\n';
 	std::cout << "Attack: " << c.get_att() << '\n';
 	std::cout << "Defense " << c.get_def() << '\n';
@@ -194,10 +196,10 @@ void Game_Tester_Menu()
 void Battle_Sequence(character& c, enemy& e)
 {
 	int run = 0;	//if character wants to run away from battle
-	while (e.get_hp() >= 0 || c.get_hp() >= 0 || run == 0)
+	while (e.get_hp() >= 0 && c.get_hp() >= 0 && run == 0)
 	{
 
-		BattleStats(c, e);
+		BattleStats(c, e);	//begins by display the stats
 		std::cout << "What would you like to do? " << std::endl;
 		int choice;
 		std::cin >> choice;
@@ -211,25 +213,44 @@ void Battle_Sequence(character& c, enemy& e)
 			break;
 		case 2:
 			c.Attack2(c, e);
+			BattleStats(c, e);
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 3:
 			c.Attack3(c, e);
+			BattleStats(c, e);	//display new stats
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 4:
 			c.Attack4(c, e);
+			BattleStats(c, e);	//display new stats
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 5:
 			std::cout << "Will display inventory" << std::endl;
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 6:
 			std::cout << "\033[2J\033[1;1H";
-			std::cout << "You ran..." << std::endl;
 			run = 1;
 			break;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl;
 			continue;
 		}
+	}
+	if (e.get_hp() >= 0)
+	{
+		std::cout << "You WON " << std::endl;
+		c.expPt();
+	}
+	else if (c.get_hp() >= 0)
+	{
+		std::cout << "YOU LOST LOSER, GOLD MINUS 3000" << std::endl;
+	}
+	else if (run == 1)
+	{
+		std::cout << "You ran..." << std::endl;
 	}
 }
 

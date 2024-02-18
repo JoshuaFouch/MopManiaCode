@@ -76,7 +76,7 @@ void enemy::Attack4(enemy& e, character& c)
 	c.damaged(e.att);
 }
 
-void enemy::nextMove(enemy e, character c, int random)
+void enemy::nextMove(enemy& e, character& c, int random)
 {
 	switch (random) {
 	case 1:

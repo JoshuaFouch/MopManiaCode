@@ -54,6 +54,11 @@ void character::set_def(int def)
 
 }
 
+int character::get_level()
+{
+    return level;
+}
+
 void character::increaseHP(int exp)
 {
     hp += exp;
@@ -69,10 +74,29 @@ void character::increaseDef(int exp)
     def += exp;
 }
 
+void character::expPt()
+{
+    winNum++;
+    if (winNum == ExpReq) {
+        level++;
+        std::cout << "You Leveled Up! " << std::endl;
+        hp += 20;
+        att += 10;
+        def += 10;
+        winNum = 0; //resets the victory counter
+        ExpReq += 1;
+    }
+    else
+    {
+        std::cout << "You have to win " << (ExpReq - winNum) << " battle(s) until you level up again!" << std::endl;
+    }
+}
+
 void character::displayStats()
 {
     std::cout << "*************************************" << '\n';
     std::cout << "Name: " << get_name() << '\n';
+    std::cout << "Level: " << get_level() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';

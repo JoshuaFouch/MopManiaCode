@@ -23,11 +23,13 @@ public:
 	void set_att(int att);
 	int get_def();
 	void set_def(int def);
+	int get_level();
 
 	//we will use these functions every time you defeat an enemy to level up
 	void increaseHP(int exp);
 	void increaseAtt(int exp);
 	void increaseDef(int exp);
+	void expPt();	//checks how many battles the character won, and increases stats accordingly
 
 	void displayStats();
 	void damaged(int oppAtt);
@@ -41,6 +43,7 @@ public:
 	void Inventory(character& c);
 	void Run(character& c);
 
+	
 
 
 private:
@@ -49,6 +52,9 @@ private:
 	int hp;
 	int att;
 	int def;
+	int winNum = 0; //checks how many battles character has won
+	int level = 1;	//level
+	int ExpReq = 1; //a counter that tracks how many battles are required to level up
 	//class inventory (linked list?)
 
 };
