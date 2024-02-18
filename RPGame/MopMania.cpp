@@ -30,7 +30,7 @@ void delay();	//delays the next output
 /*the game*/
 int main()
 {
-	Start_Menu();
+	//Start_Menu();
 
 	character c("Bob", 100, 50, 6);
 	enemy e("Bill", 100, 1, 2);
@@ -58,7 +58,7 @@ int main()
 //global function definitions
 void Start_Menu()
 {
-#pragma comment(lib, "winmm.lib")
+	#pragma comment(lib, "winmm.lib")
 	//play music (ambient music)
 	PlaySound(TEXT("void.wav"), NULL, SND_FILENAME | SND_ASYNC);
 
@@ -198,6 +198,10 @@ void Game_Tester_Menu()
 }
 void Battle_Sequence(character& c, enemy& e)
 {
+	//plays battlemusic on loop
+	#pragma comment(lib, "winmm.lib")
+	PlaySound(TEXT("battlemusic.wav"), NULL, SND_FILENAME | SND_ASYNC);
+
 	int run = 0;	//if character wants to run away from battle
 	while (e.get_hp() >= 0 && c.get_hp() >= 0 && run == 0)
 	{
@@ -262,18 +266,25 @@ void Battle_Sequence(character& c, enemy& e)
 			continue;
 		}
 	}
+
+	PlaySound(0, 0, 0);
+	PlaySound(TEXT("vine-boom.wav"), NULL, SND_FILENAME | SND_ASYNC);
+
 	if (e.get_hp() <= 0)
 	{
 		std::cout << "You WON " << std::endl;
 		c.expPt();
+		delay();
 	}
 	else if (c.get_hp() <= 0)
 	{
 		std::cout << "YOU LOST LOSER, GOLD MINUS 3000" << std::endl;
+		delay();
 	}
 	else if (run == 1)
 	{
 		std::cout << "You ran..." << std::endl;
+		delay();
 	}
 
 	//for enemy leveling
