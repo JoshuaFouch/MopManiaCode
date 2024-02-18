@@ -28,9 +28,6 @@
     <ClInclude Include="enemy.h">
       <Filter>Enemy Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneralGameFunctions.h">
-      <Filter>MainGame Files</Filter>
-    </ClInclude>
     <ClInclude Include="Level1.h">
       <Filter>GameMap Files</Filter>
     </ClInclude>
@@ -55,15 +52,9 @@
     <ClInclude Include="GraphMap.h">
       <Filter>GameMap Files</Filter>
     </ClInclude>
-    <ClInclude Include="Items.h">
-      <Filter>Inventory Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">
-      <Filter>MainGame Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneralGameFunctions.cpp">
       <Filter>MainGame Files</Filter>
     </ClCompile>
     <ClCompile Include="character.cpp">
@@ -95,9 +86,6 @@
     </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>Enemy Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Items.cpp">
-      <Filter>Inventory Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

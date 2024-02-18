@@ -1,4 +1,5 @@
 #include "character.h"
+#include "enemy.h"
 
 
 character::character(std::string name, int hp, int att, int def)
@@ -106,12 +107,12 @@ void character::Attack4(character c, enemy e)
     std::cout << "this is attack 4" << std::endl;
     e.damaged(c.att);
 }
-void character::Inventory(character c)
+void character::Inventory(character& c)
 {
     std::cout << "this is for checking the inventory, and we will use a linked list" << std::endl;
     
 }
-void character::Run(character c)
+void character::Run(character& c)
 {
     std::cout << "this is for running" << std::endl;
     

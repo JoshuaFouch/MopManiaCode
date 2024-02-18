@@ -1,9 +1,9 @@
-#ifndef enemy_h
-#define enemy_h
-
-#include "character.h"
+#ifndef ENEMY
+#define ENEMY
 #include <cstdlib>
 
+//forward declaration
+class character;
 
 class enemy{
 
@@ -23,7 +23,7 @@ public:
 	void increaseAtt(int exp);
 	void increaseDef(int exp);
 
-	int nextMove(enemy e, character c, int random);
+	void nextMove(enemy e, character c, int random);
 	int RandomNum();
 	void damaged(int oppAtt);
 
@@ -33,5 +33,5 @@ public:
 	virtual void Attack4(enemy e, character c);
 };
 
-#endif enemy_h
+#endif
 
