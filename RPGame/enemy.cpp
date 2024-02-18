@@ -1,3 +1,4 @@
+#include "character.h"
 #include "enemy.h"
 
 enemy::enemy(int att, int def, int hp)
@@ -74,7 +75,7 @@ void enemy::Attack4(enemy e, character c)
 	c.damaged(e.att);
 }
 
-int enemy::nextMove(enemy e, character c, int random)
+void enemy::nextMove(enemy e, character c, int random)
 {
 	switch (random) {
 	case 1:

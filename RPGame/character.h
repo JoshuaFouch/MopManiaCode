@@ -1,11 +1,11 @@
-#ifndef character_h
-#define character_h
+#ifndef CHARACTER
+#define CHARACTER
 
-#include "enemy.h"
 #include <iostream>
-#include <vector>
 #include <string>
 
+//forward declaration
+class enemy;
 
 class character
 {
@@ -38,6 +38,9 @@ public:
 	virtual void Attack3(character c, enemy e);
 	virtual void Attack4(character c, enemy e);
 
+	void Inventory(character& c);
+	void Run(character& c);
+
 
 
 private:
@@ -49,8 +52,5 @@ private:
 	//class inventory (linked list?)
 
 };
-
-
-
 
 #endif 
