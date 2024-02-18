@@ -39,6 +39,7 @@ public:
 	virtual void Attack4(character c, enemy e);
 
 
+
 private:
 
 	std::string name;
