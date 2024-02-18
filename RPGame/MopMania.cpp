@@ -18,6 +18,8 @@ void Battle_Sequence(character& c, enemy& e);	//in-game battle
 void GameShop_Menu();	//shopping menu
 void GameOver();	//completely clears the terminal and prints game over, completely ending the code
 void BattleStats(character& c, enemy& e);	//displays stats of a character and enemy
+void clear();	//clears the screen
+void delay();	//delays the next output
 
 
 
@@ -29,18 +31,19 @@ void BattleStats(character& c, enemy& e);	//displays stats of a character and en
 int main()
 {
 	//Start_Menu();
-	//GameOver();
-	//Game_Tester_Menu();
-	//std::cout << "git RKD" << std::endl;
-	character c("Bob", 100, 5, 6);
-	enemy e("Bill", 100, 1, 2);
 
-	/*BattleStats(c, e);
-	c.increaseHP(10);
-	e.increaseHP(100000);
-	std::this_thread::sleep_for(std::chrono::seconds(3));
-	BattleStats(c, e);*/
+	character c("Bob", 100, 50, 6);
+	enemy e("Bill", 100, 1, 2);
+	enemy f("Joel", 100, 1, 2);
+	enemy j("Josh", 100, 1, 2);
+
 	Battle_Sequence(c, e);
+
+	//Battle_Sequence(c, f);
+
+	//Battle_Sequence(c, j);
+
+	c.displayStats();
 
 	return 0;
 }
@@ -123,20 +126,21 @@ void GameOver()
 
 void BattleStats(character& c, enemy& e)
 {
-	//clear the console
-	//std::cout << "\033[2J\033[1;1H";
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+
 	//character stats
-	std::cout << "-----[ " << c.get_name() << " ]----- " << '\n';
-	std::cout << "Level: " << c.get_level() << "\n";
-	std::cout << "HP:" << c.get_hp() << '\n';
-	std::cout << "Attack: " << c.get_att() << '\n';
-	std::cout << "Defense " << c.get_def() << '\n';
-	std::cout << "----------------------------" << '\n';
+	SetConsoleTextAttribute(h, 2);
+	std::cout << "|-----[ " << c.get_name() << " ]-----| " << '\n';
+	std::cout << "|Level: " << c.get_level() << "\n";
+	std::cout << "|HP:" << c.get_hp() << "\n";
+	std::cout << "|-----------------|" << '\n';
 
 	//enemy stats
-	std::cout << "-----[ " << e.get_name() << " ]----- " << '\n';
-	std::cout << "HP:" << e.get_hp() << '\n';
-	std::cout << "----------------------------" << '\n';
+	SetConsoleTextAttribute(h, 4);
+	std::cout << "\t\t\t\t\t|-----[ " << e.get_name() << " ]-----| " << '\n';
+	std::cout << "\t\t\t\t\t|HP:" << e.get_hp() << "\n";
+	std::cout << "\t\t\t\t\t|----------------|" << '\n';
+	SetConsoleTextAttribute(h, 7);
 
 }
 
@@ -201,42 +205,61 @@ void Battle_Sequence(character& c, enemy& e)
 
 		BattleStats(c, e);	//begins by display the stats
 		std::cout << "What would you like to do? " << std::endl;
-		std::cout << "\n\n1." << c.
-		int choice;
+		std::cout << "\n1. " << c.get_aName1() << std::endl;
+		std::cout << "2. " << c.get_aName2() << std::endl;
+		std::cout << "3. " << c.get_aName3() << std::endl;
+		std::cout << "3. " << c.get_aName4() << std::endl;
+		std::cout << "5. Use Item" << std::endl;
+		std::cout << "6. Check stats" << std::endl;
+		std::cout << "7. Run (coward lol)" << std::endl;
+		int choice; 
 		std::cin >> choice;
 
 		switch (choice)
 		{
 		case 1:
 			c.Attack1(c, e);	//character attacks
-			//BattleStats(c, e);	//display new stats
+			delay();
+			clear();
+			BattleStats(c, e);
 			e.nextMove(e, c, 1);	//its the enemies turn to attack
+			delay();
+			clear();
 			break;
 		case 2:
-			c.Attack2(c, e);
-			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			c.Attack2(c, e);	//character attacks
+			e.nextMove(e, c, 1);	//its the enemies turn to attack
+			delay();
+			clear();
 			break;
 		case 3:
-			c.Attack3(c, e);
-			BattleStats(c, e);	//display new stats
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			c.Attack3(c, e);	//character attacks
+			e.nextMove(e, c, 1);	//its the enemies turn to attack
+			delay();
+			clear();
 			break;
 		case 4:
-			c.Attack4(c, e);
-			BattleStats(c, e);	//display new stats
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			c.Attack4(c, e);	//character attacks
+			e.nextMove(e, c, 1);	//its the enemies turn to attack
+			delay();
+			clear();
 			break;
 		case 5:
 			std::cout << "Will display inventory" << std::endl;
+			delay();
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 6:
-			std::cout << "\033[2J\033[1;1H";
+			c.displayStats();
+			break;
+		case 7:
+			clear();
 			run = 1;
 			break;
 		default:
-			std::cout << "Invalid choice, please choose again" << std::endl;
+			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
+			clear();
+			delay();
 			continue;
 		}
 	}
@@ -253,4 +276,14 @@ void Battle_Sequence(character& c, enemy& e)
 	{
 		std::cout << "You ran..." << std::endl;
 	}
+}
+
+void clear()
+{
+	std::cout << "\033[2J\033[1;1H";
+}
+
+void delay()
+{
+	std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 }

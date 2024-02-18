@@ -55,12 +55,14 @@ public:
 private:
 
 	std::string name;
-	int hp;
+	int hp;	//the current hp
+	int maxHp; //the constant hp
 	int att;
 	int def;
 	int winNum = 0; //checks how many battles character has won
 	int level = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
+	
 	//attack names
 	std::string aName1;
 	std::string aName2;

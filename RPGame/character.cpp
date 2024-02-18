@@ -1,11 +1,12 @@
 #include "character.h"
 #include "enemy.h"
-
+#include <Windows.h>
 
 character::character(std::string name, int hp, int att, int def)
 {
     this->name = name;
     this->hp = hp;
+    this->maxHp = hp;
     this->att = att;
     this->def = def;
     this->aName1 = "Hit with Broom";
@@ -69,6 +70,21 @@ std::string character::get_aName1()
     return aName1;
 }
 
+std::string character::get_aName2()
+{
+    return aName2;
+}
+
+std::string character::get_aName3()
+{
+    return aName3;
+}
+
+std::string character::get_aName4()
+{
+    return aName4;
+}
+
 void character::increaseHP(int exp)
 {
     hp += exp;
@@ -86,6 +102,8 @@ void character::increaseDef(int exp)
 
 void character::expPt()
 {
+    //reset the hp
+    hp = maxHp;
     winNum++;
     if (winNum == ExpReq) {
         level++;
@@ -104,13 +122,19 @@ void character::expPt()
 
 void character::displayStats()
 {
-    std::cout << "*************************************" << '\n';
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    SetConsoleTextAttribute(h, 8);
+    std::cout << "\033[2J\033[1;1H";
+    //std::cout << "*************************************" << '\n';
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_level() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "*************************************" << '\n';
+    std::cout << std::endl;
+    SetConsoleTextAttribute(h, 7);
+    //std::cout << "*************************************" << '\n';
     //display the character's statistics using the previously defined getter functions.
 }
 
