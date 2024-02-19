@@ -52,12 +52,6 @@
     <ClInclude Include="GraphMap.h">
       <Filter>GameMap Files</Filter>
     </ClInclude>
-    <ClInclude Include="Broomba.h">
-      <Filter>Character Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SprayMop.h">
-      <Filter>Character Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">
@@ -93,9 +87,6 @@
     <ClCompile Include="enemy.cpp">
       <Filter>Enemy Files</Filter>
     </ClCompile>
-    <ClCompile Include="Broomba.cpp">
-      <Filter>Character Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="void.wav">
@@ -111,6 +102,9 @@
       <Filter>MusicStuff</Filter>
     </Media>
     <Media Include="vine-boom.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="metalPipe.wav">
       <Filter>MusicStuff</Filter>
     </Media>
   </ItemGroup>

@@ -7,9 +7,9 @@
 //forward declaration
 class enemy;
 
+//BASE CHARACTER
 class character
 {
-
 public:
 
 	character(std::string name, int hp, int att, int def);
@@ -23,7 +23,7 @@ public:
 	void set_att(int att);
 	int get_def();
 	void set_def(int def);
-	int get_level();
+	int get_lvl();
 	int get_winNum();
 
 	//attack getters
@@ -40,6 +40,7 @@ public:
 	void expPt();	//checks how many battles the character won, and increases stats accordingly
 
 	virtual void displayStats();
+	virtual void describeAttacks();
 	void damaged(int oppAtt);
 
 	//abilities
@@ -50,27 +51,78 @@ public:
 
 	void Inventory(character& c);
 
-	
-
+	//public members
+	//attack names
+	std::string aName1;
+	std::string aName2;
+	std::string aName3;
+	std::string aName4;
 
 private:
 
+	//private members
 	std::string name;
 	int hp;	//the current hp
 	int maxHp; //the constant hp
 	int att;
 	int def;
 	int winNum = 0; //checks how many battles character has won
-	int level = 1;	//level
+	int lvl = 1;	//level
+	int level = 1;
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
 	
-	//attack names
-	std::string aName1;
-	std::string aName2;
-	std::string aName3;
-	std::string aName4;
 	//class inventory (linked list?)
+};
 
+//DERIVED CHARACTER BROOMBA
+class Broomba : public character 
+{
+	//set attack names
+	void set_AttackNames();
+	
+	//display stats
+	void displayStats();
+	void describeAttacks();
+
+	//abilities
+	void Attack1(character& c, enemy& e);
+	void Attack2(character& c, enemy& e);
+	void Attack3(character& c, enemy& e);
+	void Attack4(character& c, enemy& e);
+};
+
+//DERIVED CHARACTER SWIFTERJETWET
+class SwifterJetWet : public character
+{
+	//set attack names
+	void set_AttackNames();
+
+	//display stats
+	void displayStats();
+	void describeAttacks();
+
+	//abilities
+	void Attack1(character& c, enemy& e);
+	void Attack2(character& c, enemy& e);
+	void Attack3(character& c, enemy& e);
+	void Attack4(character& c, enemy& e);
+};
+
+//DERIVED CHARACTER BYSONV8
+class BysonV8 : public character
+{
+	//set attack names
+	void set_AttackNames();
+
+	//display stats
+	void displayStats();
+	void describeAttacks();
+
+	//abilities
+	void Attack1(character& c, enemy& e);
+	void Attack2(character& c, enemy& e);
+	void Attack3(character& c, enemy& e);
+	void Attack4(character& c, enemy& e);
 };
 
 #endif 

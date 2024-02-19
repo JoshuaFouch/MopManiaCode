@@ -12,7 +12,7 @@
 //global function definitions
 void Start_Menu();	//beginning of the game
 void Game_Tester_Menu();	//general form of our menus, probably going to be our pause menu
-character Mop_Selection();	//user gets to choose a type of mop, then the function will return an instance of class character
+void Mop_Selection();	//user gets to choose a type of mop, then the function will return an instance of class character
 void Pause_Menu();	//pauses game to show menu
 void Battle_Sequence(character& c, enemy& e);	//in-game battle
 void GameShop_Menu();	//shopping menu
@@ -21,19 +21,13 @@ void BattleStats(character& c, enemy& e);	//displays stats of a character and en
 void clear();	//clears the screen
 void delay();	//delays the next output
 
-
-
-
-
-
-
 /*the game*/
 int main()
 {
 	//Start_Menu();
 
-	character c("Bob", 100, 50, 6);
-	enemy e("Bill", 100, 1, 2);
+	character c("Billy BobMan", 100, 20, 6);
+	enemy e("Scrubaniel Garry", 100, 100, 2);
 	enemy f("Joel", 100, 1, 2);
 	enemy j("Josh", 100, 1, 2);
 
@@ -47,13 +41,6 @@ int main()
 
 	return 0;
 }
-
-
-
-
-
-
-
 
 //global function definitions
 void Start_Menu()
@@ -113,7 +100,6 @@ void Start_Menu()
 	//end text color
 	SetConsoleTextAttribute(h, 7);
 }
-
 void GameOver()
 {
 	PlaySound(TEXT("dies-irae-chant.wav"), NULL, SND_FILENAME | SND_ASYNC);
@@ -123,7 +109,6 @@ void GameOver()
 
 	PlaySound(0, 0, 0);
 }
-
 void BattleStats(character& c, enemy& e)
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -131,7 +116,7 @@ void BattleStats(character& c, enemy& e)
 	//character stats
 	SetConsoleTextAttribute(h, 2);
 	std::cout << "|-----[ " << c.get_name() << " ]-----| " << '\n';
-	std::cout << "|Level: " << c.get_level() << "\n";
+	std::cout << "|Level: " << c.get_lvl() << "\n";
 	std::cout << "|HP:" << c.get_hp() << "\n";
 	std::cout << "|-----------------|" << '\n';
 
@@ -142,7 +127,6 @@ void BattleStats(character& c, enemy& e)
 	std::cout << "\t\t\t\t\t|----------------|" << '\n';
 	SetConsoleTextAttribute(h, 7);
 }
-
 void Game_Tester_Menu()
 {
 	int choice;
@@ -213,8 +197,9 @@ void Battle_Sequence(character& c, enemy& e)
 		std::cout << "3. " << c.get_aName3() << std::endl;
 		std::cout << "4. " << c.get_aName4() << std::endl;
 		std::cout << "5. Use Item" << std::endl;
-		std::cout << "6. Check stats" << std::endl;
-		std::cout << "7. Run (coward lol)" << std::endl;
+		std::cout << "6. Check Stats" << std::endl;
+		std::cout << "7. Attack Descriptions" << std::endl;
+		std::cout << "8. Run (coward lol)" << std::endl;
 		int choice; 
 		std::cin >> choice;
 
@@ -253,9 +238,14 @@ void Battle_Sequence(character& c, enemy& e)
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 6:
+			clear();
 			c.displayStats();
 			break;
 		case 7:
+			clear();
+			c.describeAttacks();
+			break;
+		case 8:
 			clear();
 			run = 1;
 			break;
@@ -267,35 +257,38 @@ void Battle_Sequence(character& c, enemy& e)
 		}
 	}
 
-	PlaySound(0, 0, 0);
-	PlaySound(TEXT("vine-boom.wav"), NULL, SND_FILENAME | SND_ASYNC);
-
 	if (e.get_hp() <= 0)
 	{
+		PlaySound(0, 0, 0);
+		PlaySound(TEXT("vine-boom.wav"), NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You WON " << std::endl;
 		c.expPt();
+		delay();
 		delay();
 	}
 	else if (c.get_hp() <= 0)
 	{
+		GameOver();
 		std::cout << "YOU LOST LOSER, GOLD MINUS 3000" << std::endl;
+		delay();
 		delay();
 	}
 	else if (run == 1)
 	{
+		PlaySound(0, 0, 0);
+		PlaySound(TEXT("metalPipe.wav"), NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You ran..." << std::endl;
+		delay();
 		delay();
 	}
 
 	//for enemy leveling
 
 }
-
 void clear()
 {
 	std::cout << "\033[2J\033[1;1H";
 }
-
 void delay()
 {
 	std::this_thread::sleep_for(std::chrono::milliseconds(1500));
