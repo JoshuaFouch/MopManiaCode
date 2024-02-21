@@ -52,6 +52,9 @@
     <ClInclude Include="GraphMap.h">
       <Filter>GameMap Files</Filter>
     </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>Inventory Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">
@@ -86,6 +89,9 @@
     </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>Enemy Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inventory.cpp">
+      <Filter>Inventory Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

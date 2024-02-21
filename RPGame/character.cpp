@@ -4,7 +4,15 @@
 
 //BASE CHARACTER DEFINITIONS
 
-
+character::character()
+{
+    this->name = "character";
+    this->hp = 100;
+    this->maxHp = 100;
+    this->att = 10;
+    this->def = 10;
+    set_AttackNames();
+}
 character::character(std::string name, int hp, int att, int def)
 {
     this->name = name;
@@ -206,7 +214,6 @@ Broomba::Broomba(std::string name, int hp, int att, int def)
     this->def = def;
     set_AttackNames();
 }
-
 void Broomba::set_AttackNames()
 {
     this->aName1 = "Vacuum Vortex";
@@ -249,12 +256,42 @@ void Broomba::describeAttacks()
 }
 
 
-
+//abilities
+void Broomba::Attack1(character& c, enemy& e)
+{
+    std::cout << "Vacuum Vortex!" << std::endl;
+    e.damaged(c.get_att());
+}
+void Broomba::Attack2(character& c, enemy& e)
+{
+    std::cout << "Turbo Takedown!" << std::endl;
+    e.damaged(c.get_att());
+}
+void Broomba::Attack3(character& c, enemy& e)
+{
+    std::cout << "Debris Dash!" << std::endl;
+    e.damaged(c.get_att());
+}
+void Broomba::Attack4(character& c, enemy& e)
+{
+    std::cout << "Dust Buster Blitz!" << std::endl;
+    e.damaged(c.get_att());
+}
 
 
 
 //SWIFTERJETWET DEFINITIONS
 
+//constructor
+SwifterJetWet::SwifterJetWet(std::string name, int hp, int att, int def)
+{
+    this->name = name;
+    this->hp = hp;
+    this->maxHp = hp;
+    this->att = att;
+    this->def = def;
+    set_AttackNames();
+}
 void SwifterJetWet::set_AttackNames()
 {
     this->aName1 = "Mop'n Drop";
@@ -296,13 +333,41 @@ void SwifterJetWet::describeAttacks()
     SetConsoleTextAttribute(h, 7);
 }
 
-
-
-
-
+//abilities
+void SwifterJetWet::Attack1(character& c, enemy& e)
+{
+    std::cout << "Mop'n Drop!" << std::endl;
+    e.damaged(c.get_att());
+}
+void SwifterJetWet::Attack2(character& c, enemy& e)
+{
+    std::cout << "Jittery Jetscream!" << std::endl;
+    e.damaged(c.get_att());
+}
+void SwifterJetWet::Attack3(character& c, enemy& e)
+{
+    std::cout << "Foam Frenzy!" << std::endl;
+    e.damaged(c.get_att());
+}
+void SwifterJetWet::Attack4(character& c, enemy& e)
+{
+    std::cout << "Scrubbing Surge!" << std::endl;
+    e.damaged(c.get_att());
+}
 
 
 //BYSONV8 DEFINITIONS
+
+//constructor
+BysonV8::BysonV8(std::string name, int hp, int att, int def)
+{
+    this->name = name;
+    this->hp = hp;
+    this->maxHp = hp;
+    this->att = att;
+    this->def = def;
+    set_AttackNames();
+}
 
 void BysonV8::set_AttackNames()
 {
@@ -343,4 +408,26 @@ void BysonV8::describeAttacks()
     std::cout << "\t" << std::endl;
     std::cout << std::endl;
     SetConsoleTextAttribute(h, 7);
+}
+
+//abilities
+void BysonV8::Attack1(character& c, enemy& e)
+{
+    std::cout << "Filth Flurry!" << std::endl;
+    e.damaged(c.get_att());
+}
+void BysonV8::Attack2(character& c, enemy& e)
+{
+    std::cout << "Turbo Tornado!" << std::endl;
+    e.damaged(c.get_att());
+}
+void BysonV8::Attack3(character& c, enemy& e)
+{
+    std::cout << "Partical Pulse!" << std::endl;
+    e.damaged(c.get_att());
+}
+void BysonV8::Attack4(character& c, enemy& e)
+{
+    std::cout << "Dust Storm Surge!" << std::endl;
+    e.damaged(c.get_att());
 }

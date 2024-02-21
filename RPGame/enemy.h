@@ -27,6 +27,9 @@ public:
 	virtual void Attack2(enemy& e, character& c);
 	virtual void Attack3(enemy& e, character& c);
 	virtual void Attack4(enemy& e, character& c);
+	virtual void Heal(enemy& e);
+	virtual void Fortify(enemy& e);
+	virtual void Enrage(enemy& e);
 
 private:
 

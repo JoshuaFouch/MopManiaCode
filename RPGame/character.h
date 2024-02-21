@@ -6,6 +6,7 @@
 
 //forward declaration
 class enemy;
+class inventory;
 
 //BASE CHARACTER
 class character
@@ -100,6 +101,10 @@ public:
 //DERIVED CHARACTER SWIFTERJETWET
 class SwifterJetWet : public character
 {
+public:
+	//constructor
+	SwifterJetWet(std::string name, int hp, int att, int def);
+
 	//set attack names
 	void set_AttackNames();
 
@@ -117,6 +122,10 @@ class SwifterJetWet : public character
 //DERIVED CHARACTER BYSONV8
 class BysonV8 : public character
 {
+public:
+	//constructor
+	BysonV8(std::string name, int hp, int att, int def);
+
 	//set attack names
 	void set_AttackNames();
 
