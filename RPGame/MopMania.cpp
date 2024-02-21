@@ -112,7 +112,7 @@ void GameOver()
 void BattleStats(character& c, enemy& e)
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
+	clear();
 	//character stats
 	SetConsoleTextAttribute(h, 2);
 	std::cout << "|-----[ " << c.get_name() << " ]-----| " << '\n';

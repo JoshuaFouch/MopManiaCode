@@ -104,9 +104,9 @@ void character::expPt()
     if (winNum == ExpReq) { //if the "amount of wins" counter equals the counter for leveling up
         lvl++;
         std::cout << "You Leveled Up! " << std::endl;
-        hp += 20;
-        att += 10;
-        def += 10;
+        hp += 10;
+        att += 5;
+        def += 5;
         winNum = 0; //resets the victory counter
         ExpReq += 1;
     }
@@ -119,7 +119,7 @@ void character::expPt()
 void character::displayStats()
 {
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
+    std::cout << "\033[2J\033[1;1H"; //clear console
     SetConsoleTextAttribute(h, 8);  //gray colored text
     std::cout << "\033[2J\033[1;1H";    //clear console
     std::cout << "Name: " << get_name() << '\n';
@@ -129,8 +129,8 @@ void character::displayStats()
     std::cout << "Defense: " << get_def() << '\n';
     std::cout << "This character is etc...." << '\n';   //description
     std::cout << std::endl;
+    system("pause");
     SetConsoleTextAttribute(h, 7);
-
 }
 void character::describeAttacks()
 {
@@ -198,7 +198,7 @@ void Broomba::set_AttackNames()
 void Broomba::displayStats()
 {
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
+    std::cout << "\033[2J\033[1;1H"; //clear console
     SetConsoleTextAttribute(h, 8);  //gray colored text
     std::cout << "\033[2J\033[1;1H";    //clear console
     std::cout << "Name: " << get_name() << '\n';
@@ -206,8 +206,9 @@ void Broomba::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "broomba..." << '\n';   //description
+    std::cout << "This character is etc...." << '\n';   //description
     std::cout << std::endl;
+    system("pause");
     SetConsoleTextAttribute(h, 7);
 }
 void Broomba::describeAttacks()
@@ -240,7 +241,7 @@ void SwifterJetWet::set_AttackNames()
 void SwifterJetWet::displayStats()
 {
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
+    std::cout << "\033[2J\033[1;1H"; //clear console
     SetConsoleTextAttribute(h, 8);  //gray colored text
     std::cout << "\033[2J\033[1;1H";    //clear console
     std::cout << "Name: " << get_name() << '\n';
@@ -248,8 +249,9 @@ void SwifterJetWet::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "swifterjetwet..." << '\n';   //description
+    std::cout << "This character is etc...." << '\n';   //description
     std::cout << std::endl;
+    system("pause");
     SetConsoleTextAttribute(h, 7);
 }
 void SwifterJetWet::describeAttacks()
@@ -282,7 +284,7 @@ void BysonV8::set_AttackNames()
 void BysonV8::displayStats()
 {
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
+    std::cout << "\033[2J\033[1;1H"; //clear console
     SetConsoleTextAttribute(h, 8);  //gray colored text
     std::cout << "\033[2J\033[1;1H";    //clear console
     std::cout << "Name: " << get_name() << '\n';
@@ -290,8 +292,9 @@ void BysonV8::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "bysonv8..." << '\n';   //description
+    std::cout << "This character is etc...." << '\n';   //description
     std::cout << std::endl;
+    system("pause");
     SetConsoleTextAttribute(h, 7);
 }
 void BysonV8::describeAttacks()
