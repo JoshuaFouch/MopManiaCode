@@ -226,7 +226,7 @@ void Broomba::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "This character is etc...." << '\n';   //description
+    std::cout << "Broomba, the explosive custodian, is a high-energy character with a passion for cleaning up messes in a blast! This bombastic mop character has a head filled with explosive surprises that can turn any cleaning session into a dazzling display of pyrotechnic prowess.\n Broomba's lore traces back to the mystical laboratories of Mop-topia, where an eccentric inventor accidentally merged a mop with a collection of experimental cleaning bombs. Now, Broomba roams Moptopia, leaving sparkling trails of cleanliness and a touch of controlled chaos. Just remember, when Broomba say\n It's time to clean up you might want to take cover – cleanliness is about to go out with a bang!" << '\n';   //description
     std::cout << std::endl;
     system("pause");
     SetConsoleTextAttribute(h, 7);
