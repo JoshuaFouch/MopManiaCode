@@ -12,13 +12,16 @@ class character
 {
 public:
 
+	character();
 	character(std::string name, int hp, int att, int def);
 
 	//I really think we don't need setters... why would we need to set the hp of your character in game?
 	std::string get_name();
 	void set_name(std::string name);
 	int get_hp();
+	int get_maxhp();
 	void set_hp(int hp);
+	void set_maxHp(int maxHp);
 	int get_att();
 	void set_att(int att);
 	int get_def();
@@ -58,7 +61,7 @@ public:
 	std::string aName3;
 	std::string aName4;
 
-private:
+protected:
 
 	//private members
 	std::string name;
@@ -68,7 +71,6 @@ private:
 	int def;
 	int winNum = 0; //checks how many battles character has won
 	int lvl = 1;	//level
-	int level = 1;
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
 	
 	//class inventory (linked list?)
@@ -77,6 +79,10 @@ private:
 //DERIVED CHARACTER BROOMBA
 class Broomba : public character 
 {
+public:
+	//constuctor
+	Broomba(std::string name, int hp, int att, int def);
+
 	//set attack names
 	void set_AttackNames();
 	

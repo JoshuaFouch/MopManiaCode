@@ -34,6 +34,7 @@ private:
 	int def;
 	int hp;
 	std::string name;
+	int lvl = 1;
 };
 
 #endif

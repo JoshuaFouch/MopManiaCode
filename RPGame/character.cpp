@@ -4,6 +4,7 @@
 
 //BASE CHARACTER DEFINITIONS
 
+
 character::character(std::string name, int hp, int att, int def)
 {
     this->name = name;
@@ -27,10 +28,18 @@ int character::get_hp()
 {
     return hp;
 }
+int character::get_maxhp()
+{
+    return maxHp;
+}
 void character::set_hp(int hp)
 {
     this->hp = hp;
 
+}
+void character::set_maxHp(int maxHp)
+{
+    this->maxHp = maxHp;
 }
 int character::get_att()
 {
@@ -187,6 +196,17 @@ void character::Inventory(character& c)
 
 //BROOMBA DEFINITIONS
 
+//constructor
+Broomba::Broomba(std::string name, int hp, int att, int def) 
+{
+    this->name = name;
+    this->hp = hp;
+    this->maxHp = hp;
+    this->att = att;
+    this->def = def;
+    set_AttackNames();
+}
+
 void Broomba::set_AttackNames()
 {
     this->aName1 = "Vacuum Vortex";
@@ -227,6 +247,11 @@ void Broomba::describeAttacks()
     std::cout << std::endl;
     SetConsoleTextAttribute(h, 7);
 }
+
+
+
+
+
 
 //SWIFTERJETWET DEFINITIONS
 
@@ -270,6 +295,12 @@ void SwifterJetWet::describeAttacks()
     std::cout << std::endl;
     SetConsoleTextAttribute(h, 7);
 }
+
+
+
+
+
+
 
 //BYSONV8 DEFINITIONS
 

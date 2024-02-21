@@ -26,17 +26,11 @@ int main()
 {
 	//Start_Menu();
 
+	//Broomba b("Broomba", 100, 20, 30);
 	character c("Billy BobMan", 100, 20, 6);
 	enemy e("Scrubaniel Garry", 100, 100, 2);
-	enemy f("Joel", 100, 1, 2);
-	enemy j("Josh", 100, 1, 2);
 
-	Battle_Sequence(c, e);
-
-	//Battle_Sequence(c, f);
-
-	//Battle_Sequence(c, j);
-
+	//b.displayStats();
 	c.displayStats();
 
 	return 0;
