@@ -249,7 +249,7 @@ void SwifterJetWet::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "This character is etc...." << '\n';   //description
+    std::cout << "swifterjetwet..." << '\n';   //description
     std::cout << std::endl;
     system("pause");
     SetConsoleTextAttribute(h, 7);
