@@ -6,6 +6,7 @@
 #include <thread>
 #include <Windows.h>
 #include <stdlib.h>
+#include "utility.h"
 
 
 
@@ -17,9 +18,6 @@ void Battle_Sequence(character& c, enemy& e);	//in-game battle
 void GameShop_Menu();	//shopping menu
 void GameOver();	//completely clears the terminal and prints game over, completely ending the code
 void BattleStats(character& c, enemy& e);	//displays stats of a character and enemy
-void clear();	//clears the screen
-void MSdelay(int n);	//delays the next output of n amount of milliseconds
-void Sdelay(int n);		//delays next output of n amount of seconds
 
 /*the game*/
 int main()
@@ -27,6 +25,7 @@ int main()
 	//Start_Menu();
 
 	Broomba b("Broomba", 100, 15, 30);
+	SwifterJetWet s("JetWet", 70, 30, 15);
 	character c("character", 100, 20, 6);
 	enemy e("enemy", 100, 10, 2);
 
@@ -144,6 +143,7 @@ void BattleStats(character& c, enemy& e)
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	clear();
+
 	//character stats
 	SetConsoleTextAttribute(h, 2);
 	std::cout << "|-----[ " << c.get_name() << " ]-----| " << '\n';
@@ -248,18 +248,27 @@ void Battle_Sequence(character& c, enemy& e)
 			break;
 		case 2:
 			c.Attack2(c, e);	//character attacks
+			MSdelay(1500);
+			clear();
+			BattleStats(c, e);
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 3:
 			c.Attack3(c, e);	//character attacks
+			MSdelay(1500);
+			clear();
+			BattleStats(c, e);
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 4:
 			c.Attack4(c, e);	//character attacks
+			MSdelay(1500);
+			clear();
+			BattleStats(c, e);
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
@@ -309,16 +318,4 @@ void Battle_Sequence(character& c, enemy& e)
 
 	//for enemy leveling
 
-}
-void clear()
-{
-	std::cout << "\033[2J\033[1;1H";
-}
-void MSdelay(int n)	//delay for milliseconds
-{
-	std::this_thread::sleep_for(std::chrono::milliseconds(n));
-}
-void Sdelay(int n)
-{
-	std::this_thread::sleep_for(std::chrono::seconds(n));
 }

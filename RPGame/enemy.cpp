@@ -1,6 +1,14 @@
 #include "character.h"
 #include "enemy.h"
 
+enemy::enemy()
+{
+	this->name = "enemy";
+	this->att = 50;
+	this->def = 50;
+	this->hp = 100;
+}
+
 enemy::enemy(std::string name, int hp, int att, int def)
 {
 	this->name = name;
@@ -88,16 +96,19 @@ void enemy::Attack4(enemy& e, character& c)
 void enemy::Heal(enemy& e, character& c)
 {
 	//heals the enemy's hp depending on how much the hp the character lost
+	std::cout << "HEALED" << std::endl;
 }
 
 void enemy::Fortify(enemy& e, character& c)
 {
 	//raises the defense stat depending on how much the hp the character lost
+	std::cout << "FORTIFY" << std::endl;
 }
 
 void enemy::Enrage(enemy& e, character& c)
 {
 	//raises the attack stat depening on how much the hp the character lost
+	std::cout << "ENRAGE" << std::endl;
 }
 
 void enemy::nextMove(enemy& e, character& c, int random)

@@ -137,7 +137,7 @@
     <ClInclude Include="Level3.h" />
     <ClInclude Include="Level4.h" />
     <ClInclude Include="SqueeGeeCity.h" />
-    <ClInclude Include="utilityfunctions.h" />
+    <ClInclude Include="utility.h" />
     <ClInclude Include="VacuumVille.h" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +152,7 @@
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="SqueeGeeCity.cpp" />
+    <ClCompile Include="utility.cpp" />
     <ClCompile Include="VacuumVille.cpp" />
   </ItemGroup>
   <ItemGroup>

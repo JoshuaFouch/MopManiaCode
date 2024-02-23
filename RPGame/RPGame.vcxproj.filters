@@ -58,7 +58,7 @@
     <ClInclude Include="inventory.h">
       <Filter>Inventory Files</Filter>
     </ClInclude>
-    <ClInclude Include="utilityfunctions.h">
+    <ClInclude Include="utility.h">
       <Filter>Utility Functions</Filter>
     </ClInclude>
   </ItemGroup>
@@ -98,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="inventory.cpp">
       <Filter>Inventory Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.cpp">
+      <Filter>Utility Functions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
