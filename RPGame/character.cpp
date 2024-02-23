@@ -233,7 +233,9 @@ void Broomba::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "Broomba, the explosive custodian, is a high-energy character with a passion for cleaning up messes in a blast! This bombastic mop character has a head filled with explosive surprises that can turn any cleaning session into a dazzling display of pyrotechnic prowess.\n Broomba's lore traces back to the mystical laboratories of Mop-topia, where an eccentric inventor accidentally merged a mop with a collection of experimental cleaning bombs. Now, Broomba roams Moptopia, leaving sparkling trails of cleanliness and a touch of controlled chaos. Just remember, when Broomba say\n It's time to clean up you might want to take cover – cleanliness is about to go out with a bang!" << '\n';   //description
+    std::cout << "A high-energy soldier with a passion for cleaning up messes in a blast." << std::endl;
+    std::cout << "This broombastic soldier can turn any cleaning session into a dazzling display of pyrotechnic prowess" << std::endl;
+    std::cout << "Broomba roams Mop-topia, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
     std::cout << std::endl;
     system("pause");
     SetConsoleTextAttribute(h, 7);
@@ -311,7 +313,10 @@ void SwifterJetWet::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "swifterjetwet..." << '\n';   //description
+    std::cout << "\tSwifter JetWet takes cleanliness to new depths! JetWet gained its aquatic powers by the ancient water sage, " << std::endl;
+    std::cout << "\tMrs. Clean. Now, armed with the ability to control water, JetWet jets across Mop-topia," << std::endl;
+    std::cout << "\tleaving a trail of cleanliness and refreshing splashes. JetWet seeks to mop away the dirt and" << std::endl;
+    std::cout << "\tgrime that threaten the land." << std::endl;
     std::cout << std::endl;
     system("pause");
     SetConsoleTextAttribute(h, 7);
@@ -388,7 +393,9 @@ void BysonV8::displayStats()
     std::cout << "HP: " << get_hp() << '\n';
     std::cout << "Attack: " << get_att() << '\n';
     std::cout << "Defense: " << get_def() << '\n';
-    std::cout << "This character is etc...." << '\n';   //description
+    std::cout << "\tCrafted, in the legendary Byson Forge, the BysonV8 harnessed the power of air origins, becoming a vacuum marvel." << std::endl;
+    std::cout << "\tByson V8 roams Mop-topia, a swirling force that sucks up dirt and leaves behind a breath of pristine air" << std::endl;
+    std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
     std::cout << std::endl;
     system("pause");
     SetConsoleTextAttribute(h, 7);

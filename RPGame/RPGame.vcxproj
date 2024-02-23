@@ -137,6 +137,7 @@
     <ClInclude Include="Level3.h" />
     <ClInclude Include="Level4.h" />
     <ClInclude Include="SqueeGeeCity.h" />
+    <ClInclude Include="utilityfunctions.h" />
     <ClInclude Include="VacuumVille.h" />
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,7 @@ public:
 	std::string get_name();
 	int get_def();
 	int get_hp();
+	int get_lvl();
 
 	//we will use these functions whenever you finish a level to make the enemies harder
 	void increaseHP(int exp);
@@ -27,9 +28,11 @@ public:
 	virtual void Attack2(enemy& e, character& c);
 	virtual void Attack3(enemy& e, character& c);
 	virtual void Attack4(enemy& e, character& c);
-	virtual void Heal(enemy& e);
-	virtual void Fortify(enemy& e);
-	virtual void Enrage(enemy& e);
+	virtual void Heal(enemy& e, character& c);
+	virtual void Fortify(enemy& e, character& c);
+	virtual void Enrage(enemy& e, character& c);
+
+	void exPt(character& c);
 
 private:
 

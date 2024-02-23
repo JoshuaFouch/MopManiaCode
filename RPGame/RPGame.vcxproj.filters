@@ -20,6 +20,9 @@
     <Filter Include="Inventory Files">
       <UniqueIdentifier>{b3c8d12e-138d-4d4c-a3d7-d3c0d712fe1c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utility Functions">
+      <UniqueIdentifier>{b42d8f32-a4fe-429c-91cf-d36dd3d66c82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
@@ -54,6 +57,9 @@
     </ClInclude>
     <ClInclude Include="inventory.h">
       <Filter>Inventory Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utilityfunctions.h">
+      <Filter>Utility Functions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -12,23 +12,23 @@
 //global function definitions
 void Start_Menu();	//beginning of the game
 void Game_Tester_Menu();	//general form of our menus, probably going to be our pause menu
-void Mop_Selection();	//user gets to choose a type of mop, then the function will return an instance of class character
 void Pause_Menu();	//pauses game to show menu
 void Battle_Sequence(character& c, enemy& e);	//in-game battle
 void GameShop_Menu();	//shopping menu
 void GameOver();	//completely clears the terminal and prints game over, completely ending the code
 void BattleStats(character& c, enemy& e);	//displays stats of a character and enemy
 void clear();	//clears the screen
-void delay();	//delays the next output
+void MSdelay(int n);	//delays the next output of n amount of milliseconds
+void Sdelay(int n);		//delays next output of n amount of seconds
 
 /*the game*/
 int main()
 {
 	//Start_Menu();
 
-	Broomba b("Broomba", 100, 20, 30);
-	character c("Billy BobMan", 100, 20, 6);
-	enemy e("Scrubaniel Garry", 100, 100, 2);
+	Broomba b("Broomba", 100, 15, 30);
+	character c("character", 100, 20, 6);
+	enemy e("enemy", 100, 10, 2);
 
 	Battle_Sequence(b, e);
 
@@ -48,25 +48,25 @@ void Start_Menu()
 	//for different text colors
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
-	std::this_thread::sleep_for(std::chrono::seconds(3));
+	Sdelay(3);
 	std::cout << "You wake up one day with no body... all you see is the void of darkness" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(6));
+	Sdelay(6);
 	std::cout << "You hear a voice calling in the distance:" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(4));
+	Sdelay(4);
 	SetConsoleTextAttribute(h, 6); //Janitorius (Tyler) is yellow text
 	std::cout << "My dear soul,";
 	std::cout << " I am Janitorius, the custodian of Le Hospitale." << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(4));
+	Sdelay(4);
 	std::cout << "You seem to have lost all your memory from that day." << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(4));
+	Sdelay(4);
 	std::cout << "You died...";
-	std::this_thread::sleep_for(std::chrono::seconds(3));
+	Sdelay(3);
 	std::cout << " You unfortunately bit your tongue too hard until your legs began to fall off" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(5));
+	Sdelay(5);
 	std::cout << "\nWell anyways, you failed in your previous life so now I will offer you a new life" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(3));
+	Sdelay(3);
 	std::cout << "A life as a cleaning mop...";
-	std::this_thread::sleep_for(std::chrono::seconds(4));
+	Sdelay(4);
 	std::cout << " Will you accept this new life?";
 	SetConsoleTextAttribute(h, 7);
 	std::cout << " type: [y/n]" << std::endl;
@@ -89,6 +89,41 @@ void Start_Menu()
 		SetConsoleTextAttribute(h, 7);
 
 		return Start_Menu();
+	}
+	std::cout << "Choose a host... I am sorry, I only have these cleaning supplies you can use..." << std::endl;
+	int x;
+
+	SetConsoleTextAttribute(h, 7);
+	std::cout << "\n1. Broomba, the Explosive Custodian" << std::endl;
+	std::cout << "\tA high-energy soldier with a passion for cleaning up messes in a blast." << std::endl;
+	std::cout << "\tThis broombastic soldier can turn any cleaning session into a dazzling display of pyrotechnic prowess" << std::endl;
+	std::cout << "\tBroomba roams Mop-topia, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
+
+	std::cout << "\n2. Swifter JetWet, the Splashy Sentinel" << std::endl;
+	std::cout << "\tSwifter JetWet takes cleanliness to new depths! JetWet gained its aquatic powers by the ancient water sage, " << std::endl;
+	std::cout << "\tMrs. Clean. Now, armed with the ability to control water, JetWet jets across Mop-topia," << std::endl;
+	std::cout << "\tleaving a trail of cleanliness and refreshing splashes. JetWet seeks to mop away the dirt and" << std::endl;
+	std::cout << "\tgrime that threaten the land." << std::endl;
+
+	std::cout << "\n3. Byson V8, the cyclonic custodian" << std::endl;
+	std::cout << "\tCrafted, in the legendary Byson Forge, the BysonV8 harnessed the power of air origins, becoming a vacuum marvel." << std::endl;
+	std::cout << "\tByson V8 roams Mop-topia, a swirling force that sucks up dirt and leaves behind a breath of pristine air" << std::endl;
+	std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
+	std::cin >> x;
+
+	SetConsoleTextAttribute(h, 6);
+
+
+	switch (x)
+	{
+	case 1:
+		std::cout << "You have chosen well, the Broomba will serve you well on your journey" << std::endl;
+	case 2:
+		std::cout << "You have chosen well, the Swifter JetWet will serve you well on your journey" << std::endl;
+	case 3:
+		std::cout << "You have chosen well, the Byson V8 will serve you well on your journey" << std::endl;
+	default:
+		std::cout << "Try again" << std::endl;
 	}
 
 	//end music
@@ -119,6 +154,7 @@ void BattleStats(character& c, enemy& e)
 	//enemy stats
 	SetConsoleTextAttribute(h, 4);
 	std::cout << "\t\t\t\t\t|-----[ " << e.get_name() << " ]-----| " << '\n';
+	std::cout << "\t\t\t\t\t|Level:" << e.get_lvl() << "\n";
 	std::cout << "\t\t\t\t\t|HP:" << e.get_hp() << "\n";
 	std::cout << "\t\t\t\t\t|----------------|" << '\n';
 	SetConsoleTextAttribute(h, 7);
@@ -183,7 +219,7 @@ void Battle_Sequence(character& c, enemy& e)
 	PlaySound(TEXT("battlemusic.wav"), NULL, SND_FILENAME | SND_ASYNC);
 
 	int run = 0;	//if character wants to run away from battle
-	while (e.get_hp() >= 0 && c.get_hp() >= 0 && run == 0)
+	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
 	{
 
 		BattleStats(c, e);	//begins by display the stats
@@ -196,41 +232,41 @@ void Battle_Sequence(character& c, enemy& e)
 		std::cout << "6. Check Stats" << std::endl;
 		std::cout << "7. Attack Descriptions" << std::endl;
 		std::cout << "8. Run (coward lol)" << std::endl;
-		int choice; 
+		int choice;
 		std::cin >> choice;
 
 		switch (choice)
 		{
 		case 1:
 			c.Attack1(c, e);	//character attacks
-			delay();
+			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
-			delay();
+			MSdelay(1500);
 			clear();
 			break;
 		case 2:
 			c.Attack2(c, e);	//character attacks
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
-			delay();
+			MSdelay(1500);
 			clear();
 			break;
 		case 3:
 			c.Attack3(c, e);	//character attacks
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
-			delay();
+			MSdelay(1500);
 			clear();
 			break;
 		case 4:
 			c.Attack4(c, e);	//character attacks
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
-			delay();
+			MSdelay(1500);
 			clear();
 			break;
 		case 5:
 			std::cout << "Will display inventory" << std::endl;
-			delay();
+			MSdelay(1500);
 			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 6:
@@ -248,34 +284,27 @@ void Battle_Sequence(character& c, enemy& e)
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
 			clear();
-			delay();
+			MSdelay(1500);
 			continue;
 		}
 	}
 
 	if (e.get_hp() <= 0)
 	{
-		PlaySound(0, 0, 0);
-		PlaySound(TEXT("vine-boom.wav"), NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You WON " << std::endl;
 		c.expPt();
-		delay();
-		delay();
+		MSdelay(3000);
 	}
 	else if (c.get_hp() <= 0)
 	{
 		GameOver();
 		std::cout << "YOU LOST LOSER, GOLD MINUS 3000" << std::endl;
-		delay();
-		delay();
+		MSdelay(3000);
 	}
 	else if (run == 1)
 	{
-		PlaySound(0, 0, 0);
-		PlaySound(TEXT("metalPipe.wav"), NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You ran..." << std::endl;
-		delay();
-		delay();
+		MSdelay(3000);
 	}
 
 	//for enemy leveling
@@ -285,7 +314,11 @@ void clear()
 {
 	std::cout << "\033[2J\033[1;1H";
 }
-void delay()
+void MSdelay(int n)	//delay for milliseconds
 {
-	std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+	std::this_thread::sleep_for(std::chrono::milliseconds(n));
+}
+void Sdelay(int n)
+{
+	std::this_thread::sleep_for(std::chrono::seconds(n));
 }

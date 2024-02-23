@@ -24,6 +24,11 @@ int enemy::get_hp()
 	return hp;
 }
 
+int enemy::get_lvl()
+{
+	return lvl;
+}
+
 void enemy::increaseHP(int exp)
 {
 	hp += exp;
@@ -42,7 +47,7 @@ void enemy::increaseDef(int exp)
 int enemy::RandomNum()
 {
 	srand((unsigned) time(NULL));//need to randomize seed with the time to make the random number actually different each time its run
-	int random = rand() % 4;//calls a random number 1,4
+	int random = rand() % 7;//calls a random number 1 to 7
 	return random;
 }
 
@@ -80,6 +85,21 @@ void enemy::Attack4(enemy& e, character& c)
 	c.damaged(e.att);
 }
 
+void enemy::Heal(enemy& e, character& c)
+{
+	//heals the enemy's hp depending on how much the hp the character lost
+}
+
+void enemy::Fortify(enemy& e, character& c)
+{
+	//raises the defense stat depending on how much the hp the character lost
+}
+
+void enemy::Enrage(enemy& e, character& c)
+{
+	//raises the attack stat depening on how much the hp the character lost
+}
+
 void enemy::nextMove(enemy& e, character& c, int random)
 {
 	switch (random) {
@@ -95,5 +115,26 @@ void enemy::nextMove(enemy& e, character& c, int random)
 	case 4:
 		Attack4(e, c);
 		break;
+	case 5:
+		Heal(e, c);
+		break;
+	case 6:
+		Fortify(e, c);
+		break;
+	case 7:
+		Enrage(e, c);
+		break;
 	}
 }
+
+
+void enemy::exPt(character& c)
+{
+	//if the characters level is at a certain point, the enemy will level up a certain amount as well
+}
+
+
+
+
+
+

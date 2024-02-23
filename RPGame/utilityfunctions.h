@@ -1,0 +1,2 @@
+#ifndef UTILITY
+#define UTILITY
