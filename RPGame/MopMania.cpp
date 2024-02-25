@@ -25,14 +25,15 @@ int main()
 	//Start_Menu();
 
 	Broomba b("Broomba", 100, 15, 30);
-	SwifterJetWet s("JetWet", 70, 30, 15);
+	//SwifterJetWet a("Jet", 100, 15, 20);
 	character c("character", 100, 20, 6);
-	enemy e("enemy", 100, 10, 2);
 
-	Battle_Sequence(b, e);
+	enemy bob("bob", 1);
 
-	b.displayStats();
-	c.displayStats();
+	Battle_Sequence(c, bob);
+
+	bob.displayStats();
+	
 
 	return 0;
 }
@@ -112,7 +113,7 @@ void Start_Menu()
 
 	SetConsoleTextAttribute(h, 6);
 
-
+	//not finished
 	switch (x)
 	{
 	case 1:
@@ -300,12 +301,14 @@ void Battle_Sequence(character& c, enemy& e)
 
 	if (e.get_hp() <= 0)
 	{
+		e.death();
 		std::cout << "You WON " << std::endl;
 		c.expPt();
 		MSdelay(3000);
 	}
 	else if (c.get_hp() <= 0)
 	{
+		c.death();
 		GameOver();
 		std::cout << "YOU LOST LOSER, GOLD MINUS 3000" << std::endl;
 		MSdelay(3000);
@@ -315,7 +318,5 @@ void Battle_Sequence(character& c, enemy& e)
 		std::cout << "You ran..." << std::endl;
 		MSdelay(3000);
 	}
-
-	//for enemy leveling
 
 }

@@ -75,6 +75,16 @@ int character::get_winNum()
 {
     return winNum;
 }
+bool character::death() 
+{
+    this->isDead = true;
+    return isDead;
+}
+bool character::alive() 
+{
+    this->isDead = false;
+    return isDead;
+}
 
 //attack getters
 std::string character::get_aName1()
@@ -95,10 +105,10 @@ std::string character::get_aName4()
 }
 void character::set_AttackNames()
 {
-    this->aName1 = "Broom Boom";
-    this->aName2 = "Sweep Scythe";
-    this->aName3 = "Bristle Blast";
-    this->aName4 = "Dust Destroy";
+    aName1 = "Broom Boom";
+    aName2 = "Sweep Scythe";
+    aName3 = "Bristle Blast";
+    aName4 = "Dust Destroy";
 }
 
 void character::increaseHP(int exp)
@@ -205,21 +215,16 @@ void character::Inventory(character& c)
 //BROOMBA DEFINITIONS
 
 //constructor
-Broomba::Broomba(std::string name, int hp, int att, int def) 
+Broomba::Broomba(std::string name, int hp, int att, int def) : character(name, hp, att, def)
 {
-    this->name = name;
-    this->hp = hp;
-    this->maxHp = hp;
-    this->att = att;
-    this->def = def;
     set_AttackNames();
 }
 void Broomba::set_AttackNames()
 {
-    this->aName1 = "Vacuum Vortex";
-    this->aName2 = "Turbo Takedown";
-    this->aName3 = "Debris Dash";
-    this->aName4 = "Dust Buster Blitz";
+    aName1 = "Vacuum Vortex";
+    aName2 = "Turbo Takedown";
+    aName3 = "Debris Dash";
+    aName4 = "Dust Buster Blitz";
 }
 
 void Broomba::displayStats()

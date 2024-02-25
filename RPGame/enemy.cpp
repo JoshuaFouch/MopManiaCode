@@ -1,5 +1,6 @@
 #include "character.h"
 #include "enemy.h"
+#include <Windows.h>
 
 enemy::enemy()
 {
@@ -8,45 +9,63 @@ enemy::enemy()
 	this->def = 50;
 	this->hp = 100;
 }
-
-enemy::enemy(std::string name, int hp, int att, int def)
+enemy::enemy(std::string name, int lvl)	//hp=110 , att = 55, def = 55
 {
 	this->name = name;
-	this->att = att;
-	this->def = def;
-	this->hp = hp;
+	set_stats(100, 50, 50, lvl);
 }
 
 std::string enemy::get_name()
 {
 	return name;
 }
-
 int enemy::get_def()
 {
 	return def;
 }
-
 int enemy::get_hp()
 {
 	return hp;
 }
-
 int enemy::get_lvl()
 {
 	return lvl;
+}
+int enemy::get_att()
+{
+	return att;
+}
+void enemy::set_stats(int basehp, int baseatt, int basedef, int level)
+{
+	//automatically sets the base stats
+	hp = basehp;
+	att = baseatt;
+	def = basedef;
+	this->lvl = level;
+	//changes base stats according to lvl, credit to Seamus
+	hp += ((hp / 10) * lvl);
+	att += ((att / 10) * lvl);
+	def += ((def / 10) * lvl);
+}
+bool enemy::death()
+{
+	isDead = true;
+	return isDead;
+}
+bool enemy::alive()
+{
+	isDead = false;
+	return isDead;
 }
 
 void enemy::increaseHP(int exp)
 {
 	hp += exp;
 }
-
 void enemy::increaseAtt(int exp)
 {
 	att += exp;
 }
-
 void enemy::increaseDef(int exp)
 {
 	def += exp;
@@ -58,7 +77,6 @@ int enemy::RandomNum()
 	int random = rand() % 7;//calls a random number 1 to 7
 	return random;
 }
-
 void enemy::damaged(int oppAtt)
 {
 	if ((oppAtt - (def / 2)) < 0) {
@@ -69,42 +87,53 @@ void enemy::damaged(int oppAtt)
 	//simulate enemy being damaged with a console output message.
 }
 
+void enemy::displayStats()
+{
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	std::cout << "\033[2J\033[1;1H"; //clear console
+	SetConsoleTextAttribute(h, 8);  //gray colored text
+	std::cout << "\033[2J\033[1;1H";    //clear console
+	std::cout << "Name: " << get_name() << '\n';
+	std::cout << "Level: " << get_lvl() << '\n';
+	std::cout << "HP: " << get_hp() << '\n';
+	std::cout << "Attack: " << get_att() << '\n';
+	std::cout << "Defense: " << get_def() << '\n';
+	std::cout << "This enemy is etc...." << '\n';   //description
+	std::cout << std::endl;
+	system("pause");
+	SetConsoleTextAttribute(h, 7);
+}
+
 void enemy::Attack1(enemy& e, character& c)
 {
 	std::cout << "enemy attacks you 1! " << std::endl;
 	c.damaged(e.att);
 }
-
 void enemy::Attack2(enemy& e, character& c)
 {
 	std::cout << "enemy attacks you 2!" << std::endl;
 	c.damaged(e.att);
 }
-
 void enemy::Attack3(enemy& e, character& c)
 {
 	std::cout << "enemy attacks you 3!" << std::endl;
 	c.damaged(e.att);
 }
-
 void enemy::Attack4(enemy& e, character& c)
 {
 	std::cout << "enemy attacks you 4!" << std::endl;
 	c.damaged(e.att);
 }
-
 void enemy::Heal(enemy& e, character& c)
 {
 	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "HEALED" << std::endl;
 }
-
 void enemy::Fortify(enemy& e, character& c)
 {
 	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "FORTIFY" << std::endl;
 }
-
 void enemy::Enrage(enemy& e, character& c)
 {
 	//raises the attack stat depening on how much the hp the character lost
@@ -139,12 +168,17 @@ void enemy::nextMove(enemy& e, character& c, int random)
 }
 
 
-void enemy::exPt(character& c)
-{
-	//if the characters level is at a certain point, the enemy will level up a certain amount as well
-}
+/* enemy GarbageDan(1);
+
+	enemy GarbadeDan(6);
+	
+	
+	
+	*/
 
 
+
+//GarbageDan Implementations
 
 
 

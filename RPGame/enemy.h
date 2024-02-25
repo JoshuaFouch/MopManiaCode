@@ -10,11 +10,15 @@ class enemy
 
 public:
 	enemy();
-	enemy(std::string name, int hp, int att, int def);
+	enemy(std::string name, int lvl);
 	std::string get_name();
 	int get_def();
 	int get_hp();
 	int get_lvl();
+	int get_att();
+	void set_stats(int hp, int att, int def, int lvl);
+	bool death();
+	bool alive();
 
 	//we will use these functions whenever you finish a level to make the enemies harder
 	void increaseHP(int exp);
@@ -25,6 +29,8 @@ public:
 	int RandomNum();
 	void damaged(int oppAtt);
 
+	void displayStats();
+
 	virtual void Attack1(enemy& e, character& c);
 	virtual void Attack2(enemy& e, character& c);
 	virtual void Attack3(enemy& e, character& c);
@@ -33,8 +39,6 @@ public:
 	virtual void Fortify(enemy& e, character& c);
 	virtual void Enrage(enemy& e, character& c);
 
-	void exPt(character& c);
-
 private:
 
 	int att;
@@ -42,13 +46,14 @@ private:
 	int hp;
 	std::string name;
 	int lvl = 1;
+	bool isDead = false;
 };
 
 class GarbageDan : public enemy
 {
 public:
 	//constructor
-	GarbageDan();	//Base: 60 HP, 40 att, 100 defense
+	GarbageDan(std::string name, int lvl);	//Base: 60 HP, 40 att, 100 defense
 
 	//abilities
 	void Attack1(enemy& e, character& c);	//Trash Bash

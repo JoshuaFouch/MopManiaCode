@@ -29,6 +29,8 @@ public:
 	void set_def(int def);
 	int get_lvl();
 	int get_winNum();
+	bool death();
+	bool alive();
 
 	//attack getters
 	std::string get_aName1();
@@ -73,6 +75,7 @@ protected:
 	int winNum = 0; //checks how many battles character has won
 	int lvl = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
+	bool isDead = false; //is the character dead or alive?
 	
 	//class inventory (linked list?)
 };
@@ -82,6 +85,7 @@ class Broomba : public character
 {
 public:
 	//constuctor
+	Broomba();
 	Broomba(std::string name, int hp, int att, int def);
 
 	//set attack names
