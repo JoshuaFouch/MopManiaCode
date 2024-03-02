@@ -14,3 +14,11 @@ void Sdelay(int n)
 {
 	std::this_thread::sleep_for(std::chrono::seconds(n));
 }
+
+void color(int n)
+{
+	//for different text colors
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	SetConsoleTextAttribute(h, n);
+}

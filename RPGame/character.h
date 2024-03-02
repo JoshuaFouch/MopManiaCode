@@ -85,9 +85,7 @@ class Broomba : public character
 {
 public:
 	//constuctor
-	Broomba();
 	Broomba(std::string name, int hp, int att, int def);
-
 	//set attack names
 	void set_AttackNames();
 	

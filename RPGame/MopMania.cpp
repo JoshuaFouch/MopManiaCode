@@ -45,15 +45,12 @@ void Start_Menu()
 	//play music (ambient music)
 	PlaySound(TEXT("void.wav"), NULL, SND_FILENAME | SND_ASYNC);
 
-	//for different text colors
-	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
 	Sdelay(3);
 	std::cout << "You wake up one day with no body... all you see is the void of darkness" << std::endl;
 	Sdelay(6);
 	std::cout << "You hear a voice calling in the distance:" << std::endl;
 	Sdelay(4);
-	SetConsoleTextAttribute(h, 6); //Janitorius (Tyler) is yellow text
+	color(6);	//Janitorius (Tyler) is yellow text
 	std::cout << "My dear soul,";
 	std::cout << " I am Janitorius, the custodian of Le Hospitale." << std::endl;
 	Sdelay(4);
@@ -68,11 +65,11 @@ void Start_Menu()
 	std::cout << "A life as a cleaning mop...";
 	Sdelay(4);
 	std::cout << " Will you accept this new life?";
-	SetConsoleTextAttribute(h, 7);
+	color(7);
 	std::cout << " type: [y/n]" << std::endl;
 	std::string choice;
 	std::cin >> choice;
-	SetConsoleTextAttribute(h, 6);
+	color(6);
 
 	if (choice == "y")
 	{
@@ -86,14 +83,14 @@ void Start_Menu()
 		std::cout << "Okay... time to DIE AGAIN..." << std::endl;
 		std::this_thread::sleep_for(std::chrono::seconds(6));
 		std::cout << "\033[2J\033[1;1H";
-		SetConsoleTextAttribute(h, 7);
+		color(6);
 
 		return Start_Menu();
 	}
 	std::cout << "Choose a host... I am sorry, I only have these cleaning supplies you can use..." << std::endl;
 	int x;
 
-	SetConsoleTextAttribute(h, 7);
+	color(7);
 	std::cout << "\n1. Broomba, the Explosive Custodian" << std::endl;
 	std::cout << "\tA high-energy soldier with a passion for cleaning up messes in a blast." << std::endl;
 	std::cout << "\tThis broombastic soldier can turn any cleaning session into a dazzling display of pyrotechnic prowess" << std::endl;
@@ -111,7 +108,7 @@ void Start_Menu()
 	std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
 	std::cin >> x;
 
-	SetConsoleTextAttribute(h, 6);
+	color(6);
 
 	//not finished
 	switch (x)
@@ -129,7 +126,7 @@ void Start_Menu()
 	//end music
 	PlaySound(0, 0, 0);
 	//end text color
-	SetConsoleTextAttribute(h, 7);
+	color(7);
 }
 void GameOver()
 {
@@ -142,23 +139,22 @@ void GameOver()
 }
 void BattleStats(character& c, enemy& e)
 {
-	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	clear();
 
 	//character stats
-	SetConsoleTextAttribute(h, 2);
+	color(2);
 	std::cout << "|-----[ " << c.get_name() << " ]-----| " << '\n';
 	std::cout << "|Level: " << c.get_lvl() << "\n";
 	std::cout << "|HP:" << c.get_hp() << "\n";
 	std::cout << "|-----------------|" << '\n';
 
 	//enemy stats
-	SetConsoleTextAttribute(h, 4);
+	color(4);
 	std::cout << "\t\t\t\t\t|-----[ " << e.get_name() << " ]-----| " << '\n';
 	std::cout << "\t\t\t\t\t|Level:" << e.get_lvl() << "\n";
 	std::cout << "\t\t\t\t\t|HP:" << e.get_hp() << "\n";
 	std::cout << "\t\t\t\t\t|----------------|" << '\n';
-	SetConsoleTextAttribute(h, 7);
+	color(7);
 }
 void Game_Tester_Menu()
 {
@@ -319,4 +315,110 @@ void Battle_Sequence(character& c, enemy& e)
 		MSdelay(3000);
 	}
 
+}
+void Boss_Battle(character& c, enemy& e)
+{
+	//plays battlemusic on loop
+	#pragma comment(lib, "winmm.lib")
+	PlaySound(TEXT("battlemusic.wav"), NULL, SND_FILENAME | SND_ASYNC);
+
+	int run = 0;	//if character wants to run away from battle
+	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
+	{
+
+		BattleStats(c, e);	//begins by display the stats
+		std::cout << "What would you like to do? " << std::endl;
+		std::cout << "\n1. " << c.get_aName1() << std::endl;
+		std::cout << "2. " << c.get_aName2() << std::endl;
+		std::cout << "3. " << c.get_aName3() << std::endl;
+		std::cout << "4. " << c.get_aName4() << std::endl;
+		std::cout << "5. Use Item" << std::endl;
+		std::cout << "6. Check Stats" << std::endl;
+		std::cout << "7. Attack Descriptions" << std::endl;
+		std::cout << "8. Run (coward lol)" << std::endl;
+		int choice;
+		std::cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			c.Attack1(c, e);	//character attacks
+			MSdelay(1500);
+			clear();
+			BattleStats(c, e);
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(1500);
+			clear();
+			break;
+		case 2:
+			c.Attack2(c, e);	//character attacks
+			MSdelay(1500);
+			clear();
+			BattleStats(c, e);
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(1500);
+			clear();
+			break;
+		case 3:
+			c.Attack3(c, e);	//character attacks
+			MSdelay(1500);
+			clear();
+			BattleStats(c, e);
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(1500);
+			clear();
+			break;
+		case 4:
+			c.Attack4(c, e);	//character attacks
+			MSdelay(1500);
+			clear();
+			BattleStats(c, e);
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(1500);
+			clear();
+			break;
+		case 5:
+			std::cout << "Will display inventory" << std::endl;
+			MSdelay(1500);
+			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			break;
+		case 6:
+			clear();
+			c.displayStats();
+			break;
+		case 7:
+			clear();
+			c.describeAttacks();
+			break;
+		case 8:
+			clear();
+			run = 1;
+			break;
+		default:
+			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
+			clear();
+			MSdelay(1500);
+			continue;
+		}
+	}
+
+	if (e.get_hp() <= 0)
+	{
+		e.death();
+		std::cout << "You WON " << std::endl;
+		c.expPt();
+		MSdelay(3000);
+	}
+	else if (c.get_hp() <= 0)
+	{
+		c.death();
+		GameOver();
+		std::cout << "YOU LOST LOSER, GOLD MINUS 3000" << std::endl;
+		MSdelay(3000);
+	}
+	else if (run == 1)
+	{
+		std::cout << "You ran..." << std::endl;
+		MSdelay(3000);
+	}
 }

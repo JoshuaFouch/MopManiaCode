@@ -1,10 +1,10 @@
 #include "character.h"
 #include "enemy.h"
-#include <Windows.h>
+#include "utility.h"
 
 //BASE CHARACTER DEFINITIONS
 
-character::character()
+character::character()  //default (not used)
 {
     this->name = "character";
     this->hp = 100;
@@ -145,10 +145,8 @@ void character::expPt()
 
 void character::displayStats()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-    std::cout << "\033[2J\033[1;1H"; //clear console
-    SetConsoleTextAttribute(h, 8);  //gray colored text
-    std::cout << "\033[2J\033[1;1H";    //clear console
+    clear(); //clear console
+    color(8);  //gray colored text
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
@@ -157,13 +155,11 @@ void character::displayStats()
     std::cout << "This character is etc...." << '\n';   //description
     std::cout << std::endl;
     system("pause");
-    SetConsoleTextAttribute(h, 7);
+    color(7);
 }
 void character::describeAttacks()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
-    SetConsoleTextAttribute(h, 8);  //gray colored text
+    color(8);  //gray colored text
     std::cout << aName1 << ":\n";
     std::cout << "\tThis attack does this" << std::endl;
     std::cout << aName2 << ":\n";
@@ -173,7 +169,8 @@ void character::describeAttacks()
     std::cout << aName4 << ":\n";
     std::cout << "\tThis attack does this" << std::endl;
     std::cout << std::endl;
-    SetConsoleTextAttribute(h, 7);
+    system("pause");
+    color(7);
 }
 void character::damaged(int oppAtt)
 {
@@ -212,7 +209,7 @@ void character::Inventory(character& c)
 }
 
 
-//BROOMBA DEFINITIONS
+/*BROOMBA DEFINITIONS*/
 
 //constructor
 Broomba::Broomba(std::string name, int hp, int att, int def) : character(name, hp, att, def)
@@ -229,10 +226,8 @@ void Broomba::set_AttackNames()
 
 void Broomba::displayStats()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-    std::cout << "\033[2J\033[1;1H"; //clear console
-    SetConsoleTextAttribute(h, 8);  //gray colored text
-    std::cout << "\033[2J\033[1;1H";    //clear console
+    clear(); //clear console
+    color(8);  //gray colored text
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
@@ -243,13 +238,12 @@ void Broomba::displayStats()
     std::cout << "Broomba roams Mop-topia, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
     std::cout << std::endl;
     system("pause");
-    SetConsoleTextAttribute(h, 7);
+    color(8);
 }
 void Broomba::describeAttacks()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    SetConsoleTextAttribute(h, 8);  //gray colored text
+    color(8);  //gray colored text
     std::cout << get_aName1() << ":\n";
     std::cout << "\t" << std::endl;
     std::cout << get_aName2() << ":\n";
@@ -259,26 +253,32 @@ void Broomba::describeAttacks()
     std::cout << get_aName4() << ":\n";
     std::cout << "\t" << std::endl;
     std::cout << std::endl;
-    SetConsoleTextAttribute(h, 7);
+    system("pause");
+    color(7);
 }
 
 
 //abilities
-void Broomba::Attack1(character& c, enemy& e)
+
+//Vacuum Vortex
+void Broomba::Attack1(character& c, enemy& e) 
 {
     std::cout << "Vacuum Vortex!" << std::endl;
     e.damaged(c.get_att());
-}
-void Broomba::Attack2(character& c, enemy& e)
+} 
+//Turbo Takedown
+void Broomba::Attack2(character& c, enemy& e)   //Turbo Takedown
 {
     std::cout << "Turbo Takedown!" << std::endl;
     e.damaged(c.get_att());
 }
-void Broomba::Attack3(character& c, enemy& e)
+//Debris Dash
+void Broomba::Attack3(character& c, enemy& e) 
 {
     std::cout << "Debris Dash!" << std::endl;
     e.damaged(c.get_att());
 }
+//Dust Buster Blitz
 void Broomba::Attack4(character& c, enemy& e)
 {
     std::cout << "Dust Buster Blitz!" << std::endl;
@@ -287,16 +287,11 @@ void Broomba::Attack4(character& c, enemy& e)
 
 
 
-//SWIFTERJETWET DEFINITIONS
+/*SWIFTERJETWET DEFINITIONS*/
 
 //constructor
-SwifterJetWet::SwifterJetWet(std::string name, int hp, int att, int def)
+SwifterJetWet::SwifterJetWet(std::string name, int hp, int att, int def) : character(name, hp, att, def)
 {
-    this->name = name;
-    this->hp = hp;
-    this->maxHp = hp;
-    this->att = att;
-    this->def = def;
     set_AttackNames();
 }
 void SwifterJetWet::set_AttackNames()
@@ -309,10 +304,9 @@ void SwifterJetWet::set_AttackNames()
 
 void SwifterJetWet::displayStats()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-    std::cout << "\033[2J\033[1;1H"; //clear console
-    SetConsoleTextAttribute(h, 8);  //gray colored text
-    std::cout << "\033[2J\033[1;1H";    //clear console
+    clear(); //clear console
+    color(8); //gray colored text
+
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
@@ -324,13 +318,11 @@ void SwifterJetWet::displayStats()
     std::cout << "\tgrime that threaten the land." << std::endl;
     std::cout << std::endl;
     system("pause");
-    SetConsoleTextAttribute(h, 7);
+    color(7);
 }
 void SwifterJetWet::describeAttacks()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
-    SetConsoleTextAttribute(h, 8);  //gray colored text
+    color(8);  //gray colored text
     std::cout << get_aName1() << ":\n";
     std::cout << "\t" << std::endl;
     std::cout << get_aName2() << ":\n";
@@ -340,25 +332,31 @@ void SwifterJetWet::describeAttacks()
     std::cout << get_aName4() << ":\n";
     std::cout << "\t" << std::endl;
     std::cout << std::endl;
-    SetConsoleTextAttribute(h, 7);
+    system("pause");
+    color(7);
 }
 
 //abilities
+
+//Mop'n Drop
 void SwifterJetWet::Attack1(character& c, enemy& e)
 {
     std::cout << "Mop'n Drop!" << std::endl;
     e.damaged(c.get_att());
 }
+//Jittery Jetscream
 void SwifterJetWet::Attack2(character& c, enemy& e)
 {
     std::cout << "Jittery Jetscream!" << std::endl;
     e.damaged(c.get_att());
 }
+//Foam Frenzy
 void SwifterJetWet::Attack3(character& c, enemy& e)
 {
     std::cout << "Foam Frenzy!" << std::endl;
     e.damaged(c.get_att());
 }
+//Scrubbing Surge
 void SwifterJetWet::Attack4(character& c, enemy& e)
 {
     std::cout << "Scrubbing Surge!" << std::endl;
@@ -366,19 +364,13 @@ void SwifterJetWet::Attack4(character& c, enemy& e)
 }
 
 
-//BYSONV8 DEFINITIONS
+/*BYSONV8 DEFINITIONS*/
 
 //constructor
-BysonV8::BysonV8(std::string name, int hp, int att, int def)
+BysonV8::BysonV8(std::string name, int hp, int att, int def) : character(name, hp, att, def)
 {
-    this->name = name;
-    this->hp = hp;
-    this->maxHp = hp;
-    this->att = att;
-    this->def = def;
     set_AttackNames();
 }
-
 void BysonV8::set_AttackNames()
 {
     this->aName1 = "Filth Flurry";
@@ -389,9 +381,8 @@ void BysonV8::set_AttackNames()
 
 void BysonV8::displayStats()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-    std::cout << "\033[2J\033[1;1H"; //clear console
-    SetConsoleTextAttribute(h, 8);  //gray colored text
+    clear(); //clear console
+    color(8);  //gray colored text
     std::cout << "\033[2J\033[1;1H";    //clear console
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
@@ -403,13 +394,11 @@ void BysonV8::displayStats()
     std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
     std::cout << std::endl;
     system("pause");
-    SetConsoleTextAttribute(h, 7);
+    color(7);
 }
 void BysonV8::describeAttacks()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
-    SetConsoleTextAttribute(h, 8);  //gray colored text
+    color(8);  //gray colored text
     std::cout << get_aName1() << ":\n";
     std::cout << "\t" << std::endl;
     std::cout << get_aName2() << ":\n";
@@ -419,25 +408,31 @@ void BysonV8::describeAttacks()
     std::cout << get_aName4() << ":\n";
     std::cout << "\t" << std::endl;
     std::cout << std::endl;
-    SetConsoleTextAttribute(h, 7);
+    system("pause");
+    color(7);
 }
 
 //abilities
+
+//Filth Flurry
 void BysonV8::Attack1(character& c, enemy& e)
 {
     std::cout << "Filth Flurry!" << std::endl;
     e.damaged(c.get_att());
 }
+//Turbo Tornado
 void BysonV8::Attack2(character& c, enemy& e)
 {
     std::cout << "Turbo Tornado!" << std::endl;
     e.damaged(c.get_att());
 }
+//Partical Pulse
 void BysonV8::Attack3(character& c, enemy& e)
 {
     std::cout << "Partical Pulse!" << std::endl;
     e.damaged(c.get_att());
 }
+//Dust Storm Surge
 void BysonV8::Attack4(character& c, enemy& e)
 {
     std::cout << "Dust Storm Surge!" << std::endl;
