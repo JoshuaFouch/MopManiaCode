@@ -23,6 +23,9 @@
     <Filter Include="Utility Functions">
       <UniqueIdentifier>{b42d8f32-a4fe-429c-91cf-d36dd3d66c82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NPC Files">
+      <UniqueIdentifier>{a4fc220a-e885-44f2-9fb3-4239f0b40815}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
@@ -55,11 +58,14 @@
     <ClInclude Include="GraphMap.h">
       <Filter>GameMap Files</Filter>
     </ClInclude>
-    <ClInclude Include="inventory.h">
-      <Filter>Inventory Files</Filter>
-    </ClInclude>
     <ClInclude Include="utility.h">
       <Filter>Utility Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="npc.h">
+      <Filter>NPC Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>Inventory Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -96,11 +102,11 @@
     <ClCompile Include="enemy.cpp">
       <Filter>Enemy Files</Filter>
     </ClCompile>
-    <ClCompile Include="inventory.cpp">
-      <Filter>Inventory Files</Filter>
-    </ClCompile>
     <ClCompile Include="utility.cpp">
       <Filter>Utility Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="npc.cpp">
+      <Filter>NPC Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

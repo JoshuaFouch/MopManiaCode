@@ -136,6 +136,7 @@
     <ClInclude Include="Level2.h" />
     <ClInclude Include="Level3.h" />
     <ClInclude Include="Level4.h" />
+    <ClInclude Include="npc.h" />
     <ClInclude Include="SqueeGeeCity.h" />
     <ClInclude Include="utility.h" />
     <ClInclude Include="VacuumVille.h" />
@@ -144,13 +145,13 @@
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="FinalLevel.cpp" />
     <ClCompile Include="GraphMap.cpp" />
-    <ClCompile Include="inventory.cpp" />
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="Level2.cpp" />
     <ClCompile Include="Level3.cpp" />
     <ClCompile Include="Level4.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
+    <ClCompile Include="npc.cpp" />
     <ClCompile Include="SqueeGeeCity.cpp" />
     <ClCompile Include="utility.cpp" />
     <ClCompile Include="VacuumVille.cpp" />

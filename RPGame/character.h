@@ -6,7 +6,7 @@
 
 //forward declaration
 class enemy;
-class inventory;
+class NPC;
 
 //BASE CHARACTER
 class character
