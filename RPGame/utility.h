@@ -12,5 +12,4 @@ void MSdelay(int n);	//delays the next output of n amount of milliseconds
 void Sdelay(int n);	//delays the next output of n amount of seconds
 void color(int n);	//change the color
 
-
 #endif

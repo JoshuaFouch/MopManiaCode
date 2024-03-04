@@ -1,5 +1,5 @@
-#ifndef NPC
-#define NPC
+#ifndef N_PC
+#define N_PC
 
 #include <iostream>
 #include <string>
@@ -12,9 +12,10 @@ class NPC
 {
 public:
 	//functions
+	NPC();
 	NPC(std::string name);
 	std::string getName();
-	virtual void get_dialogue();
+	virtual void dialogue(character& c);
 
 private:
 	std::string name;

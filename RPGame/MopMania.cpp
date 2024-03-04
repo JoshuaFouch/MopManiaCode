@@ -11,7 +11,7 @@
 
 
 //global function definitions
-void Start_Menu();	//beginning of the game
+int Start_Menu();	//beginning of the game
 void Game_Tester_Menu();	//general form of our menus, probably going to be our pause menu
 void Pause_Menu();	//pauses game to show menu
 void Battle_Sequence(character& c, enemy& e);	//in-game battle
@@ -22,7 +22,11 @@ void BattleStats(character& c, enemy& e);	//displays stats of a character and en
 /*the game*/
 int main()
 {
-	//Start_Menu();
+	/*will contain a while loop with the bool "EndGame" (if true, kills while loop, if false, keep going). 
+	Also, another bool "QuitGame" which checks if user wants to quitgame, if quitgame is true, the whole code will end
+	and no end credits will be displayed*/
+
+	Start_Menu();
 
 	Broomba b("Broomba", 100, 15, 30);
 	//SwifterJetWet a("Jet", 100, 15, 20);
@@ -30,16 +34,16 @@ int main()
 
 	enemy bob("bob", 1);
 
-	Battle_Sequence(c, bob);
+	//Battle_Sequence(c, bob);
 
-	bob.displayStats();
+	//bob.displayStats();
 	
 
 	return 0;
 }
 
 //global function definitions
-void Start_Menu()
+int Start_Menu()
 {
 	#pragma comment(lib, "winmm.lib")
 	//play music (ambient music)
@@ -57,9 +61,9 @@ void Start_Menu()
 	std::cout << "You seem to have lost all your memory from that day." << std::endl;
 	Sdelay(4);
 	std::cout << "You died...";
+	Sdelay(4);
+	std::cout << " Unfortunate. " << std::endl;
 	Sdelay(3);
-	std::cout << " You unfortunately bit your tongue too hard until your legs began to fall off" << std::endl;
-	Sdelay(5);
 	std::cout << "\nWell anyways, you failed in your previous life so now I will offer you a new life" << std::endl;
 	Sdelay(3);
 	std::cout << "A life as a cleaning mop...";
@@ -74,66 +78,105 @@ void Start_Menu()
 	if (choice == "y")
 	{
 		std::cout << "\nAs you should..." << std::endl;
-		std::this_thread::sleep_for(std::chrono::seconds(4));
+		Sdelay(4);
 	}
 	else
 	{
 		PlaySound(0, 0, 0);
-		std::this_thread::sleep_for(std::chrono::seconds(5));
-		std::cout << "Okay... time to DIE AGAIN..." << std::endl;
-		std::this_thread::sleep_for(std::chrono::seconds(6));
-		std::cout << "\033[2J\033[1;1H";
-		color(6);
-
-		return Start_Menu();
+		Sdelay(5);
+		std::cout << "Okay... goodbye..." << std::endl;
+		Sdelay(4);
+		clear();
+		color(7);
+		return 0;
 	}
-	std::cout << "Choose a host... I am sorry, I only have these cleaning supplies you can use..." << std::endl;
-	int x;
 
-	color(7);
-	std::cout << "\n1. Broomba, the Explosive Custodian" << std::endl;
-	std::cout << "\tA high-energy soldier with a passion for cleaning up messes in a blast." << std::endl;
-	std::cout << "\tThis broombastic soldier can turn any cleaning session into a dazzling display of pyrotechnic prowess" << std::endl;
-	std::cout << "\tBroomba roams Mop-topia, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
-
-	std::cout << "\n2. Swifter JetWet, the Splashy Sentinel" << std::endl;
-	std::cout << "\tSwifter JetWet takes cleanliness to new depths! JetWet gained its aquatic powers by the ancient water sage, " << std::endl;
-	std::cout << "\tMrs. Clean. Now, armed with the ability to control water, JetWet jets across Mop-topia," << std::endl;
-	std::cout << "\tleaving a trail of cleanliness and refreshing splashes. JetWet seeks to mop away the dirt and" << std::endl;
-	std::cout << "\tgrime that threaten the land." << std::endl;
-
-	std::cout << "\n3. Byson V8, the cyclonic custodian" << std::endl;
-	std::cout << "\tCrafted, in the legendary Byson Forge, the BysonV8 harnessed the power of air origins, becoming a vacuum marvel." << std::endl;
-	std::cout << "\tByson V8 roams Mop-topia, a swirling force that sucks up dirt and leaves behind a breath of pristine air" << std::endl;
-	std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
-	std::cin >> x;
-
-	color(6);
-
-	//not finished
-	switch (x)
+	int charChoice;
+	bool kill = false;
+	while (kill == false)
 	{
-	case 1:
-		std::cout << "You have chosen well, the Broomba will serve you well on your journey" << std::endl;
-	case 2:
-		std::cout << "You have chosen well, the Swifter JetWet will serve you well on your journey" << std::endl;
-	case 3:
-		std::cout << "You have chosen well, the Byson V8 will serve you well on your journey" << std::endl;
-	default:
-		std::cout << "Try again" << std::endl;
+		std::cout << "Choose a host... I am sorry, I only have these cleaning supplies you can use..." << std::endl;
+		int x;
+
+		color(7);
+		std::cout << "\n1. Broomba, the Explosive Custodian" << std::endl;
+		std::cout << "\tA high-energy soldier with a passion for cleaning up messes in a blast." << std::endl;
+		std::cout << "\tThis broombastic soldier can turn any cleaning session into a dazzling display of pyrotechnic prowess" << std::endl;
+		std::cout << "\tBroomba roams Mop-topia, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
+
+		std::cout << "\n2. Swifter JetWet, the Splashy Sentinel" << std::endl;
+		std::cout << "\tSwifter JetWet takes cleanliness to new depths! JetWet gained its aquatic powers by the ancient water sage, " << std::endl;
+		std::cout << "\tMrs. Clean. Now, armed with the ability to control water, JetWet jets across Mop-topia," << std::endl;
+		std::cout << "\tleaving a trail of cleanliness and refreshing splashes. JetWet seeks to mop away the dirt and" << std::endl;
+		std::cout << "\tgrime that threaten the land." << std::endl;
+
+		std::cout << "\n3. Byson V8, the cyclonic custodian" << std::endl;
+		std::cout << "\tCrafted, in the legendary Byson Forge, the BysonV8 harnessed the power of air origins, becoming a vacuum marvel." << std::endl;
+		std::cout << "\tByson V8 roams Mop-topia, a swirling force that sucks up dirt and leaves behind a breath of pristine air" << std::endl;
+		std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
+		color(6);
+		std::cin >> x;
+
+		//not finished
+		switch (x)
+		{
+		case 1:
+			clear();
+			std::cout << "You have chosen well, the Broomba will serve you well on your journey" << std::endl;
+			charChoice = 1;
+			Sdelay(3);
+			std::cout << "My dear Broomba, go and defeat all the trash and grime off our precious land. " << std::endl;
+			std::cout << "Defeat all our enemies, and purge the world from the sludge and filth \n to restore it as it once was, " << std::endl;
+			clear();
+			color(5);
+			std::cout << " The World of MOP MANIA" << std::endl;
+			color(7);
+			kill = true;
+			break;
+		case 2:
+			std::cout << "You have chosen well, the Swifter JetWet will serve you well on your journey" << std::endl;
+			charChoice = 2;
+			Sdelay(3);
+			std::cout << "My dear JetWet, go and defeat all the trash and grime off our precious land. " << std::endl;
+			std::cout << "Defeat all our enemies, and purge the world from the sludge and filth \n to restore it as it once was, " << std::endl;
+			clear();
+			color(5);
+			std::cout << " The World of MOP MANIA" << std::endl;
+			color(7);
+			kill = true;
+			break;
+		case 3:
+			clear();
+			std::cout << "You have chosen well, the Byson V8 will serve you well on your journey" << std::endl;
+			charChoice = 3;
+			Sdelay(3);
+			std::cout << "My dear Byson, go and defeat all the trash and grime off our precious land. " << std::endl;
+			std::cout << "Defeat all our enemies, and purge the world from the sludge and filth \n to restore it as it once was, " << std::endl;
+			clear();
+			color(5);
+			std::cout << " The World of MOP MANIA" << std::endl;
+			color(7);
+			kill = true;
+			break;
+		default:
+			clear();
+			std::cout << "Try again" << std::endl;
+			continue;
+		}
 	}
 
 	//end music
 	PlaySound(0, 0, 0);
 	//end text color
 	color(7);
+	return charChoice;
 }
 void GameOver()
 {
 	PlaySound(TEXT("dies-irae-chant.wav"), NULL, SND_FILENAME | SND_ASYNC);
-	std::cout << "\033[2J\033[1;1H";
+	clear();
 	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(5));
+	Sdelay(5);
 
 	PlaySound(0, 0, 0);
 }
