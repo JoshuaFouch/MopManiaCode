@@ -16,7 +16,6 @@ public:
 	NPC(std::string name);
 	std::string getName();
 	virtual void dialogue(character& c);
-
 private:
 	std::string name;
 };

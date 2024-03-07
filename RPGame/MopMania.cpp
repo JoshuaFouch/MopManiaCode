@@ -97,7 +97,6 @@ int Start_Menu()
 	{
 		std::cout << "Choose a host... I am sorry, I only have these cleaning supplies you can use..." << std::endl;
 		int x;
-
 		color(7);
 		std::cout << "\n1. Broomba, the Explosive Custodian" << std::endl;
 		std::cout << "\tA high-energy soldier with a passion for cleaning up messes in a blast." << std::endl;
@@ -117,20 +116,25 @@ int Start_Menu()
 		color(6);
 		std::cin >> x;
 
-		//not finished
 		switch (x)
 		{
 		case 1:
+			//stop ambient music
+			PlaySound(0, 0, 0);
+			//play uplifting music
+			PlaySound(TEXT("GoDown.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			clear();
 			std::cout << "You have chosen well, the Broomba will serve you well on your journey" << std::endl;
-			charChoice = 1;
 			Sdelay(3);
 			std::cout << "My dear Broomba, go and defeat all the trash and grime off our precious land. " << std::endl;
+			Sdelay(4);
 			std::cout << "Defeat all our enemies, and purge the world from the sludge and filth \n to restore it as it once was, " << std::endl;
+			Sdelay(3);
 			clear();
 			color(5);
-			std::cout << " The World of MOP MANIA" << std::endl;
+			std::cout << " \t\t\n\nThe World of MOP MANIA" << std::endl;
 			color(7);
+			charChoice = 1;
 			kill = true;
 			break;
 		case 2:
