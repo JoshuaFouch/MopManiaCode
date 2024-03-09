@@ -28,6 +28,8 @@ void NPC::dialogue(character& c)
 
 //Duster NPC
 
+Duster::Duster(std::string name) : NPC(name) {}
+
 void Duster::dialogue(character& c)
 {
 	color(3); //the color for an NPC's text will be "aqua" (check utility.cpp for more colors)
@@ -52,8 +54,9 @@ void Duster::dialogue(character& c)
 	}
 	else
 	{
+		color(3);
 		std::cout << this->getName() << ": Oh well... TAKE IT, YOU WON'T SURVIVE OUT THERE" << std::endl;
-		//c.addPotion or something
+		c.acq_healUp(); //this should hopefully add a potion to a character
 		color(7);
 		std::cout << "You have obtained a potion against your own will!" << std::endl;
 	}

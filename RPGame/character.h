@@ -31,10 +31,19 @@ public:
 	int get_winNum();
 	bool death();
 	bool alive();
+
+	//for items
 	int get_healUp();
 	int get_attUp();
 	int get_defUp();
 	int get_deadRat();
+	void acq_healUp();
+	void acq_attUp();
+	void acq_defUp();
+	void acq_deadRat();
+	void use_healUp();
+	void use_attUp();
+	void use_defUp();
 
 	//attack getters
 	std::string get_aName1();
@@ -43,7 +52,7 @@ public:
 	std::string get_aName4();
 	virtual void set_AttackNames();
 
-	//we will use these functions every time you defeat an enemy to level up
+	//level up
 	void increaseHP(int exp);
 	void increaseAtt(int exp);
 	void increaseDef(int exp);
@@ -61,13 +70,6 @@ public:
 
 	void Inventory();
 
-	//public members
-	//attack names
-	std::string aName1;
-	std::string aName2;
-	std::string aName3;
-	std::string aName4;
-
 protected:
 
 	//private members
@@ -84,6 +86,12 @@ protected:
 	int attUp = 0;	//counter for how many attack up potions a character has
 	int defUp = 0;	//counter for how many defense up potions a character has
 	int deadRat = 0; //counter for how many dead rats the character has (its a useless item)
+
+	//attack names
+	std::string aName1;
+	std::string aName2;
+	std::string aName3;
+	std::string aName4;
 };
 
 //DERIVED CHARACTER BROOMBA

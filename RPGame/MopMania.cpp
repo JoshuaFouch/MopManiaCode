@@ -7,6 +7,7 @@
 #include <Windows.h>
 #include <stdlib.h>
 #include "utility.h"
+#include "npc.h"
 
 
 
@@ -26,18 +27,17 @@ int main()
 	Also, another bool "QuitGame" which checks if user wants to quitgame, if quitgame is true, the whole code will end
 	and no end credits will be displayed*/
 
-	//Start_Menu();
-
 	Broomba b("Broomba", 100, 15, 30);
-	//SwifterJetWet a("Jet", 100, 15, 20);
+	SwifterJetWet a("Jet", 100, 15, 20);
+	BysonV8 v("Dude", 200, 10, 15);
 	character c("character", 100, 20, 6);
-
 	enemy bob("bob", 1);
+	Duster d("Duster");
 
-	Battle_Sequence(b, bob);
+	//Start_Menu();
+	//Battle_Sequence(v,bob);
+	d.dialogue(b);
 
-	//bob.displayStats();
-	
 
 	return 0;
 }

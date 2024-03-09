@@ -22,7 +22,6 @@ character::character(std::string name, int hp, int att, int def)
     this->def = def;
     set_AttackNames();
 }
-
 std::string character::get_name()
 {
     return name;
@@ -67,6 +66,8 @@ void character::set_def(int def)
     this->def = def;
 
 }
+
+//exp
 int character::get_lvl()
 {
     return lvl;
@@ -75,6 +76,8 @@ int character::get_winNum()
 {
     return winNum;
 }
+
+//kills character
 bool character::death() 
 {
     this->isDead = true;
@@ -85,6 +88,8 @@ bool character::alive()
     this->isDead = false;
     return isDead;
 }
+
+//for items
 int character::get_healUp()
 {
     return healUp;
@@ -100,6 +105,27 @@ int character::get_defUp()
 int character::get_deadRat()
 {
     return deadRat;
+}
+void character::acq_healUp()
+{
+    healUp++;
+}
+void character::acq_attUp()
+{
+    attUp++;
+}
+void character::acq_defUp()
+{
+    defUp++;
+}
+void character::acq_deadRat()
+{
+    deadRat++;
+}
+void character::use_healUp()
+{
+    hp += 20;
+    healUp--;
 }
 
 //attack getters
@@ -127,6 +153,7 @@ void character::set_AttackNames()
     aName4 = "Dust Destroy";
 }
 
+//level up
 void character::increaseHP(int exp)
 {
     hp += exp;
@@ -158,6 +185,7 @@ void character::expPt()
         std::cout << "You have to win " << (ExpReq - winNum) << " battle(s) until you level up again!" << std::endl;
     }
 }
+
 
 void character::displayStats()
 {
@@ -198,6 +226,7 @@ void character::damaged(int oppAtt)
     //simulate character being damaged with a console output message.
 }
 
+//abilities
 void character::Attack1(enemy& e)
 {
     std::cout << "BONK!!" << std::endl;
@@ -218,6 +247,8 @@ void character::Attack4(enemy& e)
     std::cout << "EGHAEGOISEVLAEVN!!" << std::endl;
     e.damaged(this->att);
 }
+
+
 void character::Inventory()
 {
     color(8);

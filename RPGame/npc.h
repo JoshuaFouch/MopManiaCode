@@ -26,7 +26,8 @@ protected:
 class Duster : public NPC
 {
 public:
-	//Duster(std::string name);
+
+	Duster(std::string name);
 
 	void dialogue(character& c);
 };
