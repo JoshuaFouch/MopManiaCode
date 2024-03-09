@@ -17,9 +17,6 @@
     <Filter Include="MusicStuff">
       <UniqueIdentifier>{00678854-65e3-477e-80f8-7d91a5b92194}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Inventory Files">
-      <UniqueIdentifier>{b3c8d12e-138d-4d4c-a3d7-d3c0d712fe1c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utility Functions">
       <UniqueIdentifier>{b42d8f32-a4fe-429c-91cf-d36dd3d66c82}</UniqueIdentifier>
     </Filter>
@@ -63,9 +60,6 @@
     </ClInclude>
     <ClInclude Include="npc.h">
       <Filter>NPC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inventory.h">
-      <Filter>Inventory Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

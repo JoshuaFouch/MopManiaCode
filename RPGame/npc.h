@@ -16,9 +16,19 @@ public:
 	NPC(std::string name);
 	std::string getName();
 	virtual void dialogue(character& c);
-private:
+protected:
 	std::string name;
 };
 
+
+//NPC 1
+
+class Duster : public NPC
+{
+public:
+	//Duster(std::string name);
+
+	void dialogue(character& c);
+};
 
 #endif

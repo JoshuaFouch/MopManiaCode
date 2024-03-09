@@ -31,6 +31,10 @@ public:
 	int get_winNum();
 	bool death();
 	bool alive();
+	int get_healUp();
+	int get_attUp();
+	int get_defUp();
+	int get_deadRat();
 
 	//attack getters
 	std::string get_aName1();
@@ -50,12 +54,12 @@ public:
 	void damaged(int oppAtt);
 
 	//abilities
-	virtual void Attack1(character& c, enemy& e);
-	virtual void Attack2(character& c, enemy& e);
-	virtual void Attack3(character& c, enemy& e);
-	virtual void Attack4(character& c, enemy& e);
+	virtual void Attack1(enemy& e);
+	virtual void Attack2(enemy& e);
+	virtual void Attack3(enemy& e);
+	virtual void Attack4(enemy& e);
 
-	void Inventory(character& c);
+	void Inventory();
 
 	//public members
 	//attack names
@@ -76,8 +80,10 @@ protected:
 	int lvl = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
 	bool isDead = false; //is the character dead or alive?
-	
-	//class inventory (linked list?)
+	int healUp = 0;	//counter for how many potions a character has
+	int attUp = 0;	//counter for how many attack up potions a character has
+	int defUp = 0;	//counter for how many defense up potions a character has
+	int deadRat = 0; //counter for how many dead rats the character has (its a useless item)
 };
 
 //DERIVED CHARACTER BROOMBA
@@ -94,10 +100,10 @@ public:
 	void describeAttacks();
 
 	//abilities
-	void Attack1(character& c, enemy& e);
-	void Attack2(character& c, enemy& e);
-	void Attack3(character& c, enemy& e);
-	void Attack4(character& c, enemy& e);
+	void Attack1(enemy& e);
+	void Attack2(enemy& e);
+	void Attack3(enemy& e);
+	void Attack4(enemy& e);
 };
 
 //DERIVED CHARACTER SWIFTERJETWET
@@ -115,10 +121,10 @@ public:
 	void describeAttacks();
 
 	//abilities
-	void Attack1(character& c, enemy& e);
-	void Attack2(character& c, enemy& e);
-	void Attack3(character& c, enemy& e);
-	void Attack4(character& c, enemy& e);
+	void Attack1(enemy& e);
+	void Attack2(enemy& e);
+	void Attack3(enemy& e);
+	void Attack4(enemy& e);
 };
 
 //DERIVED CHARACTER BYSONV8
@@ -136,10 +142,10 @@ public:
 	void describeAttacks();
 
 	//abilities
-	void Attack1(character& c, enemy& e);
-	void Attack2(character& c, enemy& e);
-	void Attack3(character& c, enemy& e);
-	void Attack4(character& c, enemy& e);
+	void Attack1(enemy& e);
+	void Attack2(enemy& e);
+	void Attack3(enemy& e);
+	void Attack4(enemy& e);
 };
 
 #endif 

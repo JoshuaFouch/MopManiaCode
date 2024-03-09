@@ -25,19 +25,19 @@ public:
 	void increaseAtt(int exp);
 	void increaseDef(int exp);
 
-	void nextMove(enemy& e, character& c, int random);
+	void nextMove(character& c, int random);
 	int RandomNum();
 	void damaged(int oppAtt);
 
 	void displayStats();
 
-	virtual void Attack1(enemy& e, character& c);
-	virtual void Attack2(enemy& e, character& c);
-	virtual void Attack3(enemy& e, character& c);
-	virtual void Attack4(enemy& e, character& c);
-	virtual void Heal(enemy& e, character& c);
-	virtual void Fortify(enemy& e, character& c);
-	virtual void Enrage(enemy& e, character& c);
+	virtual void Attack1(character& c);
+	virtual void Attack2(character& c);
+	virtual void Attack3(character& c);
+	virtual void Attack4(character& c);
+	virtual void Heal();
+	virtual void Fortify();
+	virtual void Enrage();
 
 private:
 

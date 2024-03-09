@@ -26,7 +26,7 @@ int main()
 	Also, another bool "QuitGame" which checks if user wants to quitgame, if quitgame is true, the whole code will end
 	and no end credits will be displayed*/
 
-	Start_Menu();
+	//Start_Menu();
 
 	Broomba b("Broomba", 100, 15, 30);
 	//SwifterJetWet a("Jet", 100, 15, 20);
@@ -34,7 +34,7 @@ int main()
 
 	enemy bob("bob", 1);
 
-	//Battle_Sequence(c, bob);
+	Battle_Sequence(b, bob);
 
 	//bob.displayStats();
 	
@@ -282,45 +282,46 @@ void Battle_Sequence(character& c, enemy& e)
 		switch (choice)
 		{
 		case 1:
-			c.Attack1(c, e);	//character attacks
+			c.Attack1(e);	//character attacks
 			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 2:
-			c.Attack2(c, e);	//character attacks
+			c.Attack2(e);	//character attacks
 			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 3:
-			c.Attack3(c, e);	//character attacks
+			c.Attack3(e);	//character attacks
 			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 4:
-			c.Attack4(c, e);	//character attacks
+			c.Attack4(e);	//character attacks
 			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 5:
-			std::cout << "Will display inventory" << std::endl;
+			clear();
+			c.Inventory();
 			MSdelay(1500);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 6:
 			clear();
@@ -358,10 +359,9 @@ void Battle_Sequence(character& c, enemy& e)
 	}
 	else if (run == 1)
 	{
-		std::cout << "You ran..." << std::endl;
+		std::cout << "You ran... Imagine being a coward..." << std::endl;
 		MSdelay(3000);
 	}
-
 }
 void Boss_Battle(character& c, enemy& e)
 {
@@ -389,45 +389,45 @@ void Boss_Battle(character& c, enemy& e)
 		switch (choice)
 		{
 		case 1:
-			c.Attack1(c, e);	//character attacks
+			c.Attack1(e);	//character attacks
 			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 2:
-			c.Attack2(c, e);	//character attacks
+			c.Attack2(e);	//character attacks
 			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 3:
-			c.Attack3(c, e);	//character attacks
+			c.Attack3(e);	//character attacks
 			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 4:
-			c.Attack4(c, e);	//character attacks
+			c.Attack4(e);	//character attacks
 			MSdelay(1500);
 			clear();
 			BattleStats(c, e);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			MSdelay(1500);
 			clear();
 			break;
 		case 5:
 			std::cout << "Will display inventory" << std::endl;
 			MSdelay(1500);
-			e.nextMove(e, c, e.RandomNum());	//its the enemies turn to attack
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
 			break;
 		case 6:
 			clear();
@@ -465,7 +465,7 @@ void Boss_Battle(character& c, enemy& e)
 	}
 	else if (run == 1)
 	{
-		std::cout << "You ran..." << std::endl;
+		std::cout << "You ran... Imagine being a coward..." << std::endl;
 		MSdelay(3000);
 	}
 }

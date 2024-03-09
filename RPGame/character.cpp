@@ -85,6 +85,22 @@ bool character::alive()
     this->isDead = false;
     return isDead;
 }
+int character::get_healUp()
+{
+    return healUp;
+}
+int character::get_attUp()
+{
+    return attUp;
+}
+int character::get_defUp()
+{
+    return defUp;
+}
+int character::get_deadRat()
+{
+    return deadRat;
+}
 
 //attack getters
 std::string character::get_aName1()
@@ -182,30 +198,36 @@ void character::damaged(int oppAtt)
     //simulate character being damaged with a console output message.
 }
 
-void character::Attack1(character& c, enemy& e)
+void character::Attack1(enemy& e)
 {
     std::cout << "BONK!!" << std::endl;
-    e.damaged(c.att);
+    e.damaged(this->att);
 }
-void character::Attack2(character& c, enemy& e)
+void character::Attack2(enemy& e)
 {
     std::cout << "SQUIRT!!" << std::endl;
-    e.damaged(c.att);
+    e.damaged(this->att);
 }
-void character::Attack3(character& c, enemy& e)
+void character::Attack3(enemy& e)
 {
     std::cout << "SPLOOSH!!" << std::endl;
-    e.damaged(c.att);
+    e.damaged(this->att);
 }
-void character::Attack4(character& c, enemy& e)
+void character::Attack4(enemy& e)
 {
     std::cout << "EGHAEGOISEVLAEVN!!" << std::endl;
-    e.damaged(c.att);
+    e.damaged(this->att);
 }
-void character::Inventory(character& c)
+void character::Inventory()
 {
-    std::cout << "this is for checking the inventory, and we will use a linked list" << std::endl;
-    
+    color(8);
+    std::cout << "Potions: " << this->get_healUp() << std::endl;
+    std::cout << "Attack Ups: " << this->get_attUp() << std::endl;
+    std::cout << "Defense Ups: " << this->get_defUp() << std::endl;
+    std::cout << "Dead Rats: " << this->get_deadRat() << std::endl;
+    //will contain a switch to choose which item to use and then use that item
+    system("pause");
+    color(7);
 }
 
 
@@ -261,28 +283,28 @@ void Broomba::describeAttacks()
 //abilities
 
 //Vacuum Vortex
-void Broomba::Attack1(character& c, enemy& e) 
+void Broomba::Attack1(enemy& e) 
 {
     std::cout << "Vacuum Vortex!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 } 
 //Turbo Takedown
-void Broomba::Attack2(character& c, enemy& e)   //Turbo Takedown
+void Broomba::Attack2(enemy& e)   //Turbo Takedown
 {
     std::cout << "Turbo Takedown!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 //Debris Dash
-void Broomba::Attack3(character& c, enemy& e) 
+void Broomba::Attack3(enemy& e) 
 {
     std::cout << "Debris Dash!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 //Dust Buster Blitz
-void Broomba::Attack4(character& c, enemy& e)
+void Broomba::Attack4(enemy& e)
 {
     std::cout << "Dust Buster Blitz!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 
 
@@ -339,28 +361,28 @@ void SwifterJetWet::describeAttacks()
 //abilities
 
 //Mop'n Drop
-void SwifterJetWet::Attack1(character& c, enemy& e)
+void SwifterJetWet::Attack1(enemy& e)
 {
     std::cout << "Mop'n Drop!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 //Jittery Jetscream
-void SwifterJetWet::Attack2(character& c, enemy& e)
+void SwifterJetWet::Attack2(enemy& e)
 {
     std::cout << "Jittery Jetscream!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 //Foam Frenzy
-void SwifterJetWet::Attack3(character& c, enemy& e)
+void SwifterJetWet::Attack3(enemy& e)
 {
     std::cout << "Foam Frenzy!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 //Scrubbing Surge
-void SwifterJetWet::Attack4(character& c, enemy& e)
+void SwifterJetWet::Attack4(enemy& e)
 {
     std::cout << "Scrubbing Surge!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 
 
@@ -415,26 +437,26 @@ void BysonV8::describeAttacks()
 //abilities
 
 //Filth Flurry
-void BysonV8::Attack1(character& c, enemy& e)
+void BysonV8::Attack1(enemy& e)
 {
     std::cout << "Filth Flurry!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 //Turbo Tornado
-void BysonV8::Attack2(character& c, enemy& e)
+void BysonV8::Attack2(enemy& e)
 {
     std::cout << "Turbo Tornado!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 //Partical Pulse
-void BysonV8::Attack3(character& c, enemy& e)
+void BysonV8::Attack3(enemy& e)
 {
     std::cout << "Partical Pulse!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }
 //Dust Storm Surge
-void BysonV8::Attack4(character& c, enemy& e)
+void BysonV8::Attack4(enemy& e)
 {
     std::cout << "Dust Storm Surge!" << std::endl;
-    e.damaged(c.get_att());
+    e.damaged(this->get_att());
 }

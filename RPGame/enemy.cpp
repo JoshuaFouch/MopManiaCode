@@ -104,65 +104,65 @@ void enemy::displayStats()
 	SetConsoleTextAttribute(h, 7);
 }
 
-void enemy::Attack1(enemy& e, character& c)
+void enemy::Attack1(character& c)
 {
 	std::cout << "enemy attacks you 1! " << std::endl;
-	c.damaged(e.att);
+	c.damaged(this->att);
 }
-void enemy::Attack2(enemy& e, character& c)
+void enemy::Attack2(character& c)
 {
 	std::cout << "enemy attacks you 2!" << std::endl;
-	c.damaged(e.att);
+	c.damaged(this->att);
 }
-void enemy::Attack3(enemy& e, character& c)
+void enemy::Attack3(character& c)
 {
 	std::cout << "enemy attacks you 3!" << std::endl;
-	c.damaged(e.att);
+	c.damaged(this->att);
 }
-void enemy::Attack4(enemy& e, character& c)
+void enemy::Attack4(character& c)
 {
 	std::cout << "enemy attacks you 4!" << std::endl;
-	c.damaged(e.att);
+	c.damaged(this->att);
 }
-void enemy::Heal(enemy& e, character& c)
+void enemy::Heal()
 {
 	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "HEALED" << std::endl;
 }
-void enemy::Fortify(enemy& e, character& c)
+void enemy::Fortify()
 {
 	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "FORTIFY" << std::endl;
 }
-void enemy::Enrage(enemy& e, character& c)
+void enemy::Enrage()
 {
 	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "ENRAGE" << std::endl;
 }
 
-void enemy::nextMove(enemy& e, character& c, int random)
+void enemy::nextMove(character& c, int random)
 {
 	switch (random) {
 	case 1:
-		Attack1(e, c);
+		Attack1(c);
 		break;
 	case 2:
-		Attack2(e, c);
+		Attack2(c);
 		break;
 	case 3:
-		Attack3(e, c);
+		Attack3(c);
 		break;
 	case 4:
-		Attack4(e, c);
+		Attack4(c);
 		break;
 	case 5:
-		Heal(e, c);
+		Heal();
 		break;
 	case 6:
-		Fortify(e, c);
+		Fortify();
 		break;
 	case 7:
-		Enrage(e, c);
+		Enrage();
 		break;
 	}
 }
