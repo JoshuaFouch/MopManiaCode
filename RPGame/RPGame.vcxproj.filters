@@ -122,5 +122,8 @@
     <Media Include="metalPipe.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="gameover.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>

@@ -158,6 +158,7 @@
   <ItemGroup>
     <Media Include="battlemusic.wav" />
     <Media Include="dies-irae-chant.wav" />
+    <Media Include="gameover.wav" />
     <Media Include="GoDown.wav" />
     <Media Include="metalPipe.wav" />
     <Media Include="vine-boom.wav" />

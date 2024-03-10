@@ -73,6 +73,7 @@ public:
 protected:
 
 	//private members
+
 	std::string name;
 	int hp;	//the current hp
 	int maxHp; //the constant hp

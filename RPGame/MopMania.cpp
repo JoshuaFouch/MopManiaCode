@@ -29,14 +29,14 @@ int main()
 
 	Broomba b("Broomba", 100, 15, 30);
 	SwifterJetWet a("Jet", 100, 15, 20);
-	BysonV8 v("Dude", 200, 10, 15);
+	BysonV8 v("Dude", 200, 50, 15);
 	character c("character", 100, 20, 6);
 	enemy bob("bob", 1);
 	Duster d("Duster");
 
 	//Start_Menu();
-	//Battle_Sequence(v,bob);
-	d.dialogue(b);
+	Battle_Sequence(v,bob);
+	//d.dialogue(b);
 
 
 	return 0;
@@ -177,7 +177,7 @@ int Start_Menu()
 }
 void GameOver()
 {
-	PlaySound(TEXT("dies-irae-chant.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("gameover.wav"), NULL, SND_FILENAME | SND_ASYNC);
 	clear();
 	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
 	Sdelay(5);
@@ -260,7 +260,7 @@ void Battle_Sequence(character& c, enemy& e)
 {
 	//plays battlemusic on loop
 	#pragma comment(lib, "winmm.lib")
-	PlaySound(TEXT("battlemusic.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("battlemusic.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 
 	int run = 0;	//if character wants to run away from battle
 	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
@@ -318,10 +318,13 @@ void Battle_Sequence(character& c, enemy& e)
 			clear();
 			break;
 		case 5:
-			clear();
+			//clear();
 			c.Inventory();
+			clear();
+			BattleStats(c, e);
 			MSdelay(1500);
 			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(1500);
 			break;
 		case 6:
 			clear();
@@ -346,7 +349,7 @@ void Battle_Sequence(character& c, enemy& e)
 	if (e.get_hp() <= 0)
 	{
 		e.death();
-		std::cout << "You WON " << std::endl;
+		std::cout << "\n\n\t\tYou WON\n " << std::endl;
 		c.expPt();
 		MSdelay(3000);
 	}
@@ -354,7 +357,7 @@ void Battle_Sequence(character& c, enemy& e)
 	{
 		c.death();
 		GameOver();
-		std::cout << "YOU LOST LOSER, GOLD MINUS 3000" << std::endl;
+		std::cout << "\t\tYOU LOST LOSER, GOLD MINUS 3000" << std::endl;
 		MSdelay(3000);
 	}
 	else if (run == 1)
