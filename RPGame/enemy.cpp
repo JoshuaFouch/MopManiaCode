@@ -1,6 +1,8 @@
 #include "character.h"
 #include "enemy.h"
 #include <Windows.h>
+#include <random>
+#include "utility.h"
 
 enemy::enemy()
 {
@@ -73,8 +75,16 @@ void enemy::increaseDef(int exp)
 
 int enemy::RandomNum()
 {
-	srand((unsigned) time(NULL));//need to randomize seed with the time to make the random number actually different each time its run
-	int random = rand() % 7;//calls a random number 1 to 7
+	// Initialize a random number generator
+	std::random_device rd;
+	std::mt19937 gen(rd());
+
+	// Define the probabilities for each number
+	std::discrete_distribution<int> distribution({ 2, 2, 2, 2, 1, 1, 1 });
+
+	// Generate a random number
+	int random = distribution(gen) + 1;
+
 	return random;
 }
 void enemy::damaged(int oppAtt)
@@ -106,38 +116,52 @@ void enemy::displayStats()
 
 void enemy::Attack1(character& c)
 {
-	std::cout << "enemy attacks you 1! " << std::endl;
+	color(4);
+	std::cout << "\tenemy attacks you 1! " << std::endl;
 	c.damaged(this->att);
+	color(7);
 }
 void enemy::Attack2(character& c)
 {
-	std::cout << "enemy attacks you 2!" << std::endl;
+	color(4);
+	std::cout << "\tenemy attacks you 2!" << std::endl;
 	c.damaged(this->att);
+	color(7);
 }
 void enemy::Attack3(character& c)
 {
-	std::cout << "enemy attacks you 3!" << std::endl;
+	color(4);
+	std::cout << "\tenemy attacks you 3!" << std::endl;
 	c.damaged(this->att);
+	color(7);
 }
 void enemy::Attack4(character& c)
 {
-	std::cout << "enemy attacks you 4!" << std::endl;
+	color(4);
+	std::cout << "\tenemy attacks you 4!" << std::endl;
 	c.damaged(this->att);
+	color(7);
 }
 void enemy::Heal()
 {
+	color(4);
 	//heals the enemy's hp depending on how much the hp the character lost
-	std::cout << "HEALED" << std::endl;
+	std::cout << "\tHEALED" << std::endl;
+	color(7);
 }
 void enemy::Fortify()
 {
+	color(4);
 	//raises the defense stat depending on how much the hp the character lost
-	std::cout << "FORTIFY" << std::endl;
+	std::cout << "\tFORTIFY" << std::endl;
+	color(7);
 }
 void enemy::Enrage()
 {
+	color(4);
 	//raises the attack stat depening on how much the hp the character lost
-	std::cout << "ENRAGE" << std::endl;
+	std::cout << "\tENRAGE" << std::endl;
+	color(7);
 }
 
 void enemy::nextMove(character& c, int random)

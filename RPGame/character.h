@@ -44,6 +44,7 @@ public:
 	void use_healUp();
 	void use_attUp();
 	void use_defUp();
+	void use_deadRat();
 
 	//attack getters
 	std::string get_aName1();
@@ -68,7 +69,9 @@ public:
 	virtual void Attack3(enemy& e);
 	virtual void Attack4(enemy& e);
 
-	void Inventory();
+	bool noItems();
+	void useInventory();
+	void checkInventory();
 
 protected:
 
@@ -78,7 +81,9 @@ protected:
 	int hp;	//the current hp
 	int maxHp; //the constant hp
 	int att;
+	int maxAtt;
 	int def;
+	int maxDef;
 	int winNum = 0; //checks how many battles character has won
 	int lvl = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up

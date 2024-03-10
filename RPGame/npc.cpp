@@ -42,7 +42,7 @@ void Duster::dialogue(character& c)
 	{
 		color(3);
 		std::cout << this->getName() << ": Alright! Here you go!" << std::endl;
-		//c.addPotion or something, we will work on this implementation when we got the inventory working
+		c.acq_healUp();
 		color(7);
 		std::cout << "You have obtained a potion!" << std::endl;
 	}
@@ -56,7 +56,7 @@ void Duster::dialogue(character& c)
 	{
 		color(3);
 		std::cout << this->getName() << ": Oh well... TAKE IT, YOU WON'T SURVIVE OUT THERE" << std::endl;
-		c.acq_healUp(); //this should hopefully add a potion to a character
+		c.acq_healUp();
 		color(7);
 		std::cout << "You have obtained a potion against your own will!" << std::endl;
 	}

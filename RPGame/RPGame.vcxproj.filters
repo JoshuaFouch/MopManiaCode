@@ -61,6 +61,12 @@
     <ClInclude Include="npc.h">
       <Filter>NPC Files</Filter>
     </ClInclude>
+    <ClInclude Include="inGame.h">
+      <Filter>MainGame Files</Filter>
+    </ClInclude>
+    <ClInclude Include="battle.h">
+      <Filter>MainGame Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">

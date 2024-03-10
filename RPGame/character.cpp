@@ -10,7 +10,9 @@ character::character()  //default (not used)
     this->hp = 100;
     this->maxHp = 100;
     this->att = 10;
+    this->maxAtt = 10;
     this->def = 10;
+    this->maxDef = 10;
     set_AttackNames();
 }
 character::character(std::string name, int hp, int att, int def)
@@ -19,7 +21,9 @@ character::character(std::string name, int hp, int att, int def)
     this->hp = hp;
     this->maxHp = hp;
     this->att = att;
+    this->maxAtt = att;
     this->def = def;
+    this->maxDef = def;
     set_AttackNames();
 }
 std::string character::get_name()
@@ -127,6 +131,21 @@ void character::use_healUp()
     hp += 20;
     healUp--;
 }
+void character::use_attUp()
+{
+    att += 10;
+    attUp--;
+}
+void character::use_defUp()
+{
+    def += 10;
+    defUp--;
+}
+void character::use_deadRat()
+{
+    //actually does something maybe like gives you free money?
+    deadRat--;
+}
 
 //attack getters
 std::string character::get_aName1()
@@ -168,8 +187,10 @@ void character::increaseDef(int exp)
 }
 void character::expPt()
 {
-    //reset the hp
+    //reset the stats
     hp = maxHp;
+    att = maxAtt;
+    def = maxDef;
     winNum++;
     if (winNum == ExpReq) { //if the "amount of wins" counter equals the counter for leveling up
         lvl++;
@@ -189,7 +210,6 @@ void character::expPt()
 
 void character::displayStats()
 {
-    clear(); //clear console
     color(8);  //gray colored text
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
@@ -229,34 +249,144 @@ void character::damaged(int oppAtt)
 //abilities
 void character::Attack1(enemy& e)
 {
-    std::cout << "BONK!!" << std::endl;
+    color(2);
+    std::cout << "\tBONK!!" << std::endl;
     e.damaged(this->att);
+    color(7);
 }
 void character::Attack2(enemy& e)
 {
-    std::cout << "SQUIRT!!" << std::endl;
+    color(2);
+    std::cout << "\tSQUIRT!!" << std::endl;
     e.damaged(this->att);
+    color(7);
 }
 void character::Attack3(enemy& e)
 {
-    std::cout << "SPLOOSH!!" << std::endl;
+    color(2);
+    std::cout << "\tSPLOOSH!!" << std::endl;
     e.damaged(this->att);
+    color(7);
 }
 void character::Attack4(enemy& e)
 {
-    std::cout << "EGHAEGOISEVLAEVN!!" << std::endl;
+    color(2);
+    std::cout << "\tEGHAEGOISEVLAEVN!!" << std::endl;
     e.damaged(this->att);
+    color(7);
 }
 
-
-void character::Inventory()
+bool character::noItems()
+{
+    if (healUp == 0 && attUp == 0 && defUp == 0 && deadRat == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+void character::useInventory()
+{
+    bool kill = false;
+    while (kill == false)
+    {
+        color(8);
+        std::cout << "What do you want to use?" << std::endl;
+        std::cout << "1. Potions: " << this->get_healUp() << std::endl;
+        std::cout << "2. Attack Ups: " << this->get_attUp() << std::endl;
+        std::cout << "3. Defense Ups: " << this->get_defUp() << std::endl;
+        std::cout << "4. Dead Rats: " << this->get_deadRat() << std::endl;
+        int x;
+        std::cin >> x;
+        switch (x) {
+        case 1:
+            if (this->healUp == 0)
+            {
+                std::cout << "You have no potions!" << std::endl;
+                continue;
+            }
+            else
+            {
+                use_healUp();
+                color(2);
+                std::cout << "You healed up by 20 points!" << std::endl;
+                color(7);
+                MSdelay(2000);
+                kill = true;
+                break;
+            }
+        case 2:
+            if (this->attUp == 0)
+            {
+                std::cout << "You have no attack ups!" << std::endl;
+                continue;
+            }
+            else
+            {
+                use_attUp();
+                color(2);
+                std::cout << "Your rose your attack by 10 points!" << std::endl;
+                color(7);
+                MSdelay(2000);
+                kill = true;
+                break;
+            }
+        case 3:
+            if (this->defUp == 0)
+            {
+                std::cout << "You have no defense ups!" << std::endl;
+                continue;
+            }
+            else
+            {
+                use_defUp();
+                color(2);
+                std::cout << "Your rose your defense by 10 points!" << std::endl;
+                color(7);
+                MSdelay(2000);
+                kill = true;
+                break;
+            }
+        case 4:
+            if (this->deadRat == 0)
+            {
+                std::cout << "You have no dead rats!" << std::endl;
+                continue;
+            }
+            else
+            {
+                use_deadRat();
+                color(2);
+                std::cout << "You threw a dead rat at the enemy!";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << "\nIt did nothing at all." << std::endl;
+                color(7);
+                MSdelay(2000);
+                kill = true;
+                break;
+            }
+        default:
+            std::cout << "Invalid input." << std::endl;
+            continue;
+        } 
+    }
+    color(7);
+}
+void character::checkInventory()
 {
     color(8);
     std::cout << "Potions: " << this->get_healUp() << std::endl;
     std::cout << "Attack Ups: " << this->get_attUp() << std::endl;
     std::cout << "Defense Ups: " << this->get_defUp() << std::endl;
     std::cout << "Dead Rats: " << this->get_deadRat() << std::endl;
-    //will contain a switch to choose which item to use and then use that item
     system("pause");
     color(7);
 }
@@ -279,7 +409,6 @@ void Broomba::set_AttackNames()
 
 void Broomba::displayStats()
 {
-    clear(); //clear console
     color(8);  //gray colored text
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
@@ -295,7 +424,6 @@ void Broomba::displayStats()
 }
 void Broomba::describeAttacks()
 {
-
     color(8);  //gray colored text
     std::cout << get_aName1() << ":\n";
     std::cout << "\t" << std::endl;
@@ -316,26 +444,34 @@ void Broomba::describeAttacks()
 //Vacuum Vortex
 void Broomba::Attack1(enemy& e) 
 {
-    std::cout << "Vacuum Vortex!" << std::endl;
+    color(2);
+    std::cout << "\tVacuum Vortex!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 } 
 //Turbo Takedown
 void Broomba::Attack2(enemy& e)   //Turbo Takedown
 {
-    std::cout << "Turbo Takedown!" << std::endl;
+    color(2);
+    std::cout << "\tTurbo Takedown!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 //Debris Dash
 void Broomba::Attack3(enemy& e) 
 {
-    std::cout << "Debris Dash!" << std::endl;
+    color(2);
+    std::cout << "\tDebris Dash!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 //Dust Buster Blitz
 void Broomba::Attack4(enemy& e)
 {
-    std::cout << "Dust Buster Blitz!" << std::endl;
+    color(2);
+    std::cout << "\tDust Buster Blitz!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 
 
@@ -357,9 +493,7 @@ void SwifterJetWet::set_AttackNames()
 
 void SwifterJetWet::displayStats()
 {
-    clear(); //clear console
     color(8); //gray colored text
-
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
@@ -394,26 +528,34 @@ void SwifterJetWet::describeAttacks()
 //Mop'n Drop
 void SwifterJetWet::Attack1(enemy& e)
 {
-    std::cout << "Mop'n Drop!" << std::endl;
+    color(2);
+    std::cout << "\tMop'n Drop!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 //Jittery Jetscream
 void SwifterJetWet::Attack2(enemy& e)
 {
-    std::cout << "Jittery Jetscream!" << std::endl;
+    color(2);
+    std::cout << "\tJittery Jetscream!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 //Foam Frenzy
 void SwifterJetWet::Attack3(enemy& e)
 {
-    std::cout << "Foam Frenzy!" << std::endl;
+    color(2);
+    std::cout << "\tFoam Frenzy!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 //Scrubbing Surge
 void SwifterJetWet::Attack4(enemy& e)
 {
-    std::cout << "Scrubbing Surge!" << std::endl;
+    color(2);
+    std::cout << "\tScrubbing Surge!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 
 
@@ -434,9 +576,7 @@ void BysonV8::set_AttackNames()
 
 void BysonV8::displayStats()
 {
-    clear(); //clear console
     color(8);  //gray colored text
-    std::cout << "\033[2J\033[1;1H";    //clear console
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
@@ -470,24 +610,33 @@ void BysonV8::describeAttacks()
 //Filth Flurry
 void BysonV8::Attack1(enemy& e)
 {
-    std::cout << "Filth Flurry!" << std::endl;
+    color(2);
+    //PlaySound(TEXT("metalPipe.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_NOSTOP);
+    std::cout << "\tFilth Flurry!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 //Turbo Tornado
 void BysonV8::Attack2(enemy& e)
 {
-    std::cout << "Turbo Tornado!" << std::endl;
+    color(2);
+    std::cout << "\tTurbo Tornado!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 //Partical Pulse
 void BysonV8::Attack3(enemy& e)
 {
-    std::cout << "Partical Pulse!" << std::endl;
+    color(2);
+    std::cout << "\tPartical Pulse!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
 //Dust Storm Surge
 void BysonV8::Attack4(enemy& e)
 {
-    std::cout << "Dust Storm Surge!" << std::endl;
+    color(2);
+    std::cout << "\tDust Storm Surge!" << std::endl;
     e.damaged(this->get_att());
+    color(7);
 }
