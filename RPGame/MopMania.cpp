@@ -22,12 +22,12 @@ int main()
 	Latherus l("Latherus");
 	Scruberty s("Scruberty");
 	Fizzletider f("Fizzletider");
-	Bristlebeard b("Bristlebeard");
+	Bristlebeard B("Bristlebeard");
 
 
 	//Start_Menu();
 	Battle_Sequence(v,bob);
-	b.dialogue(v);
+	B.dialogue(v);
 	Sdelay(5);
 	Battle_Sequence(v, bill);
 
