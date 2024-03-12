@@ -19,10 +19,15 @@ int main()
 	enemy bob("bob", 1);
 	enemy bill("bill", 2);
 	Duster d("Duster");
+	Latherus l("Latherus");
+	Scruberty s("Scruberty");
+	Fizzletider f("Fizzletider");
+	Bristlebeard b("Bristlebeard");
+
 
 	//Start_Menu();
 	Battle_Sequence(v,bob);
-	d.dialogue(v);
+	b.dialogue(v);
 	Sdelay(5);
 	Battle_Sequence(v, bill);
 

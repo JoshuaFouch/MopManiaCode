@@ -32,4 +32,46 @@ public:
 	void dialogue(character& c);
 };
 
+//NPC 2 (Eljay)
+
+class Latherus : public NPC
+{
+public:
+
+	Latherus(std::string name);
+
+	void dialogue(character& c);
+};
+
+//NPC 3 (Eljay)
+class Scruberty : public NPC
+{
+public:
+
+	Scruberty(std::string name);
+
+	void dialogue(character& c);
+};
+
+//NPC 4 (Eljay)
+
+class Fizzletider : public NPC
+{
+public:
+
+	Fizzletider(std::string name);
+
+	void dialogue(character& c);
+};
+
+//NPC 5 (Eljay)
+class Bristlebeard : public NPC
+{
+public:
+
+	Bristlebeard(std::string name);
+
+	void dialogue(character& c);
+};
+
 #endif
