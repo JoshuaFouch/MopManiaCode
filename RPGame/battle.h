@@ -31,8 +31,7 @@ void BattleStats(character& c, enemy& e)
 
 void Battle_Sequence(character& c, enemy& e)
 {
-	//plays battlemusic on loop
-	PlaySound(TEXT("battlemusic.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	playMusic("battlemusic.wav");
 
 	int run = 0;	//if character wants to run away from battle
 	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
@@ -165,7 +164,7 @@ void Battle_Sequence(character& c, enemy& e)
 
 	if (e.get_hp() <= 0)
 	{
-		PlaySound(0, 0, 0);
+		//play uplifting music
 		e.death();
 		std::cout << "You WON\n" << std::endl;
 		c.expPt();
@@ -182,7 +181,7 @@ void Battle_Sequence(character& c, enemy& e)
 	}
 	else if (run == 1)
 	{
-		PlaySound(0, 0, 0);
+		//play sad music
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
 		MSdelay(3000);
 		clear();

@@ -68,3 +68,20 @@ void color(char n)
 	*/
 	SetConsoleTextAttribute(h, n);
 }
+
+void playMusic(std::string filename)
+{
+	std::wstring wideFilename(filename.begin(), filename.end());
+	PlaySound(wideFilename.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+}
+
+void endMusic()
+{
+	PlaySound(0, 0, 0);
+}
+
+void playSFX(std::string filename)
+{
+	std::wstring wideFilename(filename.begin(), filename.end());
+	PlaySound(wideFilename.c_str(), NULL, SND_FILENAME | SND_ASYNC);
+}

@@ -14,8 +14,7 @@
 
 int Start_Menu()
 {
-	//play music (ambient music)
-	PlaySound(TEXT("void.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	playMusic("void.wav");
 
 	Sdelay(3);
 	std::cout << "You wake up one day with no body... all you see is the void of darkness" << std::endl;
@@ -87,8 +86,7 @@ int Start_Menu()
 		switch (x)
 		{
 		case 1:
-			//play uplifting music
-			PlaySound(TEXT("GoDown.wav"), NULL, SND_FILENAME | SND_ASYNC);
+			playMusic("GoDown.wav");
 			clear();
 			std::cout << "You have chosen well, the Broomba will serve you well on your journey" << std::endl;
 			Sdelay(3);
@@ -105,8 +103,7 @@ int Start_Menu()
 			kill = true;
 			break;
 		case 2:
-			//play uplifting music
-			PlaySound(TEXT("GoDown.wav"), NULL, SND_FILENAME | SND_ASYNC);
+			playMusic("GoDown.wav");
 			clear();
 			std::cout << "You have chosen well, the JetWet will serve you well on your journey" << std::endl;
 			Sdelay(3);
@@ -119,14 +116,11 @@ int Start_Menu()
 			std::cout << "\nThe World of MOP MANIA\n" << std::endl;
 			color(7);
 			system("pause");
-			charChoice = 1;
+			charChoice = 2;
 			kill = true;
 			break;
 		case 3:
-			//stop ambient music
-			PlaySound(0, 0, 0);
-			//play uplifting music
-			PlaySound(TEXT("GoDown.wav"), NULL, SND_FILENAME | SND_ASYNC);
+			playMusic("GoDown.wav");
 			clear();
 			std::cout << "You have chosen well, the BysonV8 will serve you well on your journey" << std::endl;
 			Sdelay(3);
@@ -139,7 +133,7 @@ int Start_Menu()
 			std::cout << "\nThe World of MOP MANIA\n" << std::endl;
 			color(7);
 			system("pause");
-			charChoice = 1;
+			charChoice = 3;
 			kill = true;
 			break;
 		default:
@@ -149,8 +143,7 @@ int Start_Menu()
 		}
 	}
 
-	//end music
-	PlaySound(0, 0, 0);
+	endMusic();
 	//end text color
 	color(7);
 	return charChoice;
@@ -210,14 +203,31 @@ void Game_Tester_Menu()
 }
 void GameOver()
 {
-	PlaySound(TEXT("gameover.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	playSFX("gameover.wav");
 	clear();
 	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
 	Sdelay(5);
-
-	PlaySound(0, 0, 0);
 }
-
+void user()
+{
+	int choice = Start_Menu();
+	if (choice == 1)
+	{
+		std::cout << "\n\nyou inputted 1";
+	}
+	else if (choice == 2)
+	{
+		std::cout << "\n\nyou inputted 2";
+	}
+	else if (choice == 3)
+	{
+		std::cout << "\n\nyou inputted 3";
+	}
+	else
+	{
+		std::cout << "\n\nbruh" << std::endl;
+	}
+}
 
 
 

@@ -101,7 +101,7 @@ protected:
 };
 
 //DERIVED CHARACTER BROOMBA
-class Broomba : public character 
+class Broomba : public character
 {
 public:
 	//constuctor

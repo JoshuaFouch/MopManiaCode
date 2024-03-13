@@ -23,6 +23,9 @@
     <Filter Include="NPC Files">
       <UniqueIdentifier>{a4fc220a-e885-44f2-9fb3-4239f0b40815}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Event Files">
+      <UniqueIdentifier>{638ddb47-15b6-4b8c-8582-b1ced37cab42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
@@ -30,30 +33,6 @@
     </ClInclude>
     <ClInclude Include="enemy.h">
       <Filter>Enemy Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Level1.h">
-      <Filter>GameMap Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Level2.h">
-      <Filter>GameMap Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Level3.h">
-      <Filter>GameMap Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Level4.h">
-      <Filter>GameMap Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FinalLevel.h">
-      <Filter>GameMap Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SqueeGeeCity.h">
-      <Filter>GameMap Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VacuumVille.h">
-      <Filter>GameMap Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphMap.h">
-      <Filter>GameMap Files</Filter>
     </ClInclude>
     <ClInclude Include="utility.h">
       <Filter>Utility Functions</Filter>
@@ -74,30 +53,6 @@
     </ClCompile>
     <ClCompile Include="character.cpp">
       <Filter>Character Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Level1.cpp">
-      <Filter>GameMap Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Level2.cpp">
-      <Filter>GameMap Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Level3.cpp">
-      <Filter>GameMap Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Level4.cpp">
-      <Filter>GameMap Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FinalLevel.cpp">
-      <Filter>GameMap Files</Filter>
-    </ClCompile>
-    <ClCompile Include="VacuumVille.cpp">
-      <Filter>GameMap Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SqueeGeeCity.cpp">
-      <Filter>GameMap Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphMap.cpp">
-      <Filter>GameMap Files</Filter>
     </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>Enemy Files</Filter>

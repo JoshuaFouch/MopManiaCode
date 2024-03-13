@@ -1,5 +1,5 @@
-#ifndef UTILITY
-#define UTILITY
+#ifndef _UTILITY_H
+#define _UTILITY_H
 
 #include <iostream>
 #include <Windows.h>
@@ -13,4 +13,7 @@ void MSdelay(int n);	//delays the next output of n amount of milliseconds
 void Sdelay(int n);	//delays the next output of n amount of seconds
 void color(int n);	//change the color
 void color(char n);
+void playMusic(std::string filename);	//plays audio file that loop
+void endMusic();
+void playSFX(std::string filename);	//plays audio file that does not loop
 #endif
