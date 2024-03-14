@@ -46,6 +46,9 @@
     <ClInclude Include="battle.h">
       <Filter>MainGame Files</Filter>
     </ClInclude>
+    <ClInclude Include="event.h">
+      <Filter>Event Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">
@@ -62,6 +65,12 @@
     </ClCompile>
     <ClCompile Include="npc.cpp">
       <Filter>NPC Files</Filter>
+    </ClCompile>
+    <ClCompile Include="event.cpp">
+      <Filter>Event Files</Filter>
+    </ClCompile>
+    <ClCompile Include="battle.cpp">
+      <Filter>MainGame Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

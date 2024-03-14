@@ -130,12 +130,15 @@
     <ClInclude Include="battle.h" />
     <ClInclude Include="character.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="event.h" />
     <ClInclude Include="inGame.h" />
     <ClInclude Include="npc.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="battle.cpp" />
     <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="event.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="npc.cpp" />

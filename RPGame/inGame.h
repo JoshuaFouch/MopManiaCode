@@ -201,13 +201,6 @@ void Game_Tester_Menu()
 		}
 	}
 }
-void GameOver()
-{
-	playSFX("gameover.wav");
-	clear();
-	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
-	Sdelay(5);
-}
 void user()
 {
 	int choice = Start_Menu();
@@ -228,17 +221,5 @@ void user()
 		std::cout << "\n\nbruh" << std::endl;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif

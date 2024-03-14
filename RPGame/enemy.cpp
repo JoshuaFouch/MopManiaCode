@@ -116,9 +116,11 @@ void enemy::displayStats()
 
 void enemy::Attack1(character& c)
 {
+	//color red
 	color(4);
 	std::cout << "\tenemy attacks you 1! " << std::endl;
 	c.damaged(this->att);
+	//back to default color
 	color(7);
 }
 void enemy::Attack2(character& c)
@@ -192,18 +194,56 @@ void enemy::nextMove(character& c, int random)
 }
 
 
-/* enemy GarbageDan(1);
-
-	enemy GarbadeDan(6);
-	
-	
-	
-	*/
-
-
-
 //GarbageDan Implementations
+GarbageDan::GarbageDan(std::string name, int lvl) : enemy(name, lvl)
+{
+	set_stats(60, 40, 100, lvl);
+}
 
+void GarbageDan::Attack1(enemy& e, character& c)
+{
+	color(4);
+	std::cout << "\tTrash Bash!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
 
+void GarbageDan::Attack2(enemy& e, character& c)
+{
+	color(4);
+	std::cout << "\tBin Blast!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
 
+void GarbageDan::Attack3(enemy& e, character& c)
+{
+	color(4);
+	std::cout << "\tStale Food Shooter!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void GarbageDan::Attack4(enemy& e, character& c)
+{
+	color(4);
+	std::cout << "\tStench Smear!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void GarbageDan::Heal()
+{
+
+}
+
+void GarbageDan::Fortify()
+{
+
+}
+
+void GarbageDan::Enrage()
+{
+
+}
 

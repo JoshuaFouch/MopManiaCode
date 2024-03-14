@@ -60,9 +60,9 @@ public:
 	void Attack2(enemy& e, character& c);	//Bin Blast
 	void Attack3(enemy& e, character& c);	//Stale Food Shooter
 	void Attack4(enemy& e, character& c);	//Stench Smear
-	void Heal(enemy& e, character& c);	//Mold Sandwich
-	void Fortify(enemy& e, character& c);	//Dumpster Dive (raise defense)
-	void Enrage(enemy& e, character& c);	//Broken Glass Shuffle
+	void Heal();	//Mold Sandwich
+	void Fortify();	//Dumpster Dive (raise defense)
+	void Enrage();	//Broken Glass Shuffle
 
 };
 
