@@ -16,18 +16,24 @@ class event
 {
 public:
 	//functions
+	
+	//constructor
 	event(std::string music);
+
+	bool get_isComplete();
+
 	virtual void cutScene();
 
 protected:
 	//members
 	std::string music;
+	bool isComplete = false;
 };
 
-class scrubanielEvent : public event
+class GrimeEvent : public event
 {
 public:
-	//Scrubaniel battle object.
+	//Grime Reaper battle object.
 };
 
 #endif

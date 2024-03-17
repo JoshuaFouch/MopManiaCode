@@ -23,10 +23,11 @@ public:
 };
 
 //final boss battles
-class scrubanielBattle : public battle
+class GrimeBattle : public battle
 {
 public:
-	//contains its own battle sequence using a scrubaniel object (derived from enemy)
+	//contains its own battle sequence using a Grime Reaper object (derived from enemy)
+
 };
 
 #endif

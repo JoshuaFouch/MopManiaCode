@@ -10,17 +10,18 @@
 int main()
 {
 	#pragma comment(lib, "winmm.lib") //for music and sound effects!
+
 	/*will contain a while loop with the bool "EndGame" (if true, kills while loop, if false, keep going). 
 	Also, another bool "QuitGame" which checks if user wants to quitgame, if quitgame is true, the whole code will end
 	and no end credits will be displayed*/
 
 	enemy bob("bob", 1);
+	GarbageDan yOo("bruh", 5);
 	enemy bill("bill", 2);
-	Duster d("Duster");
-	Latherus l("Latherus");
-	Scruberty s("Scruberty");
-	Fizzletider f("Fizzletider");
-	Bristlebeard B("Bristlebeard");
+	Broomba goomba("Broomba", 70, 50, 80);
+	battle hi;
+	hi.Battle_Sequence(goomba, yOo);
+
 
 	int user;
 	user = Start_Menu();
@@ -46,11 +47,6 @@ int main()
 	{
 		std::cout << "Error 404 not found idk..." << std::endl;
 	}
-	//Battle_Sequence(v,bob);
-	//B.dialogue(v);
-	//Sdelay(5);
-	//Battle_Sequence(v, bill);
-
 
 	return 0;
 }

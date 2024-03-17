@@ -56,15 +56,32 @@ public:
 	GarbageDan(std::string name, int lvl);	//Base: 60 HP, 40 att, 100 defense
 
 	//abilities
-	void Attack1(enemy& e, character& c);	//Trash Bash
-	void Attack2(enemy& e, character& c);	//Bin Blast
-	void Attack3(enemy& e, character& c);	//Stale Food Shooter
-	void Attack4(enemy& e, character& c);	//Stench Smear
+	void Attack1(character& c);	//Trash Bash
+	void Attack2(character& c);	//Bin Blast
+	void Attack3(character& c);	//Stale Food Shooter
+	void Attack4(character& c);	//Stench Smear
 	void Heal();	//Mold Sandwich
 	void Fortify();	//Dumpster Dive (raise defense)
 	void Enrage();	//Broken Glass Shuffle
 
 };
+
+class GrimeReaper : public enemy
+{
+	//constructor
+	GrimeReaper(std::string name, int lvl);	//Base: 100 HP, 50 HP, 50 HP
+
+	//abilities
+	void Attack1(character& c);
+	void Attack2(character& c);
+	void Attack3(character& c);
+	void Attack4(character& c);
+	void Heal();
+	void Fortify();
+	void Enrage();
+
+};
+
 
 #endif
 

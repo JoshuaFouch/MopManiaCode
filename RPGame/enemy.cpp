@@ -100,8 +100,8 @@ void enemy::damaged(int oppAtt)
 void enemy::displayStats()
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-	std::cout << "\033[2J\033[1;1H"; //clear console
-	SetConsoleTextAttribute(h, 8);  //gray colored text
+	clear(); //clear console
+	color(8);  //gray colored text
 	std::cout << "\033[2J\033[1;1H";    //clear console
 	std::cout << "Name: " << get_name() << '\n';
 	std::cout << "Level: " << get_lvl() << '\n';
@@ -111,7 +111,7 @@ void enemy::displayStats()
 	std::cout << "This enemy is etc...." << '\n';   //description
 	std::cout << std::endl;
 	system("pause");
-	SetConsoleTextAttribute(h, 7);
+	color(8);
 }
 
 void enemy::Attack1(character& c)
@@ -193,14 +193,13 @@ void enemy::nextMove(character& c, int random)
 	}
 }
 
-
 //GarbageDan Implementations
 GarbageDan::GarbageDan(std::string name, int lvl) : enemy(name, lvl)
 {
 	set_stats(60, 40, 100, lvl);
 }
 
-void GarbageDan::Attack1(enemy& e, character& c)
+void GarbageDan::Attack1(character& c)
 {
 	color(4);
 	std::cout << "\tTrash Bash!" << std::endl;
@@ -208,7 +207,7 @@ void GarbageDan::Attack1(enemy& e, character& c)
 	color(7);
 }
 
-void GarbageDan::Attack2(enemy& e, character& c)
+void GarbageDan::Attack2(character& c)
 {
 	color(4);
 	std::cout << "\tBin Blast!" << std::endl;
@@ -216,7 +215,7 @@ void GarbageDan::Attack2(enemy& e, character& c)
 	color(7);
 }
 
-void GarbageDan::Attack3(enemy& e, character& c)
+void GarbageDan::Attack3(character& c)
 {
 	color(4);
 	std::cout << "\tStale Food Shooter!" << std::endl;
@@ -224,7 +223,7 @@ void GarbageDan::Attack3(enemy& e, character& c)
 	color(7);
 }
 
-void GarbageDan::Attack4(enemy& e, character& c)
+void GarbageDan::Attack4(character& c)
 {
 	color(4);
 	std::cout << "\tStench Smear!" << std::endl;
@@ -247,3 +246,9 @@ void GarbageDan::Enrage()
 
 }
 
+
+//GrimeReaper Implementations
+GrimeReaper::GrimeReaper(std::string name, int lvl)
+{
+	set_stats(100, 50, 50, lvl);
+}
