@@ -248,7 +248,8 @@ void GarbageDan::Enrage()
 
 
 //GrimeReaper Implementations
-GrimeReaper::GrimeReaper(std::string name, int lvl)
+/*GrimeReaper::GrimeReaper(std::string name, int lvl)
 {
 	set_stats(100, 50, 50, lvl);
-}
+}*/
+

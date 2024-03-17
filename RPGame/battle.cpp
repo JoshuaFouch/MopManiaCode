@@ -1,25 +1,31 @@
 #include "battle.h"
 #include "character.h"
 #include "enemy.h"
+#include <string>
+#include <iomanip>
+#include <algorithm>
 
 
 //regular battle
 battle::battle() {};
 void battle::BattleStats(character& c, enemy& e)
 {
+	int enemyLen = e.get_name().length() + 14;
 	//enemy stats
 	color(4);
-	std::cout << "\t\t\t\t\t|-----[ " << e.get_name() << " ]-----| " << '\n';
-	std::cout << "\t\t\t\t\t|Level:" << e.get_lvl() << "\n";
-	std::cout << "\t\t\t\t\t|HP:" << e.get_hp() << "\n";
-	std::cout << "\t\t\t\t\t|----------------|" << '\n';
+	std::cout << "\t\t\t\t\t|-----[ " << e.get_name() << " ]-----|\n";
+	std::cout << "\t\t\t\t\t| Level:" << e.get_lvl() << "\n";
+	std::cout << "\t\t\t\t\t| HP:" << e.get_hp() << "\n";
+	std::cout << "\t\t\t\t\t";
+	std::cout << "|" << std::string(enemyLen, '-') << "|\n";
 
+	int charLen = c.get_name().size() + 14;
 	//character stats
 	color(2);
-	std::cout << "|-----[ " << c.get_name() << " ]-----| " << '\n';
-	std::cout << "|Level: " << c.get_lvl() << "\n";
-	std::cout << "|HP:" << c.get_hp() << "\n";
-	std::cout << "|-----------------|" << '\n';
+	std::cout << "|-----[ " << c.get_name() << " ]-----|\n";
+	std::cout << "| Level: " << c.get_lvl() << "\n";
+	std::cout << "| HP:" << c.get_hp() << "\n";
+	std::cout << "|" << std::string(charLen, '-') << "|\n";
 	color(7);
 	std::cout << "-----------------------------------------" << std::endl;
 }

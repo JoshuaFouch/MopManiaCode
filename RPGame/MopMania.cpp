@@ -16,7 +16,7 @@ int main()
 	and no end credits will be displayed*/
 
 	enemy bob("bob", 1);
-	GarbageDan yOo("bruh", 5);
+	GarbageDan yOo("bruh", 100);
 	enemy bill("bill", 2);
 	Broomba goomba("Broomba", 70, 50, 80);
 	battle hi;
