@@ -10,15 +10,17 @@ class enemy
 
 public:
 	enemy();
-	enemy(std::string name, int lvl);
+	enemy(int lvl);
 	std::string get_name();
+	void set_name(std::string name);
 	int get_def();
 	int get_hp();
 	int get_lvl();
 	int get_att();
 	void set_stats(int hp, int att, int def, int lvl);
-	bool death();
-	bool alive();
+	bool get_isDead();
+	void makeDead();
+	void makeAlive();
 
 	//we will use these functions whenever you finish a level to make the enemies harder
 	void increaseHP(int exp);
@@ -53,7 +55,7 @@ class GarbageDan : public enemy
 {
 public:
 	//constructor
-	GarbageDan(std::string name, int lvl);	//Base: 60 HP, 40 att, 100 defense
+	GarbageDan(int lvl);	//Base: 60 HP, 40 att, 100 defense
 
 	//abilities
 	void Attack1(character& c);	//Trash Bash
@@ -66,10 +68,18 @@ public:
 
 };
 
+class Stainiac : public enemy
+{
+public:
+	//constructor
+	Stainiac(int lvl);
+};
+
+//level 1 Boss
 class GrimeReaper : public enemy
 {
 	//constructor
-	GrimeReaper(std::string name, int lvl);	//Base: 100 HP, 50 HP, 50 HP
+	GrimeReaper(int lvl);	//Base: 100 HP, 50 HP, 50 HP
 
 	//abilities
 	void Attack1(character& c);

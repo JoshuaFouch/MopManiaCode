@@ -27,7 +27,6 @@ class GrimeBattle : public battle
 {
 public:
 	//contains its own battle sequence using a Grime Reaper object (derived from enemy)
-
 };
 
 #endif

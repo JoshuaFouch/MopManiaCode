@@ -11,12 +11,16 @@ enemy::enemy()
 	this->def = 50;
 	this->hp = 100;
 }
-enemy::enemy(std::string name, int lvl)	//hp=110 , att = 55, def = 55
+enemy::enemy(int lvl)	//hp=110 , att = 55, def = 55
 {
-	this->name = name;
+	this->name = "Enemy";
 	set_stats(100, 50, 50, lvl);
 }
 
+void enemy::set_name(std::string name)
+{
+	this->name = name;
+}
 std::string enemy::get_name()
 {
 	return name;
@@ -49,15 +53,17 @@ void enemy::set_stats(int basehp, int baseatt, int basedef, int level)
 	att += ((att / 10) * lvl);
 	def += ((def / 10) * lvl);
 }
-bool enemy::death()
+bool enemy::get_isDead()
 {
-	isDead = true;
 	return isDead;
 }
-bool enemy::alive()
+void enemy::makeDead()
+{
+	isDead = true;
+}
+void enemy::makeAlive()
 {
 	isDead = false;
-	return isDead;
 }
 
 void enemy::increaseHP(int exp)
@@ -99,10 +105,9 @@ void enemy::damaged(int oppAtt)
 
 void enemy::displayStats()
 {
-	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	clear(); //clear console
 	color(8);  //gray colored text
-	std::cout << "\033[2J\033[1;1H";    //clear console
+	clear();    //clear console
 	std::cout << "Name: " << get_name() << '\n';
 	std::cout << "Level: " << get_lvl() << '\n';
 	std::cout << "HP: " << get_hp() << '\n';
@@ -194,8 +199,9 @@ void enemy::nextMove(character& c, int random)
 }
 
 //GarbageDan Implementations
-GarbageDan::GarbageDan(std::string name, int lvl) : enemy(name, lvl)
+GarbageDan::GarbageDan(int lvl) : enemy(lvl)
 {
+	set_name("GarbageDan");
 	set_stats(60, 40, 100, lvl);
 }
 
@@ -250,6 +256,7 @@ void GarbageDan::Enrage()
 //GrimeReaper Implementations
 /*GrimeReaper::GrimeReaper(std::string name, int lvl)
 {
+	set_name("The Grime Reaper");
 	set_stats(100, 50, 50, lvl);
 }*/
 

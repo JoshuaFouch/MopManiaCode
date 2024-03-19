@@ -44,7 +44,7 @@ int Start_Menu()
 
 	if (choice == "y")
 	{
-		std::cout << "\nAs you should..." << std::endl;
+		std::cout << "As you should..." << std::endl;
 		Sdelay(4);
 	}
 	else
@@ -62,26 +62,39 @@ int Start_Menu()
 	bool kill = false;
 	while (kill == false)
 	{
-		std::cout << "Choose a host... I am sorry, I only have these cleaning supplies you can use..." << std::endl;
+		clear();
+		std::cout << "Choose a cleaning mop host..." << std::endl;
+		Sdelay(3);
 		int x;
 		color(7);
 		std::cout << "\n1. Broomba, the Explosive Custodian" << std::endl;
+		Sdelay(2);
 		std::cout << "\tA high-energy soldier with a passion for cleaning up messes in a blast." << std::endl;
+		Sdelay(2);
 		std::cout << "\tThis broombastic soldier can turn any cleaning session into a dazzling display of pyrotechnic prowess" << std::endl;
+		Sdelay(2);
 		std::cout << "\tBroomba roams Mop-topia, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
+		Sdelay(3);
 
 		std::cout << "\n2. Swifter JetWet, the Splashy Sentinel" << std::endl;
+		Sdelay(2);
 		std::cout << "\tSwifter JetWet takes cleanliness to new depths! JetWet gained its aquatic powers by the ancient water sage, " << std::endl;
+		Sdelay(2);
 		std::cout << "\tMrs. Clean. Now, armed with the ability to control water, JetWet jets across Mop-topia," << std::endl;
+		Sdelay(2);
 		std::cout << "\tleaving a trail of cleanliness and refreshing splashes. JetWet seeks to mop away the dirt and" << std::endl;
 		std::cout << "\tgrime that threaten the land." << std::endl;
+		Sdelay(3);
 
 		std::cout << "\n3. Byson V8, the cyclonic custodian" << std::endl;
+		Sdelay(2);
 		std::cout << "\tCrafted, in the legendary Byson Forge, the BysonV8 harnessed the power of air origins, becoming a vacuum marvel." << std::endl;
+		Sdelay(2);
 		std::cout << "\tByson V8 roams Mop-topia, a swirling force that sucks up dirt and leaves behind a breath of pristine air" << std::endl;
 		std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
-		color(6);
+		Sdelay(3);
 		std::cin >> x;
+		color(6);
 
 		switch (x)
 		{
@@ -148,77 +161,98 @@ int Start_Menu()
 	color(7);
 	return charChoice;
 }
-void Game_Tester_Menu()
+void Pause_Menu(character& c) 
 {
+	clear();
 	int choice;
 	while (true)
 	{
-		std::cout << "\nMop Mania\n";
-		std::cout << "---------------------------------\n";
-		std::cout << "1. Return to Game" << '\n';
-		std::cout << "2. Enter Battle" << '\n';
-		std::cout << "3. Manage Inventory" << '\n';
-		std::cout << "4. Enter Shoppie" << '\n';
-		std::cout << "5. Talk to Someone" << '\n';
-		std::cout << "6. Quit Game" << '\n';
-		std::cout << "---------------------------------\n";
-
+		std::cout << "|--Pause Menu--|" << std::endl;
+		std::cout << "|---------------------------------|" << std::endl;
+		std::cout << "|1. Go back to beginning of level |" << std::endl;
+		std::cout << "|2. Go back to another level      |" << std::endl;
+		std::cout << "|3. Check Inventory               |" << std::endl;
+		std::cout << "|4. Exit Game                     |" << std::endl;
+		std::cout << "|5. Go Back                       |" << std::endl;
+		std::cout << "|---------------------------------|" << std::endl;
 		std::cin >> choice;
 
-		if (choice == 6) {
-			std::cout << "\nFarewell Mopdian! Come back again next time!" << '\n';
-			break;
+		if (choice == 4) {
+			clear();
+			std::string exitChoice;
+			std::cout << "Are you sure you want to exit? [y/n]" << std::endl;
+			std::cin >> exitChoice;
+			if (exitChoice == "y") {
+				std::string exitChoice1;
+				clear();
+				std::cout << "."; MSdelay(500);
+				std::cout << "."; MSdelay(500);
+				std::cout << "."; MSdelay(500);
+				clear();
+				std::cout << "."; MSdelay(500);
+				std::cout << "."; MSdelay(500);
+				std::cout << "."; MSdelay(500);
+				clear();
+				std::cout << "."; MSdelay(500);
+				std::cout << "."; MSdelay(500);
+				std::cout << "."; MSdelay(500);
+				clear();
+				std::cout << "Are you really really sure? ALL PROGRESS WILL BE LOST! [y/n]" << std::endl;
+				std::cin >> exitChoice1;
+				if (exitChoice1 == "y") {
+					endMusic();
+					clear();
+					std::cout << "Okay!... Thanks for playing!" << std::endl;
+					system("pause");
+					//endGame() function
+					break;
+				}
+				else
+				{
+					clear();
+					continue;
+				}
+			}
+			else {
+				clear();
+				continue;
+			}
 		}
-
-		if (choice == 1) {
-			//function returnToOverworld()
-			std::cout << "returnToOverworld()";
+		else if (choice == 1) {
+			//returnStartofLevel()
+			//will set index/currentPos = lvl1/2/3 node pointer
 			break;
 		}
 		else if (choice == 2) {
-			//function enterBattle()
-			std::cout << "enterBattle()";
-			break;
+			std::cout << "Are you sure? All enemies will reset! [y/n]" << std::endl;
+			std::string choice2;
+			std::cin >> choice2;
+			if (choice2 == "y") {
+				//returntoHome()
+				//will set index/currentPos = root node pointer
+				break;
+			}
+			else {
+				clear();
+				continue;
+			}
 		}
 		else if (choice == 3) {
-			//function manageInventory()
-			std::cout << "Inventory()";
-			break;
-		}
-		else if (choice == 4) {
-			//function chatter()
-			std::cout << "chatter()";
-			break;
+			clear();
+			c.checkInventory();
+			clear();
+			continue;
 		}
 		else if (choice == 5) {
-			//function quitGame()
-			std::cout << "quitGame()";
 			break;
 		}
 		else
 		{
-			std::cout << "try again" << std::endl;
+			clear();
+			std::cout << "INVALID INPUT" << std::endl;
+			continue;
+
 		}
-	}
-}
-void user()
-{
-	int choice = Start_Menu();
-	if (choice == 1)
-	{
-		std::cout << "\n\nyou inputted 1";
-	}
-	else if (choice == 2)
-	{
-		std::cout << "\n\nyou inputted 2";
-	}
-	else if (choice == 3)
-	{
-		std::cout << "\n\nyou inputted 3";
-	}
-	else
-	{
-		std::cout << "\n\nbruh" << std::endl;
 	}
 }
 

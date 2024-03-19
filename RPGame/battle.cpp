@@ -10,7 +10,7 @@
 battle::battle() {};
 void battle::BattleStats(character& c, enemy& e)
 {
-	int enemyLen = e.get_name().length() + 14;
+	size_t enemyLen = e.get_name().length() + 14;
 	//enemy stats
 	color(4);
 	std::cout << "\t\t\t\t\t|-----[ " << e.get_name() << " ]-----|\n";
@@ -19,7 +19,7 @@ void battle::BattleStats(character& c, enemy& e)
 	std::cout << "\t\t\t\t\t";
 	std::cout << "|" << std::string(enemyLen, '-') << "|\n";
 
-	int charLen = c.get_name().size() + 14;
+	size_t charLen = c.get_name().size() + 14;
 	//character stats
 	color(2);
 	std::cout << "|-----[ " << c.get_name() << " ]-----|\n";
@@ -172,7 +172,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	if (e.get_hp() <= 0)
 	{
 		//play uplifting music
-		e.death();
+		e.makeDead();
 		std::cout << "You WON\n" << std::endl;
 		c.expPt();
 		MSdelay(3000);

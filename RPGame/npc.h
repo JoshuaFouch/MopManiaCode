@@ -18,6 +18,7 @@ public:
 	virtual void dialogue(character& c);
 protected:
 	std::string name;
+	bool isDone = false;
 };
 
 

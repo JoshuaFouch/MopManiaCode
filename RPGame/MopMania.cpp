@@ -4,20 +4,20 @@
 #include "inGame.h"
 #include "battle.h"
 
+#pragma comment(lib, "winmm.lib") //for music and sound effects!
 /*map creation*/
 
 /*the game*/
 int main()
 {
-	#pragma comment(lib, "winmm.lib") //for music and sound effects!
 
 	/*will contain a while loop with the bool "EndGame" (if true, kills while loop, if false, keep going). 
 	Also, another bool "QuitGame" which checks if user wants to quitgame, if quitgame is true, the whole code will end
 	and no end credits will be displayed*/
 
-	enemy bob("bob", 1);
-	GarbageDan yOo("bruh", 100);
-	enemy bill("bill", 2);
+	enemy bob(1);
+	GarbageDan yOo(100);
+	enemy bill(2);
 	Broomba goomba("Broomba", 70, 50, 80);
 	battle hi;
 	hi.Battle_Sequence(goomba, yOo);

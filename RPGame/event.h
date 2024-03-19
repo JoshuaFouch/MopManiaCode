@@ -21,8 +21,10 @@ public:
 	event(std::string music);
 
 	bool get_isComplete();
+	void isCompleted();
+	void setIncomplete();
 
-	virtual void cutScene();
+	virtual void cutScene(character& c);
 
 protected:
 	//members
@@ -33,7 +35,9 @@ protected:
 class GrimeEvent : public event
 {
 public:
-	//Grime Reaper battle object.
+	/*will contain a scene, and then create a grimeReaper enemy and a grimeReaper battle object,
+	 and then will call the battle_sequence passing in the grimeReaper into it*/
+	void cutScene(character& c);
 };
 
 #endif
