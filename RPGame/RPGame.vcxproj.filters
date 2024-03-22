@@ -26,6 +26,9 @@
     <Filter Include="Event Files">
       <UniqueIdentifier>{638ddb47-15b6-4b8c-8582-b1ced37cab42}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Battle Files">
+      <UniqueIdentifier>{f0133ac8-1eee-423b-98e0-21742436361d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
@@ -43,11 +46,14 @@
     <ClInclude Include="inGame.h">
       <Filter>MainGame Files</Filter>
     </ClInclude>
-    <ClInclude Include="battle.h">
-      <Filter>MainGame Files</Filter>
-    </ClInclude>
     <ClInclude Include="event.h">
       <Filter>Event Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMap.h">
+      <Filter>GameMap Files</Filter>
+    </ClInclude>
+    <ClInclude Include="battle.h">
+      <Filter>Battle Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,8 +75,11 @@
     <ClCompile Include="event.cpp">
       <Filter>Event Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameMap.cpp">
+      <Filter>GameMap Files</Filter>
+    </ClCompile>
     <ClCompile Include="battle.cpp">
-      <Filter>MainGame Files</Filter>
+      <Filter>Battle Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

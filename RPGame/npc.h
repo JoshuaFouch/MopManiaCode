@@ -13,11 +13,8 @@ class NPC
 public:
 	//functions
 	NPC();
-	NPC(std::string name);
-	std::string getName();
 	virtual void dialogue(character& c);
 protected:
-	std::string name;
 	bool isDone = false;
 };
 
@@ -28,7 +25,7 @@ class Duster : public NPC
 {
 public:
 
-	Duster(std::string name);
+	Duster();
 
 	void dialogue(character& c);
 };
@@ -39,7 +36,7 @@ class Latherus : public NPC
 {
 public:
 
-	Latherus(std::string name);
+	Latherus();
 
 	void dialogue(character& c);
 };
@@ -49,7 +46,7 @@ class Scruberty : public NPC
 {
 public:
 
-	Scruberty(std::string name);
+	Scruberty();
 
 	void dialogue(character& c);
 };
@@ -60,7 +57,7 @@ class Fizzletider : public NPC
 {
 public:
 
-	Fizzletider(std::string name);
+	Fizzletider();
 
 	void dialogue(character& c);
 };
@@ -70,7 +67,16 @@ class Bristlebeard : public NPC
 {
 public:
 
-	Bristlebeard(std::string name);
+	Bristlebeard();
+
+	void dialogue(character& c);
+};
+
+//NPC 6 (Seamus)
+class bubbleBoy : public NPC
+{
+public:
+	//bubbleBoy();
 
 	void dialogue(character& c);
 };

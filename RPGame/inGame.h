@@ -170,7 +170,7 @@ void Pause_Menu(character& c)
 		std::cout << "|--Pause Menu--|" << std::endl;
 		std::cout << "|---------------------------------|" << std::endl;
 		std::cout << "|1. Go back to beginning of level |" << std::endl;
-		std::cout << "|2. Go back to another level      |" << std::endl;
+		std::cout << "|2. Go back to Town               |" << std::endl;
 		std::cout << "|3. Check Inventory               |" << std::endl;
 		std::cout << "|4. Exit Game                     |" << std::endl;
 		std::cout << "|5. Go Back                       |" << std::endl;
@@ -185,18 +185,7 @@ void Pause_Menu(character& c)
 			if (exitChoice == "y") {
 				std::string exitChoice1;
 				clear();
-				std::cout << "."; MSdelay(500);
-				std::cout << "."; MSdelay(500);
-				std::cout << "."; MSdelay(500);
-				clear();
-				std::cout << "."; MSdelay(500);
-				std::cout << "."; MSdelay(500);
-				std::cout << "."; MSdelay(500);
-				clear();
-				std::cout << "."; MSdelay(500);
-				std::cout << "."; MSdelay(500);
-				std::cout << "."; MSdelay(500);
-				clear();
+				Dotdot();
 				std::cout << "Are you really really sure? ALL PROGRESS WILL BE LOST! [y/n]" << std::endl;
 				std::cin >> exitChoice1;
 				if (exitChoice1 == "y") {

@@ -149,25 +149,28 @@ void enemy::Attack4(character& c)
 	c.damaged(this->att);
 	color(7);
 }
-void enemy::Heal()
+void enemy::Heal(character& c)
 {
 	color(4);
 	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "\tHEALED" << std::endl;
+	this->hp += (c.get_hp() / 5);
 	color(7);
 }
-void enemy::Fortify()
+void enemy::Fortify(character& c)
 {
 	color(4);
 	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "\tFORTIFY" << std::endl;
+	this->def += (c.get_def() / 10);
 	color(7);
 }
-void enemy::Enrage()
+void enemy::Enrage(character& c)
 {
 	color(4);
 	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "\tENRAGE" << std::endl;
+	this->att += (c.get_att() / 10);
 	color(7);
 }
 
@@ -187,13 +190,13 @@ void enemy::nextMove(character& c, int random)
 		Attack4(c);
 		break;
 	case 5:
-		Heal();
+		Heal(c);
 		break;
 	case 6:
-		Fortify();
+		Fortify(c);
 		break;
 	case 7:
-		Enrage();
+		Enrage(c);
 		break;
 	}
 }
@@ -237,17 +240,25 @@ void GarbageDan::Attack4(character& c)
 	color(7);
 }
 
-void GarbageDan::Heal()
+void GarbageDan::Heal(character& c)
 {
-
+	color(4);
+	//heals the enemy's hp depending on how much the hp the character lost
+	std::cout << "\tHEALED" << std::endl;
+	//this->get_hp() += (c.get_hp() / 5);
+	color(7);
 }
 
-void GarbageDan::Fortify()
+void GarbageDan::Fortify(character& c)
 {
-
+	color(4);
+	//raises the defense stat depending on how much the hp the character lost
+	std::cout << "\tFORTIFY" << std::endl;
+	//this->def += (c.get_def() / 10);
+	color(7);
 }
 
-void GarbageDan::Enrage()
+void GarbageDan::Enrage(character& c)
 {
 
 }

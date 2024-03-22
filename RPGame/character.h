@@ -69,9 +69,14 @@ public:
 	virtual void Attack3(enemy& e);
 	virtual void Attack4(enemy& e);
 
+	//for inventory
 	bool noItems();
 	void useInventory();
 	void checkInventory();
+
+	//for quests
+	void bubAdvance();
+
 
 protected:
 
@@ -99,6 +104,10 @@ protected:
 
 	bool backLvl = false; //if this is true, user will go back to beginning of level
 	bool otherLvl = false;	//if this is true, user will go back to another level
+
+	//quest members
+	/*depending on your progress, member++*/
+	int bubbleQuest = 0;
 
 	//attack names
 	std::string aName1;

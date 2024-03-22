@@ -18,6 +18,7 @@ public:
 	//functions
 	
 	//constructor
+	event();
 	event(std::string music);
 
 	bool get_isComplete();

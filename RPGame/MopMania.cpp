@@ -3,6 +3,7 @@
 #include "npc.h"
 #include "inGame.h"
 #include "battle.h"
+#include "event.h"
 
 #pragma comment(lib, "winmm.lib") //for music and sound effects!
 /*map creation*/
@@ -16,11 +17,14 @@ int main()
 	and no end credits will be displayed*/
 
 	enemy bob(1);
-	GarbageDan yOo(100);
+	GarbageDan yOo(10);
 	enemy bill(2);
 	Broomba goomba("Broomba", 70, 50, 80);
+	bubbleBoy bub;
 	battle hi;
-	hi.Battle_Sequence(goomba, yOo);
+	bub.dialogue(goomba);
+	//Pause_Menu(goomba);
+	//hi.Battle_Sequence(goomba, yOo);
 
 
 	int user;

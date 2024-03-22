@@ -37,9 +37,9 @@ public:
 	virtual void Attack2(character& c);
 	virtual void Attack3(character& c);
 	virtual void Attack4(character& c);
-	virtual void Heal();
-	virtual void Fortify();
-	virtual void Enrage();
+	virtual void Heal(character& c);
+	virtual void Fortify(character& c);
+	virtual void Enrage(character& c);
 
 private:
 
@@ -62,9 +62,9 @@ public:
 	void Attack2(character& c);	//Bin Blast
 	void Attack3(character& c);	//Stale Food Shooter
 	void Attack4(character& c);	//Stench Smear
-	void Heal();	//Mold Sandwich
-	void Fortify();	//Dumpster Dive (raise defense)
-	void Enrage();	//Broken Glass Shuffle
+	void Heal(character& c);	//Mold Sandwich
+	void Fortify(character& c);	//Dumpster Dive (raise defense)
+	void Enrage(character& c);	//Broken Glass Shuffle
 
 };
 
@@ -86,12 +86,11 @@ class GrimeReaper : public enemy
 	void Attack2(character& c);
 	void Attack3(character& c);
 	void Attack4(character& c);
-	void Heal();
-	void Fortify();
-	void Enrage();
+	void Heal(character& c);
+	void Fortify(character& c);
+	void Enrage(character& c);
 
 };
-
 
 #endif
 

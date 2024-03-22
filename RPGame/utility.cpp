@@ -15,6 +15,22 @@ void Sdelay(int n)
 	std::this_thread::sleep_for(std::chrono::seconds(n));
 }
 
+void Dotdot()
+{
+	std::cout << "."; MSdelay(500);
+	std::cout << "."; MSdelay(500);
+	std::cout << "."; MSdelay(500);
+	clear();
+	std::cout << "."; MSdelay(500);
+	std::cout << "."; MSdelay(500);
+	std::cout << "."; MSdelay(500);
+	clear();
+	std::cout << "."; MSdelay(500);
+	std::cout << "."; MSdelay(500);
+	std::cout << "."; MSdelay(500);
+	clear();
+}
+
 void color(int n)
 {
 	//for different text colors

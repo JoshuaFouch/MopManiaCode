@@ -131,6 +131,7 @@
     <ClInclude Include="character.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="event.h" />
+    <ClInclude Include="GameMap.h" />
     <ClInclude Include="inGame.h" />
     <ClInclude Include="npc.h" />
     <ClInclude Include="utility.h" />
@@ -139,6 +140,7 @@
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="event.cpp" />
+    <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="npc.cpp" />

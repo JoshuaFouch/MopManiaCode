@@ -391,6 +391,12 @@ void character::checkInventory()
     color(7);
 }
 
+//for quests
+void character::bubAdvance()
+{
+    bubbleQuest++;
+}
+
 
 /*BROOMBA DEFINITIONS*/
 

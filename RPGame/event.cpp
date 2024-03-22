@@ -2,6 +2,7 @@
 #include "battle.h"
 
 //base event
+event::event() {}
 event::event(std::string music)
 {
 	this->music = music;
@@ -24,4 +25,5 @@ void event::cutScene(character& c)
 {
 	playMusic(this->music);
 	std::cout << "Things will happen" << std::endl;
+	system("pause");
 }
