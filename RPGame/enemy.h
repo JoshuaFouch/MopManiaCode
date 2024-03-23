@@ -17,6 +17,9 @@ public:
 	int get_hp();
 	int get_lvl();
 	int get_att();
+	void add_hp(int val);
+	void add_att(int val);
+	void add_def(int val);
 	void set_stats(int hp, int att, int def, int lvl);
 	bool get_isDead();
 	void makeDead();
@@ -55,7 +58,7 @@ class GarbageDan : public enemy
 {
 public:
 	//constructor
-	GarbageDan(int lvl);	//Base: 60 HP, 40 att, 100 defense
+	GarbageDan(int lvl);	//Base: 60 HP, 40 att, 100 defense (high defense but low attack)
 
 	//abilities
 	void Attack1(character& c);	//Trash Bash
@@ -79,7 +82,7 @@ public:
 class GrimeReaper : public enemy
 {
 	//constructor
-	GrimeReaper(int lvl);	//Base: 100 HP, 50 HP, 50 HP
+	GrimeReaper(int lvl);	//Base: 100 HP, 80 att, 30 def (fast and powerful but low defense boss)
 
 	//abilities
 	void Attack1(character& c);

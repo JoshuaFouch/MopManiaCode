@@ -17,14 +17,14 @@ int main()
 	and no end credits will be displayed*/
 
 	enemy bob(1);
-	GarbageDan yOo(10);
+	GarbageDan yOo(1);
 	enemy bill(2);
-	Broomba goomba("Broomba", 70, 50, 80);
+	Broomba goomba("Broomba", 100, 60, 80);
 	bubbleBoy bub;
 	battle hi;
-	bub.dialogue(goomba);
+	//bub.dialogue(goomba);
 	//Pause_Menu(goomba);
-	//hi.Battle_Sequence(goomba, yOo);
+	hi.Battle_Sequence(goomba, yOo);
 
 
 	int user;

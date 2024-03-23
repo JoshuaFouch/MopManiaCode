@@ -41,6 +41,15 @@ int enemy::get_att()
 {
 	return att;
 }
+void enemy::add_hp(int val) {
+	this->hp += val;
+}
+void enemy::add_att(int val) {
+	this->att += val;
+}
+void enemy::add_def(int val) {
+	this->def += val;
+}
 void enemy::set_stats(int basehp, int baseatt, int basedef, int level)
 {
 	//automatically sets the base stats
@@ -244,23 +253,36 @@ void GarbageDan::Heal(character& c)
 {
 	color(4);
 	//heals the enemy's hp depending on how much the hp the character lost
-	std::cout << "\tHEALED" << std::endl;
-	//this->get_hp() += (c.get_hp() / 5);
+	std::cout << "\tTRASH CONSUMPTION!" << std::endl;
+	MSdelay(1000);
+	this->add_hp((c.get_hp() / 20));
 	color(7);
+	std::cout << "Enemy's health went up by: " << (c.get_hp() / 20) << std::endl;
+	MSdelay(1000);
 }
 
 void GarbageDan::Fortify(character& c)
 {
 	color(4);
 	//raises the defense stat depending on how much the hp the character lost
-	std::cout << "\tFORTIFY" << std::endl;
-	//this->def += (c.get_def() / 10);
+	std::cout << "\tSMELLY STURDY" << std::endl;
+	MSdelay(1000);
+	this->add_def((c.get_def() / 20));
 	color(7);
+	std::cout << "Enemy's defense went up by: " << (c.get_att() / 20) << std::endl;
+	MSdelay(1000);
 }
 
 void GarbageDan::Enrage(character& c)
 {
-
+	color(4);
+	//raises the attack stat depening on how much the hp the character lost
+	std::cout << "\tRANCID RAGE" << std::endl;
+	MSdelay(1000);
+	this->add_att((c.get_att() / 20));
+	color(7);
+	std::cout << "Enemy's attack went up by: " << (c.get_att() / 20) << std::endl;
+	MSdelay(1000);
 }
 
 
