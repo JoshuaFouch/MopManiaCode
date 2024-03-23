@@ -78,6 +78,23 @@ public:
 	Stainiac(int lvl);
 };
 
+//enemy (eljay)
+class MucusMaw : public enemy
+{
+public:
+	//constructor
+	MucusMaw(int lvl);	//Base: 70HP , 60 ATT, 30 DEF (Heavy hitter, but very fraile)
+	//abilities
+	void Attack1(character& c);	//Slime Spit
+	void Attack2(character& c);	//Gooey Grip
+	void Attack3(character& c);	//Viscous Vomit
+	void Attack4(character& c);	//Flash BOOger
+	void Heal(character& c);	//Slimewave Mend
+	void Fortify(character& c);	//Slime Shield (raise defense)
+	void Enrage(character& c);	//Mucous FURY
+
+};
+
 //level 1 Boss
 class GrimeReaper : public enemy
 {

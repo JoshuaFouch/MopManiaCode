@@ -63,7 +63,7 @@ void Latherus::dialogue(character& c)
 	{
 		color(6);
 		std::cout << "Latherus: Alrighto! Here you goooo good adventurer!" << std::endl;
-		c.acq_healUp();
+		c.acq_attUp();
 		color(7);
 		std::cout << "You have obtained a potion!" << std::endl;
 	}
@@ -77,7 +77,7 @@ void Latherus::dialogue(character& c)
 	{
 		color(6);
 		std::cout << "Latherus: Nah you are taking this boi! *chucks at yout head* " << std::endl;
-		c.acq_healUp();
+		c.acq_attUp();
 		color(7);
 		std::cout << "You have obtained a potion against your own will!" << std::endl;
 	}
@@ -281,4 +281,82 @@ void bubbleBoy::dialogue(character& c)
 		clear();
 		color(7);
 	}
+}
+
+DustySwift::DustySwift() : NPC() {}
+
+void DustySwift::dialogue(character& c)
+{
+	color(8);//this dialogue will be Light Blue
+	std::cout << "Dusty Swift: boi oh boi I have some options for you. Whatcha lookin for??" << '\n';
+	color(7); std::cout << " Choose an option:";
+	int choice;
+	do {
+		std::cout << "DustySwift: Hey! What do you want to do?" << '\n';
+		std::cout << "1. Ask about cleaning tips." << '\n';
+		std::cout << "2. Inquire about the nearest inn." << '\n';
+		std::cout << "3. You have anything to help me?" << '\n';
+		std::cout << "Enter your choice: ";
+		std::cin >> choice;
+		switch (choice) {
+		case 1:
+			color(8);
+			std::cout << "DustySwift: Ah cleaning tips? Wax on, Wax off..." << '\n';
+			break;
+
+		case 2:
+			color(8);
+			std::cout << " DustySwift:The nearest inn is just down the street, take a left and you'll see it." << '\n';
+			break;
+		case 3:
+			color(8);
+			std::cout << "DustySwift: AS a matter of fact, here you go! " << '\n';
+			c.acq_defUp();
+			color(7);
+			std::cout << " you have obtained a defensive potion! Seems a little dusty though..." << '\n';
+			break;
+		default: 
+			std::cout << "DustySwift: I didn't understand you choice" << '\n';
+			break;
+		}
+	} while (choice != 3); //continues dialogue until the player chooses to leave
+}
+
+SirMopsworth::SirMopsworth() : NPC() {}
+
+void SirMopsworth::dialogue(character& c)
+{
+	color(8);//this dialogue will be Light Blue
+	std::cout << "SirMopsworth: boi oh boi I have some options for you. Whatcha lookin for??" << '\n';
+	color(7); std::cout << " Choose an option:";
+	int choice;
+	do {
+		std::cout << "SirMopsworth: Hello young chap. What would you like?" << '\n';
+		std::cout << "1. Ask about cleaning tips." << '\n';
+		std::cout << "2. Inquire about the nearest inn." << '\n';
+		std::cout << "3. You have anything to help me?" << '\n';
+		std::cout << "Enter your choice: ";
+		std::cin >> choice;
+		switch (choice) {
+		case 1:
+			color(8);
+			std::cout << "SirMopsworth: Ah cleaning tips? always make sure your lab is clean..." << '\n';
+			break;
+
+		case 2:
+			color(8);
+			std::cout << " SirMopsworth:The nearest inn is near here so you will find it." << '\n';
+			break;
+		case 3:
+			color(8);
+			std::cout << "SirMopsworth: Ah yes, here is a potion for you " << '\n';
+			c.acq_defUp();
+			color(7);
+			std::cout << " you have obtained a defensive potion! Smells more like wine for some reason..." << '\n';
+			break;
+		default:
+			std::cout << "SirMopsworth: I didn't understand you choice." << '\n';
+			break;
+		}
+	} while (choice != 3); //continues dialogue until the player chooses to leave
 }

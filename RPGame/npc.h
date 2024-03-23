@@ -81,4 +81,26 @@ public:
 	void dialogue(character& c);
 };
 
+//NPC 7 (Eljay)
+
+class DustySwift : public NPC
+{
+public:
+
+	DustySwift();
+
+	void dialogue(character& c);
+};
+
+//NPC 8 (Eljay)
+
+class SirMopsworth : public NPC
+{
+public:
+
+	SirMopsworth();
+
+	void dialogue(character& c);
+};
+
 #endif

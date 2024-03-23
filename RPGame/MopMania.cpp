@@ -17,14 +17,22 @@ int main()
 	and no end credits will be displayed*/
 
 	enemy bob(1);
-	GarbageDan yOo(1);
+	//GarbageDan yOo(1);
+	MucusMaw yOo(1);
 	enemy bill(2);
 	Broomba goomba("Broomba", 100, 60, 80);
-	bubbleBoy bub;
+	//bubbleBoy bub;
 	battle hi;
 	//bub.dialogue(goomba);
 	//Pause_Menu(goomba);
 	hi.Battle_Sequence(goomba, yOo);
+
+	//currently this plays right after you win in the battle sequence
+	//but then it jumps to the dialogue where you are introduced to choose a new life
+	DustySwift DS;
+	DS.dialogue(goomba);
+	SirMopsworth SM;
+	SM.dialogue(goomba);
 
 
 	int user;

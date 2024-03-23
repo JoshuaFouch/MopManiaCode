@@ -285,6 +285,81 @@ void GarbageDan::Enrage(character& c)
 	MSdelay(1000);
 }
 
+//this is an enemy called 'MuscusMaw' Implementation
+MucusMaw::MucusMaw(int lvl) : enemy(lvl)
+{
+	set_name("MucusMaw");
+	set_stats(70, 60, 30, lvl); //HP 70, Att 60, DEF 30
+}
+
+void MucusMaw::Attack1(character& c)
+{
+	color(4);
+	std::cout << "\tSlime Spit!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void MucusMaw::Attack2(character& c)
+{
+	color(4);
+	std::cout << "\tGooey Grip!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void MucusMaw::Attack3(character& c)
+{
+	color(4);
+	std::cout << "\tViscous Vomit!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void MucusMaw::Attack4(character& c)
+{
+	color(4);
+	std::cout << "\tFlash BOOger!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void MucusMaw::Heal(character& c)
+{
+	color(4);
+	//heals the enemy's hp depending on how much the hp the character lost
+	std::cout << "\tSLIMEWAVE MEND!" << std::endl;
+	MSdelay(1000);
+	this->add_hp((c.get_hp() / 20));
+	color(7);
+	std::cout << "Enemy's health went up by: " << (c.get_hp() / 20) << std::endl;
+	MSdelay(1000);
+}
+
+void MucusMaw::Fortify(character& c)
+{
+	color(4);
+	//raises the defense stat depending on how much the hp the character lost
+	std::cout << "\tSLIME SHIELD!" << std::endl;
+	MSdelay(1000);
+	this->add_def((c.get_def() / 20));
+	color(7);
+	std::cout << "Enemy's defense went up by: " << (c.get_att() / 20) << std::endl;
+	MSdelay(1000);
+}
+
+void MucusMaw::Enrage(character& c)
+{
+	color(4);
+	//raises the attack stat depening on how much the hp the character lost
+	std::cout << "\tMUCOUS FURY!" << std::endl;
+	MSdelay(1000);
+	this->add_att((c.get_att() / 20));
+	color(7);
+	std::cout << "Enemy's attack went up by: " << (c.get_att() / 20) << std::endl;
+	MSdelay(1000);
+}
+
 
 //GrimeReaper Implementations
 /*GrimeReaper::GrimeReaper(std::string name, int lvl)
