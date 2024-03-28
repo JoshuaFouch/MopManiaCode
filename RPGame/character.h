@@ -20,9 +20,9 @@ public:
 	std::string get_name();
 	void set_name(std::string name);
 	int get_hp();
-	int get_maxhp();
+	int get_maxhp();//this has maxhp, not maxHP is there a difference??
 	void set_hp(int hp);
-	void set_maxHp(int maxHp);
+	void set_maxHp(int maxHp);//like here
 	int get_att();
 	void set_att(int att);
 	int get_def();
