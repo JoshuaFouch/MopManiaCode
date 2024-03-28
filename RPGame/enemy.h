@@ -12,11 +12,14 @@ public:
 	enemy();
 	enemy(int lvl);
 	std::string get_name();
-	void set_name(std::string name);
+	void set_name(std::string name); 
 	int get_def();
 	int get_hp();
 	int get_lvl();
 	int get_att();
+	int get_maxhp();
+	int get_maxAtt();
+	int get_maxDef();
 	void add_hp(int val);
 	void add_att(int val);
 	void add_def(int val);

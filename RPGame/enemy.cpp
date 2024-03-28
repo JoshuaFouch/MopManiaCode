@@ -41,6 +41,19 @@ int enemy::get_att()
 {
 	return att;
 }
+int enemy::get_maxhp()
+{
+    return maxHp;
+}
+int enemy::get_maxAtt()
+{
+    return maxAtt;
+}
+int enemy::get_maxDef()
+{
+    return maxDef;
+}
+
 void enemy::add_hp(int val) {
 	this->hp += val;
 }
@@ -61,6 +74,18 @@ void enemy::set_stats(int basehp, int baseatt, int basedef, int level)
 	hp += ((hp / 10) * lvl);
 	att += ((att / 10) * lvl);
 	def += ((def / 10) * lvl);
+}
+void enemy::set_maxHp(int hp)
+{
+    this->maxHp = hp;//can you help? will this go off continuously or will it go just once to set it intially?
+}
+void enemy::set_maxAtt(int att)
+{
+    this->maxAtt = att;//same
+}
+void enemy::set_maxDef(int def)
+{
+    this->maxDef = def;//same
 }
 bool enemy::get_isDead()
 {
@@ -158,12 +183,12 @@ void enemy::Attack4(character& c)
 	c.damaged(this->att);
 	color(7);
 }
-void enemy::Heal(character& c)
+void enemy::Heal(character& c)//if all this works then we also shouldn't have to pass in character for these 3 functions
 {
 	color(4);
 	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "\tHEALED" << std::endl;
-	this->hp += (c.get_hp() / 5);
+	this->hp += (e.get_maxhp() / e.get_lvl());//new function to scale healing depending on the enemy's level and their max of that stat
 	color(7);
 }
 void enemy::Fortify(character& c)
@@ -171,15 +196,15 @@ void enemy::Fortify(character& c)
 	color(4);
 	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "\tFORTIFY" << std::endl;
-	this->def += (c.get_def() / 10);
-	color(7);
+	this->def += (2*e.get_maxDef() / e.get_lvl());//since hp will standardly be about 2 times greater than the other stats,
+	color(7);// I have these ones double the stat before calculating how much to add
 }
 void enemy::Enrage(character& c)
 {
 	color(4);
 	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "\tENRAGE" << std::endl;
-	this->att += (c.get_att() / 10);
+	this->att += (2*e.get_maxAtt() / e.get_lvl());
 	color(7);
 }
 
