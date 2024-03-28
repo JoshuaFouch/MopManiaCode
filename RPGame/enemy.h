@@ -20,6 +20,9 @@ public:
 	int get_maxhp();
 	int get_maxAtt();
 	int get_maxDef();
+	void set_maxHp(int hp);
+	void set_maxAtt(int att);
+	void set_maxDef(int def);
 	void add_hp(int val);
 	void add_att(int val);
 	void add_def(int val);
@@ -52,6 +55,9 @@ private:
 	int att;
 	int def;
 	int hp;
+	int maxHp;
+	int maxAtt;
+	int maxDef;
 	std::string name;
 	int lvl = 1;
 	bool isDead = false;
