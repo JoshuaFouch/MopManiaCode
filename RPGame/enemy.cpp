@@ -197,7 +197,7 @@ void enemy::Heal(character& c)//if all this works then we also shouldn't have to
 	color(4);
 	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "\tHEALED" << std::endl;
-	this->hp += (this->get_maxhp() / this->get_lvl());//new function to scale healing depending on the enemy's level and their max of that stat
+	this->hp += ((this->get_maxhp()/10) + this->get_lvl());//new function to scale healing depending on the enemy's level and their max of that stat
 	color(7);
 }
 void enemy::Fortify(character& c)
@@ -205,7 +205,7 @@ void enemy::Fortify(character& c)
 	color(4);
 	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "\tFORTIFY" << std::endl;
-	this->def += ((2 * this->get_maxDef()) / this->get_lvl());//since hp will standardly be about 2 times greater than the other stats,
+	this->def += ((this->get_maxDef()/10)+this->get_lvl());//since hp will standardly be about 2 times greater than the other stats,
 	color(7);// I have these ones double the stat before calculating how much to add
 }
 void enemy::Enrage(character& c)
@@ -213,7 +213,7 @@ void enemy::Enrage(character& c)
 	color(4);
 	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "\tENRAGE" << std::endl;
-	this->att += ((2 * this->get_maxAtt()) / this->get_lvl());
+	this->att += ((this->get_maxAtt()/10)+this->get_lvl());
 	color(7);
 }
 
@@ -289,9 +289,9 @@ void GarbageDan::Heal(character& c)
 	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "\tTRASH CONSUMPTION!" << std::endl;
 	MSdelay(1000);
-	this->add_hp(this->get_maxhp() / this->get_lvl());
+	this->add_hp((this->get_maxhp()/10) + this->get_lvl());
 	color(7);
-	std::cout << "Enemy's health went up by: " << (this->get_maxhp() / this->get_lvl()) << std::endl;
+	std::cout << "Enemy's health went up by: " << ((this->get_maxhp()/10) + this->get_lvl()) << std::endl;
 	MSdelay(1000);
 }
 
@@ -301,9 +301,9 @@ void GarbageDan::Fortify(character& c)
 	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "\tSMELLY STURDY" << std::endl;
 	MSdelay(1000);
-	this->add_def((2 * this->get_maxDef()) / this->get_lvl());
+	this->add_def((this->get_maxDef()/10)+this->get_lvl());
 	color(7);
-	std::cout << "Enemy's defense went up by: " << ((2 * this->get_maxDef()) / this->get_lvl()) << std::endl;
+	std::cout << "Enemy's defense went up by: " << ((this->get_maxDef()/10)+this->get_lvl()) << std::endl;
 	MSdelay(1000);
 }
 
@@ -313,9 +313,9 @@ void GarbageDan::Enrage(character& c)
 	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "\tRANCID RAGE" << std::endl;
 	MSdelay(1000);
-	this->add_att((2 * this->get_maxAtt()) / this->get_lvl());
+	this->add_att((this->get_maxAtt()/10)+this->get_lvl());
 	color(7);
-	std::cout << "Enemy's attack went up by: " << ((2 * this->get_maxAtt()) / this->get_lvl()) << std::endl;
+	std::cout << "Enemy's attack went up by: " << ((this->get_maxAtt()/10)+this->get_lvl()) << std::endl;
 	MSdelay(1000);
 }
 
