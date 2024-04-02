@@ -74,9 +74,9 @@ public:
 	void Attack2(character& c);	//Bin Blast
 	void Attack3(character& c);	//Stale Food Shooter
 	void Attack4(character& c);	//Stench Smear
-	void Heal(character& c);	//Mold Sandwich
-	void Fortify(character& c);	//Dumpster Dive (raise defense)
-	void Enrage(character& c);	//Broken Glass Shuffle
+	void Heal(character& c);	//Trash consumption
+	void Fortify(character& c);	//Smelly sturdy
+	void Enrage(character& c);	//Rancid rage
 
 };
 
@@ -85,6 +85,16 @@ class Stainiac : public enemy
 public:
 	//constructor
 	Stainiac(int lvl);
+
+	//abilities
+	void Attack1(character& c);	//Ink Assault
+	void Attack2(character& c);	//Blot Blurge
+	void Attack3(character& c);	//Filthy Frenzy
+	void Attack4(character& c);	//Slimy Splat
+	void Heal(character& c);	//Gooey Rejuvenation
+	void Fortify(character& c);	//Ink Shield
+	void Enrage(character& c);	//Ink Overflow
+
 };
 
 //enemy (eljay)
@@ -92,7 +102,8 @@ class MucusMaw : public enemy
 {
 public:
 	//constructor
-	MucusMaw(int lvl);	//Base: 70HP , 60 ATT, 30 DEF (Heavy hitter, but very fraile)
+	MucusMaw(int lvl);	//Base: 70HP , 60 ATT, 30 DEF (Heavy hitter, but very frail)
+
 	//abilities
 	void Attack1(character& c);	//Slime Spit
 	void Attack2(character& c);	//Gooey Grip

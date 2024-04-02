@@ -10,6 +10,9 @@ enemy::enemy()
 	this->att = 50;
 	this->def = 50;
 	this->hp = 100;
+	this->maxHp = hp;
+	this->maxAtt = att;
+	this->maxDef = def;
 }
 enemy::enemy(int lvl)	//hp=110 , att = 55, def = 55
 {
@@ -285,38 +288,99 @@ void GarbageDan::Attack4(character& c)
 
 void GarbageDan::Heal(character& c)
 {
+	//should compare the enemy and character's level first. and then compare their hp, att, def stats accordingly
 	color(4);
-	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "\tTRASH CONSUMPTION!" << std::endl;
 	MSdelay(1000);
-	this->add_hp(this->get_maxhp() / this->get_lvl());
 	color(7);
+	this->add_hp(this->get_maxhp() / this->get_lvl());
 	std::cout << "Enemy's health went up by: " << (this->get_maxhp() / this->get_lvl()) << std::endl;
-	MSdelay(1000);
+	MSdelay(1500);
 }
 
 void GarbageDan::Fortify(character& c)
 {
 	color(4);
-	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "\tSMELLY STURDY" << std::endl;
 	MSdelay(1000);
-	this->add_def((2 * this->get_maxDef()) / this->get_lvl());
 	color(7);
+	this->add_def((2 * this->get_maxDef()) / this->get_lvl());
 	std::cout << "Enemy's defense went up by: " << ((2 * this->get_maxDef()) / this->get_lvl()) << std::endl;
-	MSdelay(1000);
+	MSdelay(1500);
 }
 
 void GarbageDan::Enrage(character& c)
 {
 	color(4);
-	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "\tRANCID RAGE" << std::endl;
 	MSdelay(1000);
-	this->add_att((2 * this->get_maxAtt()) / this->get_lvl());
 	color(7);
+	this->add_att((2 * this->get_maxAtt()) / this->get_lvl());
 	std::cout << "Enemy's attack went up by: " << ((2 * this->get_maxAtt()) / this->get_lvl()) << std::endl;
+	MSdelay(1500);
+}
+
+//Stainiac implementations
+Stainiac::Stainiac(int lvl) : enemy(lvl)
+{
+	set_name("MucusMaw");
+	set_stats(70, 70, 20, lvl); //he is a defenseless but high in attack kinda guy
+}
+
+void Stainiac::Attack1(character& c)
+{
+	color(4);
+	std::cout << "\tInk Assault!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void Stainiac::Attack2(character& c)
+{
+	color(4);
+	std::cout << "\tBlot Blurge!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void Stainiac::Attack3(character& c)
+{
+	color(4);
+	std::cout << "\tFilthy Frenzy!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void Stainiac::Attack4(character& c)
+{
+	color(4);
+	std::cout << "\tSlimy Splat!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void Stainiac::Heal(character& c)
+{
+	color(4);
+	std::cout << "\tGooey Rejuvenation!" << std::endl;
 	MSdelay(1000);
+	color(7);
+}
+
+void Stainiac::Fortify(character& c) 
+{
+	color(4);
+	std::cout << "\tInk Shield!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+void Stainiac::Enrage(character& c)
+{
+	color(4);
+	std::cout << "\tInk Overflow!" << std::endl;
+	MSdelay(1000);
+	color(7);
 }
 
 //this is an enemy called 'MucusMaw' Implementation
@@ -361,37 +425,34 @@ void MucusMaw::Attack4(character& c)
 void MucusMaw::Heal(character& c)
 {
 	color(4);
-	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "\tSLIMEWAVE MEND!" << std::endl;
 	MSdelay(1000);
-	this->add_hp((c.get_hp() / 20));
 	color(7);
+	this->add_hp((c.get_hp() / 20));
 	std::cout << "Enemy's health went up by: " << (c.get_hp() / 20) << std::endl;
-	MSdelay(1000);
+	MSdelay(1500);
 }
 
 void MucusMaw::Fortify(character& c)
 {
 	color(4);
-	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "\tSLIME SHIELD!" << std::endl;
 	MSdelay(1000);
-	this->add_def((c.get_def() / 20));
 	color(7);
+	this->add_def((c.get_def() / 20));
 	std::cout << "Enemy's defense went up by: " << (c.get_att() / 20) << std::endl;
-	MSdelay(1000);
+	MSdelay(1500);
 }
 
 void MucusMaw::Enrage(character& c)
 {
 	color(4);
-	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "\tMUCOUS FURY!" << std::endl;
 	MSdelay(1000);
-	this->add_att((c.get_att() / 20));
 	color(7);
+	this->add_att((c.get_att() / 20));
 	std::cout << "Enemy's attack went up by: " << (c.get_att() / 20) << std::endl;
-	MSdelay(1000);
+	MSdelay(1500);
 }
 
 
