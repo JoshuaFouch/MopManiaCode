@@ -393,11 +393,69 @@ void MucusMaw::Enrage(character& c)
 	MSdelay(1500);
 }
 
+//stainiac implementations
 
-//GrimeReaper Implementations
-/*GrimeReaper::GrimeReaper(std::string name, int lvl)
+Stainiac::Stainiac(int lvl)
 {
-	set_name("The Grime Reaper");
-	set_stats(100, 50, 50, lvl);
-}*/
+	set_name("Stainiac");
+	set_stats(70, 70, 20, lvl);	//defenseless but powerful
+}
+
+void Stainiac::Attack1(character& c)
+{
+	color(4);
+	std::cout << "\tInk Assault!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void Stainiac::Attack2(character& c)
+{
+	color(4);
+	std::cout << "\tBlot Blurge!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void Stainiac::Attack3(character& c)
+{
+	color(4);
+	std::cout << "\tFilthy Frenzy!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void Stainiac::Attack4(character& c)
+{
+	color(4);
+	std::cout << "\tSlimy Splat!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void Stainiac::Heal(character& c)
+{
+	color(4);
+	std::cout << "\tGooey Rejuvenation!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+void Stainiac::Fortify(character& c)
+{
+	color(4);
+	std::cout << "\tInk Shield!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+void Stainiac::Enrage(character& c)
+{
+	color(4);
+	std::cout << "\tInk Overflow!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+
 
