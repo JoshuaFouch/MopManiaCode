@@ -21,7 +21,10 @@ public:
 	//functions
 	std::string getName();
 	void setName(std::string name);
-
+	void setLeftChild(locationNode* node);
+	void setMidChild(locationNode* node);
+	void setRightChild(locationNode* node);
+	void setParent(locationNode* node);
 
 protected:
 	//for the node itself
@@ -40,6 +43,26 @@ protected:
 	enemy* enemyPtr = NULL;	//points to an enemy
 	event* eventPtr = NULL;	//points to an event
 
+};
+
+class gameMap
+{
+public:
+	int getSize();
+	void toRoot();
+	//add root only!
+	void addRoot(std::string n, std::string d1, std::string d2, NPC* np, enemy* e, event* ev);
+	void birth_leftChild(locationNode* mommy, std::string n, std::string d1, std::string d2, NPC* np, enemy* e, event* ev);
+	void birth_midChild(locationNode* mommy, std::string n, std::string d1, std::string d2, NPC* np, enemy* e, event* ev);
+	void birth_rightChild(locationNode* mommy, std::string n, std::string d1, std::string d2, NPC* np, enemy* e, event* ev);
+
+	//function to move and play through the map
+	//void play(locationNode* i, character& c);
+
+private:
+	locationNode* root;
+	locationNode* index;
+	int size;
 };
 
 #endif

@@ -199,7 +199,7 @@ void bubbleBoy::dialogue(character& c)
 	std::cout << "Bubble Boy: Can anybody hear me?"<<std::endl;
 	color(7); std::cout << "1. I can hear you!"<<std::endl;
     std::cout <<           "2. Sorry kid, I've got more important things to do"<<std::endl;	//change back to white for user
-	std::int choice;
+	int choice;
 	std::cin >> choice;
 
 	if (choice == 1)
@@ -231,7 +231,7 @@ void bubbleBoy::dialogue(character& c)
     std::cout <<     "2. Ain't no way ya blabbering bubble!"<<std::endl;	//change back to white for user
     
 	
-		std::int choice;
+		int choice;
 		std::cin >> choice;
 		if (choice == 1) {
 			color(9);
@@ -294,7 +294,8 @@ void bubbleBoy::dialogue(character& c)
 			color(7);
 			clear();
 			std::cout << "You should probably try a proper answer next time..." << std::endl;
-			system("pause");//call BubbleBoy's dioulauge again maybe 
+			system("pause");
+			bubbleBoy::dialogue(c);
 		}
 }
 
