@@ -29,8 +29,6 @@ public:
 	void set_def(int def);
 	int get_lvl();
 	int get_winNum();
-	bool death();
-	bool alive();
 
 	//for items
 	int get_healUp();
@@ -77,11 +75,13 @@ public:
 	//for quests
 	void bubAdvance();
 
+	bool isDead = false;
+	bool exitGame = false;	//if this is true, int main will return
+	bool endGame = false;	//if game is completed, endGame = true
 
 protected:
 
 	//private members
-
 	std::string name;
 	int hp;	//the current hp
 	int maxHp; //the constant hp
@@ -97,13 +97,6 @@ protected:
 	int attUp = 0;	//counter for how many attack up potions a character has
 	int defUp = 0;	//counter for how many defense up potions a character has
 	int deadRat = 0; //counter for how many dead rats the character has (its a useless item)
-
-	bool isDead = false;
-	bool exitGame = false;	//if this is true, int main will return
-	bool endGame = false;	//if game is completed, endGame = true
-
-	bool backLvl = false; //if this is true, user will go back to beginning of level
-	bool otherLvl = false;	//if this is true, user will go back to another level
 
 	//quest members
 	/*depending on your progress, member++*/

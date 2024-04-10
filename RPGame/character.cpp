@@ -82,7 +82,7 @@ int character::get_winNum()
 }
 
 //kills character
-bool character::death() 
+/*bool character::death()
 {
     this->isDead = true;
     return isDead;
@@ -91,7 +91,7 @@ bool character::alive()
 {
     this->isDead = false;
     return isDead;
-}
+}*/
 
 //for items
 int character::get_healUp()

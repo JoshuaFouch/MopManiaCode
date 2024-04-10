@@ -57,7 +57,7 @@ public:
 	void birth_rightChild(locationNode* mommy, std::string n, std::string d1, std::string d2, NPC* np, enemy* e, event* ev);
 
 	//function to move and play through the map
-	//void play(locationNode* i, character& c);
+	void play(locationNode* i, character& c);
 
 private:
 	locationNode* root;

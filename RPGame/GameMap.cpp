@@ -92,3 +92,11 @@ void gameMap::birth_rightChild(locationNode* mommy, std::string n, std::string d
 	infant->setParent(mommy);
 	size++;
 }
+
+void gameMap::play(locationNode* i, character& c)
+{
+	while (c.isDead == false || c.endGame == false || c.exitGame == false)
+	{
+
+	}
+}
