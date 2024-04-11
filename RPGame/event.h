@@ -21,24 +21,15 @@ public:
 	event();
 	event(std::string music);
 
-	bool get_isComplete();
-	void isCompleted();
-	void setIncomplete();
 
-	virtual void cutScene(character& c);
+	bool isComplete = false;
+
+	virtual void trigger(character& c);
 
 protected:
 	//members
 	std::string music;
-	bool isComplete = false;
 };
 
-class GrimeEvent : public event
-{
-public:
-	/*will contain a scene, and then create a grimeReaper enemy and a grimeReaper battle object,
-	 and then will call the battle_sequence passing in the grimeReaper into it*/
-	void cutScene(character& c);
-};
 
 #endif
