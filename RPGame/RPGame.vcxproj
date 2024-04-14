@@ -153,6 +153,7 @@
     <Media Include="gameover.wav" />
     <Media Include="GoDown.wav" />
     <Media Include="metalPipe.wav" />
+    <Media Include="OE.wav" />
     <Media Include="vine-boom.wav" />
     <Media Include="void.wav" />
   </ItemGroup>

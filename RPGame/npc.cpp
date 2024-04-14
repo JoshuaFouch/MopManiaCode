@@ -13,6 +13,16 @@ void NPC::dialogue(character& c)
 	std::cout << "NPC: What is up ? " << std::endl;
 }
 
+bool NPC::alreadyTalkedto() {
+	if (this->isDone = 1) {
+		return true;	//plays a different dialogue
+	}
+	return false;
+}
+
+void NPC::finished() {
+	this->isDone = 1;	//isDone equals true
+}
 
 //Duster NPC
 

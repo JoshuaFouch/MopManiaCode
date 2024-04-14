@@ -16,19 +16,33 @@ class event
 {
 public:
 	//functions
+	bool alreadyDone();
+	void finished();
 	
 	//constructor
 	event();
 	event(std::string music);
-
-
-	bool isComplete = false;
 
 	virtual void trigger(character& c);
 
 protected:
 	//members
 	std::string music;
+
+	int isDone = 0;
+};
+
+class waitingRoomEvent : public event
+{
+public:
+	void trigger(character& c);
+protected:
+	//points to GARBAGEDANS
+	enemy* one = NULL;
+	enemy* two = NULL;
+	enemy* three = NULL;
+	battle* Garbagebattle = NULL;
+	
 };
 
 

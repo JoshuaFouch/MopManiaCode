@@ -14,7 +14,8 @@ int main()
 	/*map creation*/
 	Broomba broomba("Broomba", 70, 50, 80); //beefy but less health
 	gameMap map;
-	event* e = new event;
+	event* e = new event("gameover.wav");
+
 	map.addRoot("Root", "You are at the root...", "You are very cool...", e);
 	map.birth_leftChild(map.getIndex(), "Root's left", "You are at the root's left child", "Hi...", e);
 	map.birth_midChild(map.getIndex(), "Root's middle", "You are at the root's mid child...", "Its pretty mid in here...", e);

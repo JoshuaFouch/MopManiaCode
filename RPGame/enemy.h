@@ -12,7 +12,8 @@ public:
 	enemy();
 	enemy(int lvl);
 	std::string get_name();
-	void set_name(std::string name); 
+	void set_name(std::string name);
+	virtual void manuallyConstruct(int lvl);
 	int get_def();
 	int get_hp();
 	int get_lvl();
@@ -68,6 +69,7 @@ class GarbageDan : public enemy
 public:
 	//constructor
 	GarbageDan(int lvl);	//Base: 60 HP, 40 att, 100 defense (high defense but low attack)
+	void manuallyConstruct(int lvl);
 
 	//abilities
 	void Attack1(character& c);	//Trash Bash
@@ -85,6 +87,7 @@ class Stainiac : public enemy
 public:
 	//constructor
 	Stainiac(int lvl);
+	void manuallyConstruct(int lvl);
 
 	//abilities
 	void Attack1(character& c);	//Ink Assault
@@ -103,6 +106,7 @@ class MucusMaw : public enemy
 public:
 	//constructor
 	MucusMaw(int lvl);	//Base: 70HP , 60 ATT, 30 DEF (Heavy hitter, but very frail)
+	void manuallyConstruct(int lvl);
 
 	//abilities
 	void Attack1(character& c);	//Slime Spit
@@ -116,10 +120,11 @@ public:
 };
 
 //level 1 Boss
-class GrimeReaper : public enemy
+class GrimeReaper : public enemy	//this is Janitorius' secret identity
 {
 	//constructor
 	GrimeReaper(int lvl);	//Base: 100 HP, 80 att, 30 def (fast and powerful but low defense boss)
+	void manuallyConstruct(int lvl);
 
 	//abilities
 	void Attack1(character& c);

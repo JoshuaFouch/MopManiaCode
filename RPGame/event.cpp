@@ -17,3 +17,14 @@ void event::trigger(character& c)
 	std::cout << "Things will happen" << std::endl;
 	system("pause");
 }
+
+bool event::alreadyDone() {
+	if (this->isDone = 1) {
+		return true;
+	}
+	return false;
+}
+
+void event::finished() {
+	this->isDone = 1;
+}

@@ -18,19 +18,24 @@ public:
 
 	//functions
 	bool isLeaf();
+	bool alreadySeen();
+	void steppedFoot();	//node has been made seen
 	std::string getName();
 	void setName(std::string name);
 	std::string getTitle();
 	std::string getDesc1();
 	std::string getDesc2();
+
 	void setLeftChild(locationNode* node);
 	void setMidChild(locationNode* node);
 	void setRightChild(locationNode* node);
 	void setParent(locationNode* node);
+	void setEvent(event* ev);
 	locationNode* getRight();
 	locationNode* getMid();
 	locationNode* getLeft();
 	locationNode* getParent();
+	event* getEvent();
 
 protected:
 	//for the node itself
@@ -38,6 +43,8 @@ protected:
 	std::string title;
 	std::string desc1;	//first line of description
 	std::string desc2;	//second line of description
+
+	int checked = 0;	//if node has already been checked
 
 	//pointers to other nodes
 	locationNode* parentPtr = NULL;	//points to this node's previous node (the parent node)
@@ -80,6 +87,7 @@ public:
 	//function to move and play through the map
 	void play(locationNode* i, character& c);
 	void displayLocation(locationNode* i);
+	void displayLocationAgain(locationNode* i);
 	int Pause_Menu(locationNode* i, character& c);
 
 private:

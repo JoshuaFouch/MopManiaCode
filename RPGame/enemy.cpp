@@ -24,6 +24,12 @@ void enemy::set_name(std::string name)
 {
 	this->name = name;
 }
+
+void enemy::manuallyConstruct(int lvl) 
+{
+	this->name = "Enemy";
+	set_stats(100, 50, 50, lvl);
+}
 std::string enemy::get_name()
 {
 	return name;
@@ -253,6 +259,11 @@ GarbageDan::GarbageDan(int lvl) : enemy(lvl)
 	set_name("GarbageDan");
 	set_stats(50, 45, 100, lvl);
 }
+void GarbageDan::manuallyConstruct(int lvl)
+{
+	set_name("GarbageDan");
+	set_stats(50, 45, 100, lvl);
+}
 
 void GarbageDan::Attack1(character& c)
 {
@@ -327,6 +338,12 @@ MucusMaw::MucusMaw(int lvl) : enemy(lvl)
 	set_name("MucusMaw");
 	set_stats(70, 60, 30, lvl); //HP 70, Att 60, DEF 30
 }
+void MucusMaw::manuallyConstruct(int lvl)
+{
+	set_name("MucusMaw");
+	set_stats(70, 60, 30, lvl);
+}
+
 
 void MucusMaw::Attack1(character& c)
 {
@@ -399,6 +416,11 @@ Stainiac::Stainiac(int lvl)
 {
 	set_name("Stainiac");
 	set_stats(70, 70, 20, lvl);	//defenseless but powerful
+}
+void Stainiac::manuallyConstruct(int lvl)
+{
+	set_name("Stainiac");
+	set_stats(70, 70, 20, lvl);
 }
 
 void Stainiac::Attack1(character& c)

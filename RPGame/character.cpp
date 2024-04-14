@@ -208,7 +208,7 @@ void character::expPt()
 
 void character::displayStats()
 {
-    color(8);  //gray colored text
+    color(7);
     std::cout << "Name: " << get_name() << '\n';
     std::cout << "Level: " << get_lvl() << '\n';
     std::cout << "HP: " << get_hp() << '\n';
@@ -221,7 +221,7 @@ void character::displayStats()
 }
 void character::describeAttacks()
 {
-    color(8);  //gray colored text
+    color(7);
     std::cout << aName1 << ":\n";
     std::cout << "\tThis attack does this" << std::endl;
     std::cout << aName2 << ":\n";
@@ -290,7 +290,7 @@ void character::useInventory()
     bool kill = false;
     while (kill == false)
     {
-        color(8);
+        color(7);
         std::cout << "What do you want to use?" << std::endl;
         std::cout << "1. Potions: " << this->get_healUp() << std::endl;
         std::cout << "2. Attack Ups: " << this->get_attUp() << std::endl;
@@ -380,7 +380,7 @@ void character::useInventory()
 }
 void character::checkInventory()
 {
-    color(8);
+    color(7);
     std::cout << "Potions: " << this->get_healUp() << std::endl;
     std::cout << "Attack Ups: " << this->get_attUp() << std::endl;
     std::cout << "Defense Ups: " << this->get_defUp() << std::endl;

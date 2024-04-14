@@ -23,6 +23,19 @@ bool locationNode::isLeaf()
 	return false;
 }
 
+bool locationNode::alreadySeen()
+{
+	if (this->checked == 1) {
+		return true;
+	}
+	return false;
+}
+
+void locationNode::steppedFoot() 
+{
+	this->checked = 1;
+}
+
 std::string locationNode::getName()
 {
 	return name;
@@ -68,6 +81,11 @@ void locationNode::setParent(locationNode* node)
 	this->parentPtr = node;
 }
 
+void locationNode::setEvent(event* ev)
+{
+	this->eventPtr = ev;
+}
+
 locationNode* locationNode::getRight()
 {
 	return rightPtr;
@@ -86,6 +104,11 @@ locationNode* locationNode::getLeft()
 locationNode* locationNode::getParent()
 {
 	return parentPtr;
+}
+
+event* locationNode::getEvent() 
+{
+	return eventPtr;
 }
 
 
@@ -200,22 +223,33 @@ void gameMap::displayLocation(locationNode* i)
 	std::cout << "|" << std::string(nameLen, '-') << "|\n";
 }
 
+void gameMap::displayLocationAgain(locationNode* i)
+{
+	clear();
+	color(7);
+	size_t nameLen = i->getTitle().length() + 16;
+	std::cout << "|--------" << i->getTitle() << "--------|" << std::endl;
+	std::cout << i->getDesc1() << std::endl;
+	std::cout << i->getDesc2() << std::endl;
+	std::cout << "|" << std::string(nameLen, '-') << "|\n";
+}
+
 int gameMap:: Pause_Menu(locationNode* i, character& c)
 {
 	clear();
-	int choice;
+	std::string choice;
 	while (true)
 	{
 		std::cout << "|--Pause Menu--|" << std::endl;
-		std::cout << "|---------------------------------|" << std::endl;
-		std::cout << "|1. Go back to beginning          |" << std::endl;
-		std::cout << "|2. Check Inventory               |" << std::endl;
-		std::cout << "|3. Exit Game                     |" << std::endl;
-		std::cout << "|4. Go Back                       |" << std::endl;
-		std::cout << "|---------------------------------|" << std::endl;
+		std::cout << "|--------------------------|" << std::endl;
+		std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Go back to beginning |" << std::endl;
+		std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Check Inventory	   |" << std::endl;
+		std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "Exit game            |" << std::endl;
+		std::cout << "|"; color(8); std::cout << "[4]: "; color(7); std::cout << "Go back              |" << std::endl;
+		std::cout << "|--------------------------|" << std::endl;
 		std::cin >> choice;
 
-		if (choice == 3) {
+		if (choice == "3") {
 			clear();
 			std::string exitChoice;
 			std::cout << "Are you sure you want to exit? [y/n]" << std::endl;
@@ -245,22 +279,25 @@ int gameMap:: Pause_Menu(locationNode* i, character& c)
 				continue;
 			}
 		}
-		else if (choice == 1) {
+		else if (choice == "1") {
 			return 2;
 		}
-		else if (choice == 2) {
+		else if (choice == "2") {
 			clear();
 			c.checkInventory();
 			clear();
 			continue;
 		}
-		else if (choice == 4) {
+		else if (choice == "4") {
 			return 1;
 		}
 		else
 		{
 			clear();
-			std::cout << "INVALID INPUT" << std::endl;
+			playMusic("OE.wav");
+			std::cout << "WHAT HAVE YOU DONE..." << std::endl;
+			Sdelay(5);
+			endMusic();
 			continue;
 
 		}
@@ -270,9 +307,22 @@ int gameMap:: Pause_Menu(locationNode* i, character& c)
 
 void gameMap::play(locationNode* i, character& c) {
 
-	playMusic("Mattari.wav");
 	//first display the current location
-	displayLocation(i);
+	if (i->alreadySeen()) {
+		clear();
+		i->getEvent()->trigger(c);
+		endMusic();
+		playMusic("Mattari.wav");
+		displayLocationAgain(i);
+	}
+	else {
+		clear();
+		i->getEvent()->trigger(c);
+		endMusic();
+		playMusic("Mattari.wav");
+		displayLocation(i);
+		i->steppedFoot();
+	}
 
 	if (c.getLife() == 0) {
 		return;	//if the character is dead

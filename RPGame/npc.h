@@ -13,9 +13,11 @@ class NPC
 public:
 	//functions
 	NPC();
+	bool alreadyTalkedto();
+	void finished();
 	virtual void dialogue(character& c);
 protected:
-	bool isDone = false;
+	int isDone = 0;	//not done
 };
 
 

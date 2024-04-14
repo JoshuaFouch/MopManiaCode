@@ -36,7 +36,7 @@ int Start_Menu()
 	std::cout << "A life as a cleaning mop...";
 	Sdelay(4);
 	std::cout << " Will you accept this new life?";
-	color(7);
+	color(8);
 	std::cout << " type: [y/n]" << std::endl;
 	std::string choice;
 	std::cin >> choice;
