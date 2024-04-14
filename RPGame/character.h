@@ -29,6 +29,9 @@ public:
 	void set_def(int def);
 	int get_lvl();
 	int get_winNum();
+	int getLife();
+	int getExit();
+	int getEnd();
 
 	//for items
 	int get_healUp();
@@ -75,9 +78,11 @@ public:
 	//for quests
 	void bubAdvance();
 
-	bool isDead = false;
-	bool exitGame = false;	//if this is true, int main will return
-	bool endGame = false;	//if game is completed, endGame = true
+	//for character progression
+	void die();
+	void exitingGame();
+	void gameCompleted();
+
 
 protected:
 
@@ -92,11 +97,14 @@ protected:
 	int winNum = 0; //checks how many battles character has won
 	int lvl = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
-
 	int healUp = 0;	//counter for how many potions a character has
 	int attUp = 0;	//counter for how many attack up potions a character has
 	int defUp = 0;	//counter for how many defense up potions a character has
 	int deadRat = 0; //counter for how many dead rats the character has (its a useless item)
+
+	int life = 1; //1 is alive; 0 is dead
+	int exit = 0; //0 is not exit; 1 is exit
+	int end = 0;	//0 is not end; 1 is end
 
 	//quest members
 	/*depending on your progress, member++*/
@@ -117,7 +125,7 @@ public:
 	Broomba(std::string name, int hp, int att, int def);
 	//set attack names
 	void set_AttackNames();
-	
+
 	//display stats
 	void displayStats();
 	void describeAttacks();

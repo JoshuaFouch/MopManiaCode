@@ -56,7 +56,9 @@ public:
 	gameMap();
 	int getSize();
 	locationNode* getIndex();
+	locationNode* theGamer();
 	void toRoot();
+	void current_toRoot(locationNode* current);
 	//add root only!
 	void addRoot(std::string n, std::string d1, std::string d2, event* ev);
 	void birth_leftChild(locationNode* mommy, std::string n, std::string d1, std::string d2, event* ev);
@@ -78,11 +80,12 @@ public:
 	//function to move and play through the map
 	void play(locationNode* i, character& c);
 	void displayLocation(locationNode* i);
-	void Pause_Menu(character& c);
+	int Pause_Menu(locationNode* i, character& c);
 
 private:
 	locationNode* root = NULL;
 	locationNode* index = NULL;
+	locationNode* user = NULL;
 	int size = 0;
 };
 

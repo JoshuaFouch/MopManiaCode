@@ -147,6 +147,7 @@
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="..\..\audio for game\Mattari.wav" />
     <Media Include="battlemusic.wav" />
     <Media Include="dies-irae-chant.wav" />
     <Media Include="gameover.wav" />

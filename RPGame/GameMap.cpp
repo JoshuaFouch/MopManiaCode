@@ -102,9 +102,18 @@ locationNode* gameMap::getIndex()
 	return index;
 }
 
+locationNode* gameMap::theGamer() 
+{
+	return user;
+}
+
 void gameMap::toRoot()
 {
 	index = root;
+}
+
+void gameMap::current_toRoot(locationNode* current) {
+	current = root;
 }
 
 void gameMap::addRoot(std::string t, std::string d1, std::string d2, event* ev)
@@ -112,6 +121,7 @@ void gameMap::addRoot(std::string t, std::string d1, std::string d2, event* ev)
 	locationNode* newNode = new locationNode(t, d1, d2, ev);
 	root = newNode;
 	index = root;
+	user = root;
 	size++;
 }
 
@@ -178,18 +188,19 @@ void gameMap::move_back(locationNode* i)
 
 void gameMap::displayLocation(locationNode* i)
 {
+	clear();
 	color(7);
 	size_t nameLen = i->getTitle().length() + 16;
 	std::cout << "|--------" << i->getTitle() << "--------|" << std::endl;
 	Sdelay(1);
 	std::cout << i->getDesc1() << std::endl;
-	Sdelay(1);
+	Sdelay(2);
 	std::cout << i->getDesc2() << std::endl;
 	Sdelay(1);
 	std::cout << "|" << std::string(nameLen, '-') << "|\n";
 }
 
-void gameMap:: Pause_Menu(character& c)
+int gameMap:: Pause_Menu(locationNode* i, character& c)
 {
 	clear();
 	int choice;
@@ -197,7 +208,7 @@ void gameMap:: Pause_Menu(character& c)
 	{
 		std::cout << "|--Pause Menu--|" << std::endl;
 		std::cout << "|---------------------------------|" << std::endl;
-		std::cout << "|1. Go back to beginning		    |" << std::endl;
+		std::cout << "|1. Go back to beginning          |" << std::endl;
 		std::cout << "|2. Check Inventory               |" << std::endl;
 		std::cout << "|3. Exit Game                     |" << std::endl;
 		std::cout << "|4. Go Back                       |" << std::endl;
@@ -220,7 +231,7 @@ void gameMap:: Pause_Menu(character& c)
 					clear();
 					std::cout << "Okay!... Thanks for playing!" << std::endl;
 					system("pause");
-					c.exitGame = true;
+					c.exitingGame();
 					break;
 				}
 				else
@@ -235,8 +246,7 @@ void gameMap:: Pause_Menu(character& c)
 			}
 		}
 		else if (choice == 1) {
-			toRoot();
-			break;
+			return 2;
 		}
 		else if (choice == 2) {
 			clear();
@@ -245,7 +255,7 @@ void gameMap:: Pause_Menu(character& c)
 			continue;
 		}
 		else if (choice == 4) {
-			break;
+			return 1;
 		}
 		else
 		{
@@ -255,294 +265,229 @@ void gameMap:: Pause_Menu(character& c)
 
 		}
 	}
+	return 0;
 }
 
-void gameMap::play(locationNode* i, character& c)
-{
-	i = root;
-	while (c.isDead == false || c.endGame == false || c.exitGame == false)
-	{
-		displayLocation(i);
-		//if only 1 child
-		if (i->getLeft() != NULL || i->getMid() != NULL || i->getRight() != NULL)
-		{
-			//if only left
-			if (i->getLeft() != NULL)
-			{
-				while (true) {
-					std::cout << "Where do you want to go?" << std::endl;
-					std::cout << "1." << i->getLeft()->getTitle() << std::endl;
-					if (i != root)
-					{
-						std::cout << "2. Go back:  " << i->getParent()->getTitle() << std::endl;
-					}
-					std::cout << "3. Pause Menu" << std::endl;
-					int choice;
-					std::cin >> choice;
-					switch (choice) {
-					case 1:
-						move_left(i);
-						clear();
-						break;
-					case 2:
-						move_back(i);
-						clear();
-						break;
-					case 3:
-						Pause_Menu(c);
-						clear();
-						break;
-					default:
-						clear();
-						continue;
-					}
-				}
-			}
-			//if only middle
-			else if (i->getMid() != NULL)
-			{
-				while (true) {
-					std::cout << "Where do you want to go?" << std::endl;
-					std::cout << "1." << i->getMid()->getTitle() << std::endl;
-					if (i != root)
-					{
-						std::cout << "2. Go back:  " << i->getParent()->getTitle() << std::endl;
-					}
-					std::cout << "3. Pause Menu" << std::endl;
-					int choice;
-					std::cin >> choice;
-					switch (choice) {
-					case 1:
-						move_middle(i);
-						clear();
-						break;
-					case 2:
-						move_back(i);
-						clear();
-						break;
-					case 3:
-						Pause_Menu(c);
-						clear();
-						break;
-					default:
-						clear();
-						continue;
-					}
-				}
-			}
-			//if only right
-			else if (i->getRight() != NULL)
-			{
-				while (true) {
-					std::cout << "Where do you want to go?" << std::endl;
-					std::cout << "1." << i->getRight()->getTitle() << std::endl;
-					if (i != root)
-					{
-						std::cout << "2. Go back:  " << i->getParent()->getTitle() << std::endl;
-					}
-					std::cout << "3. Pause Menu" << std::endl;
-					int choice;
-					std::cin >> choice;
-					switch (choice) {
-					case 1:
-						move_right(i);
-						clear();
-						break;
-					case 2:
-						move_back(i);
-						clear();
-						break;
-					case 3:
-						Pause_Menu(c);
-						clear();
-						break;
-					default:
-						clear();
-						continue;
-					}
-				}
-			}
-		//if only 2 children
-			//if only left and middle
-			else if (i->getLeft() != NULL && i->getMid() != NULL)
-			{
-				while (true) {
-					std::cout << "Where do you want to go?" << std::endl;
-					std::cout << "1." << i->getLeft()->getTitle() << std::endl;
-					std::cout << "2." << i->getMid()->getTitle() << std::endl;
-					if (i != root)
-					{
-						std::cout << "3. Go back:  " << i->getParent()->getTitle() << std::endl;
-					}
-					std::cout << "4. Pause Menu" << std::endl;
-					int choice;
-					std::cin >> choice;
-					switch (choice) {
-					case 1:
-						move_left(i);
-						clear();
-						break;
-					case 2:
-						move_middle(i);
-						clear();
-						break;
-					case 3:
-						move_back(i);
-						clear();
-						break;
-					case 4:
-						Pause_Menu(c);
-						clear();
-						break;
-					default:
-						clear();
-						continue;
-					}
-				}
-			}
-			//if only left and right
-			else if (i->getLeft() != NULL && i->getRight() != NULL)
-			{
-				while (true) {
-					std::cout << "Where do you want to go?" << std::endl;
-					std::cout << "1." << i->getLeft()->getTitle() << std::endl;
-					std::cout << "2." << i->getRight()->getTitle() << std::endl;
-					if (i != root)
-					{
-						std::cout << "3. Go back:  " << i->getParent()->getTitle() << std::endl;
-					}
-					std::cout << "4. Pause Menu" << std::endl;
-					int choice;
-					std::cin >> choice;
-					switch (choice) {
-					case 1:
-						move_left(i);
-						clear();
-						break;
-					case 2:
-						move_right(i);
-						clear();
-						break;
-					case 3:
-						move_back(i);
-						clear();
-						break;
-					case 4:
-						Pause_Menu(c);
-						clear();
-						break;
-					default:
-						clear();
-						continue;
-					}
-				}
-			}
-			//if only right and middle
-			else if (i->getRight() != NULL && i->getMid() != NULL)
-			{
-				while (true) {
-					std::cout << "Where do you want to go?" << std::endl;
-					std::cout << "1." << i->getRight()->getTitle() << std::endl;
-					std::cout << "2." << i->getMid()->getTitle() << std::endl;
-					if (i != root)
-					{
-						std::cout << "3. Go back:  " << i->getParent()->getTitle() << std::endl;
-					}
-					std::cout << "4. Pause Menu" << std::endl;
-					int choice;
-					std::cin >> choice;
-					switch (choice) {
-					case 1:
-						move_right(i);
-						clear();
-						break;
-					case 2:
-						move_middle(i);
-						clear();
-						break;
-					case 3:
-						move_back(i);
-						clear();
-						break;
-					case 4:
-						Pause_Menu(c);
-						clear();
-						break;
-					default:
-						clear();
-						continue;
-					}
-				}
-			}
+void gameMap::play(locationNode* i, character& c) {
+
+	playMusic("Mattari.wav");
+	//first display the current location
+	displayLocation(i);
+
+	if (c.getLife() == 0) {
+		return;	//if the character is dead
+	}
+	if (c.getExit() == 1) {
+		return;	//if the user chooses to leave the game
+	}
+	if (c.getEnd() == 1) {
+		return;	//if the character finishes the game and defeats final boss
+	}
+
+	/*displaying the menu*/
+
+	//if current node has all 3 children
+	whereText();	//where to next?
+	if (i->getLeft() != NULL && i->getMid() != NULL && i->getRight() != NULL) {
+		color(8);
+		std::cout << "[l]: ";
+		color(7);
+		std::cout << i->getLeft()->getTitle() << std::endl;
+		color(8);
+		std::cout << "[m]: ";
+		color(7);
+		std::cout << i->getMid()->getTitle() << std::endl;
+		color(8);
+		std::cout << "[r]: ";
+		color(7);
+		std::cout << i->getRight()->getTitle() << std::endl;
+		if (i != root) {
+			color(8);
+			std::cout << "[b]: ";
+			color(7);
+			std::cout << i->getParent()->getTitle() << std::endl;
 		}
-		//if all 3 children
-		else if (i->getLeft() != NULL && i->getMid() != NULL && i->getRight() != NULL)
-		{
-			while (true) {
-				std::cout << "Where do you want to go?" << std::endl;
-				std::cout << "1." << i->getLeft()->getTitle() << std::endl;
-				std::cout << "2." << i->getMid()->getTitle() << std::endl;
-				std::cout << "3." << i->getRight()->getTitle() << std::endl;
-				if (i != root)
-				{
-					std::cout << "4. Go back:  " << i->getParent()->getTitle() << std::endl;
-				}
-				std::cout << "5. Pause Menu" << std::endl;
-				int choice;
-				std::cin >> choice;
-				switch (choice) {
-				case 1:
-					move_left(i);
-					clear();
-					break;
-				case 2:
-					move_middle(i);
-					clear();
-					break;
-				case 3:
-					move_right(i);
-					clear();
-					break;
-				case 4:
-					move_back(i);
-					clear();
-					break;
-				case 5:
-					Pause_Menu(c);
-					clear();
-					break;
-				default:
-					clear();
-					continue;
-				}
+		color(8);
+		std::cout << "[p]: ";
+		color(7);
+		std::cout << "Pause Menu" << std::endl;
+		color(8);
+		std::cout << "Enter letter:";
+		color(7);
+	}
+	else {	//if there is less than 3 children
+		if (i->getLeft() != NULL && i->getMid() != NULL) {
+			color(8);
+			std::cout << "[l]: ";
+			color(7);
+			std::cout << i->getLeft()->getTitle() << std::endl;
+			color(8);
+			std::cout << "[m]: ";
+			color(7);
+			std::cout << i->getMid()->getTitle() << std::endl;
+			if (i != root) {
+				color(8);
+				std::cout << "[b]: ";
+				color(7);
+				std::cout << i->getParent()->getTitle() << std::endl;
 			}
+			color(8);
+			std::cout << "[p]: ";
+			color(7);
+			std::cout << "Pause Menu" << std::endl;
+			color(8);
+			std::cout << "Enter letter:";
+			color(7);
+
 		}
-		//if leaf
-		else if (i->isLeaf())
-		{
-			while (true) {
-				std::cout << "Where do you want to go?" << std::endl;
-				std::cout << "1. Go back:  " << i->getParent()->getTitle() << std::endl;
-				std::cout << "2. Pause Menu" << std::endl;
-				int choice;
-				std::cin >> choice;
-				switch (choice) {
-				case 1:
-					move_back(i);
-					clear();
-					break;
-				case 2:
-					Pause_Menu(c);
-					clear();
-					break;
-				default:
-					clear();
-					continue;
-				}
+		else if (i->getLeft() != NULL && i->getRight() != NULL) {
+			color(8);
+			std::cout << "[l]: ";
+			color(7);
+			std::cout << i->getLeft()->getTitle() << std::endl;
+			color(8);
+			std::cout << "[r]: ";
+			color(7);
+			std::cout << i->getRight()->getTitle() << std::endl;
+			if (i != root) {
+				color(8);
+				std::cout << "[b]: ";
+				color(7);
+				std::cout << i->getParent()->getTitle() << std::endl;
 			}
+			color(8);
+			std::cout << "[p]: ";
+			color(7);
+			std::cout << "Pause Menu" << std::endl;
+			color(8);
+			std::cout << "Enter letter:";
+			color(7);
 		}
-		else {
-			std::cout << "error..." << std::endl;
+		else if (i->getRight() != NULL && i->getMid() != NULL) {
+			color(8);
+			std::cout << "[r]: ";
+			color(7);
+			std::cout << i->getRight()->getTitle() << std::endl;
+			color(8);
+			std::cout << "[m]: ";
+			color(7);
+			std::cout << i->getMid()->getTitle() << std::endl;
+			if (i != root) {
+				color(8);
+				std::cout << "[b]: ";
+				color(7);
+				std::cout << i->getParent()->getTitle() << std::endl;
+			}
+			color(8);
+			std::cout << "[p]: ";
+			color(7);
+			std::cout << "Pause Menu" << std::endl;
+			color(8);
+			std::cout << "Enter letter:";
+			color(7);
+
 		}
+		else if (i->getLeft() != NULL) {
+			color(8);
+			std::cout << "[l]: ";
+			color(7);
+			std::cout << i->getLeft()->getTitle() << std::endl;
+			if (i != root) {
+				color(8);
+				std::cout << "[b]: ";
+				color(7);
+				std::cout << i->getParent()->getTitle() << std::endl;
+			}
+			color(8);
+			std::cout << "[p]: ";
+			color(7);
+			std::cout << "Pause Menu" << std::endl;
+			color(8);
+			std::cout << "Enter letter:";
+			color(7);
+
+		}
+		else if (i->getMid() != NULL) {
+			color(8);
+			std::cout << "[m]: ";
+			color(7);
+			std::cout << i->getMid()->getTitle() << std::endl;
+			if (i != root) {
+				color(8);
+				std::cout << "[b]: ";
+				color(7);
+				std::cout << i->getParent()->getTitle() << std::endl;
+			}
+			color(8);
+			std::cout << "[p]: ";
+			color(7);
+			std::cout << "Pause Menu" << std::endl;
+			color(8);
+			std::cout << "Enter letter:";
+			color(7);
+
+		}
+		else if (i->getRight() != NULL) {
+			color(8);
+			std::cout << "[r]: ";
+			color(7);
+			std::cout << i->getRight()->getTitle() << std::endl;
+			if (i != root) {
+				color(8);
+				std::cout << "[b]: ";
+				color(7);
+				std::cout << i->getParent()->getTitle() << std::endl;
+			}
+			color(8);
+			std::cout << "[p]: ";
+			color(7);
+			std::cout << "Pause Menu" << std::endl;
+			color(8);
+			std::cout << "Enter letter:";
+			color(7);
+		}
+		else {	//should be leaf case
+			if (i != root) {
+				color(8);
+				std::cout << "[b]: ";
+				color(7);
+				std::cout << i->getParent()->getTitle() << std::endl;
+			}
+			color(8);
+			std::cout << "[p]: ";
+			color(7);
+			std::cout << "Pause Menu" << std::endl;
+			color(8);
+			std::cout << "Enter letter:";
+			color(7);
+		}
+	}
+	std::string choose;
+	std::cin >> choose;
+
+	if (choose == "l") {	//left
+		play(i->getLeft(), c);
+	}
+	else if (choose == "m") {	//middle
+		play(i->getMid(), c);
+	}
+	else if (choose == "r") {	//right
+		play(i->getRight(), c);
+	}
+	else if (choose == "b") {	//back
+		play(i->getParent(), c);
+	}
+	else if (choose == "p") {	//pause menu
+		int pause = Pause_Menu(i, c);
+		if (pause == 1) {
+			play(i, c);
+		}
+		else if (pause == 2) {
+			i = root;
+			play(i, c);
+		}
+	}
+	else {
+		play(i, c);
 	}
 }

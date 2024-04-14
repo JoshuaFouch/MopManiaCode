@@ -101,3 +101,12 @@ void playSFX(std::string filename)
 	std::wstring wideFilename(filename.begin(), filename.end());
 	PlaySound(wideFilename.c_str(), NULL, SND_FILENAME | SND_ASYNC);
 }
+
+void whereText() {
+	std::cout << "W"; MSdelay(45); std::cout << "h"; MSdelay(45); std::cout << "e"; MSdelay(45); std::cout << "r"; MSdelay(45); std::cout << "e "; MSdelay(45);
+	std::cout << "w"; MSdelay(45); std::cout << "o"; MSdelay(45); std::cout << "u"; MSdelay(45); std::cout << "l"; MSdelay(45); std::cout << "d "; MSdelay(45);
+	std::cout << "y"; MSdelay(45); std::cout << "o"; MSdelay(45); std::cout << "u "; MSdelay(45);
+	std::cout << "l"; MSdelay(45); std::cout << "i"; MSdelay(45); std::cout << "k"; MSdelay(45); std::cout << "e "; MSdelay(45);
+	std::cout << "t"; MSdelay(45); std::cout << "o "; MSdelay(45);
+	std::cout << "g"; MSdelay(45); std::cout << "o?" << std::endl; MSdelay(45);
+}

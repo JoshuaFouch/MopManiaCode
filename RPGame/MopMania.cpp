@@ -15,15 +15,23 @@ int main()
 	Broomba broomba("Broomba", 70, 50, 80); //beefy but less health
 	gameMap map;
 	event* e = new event;
-	map.addRoot("Root Node", "Root Description 1", "Root Description 2", e);
+	map.addRoot("Root", "You are at the root...", "You are very cool...", e);
+	map.birth_leftChild(map.getIndex(), "Root's left", "You are at the root's left child", "Hi...", e);
+	map.birth_midChild(map.getIndex(), "Root's middle", "You are at the root's mid child...", "Its pretty mid in here...", e);
+	map.birth_rightChild(map.getIndex(), "Root's right", "You are in the root's right child", "That's right!...", e);
+	map.birth_leftChild(map.getIndex()->getLeft(), "Hi room", "test", "test", e);
+	map.birth_midChild(map.getIndex()->getLeft(), "Hello room", "test", "test", e);
+	map.birth_leftChild(map.getIndex()->getMid(), "bruh room", "test", "test", e);
+	map.birth_rightChild(map.getIndex()->getMid(), "gamer room", "test", "test", e);
+	map.birth_midChild(map.getIndex()->getRight(), "josh is cool", "test", "test", e);
+	map.birth_rightChild(map.getIndex()->getRight(), "stupid room", "test", "test", e);
 	map.toRoot();
-	map.birth_leftChild(map.getIndex(), "Left Node", "Left Description 1", "Left Description 2", e);
-	map.birth_rightChild(map.getIndex(), "Right Node", "Right Description 1", "Right Description 2", e);
-	std::cout << map.getIndex()->getTitle();
-	system("pause");
-	locationNode* i = nullptr;
-	map.play(i, broomba);
-
+	map.moveIndex_middle();
+	map.birth_leftChild(map.getIndex()->getLeft(), "eljay is cool", "test", "test", e);
+	map.birth_midChild(map.getIndex()->getRight(), "seamus is cool", "test", "test", e);
+	map.toRoot();
+	map.birth_rightChild(map.getIndex()->getRight()->getMid(), "josh has no gf", "test", "test", e);
+	map.play(map.theGamer(), broomba);
 
 	enemy bob(1);
 	int user;

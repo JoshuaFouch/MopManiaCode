@@ -180,7 +180,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	}
 	else if (c.get_hp() <= 0)
 	{
-		c.isDead = true;
+		c.die();
 		GameOver();
 		std::cout << "\t\tYOU LOST..." << std::endl;
 		MSdelay(3000);

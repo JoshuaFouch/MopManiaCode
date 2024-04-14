@@ -104,5 +104,8 @@
     <Media Include="gameover.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="..\..\audio for game\Mattari.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>

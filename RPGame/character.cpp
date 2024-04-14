@@ -81,17 +81,15 @@ int character::get_winNum()
     return winNum;
 }
 
-//kills character
-/*bool character::death()
-{
-    this->isDead = true;
-    return isDead;
+int character::getLife() {
+    return life;
 }
-bool character::alive() 
-{
-    this->isDead = false;
-    return isDead;
-}*/
+int character::getExit() {
+    return exit;
+}
+int character::getEnd() {
+    return end;
+}
 
 //for items
 int character::get_healUp()
@@ -397,9 +395,19 @@ void character::bubAdvance()
     bubbleQuest++;
 }
 
+void character::die() {
+    this->life = 0; //dead
+}
+
+void character::exitingGame() {
+    this->exit = 1;
+}
+
+void character::gameCompleted() {
+    this->end = 1;
+}
 
 /*BROOMBA DEFINITIONS*/
-
 //constructor
 Broomba::Broomba(std::string name, int hp, int att, int def) : character(name, hp, att, def)
 {
