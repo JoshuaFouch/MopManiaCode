@@ -85,7 +85,7 @@ public:
 	void move_back(locationNode* i);
 
 	//function to move and play through the map
-	void play(locationNode* i, character& c);
+	void play(locationNode* i, character& c, int ifPaused);
 	void displayLocation(locationNode* i);
 	void displayLocationAgain(locationNode* i);
 	int Pause_Menu(locationNode* i, character& c);

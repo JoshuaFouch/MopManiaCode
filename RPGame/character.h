@@ -58,6 +58,7 @@ public:
 	void increaseHP(int exp);
 	void increaseAtt(int exp);
 	void increaseDef(int exp);
+	void resetStats();
 	void expPt();	//checks how many battles the character won, and increases stats accordingly
 
 	virtual void displayStats();

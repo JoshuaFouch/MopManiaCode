@@ -183,25 +183,30 @@ void character::increaseDef(int exp)
 {
     def += exp;
 }
-void character::expPt()
+void character::resetStats()
 {
-    //reset the stats
     hp = maxHp;
     att = maxAtt;
     def = maxDef;
+}
+void character::expPt()
+{
+    //reset the stats
     winNum++;
     if (winNum == ExpReq) { //if the "amount of wins" counter equals the counter for leveling up
         lvl++;
         std::cout << "You Leveled Up! " << std::endl;
-        hp += 10;
-        att += 5;
-        def += 5;
+        maxHp += 10;
+        maxAtt += 5;
+        maxDef += 5;
         winNum = 0; //resets the victory counter
         ExpReq += 1;
+        resetStats();
     }
     else
     {
         std::cout << "You have to win " << (ExpReq - winNum) << " battle(s) until you level up again!" << std::endl;
+        resetStats();
     }
 }
 
@@ -241,7 +246,6 @@ void character::damaged(int oppAtt)
         return;
     }
     hp -= (oppAtt - (def / 2));
-    //simulate character being damaged with a console output message.
 }
 
 //abilities

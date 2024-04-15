@@ -305,10 +305,14 @@ int gameMap:: Pause_Menu(locationNode* i, character& c)
 	return 0;
 }
 
-void gameMap::play(locationNode* i, character& c) {
-
+void gameMap::play(locationNode* i, character& c, int ifPaused) {
+	
+	if (ifPaused == 1) {
+		clear();
+		displayLocationAgain(i);
+	}
 	//first display the current location
-	if (i->alreadySeen()) {
+	else if (i->alreadySeen()) {
 		clear();
 		i->getEvent()->trigger(c);
 		if (c.getLife() == 0) {
@@ -351,7 +355,7 @@ void gameMap::play(locationNode* i, character& c) {
 	if (c.getEnd() == 1) {
 		return;	//if the character finishes the game and defeats final boss
 	}
-
+	
 	/*displaying the menu*/
 
 	//if current node has all 3 children
@@ -534,28 +538,28 @@ void gameMap::play(locationNode* i, character& c) {
 	std::cin >> choose;
 
 	if (choose == "l") {	//left
-		play(i->getLeft(), c);
+		play(i->getLeft(), c, 0);
 	}
 	else if (choose == "m") {	//middle
-		play(i->getMid(), c);
+		play(i->getMid(), c, 0);
 	}
 	else if (choose == "r") {	//right
-		play(i->getRight(), c);
+		play(i->getRight(), c, 0);
 	}
 	else if (choose == "b") {	//back
-		play(i->getParent(), c);
+		play(i->getParent(), c, 0);
 	}
 	else if (choose == "p") {	//pause menu
 		int pause = Pause_Menu(i, c);
 		if (pause == 1) {
-			play(i, c);
+			play(i, c, 1);
 		}
 		else if (pause == 2) {
 			i = root;
-			play(i, c);
+			play(i, c, 0);
 		}
 	}
 	else {
-		play(i, c);
+		play(i, c, 0);
 	}
 }

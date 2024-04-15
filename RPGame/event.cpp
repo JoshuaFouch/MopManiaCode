@@ -78,7 +78,7 @@ void waitingRoomEvent::trigger(character& c)
 	std::cout << "NOOO!!!" << std::endl;
 	Sdelay(2);
 	color(7);
-	std::cout << "A GarbageDan appeared from nowhere!" << std::endl;
+	std::cout << "Another GarbageDan appeared from nowhere!" << std::endl;
 	Sdelay(2);
 	Garbagebattle->Battle_Sequence(c, *two);
 	if (c.getLife() == 0) {
@@ -94,7 +94,7 @@ void waitingRoomEvent::trigger(character& c)
 	std::cout << "NOOO!!!" << std::endl;
 	Sdelay(2);
 	color(7);
-	std::cout << "A GarbageDan appeared from nowhere!" << std::endl;
+	std::cout << "Another GarbageDan appeared from nowhere!" << std::endl;
 	Sdelay(2);
 	Garbagebattle->Battle_Sequence(c, *three);
 	if (c.getLife() == 0) {

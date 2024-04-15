@@ -38,7 +38,7 @@ int main()
 	map.birth_midChild(map.getIndex()->getRight(), "seamus is cool", "test", "test", e);
 	map.toRoot();
 	map.birth_rightChild(map.getIndex()->getRight()->getMid(), "josh has no gf", "test", "test", e);
-	map.play(map.theGamer(), broomba);
+	map.play(map.theGamer(), broomba, 0);
 
 	enemy bob(1);
 	int user;

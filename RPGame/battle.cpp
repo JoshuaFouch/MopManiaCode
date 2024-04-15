@@ -46,14 +46,14 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		clear();
 		BattleStats(c, e);	//begins by display the stats
 		std::cout << "What would you like to do? " << std::endl;
-		std::cout << "\n1. " << c.get_aName1() << std::endl;
-		std::cout << "2. " << c.get_aName2() << std::endl;
-		std::cout << "3. " << c.get_aName3() << std::endl;
-		std::cout << "4. " << c.get_aName4() << std::endl << std::endl;
-		std::cout << "5. Use Item" << std::endl;
-		std::cout << "6. Check Stats" << std::endl;
-		std::cout << "7. Attack Descriptions" << std::endl;
-		std::cout << "8. Run (coward lol)" << std::endl;
+		color(8); std::cout << "\n[1]: "; color(7); std::cout << c.get_aName1() << std::endl;
+		color(8); std::cout << "[2]: "; color(7); std::cout << c.get_aName2() << std::endl;
+		color(8); std::cout << "[3]: "; color(7); std::cout << c.get_aName3() << std::endl;
+		color(8); std::cout << "[4] "; color(7); std::cout << c.get_aName4() << std::endl << std::endl;
+		color(8); std::cout << "[5]: "; color(7); std::cout << "Use Item" << std::endl;
+		color(8); std::cout << "[6]: "; color(7); std::cout << "Check stats" << std::endl;
+		color(8); std::cout << "[7]: "; color(7); std::cout << "Attack Descriptions" << std::endl;
+		color(8); std::cout << "[8]: "; color(7); std::cout << "Run (Be a coward)" << std::endl;
 		int choice;
 		std::cin >> choice;
 
@@ -173,6 +173,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	{
 		//play uplifting music
 		e.makeDead();
+		clear();
 		std::cout << "You WON\n" << std::endl;
 		c.expPt();
 		MSdelay(3000);
