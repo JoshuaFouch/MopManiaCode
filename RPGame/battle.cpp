@@ -45,11 +45,11 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	{
 		clear();
 		BattleStats(c, e);	//begins by display the stats
-		std::cout << "What would you like to do? " << std::endl;
+		whatText();
 		color(8); std::cout << "\n[1]: "; color(7); std::cout << c.get_aName1() << std::endl;
 		color(8); std::cout << "[2]: "; color(7); std::cout << c.get_aName2() << std::endl;
 		color(8); std::cout << "[3]: "; color(7); std::cout << c.get_aName3() << std::endl;
-		color(8); std::cout << "[4] "; color(7); std::cout << c.get_aName4() << std::endl << std::endl;
+		color(8); std::cout << "[4]: "; color(7); std::cout << c.get_aName4() << std::endl << std::endl;
 		color(8); std::cout << "[5]: "; color(7); std::cout << "Use Item" << std::endl;
 		color(8); std::cout << "[6]: "; color(7); std::cout << "Check stats" << std::endl;
 		color(8); std::cout << "[7]: "; color(7); std::cout << "Attack Descriptions" << std::endl;
@@ -176,7 +176,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		clear();
 		std::cout << "You WON\n" << std::endl;
 		c.expPt();
-		MSdelay(3000);
+		Sdelay(6);
 		clear();
 	}
 	else if (c.get_hp() <= 0)
@@ -184,14 +184,15 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		c.die();
 		GameOver();
 		std::cout << "\t\tYOU LOST..." << std::endl;
-		MSdelay(3000);
+		Sdelay(6);
 		clear();
 	}
 	else if (run == 1)
 	{
-		//play sad music
+		endMusic();
+		playMusic("OE.wav");
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
-		MSdelay(3000);
+		Sdelay(6);
 		clear();
 	}
 	endMusic();

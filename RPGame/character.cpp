@@ -243,9 +243,14 @@ void character::damaged(int oppAtt)
 {
     if ((oppAtt - (def / 2)) < 0) {
         hp--;
+        MSdelay(500);
+        std::cout << "Opponent dealt 1 damage to you!!" << std::endl;
+        MSdelay(500);
         return;
     }
     hp -= (oppAtt - (def / 2));
+    std::cout << "Opponent dealt " << (oppAtt - (def / 2)) << " to you!!" << std::endl;
+    Sdelay(2);
 }
 
 //abilities

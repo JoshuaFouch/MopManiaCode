@@ -104,10 +104,19 @@ void playSFX(std::string filename)
 }
 
 void whereText() {
-	std::cout << "W"; MSdelay(45); std::cout << "h"; MSdelay(45); std::cout << "e"; MSdelay(45); std::cout << "r"; MSdelay(45); std::cout << "e "; MSdelay(45);
-	std::cout << "w"; MSdelay(45); std::cout << "o"; MSdelay(45); std::cout << "u"; MSdelay(45); std::cout << "l"; MSdelay(45); std::cout << "d "; MSdelay(45);
-	std::cout << "y"; MSdelay(45); std::cout << "o"; MSdelay(45); std::cout << "u "; MSdelay(45);
-	std::cout << "l"; MSdelay(45); std::cout << "i"; MSdelay(45); std::cout << "k"; MSdelay(45); std::cout << "e "; MSdelay(45);
-	std::cout << "t"; MSdelay(45); std::cout << "o "; MSdelay(45);
-	std::cout << "g"; MSdelay(45); std::cout << "o?" << std::endl; MSdelay(45);
+	std::cout << "W"; MSdelay(30); std::cout << "h"; MSdelay(30); std::cout << "e"; MSdelay(30); std::cout << "r"; MSdelay(30); std::cout << "e "; MSdelay(30);
+	std::cout << "w"; MSdelay(30); std::cout << "o"; MSdelay(30); std::cout << "u"; MSdelay(30); std::cout << "l"; MSdelay(30); std::cout << "d "; MSdelay(30);
+	std::cout << "y"; MSdelay(30); std::cout << "o"; MSdelay(30); std::cout << "u "; MSdelay(30);
+	std::cout << "l"; MSdelay(30); std::cout << "i"; MSdelay(30); std::cout << "k"; MSdelay(30); std::cout << "e "; MSdelay(30);
+	std::cout << "t"; MSdelay(30); std::cout << "o "; MSdelay(30);
+	std::cout << "g"; MSdelay(30); std::cout << "o?" << std::endl; MSdelay(30);
+}
+
+void whatText() {
+	std::cout << "W"; MSdelay(30); std::cout << "h"; MSdelay(30); std::cout << "a"; MSdelay(30); std::cout << "t "; MSdelay(30);
+	std::cout << "w"; MSdelay(30); std::cout << "o"; MSdelay(30); std::cout << "u"; MSdelay(30); std::cout << "l"; MSdelay(30); std::cout << "d "; MSdelay(30);
+	std::cout << "y"; MSdelay(30); std::cout << "o"; MSdelay(30); std::cout << "u "; MSdelay(30);
+	std::cout << "l"; MSdelay(30); std::cout << "i"; MSdelay(30); std::cout << "k"; MSdelay(30); std::cout << "e "; MSdelay(30);
+	std::cout << "t"; MSdelay(30); std::cout << "o "; MSdelay(30);
+	std::cout << "d"; MSdelay(30); std::cout << "o?" << std::endl; MSdelay(30);
 }

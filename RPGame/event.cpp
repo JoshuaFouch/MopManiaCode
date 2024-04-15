@@ -102,21 +102,21 @@ void waitingRoomEvent::trigger(character& c)
 	}
 	Dotdot();
 	std::cout << "The stench is gone!" << std::endl;
-	MSdelay(3000);
-	color(8);
+	Sdelay(3);
+	color(6);
 	std::cout << "Janitorius: You have done well my dear " << c.get_name() << "..." << std::endl;
-	Sdelay(2);
+	Sdelay(4);
 	std::cout << "You have restored this room to how it once was..." << std::endl;
-	MSdelay(3);
+	Sdelay(3);
 	clear();
 	std::cout << "I have faith in you...";
-	MSdelay(1000); 
+	Sdelay(4); 
 	std::cout << "Continue on your journey...and..." << std::endl;
-	MSdelay(1000);
+	Sdelay(3);
 	std::cout << "save... ";
-	MSdelay(1000);
-	std::cout << "me..." << std::endl;
-	MSdelay(2400);
+	MSdelay(2500);
+	std::cout << "me... ";
+	MSdelay(2500);
 	std::cout << "from... my mis-";
 	MSdelay(1000);
 

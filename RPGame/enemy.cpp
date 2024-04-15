@@ -149,10 +149,19 @@ void enemy::damaged(int oppAtt)
 {
 	if ((oppAtt - (def / 2)) < 0) {
 		hp--;
+		MSdelay(500);
+		color(2);
+		std::cout << "You dealt 1 damage to the Opponent!" << std::endl;
+		color(7);
+		MSdelay(500);
 		return;
 	}
 	hp -= (oppAtt - (def / 2));
-	//simulate enemy being damaged with a console output message.
+	MSdelay(500);
+	color(2);
+	std::cout << "You dealt " << (oppAtt - (def / 2)) << " damage to the Opponent!" << std::endl;
+	color(7);
+	MSdelay(500);
 }
 
 void enemy::displayStats()
