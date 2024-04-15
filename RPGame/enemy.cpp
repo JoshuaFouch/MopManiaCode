@@ -303,9 +303,9 @@ void GarbageDan::Heal(character& c)
 	color(4);
 	std::cout << "\tTRASH CONSUMPTION!" << std::endl;
 	MSdelay(1000);
-	this->add_hp(this->get_maxhp() / this->get_lvl());
+	this->add_hp((c.get_hp() / 20));
 	color(7);
-	std::cout << "Enemy's health went up by: " << (this->get_maxhp() / this->get_lvl()) << std::endl;
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 20)) << std::endl;
 	MSdelay(1000);
 }
 
@@ -316,7 +316,7 @@ void GarbageDan::Fortify(character& c)
 	MSdelay(1000);
 	this->add_def((2 * this->get_maxDef()) / this->get_lvl());
 	color(7);
-	std::cout << "Enemy's defense went up by: " << ((2 * this->get_maxDef()) / this->get_lvl()) << std::endl;
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
 	MSdelay(1000);
 }
 
@@ -327,7 +327,7 @@ void GarbageDan::Enrage(character& c)
 	MSdelay(1000);
 	this->add_att((2 * this->get_maxAtt()) / this->get_lvl());
 	color(7);
-	std::cout << "Enemy's attack went up by: " << ((2 * this->get_maxAtt()) / this->get_lvl()) << std::endl;
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
 	MSdelay(1000);
 	color(7);
 }
@@ -395,7 +395,7 @@ void MucusMaw::Fortify(character& c)
 	MSdelay(1000);
 	color(7);
 	this->add_def((c.get_def() / 20));
-	std::cout << "Enemy's defense went up by: " << (c.get_att() / 20) << std::endl;
+	std::cout << "Enemy's defense went up by: " << (c.get_def() / 20) << std::endl;
 	MSdelay(1500);
 }
 

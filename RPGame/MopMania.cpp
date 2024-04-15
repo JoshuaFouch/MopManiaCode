@@ -12,16 +12,22 @@
 int main()
 {
 	/*map creation*/
-	Broomba broomba("Broomba", 70, 50, 80); //beefy but less health
+	Broomba broomba("Broomba", 100, 80, 90); //beefy but less health
 	gameMap map;
-	event* e = new event("gameover.wav");
+	event* e = new event;
+
+	GarbageDan* one = new GarbageDan(1);
+	GarbageDan* two = new GarbageDan(1);
+	GarbageDan* three = new GarbageDan(1);
+	battle* GD = new battle;
+	waitingRoomEvent* waitingRoom = new waitingRoomEvent("void.wav", one, two, three, GD);
 
 	map.addRoot("Root", "You are at the root...", "You are very cool...", e);
 	map.birth_leftChild(map.getIndex(), "Root's left", "You are at the root's left child", "Hi...", e);
 	map.birth_midChild(map.getIndex(), "Root's middle", "You are at the root's mid child...", "Its pretty mid in here...", e);
 	map.birth_rightChild(map.getIndex(), "Root's right", "You are in the root's right child", "That's right!...", e);
 	map.birth_leftChild(map.getIndex()->getLeft(), "Hi room", "test", "test", e);
-	map.birth_midChild(map.getIndex()->getLeft(), "Hello room", "test", "test", e);
+	map.birth_midChild(map.getIndex()->getLeft(), "Hello room", "test", "test", waitingRoom);
 	map.birth_leftChild(map.getIndex()->getMid(), "bruh room", "test", "test", e);
 	map.birth_rightChild(map.getIndex()->getMid(), "gamer room", "test", "test", e);
 	map.birth_midChild(map.getIndex()->getRight(), "josh is cool", "test", "test", e);

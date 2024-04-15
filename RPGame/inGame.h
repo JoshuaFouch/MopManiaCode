@@ -23,7 +23,7 @@ int Start_Menu()
 	Sdelay(4);
 	color(6);	//Janitorius (Tyler) is yellow text
 	std::cout << "My dear soul,";
-	std::cout << " I am Janitorius, the custodian of Le Hospitale." << std::endl;
+	std::cout << " I am Janitorius, the custodian of Le Hospitale..." << std::endl;
 	Sdelay(4);
 	std::cout << "You seem to have lost all your memory from that day." << std::endl;
 	Sdelay(4);
@@ -31,11 +31,11 @@ int Start_Menu()
 	Sdelay(4);
 	std::cout << " Unfortunate. " << std::endl;
 	Sdelay(3);
-	std::cout << "\nWell anyways, you failed in your previous life so now I will offer you a new life" << std::endl;
+	std::cout << "\nWell anyways, you failed in your previous life so now I will offer you a new life..." << std::endl;
 	Sdelay(3);
 	std::cout << "A life as a cleaning mop...";
 	Sdelay(4);
-	std::cout << " Will you accept this new life?";
+	std::cout << " Will you accept this new life?...";
 	color(8);
 	std::cout << " type: [y/n]" << std::endl;
 	std::string choice;

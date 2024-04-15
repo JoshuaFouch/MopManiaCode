@@ -35,6 +35,7 @@ protected:
 class waitingRoomEvent : public event
 {
 public:
+	waitingRoomEvent(std::string music, enemy* one, enemy* two, enemy* three, battle* b);
 	void trigger(character& c);
 protected:
 	//points to GARBAGEDANS

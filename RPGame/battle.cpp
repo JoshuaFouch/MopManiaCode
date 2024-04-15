@@ -193,4 +193,5 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		MSdelay(3000);
 		clear();
 	}
+	endMusic();
 }

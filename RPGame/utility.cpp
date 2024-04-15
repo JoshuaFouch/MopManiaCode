@@ -17,17 +17,18 @@ void Sdelay(int n)
 
 void Dotdot()
 {
-	std::cout << "."; MSdelay(500);
-	std::cout << "."; MSdelay(500);
-	std::cout << "."; MSdelay(500);
 	clear();
-	std::cout << "."; MSdelay(500);
-	std::cout << "."; MSdelay(500);
-	std::cout << "."; MSdelay(500);
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
 	clear();
-	std::cout << "."; MSdelay(500);
-	std::cout << "."; MSdelay(500);
-	std::cout << "."; MSdelay(500);
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
+	clear();
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
 	clear();
 }
 
