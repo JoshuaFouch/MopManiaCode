@@ -211,8 +211,18 @@ void character::expPt()
 }
 
 void character::winBattleMoney() {
-    std::cout << "You won " << (maxHp * lvl) << " soaptokens!!" << std::endl;
-    this->SoapTokens = (maxHp * lvl);
+   // std::cout << "You won " << (maxHp * lvl) << " soaptokens!!" << std::endl;
+    //this->SoapTokens = (maxHp * lvl);
+    std::random_device rd;
+  std::mt19937 gen(rd());
+  // Define the range of numbers
+  std::uniform_int_distribution<int> distribution(60, 75);//rand num between 60 and 75
+
+  // Generate a random number
+  int random = distribution(gen);
+
+  std::cout << "You won " << (random * this->lvl) << " soaptokens!!" << std::endl;
+    this->SoapTokens = (random * this->lvl);
 }
 
 void character::displayStats()
