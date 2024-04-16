@@ -210,6 +210,10 @@ void character::expPt()
     }
 }
 
+void character::winBattleMoney() {
+    std::cout << "You won " << (maxHp * lvl) << " soaptokens!!" << std::endl;
+    this->SoapTokens = (maxHp * lvl);
+}
 
 void character::displayStats()
 {
@@ -414,6 +418,13 @@ void character::exitingGame() {
 
 void character::gameCompleted() {
     this->end = 1;
+}
+
+void character::addMoney(int value) {
+    this->SoapTokens += value;
+}
+void character::takeMoney(int value) {
+    this->SoapTokens -= value;
 }
 
 /*BROOMBA DEFINITIONS*/

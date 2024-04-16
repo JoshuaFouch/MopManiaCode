@@ -54,7 +54,6 @@ protected:
 
 	//pointer to specific event that will take place in the node
 	event* eventPtr = NULL;
-
 };
 
 class gameMap
@@ -94,6 +93,8 @@ private:
 	locationNode* root = NULL;
 	locationNode* index = NULL;
 	locationNode* user = NULL;
+	locationNode* rustyBucket = NULL;
+	locationNode* hospital = NULL;
 	int size = 0;
 };
 
