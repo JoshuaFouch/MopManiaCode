@@ -316,13 +316,8 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		clear();
 		i->getEvent()->trigger(c);
 		if (c.getLife() == 0) {
-			return;	//if the character is dead
-		}
-		if (c.getExit() == 1) {
-			return;	//if the user chooses to leave the game
-		}
-		if (c.getEnd() == 1) {
-			return;	//if the character finishes the game and defeats final boss
+			return;
+			//if the character is dead
 		}
 		endMusic();
 		playMusic("Mattari.wav");
@@ -332,13 +327,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		clear();
 		i->getEvent()->trigger(c);
 		if (c.getLife() == 0) {
-			return;	//if the character is dead
-		}
-		if (c.getExit() == 1) {
-			return;	//if the user chooses to leave the game
-		}
-		if (c.getEnd() == 1) {
-			return;	//if the character finishes the game and defeats final boss
+			return;
 		}
 		endMusic();
 		playMusic("Mattari.wav");
@@ -346,9 +335,6 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		i->steppedFoot();
 	}
 
-	if (c.getLife() == 0) {
-		return;	//if the character is dead
-	}
 	if (c.getExit() == 1) {
 		return;	//if the user chooses to leave the game
 	}

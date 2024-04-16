@@ -189,6 +189,7 @@ void character::resetStats()
     hp = maxHp;
     att = maxAtt;
     def = maxDef;
+    life = 1;
 }
 void character::expPt()
 {

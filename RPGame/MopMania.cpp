@@ -12,7 +12,7 @@
 int main()
 {
 	/*map creation*/
-	Broomba broomba("Broomba", 100, 80, 90); //beefy but less health
+	Broomba broomba("Broomba", 4, 1, 90); //beefy but less health
 	gameMap map;
 	event* e = new event;
 
@@ -39,6 +39,13 @@ int main()
 	map.toRoot();
 	map.birth_rightChild(map.getIndex()->getRight()->getMid(), "josh has no gf", "test", "test", e);
 	map.play(map.theGamer(), broomba, 0);
+	if (broomba.getLife() == 0) {
+		broomba.resetStats();
+		clear();
+		map.current_toRoot(map.theGamer());
+		map.play(map.theGamer(), broomba, 0);
+	}
+
 
 	enemy bob(1);
 	int user;

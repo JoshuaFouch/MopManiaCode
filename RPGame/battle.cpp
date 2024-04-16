@@ -40,7 +40,12 @@ void battle::GameOver(character& c)
 	color(6);
 	std::cout << "Janitorius: My dear " << c.get_name() << "..." << std::endl;
 	Sdelay(3);
-	std::cout << "It seems you have died "
+	std::cout << "It seems you have died... " << std::endl;
+	Sdelay(2);
+	std::cout << "Do not worry, I will take you back home to try again..." << std::endl;
+	color(7);
+	system("pause");
+	endMusic();
 }
 void battle::Battle_Sequence(character& c, enemy& e)
 {
@@ -188,15 +193,15 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	else if (c.get_hp() <= 0)
 	{
 		c.die();
-		GameOver();
+		GameOver(c);
 	}
 	else if (run == 1)
 	{
 		endMusic();
 		playMusic("OE.wav");
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
+		system("pause");
 	}
-	system("pause");
 	clear();
 	endMusic();
 }
