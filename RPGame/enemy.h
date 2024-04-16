@@ -119,11 +119,44 @@ public:
 
 };
 
-//level 1 Boss
+class LeopardLeper : public enemy
+{
+	LeopardLeper(int lvl); //Base: 50HP, 65 ATT, 55 DEF 
+
+	void manuallyConstruct(int lvl);
+
+	//abilities
+	void Attack1(character& c);	//
+	void Attack2(character& c);	//
+	void Attack3(character& c);	//
+	void Attack4(character& c);	//
+	void Heal(character& c);	//
+	void Fortify(character& c);	//
+	void Enrage(character& c);	//
+};
+
+//1st floor Boss
+class BronchitisRex : public character 
+{
+	BronchitisRex(int lvl); //120 HP, 70 ATT, 50 DEF
+
+	void manuallyConstruct(int lvl);
+
+	//abilities
+	void Attack1(character& c);	//
+	void Attack2(character& c);	//
+	void Attack3(character& c);	//
+	void Attack4(character& c);	//
+	void Heal(character& c);	//
+	void Fortify(character& c);	//
+	void Enrage(character& c);	//
+};
+
+//floor ? Boss
 class GrimeReaper : public enemy	//this is Janitorius' secret identity
 {
 	//constructor
-	GrimeReaper(int lvl);	//Base: 100 HP, 80 att, 30 def (fast and powerful but low defense boss)
+	GrimeReaper(int lvl);	//Base: 140 HP, 100 att, 100 def (fast and powerful but low defense boss)
 	void manuallyConstruct(int lvl);
 
 	//abilities

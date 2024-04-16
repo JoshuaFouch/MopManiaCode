@@ -492,4 +492,143 @@ void Stainiac::Enrage(character& c)
 }
 
 
+LeopardLeper::LeopardLeper(int lvl)
+{
+	set_name("LeopardLeper");
+	set_stats(50, 65, 55, lvl); //well-round kitty
+}
+
+void LeopardLeper::manuallyConstruct(int lvl)
+{
+	set_name("LeopardLeper");
+	set_stats(50, 65, 55, lvl);
+}
+
+void LeopardLeper::Attack1(character& c)
+{
+	color(4);
+	std::cout << "/tLeper Scratch!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void LeopardLeper::Attack2(character& c)
+{
+	color(4);
+	std::cout << "/tPox Punce!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void LeopardLeper::Attack3(character& c)
+{
+	color(4);
+	std::cout << "/tLesion Lash!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void LeopardLeper::Attack4(character& c)
+{
+	color(4);
+	std::cout << "/tRotting Rend!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void LeopardLeper::Heal(character& c)
+{
+	color(4);
+	std::cout << "\tScab Salve!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+void LeopardLeper::Fortify(character& c)
+{
+	color(4);
+	std::cout << "\tPatchwork Protection!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+void LeopardLeper::Enrage(character& c)
+{
+	color(4);
+	std::cout << "\tLestering Frenzy!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+//1st floor Boss
+BronchitisRex::BronchitisRex(int lvl)
+{
+	set_name("BronchitisRex");
+	set_stats(98, 90, 75, lvl); //mmmmmmmmmm dinosaur with lung problems :D
+}
+
+void BronchitisRex::manuallyConstruct(int lvl)
+{
+	set_name("BronchitisRex");
+	set_stats(98, 90, 75, lvl);
+}
+
+void BronchitisRex::Attack1(character& c)
+{
+	color(4);
+	std::cout << "/tCoughing Carnage!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void BronchitisRex::Attack2(character& c)
+{
+	color(4);
+	std::cout << "/tPhlegm Blast!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void BronchitisRex::Attack3(character& c)
+{
+	color(4);
+	std::cout << "/tMucus Maelstrom!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void BronchitisRex::Attack4(character& c)
+{
+	color(4);
+	std::cout << "/tWheezing Whirlwind!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void BronchitisRex::Heal(character& c)
+{
+	color(4);
+	std::cout << "\tRespiratory Recovery!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+void BronchitisRex::Fortify(character& c)
+{
+	color(4);
+	std::cout << "\tBronchial Barrier!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+void BronchitisRex::Enrage(character& c)
+{
+	color(4);
+	std::cout << "\tWheezing Rampage!" << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+
+
 
