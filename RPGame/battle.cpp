@@ -29,12 +29,18 @@ void battle::BattleStats(character& c, enemy& e)
 	color(7);
 	std::cout << "-----------------------------------------" << std::endl;
 }
-void battle::GameOver()
+void battle::GameOver(character& c)
 {
 	playSFX("gameover.wav");
 	clear();
 	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
 	Sdelay(5);
+	clear();
+	playMusic("void.wav");
+	color(6);
+	std::cout << "Janitorius: My dear " << c.get_name() << "..." << std::endl;
+	Sdelay(3);
+	std::cout << "It seems you have died "
 }
 void battle::Battle_Sequence(character& c, enemy& e)
 {
@@ -183,7 +189,6 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	{
 		c.die();
 		GameOver();
-		std::cout << "\t\tYOU LOST..." << std::endl;
 	}
 	else if (run == 1)
 	{

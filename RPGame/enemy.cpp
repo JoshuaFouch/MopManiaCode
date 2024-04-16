@@ -321,8 +321,8 @@ void GarbageDan::Heal(character& c)
 	color(4);
 	std::cout << "\tTRASH CONSUMPTION!" << std::endl;
 	MSdelay(1000);
-	this->add_hp((c.get_hp() / 20));
-	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 20)) << std::endl;
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
 	MSdelay(1000);
 }
 

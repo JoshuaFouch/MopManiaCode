@@ -335,7 +335,7 @@ void bubbleBoy::dialogue(character& c)
 		}
 }
 
-DustySwift::DustySwift() : NPC() {}
+/*DustySwift::DustySwift() : NPC() {}
 
 void DustySwift::dialogue(character& c)
 {
@@ -419,4 +419,4 @@ void SirMopsworth::dialogue(character& c)
 			break;
 		}
 	} while (choice != 3); //continues dialogue until the player chooses to leave
-}
+}*/

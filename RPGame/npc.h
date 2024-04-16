@@ -85,7 +85,7 @@ public:
 
 //NPC 7 (Eljay)
 
-class DustySwift : public NPC
+/*class DustySwift : public NPC
 {
 public:
 
@@ -103,6 +103,6 @@ public:
 	SirMopsworth();
 
 	void dialogue(character& c);
-};
+};*/
 
 #endif

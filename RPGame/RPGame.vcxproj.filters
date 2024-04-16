@@ -61,9 +61,6 @@
     <ClInclude Include="inventory.h">
       <Filter>Inventory Files</Filter>
     </ClInclude>
-    <ClInclude Include="hashTable.h">
-      <Filter>Inventory Files</Filter>
-    </ClInclude>
     <ClInclude Include="item.h">
       <Filter>Inventory Files</Filter>
     </ClInclude>
@@ -92,6 +89,9 @@
     </ClCompile>
     <ClCompile Include="battle.cpp">
       <Filter>Battle Files</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>Inventory Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

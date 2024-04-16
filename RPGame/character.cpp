@@ -171,7 +171,7 @@ void character::set_AttackNames()
     aName4 = "Dust Destroy";
 }
 
-//level up
+//healing
 void character::increaseHP(int exp)
 {
     hp += exp;

@@ -47,19 +47,20 @@ int main()
 	{
 		Broomba broomba("Broomba", 70, 50, 80); //beefy but less health
 		battle bobBattle;
-		bobBattle.Battle_Sequence(broomba, bob);
+		map.play(map.theGamer(), broomba, 0);
 	}
 	else if (user == 2)
 	{
 		SwifterJetWet jetwet("JetWet", 80, 90, 40);	//powerful yet defenseless
 		battle bobBattle;
-		bobBattle.Battle_Sequence(jetwet, bob);
+		map.play(map.theGamer(), jetwet, 0);
+		
 	}
 	else if (user == 3)
 	{
 		BysonV8 byson("Byson", 100, 30, 70);	//lot of health yet weak
 		battle bobBattle;
-		bobBattle.Battle_Sequence(byson, bob);
+		map.play(map.theGamer(), byson, 0);
 	}
 	else
 	{
