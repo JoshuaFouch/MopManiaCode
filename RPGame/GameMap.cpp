@@ -311,6 +311,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		clear();
 		displayLocationAgain(i);
 	}
+	else if (i->getEvent() == NULL) {
+		displayLocation(i);
+	}
 	//first display the current location
 	else if (i->alreadySeen()) {
 		clear();
