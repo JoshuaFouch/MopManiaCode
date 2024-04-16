@@ -339,15 +339,20 @@ DustySwift::DustySwift() : NPC() {}
 
 void DustySwift::dialogue(character& c)
 {
-	color(8);//this dialogue will be Light Blue
-	std::cout << "Dusty Swift: boi oh boi I have some options for you. Whatcha lookin for??" << '\n';
+	clear();
+	std::string choice;
+	color(9);//this dialogue will be 
+	std::cout << "|--Dusty Swift--|" << std::endl;
+	std::cout << "boi oh boi I have some options for you. Whatcha lookin for??" << '\n';
 	color(7); std::cout << " Choose an option:";
-	int choice;
+	
+	std::cin >> choice;
 	do {
-		std::cout << "DustySwift: Hey! What do you want to do?" << '\n';
-		std::cout << "1. Ask about cleaning tips." << '\n';
-		std::cout << "2. Inquire about the nearest inn." << '\n';
-		std::cout << "3. You have anything to help me?" << '\n';
+		std::cout << "|--------------------------|" << std::endl;
+		std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Ask about cleaning tips." << '\n';
+		std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Inquire about the nearest inn." << '\n';
+		std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "You have anything to help me?" << '\n';
+		color(8); std::cout << "|--------------------------|" << std::endl;
 		std::cout << "Enter your choice: ";
 		std::cin >> choice;
 		switch (choice) {
@@ -378,29 +383,32 @@ SirMopsworth::SirMopsworth() : NPC() {}
 
 void SirMopsworth::dialogue(character& c)
 {
-	color(8);//this dialogue will be Light Blue
-	std::cout << "SirMopsworth: boi oh boi I have some options for you. Whatcha lookin for??" << '\n';
+	color(5);//this dialogue will be Light Blue
+	std::cout << "|--Sir Mopsworth--|" << std::endl;
+	std::cout << "Hello young chap. What would you like?" << '\n';
 	color(7); std::cout << " Choose an option:";
-	int choice;
+	std::string choice;
 	do {
-		std::cout << "SirMopsworth: Hello young chap. What would you like?" << '\n';
-		std::cout << "1. Ask about cleaning tips." << '\n';
-		std::cout << "2. Inquire about the nearest inn." << '\n';
-		std::cout << "3. You have anything to help me?" << '\n';
+		color(8); std::cout << "|--------------------------|" << std::endl;
+		std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Ask about cleaning tips." << '\n';
+		std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Inquire about the nearest inn." << '\n';
+		std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "You have anything to help me?" << '\n';
+		color(8); std::cout << "|--------------------------|" << std::endl;
+
 		std::cout << "Enter your choice: ";
 		std::cin >> choice;
 		switch (choice) {
 		case 1:
-			color(8);
+			color(5);
 			std::cout << "SirMopsworth: Ah cleaning tips? always make sure your lab is clean..." << '\n';
 			break;
 
 		case 2:
-			color(8);
+			color(5);
 			std::cout << " SirMopsworth:The nearest inn is near here so you will find it." << '\n';
 			break;
 		case 3:
-			color(8);
+			color(5);
 			std::cout << "SirMopsworth: Ah yes, here is a potion for you " << '\n';
 			c.acq_defUp();
 			color(7);
