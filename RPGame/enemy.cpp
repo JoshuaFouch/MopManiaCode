@@ -136,9 +136,17 @@ int enemy::RandomNum()
 	std::discrete_distribution<int> distribution({ 2, 2, 2, 2, 1, 1, 1 });
 
 	// Adjust the probabilities for 5, 6, and 7 to be lower
+	//if we add some ifs for "smart ai" this is an easy 15 points
+
 	distribution.probabilities()[4] = 1; // Probability for 5
 	distribution.probabilities()[5] = 1; // Probability for 6
 	distribution.probabilities()[6] = 1; // Probability for 7
+
+	if(this->get_hp()<=(this->get_maxhp)/3){//so if at 1/3 hp or lower we raise the stat effecting moves(hoping that i balanced them properly)
+	distribution.probabilities()[4] = 2; // Probability for 5
+	distribution.probabilities()[5] = 2; // Probability for 6
+	distribution.probabilities()[6] = 2; // Probability for 7
+	}
 
 	// Generate a random number
 	int random = distribution(gen) + 1;
@@ -146,12 +154,12 @@ int enemy::RandomNum()
 	return random;
 }
 void enemy::damaged(int oppAtt)
-{
+{//edited this to deal at least 5 damage, not one if at lowest 
 	if ((oppAtt - (def / 2)) < 0) {
-		hp--;
+		hp-=5;
 		MSdelay(500);
 		color(2);
-		std::cout << "You dealt 1 damage to the Opponent!" << std::endl;
+		std::cout << "You dealt 5 damage to the Opponent!" << std::endl;
 		color(7);
 		MSdelay(500);
 		return;
@@ -215,7 +223,7 @@ void enemy::Heal(character& c)//if all this works then we also shouldn't have to
 	color(4);
 	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "\tHEALED" << std::endl;
-	this->hp += ((this->get_maxhp()/10) + this->get_lvl());//new function to scale healing depending on the enemy's level and their max of that stat
+	this->hp += (this->get_maxhp()/10);//new function to scale healing depending on the enemy's level and their max of that stat
 	color(7);
 }
 void enemy::Fortify(character& c)
@@ -223,7 +231,7 @@ void enemy::Fortify(character& c)
 	color(4);
 	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "\tFORTIFY" << std::endl;
-	this->def += ((this->get_maxDef()/10)+this->get_lvl());//since hp will standardly be about 2 times greater than the other stats,
+	this->def += (this->get_maxDef()/20);//since hp will standardly be about 2 times greater than the other stats,
 	color(7);// I have these ones double the stat before calculating how much to add
 }
 void enemy::Enrage(character& c)
@@ -231,7 +239,7 @@ void enemy::Enrage(character& c)
 	color(4);
 	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "\tENRAGE" << std::endl;
-	this->att += ((this->get_maxAtt()/10)+this->get_lvl());
+	this->att += (this->get_maxAtt()/20);
 	color(7);
 }
 

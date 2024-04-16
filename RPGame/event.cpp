@@ -122,3 +122,4 @@ void waitingRoomEvent::trigger(character& c)
 
 	finished();	//finished event
 }
+

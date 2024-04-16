@@ -159,6 +159,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			break;
 		case 8:
 			clear();
+			//std::cout << "Nice try bud, you can't run." << std::endl;
 			run = 1;
 			break;
 		default:
@@ -176,24 +177,20 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		clear();
 		std::cout << "You WON\n" << std::endl;
 		c.expPt();
-		Sdelay(6);
-		clear();
+		c.winBattleMoney();
 	}
 	else if (c.get_hp() <= 0)
 	{
 		c.die();
 		GameOver();
 		std::cout << "\t\tYOU LOST..." << std::endl;
-		Sdelay(6);
-		clear();
 	}
 	else if (run == 1)
 	{
 		endMusic();
 		playMusic("OE.wav");
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
-		Sdelay(6);
-		clear();
 	}
+	system("pause");
 	endMusic();
 }

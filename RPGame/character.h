@@ -60,6 +60,7 @@ public:
 	void increaseDef(int exp);
 	void resetStats();
 	void expPt();	//checks how many battles the character won, and increases stats accordingly
+	void winBattleMoney();
 
 	virtual void displayStats();
 	virtual void describeAttacks();
@@ -84,6 +85,9 @@ public:
 	void exitingGame();
 	void gameCompleted();
 
+	void addMoney(int value);
+	void takeMoney(int value);
+
 
 protected:
 
@@ -95,9 +99,11 @@ protected:
 	int maxAtt;
 	int def;
 	int maxDef;
+
 	int winNum = 0; //checks how many battles character has won
 	int lvl = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
+
 	int healUp = 0;	//counter for how many potions a character has
 	int attUp = 0;	//counter for how many attack up potions a character has
 	int defUp = 0;	//counter for how many defense up potions a character has
@@ -106,6 +112,8 @@ protected:
 	int life = 1; //1 is alive; 0 is dead
 	int exit = 0; //0 is not exit; 1 is exit
 	int end = 0;	//0 is not end; 1 is end
+
+	int SoapTokens = 0;
 
 	//quest members
 	/*depending on your progress, member++*/
