@@ -127,3 +127,81 @@ void waitingRoomEvent::trigger(character& c)
 
 }
 
+
+/*StorageRoomevent*/
+StorageRoomevent::StorageRoomevent(std::string music, enemy* one, enemy* two, enemy* three, battle* b)
+{
+	this->one = one;
+	this->Vaccuumbattle = b;
+}
+void StorageRoomevent::trigger(character& c)
+{
+	if (this->isDone == true) {
+		return;	//if character has already triggered the event in this node
+	}
+	else {
+		endMusic();
+		//playMusic();
+		Sdelay(2);
+		std::cout << "You entered the Storage room... ";
+		MSdelay(1000);
+		std::cout << "It smells like there was some sort of gas leak in here..." << std::endl;
+		MSdelay(2000);
+		std::cout << "You see tons of smashed-in anesthesia canisters scattered about the room..." << std::endl;
+		MSdelay(3000);
+		std::cout << "Finally you see a vaccum, slwoly emrge from a large pile of these canisters...";
+		MSdelay(3000);
+		std::cout << "The vaccum is convulsing, its eyes blood-shot ...";
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(100);
+		std::cout << "NOOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "The Crazed Vaccum lunged forward at you!" << std::endl;
+		Sdelay(2);
+		Garbagebattle->Battle_Sequence(c, *one);//lets make the crazed vaccum very strong, since its the only enemy  
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+	
+		Dotdot();
+		std::cout << "The vacuum lets out a loud hissing noise!" << std::endl;
+		Sdelay(3);
+		std::cout << "The room quickly becomes filled with anesthesia!" << std::endl;
+		Sdelay(3);
+		std::cout << "*you pass out*" << std::endl;
+		Sdelay(3);
+		Dotdot();
+		Dotdot();
+		std::cout << "*you feel something poking you*" << std::endl;
+		Sdelay(3);
+		std::cout << "*you hear a muffled voice*" << color(3)<<"hey..."<<Sdelay(1)<<"you..."<<Sdelay(1)<< std::endl;
+		Sdelay(1);
+		Dotdot;
+		std::cout << "WAKE UP!!!\n"<<color(7)<<MSdelay(500)<<"."<<MSdelay(500)<<"."<<MSdelay(500)<<"."<< std::endl;
+		std::cout << "*you slowly sit up*"<<Sdelay(1)<< "You see the vaccum in front of you, now looking fully healed" << std::endl;
+		std::cout <<  color(3)<<"Thank goodness you're okay!!!"<<Sdelay(1)<<"Thank you soap much for saving me!"<<Sdelay(1)<< std::endl;
+		std::cout <<"You're probably wondering how I ended up in here..." std::endl;
+		Sdelay(4);
+		std::cout <<"Well, I saw what had happened to Le' Hospitale, and wanted to help clean things up..." std::endl;
+		Sdelay(3);
+		std::cout <<"I had lived here for my whole life, that is, before the Grime Reaper came along..." std::endl;
+		Sdelay(3);
+		std::cout <<"He banished us from our homes, and made a mess of our once spotless community..." std::endl;
+		Sdelay(3);
+		std::cout <<"So I crafted a plan..."<<Sdelay(1)<<" I would sneak in here and start cleaning things up, without him noticing" std::endl;
+		Sdelay(3);
+		std::cout <<"However..."<<Sdelay(1)<<" when I started vaccuming up this room, I felt relly strange..." std::endl;
+		Sdelay(3);
+		std::cout <<"And after I cleaned up the whole room..."<<Sdelay(1)<<" I felt R"<<MSdelay(200)<<"e"<<MSdelay(200)<<"A"<<MSdelay(200)<<"l"<<MSdelay(200)<<"L"<<MSdelay(200)<<"y"<<MSdelay(200)<<" S"<<MSdelay(200)<<"t"<<MSdelay(200)<<"R"<<MSdelay(200)<<"a"<<MSdelay(200)<<"N"<<MSdelay(200)<<"g"<<MSdelay(200)<<"E"<<MSdelay(200)<<"."<<MSdelay(200)<<"."<<MSdelay(200)<<"." std::endl;
+		Sdelay(3);
+		endMusic();
+
+		this->isDone = true;
+		return;
+	}
+
+}
