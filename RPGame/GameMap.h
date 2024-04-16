@@ -89,6 +89,7 @@ public:
 	void displayLocationAgain(locationNode* i);
 	int Pause_Menu(locationNode* i, character& c);
 
+
 private:
 	locationNode* root = NULL;
 	locationNode* index = NULL;

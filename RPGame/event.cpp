@@ -21,6 +21,7 @@ void event::trigger(character& c)
 		std::cout << "Things will happen" << std::endl;
 		this->isDone = true;
 		system("pause");
+		return;
 	}
 }
 
@@ -121,6 +122,7 @@ void waitingRoomEvent::trigger(character& c)
 		endMusic();
 
 		this->isDone = true;
+		return;
 	}
 
 }
