@@ -63,13 +63,19 @@ void Duster::dialogue(character& c)
 Latherus::Latherus() : NPC() {}
 void Latherus::dialogue(character& c)
 {
-	color(6); //this dialogue will be yellow
-	std::cout << "Latherus: Hey! Would you like a potion I found on the ground?";
-	color(7); std::cout << " [y/n]:";	//change back to white for user
+	clear();
 	std::string choice;
+	color(6); //this dialogue will be yellow
+	std::cout << "|--Latherus--|" << std::endl;
+	std::cout << "Hey! Would you like a potion I found on the ground?" << std::endl;
+	std::cout << "|--------------------------|" << std::endl;
+	std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Accept |" << std::endl;
+	std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Decline|" << std::endl;
+	std::cout << "|-------------------------|" << std::endl;
+	color(8); std::cout << " [1 or 2]:";	//change back to gray
 	std::cin >> choice;
 
-	if (choice == "y")
+	if (choice == "1")
 	{
 		color(6);
 		std::cout << "Latherus: Alrighto! Here you goooo good adventurer!" << std::endl;
@@ -77,7 +83,7 @@ void Latherus::dialogue(character& c)
 		color(7);
 		std::cout << "You have obtained a potion!" << std::endl;
 	}
-	else if (choice == "n")
+	else if (choice == "2")
 	{
 		color(6);
 		std::cout << "Latherus: Oh well... if that is what you desire adventurer" << std::endl;
@@ -97,10 +103,16 @@ Scruberty::Scruberty() : NPC() {}
 
 void Scruberty::dialogue(character& c)
 {
-	color(9);//this dialogue will be Light Blue
-	std::cout << "Scruberty: Hello fellow adventurer mop, I've come across a potion, maybe you need it?";
-	color(7); std::cout << " [y/n]:";    //change back to white for user
+	clear();
 	std::string choice;
+	color(6); //this dialogue will be yellow
+	std::cout << "|--Latherus--|" << std::endl;
+	std::cout << "Adventurer! Please take this potion on you journey." << std::endl;
+	std::cout << "|--------------------------|" << std::endl;
+	std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Accept |" << std::endl;
+	std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Decline|" << std::endl;
+	std::cout << "|-------------------------|" << std::endl;
+	color(8); std::cout << " [1 or 2]:";	//change back to gray
 	std::cin >> choice;
 
 	if (choice == "y")
@@ -131,13 +143,20 @@ Fizzletider::Fizzletider() : NPC() {}
 
 void Fizzletider::dialogue(character& c)
 {
-	color(5);//this dialogue will be Light Blue
-	std::cout << "Fizzletider: Heyzzzz, you are looking for an item right ? ? ";
-	color(7); std::cout << " [y/n]:";    //change back to white for user
+	clear();
 	std::string choice;
+	color(5);//this dialogue will be Light Blue
+	std::cout << "|--Fizzletider--|" << std::endl;
+	std::cout << "Fizzletider: Heyzzzz, you are looking for an item right ??? ";
+	std::cout << "|--------------------------|" << std::endl;
+	std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Accept? |" << std::endl;
+	std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Decline |" << std::endl;
+	color(5); std::cout << "|-------------------------|" << std::endl;
+	color(7); std::cout << " [1 or 2]:";    //change back to white for user
+
 	std::cin >> choice;
 
-	if (choice == "y")
+	if (choice == "1")
 	{
 		color(5);
 		std::cout << "Fizzletider: Well here you gozzz, now show some Energy and get back on your feet!" << std::endl;
@@ -145,7 +164,7 @@ void Fizzletider::dialogue(character& c)
 		color(7);
 		std::cout << "You have obtained a potion, with a little fizz!" << std::endl;
 	}
-	else if (choice == "n")
+	else if (choice == "2")
 	{
 		color(5);
 		std::cout << "Fizzletider: Oh well... if that is what you desire adventurer. Don't ask me again for that item now..." << std::endl;
@@ -154,7 +173,7 @@ void Fizzletider::dialogue(character& c)
 	else
 	{
 		color(5);
-		std::cout << "Fizzletider: You want the bomb instead? Yeah , that's what I thought... take it" << std::endl;
+		std::cout << "Fizzletider: You want the bomb instead? Yeah, that's what I thought... take it" << std::endl;
 		c.acq_healUp();
 		color(7);
 		std::cout << "You have obtained a potion against your own will... burning with fizzly soap?" << std::endl;
@@ -165,13 +184,20 @@ Bristlebeard::Bristlebeard() : NPC() {}
 
 void Bristlebeard::dialogue(character& c)
 {
-	color(8);//this dialogue will be Light Blue
-	std::cout << "Bristlebeard: Ahoy mate, seems I found something that might be of good use to you! What do you say?";
-	color(7); std::cout << " [y/n]:";    //change back to white for user
+	clear();
 	std::string choice;
+	color(8);//this dialogue will be Light Blue
+	std::cout << "|--Bristlebeard--|" << std::endl;
+	std::cout << "Bristlebeard: Ahoy mate, seems I found something that might be of good use to you! What do you say?" << std::endl;
+	std::cout << "|--------------------------|" << std::endl;
+	std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Accept? |" << std::endl;
+	std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Decline |" << std::endl;
+	std::cout << "|-------------------------|" << std::endl;
+	color(7); std::cout << " [1 or 2]:";    //change back to white for user
+
 	std::cin >> choice;
 
-	if (choice == "y")
+	if (choice == "1")
 	{
 		color(8);
 		std::cout << "Bristlebeard: hhahaa there you go matey, be safe amongst the sea!" << std::endl;
@@ -179,7 +205,7 @@ void Bristlebeard::dialogue(character& c)
 		color(7);
 		std::cout << "You have obtained a potion!" << std::endl;
 	}
-	else if (choice == "n")
+	else if (choice == "2")
 	{
 		color(8);
 		std::cout << "Bristlebeard: Aw come on mate, you are seriosuly passing it? Your loss!" << std::endl;
