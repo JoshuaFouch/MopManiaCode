@@ -132,7 +132,10 @@
     <ClInclude Include="enemy.h" />
     <ClInclude Include="event.h" />
     <ClInclude Include="GameMap.h" />
+    <ClInclude Include="hashTable.h" />
     <ClInclude Include="inGame.h" />
+    <ClInclude Include="inventory.h" />
+    <ClInclude Include="item.h" />
     <ClInclude Include="npc.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>

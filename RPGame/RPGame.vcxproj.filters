@@ -29,6 +29,9 @@
     <Filter Include="Battle Files">
       <UniqueIdentifier>{f0133ac8-1eee-423b-98e0-21742436361d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Inventory Files">
+      <UniqueIdentifier>{d27b8a28-22d9-4cda-8682-343e8260a9d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
@@ -54,6 +57,15 @@
     </ClInclude>
     <ClInclude Include="battle.h">
       <Filter>Battle Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>Inventory Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hashTable.h">
+      <Filter>Inventory Files</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>Inventory Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
