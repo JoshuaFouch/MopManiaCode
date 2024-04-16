@@ -215,7 +215,7 @@ void enemy::Heal(character& c)//if all this works then we also shouldn't have to
 	color(4);
 	//heals the enemy's hp depending on how much the hp the character lost
 	std::cout << "\tHEALED" << std::endl;
-	this->hp += ((this->get_maxhp()/10) + this->get_lvl());//new function to scale healing depending on the enemy's level and their max of that stat
+	this->hp += (this->get_maxhp()/10);//new function to scale healing depending on the enemy's level and their max of that stat
 	color(7);
 }
 void enemy::Fortify(character& c)
@@ -223,7 +223,7 @@ void enemy::Fortify(character& c)
 	color(4);
 	//raises the defense stat depending on how much the hp the character lost
 	std::cout << "\tFORTIFY" << std::endl;
-	this->def += ((this->get_maxDef()/10)+this->get_lvl());//since hp will standardly be about 2 times greater than the other stats,
+	this->def += (this->get_maxDef()/20);//since hp will standardly be about 2 times greater than the other stats,
 	color(7);// I have these ones double the stat before calculating how much to add
 }
 void enemy::Enrage(character& c)
@@ -231,7 +231,7 @@ void enemy::Enrage(character& c)
 	color(4);
 	//raises the attack stat depening on how much the hp the character lost
 	std::cout << "\tENRAGE" << std::endl;
-	this->att += ((this->get_maxAtt()/10)+this->get_lvl());
+	this->att += (this->get_maxAtt()/20);
 	color(7);
 }
 
