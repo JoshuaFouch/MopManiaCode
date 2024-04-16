@@ -192,5 +192,6 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
 	}
 	system("pause");
+	clear();
 	endMusic();
 }

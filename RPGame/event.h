@@ -15,9 +15,6 @@ class battle;
 class event
 {
 public:
-	//functions
-	bool alreadyDone();
-	void finished();
 	
 	//constructor
 	event();
@@ -28,8 +25,7 @@ public:
 protected:
 	//members
 	std::string music;
-
-	int isDone = 0;
+	bool isDone = false;
 };
 
 class waitingRoomEvent : public event

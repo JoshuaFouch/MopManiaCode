@@ -142,10 +142,11 @@ int enemy::RandomNum()
 	distribution.probabilities()[5] = 1; // Probability for 6
 	distribution.probabilities()[6] = 1; // Probability for 7
 
-	if(this->get_hp()<=(this->get_maxhp)/3){//so if at 1/3 hp or lower we raise the stat effecting moves(hoping that i balanced them properly)
-	distribution.probabilities()[4] = 2; // Probability for 5
-	distribution.probabilities()[5] = 2; // Probability for 6
-	distribution.probabilities()[6] = 2; // Probability for 7
+	if(this->get_hp() <= this->get_maxhp()/3)
+	{	//so if at 1/3 hp or lower we raise the stat effecting moves(hoping that i balanced them properly)
+		distribution.probabilities()[4] = 2; // Probability for 5
+		distribution.probabilities()[5] = 2; // Probability for 6
+		distribution.probabilities()[6] = 2; // Probability for 7
 	}
 
 	// Generate a random number
@@ -321,7 +322,6 @@ void GarbageDan::Heal(character& c)
 	std::cout << "\tTRASH CONSUMPTION!" << std::endl;
 	MSdelay(1000);
 	this->add_hp((c.get_hp() / 20));
-	color(7);
 	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 20)) << std::endl;
 	MSdelay(1000);
 }
@@ -331,8 +331,7 @@ void GarbageDan::Fortify(character& c)
 	color(4);
 	std::cout << "\tSMELLY STURDY" << std::endl;
 	MSdelay(1000);
-	this->add_def((2 * this->get_maxDef()) / this->get_lvl());
-	color(7);
+	this->add_def(c.get_def() / 20);
 	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
 	MSdelay(1000);
 }
@@ -342,8 +341,7 @@ void GarbageDan::Enrage(character& c)
 	color(4);
 	std::cout << "\tRANCID RAGE" << std::endl;
 	MSdelay(1000);
-	this->add_att((2 * this->get_maxAtt()) / this->get_lvl());
-	color(7);
+	this->add_att(c.get_att() / 20);
 	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
 	MSdelay(1000);
 	color(7);
@@ -399,7 +397,6 @@ void MucusMaw::Heal(character& c)
 	color(4);
 	std::cout << "\tSLIMEWAVE MEND!" << std::endl;
 	MSdelay(1000);
-	color(7);
 	this->add_hp((c.get_hp() / 20));
 	std::cout << "Enemy's health went up by: " << (c.get_hp() / 20) << std::endl;
 	MSdelay(1500);
@@ -410,7 +407,6 @@ void MucusMaw::Fortify(character& c)
 	color(4);
 	std::cout << "\tSLIME SHIELD!" << std::endl;
 	MSdelay(1000);
-	color(7);
 	this->add_def((c.get_def() / 20));
 	std::cout << "Enemy's defense went up by: " << (c.get_def() / 20) << std::endl;
 	MSdelay(1500);
@@ -421,7 +417,6 @@ void MucusMaw::Enrage(character& c)
 	color(4);
 	std::cout << "\tMUCOUS FURY!" << std::endl;
 	MSdelay(1000);
-	color(7);
 	this->add_att((c.get_att() / 20));
 	std::cout << "Enemy's attack went up by: " << (c.get_att() / 20) << std::endl;
 	MSdelay(1500);
