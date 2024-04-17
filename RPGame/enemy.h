@@ -121,6 +121,8 @@ public:
 
 class LeopardLeper : public enemy
 {
+public:
+
 	LeopardLeper(int lvl); //Base: 50HP, 65 ATT, 55 DEF 
 
 	void manuallyConstruct(int lvl);
@@ -136,8 +138,10 @@ class LeopardLeper : public enemy
 };
 
 //1st floor Boss
-class BronchitisRex : public character 
+class BronchitisRex : public enemy 
 {
+public:
+
 	BronchitisRex(int lvl); //120 HP, 70 ATT, 50 DEF
 
 	void manuallyConstruct(int lvl);

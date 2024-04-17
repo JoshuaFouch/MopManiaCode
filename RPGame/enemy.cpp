@@ -317,7 +317,6 @@ void GarbageDan::Attack4(character& c)
 
 void GarbageDan::Heal(character& c)
 {
-	//should compare the enemy and character's level first. and then compare their hp, att, def stats accordingly
 	color(4);
 	std::cout << "\tTRASH CONSUMPTION!" << std::endl;
 	MSdelay(1000);
@@ -397,9 +396,9 @@ void MucusMaw::Heal(character& c)
 	color(4);
 	std::cout << "\tSLIMEWAVE MEND!" << std::endl;
 	MSdelay(1000);
-	this->add_hp((c.get_hp() / 20));
-	std::cout << "Enemy's health went up by: " << (c.get_hp() / 20) << std::endl;
-	MSdelay(1500);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
 }
 
 void MucusMaw::Fortify(character& c)
@@ -415,11 +414,12 @@ void MucusMaw::Fortify(character& c)
 void MucusMaw::Enrage(character& c)
 {
 	color(4);
-	std::cout << "\tMUCOUS FURY!" << std::endl;
+	std::cout << "\tMUCUOUS FURY!" << std::endl;
 	MSdelay(1000);
-	this->add_att((c.get_att() / 20));
-	std::cout << "Enemy's attack went up by: " << (c.get_att() / 20) << std::endl;
-	MSdelay(1500);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
+	MSdelay(1000);
+	color(7);
 }
 
 //stainiac implementations
@@ -470,23 +470,30 @@ void Stainiac::Attack4(character& c)
 void Stainiac::Heal(character& c)
 {
 	color(4);
-	std::cout << "\tGooey Rejuvenation!" << std::endl;
+	std::cout << "\tGOOEY REJUVENATION!" << std::endl;
 	MSdelay(1000);
-	color(7);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
 }
 
 void Stainiac::Fortify(character& c)
 {
 	color(4);
-	std::cout << "\tInk Shield!" << std::endl;
+	std::cout << "\tINK SHIELD!" << std::endl;
 	MSdelay(1000);
-	color(7);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	MSdelay(1000);
 }
 
 void Stainiac::Enrage(character& c)
 {
 	color(4);
-	std::cout << "\tInk Overflow!" << std::endl;
+	std::cout << "\tINK OVERFLOW!" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
 	MSdelay(1000);
 	color(7);
 }
@@ -494,20 +501,20 @@ void Stainiac::Enrage(character& c)
 
 LeopardLeper::LeopardLeper(int lvl)
 {
-	set_name("LeopardLeper");
+	set_name("Leopard the Leper");
 	set_stats(50, 65, 55, lvl); //well-round kitty
 }
 
 void LeopardLeper::manuallyConstruct(int lvl)
 {
-	set_name("LeopardLeper");
+	set_name("Leopard the Leper");
 	set_stats(50, 65, 55, lvl);
 }
 
 void LeopardLeper::Attack1(character& c)
 {
 	color(4);
-	std::cout << "/tLeper Scratch!" << std::endl;
+	std::cout << "\tLeper Scratch!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -515,7 +522,7 @@ void LeopardLeper::Attack1(character& c)
 void LeopardLeper::Attack2(character& c)
 {
 	color(4);
-	std::cout << "/tPox Punce!" << std::endl;
+	std::cout << "\tPox Punce!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -523,7 +530,7 @@ void LeopardLeper::Attack2(character& c)
 void LeopardLeper::Attack3(character& c)
 {
 	color(4);
-	std::cout << "/tLesion Lash!" << std::endl;
+	std::cout << "\tLesion Lash!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -531,7 +538,7 @@ void LeopardLeper::Attack3(character& c)
 void LeopardLeper::Attack4(character& c)
 {
 	color(4);
-	std::cout << "/tRotting Rend!" << std::endl;
+	std::cout << "\tRotting Rend!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -539,30 +546,37 @@ void LeopardLeper::Attack4(character& c)
 void LeopardLeper::Heal(character& c)
 {
 	color(4);
-	std::cout << "\tScab Salve!" << std::endl;
+	std::cout << "\tSCAB SALVE!" << std::endl;
 	MSdelay(1000);
-	color(7);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
 }
 
 void LeopardLeper::Fortify(character& c)
 {
 	color(4);
-	std::cout << "\tPatchwork Protection!" << std::endl;
+	std::cout << "\tPATCHWORK PROTECTION!" << std::endl;
 	MSdelay(1000);
-	color(7);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	MSdelay(1000);
 }
 
 void LeopardLeper::Enrage(character& c)
 {
 	color(4);
-	std::cout << "\tLestering Frenzy!" << std::endl;
+	std::cout << "\tLESTERING FRENZY!" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
 	MSdelay(1000);
 	color(7);
 }
 
 BronchitisRex::BronchitisRex(int lvl)
 {
-	set_name("BronchitisRex");
+	set_name("Bronchitis Rex");
 	set_stats(98, 90, 75, lvl); //mmmmmmmmmm dinosaur with lung problems :D
 }
 
@@ -575,7 +589,7 @@ void BronchitisRex::manuallyConstruct(int lvl)
 void BronchitisRex::Attack1(character& c)
 {
 	color(4);
-	std::cout << "/tCoughing Carnage!" << std::endl;
+	std::cout << "\tCoughing Carnage!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -583,7 +597,7 @@ void BronchitisRex::Attack1(character& c)
 void BronchitisRex::Attack2(character& c)
 {
 	color(4);
-	std::cout << "/tPhlegm Blast!" << std::endl;
+	std::cout << "\tPhlegm Blast!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -591,7 +605,7 @@ void BronchitisRex::Attack2(character& c)
 void BronchitisRex::Attack3(character& c)
 {
 	color(4);
-	std::cout << "/tMucus Maelstrom!" << std::endl;
+	std::cout << "\tMucus Maelstrom!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -599,7 +613,7 @@ void BronchitisRex::Attack3(character& c)
 void BronchitisRex::Attack4(character& c)
 {
 	color(4);
-	std::cout << "/tWheezing Whirlwind!" << std::endl;
+	std::cout << "\tWheezing Whirlwind!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -607,23 +621,30 @@ void BronchitisRex::Attack4(character& c)
 void BronchitisRex::Heal(character& c)
 {
 	color(4);
-	std::cout << "\tRespiratory Recovery!" << std::endl;
+	std::cout << "\tRESPIRATORY RECOVERY!" << std::endl;
 	MSdelay(1000);
-	color(7);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
 }
 
 void BronchitisRex::Fortify(character& c)
 {
 	color(4);
-	std::cout << "\tBronchial Barrier!" << std::endl;
+	std::cout << "\tBRONCHIAL BARRIER!" << std::endl;
 	MSdelay(1000);
-	color(7);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	MSdelay(1000);
 }
 
 void BronchitisRex::Enrage(character& c)
 {
 	color(4);
-	std::cout << "\tWheezing Rampage!" << std::endl;
+	std::cout << "\tWHEEZING RAMPAGE!" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
 	MSdelay(1000);
 	color(7);
 }
