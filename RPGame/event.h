@@ -42,5 +42,16 @@ protected:
 	
 };
 
+class storageRoomevent : public event
+{
+public: 
+	storageRoomevent(std::string music, enemy* one, battle* b);
+	void trigger(character& c);
+protected:
+	//Crazed Vacuum
+	enemy* one = NULL;
+	battle* Vacuumbattle = NULL;
+};
+
 
 #endif
