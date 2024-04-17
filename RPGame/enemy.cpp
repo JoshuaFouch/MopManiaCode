@@ -560,7 +560,6 @@ void LeopardLeper::Enrage(character& c)
 	color(7);
 }
 
-//1st floor Boss
 BronchitisRex::BronchitisRex(int lvl)
 {
 	set_name("BronchitisRex");
