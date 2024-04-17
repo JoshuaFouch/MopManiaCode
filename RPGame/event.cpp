@@ -57,6 +57,7 @@ void waitingRoomEvent::trigger(character& c)
 		Sdelay(2);
 		color(7);
 		std::cout << "A GarbageDan appeared from nowhere!" << std::endl;
+		playSFX("battle!.wav");
 		Sdelay(2);
 		Garbagebattle->Battle_Sequence(c, *one);
 		if (c.getLife() == 0) {
@@ -73,6 +74,7 @@ void waitingRoomEvent::trigger(character& c)
 		Sdelay(2);
 		color(7);
 		std::cout << "Another GarbageDan appeared from nowhere!" << std::endl;
+		playSFX("battle!.wav");
 		Sdelay(2);
 		Garbagebattle->Battle_Sequence(c, *two);
 		if (c.getLife() == 0) {
@@ -89,6 +91,7 @@ void waitingRoomEvent::trigger(character& c)
 		Sdelay(2);
 		color(7);
 		std::cout << "Another GarbageDan appeared from nowhere!" << std::endl;
+		playSFX("battle!.wav");
 		Sdelay(2);
 		Garbagebattle->Battle_Sequence(c, *three);
 		if (c.getLife() == 0) {
@@ -159,13 +162,12 @@ void storageRoomevent::trigger(character& c)
 		Sdelay(2);
 		color(7);
 		std::cout << "The Crazed Vaccum lunged forward at you!" << std::endl;
+		playSFX("battle!.wav");
 		Sdelay(2);
-
 		Vacuumbattle->Battle_Sequence(c, *one); //lets make the crazed vaccum very strong, since its the only enemy  
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
-	
 		Dotdot();
 		std::cout << "The vacuum lets out a loud hissing noise!" << std::endl;
 		Sdelay(3);
@@ -181,7 +183,7 @@ void storageRoomevent::trigger(character& c)
 		color(3);
 		std::cout << "Hey..."; Sdelay(1); std::cout << " you..." << std::endl;
 		Sdelay(1);
-		Dotdot;
+		Dotdot();
 		std::cout << "WAKE UP!!!";
 		MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "." << std::endl; Sdelay(2);
 		color(7);
@@ -204,18 +206,16 @@ void storageRoomevent::trigger(character& c)
 		Sdelay(3);
 		std::cout << "However..."; Sdelay(1); std::cout << " when I started vacuuming up this room, I felt strange..." << std::endl;
 		Sdelay(3);
-		std::cout << "And after I cleaned up the whole room..."; Sdelay(1); std::cout << " I felt R"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "A"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "L"; MSdelay(200); std::cout << "y"; MSdelay(200); std::cout " S"; MSdelay(200); std::cout << "t"; MSdelay(200); std::cout << "R"; MSdelay(200); std::cout << "a"; MSdelay(200); std::cout << "N"; MSdelay(200); std::cout << "g"; MSdelay(200); std::cout << "E"; MSdelay(200); std::cout << "."; MSdelay(200); std::cout << "."; MSdelay(200); std::cout << "." << std::endl;
+		std::cout << "And after I cleaned up the whole room..."; Sdelay(1); std::cout << " I felt R"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "A"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "L"; MSdelay(200); std::cout << "y"; MSdelay(200); std::cout << " S"; MSdelay(200); std::cout << "t"; MSdelay(200); std::cout << "R"; MSdelay(200); std::cout << "a"; MSdelay(200); std::cout << "N"; MSdelay(200); std::cout << "g"; MSdelay(200); std::cout << "E"; MSdelay(200); std::cout << "."; MSdelay(200); std::cout << "."; MSdelay(200); std::cout << "." << std::endl;
 		Sdelay(3);
-		std::cout <<"I kinda just blacked out til just now, guess that gas I sucked up, made me a little loopy." std::endl;
+		std::cout <<"I kinda just blacked out til just now, guess that gas I sucked up, made me a little loopy." << std::endl;
 		Sdelay(3);
-		std::cout <<"I'm real sorry about attacking you earlier by the way." std::endl;
+		clear();
+		std::cout <<"I'm real sorry about attacking you earlier by the way." << std::endl;
 		Sdelay(3);
-		std::cout <<"Here's some soap tolkens to hopefully make up for it..." std::endl;
+		std::cout <<"Here's some soap tolkens to hopefully make up for it..." << std::endl;
 		Sdelay(3);
-		color(7);
-		std::cout << "*you recived 500 soap tolkens*" << std::endl;
-		Sdelay(2);
-		addMoney(500);
+		c.addMoney(500);
 		endMusic();
 
 		this->isDone = true;

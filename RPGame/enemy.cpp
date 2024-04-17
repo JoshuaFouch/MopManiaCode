@@ -346,7 +346,7 @@ void GarbageDan::Enrage(character& c)
 	color(7);
 }
 
-//this is an enemy called 'MucusMaw' Implementation
+//'MucusMaw' Implementation
 MucusMaw::MucusMaw(int lvl) : enemy(lvl)
 {
 	set_name("MucusMaw");
@@ -423,7 +423,6 @@ void MucusMaw::Enrage(character& c)
 }
 
 //stainiac implementations
-
 Stainiac::Stainiac(int lvl)
 {
 	set_name("Stainiac");
@@ -649,8 +648,6 @@ void BronchitisRex::Enrage(character& c)
 	color(7);
 }
 
-
-
 //NeedleNed
 NeedleNed::NeedleNed(int lvl)
 {
@@ -734,7 +731,7 @@ ShingleShannon::ShingleShannon(int lvl)
 	set_stats(80, 75, 30, lvl);
 }
 
-void NeedleNed::manuallyConstruct(int lvl)
+void ShingleShannon::manuallyConstruct(int lvl)
 {
 	set_name("Shingle Shannon");
 	set_stats(80, 75, 30, lvl);
@@ -775,7 +772,7 @@ void ShingleShannon::Attack4(character& c)
 void ShingleShannon::Heal(character& c)
 {
 	color(4);
-	std::cout << "\tDERMIS MEND!" << std::endl;
+	std::cout << "\tDERMITITIS MEND!" << std::endl;
 	MSdelay(1000);
 	this->add_hp((c.get_hp() / 10));
 	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;

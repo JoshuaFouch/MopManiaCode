@@ -195,6 +195,9 @@ void character::expPt()
 {
     //reset the stats
     winNum++;
+    color(2);
+    std::cout << "YOU WON!!!" << std::endl;
+    color(7);
     if (winNum == ExpReq) { //if the "amount of wins" counter equals the counter for leveling up
         lvl++;
         std::cout << "You Leveled Up! " << std::endl;
@@ -431,9 +434,15 @@ void character::gameCompleted() {
 }
 
 void character::addMoney(int value) {
+    color(7);
+    std::cout << "You receieved " << value << " soaptokens!!!" << std::endl;
+    playSFX("coins!.wav");
     this->SoapTokens += value;
+    system("pause");
 }
 void character::takeMoney(int value) {
+    color(7);
+    std::cout << "You lost " << value << " soaptokens!!!" << std::endl;
     this->SoapTokens -= value;
 }
 

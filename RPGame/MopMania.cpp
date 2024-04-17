@@ -12,7 +12,7 @@
 int main()
 {
 	/*map creation*/
-	Broomba broomba("Broomba", 110, 90, 120); //beefy but less health
+	Broomba broomba("Broomba", 100, 90, 120); //beefy but less health
 	gameMap map;
 	event* e = new event;
 
@@ -21,6 +21,9 @@ int main()
 	GarbageDan* three = new GarbageDan(1);
 	battle* GD = new battle;
 	waitingRoomEvent* waitingRoom = new waitingRoomEvent("void.wav", one, two, three, GD);
+
+	BronchitisRex* bronch = new BronchitisRex(1);
+	storageRoomevent* storageRoom = new storageRoomevent("void.wav", bronch, GD);
 
 	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", NULL);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", NULL);
@@ -31,7 +34,7 @@ int main()
 	map.birth_rightChild(map.getIndex(), "1st Floor", "You walk further into the heart of Le' Hospitale...", "You see three rooms one of which has a mysterious shroud surround it...", NULL);
 	map.moveIndex_right();
 	map.birth_rightChild(map.getIndex(), "Waiting Area", "You look around, there is no more garbage on the floor!", "You see a nice little magazine rack and a small aquarium!", waitingRoom);
-	map.birth_midChild(map.getIndex(), "Mysterious Room", "This is Janitorius' office...", "You reminisce in all of the memories that took place in this room.", NULL);
+	map.birth_midChild(map.getIndex(), "Mysterious Room", "This is Janitorius' office...", "You reminisce in all of the memories that took place in this room.", storageRoom);
 	map.birth_leftChild(map.getIndex(), "Lung Care", "This is the place where you defeated the greate BRONCHITIS REX", "The air is now clearer than smog of New York City...", NULL);
 
 	//second floor
