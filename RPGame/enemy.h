@@ -137,12 +137,66 @@ public:
 	void Enrage(character& c);	//
 };
 
-//1st floor Boss
+
 class BronchitisRex : public enemy 
 {
 public:
 
-	BronchitisRex(int lvl); //120 HP, 70 ATT, 50 DEF
+	BronchitisRex(int lvl); //98 HP, 90 ATT, 75 DEF
+
+	void manuallyConstruct(int lvl);
+
+	//abilities
+	void Attack1(character& c);	//
+	void Attack2(character& c);	//
+	void Attack3(character& c);	//
+	void Attack4(character& c);	//
+	void Heal(character& c);	//
+	void Fortify(character& c);	//
+	void Enrage(character& c);	//
+};
+//NeedleNed
+class NeedleNed : public enemy
+{
+public:
+
+	NeedleNed(int lvl);// HP 80, ATT 75, DEF 30
+
+	void manuallyConstruct(int lvl);
+
+	//abilities
+	void Attack1(character& c);	//
+	void Attack2(character& c);	//
+	void Attack3(character& c);	//
+	void Attack4(character& c);	//
+	void Heal(character& c);	//
+	void Fortify(character& c);	//
+	void Enrage(character& c);	//
+};
+//ShingleShannon
+class ShingleShannon : public enemy
+{
+public:
+
+	ShingleShannon(int lvl);// HP 60, ATT 85, DEF 20
+
+	void manuallyConstruct(int lvl);
+
+	//abilities
+	void Attack1(character& c);	//
+	void Attack2(character& c);	//
+	void Attack3(character& c);	//
+	void Attack4(character& c);	//
+	void Heal(character& c);	//
+	void Fortify(character& c);	//
+	void Enrage(character& c);	//
+};
+//Deadskin Dill
+class DeadSkinDill : public enemy
+{
+public:
+
+	DeadSkinDill(int lvl); // HP 87, ATT 67, DEF 78
 
 	void manuallyConstruct(int lvl);
 
@@ -156,11 +210,13 @@ public:
 	void Enrage(character& c);	//
 };
 
+
+
 //floor ? Boss
 class GrimeReaper : public enemy	//this is Janitorius' secret identity
 {
 	//constructor
-	GrimeReaper(int lvl);	//Base: 140 HP, 100 att, 100 def (fast and powerful but low defense boss)
+	GrimeReaper(int lvl);	//Base: 200 HP, 150 att, 150 def (fast and powerful but low defense boss)
 	void manuallyConstruct(int lvl);
 
 	//abilities

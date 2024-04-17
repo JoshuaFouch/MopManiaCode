@@ -651,4 +651,230 @@ void BronchitisRex::Enrage(character& c)
 
 
 
+//NeedleNed
+NeedleNed::NeedleNed(int lvl)
+{
+	set_name("Needle Ned");
+	set_stats(80, 75, 30, lvl); 
+}
 
+void NeedleNed::manuallyConstruct(int lvl)
+{
+	set_name("Needle Ned");
+	set_stats(80, 75, 30, lvl);
+}
+
+void NeedleNed::Attack1(character& c)
+{
+	color(4);
+	std::cout << "\tNeedle Jab!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void NeedleNed::Attack2(character& c)
+{
+	color(4);
+	std::cout << "\tSyringe Strike!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void NeedleNed::Attack3(character& c)
+{
+	color(4);
+	std::cout << "\tPin Cushion Barrage!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void NeedleNed::Attack4(character& c)
+{
+	color(4);
+	std::cout << "\tNeedle Sotorm!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void NeedleNed::Heal(character& c)
+{
+	color(4);
+	std::cout << "\tSTITCH MEND!" << std::endl;
+	MSdelay(1000);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
+}
+
+void NeedleNed::Fortify(character& c)
+{
+	color(4);
+	std::cout << "\tANTISPECTIC BARRIER!" << std::endl;
+	MSdelay(1000);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	MSdelay(1000);
+}
+
+void NeedleNed::Enrage(character& c)
+{
+	color(4);
+	std::cout << "\tSTEROIDS!" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+//Shingle Shannon
+ShingleShannon::ShingleShannon(int lvl)
+{
+	set_name("Shingle Shannon");
+	set_stats(80, 75, 30, lvl);
+}
+
+void NeedleNed::manuallyConstruct(int lvl)
+{
+	set_name("Shingle Shannon");
+	set_stats(80, 75, 30, lvl);
+}
+
+void ShingleShannon::Attack1(character& c)
+{
+	color(4);
+	std::cout << "\tBlister Burst!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void ShingleShannon::Attack2(character& c)
+{
+	color(4);
+	std::cout << "\tRash Rupture!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void ShingleShannon::Attack3(character& c)
+{
+	color(4);
+	std::cout << "\tItch Infliction!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void ShingleShannon::Attack4(character& c)
+{
+	color(4);
+	std::cout << "\tScab Scatter!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void ShingleShannon::Heal(character& c)
+{
+	color(4);
+	std::cout << "\tDERMIS MEND!" << std::endl;
+	MSdelay(1000);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
+}
+
+void ShingleShannon::Fortify(character& c)
+{
+	color(4);
+	std::cout << "\tEPIDERMAL ARMOR!" << std::endl;
+	MSdelay(1000);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	MSdelay(1000);
+}
+
+void ShingleShannon::Enrage(character& c)
+{
+	color(4);
+	std::cout << "\tBURNING RAGE!" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
+//DeadSkin Dill
+DeadSkinDill::DeadSkinDill(int lvl)
+{
+	set_name("Deadskin Dill");
+	set_stats(87, 67, 78, lvl);
+}
+
+void DeadSkinDill::manuallyConstruct(int lvl)
+{
+	set_name("Deadskin Dill");
+	set_stats(87, 67, 78, lvl);
+}
+
+void DeadSkinDill::Attack1(character& c)
+{
+	color(4);
+	std::cout << "\tDill-Infused Decay!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void DeadSkinDill::Attack2(character& c)
+{
+	color(4);
+	std::cout << "\tPickled Grip!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void DeadSkinDill::Attack3(character& c)
+{
+	color(4);
+	std::cout << "\tBriney Bash!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void DeadSkinDill::Attack4(character& c)
+{
+	color(4);
+	std::cout << "\tFermented Frenzy!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void DeadSkinDill::Heal(character& c)
+{
+	color(4);
+	std::cout << "\tDILL REMEDY!" << std::endl;
+	MSdelay(1000);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
+}
+
+void DeadSkinDill::Fortify(character& c)
+{
+	color(4);
+	std::cout << "\tROTTEN RIND BARRIER!" << std::endl;
+	MSdelay(1000);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	MSdelay(1000);
+}
+
+void DeadSkinDill::Enrage(character& c)
+{
+	color(4);
+	std::cout << "\tBRINEY WRATH!" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
+	MSdelay(1000);
+	color(7);
+}
