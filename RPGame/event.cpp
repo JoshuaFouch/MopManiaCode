@@ -206,6 +206,16 @@ void storageRoomevent::trigger(character& c)
 		Sdelay(3);
 		std::cout << "And after I cleaned up the whole room..."; Sdelay(1); std::cout << " I felt R"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "A"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "L"; MSdelay(200); std::cout << "y"; MSdelay(200); std::cout " S"; MSdelay(200); std::cout << "t"; MSdelay(200); std::cout << "R"; MSdelay(200); std::cout << "a"; MSdelay(200); std::cout << "N"; MSdelay(200); std::cout << "g"; MSdelay(200); std::cout << "E"; MSdelay(200); std::cout << "."; MSdelay(200); std::cout << "."; MSdelay(200); std::cout << "." << std::endl;
 		Sdelay(3);
+		std::cout <<"I kinda just blacked out til just now, guess that gas I sucked up, made me a little loopy." std::endl;
+		Sdelay(3);
+		std::cout <<"I'm real sorry about attacking you earlier by the way." std::endl;
+		Sdelay(3);
+		std::cout <<"Here's some soap tolkens to hopefully make up for it..." std::endl;
+		Sdelay(3);
+		color(7);
+		std::cout << "*you recived 500 soap tolkens*" << std::endl;
+		Sdelay(2);
+		addMoney(500);
 		endMusic();
 
 		this->isDone = true;
