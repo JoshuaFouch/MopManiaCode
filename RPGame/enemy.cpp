@@ -667,7 +667,7 @@ void NeedleNed::manuallyConstruct(int lvl)
 void NeedleNed::Attack1(character& c)
 {
 	color(4);
-	std::cout << "\tNeedle Jab!" << std::endl;
+	std::cout << "\tLobotomize Lash!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -691,7 +691,7 @@ void NeedleNed::Attack3(character& c)
 void NeedleNed::Attack4(character& c)
 {
 	color(4);
-	std::cout << "\tNeedle Sotorm!" << std::endl;
+	std::cout << "\tNeedle Storm!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
