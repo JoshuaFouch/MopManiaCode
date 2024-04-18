@@ -227,7 +227,7 @@ void storageRoomevent::trigger(character& c)
 
 
 /*CellarEvent*/
-/*CellarEvent::CellarEvent(std::string music, enemy* one, battle* b)//more of a boss type music?
+CellarEvent::CellarEvent(std::string music, enemy* one, battle* b)//more of a boss type music?
 {
 	this->one = one;
 	this->PutridPythonBattle = b;
@@ -250,7 +250,7 @@ void CellarEvent::trigger(character& c)
 		std::cout << "Suddenly you see a pair slitted eyes blink open, their yellow glow slightly lighting up the room " << std::endl;
 		MSdelay(3000);
 		clear();
-		std::cout <<MSdelay(500)<<".";MSdelay(500); std::cout << ".";MSdelay(500); std::cout << "."<< std::endl;
+		MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "." << std::endl;
 		std::cout << "*a voice then calls out to you in a raspy tone*" << std::endl;
 		MSdelay(3000);
 		
@@ -263,9 +263,12 @@ void CellarEvent::trigger(character& c)
 		MSdelay(2000);
 		clear();
 		color(7);
-		std::cout << "*sniff sniff*";color(2); std::cout << "I can already smell "<<c.get_deadRat()<<" dead rats on you, already"<< std::endl; 
+		std::cout << "*sniff sniff*";color(2); std::cout << "I can already smell "<<c.get_deadRat()<<" dead rats on you"<< std::endl; 
 		MSdelay(2000);
-		Sdelay(2);
+		std::cout << "So what do ya say kiddo?";MSdelay(500); std::cout << "Do we got ourselves a deal?" << std::endl;
+		MSdelay(2000);
+
+		
 		color(7);
 		std::cout << "The Crazed Vaccum lunged forward at you!" << std::endl;
 		Sdelay(2);
@@ -285,4 +288,4 @@ void CellarEvent::trigger(character& c)
 		return;
 	}
 
-}*/
+}
