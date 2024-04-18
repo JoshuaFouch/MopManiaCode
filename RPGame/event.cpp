@@ -227,7 +227,7 @@ void storageRoomevent::trigger(character& c)
 
 
 /*CellarEvent*/
-CellarEvent::CellarEvent(std::string music, enemy* one, battle* b)//more of a boss type music?
+/*CellarEvent::CellarEvent(std::string music, enemy* one, battle* b)//more of a boss type music?
 {
 	this->one = one;
 	this->PutridPythonBattle = b;
@@ -285,4 +285,4 @@ void CellarEvent::trigger(character& c)
 		return;
 	}
 
-}
+}*/

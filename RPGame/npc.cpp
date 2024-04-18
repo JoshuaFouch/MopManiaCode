@@ -351,7 +351,7 @@ void MrsClean::dialogue(character& c)
 	MSdelay(2000);
 	std::cout << "Mrs. Clean: dialogue" << std::endl;
 	std::cout << ""; color(8); std::cout << "[1]: "; color(7); std::cout << "Putrid Python" << std::endl;
-	std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Janitorious" << std::endl;
+	std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Janitorious" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
 	std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Grime Reaper" << std::endl;
 	std::cout << ""; color(8); std::cout << "[4]: "; color(7); std::cout << "Drink Recommendation" << std::endl;
 	std::cout << ""; color(8); std::cout << "[5]: "; color(7); std::cout << "How is your day?" << std::endl;
@@ -363,7 +363,7 @@ void MrsClean::dialogue(character& c)
 		color(4);
 		std::cout << "Ah yes, rumors of this Putrid Python..." << std::endl;
 		MSdelay(2000);
-		std::cout << "this creature was supposedly exposed to some high levels of grime that affected its material make up..." << std::endl; << std::endl;
+		std::cout << "this creature was supposedly exposed to some high levels of grime that affected its material make up..." << std::endl;
 		MSdelay(2000);
 		std::cout << "the last I heard of it was when some adventurers discover it in the basement floor..." << std::endl;
 		MSdelay(2000);
