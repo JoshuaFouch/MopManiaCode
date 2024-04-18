@@ -478,13 +478,13 @@ void Broomba::displayStats()
 void Broomba::describeAttacks()
 {
     color(8);  //gray colored text
-    std::cout << get_aName1() << ":\n";
+    std::cout << get_aName1() << ": Creates a swirling vortex of suction, pulling anything into its cleaning chamber and draining their energy.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName2() << ":\n";
+    std::cout << get_aName2() << ": Charges forward at the breakneck speed, ramming into anything with incredible force, leavin them dazed and vulnerable.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName3() << ":\n";
+    std::cout << get_aName3() << ": Dashes around the battlefield, collecting debris and launching it at opponents with precise aim.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName4() << ":\n";
+    std::cout << get_aName4() << ": Unleashes a rapid barrage of expolosive energy pulses, homing in on anything across the battlefield and disintegrating any dirt, dust, or foes in its path.\n"; //some sort of fire periodic damage?
     std::cout << "\t" << std::endl;
     std::cout << std::endl;
     system("pause");
@@ -563,13 +563,13 @@ void SwifterJetWet::displayStats()
 void SwifterJetWet::describeAttacks()
 {
     color(8);  //gray colored text
-    std::cout << get_aName1() << ":\n";
+    std::cout << get_aName1() << ": Swings its mop, unleashing a powerful downward strike, drenching the opponent in a flood of cleaning solution.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName2() << ":\n";
+    std::cout << get_aName2() << ": Propels itself forward with incredible speed, leaving behind a turbulent stream of water that disorients and knocks back foes.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName3() << ":\n";
+    std::cout << get_aName3() << ": Releases a cloud of foamy bubbles that envelop the battle field, creating a slippery terrain and hindering opponenets' movement.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName4() << ":\n";
+    std::cout << get_aName4() << ": Channels its energy into a concentrated burst, launching a high-presure jet of water that cleanses all in its path, dealing damge and periodic bubble damage.\n"; //Do oeriodic buuble type damage in the future?
     std::cout << "\t" << std::endl;
     std::cout << std::endl;
     system("pause");
@@ -645,13 +645,13 @@ void BysonV8::displayStats()
 void BysonV8::describeAttacks()
 {
     color(8);  //gray colored text
-    std::cout << get_aName1() << ":\n";
+    std::cout << get_aName1() << ": Unleashes a rapid series of punches and kicks infused with energy, creating a whirlwind of cleaning fury that pulverizes opponets.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName2() << ":\n";
+    std::cout << get_aName2() << ": Spins rapidly, generating a powerful tornado of air and debris that engulfs enemies, tossing them around.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName3() << ":\n";
+    std::cout << get_aName3() << ": Emits a burst of energy particles that seek out and bombard opponents, disrupting their movements and sapping their strength.\n";
     std::cout << "\t" << std::endl;
-    std::cout << get_aName4() << ":\n";
+    std::cout << get_aName4() << ": Summons a massive dust sotrm, engulfing the battlefield and dealing continuous damage to all caught within its swirling vortex of cleaning power.\n"; //Maybe do periodic damage in the future?
     std::cout << "\t" << std::endl;
     std::cout << std::endl;
     system("pause");
