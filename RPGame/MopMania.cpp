@@ -20,10 +20,10 @@ int main()
 	GarbageDan* two = new GarbageDan(1);
 	GarbageDan* three = new GarbageDan(1);
 	battle* GD = new battle;
-	waitingRoomEvent* waitingRoom = new waitingRoomEvent("void.wav", one, two, three, GD);
+	waitingRoomEvent* waitingRoom = new waitingRoomEvent(one, two, three, GD);
 
 	BronchitisRex* bronch = new BronchitisRex(1);
-	storageRoomevent* storageRoom = new storageRoomevent("void.wav", bronch, GD);
+	storageRoomevent* storageRoom = new storageRoomevent(bronch, GD);
 
 	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", NULL);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", NULL);

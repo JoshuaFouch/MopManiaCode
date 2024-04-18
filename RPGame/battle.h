@@ -17,17 +17,26 @@ class battle
 {
 public:
 	battle();
-	void BattleStats(character& c, enemy& e);
-	void GameOver(character& c);
+	virtual void BattleStats(character& c, enemy& e);
+	virtual void GameOver(character& c);
 	void battleStart(character& c, enemy& e);
 	virtual void Battle_Sequence(character& c, enemy& e);
 };
 
 //final boss battles
-class GrimeBattle : public battle
+class GoodFinalBattle : public battle
 {
 public:
-	//contains its own battle sequence using a Grime Reaper object (derived from enemy)
+	void BattleStats(character& c, enemy& e, int& counter);
+	void GameOver(character& c);
+	void Battle_Sequence(character& c, enemy& e);
+	void BattleDialogue(character& c, enemy& e);
+};
+
+class PythonBattle : public battle
+{
+public:
+	void Battle_Sequence(character& c, enemy& e);
 };
 
 #endif
