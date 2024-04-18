@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include "inventory.h"
 
 //forward declaration
 class enemy;
 class NPC;
+class inventory;
 
 //BASE CHARACTER
 class character
@@ -76,6 +78,7 @@ public:
 	bool noItems();
 	void useInventory();
 	void checkInventory();
+	void testInventory();
 
 	//for quests
 	void bubAdvance();
@@ -104,6 +107,8 @@ protected:
 	int lvl = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
 
+	//inventory
+	inventory myInventory;
 	int healUp = 0;	//counter for how many potions a character has
 	int attUp = 0;	//counter for how many attack up potions a character has
 	int defUp = 0;	//counter for how many defense up potions a character has

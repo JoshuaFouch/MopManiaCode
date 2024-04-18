@@ -187,6 +187,7 @@ void storageRoomevent::trigger(character& c)
 		std::cout << "WAKE UP!!!";
 		MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "." << std::endl; Sdelay(2);
 		color(7);
+		clear();
 		std::cout << "*you slowly sit up*" << std::endl;
 		Sdelay(2);
 		std::cout << "You see the vacuum in front of you, now looking fully healed..." << std::endl;

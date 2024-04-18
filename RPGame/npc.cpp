@@ -264,7 +264,7 @@ void bubbleBoy::dialogue(character& c)
 		MSdelay(2000);
 		color(7);//change back to white for user
 		std::cout << "1. You've got yourself a deal kiddo!"<<std::endl;
-    std::cout <<     "2. Ain't no way ya blabbering bubble!"<<std::endl;	//change back to white for user
+		std::cout << "2. Ain't no way ya blabbering bubble!"<<std::endl;	//change back to white for user
     
 	
 		int choice;

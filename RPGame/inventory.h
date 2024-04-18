@@ -5,58 +5,10 @@
 #include <vector>
 #include "item.h"
 
-class hashNode {
-public:
-	//constructor
-	hashNode(int key, int data) {
-		this->next = NULL;
-		this->prev = NULL;
-		this->key = key;
-		this->data = data;
-	}
-	//for previous pointer
-	hashNode* getPrev() {
-		return prev;
-	}
-	void setPrev(hashNode* n) {
-		this->prev = n;
-	}
-	void nullifyPrev() {
-		this->prev = NULL;
-	}
-	//for next pointer
-	hashNode* getNext() {
-		return next;
-	}
-	void setNext(hashNode* n) {
-		this->next = n;
-	}
-	void nullifyNext() {
-		this->next = NULL;
-	}
-	int getKey() {
-		return key;
-	}
-	void setKey(int key) {
-		this->key = key;
-	}
-	int getData() {
-		return data;
-	}
-	void setData(int data) {
-		this->data = data;
-	}
 
-private:
-	int key;
-	int data;
-	hashNode* prev = NULL;
-	hashNode* next = NULL;
-};
-
-class hashList {
+class item_list {
 public:
-	void pushback(hashNode* n) {
+	void pushback(item* n) {
 		if (head == NULL && tail == NULL) {
 			head = n;
 			tail = n;
@@ -74,32 +26,43 @@ public:
 		size++;
 		index = head;
 	}
-	hashNode* popBack() {
+	item* getHead() {
+		return head;
+	}
+	std::string getHeadName() {
+		return head->getName();
+	}
+	int getSize() {
+		return size;
+	}
+	item* popBack() {
 		index = tail;
-		hashNode* temp = index;
+		item* temp = index;
 		tail = tail->getPrev();
-		index->getPrev()->nullifyNext();
-		//index->nullifyPrev();
+		temp->setPrev(NULL);
+		temp->setNext(NULL);
 		index = head;
+		size--;
 		return temp;
 	}
-	hashNode* popFront() {
+	item* popFront() {
 		index = head;
-		hashNode* temp = index;
+		item* temp = index;
 		head = head->getNext();
-		//index->getNext()->nullifyPrev();
-		index->nullifyNext();
+		temp->setPrev(NULL);
+		temp->setNext(NULL);
 		index = head;
+		size--;
 		return temp;
 	}
-	hashNode* popAt(int data) {
+	item* popAt(std::string name) {
 		if (size == 0) {
 			std::cout << "Nothing in list." << std::endl;
 			return NULL;
 		}
 		index = head;
-		while (index->getData() != data) {
-			if (index->getNext() == NULL && index->getData() != data) {
+		while (index->getName() != name) {
+			if (index->getNext() == NULL && index->getName() != name) {
 				std::cout << "Not found... returned last node: " << std::endl;
 				return index;
 			}
@@ -111,21 +74,22 @@ public:
 		if (index->getNext() == NULL) {
 			return popBack();
 		}
-		hashNode* temp = index;
+		item* temp = index;
 		index->getPrev()->setNext(index->getNext());
 		index->getNext()->setPrev(index->getPrev());
-		index->nullifyNext();
-		//index->nullifyPrev();
+		temp->setPrev(NULL);
+		temp->setNext(NULL);
+		size--;
 		return temp;
 	}
-	hashNode* search(int data) {
+	item* search(std::string name) {
 		index = head;
 		if (head == NULL) {
 			std::cout << "Nothing in this list." << std::endl;
 			return NULL;
 		}
-		while (index->getData() != data) {
-			if (index->getNext() == NULL && index->getData() != data) {
+		while (index->getName() != name) {
+			if (index->getNext() == NULL && index->getName() != name) {
 				std::cout << "Not found; returned last node: ";
 				return index;
 			}
@@ -137,44 +101,64 @@ public:
 		index = head;
 		std::cout << "[ ";
 		while (index != NULL) {	//traverses the list from the beginning to end
-			std::cout << index->getData() << " ";
+			std::cout << index->getName() << " ";
 			index = index->getNext();
 		}
 		std::cout << "]" << std::endl;
 		index = head;
 	}
 private:
-	hashNode* head = NULL;
-	hashNode* tail = NULL;
-	hashNode* index = NULL;
+	item* head = NULL;
+	item* tail = NULL;
+	item* index = NULL;
 	int size = 0;
 };
 
-class hashTable {
+class inventory {
 public:
-	hashTable() {};
-	hashTable(int tableSize) {
+	inventory() {
+		this->size = 100;
+		this->tableSize = 100;
+		table.resize(100);
+	}
+	inventory(int tableSize) {
 		this->size = tableSize;
 		this->tableSize = tableSize;
 		table.resize(tableSize);
 	}
-
 	int getSize() {
 		return size;
 	}
-
 	int hash(int key) {	//hashing function
-		return key;
+		return key * 1;
 	}
 
-	void add(int key, int data) {
-		/*if (size > tableSize) {
-			std::cout << "Error: Hashtable Overflow!" << std::endl;
-		}*/
+	void add(int key, item* n) {
 		int index = hash(key);	//hash value will become index location
-		hashNode* h = new hashNode(key, data);
-		table[index].pushback(h);	//adds to the back of linked list at that index
+		table[index].pushback(n);	//adds to the back of linked list at that index
 		size++;
+	}
+	void add_potion() {
+		potion* p = new potion;
+		add(p->getKey(), p);
+	}
+	void add_attackUp() {
+		attackUp* a = new attackUp;
+		add(a->getKey(), a);
+	}
+	void add_defenseUp() {
+		defenseUp* d = new defenseUp;
+		add(d->getKey(), d);
+	}
+	void add_deadRat() {
+		deadRat* r = new deadRat;
+		add(r->getKey(), r);
+	}
+
+
+	void useItem(int key, character& c) {
+		getItem(key)->use(c);	//uses item
+		remove(key);	//deletes item
 	}
 
 	void printTable() {
@@ -183,21 +167,25 @@ public:
 			table[i].printFrontwards();	//prints out all the contents of the linked list at the current "i"
 		}
 	}
-
-	hashNode* searchTable(int key, int data) {
-		int index = hash(key);	//get the key
-		return table[index].search(data);
+	void printInventory() {
+		for (int i = 0; i < tableSize; i++) {
+			std::cout << table[i].getHeadName() << ": ";
+			std::cout << table[i].getSize() << std::endl;
+		}
 	}
-
-	hashNode* remove(int key, int data) {
+	item* getItem(int key) {
 		int index = hash(key);	//get the key
-		return table[index].popAt(data);
+		return table[index].getHead();
+	}
+	item* remove(int key) {
+		int index = hash(key);	//get the key
+		return table[index].popBack();
 	}
 
 private:
 	int size = 0;
 	int tableSize = 0;
-	std::vector<hashList> table;
+	std::vector<item_list> table;
 };
 
 #endif

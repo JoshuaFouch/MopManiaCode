@@ -14,6 +14,11 @@ class enemy;
 4: deadRats
 */
 
+/*TO ADD MORE ITEMS:
+1. make a new derived class of item
+2. set its ability
+3. make an "add<item name>" function to the inventory class*/
+
 class item {
 public:
 	item();

@@ -5,10 +5,13 @@
 /*item implementations*/
 item::item() {
 	this->name = "item";
-	this->key = 5;
+	this->key = 0;
 }
 int item::getKey() {
 	return key;
+}
+void item::setKey(int key) {
+	this->key = key;
 }
 std::string item::getName() {
 	return name;
@@ -16,6 +19,19 @@ std::string item::getName() {
 void item::use(character& c) {
 	std::cout << c.get_name() << " says hi!" << std::endl;
 }
+item* item::getPrev() {
+	return prev;
+}
+void item::setPrev(item* n) {
+	this->prev = n;
+}
+item* item::getNext() {
+	return next;
+}
+void item::setNext(item* n) {
+	this->next = n;
+}
+
 
 /*potion implementations*/
 potion::potion() {

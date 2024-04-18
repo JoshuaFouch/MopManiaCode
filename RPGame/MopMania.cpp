@@ -30,6 +30,7 @@ int main()
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", NULL);
 	map.birth_midChild(map.getIndex(), "Le' Hospitale", "The home where all citizens of Mop-Mania once lived... it is now the demise of cleanliness", "Whoever enters these halls are said to never come out these days...\nThis is the place Janitorius commissioned you to clean.", NULL);
 	map.moveIndex_middle();
+
 	//first floor
 	map.birth_rightChild(map.getIndex(), "1st Floor", "You walk further into the heart of Le' Hospitale...", "You see three rooms one of which has a mysterious shroud surround it...", NULL);
 	map.moveIndex_right();
@@ -40,8 +41,20 @@ int main()
 	//second floor
 	map.moveIndex_back();
 	map.birth_midChild(map.getIndex(), "2nd Floor", "You walked up the stairs and see three other rooms...", "Huh, it stinks, better go clean it up as Janitorius told you to!", NULL);
-	
+	map.moveIndex_middle();
+	map.birth_rightChild(map.getIndex(), "Dermatology", "You enter the dermatology... its clean and supreme!", "There is no dead skin anywhere!", NULL);
+	map.birth_midChild(map.getIndex(), "Operating Room", "Your happy to see the operating room in clean condition.", "Scalpels and needles are nicely organized on the counter...", NULL);
+	map.birth_leftChild(map.getIndex(), "Pharmacy", "You see beautiful shelves of pill bottles organized neatly", "Your head is starting from, maybe go to take some acetaminophen...", NULL);
+	map.birth_midChild(map.getIndex()->getLeft(), "Doctor's Office", "", "", NULL);
+	map.birth_midChild(map.getIndex()->getMid(), "Laboratory", "", "", NULL);
+
 	//basement
+	map.moveIndex_back();
+	map.birth_leftChild(map.getIndex(), "Basement", "", "", NULL);
+	map.moveIndex_left();
+	map.birth_rightChild(map.getIndex(), "Storage Room", "", "", storageRoom);
+	map.birth_midChild(map.getIndex(), "Mental Health Room", "", "", NULL);
+	map.birth_leftChild(map.getIndex(), "Cellar", "", "", NULL);
 
 	system("pause");
 	map.play(map.theGamer(), broomba, 0);
