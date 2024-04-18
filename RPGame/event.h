@@ -106,11 +106,10 @@ protected:
 class FinalEvent : public event		/*may have alternate endings, help janitorius or kill*/
 {									//if kill you fight Grime Reaper, if help, Dirty Bubble will possess him and you have to kill him
 public:
-	FinalEvent(enemy* one, enemy* two, battle* final);
+	FinalEvent(enemy* one, battle* final);
 	void trigger(character& c);
 protected:
-	enemy* one;
-	enemy* two;
+	enemy* one;	//Grime Reaper or Dirty Bubble
 	battle* final;
 };
 

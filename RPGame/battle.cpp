@@ -71,7 +71,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 {
 	endMusic();
 	battleStart(c, e);
-	//playMusic("battlemusic.wav");
+	playMusic("battlemusic.wav");
 
 	int run = 0;	//if character wants to run away from battle
 	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
@@ -253,7 +253,7 @@ void GoodFinalBattle::BattleStats(character& c, enemy& e, int& counter) {
 		size_t enemyLen = name.length() + 14;
 		//enemy stats
 		color(4);
-		std::cout << "\t\t\t\t\t|-----[ "; color(9); std::cout << name; color(4); std::cout << " ]-----|\n";
+		std::cout << "\t\t\t\t\t|-----[ "; color(6); std::cout << name; color(4); std::cout << " ]-----|\n";
 		std::cout << "\t\t\t\t\t| Level:" << e.get_lvl() << "\n";
 		std::cout << "\t\t\t\t\t| HP:" << e.get_hp() << "\n";
 		std::cout << "\t\t\t\t\t";
@@ -455,6 +455,7 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 	else if (c.get_hp() <= 0)
 	{
 		c.die();
+		endMusic();
 		GameOver(c);
 	}
 	else if (run == 1)
@@ -469,4 +470,19 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 }
 void GoodFinalBattle::BattleDialogue(character& c, enemy& e) {
 	//if a grime reaper is at 3/4 health
+	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
+		std::cout << "I am at 75& health";
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
+		std::cout << "I am at 50 health or smth";
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
+		std::cout << "I am at 25 health or smth";
+		system("pause");
+	}
+	else {
+		return;
+	}
 }

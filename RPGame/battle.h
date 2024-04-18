@@ -24,7 +24,7 @@ public:
 };
 
 //final boss battles
-class GoodFinalBattle : public battle
+class GoodFinalBattle : public battle	//Grime Reaper becomes possessed by Dirty Bubble
 {
 public:
 	void BattleStats(character& c, enemy& e, int& counter);
