@@ -8,6 +8,7 @@
 #include <thread>
 #include <string>
 
+void Game_Menu_Test();
 void clear();	//clears the screen
 void MSdelay(int n);	//delays the next output of n amount of milliseconds
 void Sdelay(int n);	//delays the next output of n amount of seconds
