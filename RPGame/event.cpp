@@ -25,7 +25,7 @@ void event::trigger(character& c)
 
 
 /*waiting room event*/
-waitingRoomEvent::waitingRoomEvent(std::string music, enemy* one, enemy* two, enemy* three, battle* b)
+waitingRoomEvent::waitingRoomEvent(enemy* one, enemy* two, enemy* three, battle* b)
 {
 	this->one = one;
 	this->two = two;
@@ -130,7 +130,7 @@ void waitingRoomEvent::trigger(character& c)
 
 
 /*StorageRoomevent*/
-storageRoomevent::storageRoomevent(std::string music, enemy* one, battle* b)
+storageRoomevent::storageRoomevent(enemy* one, battle* b)
 {
 	this->one = one;
 	this->Vacuumbattle = b;
@@ -227,12 +227,12 @@ void storageRoomevent::trigger(character& c)
 
 
 /*CellarEvent*/
-CellarEvent::CellarEvent(std::string music, enemy* one, battle* b)//more of a boss type music?
+/*CellarEvent::CellarEvent(std::string music, enemy* one, battle* b)//more of a boss type music?
 {
 	this->one = one;
-	this->PutridPythonBattle = b;
+	this->Putridbattle = b;
 }
-void CellarEvent::trigger(character& c)
+void cellarEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
 		return;	//if character has already triggered the event in this node
@@ -272,7 +272,7 @@ void CellarEvent::trigger(character& c)
 		color(7);
 		std::cout << "The Crazed Vaccum lunged forward at you!" << std::endl;
 		Sdelay(2);
-		Garbagebattle->Battle_Sequence(c, *one);//lets make the crazed vaccum very strong, since its the only enemy  
+		Putridbattle->Battle_Sequence(c, *one);//lets make the crazed vaccum very strong, since its the only enemy  
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
@@ -281,7 +281,7 @@ void CellarEvent::trigger(character& c)
 		color(7);
 		std::cout << "*you recived 500 soap tolkens*" << std::endl;
 		Sdelay(2);
-		addMoney(500);
+		c.addMoney(500);
 		endMusic();
 
 		this->isDone = true;

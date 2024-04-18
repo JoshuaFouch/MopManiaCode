@@ -223,7 +223,6 @@ void Bristlebeard::dialogue(character& c)
 
 
 //BubblyBoy
-
 //bubbleBoy::bubbleBoy() : NPC() {}
 
 void bubbleBoy::dialogue(character& c)
@@ -343,24 +342,24 @@ void MrsClean::dialogue(character& c)
 	clear();
 	std::string choice;
 	color(3);
-	std::cout << "Mrs. Clean: Ah a new broom" << std::endl;
+	std::cout << "Mrs. Clean: Ah a new cleaning supply around these parts..." << std::endl;
 	MSdelay(2000);
-	std::cout << "Mrs. Clean: dialogue" << std::endl;
+	std::cout << "I have some stories for you..." << std::endl;
 	MSdelay(2000);
-	std::cout << "Mrs. Clean: dialogue" << std::endl;
+	std::cout << "It may be of some help for you along your journey..." << std::endl;
 	MSdelay(2000);
-	std::cout << "Mrs. Clean: dialogue" << std::endl;
+	std::cout << "Would you like to here some?" << std::endl;
 	std::cout << ""; color(8); std::cout << "[1]: "; color(7); std::cout << "Putrid Python" << std::endl;
-	std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Janitorious" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
+	std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Story of Le' Hospitale" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
 	std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Grime Reaper" << std::endl;
 	std::cout << ""; color(8); std::cout << "[4]: "; color(7); std::cout << "Drink Recommendation" << std::endl;
 	std::cout << ""; color(8); std::cout << "[5]: "; color(7); std::cout << "How is your day?" << std::endl;
 
 	std::cin >> choice;
 
-	if (choice == "1")
+	if (choice == "1") //putrid python dialogue
 	{
-		color(4);
+		color(3);
 		std::cout << "Ah yes, rumors of this Putrid Python..." << std::endl;
 		MSdelay(2000);
 		std::cout << "this creature was supposedly exposed to some high levels of grime that affected its material make up..." << std::endl;
@@ -372,29 +371,73 @@ void MrsClean::dialogue(character& c)
 		std::cout << "" << std::endl;
 		system("pause");
 	}
-	else if (choice == "2")
+	else if (choice == "2") //le' hospitale dialogue
 	{
-		color(4);
-		std::cout << "janitorious dialogue" << std::endl;
-		MSdelay(2000);
+		
 	}
-	else if (choice == "3")
+	else if (choice == "3") //grime reaper dialogue
 	{
-		color(4);
-		std::cout << "grim reaper dialogue" << std::endl;
+		color(3);
+		std::cout << "Ah the "; color(2); std::cout << "Grime Reaper..." << std::endl;
 		MSdelay(2000);
+		color(3);
+		std::cout << "My old apprentice... it has been about twenty long mop-years since I last trained him" << std::endl;
+		MSdelay(2000);
+		std::cout << "As a young boy, he ate a large amount of moppychlorines... " << std::endl;
+		MSdelay(2000);
+		clear();
+		std::cout << "Because of this, he has always been cunning and excelled in his grime combat training..." << std::endl;
+		MSdelay(3000);
+		std::cout << "His weapon of choice was always the bleached-tip scythe, being able to eliminate 99.99% of grime!" << std::endl;
+		MSdelay(4000);
+		clear();
+		std::cout << "Well anyway, ever since the Great Banishment of '87, no one around here has taken too kindly about him..." << std::endl;
+		MSdelay(3000);
+		std::cout << "However, I know he is a good man with a kind heart." << std::endl;
+		MSdelay(3000);
+		clear();
+		std::cout << "And I am sure he had good reasons for the decision he made, to banish us from our home..." << std::endl;
+		MSdelay(5000);
+		clear();
+		std::cout << "Hmmm.... your fighting skills seem very similar to that of his..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You don't happen....";
+		MSdelay(3000);
+		std::cout << " to know him??... do you?" << std::endl;
+		MSdelay(6000);
+		clear();
+		std::cout << "Ahhh forget it..." << std::endl;
+		MSdelay(3000);
+		std::cout << "*to herself* He couldn't be Grimey's chosen one..." << std::endl;
+		MSdelay(2000);
+		std::cout << "noo...no..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		std::cout << "I need another drink... RUSTY I'LL TAKE ANOTHER MUDWEISER!!" << std::endl;
+		system("pause");
+		clear();
 	}
-	else if (choice == "4")
+	else if (choice == "4") // drink stuff
 	{
-		color(4);
-		std::cout << "drink recommendation dialogue" << std::endl;
+		color(3);
+		std::cout << "Ah, nothing too special really, but here's what they have: " << std::endl;
 		MSdelay(2000);
+		color(9); std::cout << "Barnacle Berry Blast" << std::endl;
+		MSdelay(2000);
+		color(2); std::cout << "Melon Grime" << std::endl;
+		MSdelay(2000);
+		color(3); std::cout << "and my personal favorite..."; color(8); std::cout << "MudWeiser" << std::endl;
+		MSdelay(2000);
+		color(3); std::cout << "Say, I'll get you a drink, maybe then you'd want to hear some more stories!" << std::endl;
 	}
-	else if (choice == "5")
+	else if (choice == "5")// how is your day?
 	{
-		color(4);
-		std::cout << "how is your day dialogue" << std::endl;
+		color(3);
+		std::cout << "OH my day?" << std::endl;
 		MSdelay(2000);
+		std::cout << "Same as the day before and the day before that..." << std::endl;
+		MSdelay(2000);
+		std::cout << "Honestly I don't keep track anymore since everyday it feels like the same day everyday...." << std::endl;
 	}
 	
 }

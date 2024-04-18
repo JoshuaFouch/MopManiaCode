@@ -93,6 +93,15 @@
     <ClCompile Include="item.cpp">
       <Filter>Inventory Files</Filter>
     </ClCompile>
+    <ClCompile Include="joshEvents.cpp">
+      <Filter>Event Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EljayEvents.cpp">
+      <Filter>Event Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SeamusEvent.cpp">
+      <Filter>Event Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="void.wav">

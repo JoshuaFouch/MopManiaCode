@@ -191,14 +191,11 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			c.describeAttacks();
 			break;
 		case 8:
-			clear();
 			std::cout << "Nice try bud, you can't run." << std::endl;
-			system("pause");
-			//run = 1;
-			break;
+			MSdelay(1500);
+			continue;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
-			clear();
 			MSdelay(1500);
 			continue;
 		}
@@ -225,4 +222,266 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	system("pause");
 	clear();
 	endMusic();
+}
+
+
+/*Grime Reaper/Dirty Bubble battle*/
+void GoodFinalBattle::BattleStats(character& c, enemy& e, int& counter) {
+	if (counter == 1) {
+		std::string name = "Janitorius";
+		size_t enemyLen = name.length() + 14;
+		//enemy stats
+		color(4);
+		std::cout << "\t\t\t\t\t|-----[ "; color(6); std::cout << name; color(4); std::cout << " ]-----|\n";
+		std::cout << "\t\t\t\t\t| Level:" << e.get_lvl() << "\n";
+		std::cout << "\t\t\t\t\t| HP:" << e.get_hp() << "\n";
+		std::cout << "\t\t\t\t\t";
+		std::cout << "|" << std::string(enemyLen, '-') << "|\n";
+
+		size_t charLen = c.get_name().size() + 14;
+		//character stats
+		color(2);
+		std::cout << "|-----[ " << c.get_name() << " ]-----|\n";
+		std::cout << "| Level: " << c.get_lvl() << "\n";
+		std::cout << "| HP:" << c.get_hp() << "\n";
+		std::cout << "|" << std::string(charLen, '-') << "|\n";
+		color(7);
+		std::cout << "-----------------------------------------" << std::endl;
+	}
+	else if (counter == 2) {
+		std::string name = "The Grime Reaper";
+		size_t enemyLen = name.length() + 14;
+		//enemy stats
+		color(4);
+		std::cout << "\t\t\t\t\t|-----[ "; color(6); std::cout << name; color(4); std::cout << " ]-----|\n";
+		std::cout << "\t\t\t\t\t| Level:" << e.get_lvl() << "\n";
+		std::cout << "\t\t\t\t\t| HP:" << e.get_hp() << "\n";
+		std::cout << "\t\t\t\t\t";
+		std::cout << "|" << std::string(enemyLen, '-') << "|\n";
+
+		size_t charLen = c.get_name().size() + 14;
+		//character stats
+		color(2);
+		std::cout << "|-----[ " << c.get_name() << " ]-----|\n";
+		std::cout << "| Level: " << c.get_lvl() << "\n";
+		std::cout << "| HP:" << c.get_hp() << "\n";
+		std::cout << "|" << std::string(charLen, '-') << "|\n";
+		color(7);
+		std::cout << "-----------------------------------------" << std::endl;
+	}
+	else if (counter == 3) {
+		std::string name = "The Dirty Bubble";
+		size_t enemyLen = name.length() + 14;
+		//enemy stats
+		color(4);
+		std::cout << "\t\t\t\t\t|-----[ " << name << " ]-----|\n";
+		std::cout << "\t\t\t\t\t| Level:" << e.get_lvl() << "\n";
+		std::cout << "\t\t\t\t\t| HP:" << e.get_hp() << "\n";
+		std::cout << "\t\t\t\t\t";
+		std::cout << "|" << std::string(enemyLen, '-') << "|\n";
+
+		size_t charLen = c.get_name().size() + 14;
+		//character stats
+		color(2);
+		std::cout << "|-----[ " << c.get_name() << " ]-----|\n";
+		std::cout << "| Level: " << c.get_lvl() << "\n";
+		std::cout << "| HP:" << c.get_hp() << "\n";
+		std::cout << "|" << std::string(charLen, '-') << "|\n";
+		color(7);
+		std::cout << "-----------------------------------------" << std::endl;
+		counter = 1;
+	}
+}
+void GoodFinalBattle::GameOver(character& c) {
+	playSFX("OE.wav");
+	clear();
+	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
+	Sdelay(13);
+	clear();
+	std::cout << "You will be taken back home..." << std::endl;
+	system("pause");
+	endMusic();
+}
+void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
+	endMusic();
+	battleStart(c, e);
+	playMusic("battlemusic.wav");
+
+	int run = 0;	//if character wants to run away from battle
+	int statCounter = 1;
+	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
+	{
+		clear();
+		BattleDialogue(c, e);
+		clear();
+		BattleStats(c, e, statCounter);	//begins by display the stats
+		whatText();
+		color(8); std::cout << "\n[1]: "; color(7); std::cout << c.get_aName1() << std::endl;
+		color(8); std::cout << "[2]: "; color(7); std::cout << c.get_aName2() << std::endl;
+		color(8); std::cout << "[3]: "; color(7); std::cout << c.get_aName3() << std::endl;
+		color(8); std::cout << "[4]: "; color(7); std::cout << c.get_aName4() << std::endl << std::endl;
+		color(8); std::cout << "[5]: "; color(7); std::cout << "Use Item" << std::endl;
+		color(8); std::cout << "[6]: "; color(7); std::cout << "Check stats" << std::endl;
+		color(8); std::cout << "[7]: "; color(7); std::cout << "Attack Descriptions" << std::endl;
+		color(8); std::cout << "[8]: "; color(7); std::cout << "Run (Be a coward)" << std::endl;
+		int choice;
+		std::cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			clear();
+			BattleStats(c, e, statCounter);
+			c.Attack1(e);	//character attacks
+			MSdelay(2000);
+			clear();
+			BattleStats(c, e, statCounter);
+			if (e.get_hp() <= 0)
+			{
+				break;
+			}
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			statCounter++;
+			MSdelay(2000);
+			clear();
+			break;
+		case 2:
+			clear();
+			BattleStats(c, e, statCounter);
+			c.Attack2(e);	//character attacks
+			MSdelay(2000);
+			clear();
+			BattleStats(c, e, statCounter);
+			if (e.get_hp() <= 0)
+			{
+				clear();
+				break;
+			}
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			statCounter++;
+			MSdelay(2000);
+			clear();
+			break;
+		case 3:
+			clear();
+			BattleStats(c, e, statCounter);
+			c.Attack3(e);	//character attacks
+			MSdelay(2000);
+			clear();
+			BattleStats(c, e, statCounter);
+			if (e.get_hp() <= 0)
+			{
+				clear();
+				break;
+			}
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			statCounter++;
+			MSdelay(2000);
+			clear();
+			break;
+		case 4:
+			clear();
+			BattleStats(c, e, statCounter);
+			c.Attack4(e);	//character attacks
+			MSdelay(2000);
+			clear();
+			BattleStats(c, e, statCounter);
+			if (e.get_hp() <= 0)
+			{
+				clear();
+				break;
+			}
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			statCounter++;
+			MSdelay(2000);
+			clear();
+			break;
+		case 5:
+			clear();
+			BattleStats(c, e, statCounter);
+			if (c.noItems() == true)
+			{
+				color(8);
+				std::cout << "You have no items!" << std::endl;
+				color(7);
+				MSdelay(2000);
+				break;
+			}
+			else
+			{
+				c.useInventory();
+				clear();
+				BattleStats(c, e, statCounter);
+				if (e.get_hp() <= 0)
+				{
+					clear();
+					break;
+				}
+				e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+				statCounter++;
+				MSdelay(2000);
+				break;
+			}
+		case 6:
+			clear();
+			BattleStats(c, e, statCounter);
+			c.displayStats();
+			break;
+		case 7:
+			clear();
+			BattleStats(c, e, statCounter);
+			c.describeAttacks();
+			break;
+		case 8:
+			std::cout << "Nice try bud, you can't run." << std::endl;
+			MSdelay(1500);
+			//run = 1;
+			continue;
+		default:
+			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
+			MSdelay(1500);
+			continue;
+		}
+	}
+	if (e.get_hp() <= 0)
+	{
+		playSFX("void.wav");
+		e.makeDead();
+		clear();
+		c.expPt();
+		c.winBattleMoney();
+	}
+	else if (c.get_hp() <= 0)
+	{
+		c.die();
+		endMusic();
+		GameOver(c);
+	}
+	else if (run == 1)
+	{
+		endMusic();
+		playMusic("OE.wav");
+		std::cout << "You ran... Imagine being a coward..." << std::endl;
+	}
+	system("pause");
+	clear();
+	endMusic();
+}
+void GoodFinalBattle::BattleDialogue(character& c, enemy& e) {
+	//if a grime reaper is at 3/4 health
+	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
+		std::cout << "I am at 75& health";
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
+		std::cout << "I am at 50 health or smth";
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
+		std::cout << "I am at 25 health or smth";
+		system("pause");
+	}
+	else {
+		return;
+	}
 }
