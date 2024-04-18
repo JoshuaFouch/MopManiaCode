@@ -105,4 +105,12 @@ public:
 	void dialogue(character& c);
 };*/
 
+class MrsClean : public NPC
+{
+public:
+	MrsClean();
+
+	void dialogue(character& c);
+};
+
 #endif
