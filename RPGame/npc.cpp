@@ -343,7 +343,7 @@ void MrsClean::dialogue(character& c)
 	clear();
 	std::string choice;
 	color(3);
-	std::cout << "Mrs. Clean: dialogue" << std::endl;
+	std::cout << "Mrs. Clean: Ah a new broom" << std::endl;
 	MSdelay(2000);
 	std::cout << "Mrs. Clean: dialogue" << std::endl;
 	MSdelay(2000);
@@ -361,27 +361,40 @@ void MrsClean::dialogue(character& c)
 	if (choice == "1")
 	{
 		color(4);
-		std::cout << "putrid python dialogue" << std::endl;
+		std::cout << "Ah yes, rumors of this Putrid Python..." << std::endl;
+		MSdelay(2000);
+		std::cout << "this creature was supposedly exposed to some high levels of grime that affected its material make up..." << std::endl; << std::endl;
+		MSdelay(2000);
+		std::cout << "the last I heard of it was when some adventurers discover it in the basement floor..." << std::endl;
+		MSdelay(2000);
+		std::cout << "so don't get into too much trouble if you do find it..." << std::endl;
+		MSdelay(2000);
+		std::cout << "" << std::endl;
+		system("pause");
 	}
 	else if (choice == "2")
 	{
 		color(4);
 		std::cout << "janitorious dialogue" << std::endl;
+		MSdelay(2000);
 	}
 	else if (choice == "3")
 	{
 		color(4);
 		std::cout << "grim reaper dialogue" << std::endl;
+		MSdelay(2000);
 	}
 	else if (choice == "4")
 	{
 		color(4);
 		std::cout << "drink recommendation dialogue" << std::endl;
+		MSdelay(2000);
 	}
 	else if (choice == "5")
 	{
 		color(4);
 		std::cout << "how is your day dialogue" << std::endl;
+		MSdelay(2000);
 	}
 	
 }
