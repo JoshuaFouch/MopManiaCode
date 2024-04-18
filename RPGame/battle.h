@@ -19,6 +19,7 @@ public:
 	battle();
 	void BattleStats(character& c, enemy& e);
 	void GameOver(character& c);
+	void battleStart(character& c, enemy& e);
 	virtual void Battle_Sequence(character& c, enemy& e);
 };
 

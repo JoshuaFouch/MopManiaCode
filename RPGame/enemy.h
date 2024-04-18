@@ -128,13 +128,13 @@ public:
 	void manuallyConstruct(int lvl);
 
 	//abilities
-	void Attack1(character& c);	//
-	void Attack2(character& c);	//
-	void Attack3(character& c);	//
-	void Attack4(character& c);	//
-	void Heal(character& c);	//
-	void Fortify(character& c);	//
-	void Enrage(character& c);	//
+	void Attack1(character& c);
+	void Attack2(character& c);
+	void Attack3(character& c);
+	void Attack4(character& c);
+	void Heal(character& c);
+	void Fortify(character& c);
+	void Enrage(character& c);
 };
 
 
@@ -147,13 +147,13 @@ public:
 	void manuallyConstruct(int lvl);
 
 	//abilities
-	void Attack1(character& c);	//
-	void Attack2(character& c);	//
-	void Attack3(character& c);	//
-	void Attack4(character& c);	//
-	void Heal(character& c);	//
-	void Fortify(character& c);	//
-	void Enrage(character& c);	//
+	void Attack1(character& c);
+	void Attack2(character& c);
+	void Attack3(character& c);
+	void Attack4(character& c);
+	void Heal(character& c);
+	void Fortify(character& c);
+	void Enrage(character& c);
 };
 //NeedleNed
 class NeedleNed : public enemy
@@ -165,13 +165,13 @@ public:
 	void manuallyConstruct(int lvl);
 
 	//abilities
-	void Attack1(character& c);	//
-	void Attack2(character& c);	//
-	void Attack3(character& c);	//
-	void Attack4(character& c);	//
-	void Heal(character& c);	//
-	void Fortify(character& c);	//
-	void Enrage(character& c);	//
+	void Attack1(character& c);
+	void Attack2(character& c);
+	void Attack3(character& c);
+	void Attack4(character& c);
+	void Heal(character& c);
+	void Fortify(character& c);
+	void Enrage(character& c);
 };
 //ShingleShannon
 class ShingleShannon : public enemy
@@ -183,13 +183,13 @@ public:
 	void manuallyConstruct(int lvl);
 
 	//abilities
-	void Attack1(character& c);	//
-	void Attack2(character& c);	//
-	void Attack3(character& c);	//
-	void Attack4(character& c);	//
-	void Heal(character& c);	//
-	void Fortify(character& c);	//
-	void Enrage(character& c);	//
+	void Attack1(character& c);
+	void Attack2(character& c);
+	void Attack3(character& c);
+	void Attack4(character& c);
+	void Heal(character& c);
+	void Fortify(character& c);
+	void Enrage(character& c);
 };
 //Deadskin Dill
 class DeadSkinDill : public enemy
@@ -201,18 +201,18 @@ public:
 	void manuallyConstruct(int lvl);
 
 	//abilities
-	void Attack1(character& c);	//
-	void Attack2(character& c);	//
-	void Attack3(character& c);	//
-	void Attack4(character& c);	//
-	void Heal(character& c);	//
-	void Fortify(character& c);	//
-	void Enrage(character& c);	//
+	void Attack1(character& c);
+	void Attack2(character& c);
+	void Attack3(character& c);
+	void Attack4(character& c);
+	void Heal(character& c);
+	void Fortify(character& c);
+	void Enrage(character& c);
 };
 
 
 
-//floor ? Boss
+//the boss
 class GrimeReaper : public enemy	//this is Janitorius' secret identity
 {
 	//constructor

@@ -122,5 +122,17 @@
     <Media Include="OE.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="..\..\battle!.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\victory!.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\coins!.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\riser.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>

@@ -19,12 +19,20 @@ public:
 	item();
 
 	int getKey();
+	void setKey(int key);
 	std::string getName();
 	virtual void use(character& c);
+	item* getPrev();
+	void setPrev(item* n);
+	item* getNext();
+	void setNext(item* n);
+
 
 protected:
 	std::string name;
-	int key = 5;
+	int key;
+	item* prev = NULL;
+	item* next = NULL;
 };
 
 class potion : public item {

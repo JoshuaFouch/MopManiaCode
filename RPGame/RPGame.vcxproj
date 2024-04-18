@@ -151,6 +151,10 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\audio for game\Mattari.wav" />
+    <Media Include="..\..\battle!.wav" />
+    <Media Include="..\..\coins!.wav" />
+    <Media Include="..\..\riser.wav" />
+    <Media Include="..\..\victory!.wav" />
     <Media Include="battlemusic.wav" />
     <Media Include="dies-irae-chant.wav" />
     <Media Include="gameover.wav" />

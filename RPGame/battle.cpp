@@ -31,10 +31,10 @@ void battle::BattleStats(character& c, enemy& e)
 }
 void battle::GameOver(character& c)
 {
-	playSFX("gameover.wav");
+	playSFX("OE.wav");
 	clear();
 	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
-	Sdelay(5);
+	Sdelay(10);
 	clear();
 	playMusic("void.wav");
 	color(6);
@@ -44,11 +44,33 @@ void battle::GameOver(character& c)
 	Sdelay(2);
 	std::cout << "Do not worry, I will take you back home to try again..." << std::endl;
 	color(7);
-	system("pause");
 	endMusic();
+}
+void battle::battleStart(character& c, enemy& e) {
+	playSFX("riser.wav");
+	for (int i = 0; i < 23; i++) {
+		color(2); std::cout << c.get_name() << "!" << std::endl;
+		color(7); std::cout << " - VERSUS -" << std::endl;
+		color(4); std::cout << e.get_name() << "!" << std::endl;
+		MSdelay(100);
+		clear();
+		color(3); std::cout << "\t" << c.get_name() << "!" << std::endl;
+		color(7); std::cout << " - VERSUS -" << std::endl;
+		color(5); std::cout << " " << e.get_name() << "!" << std::endl;
+		MSdelay(100);
+		clear();
+		color(6); std::cout << " " << c.get_name() << "!" << std::endl;
+		color(7); std::cout << " - VERSUS -" << std::endl;
+		color(9); std::cout << "\t" << e.get_name() << "!" << std::endl;
+		MSdelay(100);
+		clear();
+	}
+
 }
 void battle::Battle_Sequence(character& c, enemy& e)
 {
+	endMusic();
+	battleStart(c, e);
 	playMusic("battlemusic.wav");
 
 	int run = 0;	//if character wants to run away from battle
@@ -170,8 +192,9 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			break;
 		case 8:
 			clear();
-			//std::cout << "Nice try bud, you can't run." << std::endl;
-			run = 1;
+			std::cout << "Nice try bud, you can't run." << std::endl;
+			system("pause");
+			//run = 1;
 			break;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
@@ -180,13 +203,11 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			continue;
 		}
 	}
-
 	if (e.get_hp() <= 0)
 	{
-		//play uplifting music
+		playSFX("victory!.wav");
 		e.makeDead();
 		clear();
-		std::cout << "You WON\n" << std::endl;
 		c.expPt();
 		c.winBattleMoney();
 	}
@@ -200,8 +221,8 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		endMusic();
 		playMusic("OE.wav");
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
-		system("pause");
 	}
+	system("pause");
 	clear();
 	endMusic();
 }
