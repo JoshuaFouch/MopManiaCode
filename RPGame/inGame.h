@@ -21,7 +21,7 @@ int Start_Menu()
 	Sdelay(6);
 	std::cout << "You hear a voice calling in the distance:" << std::endl;
 	Sdelay(4);
-	color(6);	//Janitorius (Tyler) is yellow text
+	color(6);	//Janitorius (Grime Reaper) is yellow text
 	std::cout << "My dear soul,";
 	std::cout << " I am Janitorius, the custodian of Le Hospitale..." << std::endl;
 	Sdelay(4);
@@ -73,7 +73,7 @@ int Start_Menu()
 		Sdelay(2);
 		std::cout << "\tThis broombastic soldier can turn any cleaning session into a dazzling display of pyrotechnic prowess" << std::endl;
 		Sdelay(2);
-		std::cout << "\tBroomba roams Mop-topia, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
+		std::cout << "\tBroomba roams MopMania, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
 		Sdelay(3);
 
 		std::cout << "\n2. Swifter JetWet, the Splashy Sentinel" << std::endl;
@@ -90,7 +90,7 @@ int Start_Menu()
 		Sdelay(2);
 		std::cout << "\tCrafted, in the legendary Byson Forge, the BysonV8 harnessed the power of air origins, becoming a vacuum marvel." << std::endl;
 		Sdelay(2);
-		std::cout << "\tByson V8 roams Mop-topia, a swirling force that sucks up dirt and leaves behind a breath of pristine air" << std::endl;
+		std::cout << "\tByson V8 roams MopMania, a swirling force that sucks up dirt and leaves behind a breath of pristine air" << std::endl;
 		std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
 		Sdelay(3);
 		std::cin >> x;

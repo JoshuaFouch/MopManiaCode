@@ -264,7 +264,7 @@ void bubbleBoy::dialogue(character& c)
 		MSdelay(2000);
 		color(7);//change back to white for user
 		std::cout << "1. You've got yourself a deal kiddo!"<<std::endl;
-    std::cout <<     "2. Ain't no way ya blabbering bubble!"<<std::endl;	//change back to white for user
+		std::cout << "2. Ain't no way ya blabbering bubble!"<<std::endl;	//change back to white for user
     
 	
 		int choice;
@@ -351,7 +351,7 @@ void MrsClean::dialogue(character& c)
 	MSdelay(2000);
 	std::cout << "Mrs. Clean: dialogue" << std::endl;
 	std::cout << ""; color(8); std::cout << "[1]: "; color(7); std::cout << "Putrid Python" << std::endl;
-	std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Janitorious" << std::endl;
+	std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Janitorious" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
 	std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Grime Reaper" << std::endl;
 	std::cout << ""; color(8); std::cout << "[4]: "; color(7); std::cout << "Drink Recommendation" << std::endl;
 	std::cout << ""; color(8); std::cout << "[5]: "; color(7); std::cout << "How is your day?" << std::endl;

@@ -25,7 +25,7 @@ void event::trigger(character& c)
 
 
 /*waiting room event*/
-waitingRoomEvent::waitingRoomEvent(std::string music, enemy* one, enemy* two, enemy* three, battle* b)
+waitingRoomEvent::waitingRoomEvent(enemy* one, enemy* two, enemy* three, battle* b)
 {
 	this->one = one;
 	this->two = two;
@@ -130,7 +130,7 @@ void waitingRoomEvent::trigger(character& c)
 
 
 /*StorageRoomevent*/
-storageRoomevent::storageRoomevent(std::string music, enemy* one, battle* b)
+storageRoomevent::storageRoomevent(enemy* one, battle* b)
 {
 	this->one = one;
 	this->Vacuumbattle = b;
@@ -187,6 +187,7 @@ void storageRoomevent::trigger(character& c)
 		std::cout << "WAKE UP!!!";
 		MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "." << std::endl; Sdelay(2);
 		color(7);
+		clear();
 		std::cout << "*you slowly sit up*" << std::endl;
 		Sdelay(2);
 		std::cout << "You see the vacuum in front of you, now looking fully healed..." << std::endl;
@@ -226,12 +227,12 @@ void storageRoomevent::trigger(character& c)
 
 
 /*CellarEvent*/
-CellarEvent::CellarEvent(std::string music, enemy* one, battle* b)//more of a boss type music?
+cellarEvent::cellarEvent(enemy* one, battle* b)	//more of a boss type music?
 {
 	this->one = one;
-	this->PutridPythonBattle = b;
+	this->Putridbattle = b;
 }
-void CellarEvent::trigger(character& c)
+void cellarEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
 		return;	//if character has already triggered the event in this node
@@ -249,7 +250,7 @@ void CellarEvent::trigger(character& c)
 		std::cout << "Suddenly you see a pair slitted eyes blink open, their yellow glow slightly lighting up the room " << std::endl;
 		MSdelay(3000);
 		clear();
-		std::cout <<MSdelay(500)<<".";MSdelay(500); std::cout << ".";MSdelay(500); std::cout << "."<< std::endl;
+		std::cout << "."; MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "." << std::endl; MSdelay(500);
 		std::cout << "*a voice then calls out to you in a raspy tone*" << std::endl;
 		MSdelay(3000);
 		
@@ -268,7 +269,7 @@ void CellarEvent::trigger(character& c)
 		color(7);
 		std::cout << "The Crazed Vaccum lunged forward at you!" << std::endl;
 		Sdelay(2);
-		Garbagebattle->Battle_Sequence(c, *one);//lets make the crazed vaccum very strong, since its the only enemy  
+		Putridbattle->Battle_Sequence(c, *one);//lets make the crazed vaccum very strong, since its the only enemy  
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
@@ -277,7 +278,7 @@ void CellarEvent::trigger(character& c)
 		color(7);
 		std::cout << "*you recived 500 soap tolkens*" << std::endl;
 		Sdelay(2);
-		addMoney(500);
+		c.addMoney(500);
 		endMusic();
 
 		this->isDone = true;
