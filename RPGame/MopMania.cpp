@@ -45,16 +45,16 @@ int main()
 	map.birth_rightChild(map.getIndex(), "Dermatology", "You enter the dermatology... its clean and supreme!", "There is no dead skin anywhere!", NULL);
 	map.birth_midChild(map.getIndex(), "Operating Room", "Your happy to see the operating room in clean condition.", "Scalpels and needles are nicely organized on the counter...", NULL);
 	map.birth_leftChild(map.getIndex(), "Pharmacy", "You see beautiful shelves of pill bottles organized neatly", "Your head is starting from, maybe go to take some acetaminophen...", NULL);
-	map.birth_midChild(map.getIndex()->getLeft(), "Doctor's Office", "", "", NULL);
-	map.birth_midChild(map.getIndex()->getMid(), "Laboratory", "", "", NULL);
+	map.birth_midChild(map.getIndex()->getLeft(), "Supply Closet", "You open the closet door and see many bags of.... pills....?", "You see lists of old prescription bottles nicely stacked on the walls.", NULL);
+	map.birth_midChild(map.getIndex()->getMid(), "Laboratory", "You enter and see experimental health technologies", "There are large empty cages... it seems they used to cage testing primates...", NULL);
 
 	//basement
 	map.moveIndex_back();
-	map.birth_leftChild(map.getIndex(), "Basement", "", "", NULL);
+	map.birth_leftChild(map.getIndex(), "Basement", "You walk down the stairs...", "You see three rooms down the hall", NULL);
 	map.moveIndex_left();
-	map.birth_rightChild(map.getIndex(), "Storage Room", "", "", storageRoom);
-	map.birth_midChild(map.getIndex(), "Mental Health Room", "", "", NULL);
-	map.birth_leftChild(map.getIndex(), "Cellar", "", "", NULL);
+	map.birth_rightChild(map.getIndex(), "Storage Room", "All the empty canisters have been cleaned out of the room", "The room is nicely cleaned and filled with anesthesia bottles", storageRoom);
+	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", NULL);
+	map.birth_leftChild(map.getIndex(), "Cellar", "heheha", "hehaha", NULL);
 
 	system("pause");
 	map.play(map.theGamer(), broomba, 0);
@@ -113,24 +113,3 @@ int main()
 
 	return 0;
 }
-
-
-
-
-/*map.addRoot("Root", "You are at the root...", "You are very cool...", e);
-map.birth_leftChild(map.getIndex(), "Root's left", "You are at the root's left child", "Hi...", e);
-map.birth_midChild(map.getIndex(), "Root's middle", "You are at the root's mid child...", "Its pretty mid in here...", waitingRoom);
-map.birth_rightChild(map.getIndex(), "Root's right", "You are in the root's right child", "That's right!...", e);
-map.birth_leftChild(map.getIndex()->getLeft(), "Hi room", "test", "test", e);
-map.birth_midChild(map.getIndex()->getLeft(), "Hello room", "test", "test", e);
-map.birth_leftChild(map.getIndex()->getMid(), "bruh room", "test", "test", e);
-map.birth_rightChild(map.getIndex()->getMid(), "gamer room", "test", "test", e);
-map.birth_midChild(map.getIndex()->getRight(), "josh is cool", "test", "test", e);
-map.birth_rightChild(map.getIndex()->getRight(), "stupid room", "test", "test", e);
-map.toRoot();
-map.moveIndex_middle();
-map.birth_leftChild(map.getIndex()->getLeft(), "eljay is cool", "test", "test", e);
-map.birth_midChild(map.getIndex()->getRight(), "seamus is cool", "test", "test", e);
-map.toRoot();
-map.birth_rightChild(map.getIndex()->getRight()->getMid(), "josh has no gf", "test", "test", e);
-*/
