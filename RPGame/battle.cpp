@@ -311,7 +311,6 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 	int statCounter = 1;
 	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
 	{
-		
 		clear();
 		BattleDialogue(c, e);
 		clear();
