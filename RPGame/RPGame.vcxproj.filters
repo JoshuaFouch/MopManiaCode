@@ -134,5 +134,8 @@
     <Media Include="..\..\riser.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="..\..\..\..\Downloads\onrepeat.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>
