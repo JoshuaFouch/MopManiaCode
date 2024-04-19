@@ -187,3 +187,12 @@ void DotdotTwo()
 	clear();
 }
 
+void playSFX_once(std::string filename) {
+	std::wstring wideFilename(filename.begin(), filename.end());
+	PlaySound(wideFilename.c_str(), NULL, SND_FILENAME);
+}
+
+void ellipsis() {
+	MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "."; Sdelay(2);
+}
+

@@ -155,5 +155,26 @@
     <Media Include="..\..\BAH.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="..\..\fanfare.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\jazzybeat.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\MattariCore.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\ending.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\death.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\TheGrimeReaper.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\creativity.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>

@@ -25,13 +25,8 @@ void event::trigger(character& c)
 
 
 /*waiting room event*/
-waitingRoomEvent::waitingRoomEvent(enemy* one, enemy* two, enemy* three, battle* b)
-{
-	this->one = one;
-	this->two = two;
-	this->three = three;
-	this->Garbagebattle = b;
-}
+waitingRoomEvent::waitingRoomEvent() {};
+
 void waitingRoomEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
@@ -59,7 +54,9 @@ void waitingRoomEvent::trigger(character& c)
 		std::cout << "A GarbageDan appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Garbagebattle->Battle_Sequence(c, *one);
+		battle garbage;
+		GarbageDan dan(1);
+		garbage.Battle_Sequence(c, dan);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
@@ -76,7 +73,8 @@ void waitingRoomEvent::trigger(character& c)
 		std::cout << "Another GarbageDan appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Garbagebattle->Battle_Sequence(c, *two);
+		GarbageDan can(1);
+		garbage.Battle_Sequence(c, can);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
@@ -93,7 +91,8 @@ void waitingRoomEvent::trigger(character& c)
 		std::cout << "Another GarbageDan appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Garbagebattle->Battle_Sequence(c, *three);
+		GarbageDan san(1);
+		garbage.Battle_Sequence(c, san);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
@@ -130,11 +129,8 @@ void waitingRoomEvent::trigger(character& c)
 
 
 /*StorageRoomevent*/
-storageRoomevent::storageRoomevent(enemy* one, battle* b)
-{
-	this->one = one;
-	this->Vacuumbattle = b;
-}
+storageRoomevent::storageRoomevent() {};
+
 void storageRoomevent::trigger(character& c)
 {
 	if (this->isDone == true) {
@@ -164,7 +160,9 @@ void storageRoomevent::trigger(character& c)
 		std::cout << "The Crazed Vaccum lunged forward at you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Vacuumbattle->Battle_Sequence(c, *one); //lets make the crazed vaccum very strong, since its the only enemy  
+		battle vacuum;
+		Stainiac vac(5);
+		vacuum.Battle_Sequence(c, vac);	//lets make the crazed vacuum very strong, since its the only enemy  
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}

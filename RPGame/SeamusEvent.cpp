@@ -5,11 +5,8 @@
 
 
 /*CellarEvent*/
-cellarEvent::cellarEvent(enemy* one, battle* b)//more of a boss type music?
-{
-	this->one = one;
-	this->Putridbattle = b;
-}
+/*cellarEvent::cellarEvent() {};//more of a boss type music?
+
 void cellarEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
@@ -173,7 +170,6 @@ return 0;}
 	}
 	else {
 		endMusic();
-		//playMusic();
 		Sdelay(2);
 		std::cout << "You entered The Cellar... ";
 		MSdelay(1000);
@@ -189,6 +185,7 @@ return 0;}
 		MSdelay(3000);
 
 		color(2);
+        playMusic("putrid.wav");
 		std::cout << "Putrid Python: You thereee";MSdelay(500); std::cout << ", yesssss";MSdelay(500); std::cout << ", you there with the moppy facccccce...";
 		MSdelay(3000);
 		std::cout << "I need your assistanccccce";MSdelay(500); std::cout << "I have great rewardsssss";MSdelay(500); std::cout << " to offer you" << std::endl;
@@ -211,4 +208,4 @@ return 0;}
 		return;
 	}
 
-}
+}*/

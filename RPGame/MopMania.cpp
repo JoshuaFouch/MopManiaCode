@@ -12,20 +12,16 @@
 int main()
 {
 	/*map creation*/
-	Broomba broomba("Broomba", 500, 90, 120); //beefy but less health
+	Broomba broomba("Broomba", 500, 100, 120); //beefy but less health
+	broomba.bubKill();
 	gameMap map;
 	event* e = new event;
 
-	GarbageDan* one = new GarbageDan(1);
-	GarbageDan* two = new GarbageDan(1);
-	GarbageDan* three = new GarbageDan(1);
-	battle* GD = new battle;
-	waitingRoomEvent* waitingRoom = new waitingRoomEvent(one, two, three, GD);
+	waitingRoomEvent* waitingRoom = new waitingRoomEvent;
+	storageRoomevent* storageRoom = new storageRoomevent;
+	FinalEvent* finale = new FinalEvent;
 
-	BronchitisRex* bronch = new BronchitisRex(1);
-	storageRoomevent* storageRoom = new storageRoomevent(bronch, GD);
-
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", NULL);
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", finale);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", NULL);
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", NULL);
 	map.birth_midChild(map.getIndex(), "Le' Hospitale", "The home where all citizens of Mop-Mania once lived... it is now the demise of cleanliness", "Whoever enters these halls are said to never come out these days...\nThis is the place Janitorius commissioned you to clean.", NULL);
@@ -35,7 +31,7 @@ int main()
 	map.birth_rightChild(map.getIndex(), "1st Floor", "You walk further into the heart of Le' Hospitale...", "You see three rooms one of which has a mysterious shroud surround it...", NULL);
 	map.moveIndex_right();
 	map.birth_rightChild(map.getIndex(), "Waiting Area", "You look around, there is no more garbage on the floor!", "You see a nice little magazine rack and a small aquarium!", waitingRoom);
-	map.birth_midChild(map.getIndex(), "Mysterious Room", "This is Janitorius' office...", "You reminisce in all of the memories that took place in this room.", storageRoom);
+	map.birth_midChild(map.getIndex(), "Mysterious Room", "This is Janitorius' office...", "You reminisce in all of the memories that took place in this room.", finale);
 	map.birth_leftChild(map.getIndex(), "Lung Care", "This is the place where you defeated the greate BRONCHITIS REX", "The air is now clearer than smog of New York City...", NULL);
 
 	//second floor
@@ -56,8 +52,6 @@ int main()
 	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", NULL);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", NULL);
 
-	GoodFinalBattle test;
-	test.Battle_Sequence(broomba, *bronch);
 
 	system("pause");
 	map.play(map.theGamer(), broomba, 0);

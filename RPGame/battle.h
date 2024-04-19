@@ -33,10 +33,24 @@ public:
 	void BattleDialogue(character& c, enemy& e);
 };
 
+class BubblyFinalBattle : public GoodFinalBattle	//if bubbly boy is still with you, he reveals that he is the dirty bubble
+{
+public:
+	void BattleDialogue(character& c, enemy& e);
+};
+
+class BadFinalBattle : public GoodFinalBattle
+{
+public:
+	void BattleStats(character& c, enemy& e, int& counter);
+	void BattleDialogue(character& c, enemy& e);
+};
+
 class PythonBattle : public battle
 {
 public:
 	void Battle_Sequence(character& c, enemy& e);
+	void BattleDialogue(character& c, enemy& e);
 };
 
 #endif

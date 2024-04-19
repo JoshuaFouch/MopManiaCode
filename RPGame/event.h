@@ -30,54 +30,35 @@ protected:
 };
 
 //waiting room
-class waitingRoomEvent : public event
+class waitingRoomEvent : public event	//garbagedans
 {
 public:
-	waitingRoomEvent(enemy* one, enemy* two, enemy* three, battle* b);
+	waitingRoomEvent();
 	void trigger(character& c);
-protected:
-	//points to GARBAGEDANS
-	enemy* one = NULL;
-	enemy* two = NULL;
-	enemy* three = NULL;
-	battle* Garbagebattle = NULL;
-	
 };
 
 //storage room
-class storageRoomevent : public event
+class storageRoomevent : public event	//crazed vaccuum
 {
 public: 
-	storageRoomevent(enemy* one, battle* b);
+	storageRoomevent();
 	void trigger(character& c);
-protected:
-	//Crazed Vacuum
-	enemy* one = NULL;
-	battle* Vacuumbattle = NULL;
 };
 
 //cellar
-class cellarEvent : public event
+class cellarEvent : public event	//putrid python
 {
 public:
-	cellarEvent(enemy* one, battle* b);
+	cellarEvent();
 	void trigger(character& c);
-protected:
-	//a singly putrid python
-	enemy* one = NULL;
-	battle* Putridbattle = NULL;
 };
 
 //mailbox
 class mailboxEvent : public event	//stores 3-5 NPC's, depending on level, you will talk to an NPC.
 {
 public:
-	mailboxEvent(NPC* one, NPC* two, NPC* three);
+	mailboxEvent();
 	void trigger(character& c);
-protected:
-	NPC* one;
-	NPC* two;
-	NPC* three;
 };
 
 //the rusty bucket
@@ -89,15 +70,12 @@ public:
 };
 
 //Le' Hospitale
-class HospitalEvent : public event
+class HospitalEvent : public event	//a bunch of NPC's
 {
 public:
-	HospitalEvent(NPC* one, NPC* two, NPC* three);	//same idea as mailbox, gives different lore dialogue
+	HospitalEvent();	//same idea as mailbox, gives different lore dialogue
 	void trigger(character& c);
-protected:
-	NPC* one;
-	NPC* two;
-	NPC* three;
+	int counter = 0;
 };
 
 //1st floor??
@@ -106,23 +84,17 @@ protected:
 class FinalEvent : public event		/*may have alternate endings, help janitorius or kill*/
 {									//if kill you fight Grime Reaper, if help, Dirty Bubble will possess him and you have to kill him
 public:
-	FinalEvent(enemy* one, battle* final);
+	FinalEvent();
 	void trigger(character& c);
-protected:
-	enemy* one;	//Grime Reaper or Dirty Bubble
-	battle* final;
 };
 
 //lung care unit
-class lungEvent : public event	//one MucusMaw
+/*class lungEvent : public event	//one MucusMaw
 {
 public:
-	lungEvent(enemy* one, battle* b);
+	lungEvent();
 	void trigger(character& c);
-protected:
-	enemy* one;
-	battle* b;
-};
+};*/
 
 //2nd floor??
 
