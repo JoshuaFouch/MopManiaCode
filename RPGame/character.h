@@ -81,6 +81,8 @@ public:
 	void testInventory();
 
 	//for quests
+	int getBub();
+	void bubKill();
 	void bubAdvance();
 
 	//for character progression

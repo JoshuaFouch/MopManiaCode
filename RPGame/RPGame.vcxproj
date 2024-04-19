@@ -155,9 +155,12 @@
   <ItemGroup>
     <Media Include="..\..\..\..\Downloads\onrepeat.wav" />
     <Media Include="..\..\audio for game\Mattari.wav" />
+    <Media Include="..\..\BAH.wav" />
     <Media Include="..\..\battle!.wav" />
     <Media Include="..\..\coins!.wav" />
+    <Media Include="..\..\putrid.wav" />
     <Media Include="..\..\riser.wav" />
+    <Media Include="..\..\terror.wav" />
     <Media Include="..\..\victory!.wav" />
     <Media Include="battlemusic.wav" />
     <Media Include="dies-irae-chant.wav" />

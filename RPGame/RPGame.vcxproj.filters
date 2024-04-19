@@ -146,5 +146,14 @@
     <Media Include="..\..\..\..\Downloads\onrepeat.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="..\..\putrid.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\terror.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\BAH.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
 </Project>

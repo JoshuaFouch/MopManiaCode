@@ -20,4 +20,5 @@ void color(char n);
 void playMusic(std::string filename);	//plays audio file that loop
 void endMusic();
 void playSFX(std::string filename);	//plays audio file that does not loop
+void DotdotTwo();	//dot dot dot for text
 #endif

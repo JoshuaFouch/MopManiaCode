@@ -420,6 +420,12 @@ void character::testInventory() {
 }
 
 //for quests
+int character::getBub() {
+    return bubbleQuest;
+}
+void character::bubKill() {
+    bubbleQuest = -1;
+}
 void character::bubAdvance()
 {
     bubbleQuest++;

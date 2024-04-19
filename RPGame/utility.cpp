@@ -172,3 +172,18 @@ void whatText() {
 	std::cout << "t"; MSdelay(30); std::cout << "o "; MSdelay(30);
 	std::cout << "d"; MSdelay(30); std::cout << "o?" << std::endl; MSdelay(30);
 }
+
+
+void DotdotTwo()
+{
+	clear();
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
+	clear();
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
+	std::cout << "."; MSdelay(350);
+	clear();
+}
+
