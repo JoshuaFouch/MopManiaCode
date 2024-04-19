@@ -10,11 +10,8 @@ using namespace std;
 "; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "
 */
 /*CellarEvent*/
-cellarEvent::cellarEvent(enemy* one, battle* b)//more of a boss type music?
-{
-	this->one = one;
-	this->Putridbattle = b;
-}
+/*cellarEvent::cellarEvent() {};//more of a boss type music?
+
 void cellarEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
@@ -180,7 +177,6 @@ if (gold==0){
 	}
 	else {
 		endMusic();
-		//playMusic();
 		Sdelay(2);
 		std::cout << "You entered The Cellar... ";
 		MSdelay(1000);
@@ -218,4 +214,4 @@ if (gold==0){
 		return;
 	}
 
-}
+}*/

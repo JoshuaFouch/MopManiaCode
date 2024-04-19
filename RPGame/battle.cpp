@@ -202,7 +202,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	}
 	if (e.get_hp() <= 0)
 	{
-		playSFX("victory!.wav");
+		playSFX("fanfare.wav");
 		e.makeDead();
 		clear();
 		c.expPt();
@@ -305,7 +305,7 @@ void GoodFinalBattle::GameOver(character& c) {
 void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 	endMusic();
 	battleStart(c, e);
-	playMusic("battlemusic.wav");
+	playMusic("TheGrimeReaper.wav");
 
 	int run = 0;	//if character wants to run away from battle
 	int statCounter = 1;
@@ -445,7 +445,7 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 	}
 	if (e.get_hp() <= 0)
 	{
-		playSFX("void.wav");
+		endMusic();
 		e.makeDead();
 		clear();
 		c.expPt();
@@ -470,15 +470,98 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 void GoodFinalBattle::BattleDialogue(character& c, enemy& e) {
 	//if a grime reaper is at 3/4 health
 	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
-		std::cout << "I am at 75& health";
+		std::cout << "I am at 75& health" << std::endl;
 		system("pause");
 	}
 	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
-		std::cout << "I am at 50 health or smth";
+		std::cout << "I am at 50 health or smth" << std::endl;
 		system("pause");
 	}
 	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
-		std::cout << "I am at 25 health or smth";
+		std::cout << "I am at 25 health or smth" << std::endl;
+		system("pause");
+	}
+	else {
+		return;
+	}
+}
+
+void BubblyFinalBattle::BattleDialogue(character& c, enemy& e) {	//context: Grime Reaper is possessed by Dirty Bubble
+	//if a grime reaper is at 3/4 health
+	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
+		std::cout << "I am at 75& health" << std::endl;
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
+		std::cout << "I am at 50 health or smth" << std::endl;
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
+		std::cout << "I am at 25 health or smth" << std::endl;
+		system("pause");
+	}
+	else {
+		return;
+	}
+}
+
+void BadFinalBattle::BattleStats(character& c, enemy& e, int& counter) {
+	if (counter == 1) {
+		std::string name = "Janitorius";
+		size_t enemyLen = name.length() + 14;
+		//enemy stats
+		color(4);
+		std::cout << "\t\t\t\t\t|-----[ "; color(6); std::cout << name; color(4); std::cout << " ]-----|\n";
+		std::cout << "\t\t\t\t\t| Level:" << e.get_lvl() << "\n";
+		std::cout << "\t\t\t\t\t| HP:" << e.get_hp() << "\n";
+		std::cout << "\t\t\t\t\t";
+		std::cout << "|" << std::string(enemyLen, '-') << "|\n";
+
+		size_t charLen = c.get_name().size() + 14;
+		//character stats
+		color(2);
+		std::cout << "|-----[ " << c.get_name() << " ]-----|\n";
+		std::cout << "| Level: " << c.get_lvl() << "\n";
+		std::cout << "| HP:" << c.get_hp() << "\n";
+		std::cout << "|" << std::string(charLen, '-') << "|\n";
+		color(7);
+		std::cout << "-----------------------------------------" << std::endl;
+	}
+	else if (counter == 2) {
+		std::string name = "The Grime Reaper";
+		size_t enemyLen = name.length() + 14;
+		//enemy stats
+		color(4);
+		std::cout << "\t\t\t\t\t|-----[ "; color(6); std::cout << name; color(4); std::cout << " ]-----|\n";
+		std::cout << "\t\t\t\t\t| Level:" << e.get_lvl() << "\n";
+		std::cout << "\t\t\t\t\t| HP:" << e.get_hp() << "\n";
+		std::cout << "\t\t\t\t\t";
+		std::cout << "|" << std::string(enemyLen, '-') << "|\n";
+
+		size_t charLen = c.get_name().size() + 14;
+		//character stats
+		color(2);
+		std::cout << "|-----[ " << c.get_name() << " ]-----|\n";
+		std::cout << "| Level: " << c.get_lvl() << "\n";
+		std::cout << "| HP:" << c.get_hp() << "\n";
+		std::cout << "|" << std::string(charLen, '-') << "|\n";
+		color(7);
+		std::cout << "-----------------------------------------" << std::endl;
+		counter = 1;
+	}
+}
+void BadFinalBattle::BattleDialogue(character& c, enemy& e) {	//context: no such thing as Dirty Bubble, you must kill Grime Reaper because you turn evil
+	//if a grime reaper is at 3/4 health
+	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
+		std::cout << "I am at 75& health" << std::endl;
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
+		std::cout << "I am at 50 health or smth" << std::endl;
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
+		std::cout << "I am at 25 health or smth" << std::endl;
 		system("pause");
 	}
 	else {

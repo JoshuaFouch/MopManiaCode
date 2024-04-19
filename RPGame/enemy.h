@@ -215,6 +215,7 @@ public:
 //the boss
 class GrimeReaper : public enemy	//this is Janitorius' secret identity
 {
+public:
 	//constructor
 	GrimeReaper(int lvl);	//Base: 200 HP, 150 att, 150 def (fast and powerful but low defense boss)
 	void manuallyConstruct(int lvl);

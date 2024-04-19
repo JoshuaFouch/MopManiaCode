@@ -158,9 +158,16 @@
     <Media Include="..\..\BAH.wav" />
     <Media Include="..\..\battle!.wav" />
     <Media Include="..\..\coins!.wav" />
+    <Media Include="..\..\creativity.wav" />
+    <Media Include="..\..\death.wav" />
+    <Media Include="..\..\ending.wav" />
+    <Media Include="..\..\fanfare.wav" />
+    <Media Include="..\..\jazzybeat.wav" />
+    <Media Include="..\..\MattariCore.wav" />
     <Media Include="..\..\putrid.wav" />
     <Media Include="..\..\riser.wav" />
     <Media Include="..\..\terror.wav" />
+    <Media Include="..\..\TheGrimeReaper.wav" />
     <Media Include="..\..\victory!.wav" />
     <Media Include="battlemusic.wav" />
     <Media Include="dies-irae-chant.wav" />
