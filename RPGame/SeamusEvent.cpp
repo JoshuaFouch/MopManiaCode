@@ -10,7 +10,7 @@ using namespace std;
 "; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "
 */
 /*CellarEvent*/
-/*cellarEvent::cellarEvent() {};//more of a boss type music?
+cellarEvent::cellarEvent() {};//more of a boss type music?
 
 void cellarEvent::trigger(character& c)
 {
@@ -214,4 +214,4 @@ if (gold==0){
 		return;
 	}
 
-}*/
+}
