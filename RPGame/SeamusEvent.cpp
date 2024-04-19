@@ -6,6 +6,33 @@
 using namespace std;
 
 
+{
+    case 1:
+	color(2);
+    cout<<"\n\tWhat potionssss would you like?\n";
+color(8); std::cout << "|--------------------------|" << std::endl;
+		std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "HP:  Sponge armor (4 rats)" << '\n';
+		std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "ATK: Bleach lining (4 rats)" << '\n';
+		std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "DEF: Wax-coat (4 rats)" << '\n';
+color(8); std::cout << "|--------------------------|" << std::endl;
+    int choiceA;
+    cin>>choiceA;
+        if(choiceA !=1 && choiceA !=2 && choiceA !=3){
+    cout<<"replace with othe stuff";}
+    switch(choiceA){
+    case 1:
+	color(2);
+    cout<<"Pleasure doing businessss\n";
+	 cout<<"Here'ssss your ssssponge armor\n";
+     c.use_deadRat();
+	 c.use_deadRat();
+	 c.use_deadRat();
+	 c.use_deadRat();
+	 c.get_healUp()
+      break;
+
+
+
 /*
 "; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "
 */
