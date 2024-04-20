@@ -48,6 +48,7 @@ public:
 	void use_attUp();
 	void use_defUp();
 	void use_deadRat();
+	void Rat_Sale(int num);
 
 	//attack getters
 	std::string get_aName1();

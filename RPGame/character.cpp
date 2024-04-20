@@ -146,6 +146,11 @@ void character::use_deadRat()
     deadRat--;
 }
 
+void character::Rat_Sale(int num) {
+
+    deadRat -= num;
+}
+
 //attack getters
 std::string character::get_aName1()
 {

@@ -6,35 +6,13 @@
 using namespace std;
 
 
-{
-    case 1:
-	color(2);
-    cout<<"\n\tWhat potionssss would you like?\n";
-color(8); std::cout << "|--------------------------|" << std::endl;
-		std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "HP:  Sponge armor (4 rats)" << '\n';
-		std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "ATK: Bleach lining (4 rats)" << '\n';
-		std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "DEF: Wax-coat (4 rats)" << '\n';
-color(8); std::cout << "|--------------------------|" << std::endl;
-    int choiceA;
-    cin>>choiceA;
-        if(choiceA !=1 && choiceA !=2 && choiceA !=3){
-    cout<<"replace with othe stuff";}
-    switch(choiceA){
-    case 1:
-	color(2);
-    cout<<"Pleasure doing businessss\n";
-	 cout<<"Here'ssss your ssssponge armor\n";
-     c.use_deadRat();
-	 c.use_deadRat();
-	 c.use_deadRat();
-	 c.use_deadRat();
-	 c.get_healUp()
-      break;
+
 
 
 
 /*
 "; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "
+c.Rat_Sale(4);
 */
 /*CellarEvent*/
 cellarEvent::cellarEvent() {};//more of a boss type music?
@@ -43,66 +21,78 @@ void cellarEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
 
-		while(c.get_deadRat()>0) {//while you still have rats 
-            color(2);
+		while(c.get_deadRat()>=4) {//while you still have enough rats to buy things
+            color(5);
             cout << "\nYou have "; c.get_deadRat(); cout << " rats"; MSdelay(500); cout << "s"; MSdelay(500); cout << "s"; MSdelay(500); cout << "s"; MSdelay(500);cout<< "remaining:"<<endl;
-cout<<"\n\n\tWhat type of itemsssss would you like?\n";
+cout<<"\n\n\tWhat type of items"; MSdelay(100); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " would you like?\n";
+color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
 std::cout << ""; color(8); std::cout << "[1]: "; color(7); std::cout << "Potions" << std::endl;
-std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Special Items" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
+std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Specialty Items" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
 std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Exit" << std::endl;
+color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
 
 int choice;
 cin>>choice;
 if (choice==3){
-    color(2);
+    color(5);
     cout<<"I'll s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "ee you again s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "oon";
     endMusic();
     break;}
 
  if(choice !=1 && choice !=2 && choice !=3){
-     color(2);
+     color(5);
     cout<<"You s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "tupid s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "ud, thats"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " not even an option\n";}
 switch(choice)
 
 {
-    case 1:
-    cout<<"\n\tType the corresponding number of the armor you would like to purchase\n";
-    cout<<"1. Thunderhelm(25g)\n";
-    cout<<"2. Arch Mage's Robes(50G)\n";
-    cout<<"3. Hover Boots(100G)\n";
-    cout<<"4. Diamond leggings(500G)\n";
+    {
+case 1:
+    color(5);
+    cout << "\n\tWhat potions"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " would you like?\n";
+    color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
+    std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << " Sponge armor (increases your character's HP) - 4 rats" << '\n';
+    std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << " Bleach lining (increases your character's ATK) - 4 rats" << '\n';
+    std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << " Wax-coat (increases your character's DEF) - 4 rats" << '\n';
+    color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
     int choiceA;
-    cin>>choiceA;
-        if(choiceA !=1 && choiceA !=2 && choiceA !=3 && choiceA !=4){
-    cout<<"you bum, thats not even an option! pick a number between 1 and 4";}
-    switch(choiceA){
-    case 1:
-    cout<<"thanks for purchasing the Thunderhelm for 25 gold\n";
-     gold=TWEN(gold, price);
-      break;
-    case 2:
-    cout<<"thanks for purchasing the Arch Mage's Robes for 50 gold\n";
-     gold=FIFT(gold, price);
-      break;
-    case 3:
-    cout<<"thanks for purchasing the Hover Boots for 100 gold\n";
-     gold=HUND(gold, price);
-      break;
-    case 4:
-    cout<<"thanks for purchasing the Diamond Leggings for 500 gold\n";
-    gold=FHUND(gold, price);
-      break;
-
+    cin >> choiceA;
+    if (choiceA != 1 && choiceA != 2 && choiceA != 3) {
+        cout << "You s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "tupid s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "ud, thats"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " not even an option\n";
     }
-    return main();
+    switch (choiceA) {
+    case 1:
+        color(5);
+        cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+        cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << "s"; MSdelay(200); cout << "ponge armor\n";
+        c.Rat_Sale(4);
+        c.get_healUp();
+        break;
+    case 2:
+        color(5);
+        cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+        cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Bleach lining potion\n";
+        c.Rat_Sale(4);
+        c.get_attUp();
+        break;
+    case 3:
+        color(5);
+        cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+        cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Wax"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " coat\n";
+        c.Rat_Sale(4);
+        c.get_defUp();
+        break;
+    }
+    
     break;
 
     case 2:
-    cout<<"\n\tType the corresponding number of the weapon you would like to purchase\n";
-    cout<<"1. Death Note(25g)\n";
-    cout<<"2. Raygun(50G)\n";
-    cout<<"3. Monado(100G)\n";
-    cout<<"4. Stanley's Bucket(500G)\n";
+        color(5);
+        cout << "\n\tSpecialty items "; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " would you like?\n";
+        color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
+        std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << " Slippery Soap (lets you escape any battle) - 4 rats" << '\n';
+        std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "ATK: Bleach lining (4 rats)" << '\n';
+        std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "DEF: Wax-coat (4 rats)" << '\n';
+        color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
     int choiceB;
     cin>>choiceB;
      if(choiceB !=1 && choiceB !=2 && choiceB !=3 && choiceB !=4){
@@ -218,7 +208,7 @@ if (gold==0){
 		std::cout << "*a voice then calls out to you in a raspy tone*" << std::endl;
 		MSdelay(3000);
 
-		color(2);
+		color(5);
 		std::cout << "Putrid Python: You there";MSdelay(500); std::cout << ", yes"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "";MSdelay(500); std::cout << ", you there with the moppy fac"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "e...";
 		MSdelay(3000);
 		std::cout << "I need your assistanc"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "e";MSdelay(500); std::cout << "I have great rewards"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "";MSdelay(500); std::cout << " to offer you" << std::endl;
@@ -227,7 +217,7 @@ if (gold==0){
 		MSdelay(2000);
 		clear();
 		color(7);
-        std::cout << "*sniff sniff*"; color(2); MSdelay(1000); std::cout << "I can already smell "; MSdelay(500); std::cout << c.get_deadRat() << " dead rats on you" << std::endl;
+        std::cout << "*sniff sniff*"; color(5); MSdelay(1000); std::cout << "I can already smell "; MSdelay(500); std::cout << c.get_deadRat() << " dead rats on you" << std::endl;
 		MSdelay(2000);
 		std::cout << "S"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "o what do ya say kiddo?";MSdelay(500); std::cout << "Do we got ourselves"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " a deal?" << std::endl;
 		MSdelay(5000);
