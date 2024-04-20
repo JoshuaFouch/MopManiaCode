@@ -19,7 +19,7 @@ int main()
 	waitingRoomEvent* waitingRoom = new waitingRoomEvent;
 	storageRoomevent* storageRoom = new storageRoomevent;
 	FinalEvent* finale = new FinalEvent;
-
+	//MentalEvent* mental = new MentalEvent;
 	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", finale);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", NULL);
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", NULL);
