@@ -223,3 +223,111 @@ void storageRoomevent::trigger(character& c)
 
 }
 
+/*Mental Event*/
+
+MentalEvent::MentalEvent() {};
+
+void MentalEvent::trigger(character& c)
+{
+	if (this->isDone == true) {
+		return;	//if character has already triggered the event in this node
+	}
+	else {
+		endMusic();
+		//playMusic();
+		Sdelay(2);
+		std::cout << "You entered the mental health facility...";
+		MSdelay(1000);
+		std::cout << "You gaze upon the walls of posters..." << std::endl;
+		MSdelay(2000);
+		std::cout << "You saw one along the lines of 'You have depresso?" << std::endl;
+		MSdelay(2000);
+		std::cout << "Have some expresso'..." << std::endl;		
+		MSdelay(2000);
+		std::cout << "You could really go for some expresso..." << std::endl;
+		MSdelay(2000);
+		std::cout << "As you traveled further into the room you see water coming from under the door..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You open the door spot that the drains are clogged...";
+		MSdelay(3000);
+		Dotdot();
+		color(4); 
+		MSdelay(100);
+		std::cout << "NOOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "A Hairball appeared from nowhere!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		battle garbage;
+		GarbageDan dan(1);
+		garbage.Battle_Sequence(c, dan);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "The drains still seemed to be clogged..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(200);
+		std::cout << "NOOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "Another Hairball appeared from nowhere!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		GarbageDan can(1);
+		garbage.Battle_Sequence(c, can);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "The water is starting to flow into the drains..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(200);
+		std::cout << "NOOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "Another Hairball appeared from nowhere!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		GarbageDan san(1);
+		garbage.Battle_Sequence(c, san);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Dotdot();
+		std::cout << "The room is finally drained of all the water!" << std::endl;
+		Sdelay(3);
+		clear();
+		playMusic("void.wav");
+		color(6);
+		std::cout << "Janitorius: You have done well my dear " << c.get_name() << "..." << std::endl;
+		Sdelay(4);
+		std::cout << "You are doing very well..." << std::endl;
+		Sdelay(2);
+		std::cout << "It is refreshing... so refreshing..." << std::endl;
+		Sdelay(4);
+		clear();
+		std::cout << "I still continue to put my life in your hands... ";
+		Sdelay(3);
+		std::cout << "Continue on your journey...and..." << std::endl;
+		Sdelay(3);
+		std::cout << "save... ";
+		MSdelay(2500);
+		std::cout << "me... ";
+		MSdelay(2500);
+		std::cout << "from... my mis-";
+		MSdelay(1000);
+		endMusic();
+
+		this->isDone = true;
+		return;
+	}
+
+}

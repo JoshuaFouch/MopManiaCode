@@ -88,6 +88,8 @@ public:
 	void trigger(character& c);
 };
 
+
+
 //lung care unit
 /*class lungEvent : public event	//one MucusMaw
 {
@@ -111,5 +113,11 @@ public:
 //basement??
 
 //mental health room
+class MentalEvent: public event	//garbagedans
+{
+public:
+	MentalEvent();
+	void trigger(character& c);
+};
 
 #endif
