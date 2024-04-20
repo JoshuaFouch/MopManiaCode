@@ -270,7 +270,7 @@ void GoodFinalBattle::BattleStats(character& c, enemy& e, int& counter) {
 		std::cout << "-----------------------------------------" << std::endl;
 	}
 	else if (counter == 3) {
-		std::string name = "The Dirty Bubble";
+		std::string name = "The Filthy Bubble";
 		size_t enemyLen = name.length() + 14;
 		//enemy stats
 		color(4);
@@ -306,10 +306,9 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 	endMusic();
 	battleStart(c, e);
 	playMusic("TheGrimeReaper.wav");
-
-	int run = 0;	//if character wants to run away from battle
+	int run = 0;
 	int statCounter = 1;
-	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
+	while (e.get_hp() > 0 && c.get_hp() > 0)
 	{
 		clear();
 		BattleDialogue(c, e);
@@ -468,25 +467,6 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 	endMusic();
 }
 void GoodFinalBattle::BattleDialogue(character& c, enemy& e) {
-	//if a grime reaper is at 3/4 health
-	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
-		std::cout << "I am at 75& health" << std::endl;
-		system("pause");
-	}
-	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
-		std::cout << "I am at 50 health or smth" << std::endl;
-		system("pause");
-	}
-	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
-		std::cout << "I am at 25 health or smth" << std::endl;
-		system("pause");
-	}
-	else {
-		return;
-	}
-}
-
-void BubblyFinalBattle::BattleDialogue(character& c, enemy& e) {	//context: Grime Reaper is possessed by Dirty Bubble
 	//if a grime reaper is at 3/4 health
 	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
 		std::cout << "I am at 75& health" << std::endl;
