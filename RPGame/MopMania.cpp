@@ -13,6 +13,7 @@ int main()
 {
 	/*map creation*/
 	Broomba broomba("Broomba", 500, 100, 120); //beefy but less health
+	//broomba.bubKill();
 	gameMap map;
 	event* e = new event;
 
@@ -22,7 +23,7 @@ int main()
 	FinalEvent* finale = new FinalEvent;
 	MentalEvent* mental = new MentalEvent;
 
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", mental);
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", finale);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", NULL);
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", rusty);
 	map.birth_midChild(map.getIndex(), "Le' Hospitale", "The home where all citizens of Mop-Mania once lived... it is now the demise of cleanliness", "Whoever enters these halls are said to never come out these days...\nThis is the place Janitorius commissioned you to clean.", NULL);
@@ -61,6 +62,10 @@ int main()
 		clear();
 		map.current_toRoot(map.theGamer());
 		map.play(map.theGamer(), broomba, 0);
+	}
+	else if (broomba.getEnd() == true) {
+		std::cout << "Game complete!" << std::endl;
+		return 0;
 	}
 
 

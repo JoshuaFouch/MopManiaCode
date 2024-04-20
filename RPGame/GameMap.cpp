@@ -323,6 +323,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 			return;
 			//if the character is dead
 		}
+		else if (c.getEnd() == true) {
+			return;
+		}
 		endMusic();
 		playMusic("Mattari.wav");
 		displayLocationAgain(i);
@@ -331,6 +334,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		clear();
 		i->getEvent()->trigger(c);
 		if (c.getLife() == 0) {
+			return;
+		}
+		else if (c.getEnd() == true) {
 			return;
 		}
 		endMusic();

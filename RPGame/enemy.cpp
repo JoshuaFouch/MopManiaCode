@@ -875,3 +875,203 @@ void DeadSkinDill::Enrage(character& c)
 	MSdelay(1000);
 	color(7);
 }
+
+//Grime Reaper
+GrimeReaper::GrimeReaper(int lvl)
+{
+	set_name("The Grime Reaper");
+	set_stats(110, 60, 70, lvl);
+}
+
+void GrimeReaper::manuallyConstruct(int lvl)
+{
+	set_name("The Grime Reaper");
+	set_stats(110, 60, 70, lvl);
+}
+
+void GrimeReaper::Attack1(character& c)
+{
+	color(6);
+	std::cout << "T"; MSdelay(100);
+	std::cout << "h"; MSdelay(100);
+	std::cout << "e "; MSdelay(100);
+	std::cout << "S"; MSdelay(100);
+	std::cout << "c"; MSdelay(100);
+	std::cout << "o"; MSdelay(100);
+	std::cout << "u"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "g"; MSdelay(100);
+	std::cout << "e "; MSdelay(100);
+	std::cout << "o"; MSdelay(100);
+	std::cout << "f "; MSdelay(100);
+	std::cout << "A"; MSdelay(100);
+	std::cout << "l"; MSdelay(100);
+	std::cout << "l "; MSdelay(100);
+	std::cout << "T"; MSdelay(100);
+	std::cout << "h"; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "t "; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "s "; MSdelay(100);
+	std::cout << "I"; MSdelay(100);
+	std::cout << "m"; MSdelay(100);
+	std::cout << "p"; MSdelay(100);
+	std::cout << "u"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "e"; MSdelay(100);
+	std::cout << "!" << std::endl; MSdelay(100);
+	Sdelay(3);
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void GrimeReaper::Attack2(character& c)
+{
+	color(6);
+	std::cout << "S"; MSdelay(100);
+	std::cout << "l"; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "t"; MSdelay(100);
+	std::cout << "h"; MSdelay(100);
+	std::cout << "e"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "n"; MSdelay(100);
+	std::cout << "g "; MSdelay(100);
+	std::cout << "S"; MSdelay(100);
+	std::cout << "c"; MSdelay(100);
+	std::cout << "y"; MSdelay(100);
+	std::cout << "t"; MSdelay(100);
+	std::cout << "h"; MSdelay(100);
+	std::cout << "e"; MSdelay(100);
+	std::cout << "!"; MSdelay(100);
+	std::cout << std::endl;
+	Sdelay(3);
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void GrimeReaper::Attack3(character& c)
+{
+	color(6);
+	std::cout << "D"; MSdelay(100);
+	std::cout << "e"; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "d"; MSdelay(100);
+	std::cout << "l"; MSdelay(100);
+	std::cout << "y "; MSdelay(100);
+	std::cout << "D"; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "s"; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "n"; MSdelay(100);
+	std::cout << "f"; MSdelay(100);
+	std::cout << "e"; MSdelay(100);
+	std::cout << "c"; MSdelay(100);
+	std::cout << "t"; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "n"; MSdelay(100);
+	std::cout << "t"; MSdelay(100);
+	std::cout << "!"; MSdelay(100);
+	std::cout << std::endl;
+	Sdelay(3);
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void GrimeReaper::Attack4(character& c)
+{
+	color(6);
+	std::cout << "S"; MSdelay(100);
+	std::cout << "c"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "u"; MSdelay(100);
+	std::cout << "b "; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "n"; MSdelay(100);
+	std::cout << "d "; MSdelay(100);
+	std::cout << "S"; MSdelay(100);
+	std::cout << "l"; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "s"; MSdelay(100);
+	std::cout << "h"; MSdelay(100);
+	std::cout << "!"; MSdelay(100);
+	std::cout << std::endl;
+	Sdelay(3);
+	c.damaged(this->get_att());
+	color(7);
+}
+
+void GrimeReaper::Heal(character& c)
+{
+	color(6);
+	std::cout << "P"; MSdelay(100);
+	std::cout << "u"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "f"; MSdelay(100);
+	std::cout << "y"; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "n"; MSdelay(100);
+	std::cout << "g "; MSdelay(100);
+	std::cout << "P"; MSdelay(100);
+	std::cout << "u"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "g"; MSdelay(100);
+	std::cout << "e"; MSdelay(100);
+	std::cout << "!"; MSdelay(100);
+	std::cout << std::endl;
+	Sdelay(3);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Janitorius' health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
+}
+
+void GrimeReaper::Fortify(character& c)
+{
+	color(6);
+	std::cout << "R"; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "d"; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "n"; MSdelay(100);
+	std::cout << "t "; MSdelay(100);
+	std::cout << "B"; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "i"; MSdelay(100);
+	std::cout << "e"; MSdelay(100);
+	std::cout << "r";  MSdelay(100);
+	std::cout << "!" << std::endl; MSdelay(100);
+	Sdelay(3);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Janitorius' defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	MSdelay(1000);
+}
+
+void GrimeReaper::Enrage(character& c)
+{
+	color(6);
+	std::cout << "S"; MSdelay(100);
+	std::cout << "c"; MSdelay(100);
+	std::cout << "y"; MSdelay(100);
+	std::cout << "t"; MSdelay(100);
+	std::cout << "h"; MSdelay(100);
+	std::cout << "e "; MSdelay(100);
+	std::cout << "S"; MSdelay(100);
+	std::cout << "h"; MSdelay(100);
+	std::cout << "a"; MSdelay(100);
+	std::cout << "r"; MSdelay(100);
+	std::cout << "p"; MSdelay(100);
+	std::cout << "e"; MSdelay(100);
+	std::cout << "n"; MSdelay(100);
+	std::cout << "!"; MSdelay(100);
+	std::cout << std::endl;
+	Sdelay(3);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Janitorius' attack went up by: " << ((c.get_att() / 20)) << std::endl;
+	MSdelay(1000);
+	color(7);
+}

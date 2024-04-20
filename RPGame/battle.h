@@ -30,7 +30,7 @@ public:
 	void BattleStats(character& c, enemy& e, int& counter);
 	void GameOver(character& c);
 	void Battle_Sequence(character& c, enemy& e);
-	void BattleDialogue(character& c, enemy& e);
+	virtual void BattleDialogue(character& c, enemy& e);
 };
 
 class BadFinalBattle : public GoodFinalBattle

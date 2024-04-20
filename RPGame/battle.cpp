@@ -469,15 +469,37 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 void GoodFinalBattle::BattleDialogue(character& c, enemy& e) {
 	//if a grime reaper is at 3/4 health
 	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
-		std::cout << "I am at 75& health" << std::endl;
+		color(6);
+		for (int i = 0; i < 15; i++) {
+			color(6);
+			std::cout << "MBGMMAHBGMBGAHHH" << std::endl;
+			MSdelay(150);
+			clear();
+			color(4);
+			std::cout << "MBGMMAHBGMBGAHHH" << std::endl;
+			MSdelay(150);
+		}
+		color(7);
 		system("pause");
 	}
 	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
-		std::cout << "I am at 50 health or smth" << std::endl;
+		color(4);
+		for (int i = 0; i < 50; i++) {
+			std::cout << "DIEEEEEEE..." << std::endl;
+			MSdelay(210);
+		}
+		std::cout << std::endl;
+		color(7);
 		system("pause");
 	}
 	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
-		std::cout << "I am at 25 health or smth" << std::endl;
+		color(6);
+		MSdelay(230); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(200); std::cout << "e"; color(6); MSdelay(890); std::cout << "a"; color(4); MSdelay(560); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
+		std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(431); std::cout << "l"; color(6); MSdelay(876); std::cout << "l "; color(4); MSdelay(1600);
+		std::cout << "m"; color(4); MSdelay(670); std::cout << "e"; MSdelay(2300); color(6);
+		ellipsis();
+		std::cout << "\n\n";
+		color(7);
 		system("pause");
 	}
 	else {
@@ -530,21 +552,76 @@ void BadFinalBattle::BattleStats(character& c, enemy& e, int& counter) {
 		counter = 1;
 	}
 }
-void BadFinalBattle::BattleDialogue(character& c, enemy& e) {	//context: no such thing as Dirty Bubble, you must kill Grime Reaper because you turn evil
+void BadFinalBattle::BattleDialogue(character& c, enemy& e) {	//context: Dirty Bubble, you must kill Grime Reaper because you turn evil
 	//if a grime reaper is at 3/4 health
 	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
-		std::cout << "I am at 75& health" << std::endl;
+		color(6);
+		std::cout << "W"; MSdelay(100);
+		std::cout << "h"; MSdelay(100);
+		std::cout << "y "; MSdelay(250);
+		std::cout << "h"; MSdelay(100);
+		std::cout << "a"; MSdelay(100);
+		std::cout << "v"; MSdelay(100);
+		std::cout << "e "; MSdelay(360);
+		std::cout << "y"; MSdelay(100);
+		std::cout << "o"; MSdelay(100);
+		std::cout << "u "; MSdelay(450);
+		std::cout << "b"; MSdelay(100);
+		std::cout << "e"; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << "r"; MSdelay(100);
+		std::cout << "a"; MSdelay(100);
+		std::cout << "y"; MSdelay(100);
+		std::cout << "e"; MSdelay(100);
+		std::cout << "d "; MSdelay(230);
+		std::cout << "m"; MSdelay(167);
+		std::cout << "e "; MSdelay(187);
+		ellipsis();
+		std::cout << "w"; MSdelay(100);
+		std::cout << "h"; MSdelay(100);
+		std::cout << "y"; MSdelay(100);
+		std::cout << "? "; MSdelay(1000);
+		std::cout << "W"; MSdelay(567);
+		std::cout << "H"; MSdelay(230);
+		std::cout << "Y"; MSdelay(780);
+		std::cout << "?\n"; MSdelay(340);
+		std::cout << std::endl;
+		color(7);
 		system("pause");
 	}
 	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
-		std::cout << "I am at 50 health or smth" << std::endl;
+		color(6);
+		std::cout << "Why... I put my faith in you...\n" << std::endl;
+		color(7);
 		system("pause");
 	}
 	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
-		std::cout << "I am at 25 health or smth" << std::endl;
+		color(6);
+		std::cout << "p"; MSdelay(100);
+		std::cout << "l"; MSdelay(200);
+		std::cout << "e"; MSdelay(300);
+		std::cout << "a"; MSdelay(340);
+		std::cout << "s"; MSdelay(124);
+		std::cout << "e "; MSdelay(500);
+		std::cout << "d"; MSdelay(230);
+		std::cout << "o "; MSdelay(500);
+		std::cout << "n"; MSdelay(236);
+		std::cout << "o"; MSdelay(457);
+		std::cout << "t "; MSdelay(500);
+		std::cout << "k"; MSdelay(466);
+		std::cout << "i"; MSdelay(324);
+		std::cout << "l"; MSdelay(346);
+		std::cout << "l "; MSdelay(500);
+		std::cout << "m"; MSdelay(100);
+		std::cout << "e"; MSdelay(100);
+		ellipsis();
+		std::cout << "\n";
+		std::cout << std::endl;
+		color(7);
 		system("pause");
 	}
 	else {
 		return;
 	}
 }
+

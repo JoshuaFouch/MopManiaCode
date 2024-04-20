@@ -218,8 +218,7 @@ void FinalEvent::trigger(character& c)
 			std::cout << "Fine... have it your way..." << std::endl;
 			Sdelay(3);
 			BadFinalBattle b;
-			BronchitisRex Janitorius(12);
-			//GrimeReaper Janitorius(10);
+			GrimeReaper Janitorius(10);
 			b.Battle_Sequence(c, Janitorius);
 			if (c.getLife() == 0) {
 				return;	//if the character is dead
@@ -229,13 +228,61 @@ void FinalEvent::trigger(character& c)
 			std::cout << "...i";
 			ellipsis();
 			std::cout << "... trusted you..." << std::endl;
+			Sdelay(7);
 			DotdotTwo();
 			color(7);
 			std::cout << "Janitorius, The Grime Reaper, the protector of MopMania and Le' Hospitale";
 			ellipsis();
-			std::cout << " dies" << std::endl;
+			color(4);
+			std::cout << " dies\n" << std::endl;
+			Sdelay(3);
+			color(7);
 			system("pause");
-			//Filthy bubble dialogue and end credit scene
+			color(4);
+			clear();
+			std::cout << "The Filthy Bubble: HAHAHAHAHAHAHAH";
+			playMusic("terror.wav");
+			ellipsis();
+			Sdelay(5);
+			std::cout << "My young apprentice, " << c.get_name() << std::endl;
+			Sdelay(5);
+			std::cout << "D"; MSdelay(100); std::cout << "e"; MSdelay(100); std::cout << "s"; MSdelay(100); std::cout << "t"; MSdelay(100); std::cout << "r"; MSdelay(100); std::cout << "o"; MSdelay(100); std::cout << "y "; MSdelay(100);
+			std::cout << "M"; MSdelay(100); std::cout << "o"; MSdelay(100); std::cout << "p "; MSdelay(100); std::cout << "M"; MSdelay(100); std::cout << "a"; MSdelay(100); std::cout << "n"; MSdelay(100); std::cout << "i"; MSdelay(100); std::cout << "a! "; MSdelay(1000);
+			ellipsis();
+			Sdelay(5);
+			clear();
+			for (int i = 0; i < 12; i++) {
+				std::cout << "HAHAHAH!!!" << std::endl;
+				MSdelay(210);
+			}
+			Sdelay(3);
+			std::cout << std::endl << std::endl;
+			color(7);
+			system("pause");			
+			endMusic();
+			clear();
+			std::cout << "5 mop-days later\n" << std::endl;
+			system("pause");
+			clear();
+			playMusic("void.wav");
+			std::cout << "Le' Hospitale has been destroyed" << std::endl;
+			Sdelay(5);
+			std::cout << "Everyone mourns..." << std::endl;
+			Sdelay(6);
+			std::cout << "Everyone loses hope..." << std::endl;
+			Sdelay(7);
+			std::cout << "The " << c.get_name() << ", the demise of MopMania, reigns amidst the grime and filth.";
+			Sdelay(4);
+			std::cout << "\nThe Filthy Bubble, the scourge of all that is clean, reigns along side with you..." << std::endl;
+			Sdelay(5);
+			std::cout << "What have you done " << c.get_name() << "?" << std::endl;
+			Sdelay(5);
+			std::cout << "Is this what you wanted? "; Sdelay(3); std::cout << "Death? "; Sdelay(3); std::cout << "and filth? ";
+			Sdelay(6);
+			DotdotTwo();
+			std::cout << "Is this what Janitorius wanted?\n" << std::endl;
+			Sdelay(3);
+			system("pause");
 
 			c.gameCompleted();
 			return;
@@ -294,6 +341,7 @@ void FinalEvent::trigger(character& c)
 			Sdelay(5);
 			clear();
 			std::cout << "THE WORLD MUST BE FILTHY!!!" << std::endl;
+			Sdelay(5);
 			DotdotTwo();
 			color(7);
 			std::cout << "The Filthy Bubble slowly lunges towards Janitorius... \nThe Grime Reaper's face is slowly consumed by the opaque bubble..." << std::endl;
@@ -303,7 +351,7 @@ void FinalEvent::trigger(character& c)
 			Sdelay(2);
 			std::cout << "GAHHHHHH" << std::endl;
 			Sdelay(4);
-			for (int i = 0; i < 45; i++) {
+			for (int i = 0; i < 15; i++) {
 				color(6);
 				std::cout << "MBGMMAHBGMBGAHHH" << std::endl;
 				MSdelay(150);
@@ -344,7 +392,7 @@ void FinalEvent::trigger(character& c)
 			Sdelay(3);
 			MSdelay(200); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(345); std::cout << "e"; color(6); MSdelay(670); std::cout << "a"; color(4); MSdelay(780); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
 			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(389); std::cout << "l"; color(6); MSdelay(700); std::cout << "l "; color(4); MSdelay(1200);
-			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(3000); color(6);
+			std::cout << "m"; color(4); MSdelay(670); std::cout << "e"; MSdelay(3000); color(6);
 			ellipsis();
 			std::cout << "This is why I sent you here..." << std::endl;
 			Sdelay(5);
@@ -357,34 +405,118 @@ void FinalEvent::trigger(character& c)
 			color(4);
 			std::cout << "no matter who dies..." << std::endl;
 			Sdelay(7);
+			clear();
 			std::cout << "so..." << std::endl;
 			Sdelay(6);
-			MSdelay(200); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(345); std::cout << "e"; color(6); MSdelay(670); std::cout << "a"; color(4); MSdelay(780); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
+			MSdelay(200); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(345); std::cout << "e"; color(4); MSdelay(670); std::cout << "a"; color(6); MSdelay(780); std::cout << "s"; color(4); MSdelay(400); std::cout << "e "; color(6); MSdelay(2000);
 			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(389); std::cout << "l"; color(6); MSdelay(700); std::cout << "l "; color(4); MSdelay(1200);
-			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(3000); color(6);
+			std::cout << "m"; color(4); MSdelay(670); std::cout << "e"; MSdelay(3000); color(6);
 			ellipsis();
 			Sdelay(1);
 			clear();
 			MSdelay(230); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(200); std::cout << "e"; color(6); MSdelay(890); std::cout << "a"; color(4); MSdelay(560); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
 			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(431); std::cout << "l"; color(6); MSdelay(876); std::cout << "l "; color(4); MSdelay(1600);
-			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(2300); color(6);
+			std::cout << "m"; color(4); MSdelay(670); std::cout << "e"; MSdelay(2300); color(6);
 			ellipsis();
 			clear();
 			color(4);
 			std::cout << c.get_name() << "..." << std::endl;
 			Sdelay(6);
-			for (int i = 0; i < 100; i++) {
+			for (int i = 0; i < 50; i++) {
 				std::cout << "DIEEEEEEE..." << std::endl;
+				MSdelay(210);
 			}
 			GoodFinalBattle b;
-			//GrimeReaper JaniBubble(12);
-			BronchitisRex JaniBubble(12);
+			GrimeReaper JaniBubble(10);
 			b.Battle_Sequence(c, JaniBubble);
 			if (c.getLife() == 0) {
 				return;	//if the character is dead
 			}
+			endMusic();
+			DotdotTwo();
+			color(4);
+			std::cout << "Filthy Bubble: NO.... ";
+			Sdelay(2);
+			std::cout << "NO...";
+			Sdelay(2);
+			std::cout << "NO." << std::endl;
+			Sdelay(3);
+			DotdotTwo();
+			std::cout << "I "; MSdelay(250); std::cout << "c"; MSdelay(250); std::cout << "a"; MSdelay(120); std::cout << "n"; MSdelay(250); std::cout << "n"; MSdelay(290); std::cout << "o"; MSdelay(340); std::cout << "t "; MSdelay(400);
+			std::cout << "D"; MSdelay(250); std::cout << "I"; MSdelay(250); std::cout << "E-"; MSdelay(250); ellipsis();
+			Sdelay(5);
+			clear();
+			color(7);
+			std::cout << "The Filthy Bubble's body dissipates into thin air... ";
+			Sdelay(2); std::cout << "He is finally gone...";
+			Sdelay(2); std::cout << "\nYou killed him...";
+			Sdelay(2); std::cout << " however...";
+			Sdelay(3);
+			std::cout << " death begins to take over Janitorius." << std::endl;
+			playMusic("death.wav");
+			Sdelay(5);
+			DotdotTwo();
+			color(6);
+			std::cout << "Janitorius: My dear " << c.get_name() << "..." << std::endl;
+			Sdelay(4);
+			std::cout << "You have done well..." << std::endl;
+			Sdelay(3);
+			std::cout << "MopMania can now be restored to its former glory..." << std::endl;
+			Sdelay(4);
+			std::cout << "Not because of me... ";
+			Sdelay(3);
+			std::cout << "but because of you";
+			ellipsis();
+			std::cout << std::endl;
+			Sdelay(5);
+			clear();
+			std::cout << "As a result of the death of the Filthy Bubble..." << std::endl;
+			Sdelay(4);
+			std::cout << "M"; MSdelay(320); std::cout << "y "; MSdelay(230);
+			std::cout << "d"; MSdelay(120); std::cout << "e"; MSdelay(230); std::cout << "a"; MSdelay(630); std::cout << "t"; MSdelay(230); std::cout << "h "; MSdelay(560);
+			std::cout << "i"; MSdelay(120); std::cout << "s "; MSdelay(340);
+			std::cout << "n"; MSdelay(340); std::cout << "e"; MSdelay(333); std::cout << "a"; MSdelay(230); std::cout << "r"; MSdelay(450);
+			ellipsis(); std::cout << std::endl;
+			Sdelay(6);
+			clear();
+			std::cout << "Go my dear " << c.get_name() << std::endl;
+			Sdelay(3);
+			std::cout << "and restore our homeland to its former happiness and peace..." << std::endl;
+			Sdelay(7);
+			std::cout << "T"; MSdelay(120); std::cout << "h"; MSdelay(230); std::cout << "a"; MSdelay(630); std::cout << "n"; MSdelay(230); std::cout << "k "; MSdelay(560);
+			std::cout << "y"; MSdelay(340); std::cout << "o"; MSdelay(333); std::cout << "u"; MSdelay(230); ellipsis(); std::cout << std::endl;
+			Sdelay(5);
+			DotdotTwo();
+			color(7);
+			std::cout << "Janitorius, The Grime Reaper, dies." << std::endl;
+			Sdelay(5);
 			system("pause");
-			//ending, janitorius and filthy bubble's final words... shows restored Le' Hospitale
+			endMusic();
+			clear();
+			std::cout << "5 mop-days later\n" << std::endl;
+			system("pause");
+			clear();
+			playMusic("ending.wav");
+			std::cout << "Le' Hospitale is restored to its formly glory" << std::endl;
+			Sdelay(5);
+			std::cout << "Everyone praises you for your heroic actions..." << std::endl;
+			Sdelay(6);
+			std::cout << "Everyone celebrates and rebuilds there new home with joy and peace..." << std::endl;
+			Sdelay(7);
+			std::cout << "However, ";
+			Sdelay(4);
+			std::cout << "no one praises The Grime Reaper for his heroic actions..." << std::endl;
+			Sdelay(5);
+			std::cout << "He was the one who truly loved his homeland," << std::endl;
+			Sdelay(5);
+			std::cout << "He was the one who protected them..." << std::endl;
+			Sdelay(6);
+			DotdotTwo();
+			std::cout << "The Grime Reaper... will be forgotten.\n" << std::endl;
+			system("pause");
+
+			c.gameCompleted();
+			return;
 		}
 	}
 }
