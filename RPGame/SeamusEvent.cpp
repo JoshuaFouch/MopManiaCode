@@ -3,7 +3,39 @@
 #include "character.h"
 #include "battle.h"
 
+using namespace std;
 
+
+{
+    case 1:
+	color(2);
+    cout<<"\n\tWhat potionssss would you like?\n";
+color(8); std::cout << "|--------------------------|" << std::endl;
+		std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "HP:  Sponge armor (4 rats)" << '\n';
+		std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "ATK: Bleach lining (4 rats)" << '\n';
+		std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "DEF: Wax-coat (4 rats)" << '\n';
+color(8); std::cout << "|--------------------------|" << std::endl;
+    int choiceA;
+    cin>>choiceA;
+        if(choiceA !=1 && choiceA !=2 && choiceA !=3){
+    cout<<"replace with othe stuff";}
+    switch(choiceA){
+    case 1:
+	color(2);
+    cout<<"Pleasure doing businessss\n";
+	 cout<<"Here'ssss your ssssponge armor\n";
+     c.use_deadRat();
+	 c.use_deadRat();
+	 c.use_deadRat();
+	 c.use_deadRat();
+	 c.get_healUp()
+      break;
+
+
+
+/*
+"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "
+*/
 /*CellarEvent*/
 /*cellarEvent::cellarEvent() {};//more of a boss type music?
 
@@ -11,23 +43,25 @@ void cellarEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
 
-		while(gold>0){
+		while(c.get_deadRat()>0) {//while you still have rats 
+            color(2);
+            cout << "\nYou have "; c.get_deadRat(); cout << " rats"; MSdelay(500); cout << "s"; MSdelay(500); cout << "s"; MSdelay(500); cout << "s"; MSdelay(500);cout<< "remaining:"<<endl;
+cout<<"\n\n\tWhat type of itemsssss would you like?\n";
+std::cout << ""; color(8); std::cout << "[1]: "; color(7); std::cout << "Potions" << std::endl;
+std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Special Items" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
+std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Exit" << std::endl;
 
-cout<<"\nThis is your total remaining gold:\n"<<gold<<"g";
-cout<<"\n\n\tType the corresponding number for the catagory of wares you'd like to browse\n";
-cout<<"1. Armor\n";
-cout<<"2. Weapons\n";
-cout<<"3. Spells\n";
-cout<<"4. Potions\n";
-cout<<"5. Exit shop\n";
 int choice;
 cin>>choice;
-if (choice==5){
-    cout<<"Thank you come again";
+if (choice==3){
+    color(2);
+    cout<<"I'll s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "ee you again s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "oon";
+    endMusic();
     break;}
 
- if(choice !=1 && choice !=2 && choice !=3 && choice !=4){
-    cout<<"you bum, thats not even an option! pick a number between 1 and 4\n";}
+ if(choice !=1 && choice !=2 && choice !=3){
+     color(2);
+    cout<<"You s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "tupid s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "ud, thats"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " not even an option\n";}
 switch(choice)
 
 {
@@ -164,7 +198,7 @@ switch(choice)
 if (gold==0){
     cout<<"get outta here ya broke boi!!!";
     return 0;}
-return 0;}
+
 
 		return;	//if character has already triggered the event in this node
 	}
@@ -185,21 +219,20 @@ return 0;}
 		MSdelay(3000);
 
 		color(2);
-        playMusic("putrid.wav");
-		std::cout << "Putrid Python: You thereee";MSdelay(500); std::cout << ", yesssss";MSdelay(500); std::cout << ", you there with the moppy facccccce...";
+		std::cout << "Putrid Python: You there";MSdelay(500); std::cout << ", yes"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "";MSdelay(500); std::cout << ", you there with the moppy fac"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "e...";
 		MSdelay(3000);
-		std::cout << "I need your assistanccccce";MSdelay(500); std::cout << "I have great rewardsssss";MSdelay(500); std::cout << " to offer you" << std::endl;
+		std::cout << "I need your assistanc"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "e";MSdelay(500); std::cout << "I have great rewards"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "";MSdelay(500); std::cout << " to offer you" << std::endl;
 		Sdelay(2);
-		std::cout << "And all you must do isssssss";MSdelay(500); std::cout << "give me a few of those ratssssss";MSdelay(500); std::cout << "of yoursssss" << std::endl;
+		std::cout << "And all you must do is"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "";MSdelay(500); std::cout << "give me a few of those rats"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "";MSdelay(500); std::cout << "of yours"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "" << std::endl;
 		MSdelay(2000);
 		clear();
 		color(7);
-		std::cout << "*sniff sniff*";color(2); std::cout << "I can already smell "<<c.get_deadRat()<<" dead rats on you"<< std::endl;
+        std::cout << "*sniff sniff*"; color(2); MSdelay(1000); std::cout << "I can already smell "; MSdelay(500); std::cout << c.get_deadRat() << " dead rats on you" << std::endl;
 		MSdelay(2000);
-		std::cout << "So what do ya say kiddo?";MSdelay(500); std::cout << "Do we got ourselves a deal?" << std::endl;
+		std::cout << "S"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "o what do ya say kiddo?";MSdelay(500); std::cout << "Do we got ourselves"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " a deal?" << std::endl;
 		MSdelay(5000);
 		clear();
-		std::cout << "That was retorical"; MSdelay(500); std::cout << ", of course we have a deal"; MSdelay(500); std::cout <<", just come back when whenever you wanna start trading " << std::endl;
+        std::cout << "That was retorical"; MSdelay(500); std::cout << ", of cours"; cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << ""; MSdelay(500); std::cout<<"e we have a deal"; MSdelay(500); std::cout <<", just come back when whenever you wanna start trading " << std::endl;
 		MSdelay(2000);
 
 		endMusic();
