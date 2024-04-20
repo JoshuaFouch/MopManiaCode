@@ -354,13 +354,16 @@ void MrsClean::dialogue(character& c)
 	std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Grime Reaper" << std::endl;
 	std::cout << ""; color(8); std::cout << "[4]: "; color(7); std::cout << "Drink Recommendation" << std::endl;
 	std::cout << ""; color(8); std::cout << "[5]: "; color(7); std::cout << "How is your day?" << std::endl;
+	std::cout << ""; color(8); std::cout << "[6]: "; color(7); std::cout << "Exit" << std::endl;
 
 	std::cin >> choice;
 
 	if (choice == "1") //putrid python dialogue
 	{
+		clear();
 		color(3);
-		std::cout << "Ah yes, rumors of this Putrid Python..." << std::endl;
+		std::cout << "Ah yes, rumors of this"; color(5); std::cout << " Putrid Python..." << std::endl;
+		color(3);
 		MSdelay(2000);
 		std::cout << "this creature was supposedly exposed to some high levels of grime that affected its material make up..." << std::endl;
 		MSdelay(2000);
@@ -369,14 +372,30 @@ void MrsClean::dialogue(character& c)
 		std::cout << "so don't get into too much trouble if you do find it..." << std::endl;
 		MSdelay(2000);
 		std::cout << "" << std::endl;
+		color(7);
 		system("pause");
+		clear();
 	}
 	else if (choice == "2") //le' hospitale dialogue
 	{
-		
+		clear();
+		color(3);
+		std::cout << "le hospitale dialogues" << std::endl;
+		MSdelay(3000);
+		std::cout << "fi" << std::endl;
+		MSdelay(2000);
+		std::cout << "fi" << std::endl;
+		MSdelay(4000);
+		std::cout << "fie" << std::endl;
+		MSdelay(2000);
+		std::cout << "cap" << std::endl;
+		color(7);
+		system("pause");
+		clear();
 	}
 	else if (choice == "3") //grime reaper dialogue
 	{
+		clear();
 		color(3);
 		std::cout << "Ah the "; color(2); std::cout << "Grime Reaper..." << std::endl;
 		MSdelay(2000);
@@ -414,11 +433,13 @@ void MrsClean::dialogue(character& c)
 		MSdelay(3000);
 		Dotdot();
 		std::cout << "I need another drink... RUSTY I'LL TAKE ANOTHER MUDWEISER!!" << std::endl;
+		color(7);
 		system("pause");
 		clear();
 	}
 	else if (choice == "4") // drink stuff
 	{
+		clear();
 		color(3);
 		std::cout << "Ah, nothing too special really, but here's what they have: " << std::endl;
 		MSdelay(2000);
@@ -426,20 +447,37 @@ void MrsClean::dialogue(character& c)
 		MSdelay(2000);
 		color(2); std::cout << "Melon Grime" << std::endl;
 		MSdelay(2000);
-		color(3); std::cout << "and my personal favorite..."; color(8); std::cout << "MudWeiser" << std::endl;
+		color(3); std::cout << "and my personal favorite..."; color(8); std::cout << " MudWeiser" << std::endl;
 		MSdelay(2000);
 		color(3); std::cout << "Say, I'll get you a drink, maybe then you'd want to hear some more stories!" << std::endl;
+		color(7);
+		system("pause");
+		clear();
 	}
 	else if (choice == "5")// how is your day?
 	{
+		clear();
 		color(3);
 		std::cout << "OH my day?" << std::endl;
 		MSdelay(2000);
 		std::cout << "Same as the day before and the day before that..." << std::endl;
 		MSdelay(2000);
 		std::cout << "Honestly I don't keep track anymore since everyday it feels like the same day everyday...." << std::endl;
+		MSdelay(2000);
+		std::cout << "You are very sweet... Thank you for asking!" << std::endl;
+		color(7);
+		system("pause");
+		clear();
 	}
-	
+	else if (choice == "6") 
+	{
+		clear();
+		std::cout << "You have exited" << std::endl;
+		// exit to other options in the Rusty Bucket
+		color(7);
+		system("pause");
+		clear();
+	}
 }
 
 /*DustySwift::DustySwift() : NPC() {}
