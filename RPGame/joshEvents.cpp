@@ -60,8 +60,7 @@ void FinalEvent::trigger(character& c)
 		Sdelay(4);
 		DotdotTwo();
 		std::cout << "THIS MUST BE THE GRIME REAPER... HE IS TRAPPED!!!" << std::endl;
-		playSFX("BAH.wav");
-		MSdelay(3000);
+		MSdelay(4500);
 		clear();
 		color(6);
 		endMusic();
@@ -99,7 +98,7 @@ void FinalEvent::trigger(character& c)
 		}
 		Sdelay(4);
 		clear();
-		std::cout << "The Dirty Bubble";
+		std::cout << "The Filthy Bubble";
 		ellipsis();
 		std::cout << " the scourge of MopMania";
 		ellipsis();
@@ -107,7 +106,7 @@ void FinalEvent::trigger(character& c)
 		MSdelay(3000);
 		std::cout << "THIS IS WHY I BANISHED EVERYONE FROM LE' HOSPITALE... TO PROTECT THEM" << std::endl;
 		Sdelay(3);
-		std::cout << "THIS IS WHY I DISAPPEARED... TO HOLD DIRTY BUBBLE BACK FROM KILLING EVERYONE..." << std::endl;
+		std::cout << "THIS IS WHY I DISAPPEARED... TO HOLD FILTHY BUBBLE BACK FROM KILLING EVERYONE..." << std::endl;
 		Sdelay(3);
 		std::cout << "THIS IS WHY I CHOSE YOU TO SAVE ME..." << std::endl;
 		Sdelay(4);
@@ -126,14 +125,14 @@ void FinalEvent::trigger(character& c)
 		std::cout << "I failed my precious friends and family... my precious MopMania..." << std::endl;
 		Sdelay(5);
 
-		//ending if you kill bubble boy (you kill janitorius, you join dirty bubble)
+		//ending if you kill bubble boy (you kill janitorius, you join filthy bubble)
 		if (c.getBub() == -1) {
 			//Janitorius realizes you evil nature and has to kill you
 			DotdotTwo();
 			std::cout << "It seems evil has taken over you..." << std::endl;
 			Sdelay(4);
 			std::cout << "You killed my good friend";
-			color(1);
+			color(9);
 			std::cout << " Bubble Boy..." << std::endl;
 			color(6);
 			Sdelay(6);
@@ -152,16 +151,16 @@ void FinalEvent::trigger(character& c)
 			MSdelay(4000);
 			color(6);
 			playMusic("terror.wav");
-			std::cout << "THE DIRTY BUBBLE..." << std::endl;
+			std::cout << "THE FILTHY BUBBLE..." << std::endl;
 			MSdelay(3200);
 			color(4);
-			std::cout << "The Dirty Bubble: It is I... ";
-			Sdelay(1);
+			std::cout << "The Filthy Bubble: It is I... ";
+			Sdelay(2);
 			std::cout << "the scourge of all that is clean... " << std::endl;
-			Sdelay(1);
+			Sdelay(2);
 			std::cout << "the plague of MopMania... " << std::endl;
-			Sdelay(1);
-			std::cout << "The Dirty Bubble..." << std::endl;
+			Sdelay(2);
+			std::cout << "The Filthy Bubble..." << std::endl;
 			Sdelay(2);
 			clear();
 			color(6);
@@ -236,19 +235,149 @@ void FinalEvent::trigger(character& c)
 			ellipsis();
 			std::cout << " dies" << std::endl;
 			system("pause");
-			//dirty bubble dialogue and end credit scene
+			//Filthy bubble dialogue and end credit scene
 
 			c.gameCompleted();
 			return;
 		}
 		//ending if you bring bubbly boy to bubble mama OR never meet him
-		else if (c.getBub() == 2 || c.getBub() == 0) {
-			//Dirty Bubble possesses Janitorius and you have to kill the both of them
-		}
-		else if (c.getBub() == 1) {
-			//ending if you bring bubble boy with you to the mysterious room
+		else if (c.getBub() == 2 || c.getBub() == 0 || c.getBub() == 1) {
+			//Filthy Bubble possesses Janitorius and you have to kill the both of them
+			clear();
+			color(6);
+			std::cout << "I have sent you..." << c.get_name() << " to save me..." << std::endl;
+			Sdelay(5);
+			std::cout << "I need you to kill him..." << std::endl;
+			Sdelay(2);
+			std::cout << "Kill the Filthy Bubble..." << std::endl;
+			Sdelay(5);
+			std::cout << "I put my faith in you, I gave you my powers..." << std::endl;
+			Sdelay(3);
+			std::cout << "The powers that failed me... ";
+			Sdelay(3);
+			std::cout << "the powers that brought me to my misery..." << std::endl;
+			Sdelay(5);
+			clear();
+			std::cout << "However, there is hope. ";
+			Sdelay(3);
+			std::cout << "Please destroy the Filthy Bubble...";
+			Sdelay(5);
+			endMusic();
+			clear();
+			color(4);
+			std::cout << "\t\tThats not happening..." << std::endl;
+			MSdelay(2000);
+			std::cout << "\t\tYou really are a failure..." << std::endl;
+			MSdelay(4000);
+			color(6);
+			playMusic("terror.wav");
+			std::cout << "THE FILTHY BUBBLE..." << std::endl;
+			MSdelay(3200);
+			color(4);
+			std::cout << "The Filthy Bubble: It is I... ";
+			Sdelay(2);
+			std::cout << "the scourge of all that is clean... " << std::endl;
+			Sdelay(2);
+			std::cout << "the plague of MopMania... " << std::endl;
+			Sdelay(2);
+			std::cout << "The Filthy Bubble..." << std::endl;
+			Sdelay(4);
+			clear();
+			std::cout << "It seems you have found where I locked up The Grime Reaper..." << std::endl;
+			Sdelay(5);
+			DotdotTwo();
+			std::cout << "I will consume him..." << std::endl;
+			Sdelay(2);
+			std::cout << "I will take all of his power..." << std::endl;
+			Sdelay(2);
+			std::cout << "To destroy the land of MopMania!!" << std::endl;
+			Sdelay(5);
+			clear();
+			std::cout << "THE WORLD MUST BE FILTHY!!!" << std::endl;
+			DotdotTwo();
+			color(7);
+			std::cout << "The Filthy Bubble slowly lunges towards Janitorius... \nThe Grime Reaper's face is slowly consumed by the opaque bubble..." << std::endl;
+			Sdelay(6);
+			color(6);
+			std::cout << "MMMBLHLBHML AGHHGUHMGNLBLGLGMM..." << std::endl;
+			Sdelay(2);
+			std::cout << "GAHHHHHH" << std::endl;
+			Sdelay(4);
+			for (int i = 0; i < 45; i++) {
+				color(6);
+				std::cout << "MBGMMAHBGMBGAHHH" << std::endl;
+				MSdelay(150);
+				clear();
+				color(4);
+				std::cout << "MBGMMAHBGMBGAHHH" << std::endl;
+				MSdelay(150);
+				clear();
+			}
+			DotdotTwo();
+			color(7);
+			std::cout << "Janitorius...";
+			Sdelay(3);
+			std::cout << "the one who gave you new life... " << std::endl;
+			Sdelay(4);
+			std::cout << "his own life is being taken away right in front of you..." << std::endl;
+			Sdelay(5);
+			DotdotTwo();
+			std::cout << "The Filthy Bubble has now possessed Janitorius..." << std::endl;
+			Sdelay(4);
+			std::cout << "The Filthy Bubble is now within Janitorius..." << std::endl;
+			Sdelay(5);
+			std::cout << "The Filthy Bubble "; MSdelay(700); std::cout << "is now "; MSdelay(1200); std::cout << "Janitorius..." << std::endl;
+			Sdelay(6);
+			DotdotTwo();
+			std::cout << "There is nothing you can do about it... ";
+			Sdelay(4);
+			std::cout << "but... ";
+			MSdelay(3500);
+			std::cout << "kill the both of them..." << std::endl;
+			Sdelay(5);
+			endMusic();
+			playMusic("void.wav");
+			clear();
+			color(6);
+			std::cout << c.get_name() << "..." << std::endl;
+			color(4);
+			Sdelay(3);
+			MSdelay(200); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(345); std::cout << "e"; color(6); MSdelay(670); std::cout << "a"; color(4); MSdelay(780); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
+			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(389); std::cout << "l"; color(6); MSdelay(700); std::cout << "l "; color(4); MSdelay(1200);
+			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(3000); color(6);
+			ellipsis();
+			std::cout << "This is why I sent you here..." << std::endl;
+			Sdelay(5);
+			color(4);
+			std::cout << "To save MopMania from it's misery..." << std::endl;
+			Sdelay(5);
+			color(6);
+			std::cout << "No matter the means... ";
+			Sdelay(5);
+			color(4);
+			std::cout << "no matter who dies..." << std::endl;
+			Sdelay(7);
+			std::cout << "so..." << std::endl;
+			Sdelay(6);
+			MSdelay(200); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(345); std::cout << "e"; color(6); MSdelay(670); std::cout << "a"; color(4); MSdelay(780); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
+			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(389); std::cout << "l"; color(6); MSdelay(700); std::cout << "l "; color(4); MSdelay(1200);
+			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(3000); color(6);
+			ellipsis();
+			clear();
+			MSdelay(200); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(345); std::cout << "e"; color(6); MSdelay(670); std::cout << "a"; color(4); MSdelay(780); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
+			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(389); std::cout << "l"; color(6); MSdelay(700); std::cout << "l "; color(4); MSdelay(1200);
+			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(3000); color(6);
+			ellipsis();
+			clear();
+			color(4);
+			std::cout << c.get_name() << "..." << std::endl;
+			Sdelay(6);
+			for (int i = 0; i < 100; i++) {
+				std::cout << "DIEEEEEEE..." << std::endl;
+			}
+
+
+
 		}
 	}
-
-	
 }

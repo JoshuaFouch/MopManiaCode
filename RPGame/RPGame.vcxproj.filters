@@ -170,10 +170,10 @@
     <Media Include="..\..\death.wav">
       <Filter>MusicStuff</Filter>
     </Media>
-    <Media Include="..\..\TheGrimeReaper.wav">
+    <Media Include="..\..\creativity.wav">
       <Filter>MusicStuff</Filter>
     </Media>
-    <Media Include="..\..\creativity.wav">
+    <Media Include="..\..\TheGrimeReaper.wav">
       <Filter>MusicStuff</Filter>
     </Media>
   </ItemGroup>
