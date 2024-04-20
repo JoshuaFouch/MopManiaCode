@@ -50,7 +50,7 @@ class cellarEvent : public event	//putrid python
 {
 public:
 	cellarEvent();
-	void trigger(character& c);
+	//void trigger(character& c);
 };
 
 //mailbox

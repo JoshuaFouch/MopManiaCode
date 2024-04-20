@@ -33,12 +33,6 @@ public:
 	void BattleDialogue(character& c, enemy& e);
 };
 
-class BubblyFinalBattle : public GoodFinalBattle	//if bubbly boy is still with you, he reveals that he is the dirty bubble
-{
-public:
-	void BattleDialogue(character& c, enemy& e);
-};
-
 class BadFinalBattle : public GoodFinalBattle
 {
 public:

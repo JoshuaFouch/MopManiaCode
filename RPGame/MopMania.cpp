@@ -13,7 +13,6 @@ int main()
 {
 	/*map creation*/
 	Broomba broomba("Broomba", 500, 100, 120); //beefy but less health
-	broomba.bubKill();
 	gameMap map;
 	event* e = new event;
 
@@ -53,8 +52,8 @@ int main()
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", NULL);
 
 	//Rusty Bucket thing :D
-	RustyBucketEvent test;
-	test.trigger(broomba);
+	//RustyBucketEvent test;
+	//test.trigger(broomba);
 
 	system("pause");
 	map.play(map.theGamer(), broomba, 0);

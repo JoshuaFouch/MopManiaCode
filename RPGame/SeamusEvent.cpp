@@ -17,7 +17,7 @@ c.Rat_Sale(4);
 /*CellarEvent*/
 cellarEvent::cellarEvent() {};//more of a boss type music?
 
-void cellarEvent::trigger(character& c)
+/*void cellarEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
 
@@ -231,4 +231,4 @@ if (gold==0){
 		return;
 	}
 
-}
+}*/

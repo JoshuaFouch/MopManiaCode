@@ -201,7 +201,7 @@ void FinalEvent::trigger(character& c)
 			endMusic();
 			color(7);
 			Dotdot();
-			std::cout << "You smart to smile menacingly..." << std::endl;
+			std::cout << "You start to smile menacingly..." << std::endl;
 			Sdelay(4);
 			std::cout << "You yearn...";
 			Sdelay(2);
@@ -213,7 +213,7 @@ void FinalEvent::trigger(character& c)
 			color(6);
 			playMusic("void.wav");
 			std::cout << "I should have never trusted you " << c.get_name() << std::endl;
-			Sdelay(2);
+			Sdelay(4);
 			DotdotTwo();
 			std::cout << "Fine... have it your way..." << std::endl;
 			Sdelay(3);
@@ -363,10 +363,11 @@ void FinalEvent::trigger(character& c)
 			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(389); std::cout << "l"; color(6); MSdelay(700); std::cout << "l "; color(4); MSdelay(1200);
 			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(3000); color(6);
 			ellipsis();
+			Sdelay(1);
 			clear();
-			MSdelay(200); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(345); std::cout << "e"; color(6); MSdelay(670); std::cout << "a"; color(4); MSdelay(780); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
-			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(389); std::cout << "l"; color(6); MSdelay(700); std::cout << "l "; color(4); MSdelay(1200);
-			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(3000); color(6);
+			MSdelay(230); std::cout << "P"; color(4); MSdelay(210); std::cout << "l"; color(6); MSdelay(200); std::cout << "e"; color(6); MSdelay(890); std::cout << "a"; color(4); MSdelay(560); std::cout << "s"; color(6); MSdelay(400); std::cout << "e "; color(4); MSdelay(2000);
+			std::cout << "k"; color(6); MSdelay(429); std::cout << "i"; color(4); MSdelay(431); std::cout << "l"; color(6); MSdelay(876); std::cout << "l "; color(4); MSdelay(1600);
+			std::cout << "m"; color(4); MSdelay(670); std::cout << "e" << std::endl; MSdelay(2300); color(6);
 			ellipsis();
 			clear();
 			color(4);
@@ -375,9 +376,15 @@ void FinalEvent::trigger(character& c)
 			for (int i = 0; i < 100; i++) {
 				std::cout << "DIEEEEEEE..." << std::endl;
 			}
-
-
-
+			GoodFinalBattle b;
+			//GrimeReaper JaniBubble(12);
+			BronchitisRex JaniBubble(12);
+			b.Battle_Sequence(c, JaniBubble);
+			if (c.getLife() == 0) {
+				return;	//if the character is dead
+			}
+			system("pause");
+			//ending, janitorius and filthy bubble's final words... shows restored Le' Hospitale
 		}
 	}
 }
