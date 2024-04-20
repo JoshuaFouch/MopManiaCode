@@ -178,6 +178,9 @@
     <Media Include="vine-boom.wav" />
     <Media Include="void.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="stufftodo.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

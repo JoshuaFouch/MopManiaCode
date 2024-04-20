@@ -177,4 +177,7 @@
       <Filter>MusicStuff</Filter>
     </Media>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="stufftodo.txt" />
+  </ItemGroup>
 </Project>

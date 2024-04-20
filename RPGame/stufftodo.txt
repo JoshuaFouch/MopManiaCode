@@ -1,0 +1,16 @@
+1. create Hairball enemy
+2. create GrimeReaper enemy
+3. 1st, 2nd, 3rd, and Le' Hospitale node events	(janitorius and Filthy bubble lore talking to you)
+4. lung care event (bronchitis rex)	//eljay
+	- contains one bronchitis rex
+	- you can follow the same syntax as another event
+	- but different dialogue
+5. add items to inventory
+6. bubble boy event
+7. bubble mama event
+8. finish putrid python
+9. dermatology event (deadskin dill, shingle shannon, leopard the leper)
+10. operating room event (stainiacs)
+11. supply closet event (bubble boy)
+12. pharmacy event	(Mucus Maw) //eljay
+13. laboratory event (needle ned)	//eljay

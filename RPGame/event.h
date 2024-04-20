@@ -79,6 +79,13 @@ public:
 };
 
 //1st floor??
+class firstEvent : public event
+{
+public:
+	firstEvent();
+	void trigger(character& c);
+	int counter = 0;
+};
 
 //mysterious room (janitorius' office)
 class FinalEvent : public event		/*may have alternate endings, help janitorius or kill*/
@@ -88,29 +95,72 @@ public:
 	void trigger(character& c);
 };
 
-
-
 //lung care unit
-/*class lungEvent : public event	//one MucusMaw
+class lungEvent : public event	//one MucusMaw
 {
 public:
 	lungEvent();
 	void trigger(character& c);
-};*/
+};
 
 //2nd floor??
+class secondEvent : public event
+{
+public:
+	secondEvent();
+	void trigger(character& c);
+	int counter = 0;
+};
 
 //dermatology
+class dermEvent : public event
+{
+public:
+	dermEvent();
+	void trigger(character& c);
+};
+
 
 //operating room
+class operatEvent : public event
+{
+public:
+	operatEvent();
+	void trigger(character& c);
+};
 
 //pharmacy
+class pharmEvent : public event
+{
+public:
+	pharmEvent();
+	void trigger(character& c);
+};
 
 //supply closet
+class supplyEvent : public event
+{
+public:
+	supplyEvent();
+	void trigger(character& c);
+};
 
 //laboratory
+class labEvent : public event
+{
+public:
+	labEvent();
+	void trigger(character& c);
+};
 
 //basement??
+class basementEvent : public event
+{
+public:
+	basementEvent();
+	void trigger(character& c);
+	int counter = 0;
+};
 
 //mental health room
 class MentalEvent: public event	//garbagedans

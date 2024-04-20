@@ -17,12 +17,14 @@ int main()
 	event* e = new event;
 
 	waitingRoomEvent* waitingRoom = new waitingRoomEvent;
+	RustyBucketEvent* rusty = new RustyBucketEvent;
 	storageRoomevent* storageRoom = new storageRoomevent;
 	FinalEvent* finale = new FinalEvent;
-	//MentalEvent* mental = new MentalEvent;
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", finale);
+	MentalEvent* mental = new MentalEvent;
+
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", mental);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", NULL);
-	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", NULL);
+	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", rusty);
 	map.birth_midChild(map.getIndex(), "Le' Hospitale", "The home where all citizens of Mop-Mania once lived... it is now the demise of cleanliness", "Whoever enters these halls are said to never come out these days...\nThis is the place Janitorius commissioned you to clean.", NULL);
 	map.moveIndex_middle();
 
@@ -48,12 +50,9 @@ int main()
 	map.birth_leftChild(map.getIndex(), "Basement", "You walk down the stairs...", "You see three rooms down the hall", NULL);
 	map.moveIndex_left();
 	map.birth_rightChild(map.getIndex(), "Storage Room", "All the empty canisters have been cleaned out of the room", "The room is nicely cleaned and filled with anesthesia bottles", storageRoom);
-	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", NULL);
+	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", mental);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", NULL);
 
-	//Rusty Bucket thing :D
-	//RustyBucketEvent test;
-	//test.trigger(broomba);
 
 	system("pause");
 	map.play(map.theGamer(), broomba, 0);
