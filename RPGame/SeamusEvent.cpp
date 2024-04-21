@@ -2,6 +2,7 @@
 #include "enemy.h"
 #include "character.h"
 #include "battle.h"
+#include <ChatGPTsnake.h>
 
 using namespace std;
 
@@ -14,10 +15,30 @@ using namespace std;
 "; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "
 c.Rat_Sale(4);
 */
+
+
+/*
+int main()
+{
+    srand(time(NULL));
+    Setup();
+    while (!gameOver)
+    {
+        Draw();
+        Input();
+        Logic();
+        usleep(100000); // Sleep for 0.1 seconds
+    }
+    return 0;
+}
+
+
+*/
+
 /*CellarEvent*/
 cellarEvent::cellarEvent() {};
 
-/*void cellarEvent::trigger(character& c)
+void cellarEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
 
@@ -28,7 +49,8 @@ cout<<"\n\n\tWhat type of items"; MSdelay(100); cout << "s"; MSdelay(100); cout 
 color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
 std::cout << ""; color(8); std::cout << "[1]: "; color(7); std::cout << "Potions" << std::endl;
 std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Specialty Items" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
-std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Exit" << std::endl;
+std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Play Game" << std::endl;// neat? not my code tho
+std::cout << ""; color(8); std::cout << "[4]: "; color(7); std::cout << "Exit" << std::endl;
 color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
 
 int choice;
@@ -89,104 +111,61 @@ case 1:
         color(5);
         cout << "\n\tSpecialty items "; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " would you like?\n";
         color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
-        std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << " Slippery Soap (lets you escape any battle) - 4 rats" << '\n';
-        std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "ATK: Bleach lining (4 rats)" << '\n';
-        std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "DEF: Wax-coat (4 rats)" << '\n';
+        std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << " Slippery Soap (lets you escape any battle) - 8 rats" << '\n';
+        std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << " Cleaning tips (shows enemy's current stats) - 4 rats" << '\n';//new one to show you the stats of your enemy?
+        std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << " Whendex (shows number of Dead rats left to collect) - 5 rats"<< '\n';//shows how many dead rats you have collected and how many are left maybe? the just when you use the item in inventory this info is displayed
         color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
     int choiceB;
     cin>>choiceB;
      if(choiceB !=1 && choiceB !=2 && choiceB !=3 && choiceB !=4){
-    cout<<"you bum, thats not even an option! pick a number between 1 and 4";}
+    cout<<"You s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "tupid s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "ud, thats"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " not even an option\n";
+     }
     switch(choiceB){
    
     case 1:
-    cout<<"thanks for purchasing the Death Note for 25 gold\n";
-        gold=TWEN(gold, price);
+        color(5);
+        cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+        cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your S"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "lippery S"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "oap\n";
+        c.Rat_Sale(4);
+        c.get_attUp();// will have to make these 
       break;
     case 2:
-    cout<<"thanks for purchasing the Raygun for 50 gold\n";
-        gold=FIFT(gold, price);
+        color(5);
+        cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+        cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Cleaning tips"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+        c.Rat_Sale(4);
+        c.get_attUp();// will have to make these 
       break;
     case 3:
-    cout<<"thanks for purchasing the Monado for 100 gold\n";
-        gold=HUND(gold, price);
-      break;
-    case 4:
-    cout<<"thanks for purchasing Stanley's Bucket for 500 gold\n";
-        gold=FHUND(gold, price);
+        color(5);
+        cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+        cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Whendex"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+        c.Rat_Sale(4);
+        c.get_attUp();// will have to make these 
       break;
     }
-     return main();
+   
     break;
 
  case 3:
-    cout<<"\n\tType the corresponding number of the Spell Book you would like to purchase\n";
-    cout<<"1. Spell Book of Electro-telekinis(25g)\n";
-    cout<<"2. Spell Book of Extreme Flatuation(50g)\n";
-    cout<<"3. Spell Book of Instant Time Stop(100G)\n";
-    cout<<"4. Spell Book of Object oriented programming(500g)\n";
-    int choiceC;
-    cin>>choiceC;
-     if(choiceC !=1 && choiceC !=2 && choiceC !=3 && choiceC !=4){
-    cout<<"you bum, thats not even an option! pick a number between 1 and 4";}
-    switch(choiceC){
-   
-    case 1:
-    cout<<"thanks for purchasing the Spell Book of Electro-telekinis for 25 gold\n";
-        gold=TWEN(gold, price);
-      break;
-    case 2:
-    cout<<"thanks for purchasing the Spell Book of Extreme Flatuation for 50 gold\n";
-        gold=FIFT(gold, price);
-      break;
-    case 3:
-    cout<<"thanks for purchasing the Spell Book of Instant Time Stop for 100 gold\n";
-        gold=HUND(gold, price);
-      break;
-    case 4:
-    cout<<"thanks for purchasing the Spell Book of Ojbcect oriented programming for 500 gold\n";
-        gold=FHUND(gold, price);
-      break;
+        srand(time(NULL));
+    Setup();
+    while (!gameOver)
+    {
+        Draw();
+        Input();
+        Logic();
+        usleep(100000); // Sleep for 0.1 seconds
     }
-    return main();
-    break;
-
-     case 4:
-    cout<<"\n\tType the corresponding number of the Potion you would you like to purchase\n";
-    cout<<"1. Potion of Instant Death(25g)\n";
-    cout<<"2. Juggernog (50g)\n";
-    cout<<"3. Felix Felicis (100g)\n";
-    cout<<"4. Ohio Water Potion (500g)\n";
-    int choiceD;
-    cin>>choiceD;
-     if(choiceD !=1 && choiceD !=2 && choiceD !=3 && choiceD !=4){
-    cout<<"you bum, thats not even an option! pick a number between 1 and 4";}
-    switch(choiceD){
-   
-    case 1:
-    cout<<"thanks for purchasing a Potion of Instant Death for 25 gold(kills anyone who touches the vial)\n";
-        gold=TWEN(gold, price);
-      break;
-    case 2:
-    cout<<"thanks for purchasing a bottle of Juggernog for 50 gold\n";
-        gold=FIFT(gold, price);
-      break;
-    case 3:
-    cout<<"thanks for purchasing a vial of Felix Felicis for 100 gold\n";
-        gold=HUND(gold, price);
-      break;
-    case 4:
-    cout<<"thanks for purchasing a botte of Ohio Water for 500 gold\n";
-        gold=FHUND(gold, price);
-      break;
+      break;//when you lose or leave the game it just resets 
     }
     return main();
     break;
 
 }
 }
-if (gold==0){
-    cout<<"get outta here ya broke boi!!!";
+if (c.get_deadRat()<4){
+    cout<<"get outta here ya broke boi!!!";//will fix this and the many other errors Iv've enevitibly made
     return 0;}
 
 
@@ -231,4 +210,4 @@ if (gold==0){
 		return;
 	}
 
-}*/
+}
