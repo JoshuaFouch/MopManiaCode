@@ -24,7 +24,7 @@ RustyBucketEvent::RustyBucketEvent() {};
 void RustyBucketEvent::trigger(character& c)
 {
 	endMusic();
-	//playMusic();
+	playMusic("Mattari.wav");
 	Sdelay(2);
 	std::cout << "You entered the Rusty Bucket...." << std::endl;
 	MSdelay(2000);
@@ -148,10 +148,16 @@ void RustyBucketEvent::trigger(character& c)
 			else if (choice == "5")
 			{
 				std::cout << "You have exited" << std::endl;
-				//exit
+				break;
+				return;
 			}
 			clear();
 			continue;
+		}
+		else if (choice == "5")
+		{
+			break;
+			return;
 		}
 	}
 }

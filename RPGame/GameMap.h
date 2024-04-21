@@ -70,6 +70,8 @@ public:
 	void birth_leftChild(locationNode* mommy, std::string n, std::string d1, std::string d2, event* ev);
 	void birth_midChild(locationNode* mommy, std::string n, std::string d1, std::string d2, event* ev);
 	void birth_rightChild(locationNode* mommy, std::string n, std::string d1, std::string d2, event* ev);
+	void setRusty(locationNode* n);
+	void setMailbox(locationNode* n);
 
 	//moving index
 	void moveIndex_left();
@@ -95,6 +97,7 @@ private:
 	locationNode* index = NULL;
 	locationNode* user = NULL;
 	locationNode* rustyBucket = NULL;
+	locationNode* mailbox = NULL;
 	locationNode* hospital = NULL;
 	int size = 0;
 };

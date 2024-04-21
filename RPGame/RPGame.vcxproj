@@ -155,6 +155,7 @@
   <ItemGroup>
     <Media Include="..\..\..\..\Downloads\onrepeat.wav" />
     <Media Include="..\..\audio for game\Mattari.wav" />
+    <Media Include="..\..\background.wav" />
     <Media Include="..\..\BAH.wav" />
     <Media Include="..\..\battle!.wav" />
     <Media Include="..\..\coins!.wav" />

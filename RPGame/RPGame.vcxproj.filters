@@ -176,6 +176,9 @@
     <Media Include="..\..\TheGrimeReaper.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="..\..\background.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Text Include="stufftodo.txt" />
