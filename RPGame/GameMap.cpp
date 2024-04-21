@@ -319,7 +319,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		displayLocationAgain(i);
 	}
 	else if (i->getEvent() == NULL) {	//case that will not hold true (all nodes will point to an event)
-		playMusic("Mattari.wav");
+		playMusic("background.wav");
 		displayLocation(i);
 	}
 	//first display the current location
