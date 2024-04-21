@@ -22,8 +22,9 @@ int main()
 	storageRoomevent* storageRoom = new storageRoomevent;
 	FinalEvent* finale = new FinalEvent;
 	MentalEvent* mental = new MentalEvent;
+	lungEvent* lung = new lungEvent;
 
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", finale);
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", lung);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", NULL);
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", rusty);
 	map.birth_midChild(map.getIndex(), "Le' Hospitale", "The home where all citizens of Mop-Mania once lived... it is now the demise of cleanliness", "Whoever enters these halls are said to never come out these days...\nThis is the place Janitorius commissioned you to clean.", NULL);

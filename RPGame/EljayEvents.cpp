@@ -155,3 +155,99 @@ void RustyBucketEvent::trigger(character& c)
 		}
 	}
 }
+
+lungEvent::lungEvent() {};
+
+void lungEvent::trigger(character& c)
+{
+	if (this->isDone == true) {
+		return;	//if character has already triggered the event in this node
+	}
+	else {
+		endMusic();
+		//playMusic();
+		Sdelay(2);
+		std::cout << "You entered the lung care room...";
+		MSdelay(3000);
+		std::cout << "You can barely see with the lgihts flickering on and off..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You felt a pair of eyes gazing upon you from..." << std::endl;
+		MSdelay(3000);
+		std::cout << "somewhere..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You noticed a sign pointing to an eletrical generator..." << std::endl;
+		MSdelay(3000);
+		std::cout << "As you walk towards the room to where the generator is you felt the presence of something big approaching..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You find yourself in complete darkness...";
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		MSdelay(100);
+		std::cout << "Bruh" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "A Bronchitis Rex lunged at you!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		/*battle rexl;
+		BronchitisRex rekt(1);
+		rekt.Battle_Sequence(c, rexl);*/ //I'm not sure what I did wrong, probably a very siple mistake I'm making...
+		battle garbage;
+		GarbageDan dan(1);
+		garbage.Battle_Sequence(c, dan);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "You turned on the generator..." << std::endl;
+		MSdelay(3000);
+		std::cout << "There is now light..." << std::endl;
+		MSdelay(3000);	
+		std::cout << "You felt a strong presence still lingering in the room..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(200);
+		std::cout << "NOOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "A Bronchitis Rex lunged from above!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		GarbageDan san(3);
+		garbage.Battle_Sequence(c, san);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Dotdot();
+		std::cout << "The room is finally ready to be cleaned..." << std::endl;
+		Sdelay(3);
+		clear();
+		playMusic("void.wav");
+		color(6);
+		std::cout << "Janitorius: You have done well my dear " << c.get_name() << "..." << std::endl;
+		Sdelay(4);
+		std::cout << "You have done well..." << std::endl;
+		Sdelay(2);
+		std::cout << "Soon, you'll see your purpose here..." << std::endl;
+		Sdelay(4);
+		clear();
+		std::cout << "I still continue to put my life in your hands... ";
+		Sdelay(3);
+		std::cout << "If you happen to run into someone... they aren't who you think they say they are..." << std::endl;
+		Sdelay(3);
+		std::cout << "its name... ";
+		MSdelay(2500);
+		std::cout << "is... ";
+		MSdelay(2500);
+		std::cout << "zzt-";
+		MSdelay(1000);
+		endMusic();
+
+		this->isDone = true;
+		return;
+	}
+
+}
