@@ -18,8 +18,6 @@ c.Rat_Sale(4);
 
 
 /*
-int main()
-{
     srand(time(NULL));
     Setup();
     while (!gameOver)
@@ -30,7 +28,6 @@ int main()
         usleep(100000); // Sleep for 0.1 seconds
     }
     return 0;
-}
 
 
 */
@@ -47,10 +44,10 @@ void cellarEvent::trigger(character& c)
             cout << "\nYou have "; c.get_deadRat(); cout << " rats"; MSdelay(500); cout << "s"; MSdelay(500); cout << "s"; MSdelay(500); cout << "s"; MSdelay(500);cout<< "remaining:"<<endl;
 cout<<"\n\n\tWhat type of items"; MSdelay(100); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " would you like?\n";
 color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
-std::cout << ""; color(8); std::cout << "[1]: "; color(7); std::cout << "Potions" << std::endl;
-std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Specialty Items" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
-std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Play Game" << std::endl;// neat? not my code tho
-std::cout << ""; color(8); std::cout << "[4]: "; color(7); std::cout << "Exit" << std::endl;
+std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Potions" << std::endl;
+std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Specialty Items" << std::endl;	//janitorius is the same person as grime reaper, no one knows who janitorius is except u
+std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "Play Game" << std::endl;// neat? not my code tho
+std::cout << "|"; color(8); std::cout << "[4]: "; color(7); std::cout << "Exit" << std::endl;
 color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
 
 int choice;
@@ -72,9 +69,10 @@ case 1:
     color(5);
     cout << "\n\tWhat potions"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " would you like?\n";
     color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
-    std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << " Sponge armor (increases your character's HP) - 4 rats" << '\n';
-    std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << " Bleach lining (increases your character's ATK) - 4 rats" << '\n';
-    std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << " Wax-coat (increases your character's DEF) - 4 rats" << '\n';
+    std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Sponge armor (increases your character's HP) - 4 rats" << '\n';
+    std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Bleach lining (increases your character's ATK) - 4 rats" << '\n';
+    std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "Wax-coat (increases your character's DEF) - 4 rats" << '\n';
+    std::cout << "|"; color(8); std::cout << "[4]: "; color(7); std::cout << "Back to main shop" << std::endl;
     color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
     int choiceA;
     cin >> choiceA;
@@ -111,9 +109,10 @@ case 1:
         color(5);
         cout << "\n\tSpecialty items "; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " would you like?\n";
         color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
-        std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << " Slippery Soap (lets you escape any battle) - 8 rats" << '\n';
-        std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << " Cleaning tips (shows enemy's current stats) - 4 rats" << '\n';//new one to show you the stats of your enemy?
-        std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << " Whendex (shows number of Dead rats left to collect) - 5 rats"<< '\n';//shows how many dead rats you have collected and how many are left maybe? the just when you use the item in inventory this info is displayed
+        std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Slippery Soap (lets you escape any battle) - 8 rats" << '\n';
+        std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Cleaning tips (shows enemy's current stats) - 4 rats" << '\n';//new one to show you the stats of your enemy?
+        std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "Whendex (shows number of Dead rats left to collect) - 5 rats"<< '\n';//shows how many dead rats you have collected and how many are left maybe? the just when you use the item in inventory this info is displayed
+        std::cout << "|"; color(8); std::cout << "[4]: "; color(7); std::cout << "Back to main shop" << std::endl;
         color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
     int choiceB;
     cin>>choiceB;

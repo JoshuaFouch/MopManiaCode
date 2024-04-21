@@ -3,7 +3,6 @@
 #include <ctime>
 #include <unistd.h>
 #include <termios.h>
-#include <ChatGPTsnake.h>
 
 using namespace std;
 
@@ -17,6 +16,18 @@ int nTail;
 enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN };
 eDirection dir;
 
+void HighScore(){
+    if (score>c.HighScore){//add this int and maybe getters and such for a new character variable
+       if (score>=100&&score<200){c.get_deadRat();}//if you break 100 for the first time you get a dead rat :}, should work since this only executes if hugher than hishscore
+       else if (score>=200&&score<300){c.get_deadRat();}
+        else if (score>=300&&score<400){c.get_deadRat();}
+         else if (score>=400&&score<500){c.get_deadRat();}
+          else if (score>=500&&score<600){c.get_deadRat();}//so each new score breaking 100 up to 500 will net you another rat
+        c.HighScore=score;//sets character's highscore variable to the new one thats "score"
+        
+    }
+}
+
 void Setup()
 {
     gameOver = false;
@@ -26,6 +37,7 @@ void Setup()
     foodX = rand() % width;
     foodY = rand() % height;
     score = 0;
+    nTail = 0;
 
     // Generate initial enemies
     for (int i = 0; i < 3; ++i) {
@@ -155,15 +167,14 @@ void Logic()
     default:
         break;
     }
-    if (x >= width)
-        x = 0;
-    else if (x < 0)
-        x = width - 1;
+    if (x >= width || x < 0 || y >= height || y < 0) // Check if snake hits boundaries
+        gameOver = true;
 
-    if (y >= height)
-        y = 0;
-    else if (y < 0)
-        y = height - 1;
+    // Check if the snake hits its own tail
+    for (int i = 0; i < nTail; i++) {
+        if (x == tailX[i] && y == tailY[i])
+            gameOver = true;
+    }
 
     // Check if the player collided with any enemy
     for (int i = 0; i < 10; ++i) {

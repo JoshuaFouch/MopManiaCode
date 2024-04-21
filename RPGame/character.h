@@ -109,6 +109,7 @@ protected:
 	int winNum = 0; //checks how many battles character has won
 	int lvl = 1;	//level
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
+	int HighScore = 0;//a int to track what the character's highscore is in the snake game
 
 	//inventory
 	inventory myInventory;
