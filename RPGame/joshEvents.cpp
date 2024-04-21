@@ -481,14 +481,18 @@ void FinalEvent::trigger(character& c)
 			clear();
 			std::cout << "Go my dear " << c.get_name() << std::endl;
 			Sdelay(3);
-			std::cout << "and restore our homeland to its former happiness and peace..." << std::endl;
+			std::cout << "and restore our homeland to its former happiness and peace...\n" << std::endl;
 			Sdelay(7);
-			std::cout << "T"; MSdelay(120); std::cout << "h"; MSdelay(230); std::cout << "a"; MSdelay(630); std::cout << "n"; MSdelay(230); std::cout << "k "; MSdelay(560);
-			std::cout << "y"; MSdelay(340); std::cout << "o"; MSdelay(333); std::cout << "u"; MSdelay(230); ellipsis(); std::cout << std::endl;
+			std::cout << "T"; MSdelay(220); std::cout << "h"; MSdelay(340); std::cout << "a"; MSdelay(630); std::cout << "n"; MSdelay(530); std::cout << "k "; MSdelay(560);
+			std::cout << "y"; MSdelay(640); std::cout << "o"; MSdelay(543); std::cout << "u"; MSdelay(650); ellipsis(); std::cout << std::endl;
 			Sdelay(5);
 			DotdotTwo();
 			color(7);
-			std::cout << "Janitorius, The Grime Reaper, dies." << std::endl;
+			std::cout << "Janitorius, The Grime Reaper, ";
+			Sdelay(1);
+			color(6);
+			std::cout << "dies.\n" << std::endl;
+			color(7);
 			Sdelay(5);
 			system("pause");
 			endMusic();
@@ -512,7 +516,11 @@ void FinalEvent::trigger(character& c)
 			std::cout << "He was the one who protected them..." << std::endl;
 			Sdelay(6);
 			DotdotTwo();
-			std::cout << "The Grime Reaper... will be forgotten.\n" << std::endl;
+			std::cout << "The Grime Reaper";
+			ellipsis();
+			Sdelay(2);
+			color(6);
+			std::cout << " will be forgotten.\n" << std::endl;
 			system("pause");
 
 			c.gameCompleted();

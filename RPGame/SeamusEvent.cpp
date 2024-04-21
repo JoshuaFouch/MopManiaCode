@@ -15,7 +15,7 @@ using namespace std;
 c.Rat_Sale(4);
 */
 /*CellarEvent*/
-cellarEvent::cellarEvent() {};//more of a boss type music?
+cellarEvent::cellarEvent() {};
 
 /*void cellarEvent::trigger(character& c)
 {

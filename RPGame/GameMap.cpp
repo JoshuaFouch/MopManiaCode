@@ -172,6 +172,13 @@ void gameMap::birth_rightChild(locationNode* mommy, std::string t, std::string d
 	size++;
 }
 
+void gameMap::setRusty(locationNode* n) {
+	rustyBucket = n;
+}
+void gameMap::setMailbox(locationNode* n) {
+	mailbox = n;
+}
+
 void gameMap::moveIndex_left()
 {
 	index = index->getLeft();
@@ -311,38 +318,98 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		clear();
 		displayLocationAgain(i);
 	}
-	else if (i->getEvent() == NULL) {
-		playMusic("Mattari.wav");
+	else if (i->getEvent() == NULL) {	//case that will not hold true (all nodes will point to an event)
+		playMusic("background.wav");
 		displayLocation(i);
 	}
 	//first display the current location
 	else if (i->alreadySeen()) {
-		clear();
-		i->getEvent()->trigger(c);
-		if (c.getLife() == 0) {
-			return;
-			//if the character is dead
+		if (i == this->mailbox || i == this->rustyBucket) {
+			clear();
+			i->getEvent()->trigger(c);
+			if (c.getLife() == 0) {
+				return;
+				//if the character is dead
+			}
+			else if (c.getEnd() == 1) {
+				return;
+			}
+			endMusic();
+			playMusic("Mattari.wav");
+			displayLocationAgain(i);
 		}
-		else if (c.getEnd() == true) {
-			return;
+		else if (i == this->root) {
+			clear();
+			i->getEvent()->trigger(c);
+			if (c.getLife() == 0) {
+				return;
+				//if the character is dead
+			}
+			else if (c.getEnd() == 1) {
+				return;
+			}
+			endMusic();
+			playMusic("jazzybeat.wav");
+			displayLocationAgain(i);
 		}
-		endMusic();
-		playMusic("Mattari.wav");
-		displayLocationAgain(i);
+		else {
+			clear();
+			i->getEvent()->trigger(c);
+			if (c.getLife() == 0) {
+				return;
+				//if the character is dead
+			}
+			else if (c.getEnd() == 1) {
+				return;
+			}
+			endMusic();
+			playMusic("background.wav");
+			displayLocationAgain(i);
+		}
 	}
 	else {
-		clear();
-		i->getEvent()->trigger(c);
-		if (c.getLife() == 0) {
-			return;
+		if (i == this->mailbox || i == this->rustyBucket) {
+			clear();
+			i->getEvent()->trigger(c);
+			if (c.getLife() == 0) {
+				return;
+			}
+			else if (c.getEnd() == 1) {
+				return;
+			}
+			endMusic();
+			playMusic("Mattari.wav");
+			displayLocation(i);
+			i->steppedFoot();
 		}
-		else if (c.getEnd() == true) {
-			return;
+		else if (i == this->root) {
+			clear();
+			i->getEvent()->trigger(c);
+			if (c.getLife() == 0) {
+				return;
+			}
+			else if (c.getEnd() == 1) {
+				return;
+			}
+			endMusic();
+			playMusic("jazzybeat.wav");
+			displayLocation(i);
+			i->steppedFoot();
 		}
-		endMusic();
-		playMusic("Mattari.wav");
-		displayLocation(i);
-		i->steppedFoot();
+		else {
+			clear();
+			i->getEvent()->trigger(c);
+			if (c.getLife() == 0) {
+				return;
+			}
+			else if (c.getEnd() == 1) {
+				return;
+			}
+			endMusic();
+			playMusic("background.wav");
+			displayLocation(i);
+			i->steppedFoot();
+		}
 	}
 
 	if (c.getExit() == 1) {
