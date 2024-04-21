@@ -191,10 +191,10 @@ void lungEvent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		/*battle rexl;
-		BronchitisRex rekt(1);
+		BronchitisRex rekt(2);
 		rekt.Battle_Sequence(c, rexl);*/ //I'm not sure what I did wrong, probably a very siple mistake I'm making...
 		battle garbage;
-		GarbageDan dan(1);
+		GarbageDan dan(2);
 		garbage.Battle_Sequence(c, dan);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
@@ -216,8 +216,106 @@ void lungEvent::trigger(character& c)
 		std::cout << "A Bronchitis Rex lunged from above!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		GarbageDan san(3);
+		GarbageDan san(4);
 		garbage.Battle_Sequence(c, san);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Dotdot();
+		std::cout << "The room is finally ready to be cleaned..." << std::endl;
+		Sdelay(3);
+		clear();
+		playMusic("void.wav");
+		color(6);
+		std::cout << "Janitorius: You have done well my dear " << c.get_name() << "..." << std::endl;
+		Sdelay(4);
+		std::cout << "You have done well..." << std::endl;
+		Sdelay(2);
+		std::cout << "Soon, you'll see your purpose here..." << std::endl;
+		Sdelay(4);
+		clear();
+		std::cout << "I still continue to put my life in your hands... ";
+		Sdelay(3);
+		std::cout << "If you happen to run into someone... they aren't who you think they say they are..." << std::endl;
+		Sdelay(3);
+		std::cout << "its name... ";
+		MSdelay(2500);
+		std::cout << "is... ";
+		MSdelay(2500);
+		std::cout << "zzt-";
+		MSdelay(1000);
+		endMusic();
+
+		this->isDone = true;
+		return;
+	}
+
+}
+
+pharmEvent::pharmEvent() {};
+
+void pharmEvent::trigger(character& c)
+{
+	if (this->isDone == true) {
+		return;	//if character has already triggered the event in this node
+	}
+	else {
+		endMusic();
+		//playMusic();
+		Sdelay(2);
+		std::cout << "You entered the pharmacy...";
+		MSdelay(3000);
+		std::cout << "You can barely see with the lgihts flickering on and off..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You felt a pair of eyes gazing upon you from..." << std::endl;
+		MSdelay(3000);
+		std::cout << "somewhere..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You noticed a sign pointing to an eletrical generator..." << std::endl;
+		MSdelay(3000);
+		std::cout << "As you walk towards the room to where the generator is you felt the presence of something big approaching..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You felt a drip of... mucus?";
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		MSdelay(100);
+		std::cout << "Ain't no way lol" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "A Muscus Maw dropped in from above!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		battle garbage;
+		GarbageDan tan(1);
+		garbage.Battle_Sequence(c, tan);
+		/*battle mucus;
+		MucusMaw muc(1);
+		mucus.Battle_Sequence(c, muc);*/
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "You turned on the generator..." << std::endl;
+		MSdelay(3000);
+		std::cout << "There is now light..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You felt a strong presence still lingering in the room..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(200);
+		std::cout << "NOOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "A Musucs Maw leaps towards you!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		/*MucusMaw mucu(3);
+		mucus.Battle_Sequence(c, mucu);*/
+		GarbageDan can(5);
+		garbage.Battle_Sequence(c, can);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}

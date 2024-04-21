@@ -1,7 +1,7 @@
 1. create Hairball enemy
 2. create GrimeReaper enemy
 3. 1st, 2nd, 3rd, and Le' Hospitale node events	(janitorius and Filthy bubble lore talking to you)
-4. lung care event (bronchitis rex)	//eljay
+4. lung care event (bronchitis rex)	//eljay (done)
 	- contains one bronchitis rex
 	- you can follow the same syntax as another event
 	- but different dialogue
