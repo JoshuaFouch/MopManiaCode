@@ -2,6 +2,7 @@
 #include "enemy.h"
 #include "character.h"
 #include "battle.h"
+#include "npc.h"
 //#include <ChatGPTsnake.h>
 
 using namespace std;
@@ -187,3 +188,137 @@ void cellarEvent::trigger(character& c) {
     }
 }
 
+//BubblyBoy
+bubbleBoy::bubbleBoy() : NPC() {}
+
+void bubbleBoy::dialogue(character& c)
+{
+    color(7);
+    clear();
+    std::cout << "You hear wailing, and decide to walk nearer to the noise" << std::endl;
+    color(9); //this dialogue will be light blue, moms should be dark blue
+    std::cout << "Bubble Boy: Can anybody hear me?" << std::endl;
+    color(7); std::cout << "1. I can hear you!" << std::endl;
+    std::cout << "2. Sorry kid, I've got more important things to do" << std::endl;	//change back to white for user
+    int choice;
+    std::cin >> choice;
+
+    if (choice == 1)
+    {
+        color(9);
+        std::cout << "Bubble Boy: Finally someone came!" << std::endl;;
+        MSdelay(2000);
+        std::cout << "I was exploring this creepy old mansion, looking for soap potions" << std::endl;
+        MSdelay(3000);
+        std::cout << "when all of a sudden this broom closet door shut on me!" << std::endl;
+        MSdelay(3000);
+        clear();
+        std::cout << "I was stuck and no one heard me yelling!!" << std::endl;
+        MSdelay(2000);
+        std::cout << "Guess I should've listened to mom..." << std::endl;
+        MSdelay(2500);
+        clear();
+        std::cout << "I don't really need these potions anymore... so I guess if you can get me home," << std::endl;
+        MSdelay(2000);
+        std::cout << "these 5 soap potions I collected are yours!" << std::endl;
+        MSdelay(3500);
+        clear();
+        std::cout << "And I'm sure mom would be mighty glad to see me again too!" << std::endl;
+        MSdelay(2000);
+        std::cout << "So, what do you say are you gonna help me get back to mom???";
+        MSdelay(2000);
+        color(7);//change back to white for user
+        std::cout << "1. You've got yourself a deal kiddo!" << std::endl;
+        std::cout << "2. Ain't no way ya blabbering bubble!" << std::endl;	//change back to white for user
+
+
+        int choice;
+        std::cin >> choice;
+        if (choice == 1) {
+            color(9);
+            std::cout << "Bubble Boy: Thank you soap much, kind adventurer!" << std::endl;
+            MSdelay(2000);
+            color(7);
+            std::cout << "*Bubbly Boy* joined you on your quest! \nLooks like bringing him back to his mom will net you some sweet rewards\n";
+            c.bubAdvance();	//set the int to the corresponding quest progression level, probably 1, to represent having bubble boy with you
+            system("pause");
+        }
+        else if (choice == 2) {
+            color(9);
+            std::cout << "Bubble Boy: Oh well, guess I'll just die here" << std::endl;
+            MSdelay(4000);
+            std::cout << "because I'm just a helpless kid, and this mean adventurer refuses to help" << std::endl;
+            MSdelay(3000);
+            std::cout << "*sighs dramatically*" << std::endl;
+            MSdelay(3000);
+            clear();
+            color(7);
+        }
+
+    }
+    else if (choice == 2) {
+        color(9);
+        std::cout << "Bubble Boy: Wait someone actually hears me!?" << std::endl;
+        MSdelay(2000);
+        std::cout << "and you're not even gonna help me??" << std::endl;
+        MSdelay(2000);
+        std::cout << "what a mean adventurer..." << std::endl;
+        MSdelay(2000);
+        std::cout << "I'm never gonna see mom again am I?" << std::endl;
+        MSdelay(2000);
+        clear();
+        Dotdot();
+        std::cout << "*continues wailings*" << std::endl;
+        MSdelay(2000);
+        clear();
+        color(7);
+    }
+
+    else {
+        color(9);//this is a sort of 1d10t pr00fing
+        std::cout << "Bubble Boy: What was that?" << std::endl;
+        MSdelay(2000);
+        std::cout << "Oh! He must not speak Soapanese..." << std::endl;
+        MSdelay(2000);
+        std::cout << "*while over enunciating syllables* \nEYE";
+        MSdelay(500); std::cout << " KNEEED";
+        MSdelay(500); std::cout << " YOOURRR";
+        MSdelay(500); std::cout << " HELPPPP! " << std::endl;
+        clear();
+        Dotdot();
+        std::cout << "Yeah, that probably didn't help the situation..." << std::endl;
+        MSdelay(4000);
+        std::cout << "Guess I'm not getting saved am I?" << std::endl;
+        MSdelay(2000);
+        std::cout << "*continues wailings*" << std::endl;
+        MSdelay(4000);
+        color(7);
+        clear();
+        std::cout << "You should probably try a proper answer next time..." << std::endl;
+        system("pause");
+        bubbleBoy::dialogue(c);
+    }
+}
+
+//bubble mama
+bubbleMama::bubbleMama() {};
+
+void bubbleMama::dialogue(character& c) {
+    std::cout << "not finished" << std::endl;
+    system("pause");
+}
+
+
+dermEvent::dermEvent() {};
+
+void dermEvent::trigger(character& c) {
+    std::cout << "not finished" << std::endl;
+    system("pause");
+}
+
+supplyEvent::supplyEvent() {};
+
+void supplyEvent::trigger(character& c) {
+    std::cout << "not finished" << std::endl;
+    system("pause");
+}

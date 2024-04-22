@@ -448,3 +448,19 @@ void labEvent::trigger(character& c)
 	}
 
 }
+
+operatEvent::operatEvent() {};
+
+void operatEvent::trigger(character& c) {
+	std::cout << "not finished" << std::endl;
+	system("pause");
+}
+
+
+mailboxEvent::mailboxEvent() {};
+
+void mailboxEvent::trigger(character& c) {
+	//depending on the "checked" variable and perhaps level, it will display different events
+	std::cout << "not finished" << std::endl;
+	system("pause");
+}
