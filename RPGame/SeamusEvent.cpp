@@ -151,9 +151,9 @@ void cellarEvent::trigger(character& c) {
         endMusic();
         Sdelay(2);
         std::cout << "You entered The Cellar... ";
-        MSdelay(1000);
-        std::cout << "The room is dark, and the air thick as mud, with a wretched stench of rotting flesh..." << std::endl;
         MSdelay(2000);
+        std::cout << "The room is dark, and the air thick as mud, with a wretched stench of rotting flesh..." << std::endl;
+        MSdelay(4000);
         std::cout << "You walk towards the back of the room and can faintly see a lengthy crack in the wall..." << std::endl;
         MSdelay(3000);
         std::cout << "Suddenly you see a pair slitted eyes blink open, their yellow glow slightly lighting up the room " << std::endl;
@@ -164,7 +164,7 @@ void cellarEvent::trigger(character& c) {
         MSdelay(3000);
 
         color(5);
-        std::cout << "Putrid Python: You there"; MSdelay(500); std::cout << ", yes"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << ""; MSdelay(500); std::cout << ", you there with the moppy fac"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "e...";
+        std::cout << "Putrid Python:"; MSdelay(500); std::cout << " You there"; MSdelay(500); std::cout << ", ye"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << ""; MSdelay(500); std::cout << ", you there with the moppy fac"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "e...";
         MSdelay(3000);
         std::cout << "I need your assistanc"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "c"; MSdelay(200); cout << "e"; MSdelay(500); std::cout << "I have great rewards"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << ""; MSdelay(500); std::cout << " to offer you" << std::endl;
         Sdelay(2);
