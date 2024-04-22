@@ -270,15 +270,13 @@ void pharmEvent::trigger(character& c)
 		MSdelay(3000);
 		std::cout << "You can barely see with the lgihts flickering on and off..." << std::endl;
 		MSdelay(3000);
-		std::cout << "You felt a pair of eyes gazing upon you from..." << std::endl;
+		std::cout << "The corners of the walls are lined with slime and mucus." << std::endl;
 		MSdelay(3000);
-		std::cout << "somewhere..." << std::endl;
+		std::cout << "you notice as you kept going down..." << std::endl;
 		MSdelay(3000);
-		std::cout << "You noticed a sign pointing to an eletrical generator..." << std::endl;
+		std::cout << "You noticed more mucus build-ups are thicker..." << std::endl;
 		MSdelay(3000);
-		std::cout << "As you walk towards the room to where the generator is you felt the presence of something big approaching..." << std::endl;
-		MSdelay(3000);
-		std::cout << "You felt a drip of... mucus?";
+		std::cout << "As you started cleaning the mucus..." << std::endl;
 		MSdelay(3000);
 		Dotdot();
 		color(4);
@@ -289,21 +287,18 @@ void pharmEvent::trigger(character& c)
 		std::cout << "A Muscus Maw dropped in from above!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		battle garbage;
-		GarbageDan tan(1);
-		garbage.Battle_Sequence(c, tan);
-		/*battle mucus;
+		battle mucus;
 		MucusMaw muc(1);
-		mucus.Battle_Sequence(c, muc);*/
+		mucus.Battle_Sequence(c, muc);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
-		std::cout << "You turned on the generator..." << std::endl;
+		std::cout << "You noticed the mucus starting to disapate..." << std::endl;
 		MSdelay(3000);
-		std::cout << "There is now light..." << std::endl;
+		std::cout << "Now you continue to suck up the mucus..." << std::endl;
 		MSdelay(3000);
-		std::cout << "You felt a strong presence still lingering in the room..." << std::endl;
+		std::cout << "You notice the mucus starting to come together..." << std::endl;
 		MSdelay(3000);
 		Dotdot();
 		color(4);
@@ -317,33 +312,33 @@ void pharmEvent::trigger(character& c)
 		Sdelay(2);
 		/*MucusMaw mucu(3);
 		mucus.Battle_Sequence(c, mucu);*/
-		GarbageDan can(5);
-		garbage.Battle_Sequence(c, can);
+		MucusMaw mucu(5);
+		mucus.Battle_Sequence(c, mucu);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
 		Dotdot();
-		std::cout << "The room is finally ready to be cleaned..." << std::endl;
+		std::cout << "The room is finally cleared of mucus.." << std::endl;
 		Sdelay(3);
 		clear();
 		playMusic("void.wav");
 		color(6);
-		std::cout << "Janitorius: You have done well my dear " << c.get_name() << "..." << std::endl;
+		std::cout << "Janitorius: Ah yes this disgusting room is finally clean... " << c.get_name() << "..." << std::endl;
 		Sdelay(4);
-		std::cout << "You have done well..." << std::endl;
+		std::cout << "Thos Mucus Maws had a mind of their own..." << std::endl;
 		Sdelay(2);
-		std::cout << "Soon, you'll see your purpose here..." << std::endl;
+		std::cout << "Now as I was saying..." << std::endl;
 		Sdelay(4);
 		clear();
-		std::cout << "I still continue to put my life in your hands... ";
+		std::cout << "The thing you run into is not what they seem to be... ";
 		Sdelay(3);
-		std::cout << "If you happen to run into someone... they aren't who you think they say they are..." << std::endl;
+		std::cout << "Its name..." << std::endl;
 		Sdelay(3);
-		std::cout << "its name... ";
+		std::cout << "is... ";
 		MSdelay(2500);
 		std::cout << "is... ";
 		MSdelay(2500);
-		std::cout << "zzt-";
+		std::cout << "bu-";
 		MSdelay(1000);
 		endMusic();
 
