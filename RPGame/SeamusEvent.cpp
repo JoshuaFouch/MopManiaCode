@@ -147,6 +147,9 @@ case 1:
     break;
 
  case 3:
+
+     std::cout << "I will have a game to play soon" << endl;
+     /*
         srand(time(NULL));
     Setup();
     while (!gameOver)
@@ -159,16 +162,17 @@ case 1:
       break;//when you lose or leave the game it just resets 
     }
     return main();
-    break;
+    break;*/
+    
 
 }
 }
 if (c.get_deadRat()<4){
     cout<<"get outta here ya broke boi!!!";//will fix this and the many other errors Iv've enevitibly made
-    return 0;}
+    return;}
 
 
-		return;	//if character has already triggered the event in this node
+		//return;	//if character has already triggered the event in this node
 	}
 	else {
 		endMusic();
@@ -209,4 +213,3 @@ if (c.get_deadRat()<4){
 		return;
 	}
 
-}
