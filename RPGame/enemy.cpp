@@ -1075,3 +1075,5 @@ void GrimeReaper::Enrage(character& c)
 	MSdelay(1000);
 	color(7);
 }
+
+
