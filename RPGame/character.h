@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "inventory.h"
+
 
 //forward declaration
 class enemy;
@@ -79,7 +79,7 @@ public:
 	bool noItems();
 	void useInventory();
 	void checkInventory();
-	void testInventory();
+
 
 	//for quests
 	int getBub();
@@ -111,8 +111,7 @@ protected:
 	int ExpReq = 1; //a counter that tracks how many battles are required to level up
 	int HighScore = 0;//a int to track what the character's highscore is in the snake game
 
-	//inventory
-	inventory myInventory;
+
 	int healUp = 0;	//counter for how many potions a character has
 	int attUp = 0;	//counter for how many attack up potions a character has
 	int defUp = 0;	//counter for how many defense up potions a character has

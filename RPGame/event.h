@@ -50,7 +50,7 @@ class cellarEvent : public event	//putrid python
 {
 public:
 	cellarEvent();
-	//void trigger(character& c);
+	void trigger(character& c);
 };
 
 //mailbox
@@ -74,7 +74,7 @@ class HospitalEvent : public event	//a bunch of NPC's
 {
 public:
 	HospitalEvent();	//same idea as mailbox, gives different lore dialogue
-	void trigger(character& c);
+	//void trigger(character& c);
 	int counter = 0;
 };
 
