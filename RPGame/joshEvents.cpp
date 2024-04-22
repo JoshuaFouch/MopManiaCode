@@ -533,5 +533,7 @@ void FinalEvent::trigger(character& c)
 
 HospitalEvent::HospitalEvent() {};
 
-void 
+void HospitalEvent::trigger(character& c) {
+	std::cout << "ewfesf" << std::endl;
+}
 
