@@ -2,7 +2,7 @@
 #include "enemy.h"
 #include "character.h"
 #include "battle.h"
-#include <ChatGPTsnake.h>
+#include "ChatGPTsnake.h"
 
 using namespace std;
 
