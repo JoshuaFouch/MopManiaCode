@@ -19,6 +19,7 @@ they will steal some money from you to keep up with the rent and keep the Rusty 
 
 */
 
+
 RustyBucketEvent::RustyBucketEvent() {};
 
 void RustyBucketEvent::trigger(character& c)
