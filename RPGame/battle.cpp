@@ -73,8 +73,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	battleStart(c, e);
 	playMusic("battlemusic.wav");
 
-	int run = 0;	//if character wants to run away from battle
-	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
+	while (e.get_hp() > 0 && c.get_hp() > 0 && c.getRun() == 0)
 	{
 		clear();
 		BattleStats(c, e);	//begins by display the stats
@@ -168,11 +167,15 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			}
 			else
 			{
-				c.useInventory();
+				c.useInventory(e);
 				clear();
 				BattleStats(c, e);
 				if (e.get_hp() <= 0)
 				{
+					clear();
+					break;
+				}
+				if (c.getRun() == 1) {
 					clear();
 					break;
 				}
@@ -191,6 +194,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			c.describeAttacks();
 			break;
 		case 8:
+			clear();
 			std::cout << "Nice try bud, you can't run." << std::endl;
 			MSdelay(1500);
 			continue;
@@ -213,11 +217,12 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		c.die();
 		GameOver(c);
 	}
-	else if (run == 1)
+	else if (c.getRun() == 1)
 	{
 		endMusic();
 		playMusic("OE.wav");
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
+		c.resetRun();
 	}
 	system("pause");
 	clear();
@@ -408,12 +413,19 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 			}
 			else
 			{
-				c.useInventory();
+				c.useInventory(e);
 				clear();
 				BattleStats(c, e, statCounter);
 				if (e.get_hp() <= 0)
 				{
 					clear();
+					break;
+				}
+				if (c.getRun() == 1) {
+					clear();
+					std::cout << "You can't run... this is a boss battle..." << std::endl;
+					Sdelay(4);
+					c.resetRun();
 					break;
 				}
 				e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
@@ -432,9 +444,10 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 			c.describeAttacks();
 			break;
 		case 8:
+			clear();
 			std::cout << "Nice try bud, you can't run." << std::endl;
 			MSdelay(1500);
-			//run = 1;
+			c.resetRun();
 			continue;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
@@ -456,8 +469,9 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 		endMusic();
 		GameOver(c);
 	}
-	else if (run == 1)
+	else if (c.getRun() == 1)
 	{
+		clear();
 		endMusic();
 		playMusic("OE.wav");
 		std::cout << "You ran... Imagine being a coward..." << std::endl;

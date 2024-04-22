@@ -561,6 +561,11 @@ void basementEvent::trigger(character& c) {
 }
 
 
+//create bubblyboy enemy
+
+//create putridpython enemy
+
+
 
 
 
