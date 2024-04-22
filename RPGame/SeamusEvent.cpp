@@ -2,7 +2,7 @@
 #include "enemy.h"
 #include "character.h"
 #include "battle.h"
-#include "ChatGPTsnake.h"
+//#include <ChatGPTsnake.h>
 
 using namespace std;
 
@@ -32,7 +32,7 @@ c.Rat_Sale(4);
 
 */
 
-/*CellarEvent*/
+/*CellarEvent
 cellarEvent::cellarEvent() {};
 
 void cellarEvent::trigger(character& c)
@@ -147,9 +147,6 @@ case 1:
     break;
 
  case 3:
-
-     std::cout << "I will have a game to play soon" << endl;
-     /*
         srand(time(NULL));
     Setup();
     while (!gameOver)
@@ -162,8 +159,7 @@ case 1:
       break;//when you lose or leave the game it just resets 
     }
     return main();
-    break;*/
-    
+    break;
 
 }
 }
@@ -213,3 +209,4 @@ if (c.get_deadRat()<4){
 		return;
 	}
 
+}

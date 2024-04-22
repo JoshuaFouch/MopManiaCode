@@ -29,8 +29,8 @@
     <Filter Include="Battle Files">
       <UniqueIdentifier>{f0133ac8-1eee-423b-98e0-21742436361d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Inventory Files">
-      <UniqueIdentifier>{d27b8a28-22d9-4cda-8682-343e8260a9d9}</UniqueIdentifier>
+    <Filter Include="ChatGpt_snek">
+      <UniqueIdentifier>{acb5d935-bd98-42f8-bcc0-977c2a4c8a2a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,11 +58,8 @@
     <ClInclude Include="battle.h">
       <Filter>Battle Files</Filter>
     </ClInclude>
-    <ClInclude Include="inventory.h">
-      <Filter>Inventory Files</Filter>
-    </ClInclude>
-    <ClInclude Include="item.h">
-      <Filter>Inventory Files</Filter>
+    <ClInclude Include="ChatGPTsnake.h">
+      <Filter>ChatGpt_snek</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -90,9 +87,6 @@
     <ClCompile Include="battle.cpp">
       <Filter>Battle Files</Filter>
     </ClCompile>
-    <ClCompile Include="item.cpp">
-      <Filter>Inventory Files</Filter>
-    </ClCompile>
     <ClCompile Include="joshEvents.cpp">
       <Filter>Event Files</Filter>
     </ClCompile>
@@ -101,6 +95,9 @@
     </ClCompile>
     <ClCompile Include="SeamusEvent.cpp">
       <Filter>Event Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatGPTsnake.cpp">
+      <Filter>ChatGpt_snek</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

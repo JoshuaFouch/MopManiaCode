@@ -18,13 +18,14 @@ int main()
 	event* e = new event;
 
 	lungEvent* lung = new lungEvent;
+	pharmEvent* pharm = new pharmEvent;
 	waitingRoomEvent* waitingRoom = new waitingRoomEvent;
 	RustyBucketEvent* rusty = new RustyBucketEvent;
 	storageRoomevent* storageRoom = new storageRoomevent;
 	FinalEvent* finale = new FinalEvent;
 	MentalEvent* mental = new MentalEvent;
 
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", e);
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", NULL); // e even was here
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", e);
 	map.setMailbox(map.getIndex()->getLeft());
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", rusty);
@@ -45,7 +46,7 @@ int main()
 	map.moveIndex_middle();
 	map.birth_rightChild(map.getIndex(), "Dermatology", "You enter the dermatology... its clean and supreme!", "There is no dead skin anywhere!", NULL);
 	map.birth_midChild(map.getIndex(), "Operating Room", "Your happy to see the operating room in clean condition.", "Scalpels and needles are nicely organized on the counter...", NULL);
-	map.birth_leftChild(map.getIndex(), "Pharmacy", "You see beautiful shelves of pill bottles organized neatly", "Your head is starting from, maybe go to take some acetaminophen...", NULL);
+	map.birth_leftChild(map.getIndex(), "Pharmacy", "You see beautiful shelves of pill bottles organized neatly", "Your head is starting from, maybe go to take some acetaminophen...", pharm);
 	map.birth_midChild(map.getIndex()->getLeft(), "Supply Closet", "You open the closet door and see many bags of.... pills....?", "You see lists of old prescription bottles nicely stacked on the walls.", NULL);
 	map.birth_midChild(map.getIndex()->getMid(), "Laboratory", "You enter and see experimental health technologies", "There are large empty cages... it seems they used to cage testing primates...", NULL);
 
