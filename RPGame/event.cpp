@@ -37,13 +37,13 @@ void waitingRoomEvent::trigger(character& c)
 		//playMusic();
 		Sdelay(2);
 		std::cout << "You entered the waiting room... ";
-		MSdelay(1000);
-		std::cout << "A rancid stench fills the air..." << std::endl;
 		MSdelay(2000);
+		std::cout << "A rancid stench fills the air..." << std::endl;
+		MSdelay(3000);
 		std::cout << "You feel a dark presence around you..." << std::endl;
-		MSdelay(3000);
+		MSdelay(4000);
 		std::cout << "A garbage can fell to the ground and trash fell all over the place...";
-		MSdelay(3000);
+		MSdelay(5000);
 		Dotdot();
 		color(4);
 		std::cout << "OHH...";
