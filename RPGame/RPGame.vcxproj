@@ -140,15 +140,15 @@
   <ItemGroup>
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="ChatGPTsnake.cpp" />
-    <ClCompile Include="EljayEvents.cpp" />
+    <ClCompile Include="EljayStuff.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="event.cpp" />
     <ClCompile Include="GameMap.cpp" />
-    <ClCompile Include="joshEvents.cpp" />
+    <ClCompile Include="JoshStuff.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="npc.cpp" />
-    <ClCompile Include="SeamusEvent.cpp" />
+    <ClCompile Include="SeamusStuff.cpp" />
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>

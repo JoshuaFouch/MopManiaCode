@@ -514,9 +514,9 @@ void character::checkInventory()
         color(8); std::cout << "[1]: "; color(7); std::cout << "Potions: " << this->get_healUp();
         color(4); std::cout << "\t\t\tHP: " << maxHp << std::endl;
         color(8); std::cout << "[2]: "; color(7); std::cout << "Attack Ups: " << this->get_attUp();
-        color(4); std::cout << "\t\t\tAttack: " << maxAtt << std::endl;
+        color(4); std::cout << "\t\tAttack: " << maxAtt << std::endl;
         color(8); std::cout << "[3]: "; color(7); std::cout << "Defense Ups: " << this->get_defUp();
-        color(4); std::cout << "\t\t\tDefense: " << maxDef << std::endl;
+        color(4); std::cout << "\t\tDefense: " << maxDef << std::endl;
         color(8); std::cout << "[4]: "; color(7); std::cout << "Dead Rats: " << this->get_deadRat() << std::endl;
         color(8); std::cout << "[5]: "; color(7); std::cout << "Slippery Soap: " << this->get_slipperySoap() << std::endl;
         color(8); std::cout << "[6]: "; color(7); std::cout << "Cleaning Tips: " << this->get_cleaningTips() << std::endl;

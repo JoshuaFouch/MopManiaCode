@@ -560,8 +560,140 @@ void basementEvent::trigger(character& c) {
 	system("pause");
 }
 
+//hairball enemy
+Hairball::Hairball(int lvl) : enemy(lvl) {
+	set_name("HairBall");
+	set_stats(50, 85, 60, lvl);
+}
+void Hairball::manuallyConstruct(int lvl) {
+	set_name("HairBall");
+	set_stats(50, 85, 60, lvl);
+}
+void Hairball::Attack1(character& c)
+{
+	color(4);
+	std::cout << "\tClog Cannon!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void Hairball::Attack2(character& c)
+{
+	color(4);
+	std::cout << "\tKnotty Knockout!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void Hairball::Attack3(character& c)
+{
+	color(4);
+	std::cout << "\tTangle Toss!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void Hairball::Attack4(character& c)
+{
+	color(4);
+	std::cout << "\tFurball Fling!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void Hairball::Heal(character& c)
+{
+	color(4);
+	std::cout << "\tSPLIT END MEND" << std::endl;
+	MSdelay(1000);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	MSdelay(1000);
+}
+void Hairball::Fortify(character& c)
+{
+	color(4);
+	std::cout << "\tMAT SHIELD" << std::endl;
+	MSdelay(1000);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	MSdelay(1000);
+}
+void Hairball::Enrage(character& c)
+{
+	color(4);
+	std::cout << "\tSTATIC SURGE" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
+	MSdelay(1000);
+	color(7);
+}
+
 
 //create bubblyboy enemy
+BubblyBoy::BubblyBoy(int lvl) : enemy(lvl) {
+	set_name("Bubbly Boy");
+	set_stats(50, 85, 60, lvl);
+}
+void BubblyBoy::manuallyConstruct(int lvl) {
+	set_name("Bubbly Boy");
+	set_stats(50, 85, 60, lvl);
+}
+void BubblyBoy::Attack1(character& c)
+{
+	color(9);
+	std::cout << "\tSqueaky Slash!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void BubblyBoy::Attack2(character& c)
+{
+	color(9);
+	std::cout << "\tSoapy Slap!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void BubblyBoy::Attack3(character& c)
+{
+	color(9);
+	std::cout << "\tFoamy Fit!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void BubblyBoy::Attack4(character& c)
+{
+	color(9);
+	std::cout << "\tBubble Burst!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void BubblyBoy::Heal(character& c)
+{
+	color(9);
+	std::cout << "\tBUBBLE BATH" << std::endl;
+	MSdelay(1000);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	color(7);
+	MSdelay(1000);
+}
+void BubblyBoy::Fortify(character& c)
+{
+	color(9);
+	std::cout << "\tBUBBLE BARRIER" << std::endl;
+	MSdelay(1000);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	color(7);
+	MSdelay(1000);
+}
+void BubblyBoy::Enrage(character& c)
+{
+	color(9);
+	std::cout << "\tBUBBLE BOOST" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
+	MSdelay(1000);
+	color(7);
+}
 
 //create putridpython enemy
 
