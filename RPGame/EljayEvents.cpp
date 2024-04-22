@@ -268,20 +268,20 @@ void pharmEvent::trigger(character& c)
 		Sdelay(2);
 		std::cout << "You entered the pharmacy...";
 		MSdelay(3000);
-		std::cout << "You can barely see with the lgihts flickering on and off..." << std::endl;
-		MSdelay(3000);
+		std::cout << "You can barely see with the lights flickering on and off..." << std::endl;
+		MSdelay(4000);
 		std::cout << "The corners of the walls are lined with slime and mucus." << std::endl;
-		MSdelay(3000);
+		MSdelay(5000);
 		std::cout << "you notice as you kept going down..." << std::endl;
 		MSdelay(3000);
 		std::cout << "You noticed more mucus build-ups are thicker..." << std::endl;
-		MSdelay(3000);
+		MSdelay(4000);
 		std::cout << "As you started cleaning the mucus..." << std::endl;
-		MSdelay(3000);
+		MSdelay(5000);
 		Dotdot();
 		color(4);
 		MSdelay(100);
-		std::cout << "Ain't no way lol" << std::endl;
+		std::cout << "Ain't no way..." << std::endl;
 		Sdelay(2);
 		color(7);
 		std::cout << "A Muscus Maw dropped in from above!" << std::endl;
@@ -339,6 +339,107 @@ void pharmEvent::trigger(character& c)
 		std::cout << "is... ";
 		MSdelay(2500);
 		std::cout << "bu-";
+		MSdelay(1000);
+		endMusic();
+
+		this->isDone = true;
+		return;
+	}
+
+}
+
+/*labortory event*/
+labEvent::labEvent() {};
+
+void labEvent::trigger(character& c)
+{
+	if (this->isDone == true) {
+		return;	//if character has already triggered the event in this node
+	}
+	else {
+		endMusic();
+		//playMusic();
+		Sdelay(2);
+		std::cout << "You busted down the doors to the labortory ";
+		MSdelay(2000);
+		std::cout << "A tray of scalps and knivies are neatly sorted" << std::endl;
+		MSdelay(3000);
+		std::cout << "You feel pins and needles all over your body..." << std::endl;
+		MSdelay(4000);
+		std::cout << "You look down and notice a needle stuck in onto you...";
+		MSdelay(5000);
+		Dotdot();
+		color(4);
+		std::cout << "OH SHOOT!";
+		Sdelay(2);
+		color(7);
+		std::cout << "A NeedleNed is attached to you!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		battle needle;
+		NeedleNed ne(2);
+		needle.Battle_Sequence(c, ne);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "You felt more pins needles..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(200);
+		std::cout << "SHOOT!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "Another NeedleNed appeared from nowhere!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		NeedleNed nee(3);
+		needle.Battle_Sequence(c, nee);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "The stench is starting to dissipate..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(200);
+		std::cout << "NOOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "A Powerful NeedleNed appeared to face you!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		NeedleNed need(4);
+		needle.Battle_Sequence(c, need);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Dotdot();
+		std::cout << "The presence of needles are gonna!" << std::endl;
+		Sdelay(3);
+		clear();
+		playMusic("void.wav");
+		color(6);
+		std::cout << "Janitorius: Oh I never like those needles very much..." << c.get_name() << "..." << std::endl;
+		Sdelay(4);
+		std::cout << "You have rid the room of violent needles..." << std::endl;
+		Sdelay(2);
+		std::cout << "It smells... not like needles..." << std::endl;
+		Sdelay(4);
+		clear();
+		std::cout << "What... ";
+		Sdelay(3);
+		std::cout << "What are needles suppose to smell like?" << std::endl;
+		Sdelay(3);
+		std::cout << "...";
+		MSdelay(2500);
+		std::cout << "... ";
+		MSdelay(2500);
+		std::cout << "well good job regardless!";
 		MSdelay(1000);
 		endMusic();
 
