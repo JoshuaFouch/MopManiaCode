@@ -87,13 +87,13 @@
     <ClCompile Include="battle.cpp">
       <Filter>Battle Files</Filter>
     </ClCompile>
-    <ClCompile Include="joshEvents.cpp">
+    <ClCompile Include="JoshStuff.cpp">
       <Filter>Event Files</Filter>
     </ClCompile>
-    <ClCompile Include="EljayEvents.cpp">
+    <ClCompile Include="EljayStuff.cpp">
       <Filter>Event Files</Filter>
     </ClCompile>
-    <ClCompile Include="SeamusEvent.cpp">
+    <ClCompile Include="SeamusStuff.cpp">
       <Filter>Event Files</Filter>
     </ClCompile>
     <ClCompile Include="ChatGPTsnake.cpp">

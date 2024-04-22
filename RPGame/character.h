@@ -40,6 +40,11 @@ public:
 	int get_attUp();
 	int get_defUp();
 	int get_deadRat();
+	int get_slipperySoap();
+	int get_cleaningTips();
+	int get_Whendex();
+	int get_Mirror();
+	int getTokens();
 	void acq_healUp();
 	void acq_attUp();
 	void acq_defUp();
@@ -48,6 +53,14 @@ public:
 	void use_attUp();
 	void use_defUp();
 	void use_deadRat();
+	void use_slipperySoap();
+	void use_cleaningTips(enemy& e);
+	void use_Whendex();
+	void use_Mirror();
+	void acq_slipperySoap();
+	void acq_cleaningTips();
+	void acq_Whendex();
+	void acq_Mirror();
 	void Rat_Sale(int num);
 
 	//attack getters
@@ -77,8 +90,11 @@ public:
 
 	//for inventory
 	bool noItems();
-	void useInventory();
+	void useInventory(enemy& e);
 	void checkInventory();
+
+	int getRun();
+	void resetRun();
 
 
 	//for quests
@@ -116,10 +132,15 @@ protected:
 	int attUp = 0;	//counter for how many attack up potions a character has
 	int defUp = 0;	//counter for how many defense up potions a character has
 	int deadRat = 0; //counter for how many dead rats the character has (its a useless item)
+	int slipperySoap = 0;
+	int cleaningTips = 0;
+	int Whendex = 0;
+	int Mirror = 0;
 
 	int life = 1; //1 is alive; 0 is dead
 	int exit = 0; //0 is not exit; 1 is exit
 	int end = 0;	//0 is not end; 1 is end
+	int run = 0;
 
 	int SoapTokens = 0;
 

@@ -103,9 +103,10 @@ void cellarEvent::trigger(character& c) {
                 cout << "\n\tSpecialty items would you like?\n";
                 color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
                 std::cout << "|"; color(8); std::cout << "[1]: "; color(7); std::cout << "Slippery Soap (lets you escape any battle) - 8 rats" << '\n';
-                std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Cleaning tips (shows enemy's current stats) - 4 rats" << '\n';
-                std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "Whendex (shows number of Dead rats left to collect) - 5 rats" << '\n';
-                std::cout << "|"; color(8); std::cout << "[4]: "; color(7); std::cout << "Back to main shop" << std::endl;
+                std::cout << "|"; color(8); std::cout << "[2]: "; color(7); std::cout << "Cleaning Tips (customize your attack text) - 7 rats" << '\n';
+                std::cout << "|"; color(8); std::cout << "[3]: "; color(7); std::cout << "Whendex (increases each stat's max by 1) - 10 rats" << '\n';
+                std::cout << "|"; color(8); std::cout << "[4]: "; color(7); std::cout << "Mirror (lets you see how others see you) - 8 rats" << '\n';// outputs the corresponding animation depending on what characer you are (checks string for name)
+                std::cout << "|"; color(8); std::cout << "[5]: "; color(7); std::cout << "Back to main shop" << std::endl;
                 color(5); std::cout << "<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{" << std::endl;
                 int choiceB;
                 cin >> choiceB;

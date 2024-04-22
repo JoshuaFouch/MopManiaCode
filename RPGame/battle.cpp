@@ -73,8 +73,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 	battleStart(c, e);
 	playMusic("battlemusic.wav");
 
-	int run = 0;	//if character wants to run away from battle
-	while (e.get_hp() > 0 && c.get_hp() > 0 && run == 0)
+	while (e.get_hp() > 0 && c.get_hp() > 0 && c.getRun() == 0)
 	{
 		clear();
 		BattleStats(c, e);	//begins by display the stats
@@ -168,11 +167,15 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			}
 			else
 			{
-				c.useInventory();
+				c.useInventory(e);
 				clear();
 				BattleStats(c, e);
 				if (e.get_hp() <= 0)
 				{
+					clear();
+					break;
+				}
+				if (c.getRun() == 1) {
 					clear();
 					break;
 				}
@@ -191,6 +194,7 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			c.describeAttacks();
 			break;
 		case 8:
+			clear();
 			std::cout << "Nice try bud, you can't run." << std::endl;
 			MSdelay(1500);
 			continue;
@@ -213,11 +217,12 @@ void battle::Battle_Sequence(character& c, enemy& e)
 		c.die();
 		GameOver(c);
 	}
-	else if (run == 1)
+	else if (c.getRun() == 1)
 	{
 		endMusic();
 		playMusic("OE.wav");
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
+		c.resetRun();
 	}
 	system("pause");
 	clear();
@@ -408,12 +413,19 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 			}
 			else
 			{
-				c.useInventory();
+				c.useInventory(e);
 				clear();
 				BattleStats(c, e, statCounter);
 				if (e.get_hp() <= 0)
 				{
 					clear();
+					break;
+				}
+				if (c.getRun() == 1) {
+					clear();
+					std::cout << "You can't run... this is a boss battle..." << std::endl;
+					Sdelay(4);
+					c.resetRun();
 					break;
 				}
 				e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
@@ -432,9 +444,10 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 			c.describeAttacks();
 			break;
 		case 8:
+			clear();
 			std::cout << "Nice try bud, you can't run." << std::endl;
 			MSdelay(1500);
-			//run = 1;
+			c.resetRun();
 			continue;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
@@ -456,8 +469,9 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 		endMusic();
 		GameOver(c);
 	}
-	else if (run == 1)
+	else if (c.getRun() == 1)
 	{
+		clear();
 		endMusic();
 		playMusic("OE.wav");
 		std::cout << "You ran... Imagine being a coward..." << std::endl;
@@ -617,6 +631,273 @@ void BadFinalBattle::BattleDialogue(character& c, enemy& e) {	//context: Dirty B
 		ellipsis();
 		std::cout << "\n";
 		std::cout << std::endl;
+		color(7);
+		system("pause");
+	}
+	else {
+		return;
+	}
+}
+
+void BubbleBattle::Battle_Sequence(character& c, enemy& e) {
+	endMusic();
+	battleStart(c, e);
+	playMusic("MattariCore.wav");
+	int run = 0;
+
+	while (e.get_hp() > 0 && c.get_hp() > 0)
+	{
+		clear();
+		BattleDialogue(c, e);
+		clear();
+		BattleStats(c, e);
+		whatText();
+		color(8); std::cout << "\n[1]: "; color(7); std::cout << c.get_aName1() << std::endl;
+		color(8); std::cout << "[2]: "; color(7); std::cout << c.get_aName2() << std::endl;
+		color(8); std::cout << "[3]: "; color(7); std::cout << c.get_aName3() << std::endl;
+		color(8); std::cout << "[4]: "; color(7); std::cout << c.get_aName4() << std::endl << std::endl;
+		color(8); std::cout << "[5]: "; color(7); std::cout << "Use Item" << std::endl;
+		color(8); std::cout << "[6]: "; color(7); std::cout << "Check stats" << std::endl;
+		color(8); std::cout << "[7]: "; color(7); std::cout << "Attack Descriptions" << std::endl;
+		color(8); std::cout << "[8]: "; color(7); std::cout << "Run (Be a coward)" << std::endl;
+		int choice;
+		std::cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			clear();
+			BattleStats(c, e);
+			c.Attack1(e);	//character attacks
+			MSdelay(2000);
+			clear();
+			BattleStats(c, e);
+			if (e.get_hp() <= 0)
+			{
+				break;
+			}
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(2000);
+			clear();
+			break;
+		case 2:
+			clear();
+			BattleStats(c, e);
+			c.Attack2(e);	//character attacks
+			MSdelay(2000);
+			clear();
+			BattleStats(c, e);
+			if (e.get_hp() <= 0)
+			{
+				clear();
+				break;
+			}
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(2000);
+			clear();
+			break;
+		case 3:
+			clear();
+			BattleStats(c, e);
+			c.Attack3(e);	//character attacks
+			MSdelay(2000);
+			clear();
+			BattleStats(c, e);
+			if (e.get_hp() <= 0)
+			{
+				clear();
+				break;
+			}
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(2000);
+			clear();
+			break;
+		case 4:
+			clear();
+			BattleStats(c, e);
+			c.Attack4(e);	//character attacks
+			MSdelay(2000);
+			clear();
+			BattleStats(c, e);
+			if (e.get_hp() <= 0)
+			{
+				clear();
+				break;
+			}
+			e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+			MSdelay(2000);
+			clear();
+			break;
+		case 5:
+			clear();
+			BattleStats(c, e);
+			if (c.noItems() == true)
+			{
+				color(8);
+				std::cout << "You have no items!" << std::endl;
+				color(7);
+				MSdelay(2000);
+				break;
+			}
+			else
+			{
+				c.useInventory(e);
+				clear();
+				BattleStats(c, e);
+				if (e.get_hp() <= 0)
+				{
+					clear();
+					break;
+				}
+				if (c.getRun() == 1) {
+					clear();
+					std::cout << "You can't run... this is a boss battle..." << std::endl;
+					Sdelay(4);
+					c.resetRun();
+					break;
+				}
+				e.nextMove(c, e.RandomNum());	//its the enemies turn to attack
+				MSdelay(2000);
+				break;
+			}
+		case 6:
+			clear();
+			BattleStats(c, e);
+			c.displayStats();
+			break;
+		case 7:
+			clear();
+			BattleStats(c, e);
+			c.describeAttacks();
+			break;
+		case 8:
+			clear();
+			std::cout << "Nice try bud, you can't run." << std::endl;
+			MSdelay(1500);
+			c.resetRun();
+			continue;
+		default:
+			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
+			MSdelay(1500);
+			continue;
+		}
+	}
+	if (e.get_hp() <= 0)
+	{
+		endMusic();
+		e.makeDead();
+		clear();
+		c.expPt();
+		c.winBattleMoney();
+	}
+	else if (c.get_hp() <= 0)
+	{
+		c.die();
+		endMusic();
+		GameOver(c);
+	}
+	else if (c.getRun() == 1)
+	{
+		clear();
+		endMusic();
+		playMusic("OE.wav");
+		std::cout << "You ran... Imagine being a coward..." << std::endl;
+	}
+	system("pause");
+	clear();
+	endMusic();
+}
+
+void BubbleBattle::BattleDialogue(character& c, enemy& e) {
+	//if a grime reaper is at 3/4 health
+	if ((e.get_hp() <= ((0.75) * e.get_maxhp())) && (e.get_hp() > ((0.5) * e.get_maxhp()))) {
+		color(9);
+		std::cout << "W"; MSdelay(100);
+		std::cout << "h"; MSdelay(100);
+		std::cout << "y "; MSdelay(100);
+		std::cout << "a"; MSdelay(100);
+		std::cout << "r"; MSdelay(100);
+		std::cout << "e "; MSdelay(100);
+		std::cout << "y"; MSdelay(100);
+		std::cout << "o"; MSdelay(100);
+		std::cout << "u "; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << "r"; MSdelay(100);
+		std::cout << "y"; MSdelay(100);
+		std::cout << "i"; MSdelay(100);
+		std::cout << "n"; MSdelay(100);
+		std::cout << "g "; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << "o "; MSdelay(100);
+		std::cout << "k"; MSdelay(100);
+		std::cout << "i"; MSdelay(100);
+		std::cout << "l"; MSdelay(100);
+		std::cout << "l "; MSdelay(100);
+		std::cout << "m"; MSdelay(100);
+		std::cout << "e"; MSdelay(100);
+		std::cout << "?"; MSdelay(100);
+		std::cout << "?";
+		ellipsis();
+		std::cout << "\n\n";
+		color(7);
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.5) * e.get_maxhp()) && (e.get_hp() > ((0.25) * e.get_maxhp()))) {
+		color(9);
+		std::cout << "S"; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << "o"; MSdelay(100);
+		std::cout << "p "; MSdelay(100);
+		std::cout << "i"; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << ", "; MSdelay(100);
+		std::cout << "s"; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << "o"; MSdelay(100);
+		std::cout << "p "; MSdelay(100);
+		std::cout << "i"; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << ", "; MSdelay(100);
+		std::cout << "S"; MSdelay(100);
+		std::cout << "T"; MSdelay(100);
+		std::cout << "O"; MSdelay(100);
+		std::cout << "P "; MSdelay(100);
+		std::cout << "I"; MSdelay(100);
+		std::cout << "T"; MSdelay(100);
+		std::cout << "!";
+		ellipsis();
+		std::cout << "\n\n";
+		color(7);
+		system("pause");
+	}
+	else if (e.get_hp() <= ((0.25) * e.get_maxhp())) {
+		color(9);
+		std::cout << "W"; MSdelay(100);
+		std::cout << "h"; MSdelay(100);
+		std::cout << "a"; MSdelay(100);
+		std::cout << "t "; MSdelay(100);
+		std::cout << "d"; MSdelay(100);
+		std::cout << "i"; MSdelay(100);
+		std::cout << "d "; MSdelay(100);
+		std::cout << "I "; MSdelay(100);
+		std::cout << "d"; MSdelay(100);
+		std::cout << "o "; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << "o "; MSdelay(100);
+		std::cout << "d"; MSdelay(100);
+		std::cout << "e"; MSdelay(100);
+		std::cout << "s"; MSdelay(100);
+		std::cout << "e"; MSdelay(100);
+		std::cout << "r"; MSdelay(100);
+		std::cout << "v"; MSdelay(100);
+		std::cout << "e "; MSdelay(100);
+		std::cout << "t"; MSdelay(100);
+		std::cout << "h"; MSdelay(100);
+		std::cout << "i"; MSdelay(100);
+		std::cout << "s"; MSdelay(100);
+		std::cout << "?"; MSdelay(100);
+		ellipsis();
+		std::cout << "\n\n";
 		color(7);
 		system("pause");
 	}

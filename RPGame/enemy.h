@@ -264,5 +264,22 @@ public:
 	void Enrage(character& c);
 };
 
+class BubblyBoy : public enemy
+{
+public:
+	//constructor
+	BubblyBoy(int lvl);
+	void manuallyConstruct(int lvl);
+
+	//abilities
+	void Attack1(character& c);
+	void Attack2(character& c);
+	void Attack3(character& c);
+	void Attack4(character& c);
+	void Heal(character& c);
+	void Fortify(character& c);
+	void Enrage(character& c);
+};
+
 #endif
 

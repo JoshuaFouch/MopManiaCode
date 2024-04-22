@@ -47,4 +47,11 @@ public:
 	void BattleDialogue(character& c, enemy& e);
 };
 
+class BubbleBattle : public battle
+{
+public:
+	void Battle_Sequence(character& c, enemy& e);
+	void BattleDialogue(character& c, enemy& e);
+};
+
 #endif
