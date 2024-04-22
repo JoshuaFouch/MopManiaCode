@@ -656,16 +656,16 @@ void character::checkInventory()
                 continue;
             }
         case 8:
-            if (this->Whendex == 0) {
+            if (this->Mirror == 0) {
                 clear();
-                std::cout << "You have no Whendex!!!" << std::endl;
+                std::cout << "You have no Mirrors!!!" << std::endl;
                 system("pause");
                 clear();
                 continue;
             }
             else {
                 clear();
-                use_Whendex();
+                use_Mirror();
                 clear();
                 continue;
             }

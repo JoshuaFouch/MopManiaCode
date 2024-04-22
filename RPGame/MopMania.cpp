@@ -14,6 +14,14 @@ int main()
 	/*map creation*/
 	Broomba broomba("Broomba", 500, 100, 120); //beefy but less health
 	gameMap map;
+	broomba.acq_attUp();
+	broomba.acq_cleaningTips();
+	broomba.acq_deadRat();
+	broomba.acq_defUp();
+	broomba.acq_healUp();
+	broomba.acq_Mirror();
+	broomba.acq_slipperySoap();
+	broomba.acq_Whendex();
 	event* e = new event;
 
 	lungEvent* lung = new lungEvent;
