@@ -133,9 +133,7 @@
     <ClInclude Include="enemy.h" />
     <ClInclude Include="event.h" />
     <ClInclude Include="GameMap.h" />
-    <ClInclude Include="inventory.h" />
     <ClInclude Include="inGame.h" />
-    <ClInclude Include="item.h" />
     <ClInclude Include="npc.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
@@ -146,7 +144,6 @@
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="event.cpp" />
     <ClCompile Include="GameMap.cpp" />
-    <ClCompile Include="item.cpp" />
     <ClCompile Include="joshEvents.cpp" />
     <ClCompile Include="MopMania.cpp" />
     <ClCompile Include="character.cpp" />
