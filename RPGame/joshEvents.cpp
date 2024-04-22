@@ -522,9 +522,11 @@ void FinalEvent::trigger(character& c)
 			color(6);
 			std::cout << " will be forgotten.\n" << std::endl;
 			system("pause");
+			color(7);
 
 			c.gameCompleted();
 			return;
 		}
 	}
 }
+

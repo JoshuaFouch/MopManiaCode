@@ -2,7 +2,7 @@
 #include "enemy.h"
 #include "character.h"
 #include "battle.h"
-#include <ChatGPTsnake.h>
+//#include <ChatGPTsnake.h>
 
 using namespace std;
 
@@ -32,7 +32,7 @@ c.Rat_Sale(4);
 
 */
 
-/*CellarEvent*/
+/*CellarEvent
 cellarEvent::cellarEvent() {};
 
 void cellarEvent::trigger(character& c)
@@ -147,7 +147,7 @@ case 1:
     break;
 
  case 3:
-        srand(time(NULL));
+     /*  srand(time(NULL));
     Setup();
     while (!gameOver)
     {
@@ -160,8 +160,8 @@ case 1:
     }
     return main();
     break;
-
-}
+    */
+/*}
 }
 if (c.get_deadRat()<4){
     cout<<"get outta here ya broke boi!!!";//will fix this and the many other errors Iv've enevitibly made
@@ -209,4 +209,4 @@ if (c.get_deadRat()<4){
 		return;
 	}
 
-}
+}*/

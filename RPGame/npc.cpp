@@ -233,7 +233,7 @@ void bubbleBoy::dialogue(character& c)
 	color(9); //this dialogue will be light blue, moms should be dark blue
 	std::cout << "Bubble Boy: Can anybody hear me?"<<std::endl;
 	color(7); std::cout << "1. I can hear you!"<<std::endl;
-    std::cout <<           "2. Sorry kid, I've got more important things to do"<<std::endl;	//change back to white for user
+    std::cout << "2. Sorry kid, I've got more important things to do"<<std::endl;	//change back to white for user
 	int choice;
 	std::cin >> choice;
 
