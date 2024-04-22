@@ -533,5 +533,4 @@ void FinalEvent::trigger(character& c)
 
 HospitalEvent::HospitalEvent() {};
 
-void 
 

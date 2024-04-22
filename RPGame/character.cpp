@@ -419,10 +419,6 @@ void character::checkInventory()
     system("pause");
     color(7);
 }
-void character::testInventory() {
-    myInventory.add_potion();
-    myInventory.printTable();
-}
 
 //for quests
 int character::getBub() {
