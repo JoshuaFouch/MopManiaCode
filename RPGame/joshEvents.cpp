@@ -530,10 +530,38 @@ void FinalEvent::trigger(character& c)
 	}
 }
 
-
+//hostpial
 HospitalEvent::HospitalEvent() {};
 
 void HospitalEvent::trigger(character& c) {
-	std::cout << "ewfesf" << std::endl;
+	std::cout << "not finished" << std::endl;
+	system("pause");
 }
+
+
+firstEvent::firstEvent() {};
+
+void firstEvent::trigger(character& c) {
+	std::cout << "not finished" << std::endl;
+	system("pause");
+}
+
+secondEvent::secondEvent() {};
+
+void secondEvent::trigger(character& c) {
+	std::cout << "not finished" << std::endl;
+	system("pause");
+}
+
+basementEvent::basementEvent() {};
+
+void basementEvent::trigger(character& c) {
+	std::cout << "not finished" << std::endl;
+	system("pause");
+}
+
+
+
+
+
 

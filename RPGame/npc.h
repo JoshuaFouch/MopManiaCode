@@ -78,7 +78,16 @@ public:
 class bubbleBoy : public NPC
 {
 public:
-	//bubbleBoy();
+	bubbleBoy();
+
+	void dialogue(character& c);
+};
+
+//Bubble Mama (seamus)
+class bubbleMama : public NPC
+{
+public:
+	bubbleMama();
 
 	void dialogue(character& c);
 };

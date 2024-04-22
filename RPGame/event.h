@@ -46,7 +46,7 @@ public:
 };
 
 //cellar
-class cellarEvent : public event	//putrid python
+class cellarEvent : public event	//putrid python (Seamus)
 {
 public:
 	cellarEvent();
@@ -54,11 +54,12 @@ public:
 };
 
 //mailbox
-class mailboxEvent : public event	//stores 3-5 NPC's, depending on level, you will talk to an NPC.
+class mailboxEvent : public event	//mailbox event seamus and eljay
 {
 public:
 	mailboxEvent();
 	void trigger(character& c);
+	int checked = 0;
 };
 
 //the rusty bucket
@@ -70,7 +71,7 @@ public:
 };
 
 //Le' Hospitale
-class HospitalEvent : public event	//a bunch of NPC's
+class HospitalEvent : public event	//josh
 {
 public:
 	HospitalEvent();	//same idea as mailbox, gives different lore dialogue
@@ -79,7 +80,7 @@ public:
 };
 
 //1st floor??
-class firstEvent : public event
+class firstEvent : public event	//josh
 {
 public:
 	firstEvent();
@@ -104,7 +105,7 @@ public:
 };
 
 //2nd floor??
-class secondEvent : public event
+class secondEvent : public event	//josh
 {
 public:
 	secondEvent();
@@ -113,7 +114,7 @@ public:
 };
 
 //dermatology
-class dermEvent : public event
+class dermEvent : public event	//seamus
 {
 public:
 	dermEvent();
@@ -122,7 +123,7 @@ public:
 
 
 //operating room
-class operatEvent : public event
+class operatEvent : public event	//ejljayu
 {
 public:
 	operatEvent();
@@ -138,7 +139,7 @@ public:
 };
 
 //supply closet
-class supplyEvent : public event
+class supplyEvent : public event	//BUBBLY BOY IS IN HERE (Seamus)
 {
 public:
 	supplyEvent();
@@ -154,7 +155,7 @@ public:
 };
 
 //basement??
-class basementEvent : public event
+class basementEvent : public event	//josh
 {
 public:
 	basementEvent();
@@ -163,7 +164,7 @@ public:
 };
 
 //mental health room
-class MentalEvent: public event	//garbagedans
+class MentalEvent: public event	//hairballs
 {
 public:
 	MentalEvent();
