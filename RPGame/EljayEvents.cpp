@@ -218,8 +218,8 @@ void lungEvent::trigger(character& c)
 		std::cout << "A Bronchitis Rex lunged from above!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		BronchitisRex tex(5);
-		rex.Battle_Sequence(c, tex);
+		BronchitisRex cronk(3);
+		rex.Battle_Sequence(c, cronk);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
@@ -289,9 +289,9 @@ void pharmEvent::trigger(character& c)
 		std::cout << "A Muscus Maw dropped in from above!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		battle mucus;
-		MucusMaw maw(2);
-		mucus.Battle_Sequence(c, maw);
+		battle garbage;
+		GarbageDan tan(1);
+		garbage.Battle_Sequence(c, tan);
 		/*battle mucus;
 		MucusMaw muc(1);
 		mucus.Battle_Sequence(c, muc);*/
@@ -317,8 +317,8 @@ void pharmEvent::trigger(character& c)
 		Sdelay(2);
 		/*MucusMaw mucu(3);
 		mucus.Battle_Sequence(c, mucu);*/
-		MucusMaw naw(5);
-		mucus.Battle_Sequence(c, naw);
+		GarbageDan can(5);
+		garbage.Battle_Sequence(c, can);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
