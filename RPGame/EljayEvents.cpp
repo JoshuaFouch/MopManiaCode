@@ -289,9 +289,12 @@ void pharmEvent::trigger(character& c)
 		std::cout << "A Muscus Maw dropped in from above!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		battle mucus;
-		MucusMaw muc(4);
-		mucus.Battle_Sequence(c, muc);
+		battle garbage;
+		GarbageDan tan(1);
+		garbage.Battle_Sequence(c, tan);
+		/*battle mucus;
+		MucusMaw muc(1);
+		mucus.Battle_Sequence(c, muc);*/
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
@@ -312,8 +315,10 @@ void pharmEvent::trigger(character& c)
 		std::cout << "A Musucs Maw leaps towards you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		MucusMaw mucu(4);
-		mucus.Battle_Sequence(c, mucu);
+		/*MucusMaw mucu(3);
+		mucus.Battle_Sequence(c, mucu);*/
+		GarbageDan can(5);
+		garbage.Battle_Sequence(c, can);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}

@@ -18,13 +18,14 @@ int main()
 	event* e = new event;
 
 	lungEvent* lung = new lungEvent;
+	pharmEvent* pharm = new pharmEvent;
 	waitingRoomEvent* waitingRoom = new waitingRoomEvent;
 	RustyBucketEvent* rusty = new RustyBucketEvent;
 	storageRoomevent* storageRoom = new storageRoomevent;
 	FinalEvent* finale = new FinalEvent;
 	MentalEvent* mental = new MentalEvent;
 
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", e);
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", pharm); // e even was here
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", e);
 	map.setMailbox(map.getIndex()->getLeft());
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", rusty);
