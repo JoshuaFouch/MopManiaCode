@@ -78,7 +78,6 @@ public:
 class bubbleBoy : public NPC
 {
 public:
-	bubbleBoy();
 
 	void dialogue(character& c);
 };
