@@ -71,6 +71,9 @@ void character::set_def(int def)
     this->def = def;
 
 }
+int character::getRun() {
+    return run;
+}
 
 //exp
 int character::get_lvl()
@@ -109,6 +112,21 @@ int character::get_deadRat()
 {
     return deadRat;
 }
+int character::get_slipperySoap() {
+    return slipperySoap;
+}
+int character::get_cleaningTips() {
+    return cleaningTips;
+}
+int character::get_Whendex() {
+    return Whendex;
+}
+int character::get_Mirror() {
+    return Mirror;
+}
+int character::getTokens() {
+    return SoapTokens;
+}
 void character::acq_healUp()
 {
     healUp++;
@@ -145,7 +163,53 @@ void character::use_deadRat()
     //actually does something maybe like gives you free money?
     deadRat--;
 }
+void character::use_slipperySoap() {
+    this->run = 1;
+    slipperySoap--;
+}
+void character::resetRun() {
+    this->run = 0;
+}
+void character::use_cleaningTips(enemy& e) {
+    clear();
+    color(4);
+    std::cout << "Enemy hp: " << e.get_hp() << std::endl;
+    std::cout << "Enemy attack: " << e.get_att() << std::endl;
+    std::cout << "Enemy defense: " << e.get_def() << std::endl;
+    color(7);
+    system("pause");
+    cleaningTips--;
+}
+void character::use_Whendex() {
+    clear();
+    color(2);
+    std::cout << "All max stats went up by 5 points!!!" << std::endl;
+    increaseHP(5);
+    increaseAtt(5);
+    increaseDef(5);
+    color(7);
+    system("pause");
+    Whendex--;
 
+}
+void character::use_Mirror() {
+    clear();
+    std::cout << "This is what you look like: (hideous right?) " << std::endl;
+    //seamus stuff
+    system("pause");
+}
+void character::acq_slipperySoap() {
+    slipperySoap++;
+}
+void character::acq_cleaningTips() {
+    cleaningTips++;
+}
+void character::acq_Whendex() {
+    Whendex++;
+}
+void character::acq_Mirror() {
+    Mirror++;
+}
 void character::Rat_Sale(int num) {
 
     deadRat -= num;
@@ -179,15 +243,15 @@ void character::set_AttackNames()
 //healing
 void character::increaseHP(int exp)
 {
-    hp += exp;
+    maxHp += exp;
 }
 void character::increaseAtt(int exp)
 {
-    att += exp;
+    maxAtt += exp;
 }
 void character::increaseDef(int exp)
 {
-    def += exp;
+    maxDef += exp;
 }
 void character::resetStats()
 {
@@ -307,7 +371,7 @@ void character::Attack4(enemy& e)
 
 bool character::noItems()
 {
-    if (healUp == 0 && attUp == 0 && defUp == 0 && deadRat == 0)
+    if (healUp == 0 && attUp == 0 && defUp == 0 && deadRat == 0 && slipperySoap == 0 && cleaningTips == 0)
     {
         return true;
     }
@@ -316,23 +380,28 @@ bool character::noItems()
         return false;
     }
 }
-void character::useInventory()
+void character::useInventory(enemy& e)
 {
     bool kill = false;
     while (kill == false)
     {
         color(7);
         std::cout << "What do you want to use?" << std::endl;
-        std::cout << "1. Potions: " << this->get_healUp() << std::endl;
-        std::cout << "2. Attack Ups: " << this->get_attUp() << std::endl;
-        std::cout << "3. Defense Ups: " << this->get_defUp() << std::endl;
-        std::cout << "4. Dead Rats: " << this->get_deadRat() << std::endl;
+        std::cout << "|========================|" << std::endl;
+        color(8); std::cout << "[1]: "; color(7); std::cout << "Potions: " << this->get_healUp() << std::endl;
+        color(8); std::cout << "[2]: "; color(7); std::cout << "Attack Ups: " << this->get_attUp() << std::endl;
+        color(8); std::cout << "[3]: "; color(7); std::cout << "Defense Ups: " << this->get_defUp() << std::endl;
+        color(8); std::cout << "[4]: "; color(7); std::cout << "Dead Rats: " << this->get_deadRat() << std::endl;
+        color(8); std::cout << "[5]: "; color(7); std::cout << "Slippery Soap: " << this->get_slipperySoap() << std::endl;
+        color(8); std::cout << "[6]: "; color(7); std::cout << "Cleaning Tips: " << this->get_cleaningTips() << std::endl;
+        std::cout << "|========================|" << std::endl;
         int x;
         std::cin >> x;
         switch (x) {
         case 1:
             if (this->healUp == 0)
             {
+                clear();
                 std::cout << "You have no potions!" << std::endl;
                 continue;
             }
@@ -349,6 +418,7 @@ void character::useInventory()
         case 2:
             if (this->attUp == 0)
             {
+                clear();
                 std::cout << "You have no attack ups!" << std::endl;
                 continue;
             }
@@ -381,6 +451,7 @@ void character::useInventory()
         case 4:
             if (this->deadRat == 0)
             {
+                clear();
                 std::cout << "You have no dead rats!" << std::endl;
                 continue;
             }
@@ -399,6 +470,29 @@ void character::useInventory()
                 std::cout << "\nIt did nothing at all." << std::endl;
                 color(7);
                 MSdelay(2000);
+                clear();
+                kill = true;
+                break;
+            }
+        case 5:
+            if (this->slipperySoap == 0) {
+                clear();
+                std::cout << "You have no slippery soaps!!" << std::endl;
+                continue;
+            }
+            else {
+                use_slipperySoap();
+                kill = true;
+                break;
+            }
+        case 6:
+            if (this->cleaningTips == 0) {
+                clear();
+                std::cout << "You have no cleaning tips!!" << std::endl;
+                continue;
+            }
+            else {
+                use_cleaningTips(e);
                 kill = true;
                 break;
             }
@@ -411,17 +505,195 @@ void character::useInventory()
 }
 void character::checkInventory()
 {
+    bool kill = false;
+    while (kill == false)
+    {
+        color(7);
+        std::cout << "What do you want to use?" << std::endl;
+        std::cout << "|========================|" << std::endl;
+        color(8); std::cout << "[1]: "; color(7); std::cout << "Potions: " << this->get_healUp();
+        color(4); std::cout << "\t\t\tHP: " << maxHp << std::endl;
+        color(8); std::cout << "[2]: "; color(7); std::cout << "Attack Ups: " << this->get_attUp();
+        color(4); std::cout << "\t\tAttack: " << maxAtt << std::endl;
+        color(8); std::cout << "[3]: "; color(7); std::cout << "Defense Ups: " << this->get_defUp();
+        color(4); std::cout << "\t\tDefense: " << maxDef << std::endl;
+        color(8); std::cout << "[4]: "; color(7); std::cout << "Dead Rats: " << this->get_deadRat() << std::endl;
+        color(8); std::cout << "[5]: "; color(7); std::cout << "Slippery Soap: " << this->get_slipperySoap() << std::endl;
+        color(8); std::cout << "[6]: "; color(7); std::cout << "Cleaning Tips: " << this->get_cleaningTips() << std::endl;
+        color(8); std::cout << "[7]: "; color(7); std::cout << "Whendex: " << this->get_Whendex() << std::endl;   //increases each stats max by one
+        color(8); std::cout << "[8]: "; color(7); std::cout << "Mirror: " << this->get_Mirror() << std::endl;    //displays unused animations
+        color(8); std::cout << "[9]: "; color(7); std::cout << "SoapTokens: " << this->getTokens() << std::endl;
+        color(8); std::cout << "[10]: "; color(7); std::cout << "LEAVE " << std::endl;
+        std::cout << "|========================|" << std::endl;
+        int x;
+        std::cin >> x;
+        switch (x) {
+        case 1:
+            if (this->healUp == 0)
+            {
+                clear();
+                std::cout << "You have no potions!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else
+            {
+                clear();
+                std::cout << "You can't use this here..." << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+        case 2:
+            if (this->attUp == 0)
+            {
+                clear();
+                std::cout << "You have no attack ups!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else
+            {
+                clear();
+                std::cout << "You can't use this here..." << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+        case 3:
+            if (this->defUp == 0)
+            {
+                clear();
+                std::cout << "You have no defense ups!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else
+            {
+                clear();
+                std::cout << "You can't use this here..." << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+        case 4:
+            if (this->deadRat == 0)
+            {   
+                clear();
+                std::cout << "You have no dead rats!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else
+            {
+                clear();
+                std::cout << "Uhh... please don't use that, it might be valuable for some reason";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << "\nYeah I know.... its weird..." << std::endl;
+                system("pause");
+                continue;
+            }
+        case 5:
+            if (this->slipperySoap == 0) {
+                clear();
+                std::cout << "You have no slippery soaps!!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else {
+                clear();
+                std::cout << "Why are you running";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << ".";
+                MSdelay(700);
+                std::cout << "\nWhy are you running... (get it, its from that on meme...)" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+        case 6:
+            if (this->cleaningTips == 0) {
+                clear();
+                std::cout << "You have no cleaning tips!!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else {
+                clear();
+                std::cout << "You can't use this here..." << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+        case 7:
+            if (this->Whendex == 0) {
+                clear();
+                std::cout << "You have no Whendex!!!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else {
+                clear();
+                use_Whendex();
+                clear();
+                continue;
+            }
+        case 8:
+            if (this->Mirror == 0) {
+                clear();
+                std::cout << "You have no Mirrors!!!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else {
+                clear();
+                use_Mirror();
+                clear();
+                continue;
+            }
+        case 9:
+            if (this->SoapTokens == 0) {
+                clear();
+                std::cout << "YOU BROKE... HAHA!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+            else {
+                clear();
+                std::cout << "You have: " << getTokens() << " Soap Tokens!" << std::endl;
+                system("pause");
+                clear();
+                continue;
+            }
+        case 10:
+            kill = true;
+            break;
+        default:
+            clear();
+            std::cout << "Invalid input." << std::endl;
+            continue;
+        }
+    }
     color(7);
-    std::cout << "Potions: " << this->get_healUp() << std::endl;
-    std::cout << "Attack Ups: " << this->get_attUp() << std::endl;
-    std::cout << "Defense Ups: " << this->get_defUp() << std::endl;
-    std::cout << "Dead Rats: " << this->get_deadRat() << std::endl;
-    system("pause");
-    color(7);
-}
-void character::testInventory() {
-    myInventory.add_potion();
-    myInventory.printTable();
 }
 
 //for quests
