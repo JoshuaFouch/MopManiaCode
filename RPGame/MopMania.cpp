@@ -5,6 +5,7 @@
 #include "battle.h"
 #include "event.h"
 #include "GameMap.h"
+#include "ChatGPTsnake.h"
 
 #pragma comment(lib, "winmm.lib") //for music and sound effects!
 
@@ -94,6 +95,8 @@ int main()
 	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", mental);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
+
+	cellar->trigger(broomba);
 
 	system("pause");
 	map.play(map.theGamer(), broomba, 0);

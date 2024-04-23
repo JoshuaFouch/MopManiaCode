@@ -52,6 +52,7 @@ void Game_Menu_Test() {
 		}
 	}
 }
+
 void clear() {
 	system("CLS");
 }
