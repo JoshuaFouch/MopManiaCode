@@ -371,14 +371,14 @@ void labEvent::trigger(character& c)
 		MSdelay(5000);
 		Dotdot();
 		color(4);
-		std::cout << "OH SHOOT!";
+		std::cout << "OH SHOOT!" << std::endl;
 		Sdelay(2);
 		color(7);
 		std::cout << "A NeedleNed is attached to you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle needle;
-		NeedleNed ne(2);
+		NeedleNed ne(5);
 		needle.Battle_Sequence(c, ne);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
@@ -393,16 +393,16 @@ void labEvent::trigger(character& c)
 		std::cout << "SHOOT!" << std::endl;
 		Sdelay(2);
 		color(7);
-		std::cout << "Another NeedleNed appeared from nowhere!" << std::endl;
+		std::cout << "Another Needle Ned appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		NeedleNed nee(3);
+		NeedleNed nee(7);
 		needle.Battle_Sequence(c, nee);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
-		std::cout << "The stench is starting to dissipate..." << std::endl;
+		std::cout << "The needles seem to be gone..." << std::endl;
 		MSdelay(3000);
 		Dotdot();
 		color(4);
@@ -414,7 +414,7 @@ void labEvent::trigger(character& c)
 		std::cout << "A Powerful NeedleNed appeared to face you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		NeedleNed need(4);
+		NeedleNed need(8);
 		needle.Battle_Sequence(c, need);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
@@ -464,14 +464,14 @@ void operatEvent::trigger(character& c)
 		std::cout << "You rolled into the operating room... ";
 		MSdelay(2000);
 		std::cout << "There are surgical tables flipped over and destroyed..." << std::endl;
-		MSdelay(3000);
-		std::cout << "You find kinves with fresh... ketchup..." << std::endl;
 		MSdelay(4000);
-		std::cout << "You decide to clean the room as soon as possible...";
+		std::cout << "You find kinves with fresh... ketchup..." << std::endl;
 		MSdelay(5000);
+		std::cout << "You decide to clean the room as soon as possible...";
+		MSdelay(6000);
 		Dotdot();
 		color(4);
-		std::cout << "OH SHOOT!";
+		std::cout << "OH SHOOT!" << std::endl;
 		Sdelay(2);
 		color(7);
 		std::cout << "A Stainiac lunges at you!" << std::endl;
@@ -485,7 +485,7 @@ void operatEvent::trigger(character& c)
 		}
 		Sdelay(2);
 		std::cout << "Seems like there is a presence lingering around still..." << std::endl;
-		MSdelay(3000);
+		MSdelay(5000);
 		Dotdot();
 		color(4);
 		std::cout << "OHH...";
@@ -496,14 +496,14 @@ void operatEvent::trigger(character& c)
 		std::cout << "Another Stainiac appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Stainiac sta(2);
+		Stainiac sta(4);
 		stain.Battle_Sequence(c, sta);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
 		std::cout << "The room is almost cleaned of debris..." << std::endl;
-		MSdelay(3000);
+		MSdelay(6000);
 		Dotdot();
 		color(4);
 		std::cout << "OHH...";
@@ -514,7 +514,7 @@ void operatEvent::trigger(character& c)
 		std::cout << "A Powerful Stainiac appeared to face you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Stainiac stai(2);
+		Stainiac stai(7);
 		stain.Battle_Sequence(c, stai);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
