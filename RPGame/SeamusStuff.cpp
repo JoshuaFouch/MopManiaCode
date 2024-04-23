@@ -12,6 +12,7 @@ using namespace std;
 c.Rat_Sale(4);
 */
 
+cellarEvent::cellarEvent() {};
 void cellarEvent::trigger(character& c)
 {
     bool killy = false;
@@ -174,7 +175,7 @@ void cellarEvent::trigger(character& c)
                     endMusic();
                     killswitch = true;
                     break;
-                case 3:
+                default:
                     color(5);
                     cout << "You s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "tupid s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200);
                     cout << "s"; MSdelay(200); cout << "ud, thats"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << " not even an option\n";
@@ -248,7 +249,7 @@ void cellarEvent::trigger(character& c)
 }
 
 //BubblyBoy
-bubbleBoy::bubbleBoy() : NPC() {}
+//bubbleBoy::bubbleBoy() : NPC() {}
 //BubblyBoy
 void bubbleBoy::dialogue(character& c)
 {

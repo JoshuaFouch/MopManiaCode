@@ -648,7 +648,8 @@ void mailboxEvent::trigger(character& c)
 			c.acq_Whendex();
 			checked++;
 			return;
+
 		}
 	}
-			system("pause");
+	system("pause");
 }
