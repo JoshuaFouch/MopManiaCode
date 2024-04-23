@@ -17,26 +17,6 @@ int main()
 	gameMap map;
 	broomba.acq_attUp();
 	broomba.acq_cleaningTips();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
 	broomba.acq_defUp();
 	broomba.acq_healUp();
 	broomba.acq_Mirror();
@@ -95,8 +75,6 @@ int main()
 	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", mental);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
-
-	cellar->trigger(broomba);
 
 	system("pause");
 	map.play(map.theGamer(), broomba, 0);
