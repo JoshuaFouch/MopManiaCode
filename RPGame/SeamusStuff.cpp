@@ -175,12 +175,12 @@ void cellarEvent::trigger(character& c)
                  break;*/
                     std::cout << " this will be game" << std::endl;
             }
-            if (c.get_deadRat() < 4) {
-                playSFX("vine-boom.wav");
-                cout << "get outta here ya broke boi!!!";   //will fix this and the many other errors Iv've enevitibly made
-                MSdelay(5000);
-                return;
-            }
+        }
+        if (c.get_deadRat() < 4) {
+            playSFX("vine-boom.wav");
+            cout << "get outta here ya broke boi!!!";   //will fix this and the many other errors Iv've enevitibly made
+            MSdelay(5000);
+            return;
         }
     }
      else {

@@ -16,7 +16,6 @@ int main()
 	gameMap map;
 	broomba.acq_attUp();
 	broomba.acq_cleaningTips();
-	/*broomba.acq_deadRat();
 	broomba.acq_deadRat();
 	broomba.acq_deadRat();
 	broomba.acq_deadRat();
@@ -35,7 +34,8 @@ int main()
 	broomba.acq_deadRat();
 	broomba.acq_deadRat();
 	broomba.acq_deadRat();
-	broomba.acq_deadRat();*/
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
 	broomba.acq_defUp();
 	broomba.acq_healUp();
 	broomba.acq_Mirror();
