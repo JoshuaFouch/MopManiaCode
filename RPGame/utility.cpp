@@ -1,4 +1,5 @@
 #include "utility.h"
+#include "character.h"
 
 #include <iostream>
 
@@ -52,9 +53,10 @@ void Game_Menu_Test() {
 	}
 }
 
-void clear()
+void clear(character& c)
 {
-	std::cout << "\033[2J\033[1;1H";
+	if (c)
+	system("CLS");
 }
 
 void MSdelay(int n)	//delay for milliseconds

@@ -45,6 +45,7 @@ public:
 	int get_Whendex();
 	int get_Mirror();
 	int getTokens();
+	int getPath();
 	void acq_healUp();
 	void acq_attUp();
 	void acq_defUp();
@@ -61,6 +62,7 @@ public:
 	void acq_cleaningTips();
 	void acq_Whendex();
 	void acq_Mirror();
+	void acq_cleanPath();
 	void Rat_Sale(int num);
 
 	//attack getters
@@ -136,11 +138,13 @@ protected:
 	int cleaningTips = 0;
 	int Whendex = 0;
 	int Mirror = 0;
+	int cleanPath = 0;
 
 	int life = 1; //1 is alive; 0 is dead
 	int exit = 0; //0 is not exit; 1 is exit
 	int end = 0;	//0 is not end; 1 is end
 	int run = 0;
+
 
 	int SoapTokens = 0;
 

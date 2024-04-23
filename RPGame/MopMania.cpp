@@ -12,7 +12,7 @@
 int main()
 {
 	/*map creation*/
-	Broomba broomba("Broomba", 500, 100, 120); //beefy but less health
+	Broomba broomba("Broomba", 500, 500, 120); //beefy but less health
 	gameMap map;
 	broomba.acq_attUp();
 	broomba.acq_cleaningTips();
@@ -75,7 +75,9 @@ int main()
 	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", mental);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
-
+	BubbleBattle buby;
+	BubblyBoy boy(3);
+	buby.Battle_Sequence(broomba, boy);
 
 	system("pause");
 	map.play(map.theGamer(), broomba, 0);

@@ -260,7 +260,7 @@ void MentalEvent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle garbage;
-		GarbageDan dan(1);
+		Hairball dan(1);
 		garbage.Battle_Sequence(c, dan);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
@@ -278,7 +278,7 @@ void MentalEvent::trigger(character& c)
 		std::cout << "Another Hairball appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		GarbageDan can(1);
+		Hairball can(1);
 		garbage.Battle_Sequence(c, can);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
@@ -296,7 +296,7 @@ void MentalEvent::trigger(character& c)
 		std::cout << "Another Hairball appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		GarbageDan san(1);
+		Hairball san(1);
 		garbage.Battle_Sequence(c, san);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead

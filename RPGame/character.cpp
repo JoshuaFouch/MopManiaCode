@@ -127,20 +127,31 @@ int character::get_Mirror() {
 int character::getTokens() {
     return SoapTokens;
 }
+int character::getPath() {
+    return cleanPath;
+}
 void character::acq_healUp()
 {
+    color(7);
+    std::cout << "*you acquired a Heal-up!*" << std::endl;
     healUp++;
 }
 void character::acq_attUp()
 {
+    color(7);
+    std::cout << "*you acquired an Attack-up!*" << std::endl;
     attUp++;
 }
 void character::acq_defUp()
 {
+    color(7);
+    std::cout << "*you acquired a Defense-up!*" << std::endl;
     defUp++;
 }
 void character::acq_deadRat()
 {
+    color(7);
+    std::cout << "*you acquired a Dead rat!*" << std::endl;
     deadRat++;
 }
 void character::use_healUp()
@@ -199,16 +210,29 @@ void character::use_Mirror() {
     system("pause");
 }
 void character::acq_slipperySoap() {
+    color(7);
+    std::cout << "*you acquired a Slippery Soap!*" << std::endl;
     slipperySoap++;
 }
 void character::acq_cleaningTips() {
+    color(7);
+    std::cout << "*you acquired a Cleaning Tip!*" << std::endl;
     cleaningTips++;
 }
 void character::acq_Whendex() {
+    color(7);
+    std::cout << "*you acquired a Whendex!*" << std::endl;
     Whendex++;
 }
 void character::acq_Mirror() {
+    color(7);
+    std::cout << "*you acquired the Mirror!*" << std::endl;
     Mirror++;
+}
+void character::acq_cleanPath() {
+    color(7);
+    std::cout << "*you acquired the Clean path!*" << std::endl;
+    cleanPath = 1;
 }
 void character::Rat_Sale(int num) {
 
@@ -269,12 +293,16 @@ void character::expPt()
     color(7);
     if (winNum == ExpReq) { //if the "amount of wins" counter equals the counter for leveling up
         lvl++;
-        std::cout << "You Leveled Up! " << std::endl;
+        color(6);
+        std::cout << "You Leveled Up! You are now level: " << lvl << std::endl;
+        color(4);
         maxHp += 10;
         maxAtt += 5;
         maxDef += 5;
-        winNum = 0; //resets the victory counter
-        ExpReq += 1;
+        if ((lvl % 3) == 0) {
+            ExpReq += 1;
+        }
+        winNum = 0;
         resetStats();
     }
     else
