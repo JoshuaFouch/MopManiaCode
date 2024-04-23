@@ -454,8 +454,99 @@ operatEvent::operatEvent() {};
 
 void operatEvent::trigger(character& c)
 {
-	std::cout << "not finished" << std::endl;
-	system("pause");
+	if (this->isDone == true) {
+		return;	//if character has already triggered the event in this node
+	}
+	else {
+		endMusic();
+		//playMusic();
+		Sdelay(2);
+		std::cout << "You rolled into the operating room... ";
+		MSdelay(2000);
+		std::cout << "There are surgical tables flipped over and destroyed..." << std::endl;
+		MSdelay(3000);
+		std::cout << "You find kinves with fresh... ketchup..." << std::endl;
+		MSdelay(4000);
+		std::cout << "You decide to clean the room as soon as possible...";
+		MSdelay(5000);
+		Dotdot();
+		color(4);
+		std::cout << "OH SHOOT!";
+		Sdelay(2);
+		color(7);
+		std::cout << "A Stainiac lunges at you!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		battle stain;
+		Stainiac st(2);
+		stain.Battle_Sequence(c, st);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "Seems like there is a presence lingering around still..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(200);
+		std::cout << "GREAT HEAVENS!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "Another Stainiac appeared from nowhere!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		Stainiac sta(2);
+		stain.Battle_Sequence(c, sta);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "The room is almost cleaned of debris..." << std::endl;
+		MSdelay(3000);
+		Dotdot();
+		color(4);
+		std::cout << "OHH...";
+		MSdelay(200);
+		std::cout << "NOOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "A Powerful Stainiac appeared to face you!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		Stainiac stai(2);
+		stain.Battle_Sequence(c, stai);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Dotdot();
+		std::cout << "The presence enemies are gonna!" << std::endl;
+		Sdelay(3);
+		clear();
+		playMusic("void.wav");
+		color(6);
+		std::cout << "Janitorius: Oh this place looks much better now " << c.get_name() << "..." << std::endl;
+		Sdelay(4);
+		std::cout << "You are doing very well..." << std::endl;
+		Sdelay(2);
+		std::cout << "Did you try the ketchup..." << std::endl;
+		Sdelay(4);
+		clear();
+		std::cout << "What... ";
+		Sdelay(3);
+		std::cout << "Oh I mean't clean up the ketchup?" << std::endl;
+		Sdelay(3);
+		std::cout << "...";
+		MSdelay(2500);
+		std::cout << "... ";
+		MSdelay(2500);
+		std::cout << "well get to cleaning more!";
+		MSdelay(1000);
+		endMusic();
+
+		this->isDone = true;
+		return;
+	}
 }
 
 
