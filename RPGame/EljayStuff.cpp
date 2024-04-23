@@ -552,8 +552,24 @@ void operatEvent::trigger(character& c)
 
 mailboxEvent::mailboxEvent() {};
 
-void mailboxEvent::trigger(character& c) {
+void mailboxEvent::trigger(character& c) 
+{
+	if (this->isDone == true) {
+		return;    //if character has already triggered the event in this node
 	//depending on the "checked" variable and perhaps level, it will display different events
-	std::cout << "not finished" << std::endl;
+	//std::cout << "not finished" << std::endl;
+		if (mailboxEvent::checked == true) {
+			std::cout << "You checked your mailbox..." << std::endl;
+			MSdelay(4000);
+			std::cout << "You got a letter in your mailbox!" << std::endl;
+			MSdelay(2000);
+			std::cout << "It says..." << std::endl;
+			std::cout << "Dear " << c.get_name() << std::endl;
+			std::cout << "Thank you for saving me from the needles." << std::endl;
+			std::cout << "I hope you are doing well." << std::endl;
+			std::cout << "Sincerely," << std::endl;
+			std::cout << "Janitorius" << std::endl;
+			MSdelay(4000);
+		}
 	system("pause");
 }
