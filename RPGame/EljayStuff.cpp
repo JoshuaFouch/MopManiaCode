@@ -556,9 +556,9 @@ void mailboxEvent::trigger(character& c)
 {
 	if (this->isDone == true) {
 		return;    //if character has already triggered the event in this node
-	//depending on the "checked" variable and perhaps level, it will display different events
-	//std::cout << "not finished" << std::endl;
-		if (this->checked == 0) 
+		//depending on the "checked" variable and perhaps level, it will display different events
+		//std::cout << "not finished" << std::endl;
+		if (this->checked == 0)
 		{
 			std::cout << "You checked your mailbox..." << std::endl;
 			MSdelay(4000);
@@ -574,13 +574,13 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(4000);
 			std::cout << "Sincerely," << std::endl;
 			MSdelay(3000);
-			std::cout << "Janitorius" << std::endl;			
+			std::cout << "Janitorius" << std::endl;
 			MSdelay(4000);
 			c.acq_healUp();
 			checked++;
 			return;
 		}
-		else if(this->checked == 1)
+		else if (this->checked == 1)
 		{
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
@@ -588,7 +588,7 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(4000);
 			std::cout << "Dear " << c.get_name() << std::endl;
 			MSdelay(4000);
-			std::cout << "This is the 1st time you checked it.." <<std::endl;
+			std::cout << "This is the 1st time you checked it.." << std::endl;
 			MSdelay(4000);
 			c.acq_cleaningTips();
 			checked++;
@@ -644,10 +644,12 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(3000);
 			std::cout << "You got a box covered in mucus and decide to open it..." << std::endl;
 			MSdelay(4000);
-			std::cout << "Oh WOW! " <<std::endl;
+			std::cout << "Oh WOW! " << std::endl;
 			c.acq_Whendex();
 			checked++;
 			return;
+
 		}
-			system("pause");
+	}
+	system("pause");
 }
