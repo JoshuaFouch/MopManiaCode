@@ -452,7 +452,8 @@ void labEvent::trigger(character& c)
 
 operatEvent::operatEvent() {};
 
-void operatEvent::trigger(character& c) {
+void operatEvent::trigger(character& c)
+{
 	std::cout << "not finished" << std::endl;
 	system("pause");
 }
