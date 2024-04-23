@@ -206,7 +206,145 @@ void character::use_Whendex() {
 void character::use_Mirror() {
     clear();
     std::cout << "This is what you look like: (hideous right?) " << std::endl;
-    //seamus stuff
+    if (name == "Broomba") {
+        int counter = 0;
+        while (counter != 50) {
+            counter++;
+            MSdelay(200);
+            std::cout << " _____ \n";
+            std::cout << "(_____)\n";
+            clear();
+            MSdelay(200);
+            std::cout << " _____ \n";
+            std::cout << "(_***_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << "  _____ \n";
+            std::cout << " (_***_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << "   _____ \n";
+            std::cout << "  (_***_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << "    _____ \n";
+            std::cout << "   (_***_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << "   _____ \n";
+            std::cout << "  (_***_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << "  _____ \n";
+            std::cout << " (_***_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << " _____ \n";
+            std::cout << "(_***_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << " __ \\_ \n";
+            std::cout << "(_#%#_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << " __%\\_ \n";
+            std::cout << "(__%#_)\n";
+            clear();
+            MSdelay(200);
+            std::cout << " __%\\_ \n";
+            std::cout << "(__#__)\n";
+            clear();
+            MSdelay(200);
+            std::cout << " __%\\_ \n";
+            std::cout << "(_____)\n";
+            clear();
+            MSdelay(200);
+            std::cout << " __ \\_ \n";
+            std::cout << "(_____)\n";
+            clear();
+            MSdelay(200);
+            std::cout << " _____ \n";
+            std::cout << "(_____)\n";
+            clear();
+            MSdelay(200);
+        }
+    }
+    else if (name == "JetWet") {
+        int counter = 0;
+        while (counter != 60) {
+            counter++;
+            MSdelay(200);
+            std::cout << " ____|=\n";
+            std::cout << "     |=\n";
+            clear();
+            MSdelay(200);
+            std::cout << " ___\\=\n";
+            std::cout << "     \\=\n";
+            clear();
+            MSdelay(200);
+            std::cout << " ____|=\n";
+            std::cout << "     |=\n";
+            MSdelay(200);
+            clear();
+            std::cout << " ___/=\n";
+            std::cout << "   /=\n";
+            MSdelay(200);
+            clear();
+        }
+    }
+    else if (name == "BysonV8") {
+        int counter = 0;
+        while (counter != 50) {
+            counter++;
+            clear();
+            MSdelay(200);
+            std::cout << " ,___\n";
+            std::cout << "<*___|7\n";
+            clear();
+            MSdelay(400);
+            std::cout << " ,___\n";
+            std::cout << "<**__|7\n";
+            clear();
+            MSdelay(400);
+            std::cout << " ,___\n";
+            std::cout << "<***_|7\n";
+            MSdelay(400);
+            clear();
+            std::cout << " ,___\n";
+            std::cout << "<****|7\n";
+            MSdelay(400);
+            clear();
+            counter++;
+            MSdelay(200);
+            std::cout << "  \\__\n";
+            std::cout << "<****|7\n";
+            clear();
+            MSdelay(200);
+            std::cout << "  \\__\n";
+            std::cout << "<***_|7\n";
+            clear();
+            MSdelay(200);
+            std::cout << "  \\__\n";
+            std::cout << "<**__|7\n";
+            clear();
+            MSdelay(200);
+            std::cout << "  \\__\n";
+            std::cout << "<*___|7\n";
+            MSdelay(200);
+            clear();
+            std::cout << "  \\__\n";
+            std::cout << "<____|7\n";
+            MSdelay(200);
+            clear();
+            std::cout << " ,___\n";
+            std::cout << "<____|7\n";
+            MSdelay(200);
+            clear();
+        }
+    }
+    else {
+        
+    }
     system("pause");
 }
 void character::acq_slipperySoap() {
@@ -295,7 +433,7 @@ void character::expPt()
         lvl++;
         color(6);
         std::cout << "You Leveled Up! You are now level: " << lvl << std::endl;
-        color(4);
+        color(7);
         maxHp += 10;
         maxAtt += 5;
         maxDef += 5;

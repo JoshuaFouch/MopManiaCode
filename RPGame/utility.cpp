@@ -52,11 +52,18 @@ void Game_Menu_Test() {
 		}
 	}
 }
+void clear() {
+	system("CLS");
+}
 
 void clear(character& c)
 {
-	if (c)
-	system("CLS");
+	if (c.getPath() == 1) {
+		system("CLS");
+	}
+	else {
+		std::cout << "\033[2J\033[1;1H";
+	}
 }
 
 void MSdelay(int n)	//delay for milliseconds

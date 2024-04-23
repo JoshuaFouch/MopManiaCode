@@ -123,7 +123,7 @@ int main()
 	}
 	else if (user == 3)
 	{
-		BysonV8 byson("Byson", 100, 30, 70);	//lot of health yet weak
+		BysonV8 byson("BysonV8", 100, 30, 70);	//lot of health yet weak
 		battle bobBattle;
 		map.play(map.theGamer(), byson, 0);
 		if (byson.getLife() == 0) {
