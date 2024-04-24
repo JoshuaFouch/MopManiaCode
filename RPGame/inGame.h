@@ -23,7 +23,7 @@ int Start_Menu()
 	Sdelay(4);
 	color(6);	//Janitorius (Grime Reaper) is yellow text
 	std::cout << "My dear soul,";
-	std::cout << " I am Janitorius, the custodian of Le Hospitale..." << std::endl;
+	std::cout << " I am Janitorius, the custodian of Le' Hospitale..." << std::endl;
 	Sdelay(4);
 	std::cout << "You seem to have lost all your memory from that day." << std::endl;
 	Sdelay(4);
@@ -38,6 +38,7 @@ int Start_Menu()
 	std::cout << " Will you accept this new life?...";
 	color(8);
 	std::cout << " type: [y/n]" << std::endl;
+	color(7);
 	std::string choice;
 	std::cin >> choice;
 	color(6);
@@ -49,7 +50,7 @@ int Start_Menu()
 	}
 	else
 	{
-		PlaySound(0, 0, 0);
+		endMusic();
 		Sdelay(5);
 		std::cout << "Okay... goodbye..." << std::endl;
 		Sdelay(4);
@@ -67,7 +68,7 @@ int Start_Menu()
 		Sdelay(3);
 		int x;
 		color(7);
-		std::cout << "\n1. Broomba, the Explosive Custodian" << std::endl;
+		std::cout << "\n"; color(8); std::cout << "[1]: "; color(6); std::cout << "Broomba, the Explosive Custodian" << std::endl;
 		Sdelay(2);
 		std::cout << "\tA high-energy soldier with a passion for cleaning up messes in a blast." << std::endl;
 		Sdelay(2);
@@ -76,7 +77,7 @@ int Start_Menu()
 		std::cout << "\tBroomba roams MopMania, leaving sparkling trails of cleanliness and a touch of controlled chaos" << std::endl;
 		Sdelay(3);
 
-		std::cout << "\n2. Swifter JetWet, the Splashy Sentinel" << std::endl;
+		std::cout << "\n"; color(8); std::cout << "[2]: "; color(6); std::cout << "Swifter JetWet, the Splashy Sentinel" << std::endl;
 		Sdelay(2);
 		std::cout << "\tSwifter JetWet takes cleanliness to new depths! JetWet gained its aquatic powers by the ancient water sage, " << std::endl;
 		Sdelay(2);
@@ -86,13 +87,14 @@ int Start_Menu()
 		std::cout << "\tgrime that threaten the land." << std::endl;
 		Sdelay(3);
 
-		std::cout << "\n3. Byson V8, the cyclonic custodian" << std::endl;
+		std::cout << "\n"; color(8); std::cout << "[3]: "; color(6); std::cout << "Byson V8, the cyclonic custodian" << std::endl;
 		Sdelay(2);
 		std::cout << "\tCrafted, in the legendary Byson Forge, the BysonV8 harnessed the power of air origins, becoming a vacuum marvel." << std::endl;
 		Sdelay(2);
 		std::cout << "\tByson V8 roams MopMania, a swirling force that sucks up dirt and leaves behind a breath of pristine air" << std::endl;
 		std::cout << "\tprotecting the realm from the chaos of dust and debris." << std::endl;
 		Sdelay(3);
+		color(7);
 		std::cin >> x;
 		color(6);
 
@@ -160,6 +162,11 @@ int Start_Menu()
 	//end text color
 	color(7);
 	return charChoice;
+}
+
+void EndCredits() {
+	endMusic();
+	playMusic("creativity.wav");
 }
 
 #endif

@@ -171,4 +171,12 @@ public:
 	void trigger(character& c);
 };
 
+//home event
+class homeEvent : public event
+{
+public:
+	homeEvent();
+	void trigger(character& c);
+};
+
 #endif

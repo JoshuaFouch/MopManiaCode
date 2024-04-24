@@ -11,16 +11,7 @@ event::event(std::string music)
 }
 void event::trigger(character& c)
 {
-	if (this->isDone == true) {
-		return;	//if character has already triggered the event in this node
-	}
-	else {
-		playMusic("metalPipe.wav");
-		std::cout << "Things will happen" << std::endl;
-		this->isDone = true;
-		system("pause");
-		return;
-	}
+	return;
 }
 
 

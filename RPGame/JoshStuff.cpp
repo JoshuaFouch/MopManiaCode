@@ -539,43 +539,37 @@ void HospitalEvent::trigger(character& c) {
 	}
 	else {
 		Sdelay(2);
-		std::cout << "You enter Le' Hospitale..." << std::endl;
+		std::cout << "You enter Le' Hospitale";
 		ellipsis();
 		playSFX("door.wav");
-		Sdelay(2);
-		ellipsis();
-		playSFX("vine-boom.wav");
+		Sdelay(5);
 		color(4);
-		std::cout << "\nWHO "; MSdelay(100); std::cout << "STEPS"; MSdelay(100); std::cout << " IN MY "; MSdelay(100); std::cout << "ABHORRENT ABODE???"; ellipsis();
+		std::cout << "\nWHO "; MSdelay(100); playSFX("vine-boom.wav"); std::cout << "STEPS"; MSdelay(100); std::cout << " IN MY "; MSdelay(100); std::cout << "ABHORRENT ABODE???"; ellipsis();
 		MSdelay(2000);
 		std::cout << "MY NAME IS"; ellipsis();
-		std::cout << " THE FILTHY BUBBLE!" << std::endl;
+		std::cout << " THE FILTHY BUBBLE!";
 		playSFX("vine-boom.wav");
-		Sdelay(5);
+		Sdelay(3);
 		playMusic("terror.wav");
 		ellipsis();
-		std::cout << "Filthy Bubble: WHO SENT YOU HERE???" << std::endl;
+		std::cout << "\nFilthy Bubble: WHO SENT YOU HERE???" << std::endl;
 		Sdelay(5);
 		std::cout << "It does not matter who you are"; ellipsis(); MSdelay(2000);
 		clear();
 		std::cout << "I "; MSdelay(150); std::cout << "w"; MSdelay(150); std::cout << "i"; MSdelay(150); std::cout << "l"; MSdelay(150); std::cout << "l "; MSdelay(500);
 		std::cout << "K"; MSdelay(300); std::cout << "I"; MSdelay(300); std::cout << "L"; MSdelay(300); std::cout << "L "; MSdelay(300);
-		std::cout << "Y"; MSdelay(150); std::cout << "O"; MSdelay(150); std::cout << "U"; ellipsis(); std::cout << "\n";
-		std::cout << "GO FILTHY BUBBLE MINION! "; MSdelay(3000); std::cout << "AND DEFEAT THIS ";
+		std::cout << "Y"; MSdelay(150); std::cout << "O"; MSdelay(150); std::cout << "U"; ellipsis(); std::cout << "\n"; MSdelay(2100);
+		std::cout << "GO FILTHY BUBBLE MINION! "; MSdelay(3000); std::cout << "AND DEFEAT THIS"; ellipsis();
 		std::cout << "\nPRISTINE " << std::endl;
-		endMusic();
 		playSFX("vine-boom.wav");
 		MSdelay(2000);
 		std::cout << "PIGHEADED " << std::endl;
-		endMusic();
 		playSFX("vine-boom.wav");
 		MSdelay(2000);
 		std::cout << "PATHETIC " << std::endl;
-		endMusic();
 		playSFX("vine-boom.wav");
 		MSdelay(2000);
 		std::cout << "POT-BELLIED " << std::endl;
-		endMusic();
 		playSFX("vine-boom.wav");
 		MSdelay(2000);
 		std::cout << "PRISTINE " << std::endl;
@@ -583,7 +577,6 @@ void HospitalEvent::trigger(character& c) {
 		std::cout << "-oh wait i already said that-"; ellipsis(); std::cout << "\n";
 		MSdelay(230);
 		std::cout << "POT-BELLIED " << std::endl;
-		endMusic();
 		playSFX("vine-boom.wav");
 		MSdelay(2000);
 		std::cout << "P-";
@@ -597,25 +590,94 @@ void HospitalEvent::trigger(character& c) {
 		clear();
 		std::cout << "GO KILL HIM ALREADY "; MSdelay(400);
 		std::cout << "YOU BUBBLY BRAT!" << std::endl;
-		MSdelay(6000);
+		MSdelay(4700);
 		color(9);
-		std::cout << "Bubbly bRat: ok." << std::endl;
-		MSdelay(2000);
+		std::cout << "Bubbly bRat: ok..." << std::endl;
+		MSdelay(2700);
 		color(7);
 		musicBattle first;
 		BubblyBoy bad(1);
 		bad.set_name("BUBBLY BRAT (FILTHY BUBBLE MINION)");
-		first.Battle_Sequence("terror.wav", c, bad);
+		first.Battle_Sequence("horror.wav", c, bad);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
 		DotdotTwo();
 		color(4);
-		std::cout << "DANG IT..." << std::endl;
+		playMusic("terror.wav");
+		std::cout << "DANG IT"; ellipsis(); std::cout << "\n";
+		Sdelay(3);
+		clear();
+		std::cout << "You must be the chosen one..." << std::endl;
+		Sdelay(4);
+		std::cout << "The one"; ellipsis(); std::cout << "he"; ellipsis(); std::cout << "sent..." << std::endl;
+		Sdelay(4);
+		std::cout << "anyways..." << std::endl;
+		Sdelay(2);
+		std::cout << "you have proven yourself a worthy opponent..." << std::endl;
+		Sdelay(3);
+		std::cout << "I will let you roam freely in MY house..." << std::endl;
+		Sdelay(5);
+		clear();
+		std::cout << "However, "; MSdelay(540);
+		std::cout << "MY MINIONS WILL KILL YOU!!" << std::endl;
+		MSdelay(3400);
+		std::cout << "I "; MSdelay(200);
+		std::cout << "WILL "; MSdelay(200);
+		std::cout << "NOT "; MSdelay(200);
+		std::cout << "LET "; MSdelay(200);
+		std::cout << "YOU "; MSdelay(200);
+		std::cout << "TAKE "; MSdelay(200); std::cout << "\n";
+		std::cout << "THE "; MSdelay(200);
+		color(6);
+		std::cout << "GRIME "; MSdelay(200);
+		std::cout << "REAPER "; MSdelay(200); std::cout << "\n";
+		color(4);
+		std::cout << "AWAY "; MSdelay(200);
+		std::cout << "FROM "; MSdelay(200);
+		std::cout << "ME"; ellipsis();
+		Sdelay(5);
+		endMusic();
+		DotdotTwo();
+		playMusic("void.wav");
+		color(6);
+		std::cout << "Janitorius: Do not worry " << c.get_name() << std::endl;
+		Sdelay(3);
+		std::cout << "The "; MSdelay(200);
+		color(4);
+		std::cout << "Filthy "; MSdelay(200);
+		std::cout << "Bubble "; MSdelay(200); std::cout << "\n";
+		color(6);
+		std::cout << "is "; MSdelay(200);
+		std::cout << "the "; MSdelay(200);
+		std::cout << "Scourge "; MSdelay(200);
+		std::cout << "of "; MSdelay(200);
+		std::cout << "MopMania"; MSdelay(1000); ellipsis();
+		std::cout << "\nFocus on your mission...." << std::endl;
+		Sdelay(2);
+		std::cout << "I have faith in you... ";
+		Sdelay(3);
+		std::cout << "continue on your journey...and..." << std::endl;
+		Sdelay(3);
+		std::cout << "save... ";
+		MSdelay(2500);
+		std::cout << "me... ";
+		MSdelay(2500);
+		std::cout << "from... my mis-";
+		MSdelay(2000);
+		endMusic();
+		DotdotTwo();
 		color(7);
+		std::cout << "Who is this "; color(4); std::cout << "Filthy Bubble??" << std::endl;
+		color(7);
+		Sdelay(4);
+		std::cout << "Who is this "; color(6); std::cout << "Grime Reaper??"; ellipsis();
+		color(7);
+		std::cout << "\nContinue on your journey, and one day you will find out...\n" << std::endl;
+		Sdelay(2);
 		system("pause");
 		this->isDone = true;
-		this->counter++;
+		return;
 	}
 }
 
@@ -774,7 +836,6 @@ void BubblyBoy::Enrage(character& c)
 }
 
 //create putridpython enemy
-//create bubblyboy enemy
 PutridPython::PutridPython(int lvl) : enemy(lvl) {
 	set_name("The Putrid Python");
 	set_stats(50, 85, 60, lvl);
@@ -840,6 +901,33 @@ void PutridPython::Enrage(character& c)
 	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
 	MSdelay(1000);
 	color(7);
+}
+
+//home event
+homeEvent::homeEvent() {};
+
+void homeEvent::trigger(character& c) {
+	if (this->isDone == true) {
+		return;
+	}
+	else {
+		DotdotTwo();
+		playSFX_once("door.wav");
+		Sdelay(2);
+		std::cout << "You entered your home..." << std::endl;
+		Sdelay(4);
+		std::cout << "You feel at peace with yourself." << std::endl;
+		color(2);
+		Sdelay(3);
+		std::cout << "However"; ellipsis();
+		std::cout << "You have a task to complete"; ellipsis(); std::cout << std::endl;
+		Sdelay(4);
+		color(7);
+		std::cout << "Your Mop-mom kicks you out of the house.\n" << std::endl;
+		Sdelay(1);
+		system("pause");
+		this->isDone = true;
+	}
 }
 
 
