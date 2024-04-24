@@ -3,7 +3,6 @@
 #include "character.h"
 #include "battle.h"
 #include "npc.h"
-//#include <ChatGPTsnake.h>
 
 using namespace std;
 
@@ -167,7 +166,9 @@ void cellarEvent::trigger(character& c)
                     }
                     break;
                 case 3:
-                    //game stuff
+                    color(5);
+                    std::cout << "Sorry... no game yet... (DLC)." << std::endl;
+                    MSdelay(2000);
                     continue;
                 case 4:
                     color(5);
@@ -293,7 +294,6 @@ void bubbleBoy::dialogue(character& c)
 		MSdelay(2000);
 		std::cout << "So, what do you say are you gonna help me get back to mom???";
 		MSdelay(2000);
-		//change back to white for user
             	color(8);
 	std::cout << "[1]: ";
     color(7);
@@ -301,7 +301,7 @@ void bubbleBoy::dialogue(character& c)
             	color(8);
 	std::cout << "[2]: ";
     color(7);
-    std::cout <<     " Ain't no way ya blabbering bubble, let's fight!"<<std::endl;	//change back to white for user
+        std::cout << " Ain't no way ya blabbering bubble, let's fight!"<<std::endl;	//change back to white for user
     
 	
 		std::string choice;
@@ -346,31 +346,31 @@ void bubbleBoy::dialogue(character& c)
         MSdelay(2000);
 		clear();
 		color(7);
+        return;
 	}
-
-    	    else {
-			color(9);//this is a sort of 1d10t pr00fing
-			std::cout << "Bubble Boy: What was that?" << std::endl;
-			MSdelay(2000);
-			std::cout << "Oh! He must not speak Soapanese..." << std::endl;
-			MSdelay(2000);
-			std::cout << "*while over enunciating syllables* \nEYE";
-			MSdelay(500); std::cout << " KNEEED";
-			MSdelay(500); std::cout << " YOOURRR";
-			MSdelay(500); std::cout << " HELPPPP! " << std::endl;
-			clear();
-			Dotdot();
-			std::cout << "Yeah, that probably didn't help the situation..." << std::endl;
-			MSdelay(4000);
-			std::cout << "Guess I'm not getting saved am I?" << std::endl;
-			MSdelay(2000);
-			std::cout << "*continues wailings*" << std::endl;
-			MSdelay(4000);
-			color(7);
-			clear();
-			std::cout << "You should probably try a proper answer next time..." << std::endl;
-			system("pause");//call BubbleBoy's dioulauge again maybe 
-		}
+    else {
+        color(9);//this is a sort of 1d10t pr00fing
+        std::cout << "Bubble Boy: What was that?" << std::endl;
+        MSdelay(2000);
+        std::cout << "Oh! He must not speak Soapanese..." << std::endl;
+        MSdelay(2000);
+        std::cout << "*while over enunciating syllables* \nEYE";
+        MSdelay(500); std::cout << " KNEEED";
+        MSdelay(500); std::cout << " YOOURRR";
+        MSdelay(500); std::cout << " HELPPPP! " << std::endl;
+        clear();
+        Dotdot();
+        std::cout << "Yeah, that probably didn't help the situation..." << std::endl;
+        MSdelay(4000);
+        std::cout << "Guess I'm not getting saved am I?" << std::endl;
+        MSdelay(2000);
+        std::cout << "*continues wailings*" << std::endl;
+        MSdelay(4000);
+        color(7);
+        clear();
+        std::cout << "You should probably try a proper answer next time..." << std::endl;
+        system("pause");//call BubbleBoy's dioulauge again maybe 
+    }
 }
 
 

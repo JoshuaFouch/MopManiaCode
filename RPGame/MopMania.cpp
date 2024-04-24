@@ -41,8 +41,9 @@ int main()
 	labEvent* lab = new labEvent;
 	supplyEvent* sup = new supplyEvent;
 	basementEvent* based = new basementEvent;
+	homeEvent* home = new homeEvent;
 
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", e); // e even was here
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", home);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", mail);
 	map.setMailbox(map.getIndex()->getLeft());
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", rusty);

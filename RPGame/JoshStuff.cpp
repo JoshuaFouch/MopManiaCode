@@ -677,6 +677,7 @@ void HospitalEvent::trigger(character& c) {
 		Sdelay(2);
 		system("pause");
 		this->isDone = true;
+		return;
 	}
 }
 
@@ -835,7 +836,6 @@ void BubblyBoy::Enrage(character& c)
 }
 
 //create putridpython enemy
-//create bubblyboy enemy
 PutridPython::PutridPython(int lvl) : enemy(lvl) {
 	set_name("The Putrid Python");
 	set_stats(50, 85, 60, lvl);
@@ -901,6 +901,33 @@ void PutridPython::Enrage(character& c)
 	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
 	MSdelay(1000);
 	color(7);
+}
+
+//home event
+homeEvent::homeEvent() {};
+
+void homeEvent::trigger(character& c) {
+	if (this->isDone == true) {
+		return;
+	}
+	else {
+		DotdotTwo();
+		playSFX_once("door.wav");
+		Sdelay(2);
+		std::cout << "You entered your home..." << std::endl;
+		Sdelay(4);
+		std::cout << "You feel at peace with yourself." << std::endl;
+		color(2);
+		Sdelay(3);
+		std::cout << "However"; ellipsis();
+		std::cout << "You have a task to complete"; ellipsis(); std::cout << std::endl;
+		Sdelay(4);
+		color(7);
+		std::cout << "Your Mop-mom kicks you out of the house.\n" << std::endl;
+		Sdelay(1);
+		system("pause");
+		this->isDone = true;
+	}
 }
 
 
