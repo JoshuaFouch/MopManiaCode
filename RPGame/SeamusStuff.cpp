@@ -767,21 +767,28 @@ void dermEvent::trigger(character& c) {
         Sdelay(5);
         std::cout << "the tower of tan slowly streches this way and that finally forming into..." << std::endl;
         Sdelay(5);
-        std::cout << "A LEPER LEOPARD!!!" << std::endl;
+        std::cout << "LEOPARD the LEPER!!!" << std::endl;
         Sdelay(5);
 
         playSFX("battle!.wav");
         Sdelay(2);
-        DeadSkinDill DILL(3);
-        SB.Battle_Sequence(c, DILL);
+        LeopardLeper LEP(5);
+        SB.Battle_Sequence(c, LEP);
         if (c.getLife() == 0) {
             return;	//if the character is dead
         }
+
+
 		MSdelay(1500);
 		clear();
+
+        std::cout << "Congratulations, you cleaned out the Dermatology room!" << std::endl;
+        Sdelay(5);
+
 		c.acq_deadRat();
 		c.acq_deadRat();
-		c.acq_healUp();
+        c.acq_deadRat();
+		c.acq_attUp();
 		c.acq_attUp();
 		endMusic();
 		system("pause");
