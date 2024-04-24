@@ -657,7 +657,7 @@ void HospitalEvent::trigger(character& c) {
 		Sdelay(2);
 		std::cout << "I have faith in you... ";
 		Sdelay(3);
-		std::cout << "ontinue on your journey...and..." << std::endl;
+		std::cout << "continue on your journey...and..." << std::endl;
 		Sdelay(3);
 		std::cout << "save... ";
 		MSdelay(2500);
@@ -673,7 +673,7 @@ void HospitalEvent::trigger(character& c) {
 		Sdelay(4);
 		std::cout << "Who is this "; color(6); std::cout << "Grime Reaper??"; ellipsis();
 		color(7);
-		std::cout << "Continue on your journey, and one day you will find out...\n" << std::endl;
+		std::cout << "\nContinue on your journey, and one day you will find out...\n" << std::endl;
 		Sdelay(2);
 		system("pause");
 		this->isDone = true;
