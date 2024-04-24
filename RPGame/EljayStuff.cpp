@@ -720,7 +720,7 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "Hello my friend it is I..." << std::endl;
 			MSdelay(3000);
 			playMusic("vine-boom.wav");
-			std::cout << "Grime Reaper!" << std::endl;
+			std::cout << "Grime Cleaner!" << std::endl;
 			MSdelay(3000);
 			std::cout << "You really kept checking the dang mail box..." << std::endl;
 			MSdelay(4000);
@@ -728,9 +728,9 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "So I will battle you now aahhahahahahhajhahhahahahahahahhaha... you will die" << std::endl;
 			MSdelay(5000);
 			endMusic();
-			battle grimer;
-			GrimeReaper reap(15);
-			grimer.Battle_Sequence(c, reap);
+			musicBattle bat;
+			MucusMaw reap(15);
+			bat.Battle_Sequence("MattariCore.wav", c, reap);
 			if (c.getLife() == 0) {
 				return;    //if the character is dead
 			}
