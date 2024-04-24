@@ -254,14 +254,20 @@ void MrsClean::dialogue(character& c)
 		color(3);
 		std::cout << "Ah yes, rumors of this"; color(5); std::cout << " Putrid Python..." << std::endl;
 		color(3);
-		MSdelay(2000);
+		MSdelay(3000);
 		std::cout << "this creature was supposedly exposed to some high levels of grime that affected its material make up..." << std::endl;
-		MSdelay(2000);
+		MSdelay(4000);
 		std::cout << "the last I heard of it was when some adventurers discover it in the basement floor..." << std::endl;
+		MSdelay(2600);
+		std::cout << "Apparently he loves to "; color(5); std::cout << "eat dead rats"; ellipsis(); std::cout << "\n";
 		MSdelay(2000);
-		std::cout << "so don't get into too much trouble if you do find it..." << std::endl;
+		color(3);
+		std::cout << "If you he eats "; color(5); std::cout << "too much rats, "; color(3); MSdelay(400); std::cout << "He will go insane...\n";
+		MSdelay(1200);
+		std::cout << "and he will turn into a rat/python chimera!!" << std::endl;
+		MSdelay(1500);
+		std::cout << "so don't get into too much trouble if you do find it...\n" << std::endl;
 		MSdelay(2000);
-		std::cout << "" << std::endl;
 		color(7);
 		system("pause");
 		clear();
@@ -270,15 +276,21 @@ void MrsClean::dialogue(character& c)
 	{
 		clear();
 		color(3);
-		std::cout << "le hospitale dialogues" << std::endl;
+		std::cout << "This place used to be our home in Mop Mania..." << std::endl;
 		MSdelay(3000);
-		std::cout << "fi" << std::endl;
-		MSdelay(2000);
-		std::cout << "fi" << std::endl;
-		MSdelay(4000);
-		std::cout << "fie" << std::endl;
-		MSdelay(2000);
-		std::cout << "cap" << std::endl;
+		std::cout << "Until "; color(6); MSdelay(500); std::cout << "The Grime Reaper "; color(3); MSdelay(400); std::cout << "banished us from it..." << std::endl;
+		MSdelay(4500);
+		std::cout << "Many Mop Manians will say he is evil and wants the worst for us"; ellipsis(); std::cout << "\n";
+		std::cout << "However... I raised him, "; Sdelay(2);
+		std::cout << "and "; color(6); Sdelay(1); std::cout << "he would never wish something terrible for his people"; ellipsis(); color(3);
+		MSdelay(2300);
+		std::cout << "\nAnyways, our home is filled with smelly"; ellipsis(); std::cout << " stupid"; ellipsis(); std::cout << " swines!" << std::endl;
+		MSdelay(2300);
+		std::cout << "Be careful around those parts..." << std::endl;
+		MSdelay(2100);
+		std::cout << "If you do end up going into Le' Hospitale"; ellipsis();
+		std::cout << "find my young apprentice,"; MSdelay(400); std::cout << " The Grime Reaper...\n" << std::endl;
+		Sdelay(2);
 		color(7);
 		system("pause");
 		clear();
@@ -287,7 +299,7 @@ void MrsClean::dialogue(character& c)
 	{
 		clear();
 		color(3);
-		std::cout << "Ah the "; color(2); std::cout << "Grime Reaper..." << std::endl;
+		std::cout << "Ah the "; color(6); std::cout << "Grime Reaper..." << std::endl;
 		MSdelay(2000);
 		color(3);
 		std::cout << "My old apprentice... it has been about twenty long mop-years since I last trained him" << std::endl;
@@ -317,12 +329,12 @@ void MrsClean::dialogue(character& c)
 		clear();
 		std::cout << "Ahhh forget it..." << std::endl;
 		MSdelay(3000);
-		std::cout << "*to herself* He couldn't be Grimey's chosen one..." << std::endl;
+		std::cout << "*to herself*"; color(6); std::cout << " He couldn't be Grimey's chosen one..." << std::endl;
 		MSdelay(2000);
 		std::cout << "noo...no..." << std::endl;
 		MSdelay(3000);
 		Dotdot();
-		std::cout << "I need another drink... RUSTY I'LL TAKE ANOTHER MUDWEISER!!" << std::endl;
+		std::cout << "I need another drink"; ellipsis(); std::cout << " RUSTY I'LL TAKE ANOTHER MUDWEISER!!\n" << std::endl;
 		color(7);
 		system("pause");
 		clear();
@@ -350,8 +362,8 @@ void MrsClean::dialogue(character& c)
 		color(3);
 		std::cout << "OH my day?" << std::endl;
 		MSdelay(2000);
-		std::cout << "Same as the day before and the day before that..." << std::endl;
-		MSdelay(2000);
+		std::cout << "Same as the day before and the day before that"; ellipsis(); std::cout << std::endl;
+		MSdelay(3000);
 		std::cout << "Honestly I don't keep track anymore since everyday it feels like the same day everyday...." << std::endl;
 		MSdelay(2000);
 		std::cout << "You are very sweet... Thank you for asking!" << std::endl;
@@ -362,7 +374,8 @@ void MrsClean::dialogue(character& c)
 	else if (choice == "6") 
 	{
 		clear();
-		std::cout << "You have exited" << std::endl;
+		color(7);
+		std::cout << "You have exited\n" << std::endl;
 		// exit to other options in the Rusty Bucket
 		color(7);
 		system("pause");
