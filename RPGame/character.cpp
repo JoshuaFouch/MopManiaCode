@@ -353,27 +353,32 @@ void character::use_Mirror() {
 }
 void character::acq_slipperySoap() {
     color(7);
-    std::cout << "*you acquired a Slippery Soap!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Slippery Soap!*" << std::endl;
+    color(7);
     slipperySoap++;
 }
 void character::acq_cleaningTips() {
     color(7);
-    std::cout << "*you acquired a Cleaning Tip!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Cleaning Tip!*" << std::endl;
+    color(7);
     cleaningTips++;
 }
 void character::acq_Whendex() {
     color(7);
-    std::cout << "*you acquired a Whendex!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Whendex!*" << std::endl;
+    color(7);
     Whendex++;
 }
 void character::acq_Mirror() {
     color(7);
-    std::cout << "*you acquired the Mirror!*" << std::endl;
+    std::cout << "*you acquired the "; color(2); std::cout << "Mirror!*" << std::endl;
+    color(7);
     Mirror++;
 }
 void character::acq_cleanPath() {
     color(7);
-    std::cout << "*you acquired the Clean path!*" << std::endl;
+    std::cout << "*you acquired the "; color(2); std::cout << "Clean path!*" << std::endl;
+    color(7);
     cleanPath = 1;
 }
 void character::Rat_Sale(int num) {

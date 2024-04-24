@@ -588,12 +588,12 @@ void mailboxEvent::trigger(character& c)
 		MSdelay(4000);
 		std::cout << "\tSincerely," << std::endl;
 		MSdelay(3000);
+		color(6);
 		std::cout << "\t\tJanitorius" << std::endl;
 		MSdelay(4000);
 		c.acq_healUp();
 		MSdelay(2000);
 		checked++;
-		return;
 	}
 	else if (this->checked == 1)
 	{
@@ -614,11 +614,10 @@ void mailboxEvent::trigger(character& c)
 		MSdelay(4000);
 		std::cout << "\tSincerely," << std::endl;
 		MSdelay(3000);
-		std::cout << "\t:Latherus" << std::endl;
+		std::cout << "\tLatherus" << std::endl;
 		c.acq_cleaningTips();
 		MSdelay(2000);
 		checked++;
-		return;
 	}
 	else if (this->checked == 2)
 	{
@@ -633,7 +632,7 @@ void mailboxEvent::trigger(character& c)
 		MSdelay(4000);
 		std::cout << "\t\tLatherus has brought up news of you venturing into le hospitale.." << std::endl;
 		MSdelay(4000);
-		std::cout << "\t\tI hope you are careful around the parts of there fellow.." << std::endl;
+		std::cout << "\t\tI hope you are careful around those parts, fellow.." << std::endl;
 		MSdelay(4000);
 		std::cout << "\t\tI wish you strength in your endeavors!" << std::endl;
 		MSdelay(4000);
@@ -643,7 +642,6 @@ void mailboxEvent::trigger(character& c)
 		c.acq_attUp();
 		MSdelay(2000);
 		checked++;
-		return;
 	}
 	else if (this->checked == 3)
 	{
@@ -656,7 +654,6 @@ void mailboxEvent::trigger(character& c)
 		c.acq_deadRat();
 		MSdelay(2000);
 		checked++;
-		return;
 	}
 	else if (this->checked == 4)
 	{
@@ -673,7 +670,6 @@ void mailboxEvent::trigger(character& c)
 		c.acq_Mirror();
 		MSdelay(2000);
 		checked++;
-		return;
 	}
 	else if (this->checked == 5)
 	{
@@ -702,8 +698,6 @@ void mailboxEvent::trigger(character& c)
 		c.acq_Whendex();
 		MSdelay(2000);
 		checked++;
-		return;
-
 	}
 	else if (this->checked == 6)
 	{
@@ -716,7 +710,6 @@ void mailboxEvent::trigger(character& c)
 		std::cout << "Go do other stuff." << std::endl;
 		MSdelay(2000);
 		checked++;
-		return;
 	}
 	else if (this->checked == 7)
 	{
@@ -727,7 +720,6 @@ void mailboxEvent::trigger(character& c)
 		std::cout << "I will literally raise your taxes because you keep checking your mailbox..." << std::endl;
 		MSdelay(4500);
 		checked++;
-		return;
 	}
 	else if (this->checked == 8)
 	{
@@ -737,7 +729,6 @@ void mailboxEvent::trigger(character& c)
 		std::cout << "Dude stop checking it, there seriously isn't anything here..." << std::endl;
 		MSdelay(3000);
 		checked++;
-		return;
 	}
 	else if (this->checked == 9)
 	{
@@ -752,10 +743,10 @@ void mailboxEvent::trigger(character& c)
 		std::cout << "Check it again and you'll have a surprise!" << std::endl;
 		MSdelay(4500);
 		checked++;
-		return;
 	}
 	else if (this->checked == 10)
 	{
+		playMusic("Mattari.wav");
 		Sdelay(2);
 		std::cout << "You checked your mailbox...";
 		ellipsis();
@@ -800,8 +791,6 @@ void mailboxEvent::trigger(character& c)
 		c.acq_Whendex();
 		MSdelay(2000);
 		checked++;
-		return;
-
 	}
 	else
 	{
@@ -811,7 +800,7 @@ void mailboxEvent::trigger(character& c)
 		std::cout << "There's nothing in there... stop checking actually" << std::endl;
 		MSdelay(4000);
 		this->isDone = true;
-		return;
 	}
 	system("pause");
+	return;
 }
