@@ -582,7 +582,6 @@ void mailboxEvent::trigger(character& c)
 		}
 		else if (this->checked == 1)
 		{
-		c.get_lvl() >= 2;
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
