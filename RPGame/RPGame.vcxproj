@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\..\Downloads\onrepeat.wav" />
+    <Media Include="..\..\audio for game\horror.wav" />
     <Media Include="..\..\audio for game\Mattari.wav" />
     <Media Include="..\..\background.wav" />
     <Media Include="..\..\BAH.wav" />
@@ -171,13 +172,13 @@
     <Media Include="..\..\terror.wav" />
     <Media Include="..\..\TheGrimeReaper.wav" />
     <Media Include="..\..\victory!.wav" />
+    <Media Include="..\..\vine-boom.wav" />
     <Media Include="battlemusic.wav" />
     <Media Include="dies-irae-chant.wav" />
     <Media Include="gameover.wav" />
     <Media Include="GoDown.wav" />
     <Media Include="metalPipe.wav" />
     <Media Include="OE.wav" />
-    <Media Include="vine-boom.wav" />
     <Media Include="void.wav" />
   </ItemGroup>
   <ItemGroup>

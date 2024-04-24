@@ -113,9 +113,6 @@
     <Media Include="GoDown.wav">
       <Filter>MusicStuff</Filter>
     </Media>
-    <Media Include="vine-boom.wav">
-      <Filter>MusicStuff</Filter>
-    </Media>
     <Media Include="metalPipe.wav">
       <Filter>MusicStuff</Filter>
     </Media>
@@ -180,6 +177,12 @@
       <Filter>MusicStuff</Filter>
     </Media>
     <Media Include="..\..\cricket.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\audio for game\horror.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\vine-boom.wav">
       <Filter>MusicStuff</Filter>
     </Media>
   </ItemGroup>
