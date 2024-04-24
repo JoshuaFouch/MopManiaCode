@@ -676,6 +676,11 @@ void HospitalEvent::trigger(character& c) {
 		std::cout << "\nContinue on your journey, and one day you will find out...\n" << std::endl;
 		Sdelay(2);
 		system("pause");
+		clear();
+		c.acq_deadRat();
+		c.acq_healUp();
+		c.acq_healUp();
+		system("pause");
 		this->isDone = true;
 		return;
 	}
@@ -913,19 +918,27 @@ void homeEvent::trigger(character& c) {
 	else {
 		DotdotTwo();
 		playSFX_once("door.wav");
-		Sdelay(2);
+		Sdelay(3);
 		std::cout << "You entered your home..." << std::endl;
 		Sdelay(4);
 		std::cout << "You feel at peace with yourself." << std::endl;
-		color(2);
+		playMusic("creativity.wav");
 		Sdelay(3);
 		std::cout << "However"; ellipsis();
 		std::cout << "You have a task to complete"; ellipsis(); std::cout << std::endl;
 		Sdelay(4);
+		color(2);
+		std::cout << c.get_name() << " Mom: "; MSdelay(500); std::cout << "HI SON!!"; ellipsis();
+		std::cout << "\nPlease be safe out there..." << std::endl;
+		Sdelay(2);
+		std::cout << "If you want to know more about this place, "; MSdelay(500);
+		std::cout << "You should go check out the Rusty Bucket!" << std::endl;
+		MSdelay(999);
+		std::cout << "My dear friend Mrs. Clean has some good information about our home!" << std::endl;
+		Sdelay(3);
 		color(7);
-		std::cout << "Your Mop-mom kicks you out of the house.\n" << std::endl;
-		Sdelay(1);
 		system("pause");
+		endMusic();
 		this->isDone = true;
 	}
 }
