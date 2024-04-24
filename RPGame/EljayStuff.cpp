@@ -580,15 +580,15 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(2000);
 			std::cout << "It says..." << std::endl;
 			MSdelay(2000);
-			std::cout << "Dear " << c.get_name() << std::endl;
+			std::cout << "\tDear " << c.get_name() << std::endl;
 			MSdelay(4000);
-			std::cout << "I hope your journey is going well." << std::endl;
+			std::cout << "\t\tI hope your journey is going well." << std::endl;
 			MSdelay(5000);
-			std::cout << "You are doing a great job and you deserve a little break." << std::endl;
+			std::cout << "\t\tYou are doing a great job and you deserve a little break." << std::endl;
 			MSdelay(4000);
-			std::cout << "Sincerely," << std::endl;
+			std::cout << "\tSincerely," << std::endl;
 			MSdelay(3000);
-			std::cout << "Janitorius" << std::endl;
+			std::cout << "\t\tJanitorius" << std::endl;
 			MSdelay(4000);
 			c.acq_healUp();
 			MSdelay(4000);
@@ -602,10 +602,19 @@ void mailboxEvent::trigger(character& c)
 			ellipsis();
 			std::cout << "You got a letter in your mailbox!" << std::endl;
 			MSdelay(4000);
-			std::cout << "Dear " << c.get_name() << std::endl;
+			std::cout << "\tDear " << c.get_name() << std::endl;
 			MSdelay(4000);
-			std::cout << "This is the 1st time you checked it.." << std::endl;
+			std::cout << "\t\tThis is Latherus, your neighbor.." << std::endl;
 			MSdelay(4000);
+			std::cout << "\t\tI've heard that you have been venturing into le hospitale.." << std::endl;
+			MSdelay(4000);
+			std::cout << "\t\tWhatever you do always be aware of your surroundings.." << std::endl;
+			MSdelay(4000);
+			std::cout << "\t\tI have a gift for you that might help you, I hope it helps!" << std::endl;
+			MSdelay(4000);
+			std::cout << "\tSincerely," << std::endl;
+			MSdelay(3000);
+			std::cout << "\t:Latherus" << std::endl;
 			c.acq_cleaningTips();
 			MSdelay(4000);
 			checked++;
@@ -616,21 +625,33 @@ void mailboxEvent::trigger(character& c)
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
+			std::cout << "You got a letter in your mailbox! :O" << std::endl;
 			MSdelay(4000);
-			std::cout << "You checked a 2nd time..." << std::endl;
+			std::cout << "\tDear " << c.get_name() << std::endl;
 			MSdelay(4000);
+			std::cout << "\t\tThis is Sir Mopsworth, your other neighbor.." << std::endl;
+			MSdelay(4000);
+			std::cout << "\t\tLatherus has brought up news of you venturing into le hospitale.." << std::endl;
+			MSdelay(4000);
+			std::cout << "\t\tI hope you are careful around the parts of there fellow.." << std::endl;
+			MSdelay(4000);
+			std::cout << "\t\tI wish you strength in your endeavors!" << std::endl;
+			MSdelay(4000);
+			std::cout << "\tSincerely," << std::endl;
+			MSdelay(3000);
+			std::cout << "\tSir Mopsworth" << std::endl;
 			c.acq_attUp();
 			MSdelay(4000);
 			checked++;
 			return;
 		}
-		else if (this->checked == 3)
+		else if (this->checked == 3)//putrid pythion
 		{
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			MSdelay(4000);
-			std::cout << "This is the 3rd time you checked it..." << std::endl;
+			std::cout << "Oh what's this doing here?" << std::endl;
 			MSdelay(4000);
 			c.acq_deadRat();
 			MSdelay(4000);
@@ -643,7 +664,11 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			MSdelay(4000);
-			std::cout << "This is the 4th time you checked it...." << std::endl;
+			std::cout << "Oh what's this?" << std::endl;
+			MSdelay(4000);
+			std::cout << "Your reflection..." << std::endl;
+			MSdelay(4000);
+			std::cout << "Maybe it'll be useful" << std::endl;
 			MSdelay(4000);
 			c.acq_Mirror();
 			MSdelay(4000);
@@ -655,6 +680,10 @@ void mailboxEvent::trigger(character& c)
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
+			std::cout << "You saw it covered in mucus...." << std::endl;
+			MSdelay(3000);
+			std::cout << "A Mucus Maw attacks!" << std::endl;
+			MSdelay(3000);
 			battle mucuss;
 			MucusMaw mucus(5);
 			mucuss.Battle_Sequence(c, mucus);
@@ -744,7 +773,8 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(5000);
 			endMusic();
 			musicBattle bat;
-			MucusMaw reap(15);
+			BronchitisRex reap(15);
+			reap.set_name("Grime Cleaner");
 			bat.Battle_Sequence("MattariCore.wav", c, reap);
 			if (c.getLife() == 0) {
 				return;    //if the character is dead
