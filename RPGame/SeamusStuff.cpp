@@ -378,7 +378,286 @@ void bubbleBoy::dialogue(character& c)
 bubbleMama::bubbleMama() {};
 
 void bubbleMama::dialogue(character& c) {
-    std::cout << "not finished" << std::endl;
+    
+    std::cout <<"You see a large bubble in distress, and choose to investigate" << std::endl;
+    color(1);//this makes it dark blue
+	std::cout <<  "BubbleMomma: My poor bubble boy is lost! I told him not to go to that dangerous old Hospitale"<< std::endl;
+    MSdelay(5000);
+    std::cout <<"why wouldn't he just listen to me!!" << std::endl;
+    MSdelay(3000);
+    clear();
+    	color(8);
+	std::cout << "[1]: ";
+	color(7); 
+    std::cout << " I have your Bubbleboy!"<< std::endl;    //change back to white for user
+         color(8);
+    std::cout << "[2]: ";
+    color(7);
+    std::cout << " Stop your wailing, ya big bubble!"<< std::endl; 
+	std::string choice;
+	std::cin >> choice;
+
+	if (choice == "1"&&c.bubbleQuest==1)
+	{
+		color(1);
+		std::cout <<"BubbleMomma: ITS MY BEAUTIFUL BUBBLY BUBBLE BOY!!!" << std::endl;
+        MSdelay(2000);
+        std::cout <<"I've missed you so much!!" << std::endl;
+        MSdelay(2000);
+        color(7);
+         std::cout <<"*she hugs her bubble boy lovingly*" << std::endl;
+        MSdelay(3000);
+        Dotdot();
+        color(1);
+         std::cout <<"AHH YOU BAD BAD BUBBLE BOY! " << std::endl;
+         MSdelay(2000);
+         std::cout <<"OH I COULD ALMOST POP YOU " << std::endl;
+         MSdelay(2000);
+         std::cout <<"I TOLD YOU NOT TO GO TO THAT MANSION!" << std::endl;
+         MSdelay(2000);
+         std::cout <<"and WHAT do you do??? of COURSE you go to the mansion!" << std::endl;
+         MSdelay(3000);
+        std::cout <<"You know that ever since " << std::endl;
+		color(4);
+		std::cout <<"your father ";
+		color(1);
+		std::cout <<"left, we've been " << std::endl;
+         MSdelay(3000);
+         std::cout <<"struggling just to put soap on the table" << std::endl;
+         MSdelay(2000);
+        color(9);
+          std::cout <<"Bubbleboy: But Mom, that's actually why I went to the Mansion" << std::endl;
+         MSdelay(2000);
+          std::cout <<"I saw how hard you were working just to feed the two of us and..." << std::endl;
+         MSdelay(4000);
+          std::cout <<" well, I just really wanted to help you out." << std::endl;
+         MSdelay(4000);
+         std::cout <<"Plus some weird stranger told me that there were lots and lots " << std::endl;//janitorious?
+         MSdelay(3000);
+         std::cout <<"of soap potions in that old storage closet." << std::endl;
+         MSdelay(3000);
+         color(1);
+          std::cout <<"BubbleMomma: oh Bubble boy... *begins sobbing again*" << std::endl;
+         MSdelay(2000);
+         std::cout <<"well... I'm just glad to have you home again" << std::endl;
+         MSdelay(4000);
+          std::cout <<"Thank you soap much kind adventurer!" << std::endl;
+         MSdelay(1000);
+         color(7);
+         std::cout <<"*you obtained 5 soap potions*" << std::endl;// might need to change the name of this item
+         Dotdot();
+          std::cout <<"*and a dead rat...*" << std::endl;
+          MSdelay(2000);
+           std::cout <<"*and for some reason this one stinks more than the others...*" << std::endl;
+           MSdelay(5000);
+         acq_healUp();
+         acq_healUp();
+         acq_healUp();
+         acq_healUp();
+         acq_healUp();
+         acq_deadRat();
+         MSdelay(1000);
+		color(7);
+		std::cout << "You have successfully completed";color(1); std::cout<<" THE BUBBLE QUEST!" << std::endl;
+		color(7);
+		//maybe give some exp to the player as well
+        c.bubAdvance();//this means the int is 2 and you finished the quest
+         MSdelay(3000);
+	}
+    else if (choice == "1"&&c.bubbleQuest<=0){//so if you dont have the child but say you do (or you killed him)
+    color(1);
+		std::cout <<"BubbleMomma: OH HOW IVE MISSED YOU, MY BEAUTIFUL BUBBLY BUBBLE BOY!!!" << std::endl;
+        MSdelay(2000);
+         Dotdot();
+         std::cout <<"Wait..." << std::endl;
+        MSdelay(2000);
+          Dotdot();
+          std::cout <<"where is he?" << std::endl;
+           MSdelay(2000);
+          std::cout <<"you don't have him do you?" << std::endl;
+        MSdelay(2000);
+         std::cout <<"you're a cruel person" << std::endl;
+        MSdelay(2000);
+         std::cout <<"you know that?" << std::endl;
+        MSdelay(2000);
+         //probably call the function again if this happens and you didnt see him yet 
+        if (c.bubbleQuest==-1){
+        clear();
+            	color(8);
+	std::cout << "[1]: ";
+    color(7);
+     std::cout << " You have no idea how cruel I really am, I POPPED your stupid little Bubble Boy"<< std::endl;    //change back to white for user
+                color(8);
+	std::cout << "[2]: ";
+    color(7);
+    std::cout << " I am SO sorry... "<< std::endl; 
+	std::string choiceC;
+	std::cin >> choiceC;}
+
+
+		if (choiceC=="1"){
+	color(1);
+          std::cout <<"BubbleMomma: There's no way" << std::endl; MSdelay(2000);
+		  std::cout <<"No, it just couldn't be" << std::endl; MSdelay(2000);
+		  std::cout <<"You're just kidding, this is just some sick joke, "; MSdelay(2000);
+		  std::cout <<"that's all it is " << std::endl; MSdelay(2000);
+		  clear();
+		  elipses();
+		  std::cout <<"YOU!"; MSdelay(2000);
+		  std::cout <<" This is all YOUR fault!"; MSdelay(2000);
+		  std::cout <<", IM GOING TO KILL YOU!!! " << std::endl; MSdelay(2000);
+		  std::cout <<"wait"; MSdelay(500); elipses();
+		  std::cout <<"ha"; MSdelay(500);std::cout <<"ha"; MSdelay(400);std::cout <<"ha"; MSdelay(350);std::cout <<"ha"; MSdelay(300);std::cout <<"Ha"; MSdelay(250);
+		  std::cout <<"Ha"; MSdelay(250);std::cout <<"Ha"; MSdelay(200);std::cout <<"Ha"; MSdelay(200);std::cout <<"HA"; MSdelay(150);std::cout <<"HA"; MSdelay(150);
+		  std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(50);std::cout <<"HA"; MSdelay(50);
+		  clear();
+		   std::cout <<"NO NEED!"<<endl; MSdelay(2000);
+		   std::cout <<"Ha"; MSdelay(250);std::cout <<"Ha"; MSdelay(200);std::cout <<"Ha"; MSdelay(200);std::cout <<"HA"; MSdelay(150);std::cout <<"HA"; MSdelay(150);
+		   std::cout <<"Because no one would ever fo anything so CRUEL"<<endl; MSdelay(2000);
+		   std::cout <<"Because why would anyone ever KILL"<<endl; MSdelay(2000);
+		   std::cout <<", such an innocent"; MSdelay(2000);
+		   std::cout <<", beautiful"; MSdelay(2000);
+		   std::cout <<", little"; MSdelay(2000);
+		   std::cout <<", h"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "p"; MSdelay(200); std::cout << "l"; MSdelay(200);std::cout << "e"; MSdelay(200);std::cout << "s"; MSdelay(200);std::cout << "s"; MSdelay(200);
+		    elipses();
+		   std::cout <<", B"; MSdelay(200); std::cout << "u"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "l"; MSdelay(200);std::cout << "e"; MSdelay(200);std::cout << " B"; MSdelay(200);std::cout << "o"; MSdelay(200);
+		   std::cout << "y"; MSdelay(200);
+		    elipses();
+			clear();
+			std::cout <<"you're lying, you HAVE to be lying"<<endl; MSdelay(2000);
+			elipses(); 
+			 std::cout <<""<<endl; MSdelay(2000);
+			 std::cout <<"PLEASE"; MSdelay(1000);
+			std::cout <<"PLEASE just tell me that you're lying"<<endl; MSdelay(3000);//bargin depression, acceptance
+			std::cout <<"PLEASE just tell me that my boy is okay"<<endl; MSdelay(3000);
+			std::cout <<"I couldn't even imagine a life without him"<<endl; MSdelay(3000);
+			std::cout <<"I'll give you ANYTHING"<<endl; MSdelay(2000);
+			elipses(); 
+			 std::cout <<"just"; MSdelay(1000);
+			 elipses(); 
+			 std::cout <<"just"; MSdelay(1000);
+			 elipses(); 
+			std::cout <<"TELL ME WHERE HE IS"<<endl; MSdelay(2000);
+			std::cout <<"I KNOW YOU HAVE HIM SOMEWHERE!"<<endl; MSdelay(5000);
+			elipses(); 
+			std::cout <<"Oh"<<endl; MSdelay(2000);
+			std::cout <<"Oh who am I kidding"; MSdelay(2000);
+			std::cout <<", he's gone isn't he?"<<endl; MSdelay(3000);
+			std::cout <<"he'll never come back"<<endl; MSdelay(5000);
+			std::cout <<"whats the point anymore?"<<endl; MSdelay(5000);
+			elipses(); 
+			//then call here battle here with her at level 5 or something low, maybe just specifically low attack but high hp
+
+         MSdelay(2000);
+		}
+
+		if (choiceC=="2"){//repeats a lot of other cuz you will only see that one once, since afterward she'll be dead
+color(1);
+          std::cout <<"BubbleMomma: There's no way" << std::endl; MSdelay(2000);
+		  std::cout <<"No, it just couldn't be" << std::endl; MSdelay(2000);
+		  std::cout <<"You're just kidding, this is just some sick joke, "; MSdelay(2000);
+		  std::cout <<"that's all it is " << std::endl; MSdelay(2000);
+		  clear();
+		  elipses();
+		  std::cout <<"YOU!"; MSdelay(2000);
+		  std::cout <<" This is all YOUR fault!"; MSdelay(2000);
+		  std::cout <<", IM GOING TO KILL YOU!!! " << std::endl; MSdelay(2000);
+		  std::cout <<"wait"; MSdelay(500); elipses();
+		  std::cout <<"ha"; MSdelay(500);std::cout <<"ha"; MSdelay(400);std::cout <<"ha"; MSdelay(350);std::cout <<"ha"; MSdelay(300);std::cout <<"Ha"; MSdelay(250);
+		  std::cout <<"Ha"; MSdelay(250);std::cout <<"Ha"; MSdelay(200);std::cout <<"Ha"; MSdelay(200);std::cout <<"HA"; MSdelay(150);std::cout <<"HA"; MSdelay(150);
+		  std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(50);std::cout <<"HA"; MSdelay(50);
+		  clear();
+		   std::cout <<"NO NEED!"<<endl; MSdelay(2000);
+		   std::cout <<"Ha"; MSdelay(250);std::cout <<"Ha"; MSdelay(200);std::cout <<"Ha"; MSdelay(200);std::cout <<"HA"; MSdelay(150);std::cout <<"HA"; MSdelay(150);
+		   std::cout <<"Because no one would ever fo anything so CRUEL"<<endl; MSdelay(2000);
+		   std::cout <<"Because why would anyone ever KILL"<<endl; MSdelay(2000);
+		   std::cout <<", such an innocent"; MSdelay(2000);
+		   std::cout <<", beautiful"; MSdelay(2000);
+		   std::cout <<", little"; MSdelay(2000);
+		   std::cout <<", h"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "p"; MSdelay(200); std::cout << "l"; MSdelay(200);std::cout << "e"; MSdelay(200);std::cout << "s"; MSdelay(200);std::cout << "s"; MSdelay(200);
+		    elipses();
+		   std::cout <<", B"; MSdelay(200); std::cout << "u"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "l"; MSdelay(200);std::cout << "e"; MSdelay(200);std::cout << " B"; MSdelay(200);std::cout << "o"; MSdelay(200);
+		   std::cout << "y"; MSdelay(200);
+		    elipses();
+			clear();
+			std::cout <<"you're lying, you HAVE to be lying"<<endl; MSdelay(2000);
+			elipses(); 
+			 std::cout <<""<<endl; MSdelay(2000);
+			 std::cout <<"PLEASE"; MSdelay(1000);
+			std::cout <<"PLEASE just tell me that you're lying"<<endl; MSdelay(3000);//bargin depression, acceptance
+			std::cout <<"PLEASE just tell me that my boy is okay"<<endl; MSdelay(3000);
+			std::cout <<"I couldn't even imagine a life without him"<<endl; MSdelay(3000);
+			std::cout <<"I'll give you ANYTHING"<<endl; MSdelay(2000);
+			elipses(); 
+			 std::cout <<"just"; MSdelay(1000);
+			 elipses(); 
+			 std::cout <<"just"; MSdelay(1000);
+			 elipses(); 
+			std::cout <<"TELL ME WHERE HE IS"<<endl; MSdelay(2000);
+			std::cout <<"I KNOW YOU HAVE HIM SOMEWHERE!"<<endl; MSdelay(5000);
+			elipses(); 
+			std::cout <<"Oh"<<endl; MSdelay(2000);
+			std::cout <<"Oh who am I kidding"; MSdelay(2000);
+			std::cout <<", he's gone isn't he?"<<endl; MSdelay(3000);
+			std::cout <<"he'll never come back"<<endl; MSdelay(5000);
+			std::cout <<"I forgive you though"<<endl; MSdelay(5000);
+			elipses(); 
+			std::cout <<"you really are sorry"; MSdelay(5000);
+			std::cout <<", right?"<<endl; MSdelay(5000);
+			            	color(8);
+	std::cout << "[1]: ";
+    color(7);
+     std::cout << " Yes"<< std::endl;    //change back to white for user
+                color(8);
+	std::cout << "[2]: ";
+    color(7);
+    std::cout << " No... "<< std::endl; 
+	std::string choiceD;
+	std::cin >> choiceD;
+
+	if (choiceD=="1"){
+color(1);
+          	 std::cout <<"BubbleMomma: You filthy creature..." << std::endl; MSdelay(2000);
+		     std::cout <<"you were meant to clean"; MSdelay(4000);
+			 std::cout <<", not just make more messes. " << std::endl; MSdelay(4000);
+			 std::cout <<"you could've been a force for the good" << std::endl; MSdelay(4000);
+			 std::cout <<", the clean"; MSdelay(4000);
+			 std::cout <<", the"; MSdelay(4000);
+			 color(9);
+			std::cout <<" h"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "p"; MSdelay(200); std::cout << "l"; MSdelay(200);std::cout << "e"; MSdelay(200);std::cout << "s"; MSdelay(200);std::cout << "s"<<endl; MSdelay(200);
+			color(1);
+			std::cout <<"there's nothing that can redeem you now" << std::endl; MSdelay(4000);
+			std::cout <<"and since I have nothing to live for anymore" << std::endl; MSdelay(5000);
+			std::cout <<"it's my duty to" << std::endl; MSdelay(5000);
+			elipses();
+			std::cout <<"TAKE YOU OUT!!!" << std::endl; MSdelay(5000);
+				//then call here battle here but make her like level 8, or at least with balanced hp and atk also will have to set it to -2
+	}
+
+	if (choiceD=="2"){
+			
+color(1);
+          	 std::cout <<"BubbleMomma: Then..." << std::endl; MSdelay(3000);
+			 std::cout <<"I suppose" << std::endl; MSdelay(3000);
+			 std::cout <<"I forgive you" << std::endl; MSdelay(3000);
+			 std::cout <<"*BubbleMomma gives you a long, heavily needed embrace*" << std::endl; MSdelay(8000);
+			 color(7);
+			 std::cout <<"You talk to"; MSdelay(3000); color(1);std::cout <<"BubbleMomma"; color(7);std::cout <<"for a few hours and after a long night you leave her."<<endl;
+			  std::cout <<"You've sworn to help use your powers for good, making sure BubbleMomma is provided for, and that you will clean up all of Mop Mania" << std::endl; MSdelay(3000);
+
+		}
+
+
+
+        }
+		if (choice == "1"&&c.bubbleQuest==1){
+			color(7);
+			std::cout<<"*she continues wailing*"<< std::endl; MSdelay(5000);
+			std::cout<<"*even louder now*"<< std::endl; MSdelay(3000);
+			std::cout<<"You should probably be a little nicer next time"<< std::endl; MSdelay(3000);
+
+		}
+	}
     system("pause");
 }
 
@@ -398,153 +677,3 @@ void supplyEvent::trigger(character& c) {
 }
 
 
-/*
-   int counter = 0;
-
-    while (counter != 20) {
-        counter++;
-        MSdelay(200);
-        std::cout << " _____ \n";
-        std::cout << "(_____)\n";
-        clear();
-        MSdelay(200);
-        std::cout << " _____ \n";
-        std::cout << "(_***_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << "  _____ \n";
-        std::cout << " (_***_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << "   _____ \n";
-        std::cout << "  (_***_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << "    _____ \n";
-        std::cout << "   (_***_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << "   _____ \n";
-        std::cout << "  (_***_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << "  _____ \n";
-        std::cout << " (_***_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << " _____ \n";
-        std::cout << "(_***_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << " __ \\_ \n";
-        std::cout << "(_#%#_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << " __%\\_ \n";
-        std::cout << "(__%#_)\n";
-        clear();
-        MSdelay(200);
-        std::cout << " __%\\_ \n";
-        std::cout << "(__#__)\n";
-        clear();
-        MSdelay(200);
-        std::cout << " __%\\_ \n";
-        std::cout << "(_____)\n";
-        clear();
-        MSdelay(200);
-        std::cout << " __ \\_ \n";
-        std::cout << "(_____)\n";
-        clear();
-        MSdelay(200);
-        std::cout << " _____ \n";
-        std::cout << "(_____)\n";
-        clear();
-        MSdelay(200);
-    }*/
-
-
-    /*
-     int counter=0;
-   
-    while (counter!=20){
-        counter++;
-        MSdelay(200);
-    std::cout<<" ____|=\n";
-    std::cout<<"     |=\n";
-    clear();
-      MSdelay(200);
-    std::cout<<" ___\\=\n";
-    std::cout<<"     \\=\n";
-    clear();
-    MSdelay(200);
-    std::cout<<" ____|=\n";
-    std::cout<<"     |=\n";
-      MSdelay(200);
-    clear();
-    std::cout<<" ___/=\n";
-    std::cout<<"   /=\n";
-      MSdelay(200);
-    clear();
-    }
-    */
-
-    /*
-       int counter=0;
-  //  int counter2=0;
-
-
-        while (counter!=20){//filling
-        counter++;
-            clear();
-        MSdelay(200);
-    std::cout<<" ,___\n";
-    std::cout<<"<*___|7\n";
-    clear();
-      std::this_thread::sleep_for(std::chrono::milliseconds(400));
-    std::cout<<" ,___\n";
-    std::cout<<"<**__|7\n";
-    clear();
-    std::this_thread::sleep_for(std::chrono::milliseconds(400));
-    std::cout<<" ,___\n";
-    std::cout<<"<***_|7\n";
-      std::this_thread::sleep_for(std::chrono::milliseconds(400));
-    clear();
-    std::cout<<" ,___\n";
-    std::cout<<"<****|7\n";
-      std::this_thread::sleep_for(std::chrono::milliseconds(400));
-    clear();
-//    std::cout<<"  \\__\n";
-//    std::cout<<"<____|7\n";
-//      MSdelay(200);
-//    clear();
-   // }
-
-   //         while (counter2!=20){//emptying
-        counter++;
-    MSdelay(200);
-    std::cout<<"  \\__\n";
-    std::cout<<"<****|7\n";
-   clear();
-        MSdelay(200);
-    std::cout<<"  \\__\n";
-    std::cout<<"<***_|7\n";
-    clear();
-      MSdelay(200);
-    std::cout<<"  \\__\n";
-    std::cout<<"<**__|7\n";
-    clear();
-    MSdelay(200);
-    std::cout<<"  \\__\n";
-    std::cout<<"<*___|7\n";
-      MSdelay(200);
-    clear();
-    std::cout<<"  \\__\n";
-    std::cout<<"<____|7\n";
-      MSdelay(200);
-    clear();
-    std::cout<<" ,___\n";
-    std::cout<<"<____|7\n";
-      MSdelay(200);
-    clear();
-    }
-    */
