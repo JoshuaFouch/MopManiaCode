@@ -641,7 +641,7 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			battle mucuss;
-			GrimeReaper mucus(5);
+			MucusMaw mucus(5);
 			mucuss.Battle_Sequence(c, mucus);
 			if (c.getLife() == 0) {
 				return;    //if the character is dead
@@ -653,7 +653,7 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "Oh?" << std::endl;
 			MSdelay(3000);
 			std::cout << "You got a box covered in mucus and decide to open it..." << std::endl;
-			MSdelay(4000);
+			MSdelay(3000);
 			std::cout << "Oh WOW! " << std::endl;
 			c.acq_Whendex();
 			MSdelay(4000);
@@ -666,9 +666,9 @@ void mailboxEvent::trigger(character& c)
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
-			MSdelay(4000);
+			MSdelay(3000);
 			std::cout << "Nothing is here buddy..." << std::endl;
-			MSdelay(4000);
+			MSdelay(3000);
 			std::cout << "Go do other stuff." << std::endl;
 			MSdelay(4000);
 			checked++;
@@ -690,34 +690,23 @@ void mailboxEvent::trigger(character& c)
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
-			MSdelay(4000);
-			std::cout << "I'm going to go crazy bruh..." << std::endl;
-			MSdelay(4000);
+			MSdelay(2000);
+			std::cout << "Dude stop checking it, there srsly isn't anything here..." << std::endl;
+			MSdelay(3000);
 			checked++;
 			return;
-			}
+		}
 		else if (this->checked == 9)
 		{
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
-			MSdelay(4000);
-			std::cout << "Dude stop checking it, there srsly isn't anything here..." << std::endl;
-			MSdelay(4000);
-			checked++;
-			return;
-		}
-		else if (this->checked == 10)
-		{
-			Sdelay(2);
-			std::cout << "You checked your mailbox..." << std::endl;
-			ellipsis();
-			MSdelay(4000);
+			MSdelay(3000);
 			std::cout << "You want something to be there?..." << std::endl;
-			MSdelay(4000);
+			MSdelay(2000);
 			std::cout << "Fine..." << std::endl;
 			MSdelay(3000);
-			std::cout << "Check it again and you'll have a suprise" << std::endl;
+			std::cout << "Check it again and you'll have a suprise!" << std::endl;
 			MSdelay(4000);
 			checked++;
 			return;
@@ -730,17 +719,23 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(3000);
 			std::cout << "Hello my friend it is I..." << std::endl;
 			MSdelay(3000);
+			playMusic("vine-boom.wav");
 			std::cout << "Grime Reaper!" << std::endl;
 			MSdelay(3000);
 			std::cout << "You really kept checking the dang mail box..." << std::endl;
-			MSdelay(3000);
-			std::cout << "So I will battle you now aahhahahahahhajhahhahahahahahahhaha" << std::endl;
+			MSdelay(4000);
+			playMusic("MattariCore.wav");
+			std::cout << "So I will battle you now aahhahahahahhajhahhahahahahahahhaha... you will die" << std::endl;
+			MSdelay(5000);
+			endMusic();
 			battle grimer;
-			GrimeReaper reap(5);
+			GrimeReaper reap(15);
 			grimer.Battle_Sequence(c, reap);
 			if (c.getLife() == 0) {
 				return;    //if the character is dead
 			}
+			endMusic();
+			playMusic("background.wav");
 			Dotdot();
 			std::cout << "You don't see anything else in your mail box..." << std::endl;
 			MSdelay(2000);
@@ -750,6 +745,7 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "You got a box covered in mucus and decide to open it..." << std::endl;
 			MSdelay(4000);
 			std::cout << "Oh WOW! " << std::endl;
+			c.acq_Whendex();
 			c.acq_Whendex();
 			MSdelay(4000);
 			checked++;
