@@ -316,7 +316,6 @@ void bubbleBoy::dialogue(character& c)
 			system("pause");
 		}
 		else if (choice == "2") {
-            endMusic();
 			color(9);
             clear();
             std::cout << "Bubble Boy: You're kidding right?"; ellipsis(); std::cout << "R"; MSdelay(200); cout << "i"; MSdelay(200); cout << "G"; MSdelay(200); cout << "h"; MSdelay(200); cout << "t"; MSdelay(200); cout << "?"; MSdelay(200); cout << "?"; MSdelay(200); cout << "?"; MSdelay(200); cout << std::endl;
@@ -504,11 +503,11 @@ void bubbleMama::dialogue(character& c) {
 		  std::cout <<"You're just kidding, this is just some sick joke, "; MSdelay(2000);
 		  std::cout <<"that's all it is " << std::endl; MSdelay(2000);
 		  clear();
-		  elipses();
+		  ellipsis();
 		  std::cout <<"YOU!"; MSdelay(2000);
 		  std::cout <<" This is all YOUR fault!"; MSdelay(2000);
 		  std::cout <<", IM GOING TO KILL YOU!!! " << std::endl; MSdelay(2000);
-		  std::cout <<"wait"; MSdelay(500); elipses();
+		  std::cout <<"wait"; MSdelay(500); ellipsis();
 		  std::cout <<"ha"; MSdelay(500);std::cout <<"ha"; MSdelay(400);std::cout <<"ha"; MSdelay(350);std::cout <<"ha"; MSdelay(300);std::cout <<"Ha"; MSdelay(250);
 		  std::cout <<"Ha"; MSdelay(250);std::cout <<"Ha"; MSdelay(200);std::cout <<"Ha"; MSdelay(200);std::cout <<"HA"; MSdelay(150);std::cout <<"HA"; MSdelay(150);
 		  std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(100);std::cout <<"HA"; MSdelay(50);std::cout <<"HA"; MSdelay(50);
@@ -521,33 +520,33 @@ void bubbleMama::dialogue(character& c) {
 		   std::cout <<", beautiful"; MSdelay(2000);
 		   std::cout <<", little"; MSdelay(2000);
 		   std::cout <<", h"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "p"; MSdelay(200); std::cout << "l"; MSdelay(200);std::cout << "e"; MSdelay(200);std::cout << "s"; MSdelay(200);std::cout << "s"; MSdelay(200);
-		    elipses();
+           ellipsis();
 		   std::cout <<", B"; MSdelay(200); std::cout << "u"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "l"; MSdelay(200);std::cout << "e"; MSdelay(200);std::cout << " B"; MSdelay(200);std::cout << "o"; MSdelay(200);
 		   std::cout << "y"; MSdelay(200);
-		    elipses();
+           ellipsis();
 			clear();
 			std::cout <<"you're lying, you HAVE to be lying"<<endl; MSdelay(2000);
-			elipses(); 
+            ellipsis();
 			 std::cout <<""<<endl; MSdelay(2000);
 			 std::cout <<"PLEASE"; MSdelay(1000);
 			std::cout <<"PLEASE just tell me that you're lying"<<endl; MSdelay(3000);//bargin depression, acceptance
 			std::cout <<"PLEASE just tell me that my boy is okay"<<endl; MSdelay(3000);
 			std::cout <<"I couldn't even imagine a life without him"<<endl; MSdelay(3000);
 			std::cout <<"I'll give you ANYTHING"<<endl; MSdelay(2000);
-			elipses(); 
+			ellipsis();
 			 std::cout <<"just"; MSdelay(1000);
-			 elipses(); 
+			 ellipsis();
 			 std::cout <<"just"; MSdelay(1000);
-			 elipses(); 
+			 ellipsis();
 			std::cout <<"TELL ME WHERE HE IS"<<endl; MSdelay(2000);
 			std::cout <<"I KNOW YOU HAVE HIM SOMEWHERE!"<<endl; MSdelay(5000);
-			elipses(); 
+			ellipsis();
 			std::cout <<"Oh"<<endl; MSdelay(2000);
 			std::cout <<"Oh who am I kidding"; MSdelay(2000);
 			std::cout <<", he's gone isn't he?"<<endl; MSdelay(3000);
 			std::cout <<"he'll never come back"<<endl; MSdelay(5000);
 			std::cout <<"whats the point anymore?"<<endl; MSdelay(5000);
-			elipses(); 
+			ellipsis();
 			//then call here battle here with her at level 5 or something low, maybe just specifically low attack but high hp
 
          MSdelay(2000);
@@ -560,7 +559,7 @@ color(1);
 		  std::cout <<"You're just kidding, this is just some sick joke, "; MSdelay(2000);
 		  std::cout <<"that's all it is " << std::endl; MSdelay(2000);
 		  clear();
-		  elipses();
+          ellipsis();
 		  std::cout <<"YOU!"; MSdelay(2000);
 		  std::cout <<" This is all YOUR fault!"; MSdelay(2000);
 		  std::cout <<", IM GOING TO KILL YOU!!! " << std::endl; MSdelay(2000);
@@ -583,27 +582,27 @@ color(1);
 		    elipses();
 			clear();
 			std::cout <<"you're lying, you HAVE to be lying"<<endl; MSdelay(2000);
-			elipses(); 
+			ellipsis();
 			 std::cout <<""<<endl; MSdelay(2000);
 			 std::cout <<"PLEASE"; MSdelay(1000);
 			std::cout <<"PLEASE just tell me that you're lying"<<endl; MSdelay(3000);//bargin depression, acceptance
 			std::cout <<"PLEASE just tell me that my boy is okay"<<endl; MSdelay(3000);
 			std::cout <<"I couldn't even imagine a life without him"<<endl; MSdelay(3000);
 			std::cout <<"I'll give you ANYTHING"<<endl; MSdelay(2000);
-			elipses(); 
+			ellipsis();
 			 std::cout <<"just"; MSdelay(1000);
-			 elipses(); 
+			 ellipsis();
 			 std::cout <<"just"; MSdelay(1000);
-			 elipses(); 
+			 ellipsis();
 			std::cout <<"TELL ME WHERE HE IS"<<endl; MSdelay(2000);
 			std::cout <<"I KNOW YOU HAVE HIM SOMEWHERE!"<<endl; MSdelay(5000);
-			elipses(); 
+			ellipsis();
 			std::cout <<"Oh"<<endl; MSdelay(2000);
 			std::cout <<"Oh who am I kidding"; MSdelay(2000);
 			std::cout <<", he's gone isn't he?"<<endl; MSdelay(3000);
 			std::cout <<"he'll never come back"<<endl; MSdelay(5000);
 			std::cout <<"I forgive you though"<<endl; MSdelay(5000);
-			elipses(); 
+			ellipsis();
 			std::cout <<"you really are sorry"; MSdelay(5000);
 			std::cout <<", right?"<<endl; MSdelay(5000);
 			            	color(8);
@@ -652,7 +651,7 @@ color(1);
 
 
         }
-		if (choice == "1"&&c.bubbleQuest==1){
+		if (choice == "1"&&c.getBub() == 1) {
 			color(7);
 			std::cout<<"*she continues wailing*"<< std::endl; MSdelay(5000);
 			std::cout<<"*even louder now*"<< std::endl; MSdelay(3000);
@@ -720,12 +719,12 @@ void dermEvent::trigger(character& c) {
 		Sdelay(2);
 		std::cout << "The Shingle Shannon splatters into pieces about the room..." << std::endl;
 		MSdelay(4000);
-		std::cout << "The pieces start evaporating away..." << std::endl;
+		std::cout << "The pieces slowly start to reform into one..." << std::endl;
 		MSdelay(6000);	
-		std::cout << "Before they are even half dissipated..." << std::endl;
+		std::cout << "After only a few seconds..." << std::endl;
 		MSdelay(3000);
         std::cout << "Another tan mass plops onto the ground before you..." << std::endl;
-		MSdelay(3000);
+		MSdelay(4000);
          std::cout << "This time taking the form of a..." << std::endl;
 		MSdelay(3000);
 		std::cout << "DEAD-SKIN DILL!!!" << std::endl;
@@ -734,33 +733,30 @@ void dermEvent::trigger(character& c) {
 		std::cout << "Dead-Skin Dill lunged forward!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		BronchitisRex cronk(3);
-		rex.Battle_Sequence(c, cronk);
+		DeadSkinDill DILL(3);
+		SB.Battle_Sequence(c, DILL);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
 		}
 		DotdotTwo();
-		std::cout << "The room is finally ready to be cleaned..." << std::endl;
-		Sdelay(6);
-		clear();
-		playMusic("void.wav");
-		color(6);
-		std::cout << "Janitorius: " << c.get_name() << "..." << std::endl;
-		Sdelay(4);
-		std::cout << "You have done well..." << std::endl;
-		Sdelay(4);
-		std::cout << "Continue to search these halls..." << std::endl;
-		Sdelay(6);
-		clear();
-		std::cout << "These halls are controlled by a man named \"The Filthy Bubble\"... ";
-		Sdelay(7);
-		std::cout << "If you happen to run into this creature..." << std::endl;
-		Sdelay(3);
-		std::cout << "DO NOT TRUST HIM... ";
-		MSdelay(2500);
-		std::cout << "He... will destroy you... ";
-		MSdelay(2500);
-		std::cout << "zzt-";
+		std::cout << "Once last time the dead skin all collects together..." << std::endl;
+		Sdelay(5);
+        std::cout << "This time, the pile grows to its maximum height..." << std::endl;
+        Sdelay(5);
+        std::cout << "Now standing at nearly 7 feet tall." << std::endl;
+        Sdelay(5);
+        std::cout << "the tower of tan slowly streches this way and that finally forming into..." << std::endl;
+        Sdelay(5);
+        std::cout << "A LEPER LEOPARD!!!" << std::endl;
+        Sdelay(5);
+
+        playSFX("battle!.wav");
+        Sdelay(2);
+        DeadSkinDill DILL(3);
+        SB.Battle_Sequence(c, DILL);
+        if (c.getLife() == 0) {
+            return;	//if the character is dead
+        }
 		MSdelay(1500);
 		clear();
 		c.acq_deadRat();
