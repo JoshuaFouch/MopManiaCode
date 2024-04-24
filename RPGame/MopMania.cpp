@@ -91,6 +91,7 @@ int main()
 
 	//WHEN I DIED TO GRIME REAPER, IT DID NOT TAKE ME HOME.
 
+	system("pause");
 	enemy bob(1);
 	int user;
 	user = Start_Menu();

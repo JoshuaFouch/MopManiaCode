@@ -316,6 +316,7 @@ void bubbleBoy::dialogue(character& c)
 			system("pause");
 		}
 		else if (choice == "2") {
+            endMusic();
 			color(9);
             clear();
             std::cout << "Bubble Boy: You're kidding right?"; ellipsis(); std::cout << "R"; MSdelay(200); cout << "i"; MSdelay(200); cout << "G"; MSdelay(200); cout << "h"; MSdelay(200); cout << "t"; MSdelay(200); cout << "?"; MSdelay(200); cout << "?"; MSdelay(200); cout << "?"; MSdelay(200); cout << std::endl;
