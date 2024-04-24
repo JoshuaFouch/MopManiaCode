@@ -54,4 +54,10 @@ public:
 	void BattleDialogue(character& c, enemy& e);
 };
 
+class musicBattle : public battle
+{
+public:
+	void Battle_Sequence(std::string music, character& c, enemy& e);
+};
+
 #endif

@@ -534,30 +534,100 @@ void FinalEvent::trigger(character& c)
 HospitalEvent::HospitalEvent() {};
 
 void HospitalEvent::trigger(character& c) {
-	std::cout << "not finished" << std::endl;
-	system("pause");
+	if (this->isDone == true) {
+		return;
+	}
+	else {
+		ellipsis();
+		playSFX("door.wav");
+		Sdelay(2);
+		ellipsis();
+		playSFX("vine-boom.wav");
+		color(4);
+		std::cout << "WHO "; MSdelay(100); std::cout << "STEPS "; MSdelay(100); std::cout << " IN MY "; MSdelay(100); std::cout << "ABHORRENT ABODE???"; ellipsis();
+		MSdelay(4000);
+		std::cout << "MY NAME IS"; ellipsis();
+		std::cout << " THE FILTHY BUBBLE!" << std::endl;
+		playSFX("vine-boom.wav");
+		Sdelay(5);
+		playMusic("terror.wav");
+		ellipsis();
+		std::cout << "Filthy Bubble: WHO SENT YOU HERE???" << std::endl;
+		Sdelay(3);
+		std::cout << "It does not matter who you are"; ellipsis(); MSdelay(2000);
+		clear();
+		std::cout << "I "; MSdelay(150); std::cout << "w"; MSdelay(150); std::cout << "i"; MSdelay(150); std::cout << "l"; MSdelay(150); std::cout << "l "; MSdelay(500);
+		std::cout << "K"; MSdelay(300); std::cout << "I"; MSdelay(300); std::cout << "L"; MSdelay(300); std::cout << "L "; MSdelay(300);
+		std::cout << "Y"; MSdelay(150); std::cout << "O"; MSdelay(150); std::cout << "U"; ellipsis(); std::cout << "\n";
+		std::cout << "GO FILTHY BUBBLE MINION! "; MSdelay(1200); std::cout << "AND DEFEAT THIS ";
+		std::cout << "PRISTINE " << std::endl;
+		endMusic();
+		playSFX("vine-boom.wav");
+		MSdelay(1000);
+		std::cout << "PIGHEADED " << std::endl;
+		endMusic();
+		playSFX("vine-boom.wav");
+		MSdelay(1000);
+		std::cout << "PATHETIC " << std::endl;
+		endMusic();
+		playSFX("vine-boom.wav");
+		MSdelay(1000);
+		std::cout << "POT-BELLIED " << std::endl;
+		endMusic();
+		playSFX("vine-boom.wav");
+		MSdelay(1000);
+		std::cout << "PRISTINE " << std::endl;
+		MSdelay(1200);
+		std::cout << "-oh wait i already said that-"; ellipsis(); std::cout << "\n";
+		MSdelay(230);
+		std::cout << "POT-BELLIED " << std::endl;
+		endMusic();
+		playSFX("vine-boom.wav");
+		MSdelay(1000);
+		std::cout << "P-";
+		MSdelay(350);
+		std::cout << "CLEANING"; ellipsis();
+		std::cout << "THING!" << std::endl;
+		MSdelay(1000);
+		playMusic("cricket.wav");
+		MSdelay(4000);
+		std::cout << "GO KILL HIM ALREADY "; MSdelay(400);
+		std::cout << "YOU BUBBLY BRAT!" << std::endl;
+		MSdelay(6000);
+		color(7);
+		musicBattle first;
+		BubblyBoy bad(1);
+		first.Battle_Sequence("horror.wav", c, bad);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		DotdotTwo();
+		color(4);
+		std::cout << "DANG IT..." << std::endl;
+		color(7);
+		system("pause");
+		this->isDone = true;
+		this->counter++;
+	}
 }
 
 
 firstEvent::firstEvent() {};
 
 void firstEvent::trigger(character& c) {
-	std::cout << "not finished" << std::endl;
-	system("pause");
+	return;
 }
 
 secondEvent::secondEvent() {};
 
 void secondEvent::trigger(character& c) {
-	std::cout << "not finished" << std::endl;
-	system("pause");
+	return;
 }
 
 basementEvent::basementEvent() {};
 
 void basementEvent::trigger(character& c) {
-	std::cout << "not finished" << std::endl;
-	system("pause");
+	return;
 }
 
 //hairball enemy
@@ -629,11 +699,11 @@ void Hairball::Enrage(character& c)
 
 //create bubblyboy enemy
 BubblyBoy::BubblyBoy(int lvl) : enemy(lvl) {
-	set_name("Bubbly Boy");
+	set_name("Bubble Boy");
 	set_stats(50, 85, 60, lvl);
 }
 void BubblyBoy::manuallyConstruct(int lvl) {
-	set_name("Bubbly Boy");
+	set_name("Bubble Boy");
 	set_stats(50, 85, 60, lvl);
 }
 void BubblyBoy::Attack1(character& c)
@@ -660,7 +730,7 @@ void BubblyBoy::Attack3(character& c)
 void BubblyBoy::Attack4(character& c)
 {
 	color(9);
-	std::cout << "\tBubble Burst!" << std::endl;
+	std::cout << "\tBubble Trouble!" << std::endl;
 	c.damaged(this->get_att());
 	color(7);
 }
@@ -687,7 +757,7 @@ void BubblyBoy::Fortify(character& c)
 void BubblyBoy::Enrage(character& c)
 {
 	color(9);
-	std::cout << "\tBUBBLE BOOST" << std::endl;
+	std::cout << "\tBLEACH BUBBLE" << std::endl;
 	MSdelay(1000);
 	this->add_att(c.get_att() / 20);
 	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
@@ -696,7 +766,73 @@ void BubblyBoy::Enrage(character& c)
 }
 
 //create putridpython enemy
-
+//create bubblyboy enemy
+PutridPython::PutridPython(int lvl) : enemy(lvl) {
+	set_name("The Putrid Python");
+	set_stats(50, 85, 60, lvl);
+}
+void PutridPython::manuallyConstruct(int lvl) {
+	set_name("The Putrid Python");
+	set_stats(50, 85, 60, lvl);
+}
+void PutridPython::Attack1(character& c)
+{
+	color(5);
+	std::cout << "\tDead Rat Fling!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void PutridPython::Attack2(character& c)
+{
+	color(5);
+	std::cout << "\tRavenous Rat Bite!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void PutridPython::Attack3(character& c)
+{
+	color(5);
+	std::cout << "\tSmelly Strangle!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void PutridPython::Attack4(character& c)
+{
+	color(5);
+	std::cout << "\tConcupi-scent Odor!" << std::endl;
+	c.damaged(this->get_att());
+	color(7);
+}
+void PutridPython::Heal(character& c)
+{
+	color(5);
+	std::cout << "\tRAT CHOMP!" << std::endl;
+	MSdelay(1000);
+	this->add_hp((c.get_hp() / 10));
+	std::cout << "Enemy's health went up by: " << ((c.get_hp() / 10)) << std::endl;
+	color(7);
+	MSdelay(1000);
+}
+void PutridPython::Fortify(character& c)
+{
+	color(5);
+	std::cout << "\tSMELLY SKIN SHED!" << std::endl;
+	MSdelay(1000);
+	this->add_def(c.get_def() / 20);
+	std::cout << "Enemy's defense went up by: " << ((c.get_def() / 20)) << std::endl;
+	color(7);
+	MSdelay(1000);
+}
+void PutridPython::Enrage(character& c)
+{
+	color(5);
+	std::cout << "\tRADIOACTIVE RAT CHOMP!" << std::endl;
+	MSdelay(1000);
+	this->add_att(c.get_att() / 20);
+	std::cout << "Enemy's attack went up by: " << ((c.get_att() / 20)) << std::endl;
+	MSdelay(1000);
+	color(7);
+}
 
 
 
