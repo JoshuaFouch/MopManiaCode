@@ -397,7 +397,7 @@ void bubbleMama::dialogue(character& c) {
 	std::string choice;
 	std::cin >> choice;
 
-	if (choice == "1"&&c.bubbleQuest==1)
+	if (choice == "1"&&c.getBub() == 1)
 	{
 		color(1);
 		std::cout <<"BubbleMomma: ITS MY BEAUTIFUL BUBBLY BUBBLE BOY!!!" << std::endl;
@@ -450,12 +450,13 @@ void bubbleMama::dialogue(character& c) {
           MSdelay(2000);
            std::cout <<"*and for some reason this one stinks more than the others...*" << std::endl;
            MSdelay(5000);
-         acq_healUp();
-         acq_healUp();
-         acq_healUp();
-         acq_healUp();
-         acq_healUp();
-         acq_deadRat();
+         c.acq_healUp();
+         c.acq_healUp();
+         c.acq_healUp();
+         c.acq_healUp();
+         c.acq_healUp();
+         c.acq_deadRat();
+         system("pause");
          MSdelay(1000);
 		color(7);
 		std::cout << "You have successfully completed";color(1); std::cout<<" THE BUBBLE QUEST!" << std::endl;
@@ -464,7 +465,7 @@ void bubbleMama::dialogue(character& c) {
         c.bubAdvance();//this means the int is 2 and you finished the quest
          MSdelay(3000);
 	}
-    else if (choice == "1"&&c.bubbleQuest<=0){//so if you dont have the child but say you do (or you killed him)
+    else if (choice == "1"&&c.getBub()<=0){//so if you dont have the child but say you do (or you killed him)
     color(1);
 		std::cout <<"BubbleMomma: OH HOW IVE MISSED YOU, MY BEAUTIFUL BUBBLY BUBBLE BOY!!!" << std::endl;
         MSdelay(2000);
@@ -481,19 +482,19 @@ void bubbleMama::dialogue(character& c) {
          std::cout <<"you know that?" << std::endl;
         MSdelay(2000);
          //probably call the function again if this happens and you didnt see him yet 
-        if (c.bubbleQuest==-1){
-        clear();
-            	color(8);
-	std::cout << "[1]: ";
-    color(7);
-     std::cout << " You have no idea how cruel I really am, I POPPED your stupid little Bubble Boy"<< std::endl;    //change back to white for user
-                color(8);
-	std::cout << "[2]: ";
-    color(7);
-    std::cout << " I am SO sorry... "<< std::endl; 
-	std::string choiceC;
-	std::cin >> choiceC;}
-
+        if (c.getBub() == -1) {
+            clear();
+            color(8);
+            std::cout << "[1]: ";
+            color(7);
+            std::cout << " You have no idea how cruel I really am, I POPPED your stupid little Bubble Boy" << std::endl;    //change back to white for user
+            color(8);
+            std::cout << "[2]: ";
+            color(7);
+            std::cout << " I am SO sorry... " << std::endl;
+            std::string choiceC;
+            std::cin >> choiceC;
+        }        
 
 		if (choiceC=="1"){
 	color(1);
