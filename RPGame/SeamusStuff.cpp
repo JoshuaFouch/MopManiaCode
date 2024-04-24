@@ -259,75 +259,94 @@ void bubbleBoy::dialogue(character& c)
 	std::cout << "You hear wailing, and decide to walk nearer to the noise" << std::endl;
 	color(9); //this dialogue will be light blue, moms should be dark blue
 	std::cout << "Bubble Boy: Can anybody hear me?"<<std::endl;
-        	color(8);
-	std::cout << "[1]: ";
+    color(8);
+	std::cout << "[1]:";
     color(7);
 	std::cout << " I can hear you!"<<std::endl;
-    	color(8);
-	std::cout << "[2]: ";
+    color(8);
+	std::cout << "[2]:";
     color(7);
-    std::cout <<           " Sorry kid, I've got more important things to do"<<std::endl;	//change back to white for user
+    std::cout << " Sorry kid, I've got more important things to do..." << std::endl;	//change back to white for user
 	std::string choice;
 	std::cin >> choice;
 
 	if (choice == "1")
 	{
+        endMusic();
+        playMusic("")
 		color(9);
 		std::cout << "Bubble Boy: Finally someone came!" << std::endl;;
 		MSdelay(2000);
 		std::cout << "I was exploring this creepy old mansion, looking for soap potions" << std::endl;
-		MSdelay(3000);
+		MSdelay(3500);
 		std::cout << "when all of a sudden this broom closet door shut on me!" << std::endl;
-		MSdelay(3000);
+		MSdelay(3500);
 		clear();
 		std::cout << "I was stuck and no one heard me yelling!!" << std::endl;
-		MSdelay(2000);
-		std::cout << "Guess I should've listened to mom..." << std::endl;
 		MSdelay(2500);
+		std::cout << "Guess I should've listened to mom..." << std::endl;
+		MSdelay(3000);
 		clear();
 		std::cout << "I don't really need these potions anymore... so I guess if you can get me home," << std::endl;
-		MSdelay(2000);
+		MSdelay(2500);
 		std::cout << "these 5 soap potions I collected are yours!" << std::endl;
-		MSdelay(3500);
+		MSdelay(5000);
 		clear();
 		std::cout << "And I'm sure mom would be mighty glad to see me again too!" << std::endl;
 		MSdelay(2000);
 		std::cout << "So, what do you say are you gonna help me get back to mom???";
 		MSdelay(2000);
-            	color(8);
-	std::cout << "[1]: ";
-    color(7);
-		std::cout << " You've got yourself a deal kiddo!"<<std::endl;
-            	color(8);
-	std::cout << "[2]: ";
-    color(7);
-        std::cout << " Ain't no way ya blabbering bubble, let's fight!"<<std::endl;	//change back to white for user
+        color(8);
+	    std::cout << "[1]: ";
+        color(7);
+		std::cout << "You've got yourself a deal kiddo!"<<std::endl;
+        color(8);
+	    std::cout << "[2]: ";
+        color(7);
+        std::cout << "Ain't no way, ya blabbering bubble, let's fight!!"<<std::endl;	//change back to white for user
     
-	
 		std::string choice;
 		std::cin >> choice;
 		if (choice == "1") {
 			color(9);
 			std::cout << "Bubble Boy: Thank you soap much, kind adventurer!" << std::endl;
-			MSdelay(2000);
-			color(7);
-			std::cout << "*Bubbly Boy* joined you on your quest! \nLooks like bringing him back to his mom will net you some sweet rewards\n";
-			c.bubAdvance();	//set the int to the corresponding quest progression level, probably 1, to represent having bubble boy with you
+			MSdelay(3500);
+			color(9);
+            std::cout << "*Bubbly Boy* ";
+            color(7);
+            std::cout << "joined you on your quest!\nLooks like bringing him back to his mom will net you some sweet rewards\n";
+			c.bubAdvance();	    //set the int to the corresponding quest progression level, probably 1, to represent having bubble boy with you
 			system("pause");
 		}
 		else if (choice == "2") {
             endMusic();
 			color(9);
             clear();
-            std::cout << "Bubble Boy: You're kidding right?"; ellipsis(); std::cout << "R"; MSdelay(200); cout << "i"; MSdelay(200); cout << "G"; MSdelay(200); cout << "h"; MSdelay(200); cout << "t"; MSdelay(200); cout << "?"; MSdelay(200); cout << "?"; MSdelay(200); cout << "?"; MSdelay(200); cout << std::endl;
+            DotdotTwo();
+            std::cout << "Bubble Boy: You're kidding right?"; ellipsis(); std::cout << " R"; MSdelay(200); cout << "i"; MSdelay(200); cout << "G"; MSdelay(200); cout << "h"; MSdelay(200); cout << "t"; MSdelay(200); cout << "?"; MSdelay(200); cout << "?"; MSdelay(200); cout << "?"; MSdelay(200); cout << std::endl;
             BubbleBattle BB;
             BubblyBoy BUBS(5);
             BB.Battle_Sequence(c, BUBS);//during battle, we should have him like call for his mom and stuff like "MOM... JANITORIOUS... SOMEONE PLEASE HELP! SAVE ME FROM THIS MAD MAN!!!
             if (c.getLife() == 0) {
                 return;	//if the character is dead
             }
+            DotdotTwo();
+            playMusic("horror.wav");
+            color(9);
+            std::cout << "w"; MSdelay(300); std::cout << "h"; MSdelay(300); std::cout << "a"; MSdelay(300); std::cout << "t "; MSdelay(300); std::cout << "h"; MSdelay(300); std::cout << "a"; MSdelay(300); std::cout << "v"; MSdelay(300); std::cout << "e "; MSdelay(300);
+            std::cout << "I "; MSdelay(300); std::cout << "d"; MSdelay(300); std::cout << "o"; MSdelay(300); std::cout << "n"; MSdelay(300); std::cout << "e "; MSdelay(300);
+            std::cout << "t"; MSdelay(300); std::cout << "o "; MSdelay(300);
+            std::cout << "d"; MSdelay(300); std::cout << "e"; MSdelay(300); std::cout << "s"; MSdelay(300); std::cout << "e"; MSdelay(300); std::cout << "r"; MSdelay(300); std::cout << "v"; MSdelay(300); std::cout << "e"; MSdelay(300);
+            std::cout << "t"; MSdelay(300); std::cout << "h"; MSdelay(300); std::cout << "i"; MSdelay(300); std::cout << "s-"; MSdelay(300); ellipsis();
+            color(7);
+            std::cout << "the bubble boy is now dead"; ellipsis();
+            std::cout << "I wonder what Bubble Mama would think of you...\n" << std::endl;
+            Sdelay(4);
+            system("pause");
+            c.bubKill();
 			clear();
 			color(7);
+            return;
 		}
 
 	}
@@ -370,7 +389,8 @@ void bubbleBoy::dialogue(character& c)
         color(7);
         clear();
         std::cout << "You should probably try a proper answer next time..." << std::endl;
-        system("pause");//call BubbleBoy's dioulauge again maybe 
+        system("pause");    //call BubbleBoy's dioulauge again maybe 
+        this->dialogue(c);
     }
 }
 
