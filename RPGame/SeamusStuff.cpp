@@ -665,7 +665,113 @@ color(1);
 dermEvent::dermEvent() {};
 
 void dermEvent::trigger(character& c) {
-    std::cout << "not finished" << std::endl;
+    if (this->isDone == true) {
+		return;	//if character has already triggered the event in this node
+	}
+	else {
+		endMusic();
+		Sdelay(2);
+		std::cout << "You entered the Dermatology room...";
+		MSdelay(3000);
+		std::cout << "On the ground you see tan flakes scattered about..." << std::endl;
+		MSdelay(6000);
+		std::cout << "you continue looking around, seeeing larger and larger clumps of tan..." << std::endl;
+		MSdelay(3000);
+		std::cout << "in one of the clumps you find a rat with horrible dandruff and decide to yank it out..." << std::endl;
+        MSdelay(7000);
+        c.acq_deadRat();
+		std::cout << "Suddenly you notice something racing past in your peripheral..." << std::endl;
+		MSdelay(3000);
+		std::cout << "By the time you turn to look, it's already gone..." << std::endl;
+		MSdelay(3000);
+		std::cout << "Then you notice that the clumps of tan have disappeared...";
+		MSdelay(4000);
+        clear();
+        std::cout << "You turn you head all about and see that now all the clumps have dissapeared..." << std::endl;
+		MSdelay(4000);
+		std::cout << "You then slowly tilt your head up twoards the ceiling..." << std::endl;
+		MSdelay(6000);
+        //scary sound effect???
+		std::cout << "You see all the tan gobs slowly inching twoards the center of the ceiling...";
+        MSdelay(5000);
+        std::cout << "All of them, accumulating into one giant mass..." << std::endl;
+		MSdelay(5000);
+		DotdotTwo();
+		color(4);
+		MSdelay(100);
+		std::cout << "OH NOO!!!" << std::endl;
+		Sdelay(2);
+		color(7);
+		std::cout << "A " << std::endl;
+        system("Color 0E"); //hope this works for a tan like color??
+        std::cout << "Shingle Shannon" << std::endl;
+        color(4);
+        std::cout << " plops down from the giant tan mass!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		battle SB;
+		ShingleShannon shan(3);
+		SB.Battle_Sequence(c, shan);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		Sdelay(2);
+		std::cout << "The Shingle Shannon splatters into pieces about the room..." << std::endl;
+		MSdelay(4000);
+		std::cout << "The pieces start evaporating away..." << std::endl;
+		MSdelay(6000);	
+		std::cout << "Before they are even half dissipated..." << std::endl;
+		MSdelay(3000);
+        std::cout << "Another tan mass plops onto the ground before you..." << std::endl;
+		MSdelay(3000);
+         std::cout << "This time taking the form of a..." << std::endl;
+		MSdelay(3000);
+		std::cout << "DEAD-SKIN DILL!!!" << std::endl;
+		Sdelay(5);
+		color(7);
+		std::cout << "Dead-Skin Dill lunged forward!" << std::endl;
+		playSFX("battle!.wav");
+		Sdelay(2);
+		BronchitisRex cronk(3);
+		rex.Battle_Sequence(c, cronk);
+		if (c.getLife() == 0) {
+			return;	//if the character is dead
+		}
+		DotdotTwo();
+		std::cout << "The room is finally ready to be cleaned..." << std::endl;
+		Sdelay(6);
+		clear();
+		playMusic("void.wav");
+		color(6);
+		std::cout << "Janitorius: " << c.get_name() << "..." << std::endl;
+		Sdelay(4);
+		std::cout << "You have done well..." << std::endl;
+		Sdelay(4);
+		std::cout << "Continue to search these halls..." << std::endl;
+		Sdelay(6);
+		clear();
+		std::cout << "These halls are controlled by a man named \"The Filthy Bubble\"... ";
+		Sdelay(7);
+		std::cout << "If you happen to run into this creature..." << std::endl;
+		Sdelay(3);
+		std::cout << "DO NOT TRUST HIM... ";
+		MSdelay(2500);
+		std::cout << "He... will destroy you... ";
+		MSdelay(2500);
+		std::cout << "zzt-";
+		MSdelay(1500);
+		clear();
+		c.acq_deadRat();
+		c.acq_deadRat();
+		c.acq_healUp();
+		c.acq_attUp();
+		endMusic();
+		system("pause");
+		color(7);
+
+		this->isDone = true;
+		return;
+	}
     system("pause");
 }
 
