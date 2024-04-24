@@ -133,25 +133,29 @@ int character::getPath() {
 void character::acq_healUp()
 {
     color(7);
-    std::cout << "*you acquired a Heal-up!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Heal-up!*" << std::endl;
+    color(7);
     healUp++;
 }
 void character::acq_attUp()
 {
     color(7);
-    std::cout << "*you acquired an Attack-up!*" << std::endl;
+    std::cout << "*you acquired an "; color(2); std::cout << "Attack-up!*" << std::endl;
+    color(7);
     attUp++;
 }
 void character::acq_defUp()
 {
     color(7);
-    std::cout << "*you acquired a Defense-up!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Defense-up!*" << std::endl;
+    color(7);
     defUp++;
 }
 void character::acq_deadRat()
 {
     color(7);
-    std::cout << "*you acquired a Dead rat!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Dead rat!*" << std::endl;
+    color(7);
     deadRat++;
 }
 void character::use_healUp()
@@ -208,7 +212,7 @@ void character::use_Mirror() {
     std::cout << "This is what you look like: (hideous right?) " << std::endl;
     if (name == "Broomba") {
         int counter = 0;
-        while (counter != 50) {
+        while (counter != 10) {
             counter++;
             MSdelay(200);
             std::cout << " _____ \n";
@@ -271,7 +275,7 @@ void character::use_Mirror() {
     }
     else if (name == "JetWet") {
         int counter = 0;
-        while (counter != 60) {
+        while (counter != 10) {
             counter++;
             MSdelay(200);
             std::cout << " ____|=\n";
@@ -294,7 +298,7 @@ void character::use_Mirror() {
     }
     else if (name == "BysonV8") {
         int counter = 0;
-        while (counter != 50) {
+        while (counter != 10) {
             counter++;
             clear();
             MSdelay(200);
@@ -349,27 +353,32 @@ void character::use_Mirror() {
 }
 void character::acq_slipperySoap() {
     color(7);
-    std::cout << "*you acquired a Slippery Soap!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Slippery Soap!*" << std::endl;
+    color(7);
     slipperySoap++;
 }
 void character::acq_cleaningTips() {
     color(7);
-    std::cout << "*you acquired a Cleaning Tip!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Cleaning Tip!*" << std::endl;
+    color(7);
     cleaningTips++;
 }
 void character::acq_Whendex() {
     color(7);
-    std::cout << "*you acquired a Whendex!*" << std::endl;
+    std::cout << "*you acquired a "; color(2); std::cout << "Whendex!*" << std::endl;
+    color(7);
     Whendex++;
 }
 void character::acq_Mirror() {
     color(7);
-    std::cout << "*you acquired the Mirror!*" << std::endl;
+    std::cout << "*you acquired the "; color(2); std::cout << "Mirror!*" << std::endl;
+    color(7);
     Mirror++;
 }
 void character::acq_cleanPath() {
     color(7);
-    std::cout << "*you acquired the Clean path!*" << std::endl;
+    std::cout << "*you acquired the "; color(2); std::cout << "Clean path!*" << std::endl;
+    color(7);
     cleanPath = 1;
 }
 void character::Rat_Sale(int num) {

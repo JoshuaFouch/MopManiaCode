@@ -9,7 +9,7 @@ void FinalEvent::trigger(character& c)
 {
 	endMusic();
 
-	if (c.get_lvl() > 10) {
+	if (c.get_lvl() < 5) {
 		clear();
 		playMusic("void.wav");
 		Sdelay(1);
@@ -38,8 +38,7 @@ void FinalEvent::trigger(character& c)
 		endMusic();
 		return;
 	}
-
-	if (c.get_lvl() < 10) {
+	else {
 		clear();
 		Sdelay(2);
 		std::cout << "You open the door and see a cyborg... ";
@@ -560,30 +559,30 @@ void HospitalEvent::trigger(character& c) {
 		std::cout << "K"; MSdelay(300); std::cout << "I"; MSdelay(300); std::cout << "L"; MSdelay(300); std::cout << "L "; MSdelay(300);
 		std::cout << "Y"; MSdelay(150); std::cout << "O"; MSdelay(150); std::cout << "U"; ellipsis(); std::cout << "\n"; MSdelay(2100);
 		std::cout << "GO FILTHY BUBBLE MINION! "; MSdelay(3000); std::cout << "AND DEFEAT THIS"; ellipsis();
+		playSFX("vine-boom.wav");
 		std::cout << "\nPRISTINE " << std::endl;
-		playSFX("vine-boom.wav");
 		MSdelay(2000);
+		playSFX("vine-boom.wav");
 		std::cout << "PIGHEADED " << std::endl;
-		playSFX("vine-boom.wav");
 		MSdelay(2000);
+		playSFX("vine-boom.wav");
 		std::cout << "PATHETIC " << std::endl;
-		playSFX("vine-boom.wav");
 		MSdelay(2000);
-		std::cout << "POT-BELLIED " << std::endl;
 		playSFX("vine-boom.wav");
+		std::cout << "POT-BELLIED " << std::endl;
 		MSdelay(2000);
 		std::cout << "PRISTINE " << std::endl;
 		MSdelay(1000);
 		std::cout << "-oh wait i already said that-"; ellipsis(); std::cout << "\n";
 		MSdelay(230);
-		std::cout << "POT-BELLIED " << std::endl;
 		playSFX("vine-boom.wav");
+		std::cout << "POT-BELLIED " << std::endl;
 		MSdelay(2000);
 		std::cout << "P-";
 		MSdelay(350);
 		std::cout << "CLEANING"; ellipsis();
-		std::cout << "THING!" << std::endl;
 		playSFX("vine-boom.wav");
+		std::cout << "THING!" << std::endl;
 		MSdelay(1000);
 		playMusic("cricket.wav");
 		MSdelay(5000);
@@ -675,6 +674,11 @@ void HospitalEvent::trigger(character& c) {
 		color(7);
 		std::cout << "\nContinue on your journey, and one day you will find out...\n" << std::endl;
 		Sdelay(2);
+		system("pause");
+		clear();
+		c.acq_deadRat();
+		c.acq_healUp();
+		c.acq_healUp();
 		system("pause");
 		this->isDone = true;
 		return;
@@ -917,15 +921,23 @@ void homeEvent::trigger(character& c) {
 		std::cout << "You entered your home..." << std::endl;
 		Sdelay(4);
 		std::cout << "You feel at peace with yourself." << std::endl;
-		color(2);
+		playMusic("creativity.wav");
 		Sdelay(3);
 		std::cout << "However"; ellipsis();
 		std::cout << "You have a task to complete"; ellipsis(); std::cout << std::endl;
 		Sdelay(4);
+		color(2);
+		std::cout << c.get_name() << " Mom: "; MSdelay(500); std::cout << "HI SON!!"; ellipsis();
+		std::cout << "\nPlease be safe out there..." << std::endl;
+		Sdelay(2);
+		std::cout << "If you want to know more about this place, "; MSdelay(1200);
+		std::cout << "You should go check out the Rusty Bucket!" << std::endl;
+		MSdelay(3000);
+		std::cout << "My dear friend Mrs. Clean has some good information about our home!\n" << std::endl;
+		Sdelay(3);
 		color(7);
-		std::cout << "Your Mop-mom kicks you out of the house.\n" << std::endl;
-		Sdelay(1);
 		system("pause");
+		endMusic();
 		this->isDone = true;
 	}
 }

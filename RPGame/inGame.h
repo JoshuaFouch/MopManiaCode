@@ -15,7 +15,7 @@
 int Start_Menu()
 {
 	playMusic("void.wav");
-
+	clear();
 	Sdelay(3);
 	std::cout << "You wake up one day with no body... all you see is the void of darkness" << std::endl;
 	Sdelay(6);
@@ -23,19 +23,20 @@ int Start_Menu()
 	Sdelay(4);
 	color(6);	//Janitorius (Grime Reaper) is yellow text
 	std::cout << "My dear soul,";
-	std::cout << " I am Janitorius, the custodian of Le' Hospitale..." << std::endl;
+	Sdelay(2);
+	std::cout << " I am Janitorius, "; MSdelay(720); std::cout <<"the custodian of Le' Hospitale"; ellipsis();
+	Sdelay(2);
+	std::cout << "\nYou seem to have lost all your memory from that day." << std::endl;
 	Sdelay(4);
-	std::cout << "You seem to have lost all your memory from that day." << std::endl;
-	Sdelay(4);
-	std::cout << "You died...";
-	Sdelay(4);
+	std::cout << "You "; MSdelay(800); std::cout << "died"; ellipsis();
+	Sdelay(2);
 	std::cout << " Unfortunate. " << std::endl;
 	Sdelay(3);
-	std::cout << "\nWell anyways, you failed in your previous life so now I will offer you a new life..." << std::endl;
-	Sdelay(3);
-	std::cout << "A life as a cleaning mop...";
+	std::cout << "\nWell anyways, you failed in your previous life so now I will offer you a new life"; ellipsis();
+	Sdelay(1);
+	std::cout << "\nA life"; ellipsis(); std::cout << " as a"; ellipsis(); std::cout << " cleaning"; MSdelay(670); std::cout << " supply"; ellipsis();
 	Sdelay(4);
-	std::cout << " Will you accept this new life?...";
+	std::cout << "\nWill you accept this new life?...";
 	color(8);
 	std::cout << " type: [y/n]" << std::endl;
 	color(7);
@@ -45,12 +46,14 @@ int Start_Menu()
 
 	if (choice == "y")
 	{
+		clear();
 		std::cout << "As you should..." << std::endl;
 		Sdelay(4);
 	}
 	else
 	{
 		endMusic();
+		clear();
 		Sdelay(5);
 		std::cout << "Okay... goodbye..." << std::endl;
 		Sdelay(4);
@@ -64,7 +67,7 @@ int Start_Menu()
 	while (kill == false)
 	{
 		clear();
-		std::cout << "Choose a cleaning mop host..." << std::endl;
+		std::cout << "Choose a cleaning supply..." << std::endl;
 		Sdelay(3);
 		int x;
 		color(7);
@@ -109,7 +112,6 @@ int Start_Menu()
 			Sdelay(4);
 			std::cout << "Defeat all our enemies, and purge the world from the sludge and filth \n to restore it as it once was, " << std::endl;
 			Sdelay(3);
-			clear();
 			color(5);
 			std::cout << "\nThe World of MOP MANIA\n" << std::endl;
 			color(7);
@@ -126,7 +128,6 @@ int Start_Menu()
 			Sdelay(4);
 			std::cout << "Defeat all our enemies, and purge the world from the sludge and filth \n to restore it as it once was, " << std::endl;
 			Sdelay(3);
-			clear();
 			color(5);
 			std::cout << "\nThe World of MOP MANIA\n" << std::endl;
 			color(7);
@@ -143,7 +144,6 @@ int Start_Menu()
 			Sdelay(4);
 			std::cout << "Defeat all our enemies, and purge the world from the sludge and filth \n to restore it as it once was, " << std::endl;
 			Sdelay(3);
-			clear();
 			color(5);
 			std::cout << "\nThe World of MOP MANIA\n" << std::endl;
 			color(7);

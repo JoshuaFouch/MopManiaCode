@@ -58,9 +58,9 @@ void RustyBucketEvent::trigger(character& c)
 			MSdelay(4000);
 			color(8); std::cout << "Ah adventurer, welcome to my shop..." << std::endl;
 			MSdelay(2000);
-			std::cout << "Take a gander of what I have: " << std::endl;
+			std::cout << "It is currently under renovation..." << std::endl;
 			MSdelay(3000);
-			std::cout << " But I can't sell ya anything, sorry pal..." << std::endl;
+			std::cout << "So I can't sell ya anything, sorry pal...\n" << std::endl;
 
 			// game shop menu implementation
 	
@@ -79,14 +79,8 @@ void RustyBucketEvent::trigger(character& c)
 		}
 		else if (choice == "3") //Talk to Bubble Momma + Bubble Boy Event Encounter??
 		{
-			//function to call the Bubble Momma Dialogue
-			color(1);
-			std::cout << "Ah the "; color(2); std::cout << "Bubble Momma..." << std::endl;
-			color(3);
-			std::cout << "Did you find Bubble Boy??" << std::endl;
-			MSdelay(2000);
-			std::cout << "... " << std::endl;
-			MSdelay(2000);
+			bubbleMama bub;
+			bub.dialogue(c);
 			color(7);
 			system("pause");
 			clear();
@@ -97,7 +91,7 @@ void RustyBucketEvent::trigger(character& c)
 			std::string choice;
 			
 			clear();
-			color(8); std::cout << " Oh sure! I can grab ya a hearty drink! What can I get you?" << std::endl;
+			color(8); std::cout << "Rusty: Oh sure! I can grab ya a hearty drink! What can I get you?" << std::endl;
 			MSdelay(2000);
 			color(7);
 			std::cout << "=================================================" << std::endl;
@@ -159,6 +153,10 @@ void RustyBucketEvent::trigger(character& c)
 		{
 			break;
 			return;
+		}
+		else {
+			clear();
+			continue;
 		}
 	}
 }
@@ -246,8 +244,14 @@ void lungEvent::trigger(character& c)
 		std::cout << "He... will destroy you... ";
 		MSdelay(2500);
 		std::cout << "zzt-";
-		MSdelay(1000);
+		MSdelay(1500);
+		clear();
+		c.acq_deadRat();
+		c.acq_deadRat();
+		c.acq_healUp();
+		c.acq_attUp();
 		endMusic();
+		system("pause");
 		color(7);
 
 		this->isDone = true;
@@ -311,8 +315,6 @@ void pharmEvent::trigger(character& c)
 		std::cout << "A Musucs Maw leaps towards you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		/*MucusMaw mucu(3);
-		mucus.Battle_Sequence(c, mucu);*/
 		MucusMaw mucu(5);
 		mucus.Battle_Sequence(c, mucu);
 		if (c.getLife() == 0) {
@@ -326,21 +328,28 @@ void pharmEvent::trigger(character& c)
 		color(6);
 		std::cout << "Janitorius: Ah yes this disgusting room is finally clean... " << c.get_name() << "..." << std::endl;
 		Sdelay(4);
-		std::cout << "Thos Mucus Maws had a mind of their own..." << std::endl;
-		Sdelay(2);
-		std::cout << "Now as I was saying..." << std::endl;
+		std::cout << "Those Mucus Maws had a mind of their own..." << std::endl;
+		Sdelay(3);
+		std::cout << "Anyways"; ellipsis(); std::cout << std::endl;
 		Sdelay(4);
 		clear();
-		std::cout << "The thing you run into is not what they seem to be... ";
+		std::cout << "continue on your journey... ";
 		Sdelay(3);
-		std::cout << "Its name..." << std::endl;
+		std::cout << "one day..." << std::endl;
 		Sdelay(3);
-		std::cout << "is... ";
+		std::cout << "you... ";
 		MSdelay(2500);
-		std::cout << "is... ";
+		std::cout << "will... ";
 		MSdelay(2500);
-		std::cout << "bu-";
-		MSdelay(1000);
+		std::cout << "fin-";
+		MSdelay(1500);
+		system("pause");
+		clear();
+		c.acq_deadRat();
+		c.acq_deadRat();
+		c.acq_defUp();
+		c.acq_healUp();
+		system("pause");
 		endMusic();
 
 		this->isDone = true;
@@ -434,14 +443,17 @@ void labEvent::trigger(character& c)
 		clear();
 		std::cout << "What... ";
 		Sdelay(3);
-		std::cout << "What are needles suppose to smell like?" << std::endl;
-		Sdelay(3);
-		std::cout << "...";
+		std::cout << "What are needles suppose to smell like?"; ellipsis(); std::cout << std::endl;
 		MSdelay(2500);
-		std::cout << "... ";
-		MSdelay(2500);
-		std::cout << "well good job regardless!";
-		MSdelay(1000);
+		std::cout << "\nwell good job regardless!";
+		MSdelay(2000);
+		system("pause");
+		clear();
+		c.acq_deadRat();
+		c.acq_deadRat();
+		c.acq_healUp();
+		c.acq_attUp();
+		system("pause");
 		endMusic();
 
 		this->isDone = true;
@@ -529,19 +541,22 @@ void operatEvent::trigger(character& c)
 		Sdelay(4);
 		std::cout << "You are doing very well..." << std::endl;
 		Sdelay(2);
-		std::cout << "Did you try the ketchup..." << std::endl;
+		std::cout << "Did you try the ketchup?..." << std::endl;
 		Sdelay(4);
 		clear();
 		std::cout << "What... ";
 		Sdelay(3);
-		std::cout << "Oh I mean't clean up the ketchup?" << std::endl;
-		Sdelay(3);
-		std::cout << "...";
+		std::cout << "Oh I mean't clean up the ketchup?"; ellipsis(); std::cout << std::endl;
 		MSdelay(2500);
-		std::cout << "... ";
-		MSdelay(2500);
-		std::cout << "well get to cleaning more!";
+		std::cout << "well get to cleaning more!\n";
 		MSdelay(1000);
+		system("pause");
+		clear();
+		c.acq_deadRat();
+		c.acq_deadRat();
+		c.acq_healUp();
+		c.acq_attUp();
+		system("pause");
 		endMusic();
 
 		this->isDone = true;
@@ -792,4 +807,5 @@ void mailboxEvent::trigger(character& c)
 			return;
 		}
 	system("pause");
+	return;
 }
