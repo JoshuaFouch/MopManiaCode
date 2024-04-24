@@ -758,7 +758,7 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(5000);
 			endMusic();
 			musicBattle bat;
-			BronchitisRex reap(15);
+			BronchitisRex reap(150);
 			reap.set_name("Grime Cleaner");
 			bat.Battle_Sequence("MattariCore.wav", c, reap);
 			if (c.getLife() == 0) {
