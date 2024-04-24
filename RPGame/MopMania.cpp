@@ -42,7 +42,7 @@ int main()
 	supplyEvent* sup = new supplyEvent;
 	basementEvent* based = new basementEvent;
 
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", hospital); // e even was here
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", e); // e even was here
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", mail);
 	map.setMailbox(map.getIndex()->getLeft());
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", rusty);
@@ -104,6 +104,10 @@ int main()
 			map.current_toRoot(map.theGamer());
 			map.play(map.theGamer(), broomba, 0);
 		}
+		else if (broomba.getEnd() == 1) {
+			std::cout << "Game complete!" << std::endl;
+			return 0;
+		}
 	}
 	else if (user == 2)
 	{
@@ -116,11 +120,15 @@ int main()
 			map.current_toRoot(map.theGamer());
 			map.play(map.theGamer(), jetwet, 0);
 		}
+		else if (jetwet.getEnd() == 1) {
+			std::cout << "Game complete!" << std::endl;
+			return 0;
+		}
 		
 	}
 	else if (user == 3)
 	{
-		BysonV8 byson("BysonV8", 100, 30, 70);	//lot of health yet weak
+		BysonV8 byson("BysonV8", 100, 45, 70);	//lot of health yet weak
 		battle bobBattle;
 		map.play(map.theGamer(), byson, 0);
 		if (byson.getLife() == 0) {
@@ -128,6 +136,10 @@ int main()
 			clear();
 			map.current_toRoot(map.theGamer());
 			map.play(map.theGamer(), byson, 0);
+		}
+		else if (byson.getEnd() == 1) {
+			std::cout << "Game complete!" << std::endl;
+			return 0;
 		}
 	}
 	else
