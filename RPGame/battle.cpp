@@ -907,10 +907,11 @@ void BubbleBattle::BattleDialogue(character& c, enemy& e) {
 }
 
 
-void musicBattle::Battle_Sequence(std::string music, character& c, enemy& e) {
+void musicBattle::Battle_Sequence(std::string filename, character& c, enemy& e) {
 	endMusic();
 	battleStart(c, e);
-	playMusic(music);
+	std::wstring wideFilename(filename.begin(), filename.end());
+	PlaySound(wideFilename.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 
 	while (e.get_hp() > 0 && c.get_hp() > 0 && c.getRun() == 0)
 	{
