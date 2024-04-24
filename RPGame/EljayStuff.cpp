@@ -555,10 +555,9 @@ mailboxEvent::mailboxEvent() {};
 void mailboxEvent::trigger(character& c) 
 {
 	if (this->isDone == true) {
-		return;    //if character has already triggered the event in this node
-		//depending on the "checked" variable and perhaps level, it will display different events
-		//std::cout << "not finished" << std::endl;
-		if (this->checked == 0)
+		return;	//if character has already triggered the event in this node
+	}
+		else if (this->checked == 0)
 		{
 			std::cout << "You checked your mailbox..." << std::endl;
 			MSdelay(4000);
@@ -577,11 +576,13 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "Janitorius" << std::endl;
 			MSdelay(4000);
 			c.acq_healUp();
+			MSdelay(4000);
 			checked++;
 			return;
 		}
 		else if (this->checked == 1)
 		{
+			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			std::cout << "You got a letter in your mailbox!" << std::endl;
@@ -591,54 +592,153 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "This is the 1st time you checked it.." << std::endl;
 			MSdelay(4000);
 			c.acq_cleaningTips();
+			MSdelay(4000);
 			checked++;
 			return;
 		}
 		else if (this->checked == 2)
 		{
+			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			MSdelay(4000);
 			std::cout << "You checked a 2nd time..." << std::endl;
 			MSdelay(4000);
 			c.acq_attUp();
+			MSdelay(4000);
 			checked++;
 			return;
 		}
 		else if (this->checked == 3)
 		{
+			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			MSdelay(4000);
 			std::cout << "This is the 3rd time you checked it..." << std::endl;
 			MSdelay(4000);
 			c.acq_deadRat();
+			MSdelay(4000);
 			checked++;
 			return;
 		}
 		else if (this->checked == 4)
 		{
+			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			MSdelay(4000);
 			std::cout << "This is the 4th time you checked it...." << std::endl;
 			MSdelay(4000);
 			c.acq_Mirror();
+			MSdelay(4000);
 			checked++;
 			return;
 		}
 		else if (this->checked == 5)
-		{// I want to put a battle sequence here
+		{
+			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			battle mucuss;
-			MucusMaw mucus(1);
+			MucusMaw mucus(5);
 			mucuss.Battle_Sequence(c, mucus);
 			if (c.getLife() == 0) {
 				return;    //if the character is dead
 			}
 			Dotdot();
 			std::cout << "You don't see anything else in your mail box..." << std::endl;
+			MSdelay(2000);
+			Dotdot();
+			std::cout << "Oh?" << std::endl;
+			MSdelay(3000);
+			std::cout << "You got a box covered in mucus and decide to open it..." << std::endl;
+			MSdelay(3000);
+			std::cout << "Oh WOW! " << std::endl;
+			c.acq_Whendex();
+			MSdelay(4000);
+			checked++;
+			return;
+
+		} 
+		else if (this->checked == 6)
+		{
+			Sdelay(2);
+			std::cout << "You checked your mailbox..." << std::endl;
+			ellipsis();
+			MSdelay(3000);
+			std::cout << "Nothing is here buddy..." << std::endl;
+			MSdelay(3000);
+			std::cout << "Go do other stuff." << std::endl;
+			MSdelay(4000);
+			checked++;
+			return;
+		}
+		else if (this->checked == 7)
+		{
+			Sdelay(2);
+			std::cout << "You checked your mailbox..." << std::endl;
+			ellipsis();
+			MSdelay(4000);
+			std::cout << "I will literally raise your taxes because you keep checking your mailbox..." << std::endl;
+			MSdelay(4000);
+			checked++;
+			return;
+			}
+		else if (this->checked == 8)
+		{
+			Sdelay(2);
+			std::cout << "You checked your mailbox..." << std::endl;
+			ellipsis();
+			MSdelay(2000);
+			std::cout << "Dude stop checking it, there srsly isn't anything here..." << std::endl;
+			MSdelay(3000);
+			checked++;
+			return;
+		}
+		else if (this->checked == 9)
+		{
+			Sdelay(2);
+			std::cout << "You checked your mailbox..." << std::endl;
+			ellipsis();
+			MSdelay(3000);
+			std::cout << "You want something to be there?..." << std::endl;
+			MSdelay(2000);
+			std::cout << "Fine..." << std::endl;
+			MSdelay(3000);
+			std::cout << "Check it again and you'll have a suprise!" << std::endl;
+			MSdelay(4000);
+			checked++;
+			return;
+		}
+		else if (this->checked == 10)
+		{
+			Sdelay(2);
+			std::cout << "You checked your mailbox..." << std::endl;
+			ellipsis();
+			MSdelay(3000);
+			std::cout << "Hello my friend it is I..." << std::endl;
+			MSdelay(3000);
+			playMusic("vine-boom.wav");
+			std::cout << "Grime Reaper!" << std::endl;
+			MSdelay(3000);
+			std::cout << "You really kept checking the dang mail box..." << std::endl;
+			MSdelay(4000);
+			playMusic("MattariCore.wav");
+			std::cout << "So I will battle you now aahhahahahahhajhahhahahahahahahhaha... you will die" << std::endl;
+			MSdelay(5000);
+			endMusic();
+			battle grimer;
+			GrimeReaper reap(15);
+			grimer.Battle_Sequence(c, reap);
+			if (c.getLife() == 0) {
+				return;    //if the character is dead
+			}
+			endMusic();
+			playMusic("background.wav");
+			Dotdot();
+			std::cout << "You don't see anything else in your mail box..." << std::endl;
+			MSdelay(2000);
 			Dotdot();
 			std::cout << "Oh?" << std::endl;
 			MSdelay(3000);
@@ -646,10 +746,20 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(4000);
 			std::cout << "Oh WOW! " << std::endl;
 			c.acq_Whendex();
+			c.acq_Whendex();
+			MSdelay(4000);
 			checked++;
 			return;
 
 		}
-	}
+		else
+		{
+			ellipsis();
+			std::cout << "You checked your mailbox..." << std::endl;
+			MSdelay(4000);
+			std::cout << "There's nothing in there... stop checking actually" << std::endl;
+			MSdelay(4000);
+			return;
+		}
 	system("pause");
 }
