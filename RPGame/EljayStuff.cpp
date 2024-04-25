@@ -25,7 +25,6 @@ RustyBucketEvent::RustyBucketEvent() {};
 void RustyBucketEvent::trigger(character& c)
 {
 	bubbleMama bub;
-	bub.alreadyTalkedto();
 	Sdelay(2);
 	std::cout << "You entered the Rusty Bucket...." << std::endl;
 	MSdelay(2000);
