@@ -69,8 +69,22 @@ int main()
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
 
-	Broomba broomba("Broomba", 70, 1, 1); //beefy but less health
-	battle bobBattle;
+
+
+	Broomba broomba("Broomba", 65, 1000, 1); //beefy but less health
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
+	broomba.acq_deadRat();
 	map.play(map.theGamer(), broomba, 0);
 	if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
 		broomba.resetStats();
