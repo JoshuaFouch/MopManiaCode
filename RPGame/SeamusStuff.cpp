@@ -399,7 +399,7 @@ int bubbleBoy::dilly(character& c)
 //bubble mama
 bubbleMama::bubbleMama() {};
 
-void bubbleMama::dialogue(character& c) {
+int bubbleMama::dilly(character& c) {
     if (this->isDone == true && c.getBub() == 2) {  //if you save bubble boy and brought him back to Bubble Momma
         endMusic();
         playMusic("creativity.wav");
@@ -415,7 +415,7 @@ void bubbleMama::dialogue(character& c) {
         std::cout << "and have a moment of accomplishment about the good you brought about." << std::endl;
         Sdelay(2);
         system("pause");
-        return;
+        return 0;
     }
     if (this->isDone == true && c.getBub() == -2) { //if you killed them both...
         DotdotTwo();
@@ -448,7 +448,7 @@ void bubbleMama::dialogue(character& c) {
             std::cout << "ERROR 404 HAH\n";
         }
         endMusic();
-        return;
+        return 0;
     }
     if (this->isDone == true && c.getBub() == 0) {  //if you killed bubble boy but bubble momma forgave her...
         DotdotTwo();
@@ -649,7 +649,7 @@ void bubbleMama::dialogue(character& c) {
                 mama.set_name("The Bubble Mama");
                 fight.Battle_Sequence(c, mama);
                 if (c.getLife() <= 0) {
-                    return;	//if the character is dead
+                    return -1;	//if the character is dead
                 }
                 MSdelay(2000);
                 DotdotTwo();
@@ -740,7 +740,7 @@ void bubbleMama::dialogue(character& c) {
                 if (choiceD == "2") {
                     color(1);
                     DotdotTwo();
-                    playMusic("void.wav");
+                    playMusic("horror.wav");
                     std::cout << "BubbleMomma: You filthy creature..." << std::endl; MSdelay(2000);
                     std::cout << "you were meant to clean"; MSdelay(4000);
                     std::cout << ", not just make more messes. " << std::endl; MSdelay(4000);
@@ -761,7 +761,7 @@ void bubbleMama::dialogue(character& c) {
                     mama.set_name("Enraged Bubble Mama");
                     fight.Battle_Sequence(c, mama);
                     if (c.getLife() <= 0) {
-                        return;	//if the character is dead
+                        return -1;	//if the character is dead
                     }
                     MSdelay(2000);
                     DotdotTwo();
@@ -810,7 +810,7 @@ void bubbleMama::dialogue(character& c) {
             }
         }
 	}
-    if (choice == "2") {
+    else {
         color(7);
         std::cout << "*she continues wailing*" << std::endl; MSdelay(5000);
         std::cout << "*even louder now*" << std::endl; MSdelay(3000);
@@ -818,7 +818,7 @@ void bubbleMama::dialogue(character& c) {
 
     }
     system("pause");
-    return;
+    return 1;
 }
 
 
@@ -847,7 +847,7 @@ void dermEvent::trigger(character& c) {
 		std::cout << "Then you notice that the clumps of tan have disappeared...";
 		MSdelay(4000);
         clear();
-        std::cout << "You turn you head all about and see that now all the clumps have dissapeared..." << std::endl;
+        std::cout << "You turn you head all about and see that now all the clumps have disappeared..." << std::endl;
 		MSdelay(4000);
 		std::cout << "You then slowly tilt your head up twoards the ceiling..." << std::endl;
 		MSdelay(6000);

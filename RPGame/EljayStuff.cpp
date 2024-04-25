@@ -80,11 +80,22 @@ void RustyBucketEvent::trigger(character& c)
 		else if (choice == "3") //Talk to Bubble Momma + Bubble Boy Event Encounter??
 		{
 			bubbleMama bub;
-			bub.dialogue(c);
-			color(7);
-			system("pause");
-			clear();
-			continue;
+			int flag = bub.dilly(c);
+			if (flag == 0) {
+				color(7);
+				system("pause");
+				clear();
+				continue;
+			}
+			else if (flag == 1) {
+				color(7);
+				system("pause");
+				clear();
+				continue;
+			}
+			else if (flag == -1) {
+				return;
+			}
 		}
 		else if (choice == "4") //Drink Stuff
 		{
