@@ -352,8 +352,14 @@ void character::acq_cleanPath() {
     cleanPath = 1;
 }
 void character::Rat_Sale(int num) {
-
-    deadRat -= num;
+    if ((deadRat - num) > 0) {
+         deadRat -= num;//if you can afford the item then it will subtract
+    }
+    else {
+        std::cout << "you fool, you can't afford this"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"<<endl;
+        Sdelay(2);
+        return;
+    }
 }
 
 //attack getters
