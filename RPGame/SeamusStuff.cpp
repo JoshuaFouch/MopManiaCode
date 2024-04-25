@@ -482,7 +482,7 @@ int bubbleMama::dilly(character& c) {
     color(8);
     std::cout << "[3]: ";
     color(7);
-    std::cout << "I'm sorry to hear that Bubble Momma, I'll go and look for your Bubble boy!" << std::endl;	//change back to white for user
+    std::cout << " I'm sorry to hear that Bubble Momma, I'll go and look for your Bubble boy!" << std::endl;	//change back to white for user
 	std::string choice;
 	std::cin >> choice;
 
@@ -828,7 +828,9 @@ int bubbleMama::dilly(character& c) {
         std::cout << "BubbleMomma: Oh..." << std::endl; MSdelay(3000);
         std::cout << "*she stops wailing and slowly wipes her tears away*" << std::endl; MSdelay(4000);
         std::cout << "Thank you kind adventurer" << std::endl; MSdelay(3000);
-        std::cout << "maybe there really are some good mops still out there" << std::endl; ellipsis(); MSdelay(3000);
+        std::cout << "maybe there really are some good mops still out there"; ellipsis(); MSdelay(3000);
+        std::cout << "" << endl;
+        color(7);
     }
     system("pause");
     return 1;
