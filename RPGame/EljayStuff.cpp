@@ -289,7 +289,7 @@ void pharmEvent::trigger(character& c)
 		std::cout << "Ain't no way..." << std::endl;
 		Sdelay(2);
 		color(7);
-		std::cout << "A Muscus Maw dropped in from above!" << std::endl;
+		std::cout << "A Mucus Maw dropped in from above!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle mucus;
@@ -299,7 +299,7 @@ void pharmEvent::trigger(character& c)
 			return;	//if the character is dead
 		}
 		Sdelay(2);
-		std::cout << "You noticed the mucus starting to disapate..." << std::endl;
+		std::cout << "You noticed the mucus starting to dissipate..." << std::endl;
 		MSdelay(3000);
 		std::cout << "Now you continue to suck up the mucus..." << std::endl;
 		MSdelay(3000);
@@ -477,7 +477,7 @@ void operatEvent::trigger(character& c)
 		MSdelay(2000);
 		std::cout << "There are surgical tables flipped over and destroyed..." << std::endl;
 		MSdelay(4000);
-		std::cout << "You find kinves with fresh... ketchup..." << std::endl;
+		std::cout << "You find knives with fresh... ketchup..." << std::endl;
 		MSdelay(5000);
 		std::cout << "You decide to clean the room as soon as possible...";
 		MSdelay(6000);

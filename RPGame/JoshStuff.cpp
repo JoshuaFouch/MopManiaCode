@@ -609,7 +609,7 @@ void HospitalEvent::trigger(character& c) {
 		clear();
 		std::cout << "You must be the chosen one..." << std::endl;
 		Sdelay(4);
-		std::cout << "The one"; ellipsis(); std::cout << "he"; ellipsis(); std::cout << "sent..." << std::endl;
+		std::cout << "The one"; ellipsis(); color(6); std::cout << "he"; ellipsis(); color(4); std::cout << "sent..." << std::endl;
 		Sdelay(4);
 		std::cout << "anyways..." << std::endl;
 		Sdelay(2);

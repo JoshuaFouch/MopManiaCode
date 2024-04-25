@@ -570,10 +570,9 @@ void character::useInventory(enemy& e)
         color(8); std::cout << "[5]: "; color(7); std::cout << "Slippery Soap: " << this->get_slipperySoap() << std::endl;
         color(8); std::cout << "[6]: "; color(7); std::cout << "Cleaning Tips: " << this->get_cleaningTips() << std::endl;
         std::cout << "|========================|" << std::endl;
-        int x;
+        std::string x;
         std::cin >> x;
-        switch (x) {
-        case 1:
+        if (x == "1") {
             if (this->healUp == 0)
             {
                 clear();
@@ -590,7 +589,8 @@ void character::useInventory(enemy& e)
                 kill = true;
                 break;
             }
-        case 2:
+        }
+        else if (x == "2") {
             if (this->attUp == 0)
             {
                 clear();
@@ -607,7 +607,8 @@ void character::useInventory(enemy& e)
                 kill = true;
                 break;
             }
-        case 3:
+        }
+        else if (x == "3") {
             if (this->defUp == 0)
             {
                 std::cout << "You have no defense ups!" << std::endl;
@@ -623,7 +624,8 @@ void character::useInventory(enemy& e)
                 kill = true;
                 break;
             }
-        case 4:
+        }
+        else if (x == "4") {
             if (this->deadRat == 0)
             {
                 clear();
@@ -649,7 +651,8 @@ void character::useInventory(enemy& e)
                 kill = true;
                 break;
             }
-        case 5:
+        }
+        else if (x == "5") {
             if (this->slipperySoap == 0) {
                 clear();
                 std::cout << "You have no slippery soaps!!" << std::endl;
@@ -660,7 +663,8 @@ void character::useInventory(enemy& e)
                 kill = true;
                 break;
             }
-        case 6:
+        }
+        else if (x == "6") {
             if (this->cleaningTips == 0) {
                 clear();
                 std::cout << "You have no cleaning tips!!" << std::endl;
@@ -671,10 +675,11 @@ void character::useInventory(enemy& e)
                 kill = true;
                 break;
             }
-        default:
-            std::cout << "Invalid input." << std::endl;
+        }
+        else {
+            std::cout << "Invalid input!" << std::endl;
             continue;
-        } 
+        }
     }
     color(7);
 }
@@ -700,8 +705,44 @@ void character::checkInventory()
         color(8); std::cout << "[9]: "; color(7); std::cout << "SoapTokens: " << this->getTokens() << std::endl;
         color(8); std::cout << "[10]: "; color(7); std::cout << "LEAVE " << std::endl;
         std::cout << "|========================|" << std::endl;
-        int x;
+        std::string x;
         std::cin >> x;
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
+        if (x == "1") {
+
+        }
         switch (x) {
         case 1:
             if (this->healUp == 0)
