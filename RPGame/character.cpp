@@ -212,7 +212,7 @@ void character::use_Mirror() {
     std::cout << "This is what you look like: (hideous right?) " << std::endl;
     if (name == "Broomba") {
         int counter = 0;
-        while (counter != 10) {
+        while (counter != 5) {
             counter++;
             MSdelay(200);
             std::cout << " _____ \n";
@@ -281,7 +281,7 @@ void character::use_Mirror() {
     }
     else if (name == "BysonV8") {
         int counter = 0;
-        while (counter != 10) {
+        while (counter != 5) {
             counter++;
             MSdelay(200);clear();
             std::cout << " ,___\n";
