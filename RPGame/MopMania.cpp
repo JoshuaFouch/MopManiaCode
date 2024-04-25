@@ -76,21 +76,20 @@ int main()
 	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", mental);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
-	/*system("pause");
-	map.play(map.theGamer(), broomba, 0);
-	if (broomba.getLife() == 0) {
-		broomba.resetStats();
-		clear();
-		map.current_toRoot(map.theGamer());
-		map.play(map.theGamer(), broomba, 0);
-	}
-	else if (broomba.getEnd() == 1) {
-		std::cout << "Game complete!" << std::endl;
-		return 0;
-	}*/
+	bubbleBoy boy;
+	bubbleMama mom;
 
+	mom.dialogue(broomba);
+	system("pause");
+	
+	//if -1
+	broomba.bubKill();
+	mom.dialogue(broomba);
+	system("pause");
 
-	//WHEN I DIED TO GRIME REAPER, IT DID NOT TAKE ME HOME.
+	mom.dialogue(broomba);
+	system("pause");
+
 
 	system("pause");
 	enemy bob(1);

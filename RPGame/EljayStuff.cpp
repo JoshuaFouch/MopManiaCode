@@ -24,8 +24,6 @@ RustyBucketEvent::RustyBucketEvent() {};
 
 void RustyBucketEvent::trigger(character& c)
 {
-	endMusic();
-	playMusic("Mattari.wav");
 	Sdelay(2);
 	std::cout << "You entered the Rusty Bucket...." << std::endl;
 	MSdelay(2000);
@@ -36,6 +34,8 @@ void RustyBucketEvent::trigger(character& c)
 
 	clear();
 	while (true) {
+		endMusic();
+		playMusic("Mattari.wav");
 		std::string choice;
 
 		std::cout << "What would you like to do?\n" << std::endl;

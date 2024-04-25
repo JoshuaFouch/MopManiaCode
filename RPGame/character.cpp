@@ -513,6 +513,9 @@ void character::damaged(int oppAtt)
     std::cout << "Opponent dealt " << (oppAtt - (def / 2)) << " damage to you!!" << std::endl;
     MSdelay(500);
 }
+void character::setBubQuest(int x) {
+    this->bubbleQuest = x;
+}
 
 //abilities
 void character::Attack1(enemy& e)

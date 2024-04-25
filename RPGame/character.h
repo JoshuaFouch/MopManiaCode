@@ -34,6 +34,7 @@ public:
 	int getLife();
 	int getExit();
 	int getEnd();
+	void setBubQuest(int x);
 
 	//for items
 	int get_healUp();
