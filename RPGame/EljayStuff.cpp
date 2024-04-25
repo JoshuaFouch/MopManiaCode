@@ -187,7 +187,6 @@ void lungEvent::trigger(character& c)
 		return;	//if character has already triggered the event in this node
 	}
 	else {
-		endMusic();
 		Sdelay(2);
 		std::cout << "You entered the lung care room...";
 		MSdelay(3000);
@@ -286,8 +285,6 @@ void pharmEvent::trigger(character& c)
 		return;	//if character has already triggered the event in this node
 	}
 	else {
-		endMusic();
-		//playMusic();
 		Sdelay(2);
 		std::cout << "You entered the pharmacy...";
 		MSdelay(3000);
@@ -385,8 +382,6 @@ void labEvent::trigger(character& c)
 		return;	//if character has already triggered the event in this node
 	}
 	else {
-		endMusic();
-		//playMusic();
 		Sdelay(2);
 		std::cout << "You busted down the doors to the labortory ";
 		MSdelay(2000);
@@ -488,8 +483,6 @@ void operatEvent::trigger(character& c)
 		return;	//if character has already triggered the event in this node
 	}
 	else {
-		endMusic();
-		//playMusic();
 		Sdelay(2);
 		std::cout << "You rolled into the operating room... ";
 		MSdelay(2000);

@@ -174,14 +174,27 @@ void EndCredits() {
 	color(7);
 	std::cout << "\tcreated by:\n";
 	Sdelay(1);
+	color(2);
 	std::cout << "\t Joshua Fouch\n";
 	Sdelay(1);
+
+	color(1);
 	std::cout << "\t Seamus Sommers\n";
 	Sdelay(1);
+
+	color(5);
 	std::cout << "\t Eljay Jimenez\n";
 	Sdelay(3);
 
-	std::cout << "end credits..." << std::endl;
+	std::cout << "\tmusic by:\n";
+	Sdelay(1);
+	std::cout << "\t Joshua Fouch\n";
+	Sdelay(1);
+	std::cout << "\t Nathaniel Garry\n";
+	Sdelay(1);
+	std::cout << "\t free music online lol\n";
+	Sdelay(1);
+
 	system("pause");
 }
 

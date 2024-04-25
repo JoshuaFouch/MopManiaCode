@@ -830,7 +830,6 @@ void dermEvent::trigger(character& c) {
 		return;	//if character has already triggered the event in this node
 	}
 	else {
-		endMusic();
 		Sdelay(2);
 		std::cout << "You entered the Dermatology room...";
 		MSdelay(3000);

@@ -35,7 +35,7 @@ int main()
 	basementEvent* based = new basementEvent;
 	homeEvent* home = new homeEvent;
 
-	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", finale);
+	map.addRoot("Home", "You are in your little cottage", "Remembering the words of Janitorius, you realize the great duty that is set before you", home);
 	map.birth_leftChild(map.getIndex(), "Mailbox", "Out of curiosity, you walk over to your mailbox", "You check your mailbox and find nothing", mail);
 	map.setMailbox(map.getIndex()->getLeft());
 	map.birth_rightChild(map.getIndex(), "The Rusty-Bucket", "This is a great place to buy items, share a drink,", "gain some info, or just hang around.", rusty);
@@ -70,46 +70,7 @@ int main()
 
 
 
-
-	Broomba broomba("Broomba", 65, 1000, 1); //beefy but less health
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	broomba.acq_deadRat();
-	map.play(map.theGamer(), broomba, 0);
-	if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
-		broomba.resetStats();
-		clear();
-		map.current_toRoot(map.theGamer());
-		map.play(map.theGamer(), broomba, 0);
-	}
-	else if (broomba.getEnd() == 1) {
-		EndCredits();
-		color(4);
-		system("pause");
-	}
-	else if (broomba.getEnd() == 1) {
-		clear();
-		color(4);
-		std::cout << "Thanks for playing!!\n" << std::endl;
-	}
-	else {
-		broomba.resetStats();
-		clear();
-		map.current_toRoot(map.theGamer());
-		map.play(map.theGamer(), broomba, 0);
-	}
-
-
+	
 	color(2);
 	std::cout << "Mop Mania: The Purging of Le' Hospitale";
 	Sdelay(1);
@@ -136,7 +97,7 @@ int main()
 			color(4);
 			system("pause");
 		}
-		else if (broomba.getEnd() == 1) {
+		else if (broomba.getExit() == 1) {
 			clear();
 			color(4);
 			std::cout << "Thanks for playing!!\n" << std::endl;
@@ -164,7 +125,7 @@ int main()
 			color(4);
 			system("pause");
 		}
-		else if (jetwet.getEnd() == 1) {
+		else if (jetwet.getExit() == 1) {
 			clear();
 			color(4);
 			std::cout << "Thanks for playing!!\n" << std::endl;

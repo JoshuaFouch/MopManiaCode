@@ -11,7 +11,19 @@ event::event(std::string music)
 }
 void event::trigger(character& c)
 {
-	return;
+	/*BadFinalBattle b;
+	GrimeReaper Janitorius(c.get_lvl() + 2);
+	b.Battle_Sequence(c, Janitorius);
+	if (c.getLife() <= 0) {
+		return;	//if the character is dead
+	}*/
+	BubbleBattle fight;
+	BubblyBoy mama(c.get_lvl() + 1);
+	mama.set_name("The Bubble Mama");
+	fight.Battle_Sequence(c, mama);
+	if (c.getLife() <= 0) {
+		return;	//if the character is dead
+	}
 }
 
 
@@ -24,8 +36,6 @@ void waitingRoomEvent::trigger(character& c)
 		return;	//if character has already triggered the event in this node
 	}
 	else {
-		endMusic();
-		//playMusic();
 		Sdelay(2);
 		std::cout << "You entered the waiting room... ";
 		MSdelay(2000);
@@ -128,8 +138,6 @@ void storageRoomevent::trigger(character& c)
 		return;	//if character has already triggered the event in this node
 	}
 	else {
-		endMusic();
-		//playMusic();
 		Sdelay(2);
 		std::cout << "You entered the Storage room... ";
 		MSdelay(2000);
@@ -148,12 +156,12 @@ void storageRoomevent::trigger(character& c)
 		std::cout << "NOOO!!!" << std::endl;
 		Sdelay(2);
 		color(7);
-		std::cout << "The Crazed Vaccum lunged forward at you!" << std::endl;
+		std::cout << "The Crazed Vacuum lunged forward at you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle vacuum;
 		Stainiac vac(c.get_lvl()+1);
-		vac.set_name("Crazed Vaccum");
+		vac.set_name("Crazed Vacuum");
 		vacuum.Battle_Sequence(c, vac);	//lets make the crazed vacuum very strong, since its the only enemy  
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -174,6 +182,7 @@ void storageRoomevent::trigger(character& c)
 		std::cout << "Hey..."; Sdelay(1); std::cout << " you..." << std::endl;
 		Sdelay(1);
 		Dotdot();
+		playMusic("creativity.wav");
 		std::cout << "WAKE UP!!!";
 		MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "."; MSdelay(500); std::cout << "." << std::endl; Sdelay(2);
 		color(7);
@@ -225,8 +234,6 @@ void MentalEvent::trigger(character& c)
 		return;	//if character has already triggered the event in this node
 	}
 	else {
-		endMusic();
-		//playMusic();
 		Sdelay(2);
 		std::cout << "You entered the mental health facility...";
 		MSdelay(3000);

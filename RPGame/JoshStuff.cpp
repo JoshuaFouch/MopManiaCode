@@ -9,7 +9,7 @@ void FinalEvent::trigger(character& c)
 {
 	endMusic();
 
-	if (c.get_lvl() < 2) {
+	if (c.get_lvl() < 10) {
 		clear();
 		playMusic("void.wav");
 		Sdelay(1);
@@ -125,7 +125,7 @@ void FinalEvent::trigger(character& c)
 		Sdelay(5);
 
 		//ending if you kill bubble boy (you kill janitorius, you join filthy bubble)
-		if (c.getBub() == -1) {
+		if ((c.getBub() == -1) || (c.getBub() == -2)) {
 			//Janitorius realizes you evil nature and has to kill you
 			DotdotTwo();
 			std::cout << "It seems evil has taken over you..." << std::endl;
@@ -133,6 +133,9 @@ void FinalEvent::trigger(character& c)
 			std::cout << "You killed my good friend";
 			color(9);
 			std::cout << " Bubble Boy..." << std::endl;
+			if (c.getBub() == -2) {
+				std::cout << "and even Bubble Momma..." << std::endl;
+			}
 			color(6);
 			Sdelay(6);
 			std::cout << "WHAT HAVE YOU DONE..." << std::endl;
@@ -217,7 +220,7 @@ void FinalEvent::trigger(character& c)
 			std::cout << "Fine... have it your way..." << std::endl;
 			Sdelay(3);
 			BadFinalBattle b;
-			GrimeReaper Janitorius(10);
+			GrimeReaper Janitorius(c.get_lvl()+2);
 			b.Battle_Sequence(c, Janitorius);
 			if (c.getLife() <= 0) {
 				return;	//if the character is dead
@@ -426,7 +429,7 @@ void FinalEvent::trigger(character& c)
 				MSdelay(210);
 			}
 			GoodFinalBattle b;
-			GrimeReaper JaniBubble(10);
+			GrimeReaper JaniBubble(c.get_lvl() + 2);
 			b.Battle_Sequence(c, JaniBubble);
 			if (c.getLife() <= 0) {
 				return;	//if the character is dead

@@ -314,6 +314,15 @@ int gameMap:: Pause_Menu(locationNode* i, character& c)
 
 void gameMap::play(locationNode* i, character& c, int ifPaused) {
 	
+	if (c.get_lvl() == 10) {
+		playMusic("void.wav");
+		ellipsis();
+		std::cout << " you hear a door opening"; ellipsis(); 
+		std::cout << " and someone seems to be screaming in pain... you should go check it out..." << std::endl;
+		ellipsis();
+		system("pause");
+	}
+
 	if (ifPaused == 1) {
 		clear();
 		displayLocationAgain(i);
@@ -327,7 +336,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		if (i == this->mailbox || i == this->rustyBucket) {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() <= 0) {
+			if (c.get_hp() <= 0) {
 				return;
 				//if the character is dead
 			}
@@ -341,7 +350,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		else if (i == this->root) {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() <= 0) {
+			if (c.get_hp() <= 0) {
 				return;
 				//if the character is dead
 			}
@@ -355,7 +364,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		else {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() <= 0) {
+			if (c.get_hp() <= 0) {
 				return;
 				//if the character is dead
 			}
@@ -371,7 +380,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		if (i == this->mailbox || i == this->rustyBucket) {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() <= 0) {
+			if (c.get_hp() <= 0) {
 				return;
 			}
 			else if (c.getEnd() == 1) {
@@ -385,7 +394,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		else if (i == this->root) {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() <= 0) {
+			if (c.get_hp() <= 0) {
 				return;
 			}
 			else if (c.getEnd() == 1) {
@@ -399,7 +408,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		else {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() <= 0) {
+			if (c.get_hp() <= 0) {
 				return;
 			}
 			else if (c.getEnd() == 1) {

@@ -34,17 +34,32 @@ void battle::GameOver(character& c)
 	playSFX("OE.wav");
 	clear();
 	std::cout << "\n\n\t\tGAME OVER, YOU DIED.\n" << std::endl;
-	Sdelay(10);
+	Sdelay(8);
 	clear();
 	playMusic("void.wav");
-	color(6);
-	std::cout << "Janitorius: My dear " << c.get_name() << "..." << std::endl;
+	clear();
 	Sdelay(3);
-	std::cout << "It seems you have died... " << std::endl;
+	std::cout << "You wake up one day with no body... all you see is the void of darkness" << std::endl;
+	Sdelay(6);
+	std::cout << "You hear a voice calling in the distance:" << std::endl;
+	Sdelay(4);
+	color(6);	//Janitorius (Grime Reaper) is yellow text
+	std::cout << "My dear soul,";
 	Sdelay(2);
-	std::cout << "Do not worry, I will take you back home to try again..." << std::endl;
+	std::cout << " I am Janitorius, "; MSdelay(720); std::cout << "the custodian of Le' Hospitale"; ellipsis();
+	Sdelay(2);
+	std::cout << "\nYou seem to have lost all your memory from that day." << std::endl;
+	Sdelay(4);
+	std::cout << "You "; MSdelay(800); std::cout << "died"; ellipsis();
+	Sdelay(2);
+	std::cout << " Unfortunate"; ellipsis();
 	color(7);
-	endMusic();
+	Sdelay(2);
+	color(2);
+	std::cout << "\nthis feels oddly familiar...\n" << std::endl;
+	system("pause");
+	Sdelay(3);
+
 }
 void battle::battleStart(character& c, enemy& e) {
 	playSFX("riser.wav");
