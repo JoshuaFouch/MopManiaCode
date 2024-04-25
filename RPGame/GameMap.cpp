@@ -412,10 +412,12 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		}
 	}
 
+	if (c.get_hp() <= 0) {
+		return;
+	}
 	if (c.getLife() == 0) {
 		return;//for when you enivitably die
 	}
-
 	if (c.getExit() == 1) {
 		return;	//if the user chooses to leave the game
 	}

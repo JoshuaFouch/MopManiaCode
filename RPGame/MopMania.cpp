@@ -13,7 +13,6 @@
 int main()
 {
 	/*map creation*/
-	Broomba broomba("Broomba", 500, 500, 120); //beefy but less health
 	gameMap map;
 	event* e = new event;
 
@@ -69,6 +68,34 @@ int main()
 	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", mental);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
+
+	Broomba broomba("Broomba", 70, 1, 1); //beefy but less health
+	battle bobBattle;
+	map.play(map.theGamer(), broomba, 0);
+	if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
+		broomba.resetStats();
+		clear();
+		map.current_toRoot(map.theGamer());
+		map.play(map.theGamer(), broomba, 0);
+	}
+	else if (broomba.getEnd() == 1) {
+		EndCredits();
+		color(4);
+		system("pause");
+	}
+	else if (broomba.getEnd() == 1) {
+		clear();
+		color(4);
+		std::cout << "Thanks for playing!!\n" << std::endl;
+	}
+	else {
+		broomba.resetStats();
+		clear();
+		map.current_toRoot(map.theGamer());
+		map.play(map.theGamer(), broomba, 0);
+	}
+
+
 	color(2);
 	std::cout << "Mop Mania: The Purging of Le' Hospitale";
 	Sdelay(1);
@@ -84,7 +111,7 @@ int main()
 		Broomba broomba("Broomba", 70, 65, 100); //beefy but less health
 		battle bobBattle;
 		map.play(map.theGamer(), broomba, 0);
-		if (broomba.get_hp() <= 0) {
+		if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
 			broomba.resetStats();
 			clear();
 			map.current_toRoot(map.theGamer());
@@ -92,10 +119,19 @@ int main()
 		}
 		else if (broomba.getEnd() == 1) {
 			EndCredits();
-			return 0;
+			color(4);
+			system("pause");
+		}
+		else if (broomba.getEnd() == 1) {
+			clear();
+			color(4);
+			std::cout << "Thanks for playing!!\n" << std::endl;
 		}
 		else {
-			std::cout << "error." << std::endl;
+			broomba.resetStats();
+			clear();
+			map.current_toRoot(map.theGamer());
+			map.play(map.theGamer(), broomba, 0);
 		}
 	}
 	else if (user == 2)
@@ -103,7 +139,7 @@ int main()
 		SwifterJetWet jetwet("JetWet", 80, 90, 40);	//powerful yet defenseless
 		battle bobBattle;
 		map.play(map.theGamer(), jetwet, 0);
-		if (jetwet.get_hp() <= 0) {
+		if (jetwet.get_hp() <= 0 || jetwet.getLife() == 0) {
 			jetwet.resetStats();
 			clear();
 			map.current_toRoot(map.theGamer());
@@ -111,10 +147,19 @@ int main()
 		}
 		else if (jetwet.getEnd() == 1) {
 			EndCredits();
-			return 0;
+			color(4);
+			system("pause");
+		}
+		else if (jetwet.getEnd() == 1) {
+			clear();
+			color(4);
+			std::cout << "Thanks for playing!!\n" << std::endl;
 		}
 		else {
-			std::cout << "error." << std::endl;
+			jetwet.resetStats();
+			clear();
+			map.current_toRoot(map.theGamer());
+			map.play(map.theGamer(), jetwet, 0);
 		}
 		
 	}
@@ -123,7 +168,7 @@ int main()
 		BysonV8 byson("BysonV8", 100, 70, 70);	//lot of health yet weak
 		battle bobBattle;
 		map.play(map.theGamer(), byson, 0);
-		if (byson.get_hp() <= 0) {
+		if (byson.get_hp() <= 0 || byson.getLife() == 0) {
 			byson.resetStats();
 			clear();
 			map.current_toRoot(map.theGamer());
@@ -131,10 +176,19 @@ int main()
 		}
 		else if (byson.getEnd() == 1) {
 			EndCredits();
-			return 0;
+			color(4);
+			system("pause");
+		}
+		else if (byson.getEnd() == 1) {
+			clear();
+			color(4);
+			std::cout << "Thanks for playing!!\n" << std::endl;
 		}
 		else {
-			std::cout << "error." << std::endl;
+			byson.resetStats();
+			clear();
+			map.current_toRoot(map.theGamer());
+			map.play(map.theGamer(), byson, 0);
 		}
 	}
 	else

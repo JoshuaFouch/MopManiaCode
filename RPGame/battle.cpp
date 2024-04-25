@@ -466,7 +466,6 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 	else if (c.get_hp() <= 0)
 	{
 		c.die();
-		endMusic();
 		GameOver(c);
 	}
 	else if (c.getRun() == 1)
