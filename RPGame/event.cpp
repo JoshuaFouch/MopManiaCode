@@ -152,7 +152,8 @@ void storageRoomevent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle vacuum;
-		Stainiac vac(c.get_lvl());
+		Stainiac vac(c.get_lvl()+1);
+		vac.set_name("Crazed Vaccum");
 		vacuum.Battle_Sequence(c, vac);	//lets make the crazed vacuum very strong, since its the only enemy  
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead

@@ -212,65 +212,52 @@ void character::use_Mirror() {
     std::cout << "This is what you look like: (hideous right?) " << std::endl;
     if (name == "Broomba") {
         int counter = 0;
-        while (counter != 10) {
+        while (counter != 5) {
             counter++;
             MSdelay(200);
             std::cout << " _____ \n";
             std::cout << "(_____)\n";
-            clear();
             MSdelay(200);
+            clear();
             std::cout << " _____ \n";
             std::cout << "(_***_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << "  _____ \n";
             std::cout << " (_***_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << "   _____ \n";
             std::cout << "  (_***_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << "    _____ \n";
             std::cout << "   (_***_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << "   _____ \n";
             std::cout << "  (_***_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << "  _____ \n";
             std::cout << " (_***_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " _____ \n";
             std::cout << "(_***_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " __ \\_ \n";
             std::cout << "(_#%#_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " __%\\_ \n";
             std::cout << "(__%#_)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " __%\\_ \n";
             std::cout << "(__#__)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " __%\\_ \n";
             std::cout << "(_____)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " __ \\_ \n";
             std::cout << "(_____)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " _____ \n";
             std::cout << "(_____)\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
         }
     }
     else if (name == "JetWet") {
@@ -280,70 +267,53 @@ void character::use_Mirror() {
             MSdelay(200);
             std::cout << " ____|=\n";
             std::cout << "     |=\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " ___\\=\n";
             std::cout << "     \\=\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " ____|=\n";
             std::cout << "     |=\n";
-            MSdelay(200);
-            clear();
+            MSdelay(200);clear();
             std::cout << " ___/=\n";
             std::cout << "   /=\n";
-            MSdelay(200);
-            clear();
+            MSdelay(200);clear();
         }
     }
     else if (name == "BysonV8") {
         int counter = 0;
-        while (counter != 10) {
+        while (counter != 5) {
             counter++;
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << " ,___\n";
             std::cout << "<*___|7\n";
-            clear();
-            MSdelay(400);
+            MSdelay(200);clear();
             std::cout << " ,___\n";
             std::cout << "<**__|7\n";
-            clear();
-            MSdelay(400);
+            MSdelay(200);clear();
             std::cout << " ,___\n";
             std::cout << "<***_|7\n";
-            MSdelay(400);
-            clear();
+            MSdelay(200);clear();
             std::cout << " ,___\n";
             std::cout << "<****|7\n";
-            MSdelay(400);
-            clear();
-            counter++;
-            MSdelay(200);
+            MSdelay(200); clear();
             std::cout << "  \\__\n";
             std::cout << "<****|7\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << "  \\__\n";
             std::cout << "<***_|7\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << "  \\__\n";
             std::cout << "<**__|7\n";
-            clear();
-            MSdelay(200);
+            MSdelay(200);clear();
             std::cout << "  \\__\n";
             std::cout << "<*___|7\n";
-            MSdelay(200);
-            clear();
+            MSdelay(200);clear();
             std::cout << "  \\__\n";
             std::cout << "<____|7\n";
-            MSdelay(200);
-            clear();
+            MSdelay(200);clear();
             std::cout << " ,___\n";
             std::cout << "<____|7\n";
-            MSdelay(200);
-            clear();
+            MSdelay(200);clear();
         }
     }
     else {
@@ -382,8 +352,16 @@ void character::acq_cleanPath() {
     cleanPath = 1;
 }
 void character::Rat_Sale(int num) {
-
-    deadRat -= num;
+    if ((deadRat - num) > 0) {
+         deadRat -= num;//if you can afford the item then it will subtract
+    }
+    else {
+        std::cout << "S"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "ike!" << std::endl;
+        Sdelay(3);
+        std::cout << "you fool, you can't afford this"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"<<std::endl;
+        Sdelay(2);
+        return;
+    }
 }
 
 //attack getters
@@ -514,7 +492,7 @@ void character::damaged(int oppAtt)
     MSdelay(500);
 }
 void character::setBubQuest(int x) {
-    this->bubbleQuest = x;
+    bubbleQuest = x;
 }
 
 //abilities
@@ -894,6 +872,9 @@ int character::getBub() {
 }
 void character::bubKill() {
     bubbleQuest = -1;
+}
+void character::bubMomKill() {
+    bubbleQuest = -2;
 }
 void character::bubAdvance()
 {
