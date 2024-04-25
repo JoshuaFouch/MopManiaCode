@@ -588,7 +588,9 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(4000);
 			std::cout << "\tSincerely," << std::endl;
 			MSdelay(3000);
+			color(6);
 			std::cout << "\t\tJanitorius" << std::endl;
+			color(7);
 			MSdelay(4000);
 			c.acq_healUp();
 			MSdelay(4000);
@@ -614,7 +616,7 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(4000);
 			std::cout << "\tSincerely," << std::endl;
 			MSdelay(3000);
-			std::cout << "\t:Latherus" << std::endl;
+			std::cout << "\tLatherus" << std::endl;
 			c.acq_cleaningTips();
 			MSdelay(4000);
 			checked++;
@@ -654,6 +656,12 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "Oh what's this doing here?" << std::endl;
 			MSdelay(4000);
 			c.acq_deadRat();
+			Sdelay(2);
+			std::cout << "\tSincerely," << std::endl;
+			MSdelay(3000);
+			color(5);
+			std::cout << "\tPutrid Python" << std::endl;
+			color(7);
 			MSdelay(4000);
 			checked++;
 			return;
@@ -735,7 +743,7 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
 			MSdelay(2000);
-			std::cout << "Dude stop checking it, there srsly isn't anything here..." << std::endl;
+			std::cout << "Dude stop checking it, there seriously isn't anything here..." << std::endl;
 			MSdelay(3000);
 			checked++;
 			return;
@@ -750,7 +758,7 @@ void mailboxEvent::trigger(character& c)
 			MSdelay(2000);
 			std::cout << "Fine..." << std::endl;
 			MSdelay(3000);
-			std::cout << "Check it again and you'll have a suprise!" << std::endl;
+			std::cout << "Check it again and you'll have a surprise!" << std::endl;
 			MSdelay(4000);
 			checked++;
 			return;
@@ -760,6 +768,7 @@ void mailboxEvent::trigger(character& c)
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
+			playMusic("Mattari.wav");
 			MSdelay(3000);
 			std::cout << "Hello my friend it is I..." << std::endl;
 			MSdelay(3000);
@@ -769,7 +778,7 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "You really kept checking the dang mail box..." << std::endl;
 			MSdelay(4000);
 			playMusic("MattariCore.wav");
-			std::cout << "So I will battle you now aahhahahahahhajhahhahahahahahahhaha... you will die" << std::endl;
+			std::cout << "So I will battle you now aahhahahahahhajhahhahahahahahahhaha"; ellipsis(); std::cout << " you will die ;)" << std::endl;
 			MSdelay(5000);
 			endMusic();
 			musicBattle bat;
