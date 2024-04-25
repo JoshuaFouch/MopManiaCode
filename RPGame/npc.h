@@ -89,7 +89,7 @@ class bubbleMama : public NPC
 public:
 	bubbleMama();
 
-	void dialogue(character& c);
+	int dilly(character& c);
 };
 
 //NPC 7 (Eljay)
