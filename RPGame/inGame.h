@@ -1,4 +1,4 @@
-#ifndef IN_GAME
+﻿#ifndef IN_GAME
 #define IN_GAME
 #include "character.h"
 #include "enemy.h"
@@ -169,15 +169,43 @@ void EndCredits() {
 	playMusic("creativity.wav");
 	clear();
 	color(2);
-	std::cout << "MOP MANIA: The Purging of Le' Hospitale\n\n";
+	std::cout << " _____________________________________________________________________________________________________________________" << std::endl;
+	std::cout << "/ /                                                                                                                   \\  " << std::endl;
+	std::cout << "| | ,ggg, ,ggg,_,ggg,                                ,ggg, ,ggg,_,ggg,                                                |" << std::endl;
+	std::cout << "| | dP\"\"Y8dP\"\"Y88P\"\"Y8b                              dP\"\"Y8dP\"\"Y88P\"\"Y8b                                              |" << std::endl;
+	std::cout << "| | Yb, `88'  `88'  `88                              Yb, `88'  `88'  `88                                              |" << std::endl;
+	std::cout << "| |  `\"  88    88    88                               `\"  88    88    88                             gg               |" << std::endl;
+	std::cout << "| |      88    88    88                                   88    88    88                             \"\"               |" << std::endl;
+	std::cout << "| |      88    88    88    ,ggggg,    gg,gggg,            88    88    88    ,gggg,gg   ,ggg,,ggg,    gg     ,gggg,gg  |" << std::endl;
+	std::cout << "| |      88    88    88   dP\"  \"Y8ggg I8P\"  \"Yb           88    88    88   dP\"  \"Y8I  ,8\" \"8P\" \"8,   88    dP\"  \"Y8I  |" << std::endl;
+	std::cout << "| |      88    88    88  i8'    ,8I   I8'    ,8i          88    88    88  i8'    ,8I  I8   8I   8I   88   i8'    ,8I  |" << std::endl;
+	std::cout << "| |      88    88    Y8,,d8,   ,d8'  ,I8 _  ,d8'          88    88    Y8,,d8,   ,d8b,,dP   8I   Yb,_,88,_,d8,   ,d8b, |" << std::endl;
+	std::cout << "| |      88    88    `Y8P\"Y8888P\"    PI8 YY88888P         88    88    `Y8P\"Y8888P\"`Y88P'   8I   `Y88P\"\"Y8P\"Y8888P\"`Y8 |" << std::endl;
+	std::cout << "| |                                   I8                                                                              |" << std::endl;
+	std::cout << "| |                                   I8                                                                              |" << std::endl;
+	std::cout << "| |                                   I8                                                                              |" << std::endl;
+	std::cout << "| |                                   I8                                                                              |" << std::endl;
+	std::cout << "| |                                   I8                                                                              |" << std::endl;
+	std::cout << "| |                                   I8                                                                              |" << std::endl;
+	std::cout << "| |___________________________________________________________________________________________________________________|" << std::endl;
+	std::cout << "\\_____________________________________________________________________________________________________________________/" << std::endl;
+
+	std::cout << "\n\n";
+		std::cout << "\t\t\t•   ┏┳┓┓     ┏┓      •        ┏  ┓   ╹  ┓┏     •   ┓  " << std::endl;
+		std::cout << "\t\t\t•	 ┃ ┣┓┏┓  ┃┃┓┏┏┓┏┓┓┏┓┏┓  ┏┓╋  ┃ ┏┓   ┣┫┏┓┏┏┓┓╋┏┓┃┏┓" << std::endl;
+		std::cout << "\t\t\t•	 ┻ ┛┗┗   ┣┛┗┻┛ ┗┫┗┛┗┗┫  ┗┛┛  ┗┛┗    ┛┗┗┛┛┣┛┗┗┗┻┗┗ " << std::endl;
+		std::cout << "\t\t\t                    ┛    ┛                   ┛        " << std::endl;
 	Sdelay(2);
 	color(7);
 	std::cout << "\tcreated by:\n";
 	Sdelay(1);
+	color(2);
 	std::cout << "\t Joshua Fouch\n";
 	Sdelay(1);
+	color(1);
 	std::cout << "\t Seamus Sommers\n";
 	Sdelay(1);
+	color(5);
 	std::cout << "\t Eljay Jimenez\n";
 	Sdelay(3);
 
