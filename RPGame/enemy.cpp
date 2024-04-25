@@ -350,12 +350,12 @@ void GarbageDan::Enrage(character& c)
 MucusMaw::MucusMaw(int lvl) : enemy(lvl)
 {
 	set_name("MucusMaw");
-	set_stats(70, 60, 30, lvl); //HP 70, Att 60, DEF 30
+	set_stats(70, 60, 60, lvl); //HP 70, Att 60, DEF 60
 }
 void MucusMaw::manuallyConstruct(int lvl)
 {
 	set_name("MucusMaw");
-	set_stats(70, 60, 30, lvl);
+	set_stats(70, 60, 60, lvl);
 }
 
 
