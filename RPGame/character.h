@@ -35,6 +35,7 @@ public:
 	int getExit();
 	int getEnd();
 	void setBubQuest(int x);
+	void bubMomKill();
 
 	//for items
 	int get_healUp();

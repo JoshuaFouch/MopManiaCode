@@ -492,7 +492,7 @@ void character::damaged(int oppAtt)
     MSdelay(500);
 }
 void character::setBubQuest(int x) {
-    this->bubbleQuest = x;
+    bubbleQuest = x;
 }
 
 //abilities
@@ -872,6 +872,9 @@ int character::getBub() {
 }
 void character::bubKill() {
     bubbleQuest = -1;
+}
+void character::bubMomKill() {
+    bubbleQuest = -2;
 }
 void character::bubAdvance()
 {
