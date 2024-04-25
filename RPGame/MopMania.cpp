@@ -82,9 +82,17 @@ int main()
 	//user = Start_Menu();
 	if (user == 1)
 	{
-		Broomba broomba("Broomba", 70, 65, 100); //beefy but less health
-		battle bobBattle;
-		bobBattle.Battle_Sequence(broomba, ef);
+		Broomba broomba("Broomba", 70, 100, 100); //beefy but less health
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
 		map.play(map.theGamer(), broomba, 0);
 		if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
 			broomba.resetStats();
@@ -106,7 +114,6 @@ int main()
 	else if (user == 2)
 	{
 		SwifterJetWet jetwet("JetWet", 80, 100, 60);	//powerful yet defenseless
-		battle bobBattle;
 		map.play(map.theGamer(), jetwet, 0);
 		if (jetwet.get_hp() <= 0 || jetwet.getLife() == 0) {
 			jetwet.resetStats();
@@ -129,7 +136,6 @@ int main()
 	else if (user == 3)
 	{
 		BysonV8 byson("BysonV8", 100, 70, 70);	//lot of health yet weak
-		battle bobBattle;
 		map.play(map.theGamer(), byson, 0);
 		if (byson.get_hp() <= 0 || byson.getLife() == 0) {
 			byson.resetStats();
