@@ -197,7 +197,7 @@ void lungEvent::trigger(character& c)
 		battle rex;
 		BronchitisRex bronch(3);
 		rex.Battle_Sequence(c, bronch);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
@@ -219,7 +219,7 @@ void lungEvent::trigger(character& c)
 		Sdelay(2);
 		BronchitisRex cronk(3);
 		rex.Battle_Sequence(c, cronk);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		DotdotTwo();
@@ -295,7 +295,7 @@ void pharmEvent::trigger(character& c)
 		battle mucus;
 		MucusMaw muc(1);
 		mucus.Battle_Sequence(c, muc);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
@@ -317,7 +317,7 @@ void pharmEvent::trigger(character& c)
 		Sdelay(2);
 		MucusMaw mucu(5);
 		mucus.Battle_Sequence(c, mucu);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Dotdot();
@@ -389,7 +389,7 @@ void labEvent::trigger(character& c)
 		battle needle;
 		NeedleNed ne(5);
 		needle.Battle_Sequence(c, ne);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
@@ -407,7 +407,7 @@ void labEvent::trigger(character& c)
 		Sdelay(2);
 		NeedleNed nee(7);
 		needle.Battle_Sequence(c, nee);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
@@ -425,7 +425,7 @@ void labEvent::trigger(character& c)
 		Sdelay(2);
 		NeedleNed need(8);
 		needle.Battle_Sequence(c, need);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Dotdot();
@@ -492,7 +492,7 @@ void operatEvent::trigger(character& c)
 		battle stain;
 		Stainiac st(2);
 		stain.Battle_Sequence(c, st);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
@@ -510,7 +510,7 @@ void operatEvent::trigger(character& c)
 		Sdelay(2);
 		Stainiac sta(4);
 		stain.Battle_Sequence(c, sta);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
@@ -528,7 +528,7 @@ void operatEvent::trigger(character& c)
 		Sdelay(2);
 		Stainiac stai(7);
 		stain.Battle_Sequence(c, stai);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Dotdot();
@@ -663,11 +663,11 @@ void mailboxEvent::trigger(character& c)
 			Sdelay(2);
 			std::cout << "You checked your mailbox..." << std::endl;
 			ellipsis();
-			MSdelay(4000);
+			MSdelay(3000);
 			std::cout << "Oh what's this?" << std::endl;
 			MSdelay(4000);
 			std::cout << "Your reflection..." << std::endl;
-			MSdelay(4000);
+			MSdelay(3000);
 			std::cout << "Maybe it'll be useful" << std::endl;
 			MSdelay(4000);
 			c.acq_Mirror();
@@ -687,7 +687,7 @@ void mailboxEvent::trigger(character& c)
 			battle mucuss;
 			MucusMaw mucus(5);
 			mucuss.Battle_Sequence(c, mucus);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;    //if the character is dead
 			}
 			Dotdot();
@@ -776,7 +776,7 @@ void mailboxEvent::trigger(character& c)
 			BronchitisRex reap(150);
 			reap.set_name("Grime Cleaner");
 			bat.Battle_Sequence("MattariCore.wav", c, reap);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;    //if the character is dead
 			}
 			endMusic();
@@ -787,7 +787,7 @@ void mailboxEvent::trigger(character& c)
 			Dotdot();
 			std::cout << "Oh?" << std::endl;
 			MSdelay(3000);
-			std::cout << "You got a box covered in mucus and decide to open it..." << std::endl;
+			std::cout << "There is a box in the mail..." << std::endl;
 			MSdelay(4000);
 			std::cout << "Oh WOW! " << std::endl;
 			c.acq_Whendex();
