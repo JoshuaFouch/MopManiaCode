@@ -91,16 +91,6 @@ int main()
 			map.current_toRoot(map.theGamer());
 			map.play(map.theGamer(), broomba, 0);
 		}
-		else if (broomba.getEnd() == 1) {
-			EndCredits();
-			color(4);
-			system("pause");
-		}
-		else if (broomba.getExit() == 1) {
-			clear();
-			color(4);
-			std::cout << "Thanks for playing!!\n" << std::endl;
-		}
 		else {
 			broomba.resetStats();
 			clear();
@@ -118,16 +108,6 @@ int main()
 			clear();
 			map.current_toRoot(map.theGamer());
 			map.play(map.theGamer(), jetwet, 0);
-		}
-		else if (jetwet.getEnd() == 1) {
-			EndCredits();
-			color(4);
-			system("pause");
-		}
-		else if (jetwet.getExit() == 1) {
-			clear();
-			color(4);
-			std::cout << "Thanks for playing!!\n" << std::endl;
 		}
 		else {
 			jetwet.resetStats();
@@ -148,16 +128,6 @@ int main()
 			map.current_toRoot(map.theGamer());
 			map.play(map.theGamer(), byson, 0);
 		}
-		else if (byson.getEnd() == 1) {
-			EndCredits();
-			color(4);
-			system("pause");
-		}
-		else if (byson.getEnd() == 1) {
-			clear();
-			color(4);
-			std::cout << "Thanks for playing!!\n" << std::endl;
-		}
 		else {
 			byson.resetStats();
 			clear();
@@ -169,5 +139,7 @@ int main()
 	{
 		std::cout << "Error 404 not found idk..." << std::endl;
 	}
+
+	std::cout << "must be an error..." << std::endl;
 	return 0;
 }
