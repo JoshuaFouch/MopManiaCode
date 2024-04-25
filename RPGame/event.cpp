@@ -84,7 +84,7 @@ void waitingRoomEvent::trigger(character& c)
 		Sdelay(2);
 		GarbageDan san(1);
 		garbage.Battle_Sequence(c, san);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Dotdot();
@@ -154,7 +154,7 @@ void storageRoomevent::trigger(character& c)
 		battle vacuum;
 		Stainiac vac(5);
 		vacuum.Battle_Sequence(c, vac);	//lets make the crazed vacuum very strong, since its the only enemy  
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Dotdot();
@@ -253,7 +253,7 @@ void MentalEvent::trigger(character& c)
 		battle garbage;
 		Hairball dan(1);
 		garbage.Battle_Sequence(c, dan);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Sdelay(2);
@@ -289,7 +289,7 @@ void MentalEvent::trigger(character& c)
 		Sdelay(2);
 		Hairball san(1);
 		garbage.Battle_Sequence(c, san);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		Dotdot();
