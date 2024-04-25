@@ -708,43 +708,6 @@ void character::checkInventory()
         std::string x;
         std::cin >> x;
         if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        if (x == "1") {
-
-        }
-        switch (x) {
-        case 1:
             if (this->healUp == 0)
             {
                 clear();
@@ -761,7 +724,8 @@ void character::checkInventory()
                 clear();
                 continue;
             }
-        case 2:
+        }
+        else if (x == "2") {
             if (this->attUp == 0)
             {
                 clear();
@@ -778,7 +742,8 @@ void character::checkInventory()
                 clear();
                 continue;
             }
-        case 3:
+        }
+        else if (x == "3") {
             if (this->defUp == 0)
             {
                 clear();
@@ -795,9 +760,10 @@ void character::checkInventory()
                 clear();
                 continue;
             }
-        case 4:
+        }
+        else if (x == "4") {
             if (this->deadRat == 0)
-            {   
+            {
                 clear();
                 std::cout << "You have no dead rats!" << std::endl;
                 system("pause");
@@ -819,7 +785,8 @@ void character::checkInventory()
                 system("pause");
                 continue;
             }
-        case 5:
+        }
+        else if (x == "5") {
             if (this->slipperySoap == 0) {
                 clear();
                 std::cout << "You have no slippery soaps!!" << std::endl;
@@ -842,7 +809,8 @@ void character::checkInventory()
                 clear();
                 continue;
             }
-        case 6:
+        }
+        else if (x == "6") {
             if (this->cleaningTips == 0) {
                 clear();
                 std::cout << "You have no cleaning tips!!" << std::endl;
@@ -857,7 +825,8 @@ void character::checkInventory()
                 clear();
                 continue;
             }
-        case 7:
+        }
+        else if (x == "7") {
             if (this->Whendex == 0) {
                 clear();
                 std::cout << "You have no Whendex!!!" << std::endl;
@@ -871,7 +840,8 @@ void character::checkInventory()
                 clear();
                 continue;
             }
-        case 8:
+        }
+        else if (x == "8") {
             if (this->Mirror == 0) {
                 clear();
                 std::cout << "You have no Mirrors!!!" << std::endl;
@@ -885,7 +855,8 @@ void character::checkInventory()
                 clear();
                 continue;
             }
-        case 9:
+        }
+        else if (x == "9") {
             if (this->SoapTokens == 0) {
                 clear();
                 std::cout << "YOU BROKE... HAHA!" << std::endl;
@@ -900,10 +871,12 @@ void character::checkInventory()
                 clear();
                 continue;
             }
-        case 10:
+        }
+        else if (x == "10") {
             kill = true;
             break;
-        default:
+        }
+        else {
             clear();
             std::cout << "Invalid input." << std::endl;
             continue;
