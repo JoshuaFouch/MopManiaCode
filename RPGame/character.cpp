@@ -356,7 +356,9 @@ void character::Rat_Sale(int num) {
          deadRat -= num;//if you can afford the item then it will subtract
     }
     else {
-        std::cout << "you fool, you can't afford this"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"<<endl;
+        std::cout << "S"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "ike!" << std::endl;
+        Sdelay(3);
+        std::cout << "you fool, you can't afford this"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"; MSdelay(500); std::cout << "s"<<std::endl;
         Sdelay(2);
         return;
     }

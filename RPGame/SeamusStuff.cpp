@@ -71,24 +71,24 @@ void cellarEvent::trigger(character& c)
                             color(5);
                             cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
                             cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << "s"; MSdelay(200); cout << "ponge armor\n";
+                            if (c.get_deadRat() >= 4) { c.acq_healUp();}
                             c.Rat_Sale(4);
-                            c.get_healUp();
                             MSdelay(2000);
                             continue;
                         case 2:
                             color(5);
                             cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
                             cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Bleach lining potion\n";
+                            if (c.get_deadRat() >= 4) { c.acq_attUp(); }
                             c.Rat_Sale(4);
-                            c.get_attUp();
                             MSdelay(2000);
                             continue;
                         case 3:
                             color(5);
                             cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
                             cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Wax"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " coat\n";
+                            if (c.get_deadRat() >= 4) { c.acq_defUp(); }
                             c.Rat_Sale(4);
-                            c.get_defUp();
                             continue;
                         case 4:
                             kill = true;
