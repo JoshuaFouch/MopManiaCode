@@ -327,7 +327,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		if (i == this->mailbox || i == this->rustyBucket) {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;
 				//if the character is dead
 			}
@@ -341,7 +341,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		else if (i == this->root) {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;
 				//if the character is dead
 			}
@@ -355,7 +355,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		else {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;
 				//if the character is dead
 			}
@@ -371,7 +371,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		if (i == this->mailbox || i == this->rustyBucket) {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;
 			}
 			else if (c.getEnd() == 1) {
@@ -385,7 +385,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		else if (i == this->root) {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;
 			}
 			else if (c.getEnd() == 1) {
@@ -399,7 +399,7 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 		else {
 			clear();
 			i->getEvent()->trigger(c);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;
 			}
 			else if (c.getEnd() == 1) {

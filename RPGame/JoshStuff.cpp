@@ -219,7 +219,7 @@ void FinalEvent::trigger(character& c)
 			BadFinalBattle b;
 			GrimeReaper Janitorius(10);
 			b.Battle_Sequence(c, Janitorius);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;	//if the character is dead
 			}
 			Dotdot();
@@ -428,7 +428,7 @@ void FinalEvent::trigger(character& c)
 			GoodFinalBattle b;
 			GrimeReaper JaniBubble(10);
 			b.Battle_Sequence(c, JaniBubble);
-			if (c.getLife() == 0) {
+			if (c.getLife() <= 0) {
 				return;	//if the character is dead
 			}
 			endMusic();
@@ -598,7 +598,7 @@ void HospitalEvent::trigger(character& c) {
 		BubblyBoy bad(1);
 		bad.set_name("BUBBLY BRAT (FILTHY BUBBLE MINION)");
 		first.Battle_Sequence("horror.wav", c, bad);
-		if (c.getLife() == 0) {
+		if (c.getLife() <= 0) {
 			return;	//if the character is dead
 		}
 		DotdotTwo();
