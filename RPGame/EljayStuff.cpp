@@ -32,6 +32,10 @@ void RustyBucketEvent::trigger(character& c)
 	MSdelay(3000);
 	std::cout << "But the place looks beautiful on the inside..." << std::endl;
 	MSdelay(4000);
+	std::cout << "With light bouncing off the rusty bucket chandeliers..." << std::endl;
+	MSdelay(4000);
+	std::cout << "Making the place glow with a particular shine..." << std::endl;
+	MSdelay(4000);
 	std::cout << "There seems to be a few places you can stop by..." << std::endl;
 	MSdelay(3000);
 
