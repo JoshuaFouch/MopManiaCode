@@ -77,7 +77,6 @@ int main()
 	color(8);
 	std::cout << "\n\nCreated by: Joshua Fouch,"; Sdelay(1); std::cout << " Seamus Sommers,"; Sdelay(1); std::cout << " and Eljay Jimenez\n";
 	color(7);
-	ellipsis();
 	system("pause");
 	int user;
 	user = Start_Menu();
