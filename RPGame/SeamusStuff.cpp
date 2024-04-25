@@ -418,7 +418,7 @@ void bubbleMama::dialogue(character& c) {
 	std::string choice;
 	std::cin >> choice;
 
-	if (choice == "1"&&c.getBub() == 1)
+	if (choice == "1" && c.getBub() == 1)
 	{
 		color(1);
 		std::cout <<"BubbleMomma: ITS MY BEAUTIFUL BUBBLY BUBBLE BOY!!!" << std::endl;
@@ -568,8 +568,13 @@ void bubbleMama::dialogue(character& c) {
                 std::cout << "he'll never come back" << endl; MSdelay(5000);
                 std::cout << "whats the point anymore?" << endl; MSdelay(5000);
                 ellipsis();
-                //then call here battle here with her at level 5 or something low, maybe just specifically low attack but high hp
-
+                BubbleBattle fight;
+                BubblyBoy mama(5);
+                mama.set_name("The Bubble Mama");
+                fight.Battle_Sequence(c, mama);
+                if (c.getLife() <= 0) {
+                    return;	//if the character is dead
+                }
                 MSdelay(2000);
             }
 
@@ -637,7 +642,7 @@ void bubbleMama::dialogue(character& c) {
                 std::string choiceD;
                 std::cin >> choiceD;
 
-                if (choiceD == "1") {
+                if (choiceD == "2") {
                     color(1);
                     std::cout << "BubbleMomma: You filthy creature..." << std::endl; MSdelay(2000);
                     std::cout << "you were meant to clean"; MSdelay(4000);
@@ -653,10 +658,16 @@ void bubbleMama::dialogue(character& c) {
                     std::cout << "it's my duty to" << std::endl; MSdelay(5000);
                     ellipsis();
                     std::cout << "TAKE YOU OUT!!!" << std::endl; MSdelay(5000);
-                    //then call here battle here but make her like level 8, or at least with balanced hp and atk also will have to set it to -2
+                    BubbleBattle fight;
+                    BubblyBoy mama(8);
+                    mama.set_name("Enraged Bubble Mama");
+                    fight.Battle_Sequence(c, mama);
+                    if (c.getLife() <= 0) {
+                        return;	//if the character is dead
+                    }
                 }
 
-                if (choiceD == "2") {
+                if (choiceD == "1") {
 
                     color(1);
                     std::cout << "BubbleMomma: Then..." << std::endl; MSdelay(3000);

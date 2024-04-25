@@ -312,7 +312,7 @@ void pharmEvent::trigger(character& c)
 		std::cout << "NOOO!!!" << std::endl;
 		Sdelay(2);
 		color(7);
-		std::cout << "A Musucs Maw leaps towards you!" << std::endl;
+		std::cout << "A Mucus Maw leaps towards you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
 		MucusMaw mucu(5);
