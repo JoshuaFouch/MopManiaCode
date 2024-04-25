@@ -46,7 +46,7 @@ void waitingRoomEvent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle garbage;
-		GarbageDan dan(1);
+		GarbageDan dan(c.get_lvl());
 		garbage.Battle_Sequence(c, dan);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
@@ -64,7 +64,7 @@ void waitingRoomEvent::trigger(character& c)
 		std::cout << "Another GarbageDan appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		GarbageDan can(1);
+		GarbageDan can(c.get_lvl());
 		garbage.Battle_Sequence(c, can);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
@@ -82,7 +82,7 @@ void waitingRoomEvent::trigger(character& c)
 		std::cout << "Another GarbageDan appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		GarbageDan san(1);
+		GarbageDan san(c.get_lvl());
 		garbage.Battle_Sequence(c, san);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -152,7 +152,7 @@ void storageRoomevent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle vacuum;
-		Stainiac vac(5);
+		Stainiac vac(c.get_lvl());
 		vacuum.Battle_Sequence(c, vac);	//lets make the crazed vacuum very strong, since its the only enemy  
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -251,7 +251,7 @@ void MentalEvent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle garbage;
-		Hairball dan(1);
+		Hairball dan(c.get_lvl());
 		garbage.Battle_Sequence(c, dan);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -269,7 +269,7 @@ void MentalEvent::trigger(character& c)
 		std::cout << "Another Hairball appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Hairball can(1);
+		Hairball can(c.get_lvl());
 		garbage.Battle_Sequence(c, can);
 		if (c.getLife() == 0) {
 			return;	//if the character is dead
@@ -287,7 +287,7 @@ void MentalEvent::trigger(character& c)
 		std::cout << "Another Hairball appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Hairball san(1);
+		Hairball san(c.get_lvl());
 		garbage.Battle_Sequence(c, san);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead

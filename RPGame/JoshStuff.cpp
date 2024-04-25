@@ -595,7 +595,7 @@ void HospitalEvent::trigger(character& c) {
 		MSdelay(2700);
 		color(7);
 		musicBattle first;
-		BubblyBoy bad(1);
+		BubblyBoy bad(c.get_lvl());
 		bad.set_name("BUBBLY BRAT (FILTHY BUBBLE MINION)");
 		first.Battle_Sequence("horror.wav", c, bad);
 		if (c.getLife() <= 0) {

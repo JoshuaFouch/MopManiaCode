@@ -400,7 +400,7 @@ int bubbleBoy::dilly(character& c)
 bubbleMama::bubbleMama() {};
 
 void bubbleMama::dialogue(character& c) {
-    if (this->isDone == true && c.getBub() == 2) {
+    if (this->isDone == true && c.getBub() == 2) {  //if you save bubble boy and brought him back to Bubble Momma
         endMusic();
         playMusic("creativity.wav");
         color(1);
@@ -417,13 +417,12 @@ void bubbleMama::dialogue(character& c) {
         system("pause");
         return;
     }
-    if (this->isDone == true && c.getBub() == -2) {
+    if (this->isDone == true && c.getBub() == -2) { //if you killed them both...
         DotdotTwo();
         color(1);
         std::cout << "Bubble Momma: ";
-        Sdelay(1);
+        Sdelay(6);
         playMusic("death.wav");
-        Sdelay(5);
         clear();
         color(7);
         std::cout << "Oh wait"; ellipsis(); std::cout << " you killed her." << std::endl;
@@ -431,24 +430,27 @@ void bubbleMama::dialogue(character& c) {
         system("pause");
         for (int i = 0; i < 20; i++) {
             clear();
+            endMusic();
             playMusic("asheoifhs.wav");
             MSdelay(100);
             if (i % 2 == 0) {
                 color(4);
                 std::cout << "YOU KILLED HER"; color(7); std::cout << " IP. 92.28.211.234" << endl;
+                MSdelay(200);
                 color(7);
             }
             else if (i % 3 == 0) {
                 color(9);
                 std::cout << "what have you done?" << std::endl;
+                MSdelay(200);
                 color(7);
             }
-            std::cout << "ERROR 404";
+            std::cout << "ERROR 404 HAH\n";
         }
         endMusic();
         return;
     }
-    if (this->isDone == true && c.getBub() == 0) {
+    if (this->isDone == true && c.getBub() == 0) {  //if you killed bubble boy but bubble momma forgave her...
         DotdotTwo();
         playMusic("ending.wav");
         color(7);
@@ -479,11 +481,11 @@ void bubbleMama::dialogue(character& c) {
 	std::string choice;
 	std::cin >> choice;
 
-	if (choice == "1" && c.getBub() == 1)
+	if (choice == "1" && c.getBub() == 1)   //if you have bubble boy and say yes
 	{
         playMusic("creativity.wav");
 		color(1);
-		std::cout <<"BubbleMomma: ITS MY BEAUTIFUL BUBBLY BUBBLE BOY!!!" << std::endl;
+        std::cout << "BubbleMomma: ITS MY BEAUTIFUL BUBBLY"; Sdelay(1); std::cout << " BUBBLE BOY!!!" << std::endl;
         MSdelay(2650);
         std::cout <<"I've missed you so much!!" << std::endl;
         MSdelay(3000);
@@ -547,10 +549,10 @@ void bubbleMama::dialogue(character& c) {
         MSdelay(3000);
         this->isDone = true;
 	}
-    else if (choice == "1" && c.getBub()<=0){//so if you dont have the child but say you do (or you killed him)
+    else if (choice == "1" && c.getBub()<=0){   //if you dont have the child but say you do (or you killed him)
     color(1);
         playMusic("creativity.wav");
-		std::cout <<"BubbleMomma: OH HOW IVE MISSED YOU, MY BEAUTIFUL BUBBLY BUBBLE BOY!!!" << std::endl;
+		std::cout <<"BubbleMomma: OH HOW IVE MISSED YOU, MY BEAUTIFUL BUBBLY"; Sdelay(1); std::cout << " BUBBLE BOY!!!" << std::endl;
         MSdelay(4000);
          DotdotTwo();
          std::cout <<"Wait..." << std::endl;
@@ -573,11 +575,12 @@ void bubbleMama::dialogue(character& c) {
             system("pause");
             this->dialogue(c);
         }
-        if (c.getBub() == -1) {
+        if (c.getBub() == -1) { //if you killed him... you still have a choice...
+            color(7); std::cout << "Choose wisely..." << std::endl;
             color(8);
             std::cout << "[1]: ";
             color(7);
-            std::cout << " You have no idea how cruel I really am, I POPPED your stupid little Bubble Boy" << std::endl;    //change back to white for user
+            std::cout << " You have no idea how cruel I really am, I POPPED your stupid little Bubble Boy!!" << std::endl;    //change back to white for user
             color(8);
             std::cout << "[2]: ";
             color(7);
@@ -589,14 +592,15 @@ void bubbleMama::dialogue(character& c) {
             if (choiceC == "1") {
                 color(1);
                 playMusic("death.wav");
-                std::cout << "BubbleMomma: There's no way" << std::endl; MSdelay(3000);
-                std::cout << "No, it just couldn't be" << std::endl; MSdelay(2650);
+                std::cout << "BubbleMomma: There's no way..." << std::endl; MSdelay(3000);
+                std::cout << "No, it just couldn't be..." << std::endl; MSdelay(2650);
                 std::cout << "You're just kidding, this is just some sick joke, "; MSdelay(2000);
                 std::cout << "that's all it is " << std::endl; MSdelay(3500);
                 clear();
                 ellipsis();
                 std::cout << "YOU!"; MSdelay(2000);
                 std::cout << " This is all YOUR fault!"; MSdelay(2000);
+                endMusic();
                 std::cout << ", IM GOING TO KILL YOU!!! " << std::endl; MSdelay(2000);
                 std::cout << "wait"; MSdelay(500); ellipsis(); std::cout << "\n";
                 std::cout << "ha"; MSdelay(500); std::cout << "ha"; MSdelay(400); std::cout << "ha"; MSdelay(350); std::cout << "ha"; MSdelay(300); std::cout << "Ha"; MSdelay(250);
@@ -605,7 +609,7 @@ void bubbleMama::dialogue(character& c) {
                 clear();
                 std::cout << "NO NEED!" << endl; MSdelay(2000);
                 std::cout << "Ha"; MSdelay(250); std::cout << "Ha"; MSdelay(200); std::cout << "Ha"; MSdelay(200); std::cout << "HA"; MSdelay(150); std::cout << "HA"; MSdelay(150);
-                std::cout << "Because no one would ever fo anything so CRUEL" << endl; MSdelay(2000);
+                std::cout << "Because no one would ever do anything so CRUEL" << endl; MSdelay(2000);
                 std::cout << "Because why would anyone ever KILL" << endl; MSdelay(2000);
                 std::cout << ", such an innocent"; MSdelay(2000);
                 std::cout << ", beautiful"; MSdelay(2000);
@@ -614,9 +618,10 @@ void bubbleMama::dialogue(character& c) {
                 ellipsis();
                 std::cout << ", B"; MSdelay(200); std::cout << "u"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << " B"; MSdelay(200); std::cout << "o"; MSdelay(200);
                 std::cout << "y"; MSdelay(200);
-                ellipsis();
+                playMusic("horror.wav");
+                ellipsis(); ellipsis();
                 clear();
-                std::cout << "you're lying, you HAVE to be lying" << endl; MSdelay(2000);
+                std::cout << "you're lying, you HAVE to be lying!!" << endl; MSdelay(2000);
                 ellipsis();
                 std::cout << "" << endl; MSdelay(2000);
                 std::cout << "PLEASE\n"; MSdelay(1000);
@@ -632,6 +637,7 @@ void bubbleMama::dialogue(character& c) {
                 std::cout << "TELL ME WHERE HE IS" << endl; MSdelay(2000);
                 std::cout << "I KNOW YOU HAVE HIM SOMEWHERE!" << endl; MSdelay(5000);
                 ellipsis();
+                clear();
                 std::cout << "Oh" << endl; MSdelay(2500);
                 std::cout << "Oh who am I kidding"; MSdelay(2500);
                 std::cout << ", he's gone isn't he?" << endl; MSdelay(3000);
@@ -639,7 +645,7 @@ void bubbleMama::dialogue(character& c) {
                 std::cout << " whats the point anymore?" << endl; MSdelay(5000);
                 ellipsis();
                 BubbleBattle fight;
-                BubblyBoy mama(5);
+                BubblyBoy mama(7);
                 mama.set_name("The Bubble Mama");
                 fight.Battle_Sequence(c, mama);
                 if (c.getLife() <= 0) {
@@ -673,6 +679,7 @@ void bubbleMama::dialogue(character& c) {
                 ellipsis();
                 std::cout << "YOU!"; MSdelay(2000);
                 std::cout << " This is all YOUR fault!"; MSdelay(2000);
+                endMusic();
                 std::cout << ", IM GOING TO KILL YOU!!! " << std::endl; MSdelay(2000);
                 std::cout << "wait"; MSdelay(500); ellipsis();
                 std::cout << "ha"; MSdelay(500); std::cout << "ha"; MSdelay(400); std::cout << "ha"; MSdelay(350); std::cout << "ha"; MSdelay(300); std::cout << "Ha"; MSdelay(250);
@@ -691,6 +698,7 @@ void bubbleMama::dialogue(character& c) {
                 std::cout << ", B"; MSdelay(200); std::cout << "u"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "b"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << " B"; MSdelay(200); std::cout << "o"; MSdelay(200);
                 std::cout << "y"; MSdelay(200);
                 ellipsis();
+                playMusic("death.wav");
                 clear();
                 std::cout << "you're lying, you HAVE to be lying" << endl; MSdelay(2000);
                 ellipsis();
@@ -708,14 +716,16 @@ void bubbleMama::dialogue(character& c) {
                 std::cout << "TELL ME WHERE HE IS" << endl; MSdelay(2000);
                 std::cout << "I KNOW YOU HAVE HIM SOMEWHERE!" << endl; MSdelay(5000);
                 ellipsis();
+                clear();
                 std::cout << "Oh" << endl; MSdelay(2000);
                 std::cout << "Oh who am I kidding"; MSdelay(2000);
                 std::cout << ", he's gone isn't he?" << endl; MSdelay(3000);
-                std::cout << "he'll never come back" << endl; MSdelay(5000);
+                std::cout << "he'll never come back" << endl; MSdelay(5700);
                 std::cout << "I forgive you though" << endl; MSdelay(5000);
                 ellipsis();
                 std::cout << "you really are sorry"; MSdelay(5000);
                 std::cout << ", right?" << endl; MSdelay(5000);
+                color(7); std::cout << "Choose wisely..." << std::endl;
                 color(8);
                 std::cout << "[1]: ";
                 color(7);
@@ -729,6 +739,8 @@ void bubbleMama::dialogue(character& c) {
 
                 if (choiceD == "2") {
                     color(1);
+                    DotdotTwo();
+                    playMusic("void.wav");
                     std::cout << "BubbleMomma: You filthy creature..." << std::endl; MSdelay(2000);
                     std::cout << "you were meant to clean"; MSdelay(4000);
                     std::cout << ", not just make more messes. " << std::endl; MSdelay(4000);
@@ -737,8 +749,9 @@ void bubbleMama::dialogue(character& c) {
                     std::cout << ", the"; MSdelay(4000);
                     color(9);
                     std::cout << " h"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "p"; MSdelay(200); std::cout << "l"; MSdelay(200); std::cout << "e"; MSdelay(200); std::cout << "s"; MSdelay(200); std::cout << "s" << endl; MSdelay(200);
+                    color(4);
+                    std::cout << "there's NOTHING that can redeem you now" << std::endl; MSdelay(4000);
                     color(1);
-                    std::cout << "there's nothing that can redeem you now" << std::endl; MSdelay(4000);
                     std::cout << "and since I have nothing to live for anymore" << std::endl; MSdelay(5000);
                     std::cout << "it's my duty to" << std::endl; MSdelay(5000);
                     ellipsis();
@@ -771,6 +784,7 @@ void bubbleMama::dialogue(character& c) {
                 if (choiceD == "1") {
 
                     color(1);
+                    playMusic("ending.wav");
                     std::cout << "BubbleMomma: Then..." << std::endl; MSdelay(3000);
                     std::cout << "I suppose" << std::endl; MSdelay(3000);
                     std::cout << "I forgive you" << std::endl; MSdelay(3000);
@@ -856,7 +870,7 @@ void dermEvent::trigger(character& c) {
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle SB;
-		ShingleShannon shan(3);
+		ShingleShannon shan(c.get_lvl());
 		SB.Battle_Sequence(c, shan);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -878,7 +892,7 @@ void dermEvent::trigger(character& c) {
 		std::cout << "Dead-Skin Dill lunged forward!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		DeadSkinDill DILL(3);
+		DeadSkinDill DILL(c.get_lvl());
 		SB.Battle_Sequence(c, DILL);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -897,7 +911,7 @@ void dermEvent::trigger(character& c) {
 
         playSFX("battle!.wav");
         Sdelay(2);
-        LeopardLeper LEP(5);
+        LeopardLeper LEP(c.get_lvl());
         SB.Battle_Sequence(c, LEP);
         if (c.getLife() <= 0) {
             return;	//if the character is dead
@@ -922,7 +936,6 @@ void dermEvent::trigger(character& c) {
 		this->isDone = true;
 		return;
 	}
-    system("pause");
 }
 
 supplyEvent::supplyEvent() {};
@@ -939,7 +952,6 @@ void supplyEvent::trigger(character& c) {
              if (flag == 0) {
                  return;
              }
-
              else if (flag == 1) {
                  this->isDone = true;
                  return;
@@ -948,8 +960,6 @@ void supplyEvent::trigger(character& c) {
                  return;
              }
     }
-
-
 }
 
 

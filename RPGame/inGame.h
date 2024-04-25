@@ -167,6 +167,22 @@ int Start_Menu()
 void EndCredits() {
 	endMusic();
 	playMusic("creativity.wav");
+	clear();
+	color(2);
+	std::cout << "MOP MANIA: The Purging of Le' Hospitale\n\n";
+	Sdelay(2);
+	color(7);
+	std::cout << "\tcreated by:\n";
+	Sdelay(1);
+	std::cout << "\t Joshua Fouch\n";
+	Sdelay(1);
+	std::cout << "\t Seamus Sommers\n";
+	Sdelay(1);
+	std::cout << "\t Eljay Jimenez\n";
+	Sdelay(3);
+
+	std::cout << "end credits..." << std::endl;
+	system("pause");
 }
 
 #endif

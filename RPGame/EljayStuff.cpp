@@ -195,7 +195,7 @@ void lungEvent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle rex;
-		BronchitisRex bronch(3);
+		BronchitisRex bronch(c.get_lvl());
 		rex.Battle_Sequence(c, bronch);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -217,7 +217,7 @@ void lungEvent::trigger(character& c)
 		std::cout << "A Bronchitis Rex lunged from above!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		BronchitisRex cronk(3);
+		BronchitisRex cronk(c.get_lvl());
 		rex.Battle_Sequence(c, cronk);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -293,7 +293,7 @@ void pharmEvent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle mucus;
-		MucusMaw muc(1);
+		MucusMaw muc(c.get_lvl());
 		mucus.Battle_Sequence(c, muc);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -315,7 +315,7 @@ void pharmEvent::trigger(character& c)
 		std::cout << "A Mucus Maw leaps towards you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		MucusMaw mucu(5);
+		MucusMaw mucu(c.get_lvl());
 		mucus.Battle_Sequence(c, mucu);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -387,7 +387,7 @@ void labEvent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle needle;
-		NeedleNed ne(5);
+		NeedleNed ne(c.get_lvl());
 		needle.Battle_Sequence(c, ne);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -423,7 +423,7 @@ void labEvent::trigger(character& c)
 		std::cout << "A Powerful NeedleNed appeared to face you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		NeedleNed need(8);
+		NeedleNed need(c.get_lvl());
 		needle.Battle_Sequence(c, need);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -490,7 +490,7 @@ void operatEvent::trigger(character& c)
 		playSFX("battle!.wav");
 		Sdelay(2);
 		battle stain;
-		Stainiac st(2);
+		Stainiac st(c.get_lvl());
 		stain.Battle_Sequence(c, st);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -508,7 +508,7 @@ void operatEvent::trigger(character& c)
 		std::cout << "Another Stainiac appeared from nowhere!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Stainiac sta(4);
+		Stainiac sta(c.get_lvl());
 		stain.Battle_Sequence(c, sta);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -526,7 +526,7 @@ void operatEvent::trigger(character& c)
 		std::cout << "A Powerful Stainiac appeared to face you!" << std::endl;
 		playSFX("battle!.wav");
 		Sdelay(2);
-		Stainiac stai(7);
+		Stainiac stai(c.get_lvl());
 		stain.Battle_Sequence(c, stai);
 		if (c.getLife() <= 0) {
 			return;	//if the character is dead
@@ -693,7 +693,7 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "A Mucus Maw attacks!" << std::endl;
 			MSdelay(3000);
 			battle mucuss;
-			MucusMaw mucus(5);
+			MucusMaw mucus(6);
 			mucuss.Battle_Sequence(c, mucus);
 			if (c.getLife() <= 0) {
 				return;    //if the character is dead
@@ -778,11 +778,17 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "You really kept checking the dang mail box..." << std::endl;
 			MSdelay(4000);
 			playMusic("MattariCore.wav");
-			std::cout << "So I will battle you now aahhahahahahhajhahhahahahahahahhaha"; ellipsis(); std::cout << " you will die ;)" << std::endl;
+			std::cout << "So I will battle you now"; ellipsis(); std::cout << " you will die ;)" << std::endl;
+			for (int i = 0; i < 10; i++) {
+				std::cout << "BAGAGABAGHAHAAHABAGH!!!" << std::endl;
+				MSdelay(500);
+				clear();
+			}
+			std::cout << "you will die, teehee... ;)" << std::endl;
 			MSdelay(5000);
 			endMusic();
 			musicBattle bat;
-			BronchitisRex reap(150);
+			BronchitisRex reap(15);
 			reap.set_name("Grime Cleaner");
 			bat.Battle_Sequence("MattariCore.wav", c, reap);
 			if (c.getLife() <= 0) {

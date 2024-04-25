@@ -76,23 +76,14 @@ int main()
 	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", mental);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
-	bubbleBoy boy;
-	bubbleMama mom;
-
-	mom.dialogue(broomba);
+	color(2);
+	std::cout << "Mop Mania: The Purging of Le' Hospitale";
+	Sdelay(1);
+	color(8);
+	std::cout << "\n\nCreated by: Joshua Fouch,"; Sdelay(1); std::cout << " Seamus Sommers,"; Sdelay(1); std::cout << " and Eljay Jimenez\n";
+	color(7);
+	ellipsis();
 	system("pause");
-	
-	//if -1
-	broomba.bubKill();
-	mom.dialogue(broomba);
-	system("pause");
-
-	mom.dialogue(broomba);
-	system("pause");
-
-
-	system("pause");
-	enemy bob(1);
 	int user;
 	user = Start_Menu();
 	if (user == 1)
@@ -107,7 +98,7 @@ int main()
 			map.play(map.theGamer(), broomba, 0);
 		}
 		else if (broomba.getEnd() == 1) {
-			std::cout << "Game complete!" << std::endl;
+			EndCredits();
 			return 0;
 		}
 	}
@@ -123,7 +114,7 @@ int main()
 			map.play(map.theGamer(), jetwet, 0);
 		}
 		else if (jetwet.getEnd() == 1) {
-			std::cout << "Game complete!" << std::endl;
+			EndCredits();
 			return 0;
 		}
 		
@@ -140,7 +131,7 @@ int main()
 			map.play(map.theGamer(), byson, 0);
 		}
 		else if (byson.getEnd() == 1) {
-			std::cout << "Game complete!" << std::endl;
+			EndCredits();
 			return 0;
 		}
 	}
@@ -148,6 +139,5 @@ int main()
 	{
 		std::cout << "Error 404 not found idk..." << std::endl;
 	}
-
 	return 0;
 }
