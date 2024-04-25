@@ -69,7 +69,7 @@ int main()
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
 
-
+	
 	
 	color(2);
 	std::cout << "Mop Mania: The Purging of Le' Hospitale";
