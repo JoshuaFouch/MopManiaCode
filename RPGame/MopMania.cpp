@@ -100,7 +100,7 @@ int main()
 		Broomba broomba("Broomba", 70, 50, 80); //beefy but less health
 		battle bobBattle;
 		map.play(map.theGamer(), broomba, 0);
-		if (broomba.get_hp() == 0) {
+		if (broomba.get_hp() <= 0) {
 			broomba.resetStats();
 			clear();
 			map.current_toRoot(map.theGamer());
@@ -116,7 +116,7 @@ int main()
 		SwifterJetWet jetwet("JetWet", 80, 90, 40);	//powerful yet defenseless
 		battle bobBattle;
 		map.play(map.theGamer(), jetwet, 0);
-		if (jetwet.get_hp() == 0) {
+		if (jetwet.get_hp() <= 0) {
 			jetwet.resetStats();
 			clear();
 			map.current_toRoot(map.theGamer());
@@ -133,7 +133,7 @@ int main()
 		BysonV8 byson("BysonV8", 100, 45, 70);	//lot of health yet weak
 		battle bobBattle;
 		map.play(map.theGamer(), byson, 0);
-		if (byson.get_hp() == 0) {
+		if (byson.get_hp() <= 0) {
 			byson.resetStats();
 			clear();
 			map.current_toRoot(map.theGamer());
