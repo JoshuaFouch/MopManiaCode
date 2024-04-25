@@ -4,6 +4,7 @@
 #include <string>
 #include <iomanip>
 #include <algorithm>
+#include <limits>
 
 
 //regular battle
@@ -40,16 +41,16 @@ void battle::GameOver(character& c)
 	clear();
 	Sdelay(3);
 	std::cout << "You wake up one day with no body... all you see is the void of darkness" << std::endl;
-	Sdelay(6);
-	std::cout << "You hear a voice calling in the distance:" << std::endl;
 	Sdelay(4);
+	std::cout << "You hear a voice calling in the distance:" << std::endl;
+	Sdelay(3);
 	color(6);	//Janitorius (Grime Reaper) is yellow text
 	std::cout << "My dear soul,";
 	Sdelay(2);
 	std::cout << " I am Janitorius, "; MSdelay(720); std::cout << "the custodian of Le' Hospitale"; ellipsis();
 	Sdelay(2);
 	std::cout << "\nYou seem to have lost all your memory from that day." << std::endl;
-	Sdelay(4);
+	Sdelay(2);
 	std::cout << "You "; MSdelay(800); std::cout << "died"; ellipsis();
 	Sdelay(2);
 	std::cout << " Unfortunate"; ellipsis();
@@ -57,6 +58,7 @@ void battle::GameOver(character& c)
 	Sdelay(2);
 	color(2);
 	std::cout << "\nthis feels oddly familiar...\n" << std::endl;
+	Sdelay(2);
 	system("pause");
 	Sdelay(3);
 
@@ -215,6 +217,8 @@ void battle::Battle_Sequence(character& c, enemy& e)
 			continue;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
+			std::cin.clear();                 // Clear error state
+			std::cin.ignore(10000, '\n');
 			MSdelay(1500);
 			continue;
 		}
@@ -466,6 +470,8 @@ void GoodFinalBattle::Battle_Sequence(character& c, enemy& e) {
 			continue;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
+			std::cin.clear();                 // Clear error state
+			std::cin.ignore(10000, '\n');
 			MSdelay(1500);
 			continue;
 		}
@@ -792,6 +798,8 @@ void BubbleBattle::Battle_Sequence(character& c, enemy& e) {
 			continue;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
+			std::cin.clear();                 // Clear error state
+			std::cin.ignore(10000, '\n');
 			MSdelay(1500);
 			continue;
 		}
@@ -1054,6 +1062,8 @@ void musicBattle::Battle_Sequence(std::string filename, character& c, enemy& e) 
 			continue;
 		default:
 			std::cout << "Invalid choice, please choose again" << std::endl << std::endl;
+			std::cin.clear();                 // Clear error state
+			std::cin.ignore(10000, '\n');
 			MSdelay(1500);
 			continue;
 		}

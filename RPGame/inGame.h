@@ -154,6 +154,8 @@ int Start_Menu()
 		default:
 			clear();
 			std::cout << "Try again" << std::endl;
+			std::cin.clear();                 // Clear error state
+			std::cin.ignore(10000, '\n');
 			continue;
 		}
 	}
