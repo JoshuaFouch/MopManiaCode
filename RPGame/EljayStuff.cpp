@@ -29,6 +29,8 @@ void RustyBucketEvent::trigger(character& c)
 	MSdelay(2000);
 	std::cout << "It doesn't seem very lively in here..." << std::endl;
 	MSdelay(3000);
+	std::cout << "But the place looks beautiful on the inside..." << std::endl;
+	MSdelay(4000);
 	std::cout << "There seems to be a few places you can stop by..." << std::endl;
 	MSdelay(3000);
 
@@ -113,7 +115,7 @@ void RustyBucketEvent::trigger(character& c)
 				system("pause");
 				clear();
 			}
-			else if (choice == "2") 
+			else if (choice == "2") //Grime Melon
 			{
 				clear();
 				std::cout << "You grab the melon grime from the shop..." << std::endl;
@@ -124,7 +126,7 @@ void RustyBucketEvent::trigger(character& c)
 				system("pause");
 				clear();
 			}
-			else if (choice == "3") 
+			else if (choice == "3") //Mudweiser
 			{
 				clear();
 				std::cout << "You grab the mudweiser from the shop..." << std::endl;
@@ -134,7 +136,7 @@ void RustyBucketEvent::trigger(character& c)
 				Dotdot();
 				std::cout << "You start feeling whoozy..." << std::endl;
 				MSdelay(4000);
-				std::cout << "It's a delicious again" << std::endl;
+				std::cout << "It's pretty good!" << std::endl;
 				//paid like 30 soaptokens
 				color(7);
 				system("pause");
@@ -372,7 +374,7 @@ void labEvent::trigger(character& c)
 		Sdelay(2);
 		std::cout << "You busted down the doors to the labortory ";
 		MSdelay(2000);
-		std::cout << "A tray of scalps and knivies are neatly sorted" << std::endl;
+		std::cout << "A tray of scalpel and knives are neatly sorted" << std::endl;
 		MSdelay(3000);
 		std::cout << "You feel pins and needles all over your body..." << std::endl;
 		MSdelay(4000);
@@ -445,7 +447,7 @@ void labEvent::trigger(character& c)
 		Sdelay(3);
 		std::cout << "What are needles suppose to smell like?"; ellipsis(); std::cout << std::endl;
 		MSdelay(2500);
-		std::cout << "\nwell good job regardless!";
+		std::cout << "\nwell good job regardless!\n";
 		MSdelay(2000);
 		system("pause");
 		clear();
@@ -480,7 +482,7 @@ void operatEvent::trigger(character& c)
 		std::cout << "You find knives with fresh... ketchup..." << std::endl;
 		MSdelay(5000);
 		std::cout << "You decide to clean the room as soon as possible...";
-		MSdelay(6000);
+		MSdelay(5000);
 		Dotdot();
 		color(4);
 		std::cout << "OH SHOOT!" << std::endl;
@@ -546,7 +548,7 @@ void operatEvent::trigger(character& c)
 		clear();
 		std::cout << "What... ";
 		Sdelay(3);
-		std::cout << "Oh I mean't clean up the ketchup?"; ellipsis(); std::cout << std::endl;
+		std::cout << "Oh I mean't clean up the ketchup?\n"; ellipsis(); std::cout << std::endl;
 		MSdelay(2500);
 		std::cout << "well get to cleaning more!\n";
 		MSdelay(1000);
@@ -807,6 +809,8 @@ void mailboxEvent::trigger(character& c)
 			std::cout << "Oh WOW! " << std::endl;
 			c.acq_Whendex();
 			c.acq_Whendex();
+			c.acq_healUp();
+			c.acq_healUp();
 			MSdelay(4000);
 			checked++;
 			return;
