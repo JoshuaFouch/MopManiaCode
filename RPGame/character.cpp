@@ -352,7 +352,7 @@ void character::acq_cleanPath() {
     cleanPath = 1;
 }
 void character::Rat_Sale(int num) {
-    if ((deadRat - num) > 0) {
+    if ((deadRat - num) >= 0) {
          deadRat -= num;//if you can afford the item then it will subtract
     }
     else {
