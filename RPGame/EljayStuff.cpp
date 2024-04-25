@@ -24,6 +24,8 @@ RustyBucketEvent::RustyBucketEvent() {};
 
 void RustyBucketEvent::trigger(character& c)
 {
+	bubbleMama bub;
+	bub.alreadyTalkedto();
 	Sdelay(2);
 	std::cout << "You entered the Rusty Bucket...." << std::endl;
 	MSdelay(2000);
@@ -42,7 +44,12 @@ void RustyBucketEvent::trigger(character& c)
 
 		std::cout << ""; color(8); std::cout << "[1]: "; color(7); std::cout << "Rusty's Shop" << std::endl;
 		std::cout << ""; color(8); std::cout << "[2]: "; color(7); std::cout << "Talk to Mrs. Clean" << std::endl;
-		std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Talk to Bubble Momma" << std::endl;
+		if (c.getBub() == -2) {
+			std::cout << ""; color(4); std::cout << "[3]: "; color(7); std::cout << "ERROR %*^$@ ERROR zztzTZt ERROR &$(@" << std::endl;
+		}
+		else {
+			std::cout << ""; color(8); std::cout << "[3]: "; color(7); std::cout << "Talk to Bubble Momma" << std::endl;
+		}
 		std::cout << ""; color(8); std::cout << "[4]: "; color(7); std::cout << "Get a Drink" << std::endl;
 		std::cout << ""; color(8); std::cout << "[5]: "; color(7); std::cout << "Exit" << std::endl;
 	
@@ -79,7 +86,6 @@ void RustyBucketEvent::trigger(character& c)
 		}
 		else if (choice == "3") //Talk to Bubble Momma + Bubble Boy Event Encounter??
 		{
-			bubbleMama bub;
 			int flag = bub.dilly(c);
 			if (flag == 0) {
 				color(7);

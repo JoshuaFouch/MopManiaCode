@@ -404,6 +404,7 @@ int bubbleMama::dilly(character& c) {
         endMusic();
         playMusic("creativity.wav");
         color(1);
+        clear();
         std::cout << "Bubble Momma: THANK YOU soap much for bringing my son back to me!" << std::endl;
         Sdelay(3);
         color(9);
@@ -428,21 +429,21 @@ int bubbleMama::dilly(character& c) {
         std::cout << "Oh wait"; ellipsis(); std::cout << " you killed her." << std::endl;
         Sdelay(2);
         system("pause");
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 40; i++) {
             clear();
             endMusic();
             playMusic("asheoifhs.wav");
-            MSdelay(100);
+            MSdelay(100 - (i * 20));
             if (i % 2 == 0) {
                 color(4);
                 std::cout << "YOU KILLED HER"; color(7); std::cout << " IP. 92.28.211.234" << endl;
-                MSdelay(200);
+                MSdelay(200 - (i*20));
                 color(7);
             }
             else if (i % 3 == 0) {
                 color(9);
                 std::cout << "what have you done?" << std::endl;
-                MSdelay(200);
+                MSdelay(200 - (i * 20));
                 color(7);
             }
             std::cout << "ERROR 404 HAH\n";
@@ -573,7 +574,7 @@ int bubbleMama::dilly(character& c) {
             std::cout << "You should probably go look for Bubble Boy for her..." << std::endl;
             endMusic();
             system("pause");
-            this->dialogue(c);
+            this->dilly(c);
         }
         if (c.getBub() == -1) { //if you killed him... you still have a choice...
             color(7); std::cout << "Choose wisely..." << std::endl;
@@ -609,8 +610,8 @@ int bubbleMama::dilly(character& c) {
                 clear();
                 std::cout << "NO NEED!" << endl; MSdelay(2000);
                 std::cout << "Ha"; MSdelay(250); std::cout << "Ha"; MSdelay(200); std::cout << "Ha"; MSdelay(200); std::cout << "HA"; MSdelay(150); std::cout << "HA"; MSdelay(150);
-                std::cout << "Because no one would ever do anything so CRUEL" << endl; MSdelay(2000);
-                std::cout << "Because why would anyone ever KILL" << endl; MSdelay(2000);
+                std::cout << " Because no one would ever do anything so CRUEL"; MSdelay(2000);
+                std::cout << "\nBecause why would anyone ever KILL" << endl; MSdelay(2000);
                 std::cout << ", such an innocent"; MSdelay(2000);
                 std::cout << ", beautiful"; MSdelay(2000);
                 std::cout << ", little"; MSdelay(2000);
@@ -645,7 +646,7 @@ int bubbleMama::dilly(character& c) {
                 std::cout << " whats the point anymore?" << endl; MSdelay(5000);
                 ellipsis();
                 BubbleBattle fight;
-                BubblyBoy mama(7);
+                BubblyBoy mama(c.get_lvl() + 1);
                 mama.set_name("The Bubble Mama");
                 fight.Battle_Sequence(c, mama);
                 if (c.getLife() <= 0) {
@@ -682,14 +683,14 @@ int bubbleMama::dilly(character& c) {
                 endMusic();
                 std::cout << ", IM GOING TO KILL YOU!!! " << std::endl; MSdelay(2000);
                 std::cout << "wait"; MSdelay(500); ellipsis();
-                std::cout << "ha"; MSdelay(500); std::cout << "ha"; MSdelay(400); std::cout << "ha"; MSdelay(350); std::cout << "ha"; MSdelay(300); std::cout << "Ha"; MSdelay(250);
+                std::cout << " ha"; MSdelay(500); std::cout << "ha"; MSdelay(400); std::cout << "ha"; MSdelay(350); std::cout << "ha"; MSdelay(300); std::cout << "Ha"; MSdelay(250);
                 std::cout << "Ha"; MSdelay(250); std::cout << "Ha"; MSdelay(200); std::cout << "Ha"; MSdelay(200); std::cout << "HA"; MSdelay(150); std::cout << "HA"; MSdelay(150);
                 std::cout << "HA"; MSdelay(100); std::cout << "HA"; MSdelay(100); std::cout << "HA"; MSdelay(100); std::cout << "HA"; MSdelay(50); std::cout << "HA"; MSdelay(50);
                 clear();
-                std::cout << "NO NEED!" << endl; MSdelay(2000);
+                std::cout << "\nNO NEED!" << endl; MSdelay(2000);
                 std::cout << "Ha"; MSdelay(250); std::cout << "Ha"; MSdelay(200); std::cout << "Ha"; MSdelay(200); std::cout << "HA"; MSdelay(150); std::cout << "HA"; MSdelay(150);
-                std::cout << "Because no one would ever fo anything so CRUEL" << endl; MSdelay(2000);
-                std::cout << "Because why would anyone ever KILL" << endl; MSdelay(2000);
+                std::cout << " Because no one would ever do anything so CRUEL" << endl; MSdelay(2000);
+                std::cout << "Because why would anyone ever KILL"; MSdelay(2000);
                 std::cout << ", such an innocent"; MSdelay(2000);
                 std::cout << ", beautiful"; MSdelay(2000);
                 std::cout << ", little"; MSdelay(2000);
@@ -699,11 +700,12 @@ int bubbleMama::dilly(character& c) {
                 std::cout << "y"; MSdelay(200);
                 ellipsis();
                 playMusic("death.wav");
+                Sdelay(2);
                 clear();
                 std::cout << "you're lying, you HAVE to be lying" << endl; MSdelay(2000);
                 ellipsis();
                 std::cout << "" << endl; MSdelay(2000);
-                std::cout << "PLEASE"; MSdelay(1000);
+                std::cout << "PLEASE... "; MSdelay(1000);
                 std::cout << "PLEASE just tell me that you're lying" << endl; MSdelay(3000);//bargin depression, acceptance
                 std::cout << "PLEASE just tell me that my boy is okay" << endl; MSdelay(3000);
                 std::cout << "I couldn't even imagine a life without him" << endl; MSdelay(3000);
@@ -757,7 +759,7 @@ int bubbleMama::dilly(character& c) {
                     ellipsis();
                     std::cout << "TAKE YOU OUT!!!" << std::endl; MSdelay(5000);
                     BubbleBattle fight;
-                    BubblyBoy mama(8);
+                    BubblyBoy mama(c.get_lvl() + 2);
                     mama.set_name("Enraged Bubble Mama");
                     fight.Battle_Sequence(c, mama);
                     if (c.getLife() <= 0) {
@@ -815,7 +817,6 @@ int bubbleMama::dilly(character& c) {
         std::cout << "*she continues wailing*" << std::endl; MSdelay(5000);
         std::cout << "*even louder now*" << std::endl; MSdelay(3000);
         std::cout << "You should probably be a little nicer next time" << std::endl; MSdelay(3000);
-
     }
     system("pause");
     return 1;
