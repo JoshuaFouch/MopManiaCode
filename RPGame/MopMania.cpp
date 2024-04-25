@@ -150,7 +150,7 @@ int main()
 	}
 	else if (user == 2)
 	{
-		SwifterJetWet jetwet("JetWet", 80, 90, 55);	//powerful yet defenseless
+		SwifterJetWet jetwet("JetWet", 80, 100, 60);	//powerful yet defenseless
 		battle bobBattle;
 		map.play(map.theGamer(), jetwet, 0);
 		if (jetwet.get_hp() <= 0 || jetwet.getLife() == 0) {
