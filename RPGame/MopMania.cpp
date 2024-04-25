@@ -15,13 +15,6 @@ int main()
 	/*map creation*/
 	Broomba broomba("Broomba", 500, 500, 120); //beefy but less health
 	gameMap map;
-	broomba.acq_attUp();
-	broomba.acq_cleaningTips();
-	broomba.acq_defUp();
-	broomba.acq_healUp();
-	broomba.acq_Mirror();
-	broomba.acq_slipperySoap();
-	broomba.acq_Whendex();
 	event* e = new event;
 
 	lungEvent* lung = new lungEvent;
@@ -88,7 +81,7 @@ int main()
 	user = Start_Menu();
 	if (user == 1)
 	{
-		Broomba broomba("Broomba", 70, 50, 80); //beefy but less health
+		Broomba broomba("Broomba", 70, 65, 100); //beefy but less health
 		battle bobBattle;
 		map.play(map.theGamer(), broomba, 0);
 		if (broomba.get_hp() <= 0) {
@@ -100,6 +93,9 @@ int main()
 		else if (broomba.getEnd() == 1) {
 			EndCredits();
 			return 0;
+		}
+		else {
+			std::cout << "error." << std::endl;
 		}
 	}
 	else if (user == 2)
@@ -117,11 +113,14 @@ int main()
 			EndCredits();
 			return 0;
 		}
+		else {
+			std::cout << "error." << std::endl;
+		}
 		
 	}
 	else if (user == 3)
 	{
-		BysonV8 byson("BysonV8", 100, 45, 70);	//lot of health yet weak
+		BysonV8 byson("BysonV8", 100, 70, 70);	//lot of health yet weak
 		battle bobBattle;
 		map.play(map.theGamer(), byson, 0);
 		if (byson.get_hp() <= 0) {
@@ -133,6 +132,9 @@ int main()
 		else if (byson.getEnd() == 1) {
 			EndCredits();
 			return 0;
+		}
+		else {
+			std::cout << "error." << std::endl;
 		}
 	}
 	else
