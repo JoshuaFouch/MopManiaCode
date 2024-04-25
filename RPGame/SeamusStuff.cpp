@@ -125,32 +125,32 @@ void cellarEvent::trigger(character& c)
                             color(5);
                             cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
                             cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your S"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "lippery S"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "oap\n";
-                            c.Rat_Sale(4);
-                            c.acq_slipperySoap();// will have to make these
+                            if (c.get_deadRat() >= 8) { c.acq_slipperySoap(); }
+                            c.Rat_Sale(8);
                             MSdelay(2000);
                             continue;
                         case 2:
                             color(5);
                             cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
                             cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Cleaning tips"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
+                            if (c.get_deadRat() >= 4) { c.acq_cleaningTips(); }
                             c.Rat_Sale(4);
-                            c.acq_cleaningTips();
                             MSdelay(2000);
                             continue;
                         case 3:
                             color(5);
                             cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
                             cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Whendex"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
-                            c.Rat_Sale(4);
-                            c.acq_Whendex();
+                            if (c.get_deadRat() >= 10) { c.acq_Whendex(); }
+                            c.Rat_Sale(10);
                             MSdelay(2000);
                             continue;
                         case 4:
                             color(5);
                             cout << "Pleasure doing busines"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(200); cout << "\n";
                             cout << "Here's"; MSdelay(200); cout << "s"; MSdelay(200); cout << "s"; MSdelay(100); cout << "s"; MSdelay(100); cout << " your Mirror"; MSdelay(200); cout << "\n";
+                            if (c.get_deadRat() >= 4) { c.acq_Mirror(); }
                             c.Rat_Sale(4);
-                            c.acq_Mirror();
                             MSdelay(2000);
                             continue;
                         case 5:
