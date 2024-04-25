@@ -79,7 +79,8 @@ class bubbleBoy : public NPC
 {
 public:
 
-	void dialogue(character& c);
+
+	int dilly(character& c);
 };
 
 //Bubble Mama (seamus)
