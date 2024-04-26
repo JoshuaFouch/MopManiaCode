@@ -178,9 +178,12 @@
     <Media Include="dies-irae-chant.wav" />
     <Media Include="gameover.wav" />
     <Media Include="GoDown.wav" />
+    <Media Include="Mattari.wav" />
     <Media Include="metalPipe.wav" />
     <Media Include="OE.wav" />
-    <Media Include="void.wav" />
+    <Resource Include="void.wav">
+      <FileType>Document</FileType>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Text Include="eljay.txt" />
@@ -188,7 +191,6 @@
     <Text Include="josh.txt" />
     <Text Include="purge.txt" />
     <Text Include="seamus.txt" />
-    <Text Include="stufftodo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -101,9 +101,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="void.wav">
-      <Filter>MusicStuff</Filter>
-    </Media>
     <Media Include="dies-irae-chant.wav">
       <Filter>MusicStuff</Filter>
     </Media>
@@ -179,18 +176,20 @@
     <Media Include="..\..\cricket.wav">
       <Filter>MusicStuff</Filter>
     </Media>
-    <Media Include="..\..\audio for game\horror.wav">
-      <Filter>MusicStuff</Filter>
-    </Media>
     <Media Include="..\..\vine-boom.wav">
       <Filter>MusicStuff</Filter>
     </Media>
     <Media Include="..\..\u-s-eas-system-full.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="Mattari.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\audio for game\horror.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="stufftodo.txt" />
     <Text Include="endcredit.txt">
       <Filter>MainGame Files</Filter>
     </Text>
@@ -206,5 +205,10 @@
     <Text Include="eljay.txt">
       <Filter>MainGame Files</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="void.wav">
+      <Filter>MusicStuff</Filter>
+    </Resource>
   </ItemGroup>
 </Project>
