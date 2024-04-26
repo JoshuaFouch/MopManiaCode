@@ -68,9 +68,6 @@ int main()
 	map.birth_midChild(map.getIndex(), "Mental Health Room", "You see lots of encouraging posters on the walls", "One says 'Do you feel like a mess? Time to decompress!", mental);
 	map.birth_leftChild(map.getIndex(), "Cellar", "This is Putrid Python's hole in the wall shop", "Haha... get it... cuz its literally a hole in the wall?", cellar);
 
-	enemy ef(5);
-	
-	
 	color(2);
 	std::cout << "Mop Mania: The Purging of Le' Hospitale";
 	Sdelay(1);
@@ -79,20 +76,10 @@ int main()
 	color(7);
 	system("pause");
 	int user = 1;
-	//user = Start_Menu();
+	user = Start_Menu();
 	if (user == 1)
 	{
-		Broomba broomba("Broomba", 70, 100, 100); //beefy but less health
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
+		Broomba broomba("Broomba", 75, 75, 150); //beefy but less health
 		map.play(map.theGamer(), broomba, 0);
 		if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
 			broomba.resetStats();
@@ -113,7 +100,7 @@ int main()
 	}
 	else if (user == 2)
 	{
-		SwifterJetWet jetwet("JetWet", 80, 100, 60);	//powerful yet defenseless
+		SwifterJetWet jetwet("JetWet", 75, 150, 75);	//powerful yet defenseless
 		map.play(map.theGamer(), jetwet, 0);
 		if (jetwet.get_hp() <= 0 || jetwet.getLife() == 0) {
 			jetwet.resetStats();
@@ -135,7 +122,7 @@ int main()
 	}
 	else if (user == 3)
 	{
-		BysonV8 byson("BysonV8", 100, 70, 70);	//lot of health yet weak
+		BysonV8 byson("BysonV8", 150, 75, 75);	//lot of health yet weak
 		map.play(map.theGamer(), byson, 0);
 		if (byson.get_hp() <= 0 || byson.getLife() == 0) {
 			byson.resetStats();

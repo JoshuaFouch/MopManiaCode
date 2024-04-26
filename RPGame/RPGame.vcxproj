@@ -171,6 +171,7 @@
     <Media Include="..\..\riser.wav" />
     <Media Include="..\..\terror.wav" />
     <Media Include="..\..\TheGrimeReaper.wav" />
+    <Media Include="..\..\u-s-eas-system-full.wav" />
     <Media Include="..\..\victory!.wav" />
     <Media Include="..\..\vine-boom.wav" />
     <Media Include="battlemusic.wav" />
@@ -182,6 +183,11 @@
     <Media Include="void.wav" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="eljay.txt" />
+    <Text Include="endcredit.txt" />
+    <Text Include="josh.txt" />
+    <Text Include="purge.txt" />
+    <Text Include="seamus.txt" />
     <Text Include="stufftodo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
