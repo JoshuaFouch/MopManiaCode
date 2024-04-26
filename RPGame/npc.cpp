@@ -262,7 +262,7 @@ void MrsClean::dialogue(character& c)
 		std::cout << "Apparently he loves to "; color(5); std::cout << "eat dead rats"; ellipsis(); std::cout << "\n";
 		MSdelay(2000);
 		color(3);
-		std::cout << "If you he eats "; color(5); std::cout << "too much rats, "; color(3); MSdelay(400); std::cout << "He will go insane...\n";
+		std::cout << "If you let him eat "; color(5); std::cout << "too many rats, "; color(3); MSdelay(400); std::cout << "He will go insane...\n";
 		MSdelay(1200);
 		std::cout << "and he will turn into a rat/python chimera!!" << std::endl;
 		MSdelay(1500);
