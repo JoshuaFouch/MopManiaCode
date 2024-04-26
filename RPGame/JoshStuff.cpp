@@ -284,6 +284,7 @@ void FinalEvent::trigger(character& c)
 			DotdotTwo();
 			std::cout << "Is this what Janitorius wanted?\n" << std::endl;
 			Sdelay(3);
+			std::cout << "Maybe the next hero will truly clean up this land...\n" << std::endl;
 			system("pause");
 
 			c.gameCompleted();
@@ -503,7 +504,7 @@ void FinalEvent::trigger(character& c)
 			system("pause");
 			clear();
 			playMusic("ending.wav");
-			std::cout << "Le' Hospitale is restored to its formly glory" << std::endl;
+			std::cout << "Le' Hospitale is restored to its former glory" << std::endl;
 			Sdelay(5);
 			std::cout << "Everyone praises you for your heroic actions..." << std::endl;
 			Sdelay(6);

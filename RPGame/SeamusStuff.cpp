@@ -310,10 +310,11 @@ int bubbleBoy::dilly(character& c)
 		std::cin >> choice;
 		if (choice == "1") {
 			color(9);
+            clear();
 			std::cout << "Bubble Boy: Thank you soap much, kind adventurer!" << std::endl;
 			MSdelay(3500);
 			color(9);
-            std::cout << "*Bubbly Boy* ";
+            std::cout << "\n*Bubbly Boy* ";
             color(7);
             std::cout << "joined you on your quest!\nLooks like bringing him back to his mom will net you some sweet rewards\n";
 			c.bubAdvance();	    //set the int to the corresponding quest progression level, probably 1, to represent having bubble boy with you
@@ -353,6 +354,7 @@ int bubbleBoy::dilly(character& c)
 	}
 	else if(choice=="2"){
 		color(9);
+        clear();
 		std::cout << "Bubble Boy: Wait someone actually hears me!?" << std::endl;
 		MSdelay(2500);
         std::cout << "and you're not even gonna help me??" << std::endl;
@@ -371,6 +373,7 @@ int bubbleBoy::dilly(character& c)
 	}
     else {
         color(9);//this is a sort of 1d10t pr00fing
+        clear();
         std::cout << "Bubble Boy: What was that?" << std::endl;
         MSdelay(2000);
         std::cout << "Oh! He must not speak Soapanese..." << std::endl;
@@ -429,10 +432,10 @@ int bubbleMama::dilly(character& c) {
         std::cout << "Oh wait"; ellipsis(); std::cout << " you killed her." << std::endl;
         Sdelay(2);
         system("pause");
+        endMusic();
+        playMusic("u-s-eas-system-full.wav");
         for (int i = 0; i < 40; i++) {
             clear();
-            endMusic();
-            playMusic("asheoifhs.wav");
             MSdelay(100 - (i * 20));
             if (i % 2 == 0) {
                 color(4);

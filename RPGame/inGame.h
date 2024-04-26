@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include "utility.h"
 #include "npc.h"
+#include <fstream>
 
 
 int Start_Menu()
@@ -171,54 +172,31 @@ void EndCredits() {
 	playMusic("creativity.wav");
 	clear();
 	color(2);
-	std::cout << " _____________________________________________________________________________________________________________________" << std::endl;
-	std::cout << "/ /                                                                                                                   \\  " << std::endl;
-	std::cout << "| | ,ggg, ,ggg,_,ggg,                                ,ggg, ,ggg,_,ggg,                                                |" << std::endl;
-	std::cout << "| | dP\"\"Y8dP\"\"Y88P\"\"Y8b                              dP\"\"Y8dP\"\"Y88P\"\"Y8b                                              |" << std::endl;
-	std::cout << "| | Yb, `88'  `88'  `88                              Yb, `88'  `88'  `88                                              |" << std::endl;
-	std::cout << "| |  `\"  88    88    88                               `\"  88    88    88                             gg               |" << std::endl;
-	std::cout << "| |      88    88    88                                   88    88    88                             \"\"               |" << std::endl;
-	std::cout << "| |      88    88    88    ,ggggg,    gg,gggg,            88    88    88    ,gggg,gg   ,ggg,,ggg,    gg     ,gggg,gg  |" << std::endl;
-	std::cout << "| |      88    88    88   dP\"  \"Y8ggg I8P\"  \"Yb           88    88    88   dP\"  \"Y8I  ,8\" \"8P\" \"8,   88    dP\"  \"Y8I  |" << std::endl;
-	std::cout << "| |      88    88    88  i8'    ,8I   I8'    ,8i          88    88    88  i8'    ,8I  I8   8I   8I   88   i8'    ,8I  |" << std::endl;
-	std::cout << "| |      88    88    Y8,,d8,   ,d8'  ,I8 _  ,d8'          88    88    Y8,,d8,   ,d8b,,dP   8I   Yb,_,88,_,d8,   ,d8b, |" << std::endl;
-	std::cout << "| |      88    88    `Y8P\"Y8888P\"    PI8 YY88888P         88    88    `Y8P\"Y8888P\"`Y88P'   8I   `Y88P\"\"Y8P\"Y8888P\"`Y8 |" << std::endl;
-	std::cout << "| |                                   I8                                                                              |" << std::endl;
-	std::cout << "| |                                   I8                                                                              |" << std::endl;
-	std::cout << "| |                                   I8                                                                              |" << std::endl;
-	std::cout << "| |                                   I8                                                                              |" << std::endl;
-	std::cout << "| |                                   I8                                                                              |" << std::endl;
-	std::cout << "| |                                   I8                                                                              |" << std::endl;
-	std::cout << "| |___________________________________________________________________________________________________________________|" << std::endl;
-	std::cout << "\\_____________________________________________________________________________________________________________________/" << std::endl;
+	
+	std::string line = "";
+	std::ifstream inFile;
+	inFile.open("endcredit.txt");
+	if (inFile.is_open()) {
+		while (getline(inFile, line)) {
+			std::cout << line << std::endl;
+		}
+	}
 
-	std::cout << "\n\n";
-		std::cout << "\t\t\t•   ┏┳┓┓     ┏┓      •        ┏  ┓   ╹  ┓┏     •   ┓  " << std::endl;
-		std::cout << "\t\t\t•	 ┃ ┣┓┏┓  ┃┃┓┏┏┓┏┓┓┏┓┏┓  ┏┓╋  ┃ ┏┓   ┣┫┏┓┏┏┓┓╋┏┓┃┏┓" << std::endl;
-		std::cout << "\t\t\t•	 ┻ ┛┗┗   ┣┛┗┻┛ ┗┫┗┛┗┗┫  ┗┛┛  ┗┛┗    ┛┗┗┛┛┣┛┗┗┗┻┗┗ " << std::endl;
-		std::cout << "\t\t\t                    ┛    ┛                   ┛        " << std::endl;
-	Sdelay(2);
-	color(7);
-	std::cout << "\tcreated by:\n";
+	std::cout << "\n\n\n\n \n";
 	Sdelay(1);
-	color(2);
-	std::cout << "\t Joshua Fouch\n";
+	std::cout << "\t\tthis game is dedicated to our MopMoms\n";
 	Sdelay(1);
-	color(1);
-	std::cout << "\t Seamus Sommers\n";
+	std::cout << "\t Anna Fouch\n";
 	Sdelay(1);
-	std::cout << "\t Eljay Jimenez\n";
+	std::cout << "\t Terry Sommers\n";
+	Sdelay(1);
+	std::cout << "\t Ellen Jimenez\n";
 	Sdelay(3);
+	std::cout << "\t and ur mom ;)\n";
+	Sdelay(5);
 
-	std::cout << "\tmusic by:\n";
-	Sdelay(1);
-	std::cout << "\t Joshua Fouch\n";
-	Sdelay(1);
-	std::cout << "\t Nathaniel Garry\n";
-	Sdelay(1);
-	std::cout << "\t free music online lol\n";
-	Sdelay(1);
-
+	color(67);
+	std::cout << "\nIP6 206.241.34.110\n161.226.111.245\n207.211.62.213\n207.211.62.213\n122.66.49.164\n153.144.118.221\n\n";
 	system("pause");
 }
 

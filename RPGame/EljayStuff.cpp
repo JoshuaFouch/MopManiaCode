@@ -91,6 +91,7 @@ void RustyBucketEvent::trigger(character& c)
 		}
 		else if (choice == "3") //Talk to Bubble Momma + Bubble Boy Event Encounter??
 		{
+			bub.alreadyTalkedto();
 			int flag = bub.dilly(c);
 			if (flag == 0) {
 				color(7);

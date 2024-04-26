@@ -185,8 +185,26 @@
     <Media Include="..\..\vine-boom.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="..\..\u-s-eas-system-full.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Text Include="stufftodo.txt" />
+    <Text Include="endcredit.txt">
+      <Filter>MainGame Files</Filter>
+    </Text>
+    <Text Include="purge.txt">
+      <Filter>MainGame Files</Filter>
+    </Text>
+    <Text Include="josh.txt">
+      <Filter>MainGame Files</Filter>
+    </Text>
+    <Text Include="seamus.txt">
+      <Filter>MainGame Files</Filter>
+    </Text>
+    <Text Include="eljay.txt">
+      <Filter>MainGame Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
