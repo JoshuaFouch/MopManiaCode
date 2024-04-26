@@ -181,9 +181,9 @@
     <Media Include="Mattari.wav" />
     <Media Include="metalPipe.wav" />
     <Media Include="OE.wav" />
-    <Resource Include="void.wav">
+    <Media Include="void.wav">
       <FileType>Document</FileType>
-    </Resource>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Text Include="eljay.txt" />
