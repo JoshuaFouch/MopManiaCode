@@ -77,6 +77,7 @@ int main()
 	std::cout << "\n\nCreated by: Joshua Fouch,"; Sdelay(1); std::cout << " Seamus Sommers,"; Sdelay(1); std::cout << " and Eljay Jimenez\n";
 	color(7);
 	system("pause");
+
 	int user = 1;
 	user = Start_Menu();
 	if (user == 1)

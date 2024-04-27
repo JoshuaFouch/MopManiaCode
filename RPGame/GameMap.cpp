@@ -337,7 +337,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 			clear();
 			i->getEvent()->trigger(c);
 			if (c.get_hp() <= 0) {
-				return;
+				current_toRoot(i);
+				c.resetStats();
+				play(i, c, 0);
 				//if the character is dead
 			}
 			else if (c.getEnd() == 1) {
@@ -351,7 +353,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 			clear();
 			i->getEvent()->trigger(c);
 			if (c.get_hp() <= 0) {
-				return;
+				current_toRoot(i);
+				c.resetStats();
+				play(i, c, 0);
 				//if the character is dead
 			}
 			else if (c.getEnd() == 1) {
@@ -365,7 +369,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 			clear();
 			i->getEvent()->trigger(c);
 			if (c.get_hp() <= 0) {
-				return;
+				current_toRoot(i);
+				c.resetStats();
+				play(i, c, 0);
 				//if the character is dead
 			}
 			else if (c.getEnd() == 1) {
@@ -381,7 +387,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 			clear();
 			i->getEvent()->trigger(c);
 			if (c.get_hp() <= 0) {
-				return;
+				current_toRoot(i);
+				c.resetStats();
+				play(i, c, 0);
 			}
 			else if (c.getEnd() == 1) {
 				return;
@@ -395,7 +403,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 			clear();
 			i->getEvent()->trigger(c);
 			if (c.get_hp() <= 0) {
-				return;
+				current_toRoot(i);
+				c.resetStats();
+				play(i, c, 0);
 			}
 			else if (c.getEnd() == 1) {
 				return;
@@ -409,7 +419,9 @@ void gameMap::play(locationNode* i, character& c, int ifPaused) {
 			clear();
 			i->getEvent()->trigger(c);
 			if (c.get_hp() <= 0) {
-				return;
+				current_toRoot(i);
+				c.resetStats();
+				play(i, c, 0);
 			}
 			else if (c.getEnd() == 1) {
 				return;
