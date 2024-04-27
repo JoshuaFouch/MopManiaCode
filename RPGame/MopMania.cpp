@@ -9,6 +9,8 @@
 
 #pragma comment(lib, "winmm.lib") //for music and sound effects!
 
+
+
 /*the game*/
 int main()
 {
@@ -80,72 +82,46 @@ int main()
 	if (user == 1)
 	{
 		Broomba broomba("Broomba", 75, 75, 150); //beefy but less health
-		map.play(map.theGamer(), broomba, 0);
-		if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
-			broomba.resetStats();
-			clear();
-			map.current_toRoot(map.theGamer());
+		while (broomba.getEnd() != 1 || broomba.getExit() != 1) {
+			if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
+				broomba.resetStats();
+				clear();
+				map.current_toRoot(map.theGamer());
+			}
 			map.play(map.theGamer(), broomba, 0);
 		}
-		else if (broomba.getEnd() == 1) {
-			EndCredits();
-			return 0;
-		}
-		else {
-			broomba.resetStats();
-			clear();
-			map.current_toRoot(map.theGamer());
-			map.play(map.theGamer(), broomba, 0);
-		}
+		EndCredits();
 	}
 	else if (user == 2)
 	{
 		SwifterJetWet jetwet("JetWet", 75, 150, 75);	//powerful yet defenseless
-		map.play(map.theGamer(), jetwet, 0);
-		if (jetwet.get_hp() <= 0 || jetwet.getLife() == 0) {
-			jetwet.resetStats();
-			clear();
-			map.current_toRoot(map.theGamer());
+		while (jetwet.getEnd() != 1 || jetwet.getExit() != 1) {
+			if (jetwet.get_hp() <= 0 || jetwet.getLife() == 0) {
+				jetwet.resetStats();
+				clear();
+				map.current_toRoot(map.theGamer());
+			}
 			map.play(map.theGamer(), jetwet, 0);
 		}
-		else if (jetwet.getEnd() == 1) {
-			EndCredits();
-			return 0;
-		}
-		else {
-			jetwet.resetStats();
-			clear();
-			map.current_toRoot(map.theGamer());
-			map.play(map.theGamer(), jetwet, 0);
-		}
+		EndCredits();
 		
 	}
 	else if (user == 3)
 	{
 		BysonV8 byson("BysonV8", 150, 75, 75);	//lot of health yet weak
-		map.play(map.theGamer(), byson, 0);
-		if (byson.get_hp() <= 0 || byson.getLife() == 0) {
-			byson.resetStats();
-			clear();
-			map.current_toRoot(map.theGamer());
+		while (byson.getEnd() != 1 || byson.getExit() != 1) {
+			if (byson.get_hp() <= 0 || byson.getLife() == 0) {
+				byson.resetStats();
+				clear();
+				map.current_toRoot(map.theGamer());
+			}
 			map.play(map.theGamer(), byson, 0);
 		}
-		else if (byson.getEnd() == 1) {
-			EndCredits();
-			return 0;
-		}
-		else {
-			byson.resetStats();
-			clear();
-			map.current_toRoot(map.theGamer());
-			map.play(map.theGamer(), byson, 0);
-		}
+		EndCredits();
 	}
 	else
 	{
 		std::cout << "Error 404 not found idk..." << std::endl;
 	}
-
-	EndCredits();
 	return 0;
 }
