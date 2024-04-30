@@ -82,7 +82,8 @@ int main()
 	user = Start_Menu();
 	if (user == 1)
 	{
-		Broomba broomba("Broomba", 75, 75, 150); //beefy but less health
+		Broomba broomba("Broomba", 100, 100, 150); //beefy but less health
+		//Broomba broomba("Broomba", 75, 75, 150); //beefy but less health
 		while (broomba.getEnd() != 1 || broomba.getExit() != 1) {
 			if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
 				broomba.resetStats();
@@ -95,7 +96,8 @@ int main()
 	}
 	else if (user == 2)
 	{
-		SwifterJetWet jetwet("JetWet", 75, 150, 75);	//powerful yet defenseless
+		SwifterJetWet jetwet("JetWet", 100, 150, 100);	//powerful yet defenseless
+		//SwifterJetWet jetwet("JetWet", 75, 150, 75);	//powerful yet defenseless
 		while (jetwet.getEnd() != 1 || jetwet.getExit() != 1) {
 			if (jetwet.get_hp() <= 0 || jetwet.getLife() == 0) {
 				jetwet.resetStats();
@@ -109,7 +111,8 @@ int main()
 	}
 	else if (user == 3)
 	{
-		BysonV8 byson("BysonV8", 150, 75, 75);	//lot of health yet weak
+		BysonV8 byson("BysonV8", 150, 100, 100);	//lot of health yet weak
+		//BysonV8 byson("BysonV8", 150, 75, 75);	//lot of health yet weak
 		while (byson.getEnd() != 1 || byson.getExit() != 1) {
 			if (byson.get_hp() <= 0 || byson.getLife() == 0) {
 				byson.resetStats();
