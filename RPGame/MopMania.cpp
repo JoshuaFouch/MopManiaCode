@@ -78,6 +78,12 @@ int main()
 	color(7);
 	system("pause");
 
+	/*Broomba broomba("Broomba", 100, 100, 150); //beefy but less health
+	GoodFinalBattle test;
+	GrimeReaper reaper(3);
+	test.Battle_Sequence(broomba, reaper);
+	*/
+
 	int user = 1;
 	user = Start_Menu();
 	if (user == 1)
