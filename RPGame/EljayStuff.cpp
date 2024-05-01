@@ -361,7 +361,7 @@ void pharmEvent::trigger(character& c)
 		MSdelay(2500);
 		std::cout << "will... ";
 		MSdelay(2500);
-		std::cout << "fin-";
+		std::cout << "fin-\n";
 		MSdelay(1500);
 		system("pause");
 		clear();
