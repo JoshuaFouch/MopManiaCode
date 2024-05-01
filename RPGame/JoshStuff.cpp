@@ -9,7 +9,7 @@ void FinalEvent::trigger(character& c)
 {
 	endMusic();
 
-	if (c.get_lvl() < 10) {
+	if (c.get_lvl() > 10) {
 		clear();
 		playMusic("void.wav");
 		Sdelay(1);
