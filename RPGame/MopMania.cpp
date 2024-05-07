@@ -83,13 +83,17 @@ int main()
 	GrimeReaper reaper(3);
 	test.Battle_Sequence(broomba, reaper);
 	*/
-
+	
 	int user = 1;
 	user = Start_Menu();
 	if (user == 1)
 	{
 		Broomba broomba("Broomba", 100, 100, 150); //beefy but less health
 		//Broomba broomba("Broomba", 75, 75, 150); //beefy but less health
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
+		broomba.acq_deadRat();
 		while (broomba.getEnd() != 1 || broomba.getExit() != 1) {
 			if (broomba.get_hp() <= 0 || broomba.getLife() == 0) {
 				broomba.resetStats();
@@ -104,6 +108,10 @@ int main()
 	{
 		SwifterJetWet jetwet("JetWet", 100, 150, 100);	//powerful yet defenseless
 		//SwifterJetWet jetwet("JetWet", 75, 150, 75);	//powerful yet defenseless
+		jetwet.acq_deadRat();
+		jetwet.acq_deadRat();
+		jetwet.acq_deadRat();
+		jetwet.acq_deadRat();
 		while (jetwet.getEnd() != 1 || jetwet.getExit() != 1) {
 			if (jetwet.get_hp() <= 0 || jetwet.getLife() == 0) {
 				jetwet.resetStats();
@@ -119,6 +127,10 @@ int main()
 	{
 		BysonV8 byson("BysonV8", 150, 100, 100);	//lot of health yet weak
 		//BysonV8 byson("BysonV8", 150, 75, 75);	//lot of health yet weak
+		byson.acq_deadRat();
+		byson.acq_deadRat();
+		byson.acq_deadRat();
+		byson.acq_deadRat();
 		while (byson.getEnd() != 1 || byson.getExit() != 1) {
 			if (byson.get_hp() <= 0 || byson.getLife() == 0) {
 				byson.resetStats();
