@@ -5,7 +5,6 @@
 #include "battle.h"
 #include "event.h"
 #include "GameMap.h"
-#include "ChatGPTsnake.h"
 
 #pragma comment(lib, "winmm.lib") //for music and sound effects!
 

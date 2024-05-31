@@ -29,9 +29,6 @@
     <Filter Include="Battle Files">
       <UniqueIdentifier>{f0133ac8-1eee-423b-98e0-21742436361d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ChatGpt_snek">
-      <UniqueIdentifier>{acb5d935-bd98-42f8-bcc0-977c2a4c8a2a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
@@ -57,9 +54,6 @@
     </ClInclude>
     <ClInclude Include="battle.h">
       <Filter>Battle Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ChatGPTsnake.h">
-      <Filter>ChatGpt_snek</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -95,9 +89,6 @@
     </ClCompile>
     <ClCompile Include="SeamusStuff.cpp">
       <Filter>Event Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ChatGPTsnake.cpp">
-      <Filter>ChatGpt_snek</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +179,7 @@
     <Media Include="..\..\audio for game\horror.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="void.wav" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="endcredit.txt">
@@ -205,10 +197,5 @@
     <Text Include="eljay.txt">
       <Filter>MainGame Files</Filter>
     </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="void.wav">
-      <Filter>MusicStuff</Filter>
-    </Resource>
   </ItemGroup>
 </Project>

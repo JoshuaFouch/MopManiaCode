@@ -129,7 +129,6 @@
   <ItemGroup>
     <ClInclude Include="battle.h" />
     <ClInclude Include="character.h" />
-    <ClInclude Include="ChatGPTsnake.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="event.h" />
     <ClInclude Include="GameMap.h" />
@@ -139,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="battle.cpp" />
-    <ClCompile Include="ChatGPTsnake.cpp" />
     <ClCompile Include="EljayStuff.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="event.cpp" />
