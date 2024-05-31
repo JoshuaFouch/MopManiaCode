@@ -88,7 +88,7 @@ int main()
 	user = Start_Menu();
 	if (user == 1)
 	{
-		Broomba broomba("Broomba", 100, 100, 150); //beefy but less health
+		Broomba broomba("Broomba", 110, 110, 160); //beefy but less health
 		//Broomba broomba("Broomba", 75, 75, 150); //beefy but less health
 		broomba.acq_deadRat();
 		broomba.acq_deadRat();
@@ -106,7 +106,7 @@ int main()
 	}
 	else if (user == 2)
 	{
-		SwifterJetWet jetwet("JetWet", 100, 150, 100);	//powerful yet defenseless
+		SwifterJetWet jetwet("JetWet", 110, 160, 110);	//powerful yet defenseless
 		//SwifterJetWet jetwet("JetWet", 75, 150, 75);	//powerful yet defenseless
 		jetwet.acq_deadRat();
 		jetwet.acq_deadRat();
@@ -125,7 +125,7 @@ int main()
 	}
 	else if (user == 3)
 	{
-		BysonV8 byson("BysonV8", 150, 100, 100);	//lot of health yet weak
+		BysonV8 byson("BysonV8", 160, 110, 110);	//lot of health yet weak
 		//BysonV8 byson("BysonV8", 150, 75, 75);	//lot of health yet weak
 		byson.acq_deadRat();
 		byson.acq_deadRat();
