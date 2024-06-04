@@ -87,10 +87,8 @@ int main()
 	user = Start_Menu();
 	if (user == 1)
 	{
-		Broomba broomba("Broomba", 110, 110, 160); //beefy but less health
-		//Broomba broomba("Broomba", 75, 75, 150); //beefy but less health
-		broomba.acq_deadRat();
-		broomba.acq_deadRat();
+		//Broomba broomba("Broomba", 110, 110, 160); //beefy but less health
+		Broomba broomba("Broomba", 75, 75, 150); //beefy but less health
 		broomba.acq_deadRat();
 		broomba.acq_deadRat();
 		while (broomba.getEnd() != 1 || broomba.getExit() != 1) {
@@ -105,10 +103,8 @@ int main()
 	}
 	else if (user == 2)
 	{
-		SwifterJetWet jetwet("JetWet", 110, 160, 110);	//powerful yet defenseless
-		//SwifterJetWet jetwet("JetWet", 75, 150, 75);	//powerful yet defenseless
-		jetwet.acq_deadRat();
-		jetwet.acq_deadRat();
+		//SwifterJetWet jetwet("JetWet", 110, 160, 110);	//powerful yet defenseless
+		SwifterJetWet jetwet("JetWet", 75, 150, 75);	//powerful yet defenseless
 		jetwet.acq_deadRat();
 		jetwet.acq_deadRat();
 		while (jetwet.getEnd() != 1 || jetwet.getExit() != 1) {
@@ -124,10 +120,8 @@ int main()
 	}
 	else if (user == 3)
 	{
-		BysonV8 byson("BysonV8", 160, 110, 110);	//lot of health yet weak
-		//BysonV8 byson("BysonV8", 150, 75, 75);	//lot of health yet weak
-		byson.acq_deadRat();
-		byson.acq_deadRat();
+		//BysonV8 byson("BysonV8", 160, 110, 110);	//lot of health yet weak
+		BysonV8 byson("BysonV8", 150, 75, 75);	//lot of health yet weak
 		byson.acq_deadRat();
 		byson.acq_deadRat();
 		while (byson.getEnd() != 1 || byson.getExit() != 1) {

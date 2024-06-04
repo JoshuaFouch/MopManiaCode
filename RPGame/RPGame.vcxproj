@@ -134,6 +134,7 @@
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="inGame.h" />
     <ClInclude Include="npc.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
   <ItemGroup>
@@ -150,9 +151,8 @@
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="..\..\..\..\Downloads\onrepeat.wav" />
+    <Media Include="..\..\audio for game\background.wav" />
     <Media Include="..\..\audio for game\horror.wav" />
-    <Media Include="..\..\audio for game\Mattari.wav" />
     <Media Include="..\..\background.wav" />
     <Media Include="..\..\BAH.wav" />
     <Media Include="..\..\battle!.wav" />
@@ -172,13 +172,31 @@
     <Media Include="..\..\u-s-eas-system-full.wav" />
     <Media Include="..\..\victory!.wav" />
     <Media Include="..\..\vine-boom.wav" />
+    <Media Include="BAH.wav" />
+    <Media Include="battle!.wav" />
     <Media Include="battlemusic.wav" />
-    <Media Include="dies-irae-chant.wav" />
+    <Media Include="coins!.wav" />
+    <Media Include="creativity.wav" />
+    <Media Include="cricket.wav" />
+    <Media Include="death.wav" />
+    <Media Include="door.wav" />
+    <Media Include="ending.wav" />
+    <Media Include="fanfare.wav" />
     <Media Include="gameover.wav" />
     <Media Include="GoDown.wav" />
+    <Media Include="horror.wav" />
+    <Media Include="jazzybeat.wav" />
     <Media Include="Mattari.wav" />
+    <Media Include="MattariCore.wav" />
     <Media Include="metalPipe.wav" />
     <Media Include="OE.wav" />
+    <Media Include="putrid.wav" />
+    <Media Include="riser.wav" />
+    <Media Include="terror.wav" />
+    <Media Include="TheGrimeReaper.wav" />
+    <Media Include="u-s-eas-system-full.wav" />
+    <Media Include="victory!.wav" />
+    <Media Include="vine-boom.wav" />
     <Media Include="void.wav">
       <FileType>Document</FileType>
     </Media>
@@ -189,6 +207,9 @@
     <Text Include="josh.txt" />
     <Text Include="purge.txt" />
     <Text Include="seamus.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
