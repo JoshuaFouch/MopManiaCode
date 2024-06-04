@@ -179,7 +179,9 @@
     <Media Include="..\..\audio for game\horror.wav">
       <Filter>MusicStuff</Filter>
     </Media>
-    <Media Include="void.wav" />
+    <Media Include="void.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Text Include="endcredit.txt">
