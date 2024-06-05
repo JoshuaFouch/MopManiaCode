@@ -1,5 +1,6 @@
 #include "utility.h"
 #include "character.h"
+#include "resource.h"
 
 #include <iostream>
 
@@ -150,8 +151,91 @@ void color(char n)
 
 void playMusic(std::string filename)
 {
-	std::wstring wideFilename(filename.begin(), filename.end());
-	PlaySound(wideFilename.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	if (filename == "background.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE1), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "BAH.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE2), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "battle!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE3), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "battlemusic.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE4), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "coins!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE5), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "creativity.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE6), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "cricket.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE7), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "death.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE8), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "door.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE9), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "ending.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE10), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "fanfare.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE11), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "gameover.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE12), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "GoDown.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE13), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "horror.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE14), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "jazzybeat.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE15), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "Mattari.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE16), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "MattariCore.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE17), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "metalPipe.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE18), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "OE.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE19), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "putrid.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE20), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "riser.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE21), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "terror.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE22), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "TheGrimeReaper.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE23), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "u-s-eas-system-full.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE24), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "victory!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE25), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "vine-boom.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE26), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else if (filename == "void.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE27), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	}
+	else {
+		//std::wstring wideFilename(filename.begin(), filename.end());
+		//PlaySound(wideFilename.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	}
 }
 
 void endMusic()
@@ -161,8 +245,91 @@ void endMusic()
 
 void playSFX(std::string filename)
 {
-	std::wstring wideFilename(filename.begin(), filename.end());
-	PlaySound(wideFilename.c_str(), NULL, SND_FILENAME | SND_ASYNC);
+	if (filename == "background.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE1), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "BAH.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE2), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "battle!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE3), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "battlemusic.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE4), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "coins!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE5), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "creativity.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE6), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "cricket.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE7), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "death.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE8), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "door.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE9), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "ending.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE10), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "fanfare.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE11), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "gameover.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE12), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "GoDown.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE13), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "horror.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE14), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "jazzybeat.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE15), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "Mattari.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE16), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "MattariCore.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE17), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "metalPipe.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE18), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "OE.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE19), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "putrid.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE20), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "riser.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE21), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "terror.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE22), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "TheGrimeReaper.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE23), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "u-s-eas-system-full.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE24), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "victory!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE25), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "vine-boom.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE26), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else if (filename == "void.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE27), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+	}
+	else {
+		//std::wstring wideFilename(filename.begin(), filename.end());
+		//PlaySound(wideFilename.c_str(), NULL, SND_FILENAME | SND_ASYNC);
+	}
 }
 
 void whereText() {
@@ -198,8 +365,91 @@ void DotdotTwo()
 }
 
 void playSFX_once(std::string filename) {
-	std::wstring wideFilename(filename.begin(), filename.end());
-	PlaySound(wideFilename.c_str(), NULL, SND_FILENAME);
+	if (filename == "background.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE1), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "BAH.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE2), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "battle!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE3), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "battlemusic.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE4), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "coins!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE5), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "creativity.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE6), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "cricket.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE7), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "death.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE8), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "door.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE9), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "ending.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE10), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "fanfare.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE11), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "gameover.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE12), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "GoDown.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE13), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "horror.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE14), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "jazzybeat.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE15), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "Mattari.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE16), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "MattariCore.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE17), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "metalPipe.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE18), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "OE.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE19), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "putrid.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE20), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "riser.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE21), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "terror.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE22), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "TheGrimeReaper.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE23), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "u-s-eas-system-full.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE24), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "victory!.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE25), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "vine-boom.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE26), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else if (filename == "void.wav") {
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE27), GetModuleHandle(NULL), SND_RESOURCE);
+	}
+	else {
+		//std::wstring wideFilename(filename.begin(), filename.end());
+		//PlaySound(wideFilename.c_str(), NULL, SND_FILENAME);
+	}
 }
 
 void ellipsis() {

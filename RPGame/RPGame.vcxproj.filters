@@ -29,9 +29,6 @@
     <Filter Include="Battle Files">
       <UniqueIdentifier>{f0133ac8-1eee-423b-98e0-21742436361d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ChatGpt_snek">
-      <UniqueIdentifier>{acb5d935-bd98-42f8-bcc0-977c2a4c8a2a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="character.h">
@@ -58,9 +55,7 @@
     <ClInclude Include="battle.h">
       <Filter>Battle Files</Filter>
     </ClInclude>
-    <ClInclude Include="ChatGPTsnake.h">
-      <Filter>ChatGpt_snek</Filter>
-    </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MopMania.cpp">
@@ -96,14 +91,8 @@
     <ClCompile Include="SeamusStuff.cpp">
       <Filter>Event Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChatGPTsnake.cpp">
-      <Filter>ChatGpt_snek</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="dies-irae-chant.wav">
-      <Filter>MusicStuff</Filter>
-    </Media>
     <Media Include="battlemusic.wav">
       <Filter>MusicStuff</Filter>
     </Media>
@@ -114,9 +103,6 @@
       <Filter>MusicStuff</Filter>
     </Media>
     <Media Include="gameover.wav">
-      <Filter>MusicStuff</Filter>
-    </Media>
-    <Media Include="..\..\audio for game\Mattari.wav">
       <Filter>MusicStuff</Filter>
     </Media>
     <Media Include="OE.wav">
@@ -132,9 +118,6 @@
       <Filter>MusicStuff</Filter>
     </Media>
     <Media Include="..\..\riser.wav">
-      <Filter>MusicStuff</Filter>
-    </Media>
-    <Media Include="..\..\..\..\Downloads\onrepeat.wav">
       <Filter>MusicStuff</Filter>
     </Media>
     <Media Include="..\..\putrid.wav">
@@ -188,6 +171,29 @@
     <Media Include="..\..\audio for game\horror.wav">
       <Filter>MusicStuff</Filter>
     </Media>
+    <Media Include="void.wav">
+      <Filter>MusicStuff</Filter>
+    </Media>
+    <Media Include="..\..\audio for game\background.wav" />
+    <Media Include="BAH.wav" />
+    <Media Include="battle!.wav" />
+    <Media Include="coins!.wav" />
+    <Media Include="creativity.wav" />
+    <Media Include="cricket.wav" />
+    <Media Include="death.wav" />
+    <Media Include="door.wav" />
+    <Media Include="ending.wav" />
+    <Media Include="fanfare.wav" />
+    <Media Include="horror.wav" />
+    <Media Include="jazzybeat.wav" />
+    <Media Include="MattariCore.wav" />
+    <Media Include="putrid.wav" />
+    <Media Include="riser.wav" />
+    <Media Include="terror.wav" />
+    <Media Include="TheGrimeReaper.wav" />
+    <Media Include="u-s-eas-system-full.wav" />
+    <Media Include="victory!.wav" />
+    <Media Include="vine-boom.wav" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="endcredit.txt">
@@ -207,8 +213,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="void.wav">
-      <Filter>MusicStuff</Filter>
-    </Resource>
+    <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
 </Project>
