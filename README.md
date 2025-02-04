@@ -1,5 +1,7 @@
 # Josh, Eljay, and Seamus Game Project
 
+## THIS GAME ONLY WORKS ON WINDOWS VIA VISUAL STUDIO AS OF 2025!
+
 MAKE SURE YOU PULL ALL CODE INTO YOUR IDE
 
 - The only way I made this work was by creating a new repository through Visual Studio
